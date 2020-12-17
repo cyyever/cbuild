@@ -1,0 +1,6 @@
+{
+  "git_url": "git@github.com:nodejs/node.git",
+  "cache_time": 999,
+  "default_build_script": "c",
+  "configure_options": "--ninja"
+}

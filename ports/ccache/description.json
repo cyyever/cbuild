@@ -1,0 +1,20 @@
+{
+  "git_url": "git@github.com:ccache/ccache.git",
+  "default_build_script": "c",
+  "environment_variable": [
+    "run_test=0"
+  ],
+  "system_package_dependency": {
+    "unix": [
+      "gperf"
+    ],
+"macos":[
+      "zstd"
+],
+    "ubuntu": [
+      "libzstd-dev",
+      "libb2-dev"
+    ]
+  },
+  "configure_options": "--disable-man"
+}

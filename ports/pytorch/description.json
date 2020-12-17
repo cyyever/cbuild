@@ -1,0 +1,74 @@
+{
+  "git_url": "git@github.com:pytorch/pytorch.git",
+  "cache_time": 30,
+  "conditional_new_feature": {
+    "support_cuda": [
+      "cuda"
+    ],
+    "unix": [
+      "new_gcc"
+    ]
+  },
+  "default_build_script": "python",
+  "environment_variable": [
+    "run_test=0",
+    "static_analysis=1",
+    "BUILD_TEST=off",
+    "USE_MPI=OFF",
+    "BUILD_CAFFE2_MOBILE=off",
+    "USE_DISTRIBUTED=off",
+    "USE_FBGEMM=off",
+    "USE_NATIVE_ARCH=on",
+    "USE_ROCM=off",
+    "USE_TENSORRT=off",
+    "USE_OPENCV=off",
+    "USE_QNNPACK=off",
+    "USE_PYTORCH_QNNPACK=off",
+    "USE_METAL=off",
+    "USE_NUMA=ON",
+    "USE_FFMPEG=off",
+    "USE_GLOG=off",
+    "USE_GFLAGS=off",
+    "ONNX_ML=off",
+    "pybind11_PREFER_third_party=ON",
+    "BLAS=OpenBLAS",
+    "USE_TBB=on",
+    "PYTHON_EXECUTABLE=${CBUILD_PYTHON_EXE}",
+    "OpenBLAS_HOME=${INSTALL_PREFIX}/include/openblas",
+    "OpenBLAS=${INSTALL_PREFIX}"
+  ],
+  "conditional_environment_variable": {
+    "cuda": [
+      "USE_CUDA=on",
+      "USE_CUDNN=on"
+    ],
+    "debug_build": [
+      "DEBUG=1"
+    ],
+    "linux&&cuda": [
+      "CUDNN_ROOT=${INSTALL_PREFIX}/cuda",
+      "CUDNN_LIBRARY=${INSTALL_PREFIX}/cuda",
+      "CMAKE_CXX_FLAGS=-DNO_CUDNN_DESTROY_HANDLE",
+      "NCCL_ROOT=${INSTALL_PREFIX}",
+      "USE_NCCL=on"
+    ],
+    "windows&&cuda": [
+      "CUDNN_ROOT=${env:INSTALL_PREFIX}/cuda",
+      "CMAKE_CXX_FLAGS=/DNO_CUDNN_DESTROY_HANDLE"
+    ]
+  },
+  "dependency": [
+    "machine_learning_dev_env:__cbuild_most_recent_git_tag"
+  ],
+  "system_package_dependency": {
+    "ubuntu": [
+      "libgoogle-glog-dev",
+      "libnuma-dev"
+    ],
+    "archlinux": [
+      "google-glog",
+      "gflags",
+      "numactl"
+    ]
+  }
+}

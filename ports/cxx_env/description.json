@@ -1,0 +1,47 @@
+{
+  "group_package": true,
+  "conditional_dependency": {
+    "windows": [
+      "Visual-Studio:2019"
+    ]
+  },
+  "system_package_dependency": {
+    "all_os": [
+      "cmake"
+    ],
+    "unix": [
+      "autoconf",
+      "automake",
+      "gettext",
+      "gcc",
+      "libtool"
+    ],
+    "macos": [
+      "ninja"
+    ],
+    "freebsd": [
+      "gmake",
+      "pkgconf",
+      "googletest",
+      "ninja"
+    ],
+    "archlinux": [
+      "ninja",
+      "base-devel"
+    ],
+    "ubuntu": [
+      "bison",
+      "flex",
+      "libtool-bin",
+      "g++",
+      "make",
+      "ninja-build",
+      "pkg-config"
+    ],
+    "windows": [
+      "pkgconfiglite",
+      "vswhere",
+      "ninja"
+    ]
+  }
+}

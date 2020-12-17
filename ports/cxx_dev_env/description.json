@@ -1,0 +1,22 @@
+{
+  "group_package": true,
+  "system_package_dependency": {
+    "unix": [
+      "valgrind",
+      "gdb"
+    ]
+  },
+  "context_dependency": {
+    "linux": [
+      "lcov:master",
+      "ccache:__cbuild_most_recent_git_tag"
+    ],
+    "unix": [
+      "gcc:releases/gcc-10.2.0"
+    ]
+  },
+  "dependency": [
+    "llvm:__cbuild_most_recent_git_tag",
+    "static_analysis_env:__cbuild_most_recent_git_tag"
+  ]
+}

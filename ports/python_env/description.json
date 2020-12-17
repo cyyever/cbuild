@@ -1,0 +1,16 @@
+{
+  "group_package": true,
+  "conditional_dependency": {
+    "unix": [
+      "cpython:v3.9.1"
+    ]
+  },
+  "system_package_dependency": {
+    "pip": [
+      "PyYAML",
+      "setuptools",
+      "pytest",
+      "wheel"
+    ]
+  }
+}

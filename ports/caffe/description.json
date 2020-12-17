@@ -1,0 +1,21 @@
+{
+  "git_url": "git@github.com:BVLC/caffe.git",
+  "dependency": [
+    "machine_learning_dev_env:master"
+  ],
+  "system_package_dependency": {
+    "ubuntu": [
+      "libboost-thread-dev",
+      "libboost-filesystem-dev",
+      "libprotobuf-dev",
+      "protobuf-compiler",
+      "libgflags-dev",
+      "libgoogle-glog-dev",
+      "liblmdb-dev",
+      "libhdf5-serial-dev",
+      "libleveldb-dev"
+    ]
+  },
+  "default_build_script": "c",
+  "cmake_options": "-DUSE_LEVELDB=off -DUSE_OPENCV=off -DBLAS=Open -DCUDA_ARCH_NAME=Pascal -DBUILD_python=off"
+}

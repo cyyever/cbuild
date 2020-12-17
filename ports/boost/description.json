@@ -1,0 +1,9 @@
+{
+  "git_url": "git@github.com:boostorg/boost.git",
+  "cmake_options": "-DBOOST_ENABLE_CMAKE=on",
+  "default_build_script": "c",
+  "environment_variable": [
+    "run_test=0"
+  ],
+  "cache_time": 300
+}

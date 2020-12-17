@@ -1,0 +1,9 @@
+{
+  "group_package": true,
+  "conditional_dependency":{
+  "unix":[
+    "gcc:releases/gcc-10.2.0"
+  ]
+
+  }
+}

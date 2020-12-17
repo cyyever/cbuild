@@ -1,0 +1,7 @@
+{
+  "git_url": "git@github.com:NVIDIA/nccl.git",
+  "default_build_script": "c",
+  "environment_variable": [
+    "NVCC_GENCODE=-gencode=arch=compute_80,code=sm_80 -gencode=arch=compute_80,code=compute_80"
+  ]
+}

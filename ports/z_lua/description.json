@@ -1,0 +1,6 @@
+{
+  "git_url": "git@github.com:skywind3000/z.lua.git",
+  "dependency": [
+    "lua_env:__cbuild_most_recent_git_tag"
+  ]
+}

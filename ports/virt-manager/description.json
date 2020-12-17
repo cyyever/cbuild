@@ -1,0 +1,34 @@
+{
+  "git_url": "git@github.com:virt-manager/virt-manager.git",
+  "environment_variable": [
+    "DEFAULT_INSTALL_PREFIX=1",
+    "run_test=0"
+  ],
+  "default_build_script": "python",
+  "system_package_dependency": {
+    "bsd": [
+      "qemu",
+      "libvirt"
+    ],
+    "archlinux": [
+      "ebtables",
+      "dnsmasq"
+    ],
+    "macos": [
+      "dnsmasq"
+    ],
+    "freebsd": [
+      "libosinfo",
+      "libvirt-glib"
+    ],
+    "pip": [
+      "gobject",
+      "libvirt-python",
+      "PyGObject",
+      "docutils"
+    ]
+  },
+  "package_dependency": [
+    "libxml2:master"
+  ]
+}

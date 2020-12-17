@@ -1,0 +1,4 @@
+{
+ "git_url": "https://gitlab.gnome.org/GNOME/libxml2.git",
+ "default_build_script": "c"
+}

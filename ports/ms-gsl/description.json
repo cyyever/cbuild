@@ -1,0 +1,5 @@
+{
+ "git_url": "git@github.com:microsoft/GSL.git",
+ "default_build_script": "c",
+ "cmake_options": "-DGSL_TEST=off"
+}

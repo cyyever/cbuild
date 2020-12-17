@@ -1,0 +1,21 @@
+{
+  "script_package": true,
+  "system_package_dependency": {
+    "windows": [
+      "golang"
+    ],
+    "macos": [
+      "golang"
+    ],
+    "archlinux": [
+      "go"
+    ],
+    "freebsd": [
+      "go",
+      "git"
+    ],
+    "ubuntu": [
+      "golang"
+    ]
+  }
+}

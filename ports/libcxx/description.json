@@ -1,0 +1,9 @@
+{
+  "git_url": "git@github.com:llvm/llvm-project.git",
+  "default_build_script": "c",
+  "environment_variable": [
+    "SRC_SUBDIR=llvm",
+    "INSTALL_SUBDIR=llvm/${PACKAGE_VERSION}"
+  ],
+  "cmake_options": "-DCMAKE_CXX_COMPILER=clang++ -DCMAKE_C_COMPILER=clang -DLLVM_ENABLE_PROJECTS='libcxx;libcxxabi' -DLLVM_USE_SANITIZER=MemoryWithOrigins -DLLVM_ENABLE_RTTI=ON -DLLVM_TARGETS_TO_BUILD=host -DLLVM_BUILD_TESTS=ON"
+}

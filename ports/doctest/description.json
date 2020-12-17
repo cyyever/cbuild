@@ -1,0 +1,5 @@
+{
+  "git_url": "git@github.com:onqtam/doctest.git",
+  "cmake_options": "-DDOCTEST_WITH_TESTS=off",
+  "default_build_script": "c"
+}

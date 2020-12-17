@@ -1,0 +1,8 @@
+{
+  "git_url": "git@github.com:intel/tbb.git",
+  "system_package_dependency": {
+    "unix": [
+      "rsync"
+    ]
+  }
+}

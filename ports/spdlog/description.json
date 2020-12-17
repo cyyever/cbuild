@@ -1,0 +1,8 @@
+{
+  "git_url": "git@github.com:gabime/spdlog.git",
+  "default_build_script": "c",
+  "cmake_options": "-DSPDLOG_BUILD_EXAMPLE=off",
+  "feature_cmake_options": {
+    "shared_lib": "-DSPDLOG_BUILD_SHARED=on"
+  }
+}

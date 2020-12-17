@@ -1,0 +1,1 @@
+[Environment]::SetEnvironmentVariable( "Path", $env:INSTALL_PREFIX+"/x64/vc16/bin" + ";" + [Environment]::GetEnvironmentVariable("Path", [EnvironmentVariableTarget]::User), [EnvironmentVariableTarget]::User)

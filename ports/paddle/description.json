@@ -1,0 +1,31 @@
+{
+  "git_url": "git@github.com:PaddlePaddle/Paddle.git",
+  "cache_time": 30,
+  "conditional_new_feature": {
+    "support_cuda": [
+      "cuda"
+    ]
+  },
+  "default_build_script": "c",
+  "environment_variable": [
+    "cmake_generator=native"
+  ],
+  "cmake_options": "-DPY_VERSION=3.8",
+  "context_cmake_options": {
+    "linux&&cuda": "-DCUDNN_ROOT=${INSTALL_PREFIX}/cuda -DCUDNN_LIBRARY=${INSTALL_PREFIX}/cuda -DNCCL_ROOT=${INSTALL_PREFIX}",
+    "windows&&cuda": "\"-DCUDNN_ROOT=${env:INSTALL_PREFIX}/cuda\""
+  },
+  "dependency": [
+    "machine_learning_dev_env:__cbuild_most_recent_git_tag"
+  ],
+  "context_dependency": {
+    "linux&&cuda": [
+      "nccl:__cbuild_most_recent_git_tag"
+    ]
+  },
+  "system_package_dependency": {
+    "linux": [
+      "patchelf"
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "group_package": true,
+  "system_package_dependency": {
+    "unix": [
+      "nasm"
+    ],
+    "windows": [
+      "nasm",
+      "yasm"
+    ]
+  }
+}

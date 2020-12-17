@@ -1,0 +1,11 @@
+{
+  "group_package": true,
+  "system_package_dependency": {
+    "unix": [
+      "catch2"
+    ]
+  },
+  "dependency": [
+    "doctest:__cbuild_most_recent_git_tag"
+  ]
+}

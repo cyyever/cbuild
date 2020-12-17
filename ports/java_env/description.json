@@ -1,0 +1,15 @@
+{
+  "group_package": true,
+  "system_package_dependency": {
+    "all_os": [
+      "maven",
+      "ant"
+    ],
+    "ubuntu": [
+      "default-jdk"
+    ],
+    "windows": [
+      "openjdk12"
+    ]
+  }
+}

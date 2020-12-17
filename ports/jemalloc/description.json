@@ -1,0 +1,4 @@
+{
+  "git_url": "git@github.com:jemalloc/jemalloc.git",
+  "default_build_script": "c"
+}

@@ -1,0 +1,15 @@
+{
+  "git_url": "git@github.com:kovidgoyal/kitty.git",
+  "environment_variable": [
+    "LDFLAGS=-L/usr/local/lib",
+    "static_analysis=1"
+  ],
+  "build_languages": [
+    "python"
+  ],
+  "system_package_dependency": {
+    "unix": [
+      "rsync"
+    ]
+  }
+}

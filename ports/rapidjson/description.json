@@ -1,0 +1,5 @@
+{
+  "git_url": "git@github.com:Tencent/rapidjson.git",
+  "default_build_script": "c",
+  "cmake_options": "-DRAPIDJSON_BUILD_EXAMPLES=off -DRAPIDJSON_BUILD_DOC=off -DRAPIDJSON_BUILD_TESTS=off"
+}

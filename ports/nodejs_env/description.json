@@ -1,0 +1,23 @@
+{
+  "group_package": true,
+  "system_package_dependency": {
+    "windows": [
+      "nodejs.install"
+    ],
+    "archlinux": [
+      "nodejs",
+      "npm"
+    ],
+	"macos":[
+"nodejs"
+],
+    "freebsd": [
+      "www/npm"
+    ]
+  },
+  "context_dependency": {
+    "ubuntu": [
+      "nodejs:__cbuild_most_recent_git_tag"
+    ]
+  }
+}

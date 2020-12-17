@@ -1,0 +1,17 @@
+{
+  "git_url": "git@github.com:cyyever/shadowsocks-qt5.git",
+  "default_build_script": "c",
+  "dependency": [
+    "libQtShadowsocks:cyy"
+  ],
+  "system_package_dependency": {
+    "ubuntu": [
+      "qtbase5-dev",
+      "libqrencode-dev",
+      "libzbar-dev"
+    ]
+  },
+  "environment_variable": [
+    "DEFAULT_INSTALL_PREFIX=1"
+  ]
+}

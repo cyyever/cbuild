@@ -1,0 +1,17 @@
+{
+  "group_package": true,
+  "package_dependency": [
+    "python_env"
+  ],
+  "system_package_dependency": {
+    "pip": [
+      "pytest",
+      "coverage",
+      "line_profiler",
+      "memory_profiler",
+      "py-spy",
+      "Cython",
+      "psutil"
+    ]
+  }
+}

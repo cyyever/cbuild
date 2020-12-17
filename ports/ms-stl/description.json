@@ -1,0 +1,14 @@
+{
+  "git_url": "git@github.com:microsoft/STL.git",
+  "with_submodule": false,
+  "default_build_script": "c",
+  "context_environment_variable": {
+    "all_os": [
+      "no_install=1",
+      "run_test=0"
+    ]
+  },
+  "dependency": [
+    "boost:__cbuild_most_recent_git_tag"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "git_url": "git@github.com:llvm/llvm-project.git",
+  "cache_time": 999,
+  "environment_variable": [
+    "SRC_SUBDIR=llvm",
+    "INSTALL_SUBDIR=llvm/${PACKAGE_VERSION}",
+    "TEST_TARGET=check-all",
+    "run_test=0"
+  ],
+  "ignored_tag_regex": [
+    "init"
+  ],
+  "default_build_script": "c",
+  "cmake_options": "-DLLVM_ENABLE_PROJECTS='clang;lld;libcxx;libcxxabi;clang-tools-extra;compiler-rt' -DLLVM_INCLUDE_BENCHMARKS=OFF -DLLVM_INCLUDE_DOCS=OFF -DLLVM_INCLUDE_EXAMPLES=OFF -DCLANG_INCLUDE_DOCS=OFF -DCLANG_TOOLS_EXTRA_INCLUDE_DOCS=OFF -DLIBCXX_INCLUDE_DOCS=OFF -DCLANG_TOOLS_EXTRA_INCLUDE_DOCS=OFF -DLLVM_ENABLE_RTTI=ON -DLLVM_TARGETS_TO_BUILD=host -DLLVM_BUILD_TESTS=OFF",
+  "context_cmake_options": {
+    "unix": "-DLLVM_BINUTILS_INCDIR=/usr/include"
+  },
+  "system_package_dependency": {
+    "ubuntu": [
+      "binutils-dev"
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "git_url": "git@github.com:gcc-mirror/gcc.git",
+  "cache_time": 999,
+  "environment_variable": [
+    "INSTALL_SUBDIR=gcc/${PACKAGE_VERSION}",
+    "USE_BUILD_DIR=1"
+  ],
+  "default_build_script": "c",
+  "configure_options": "--enable-languages=c,c++,fortran --enable-libstdcxx-debug --disable-multilib --disable-nls --with-default-libstdcxx-abi=new",
+  "conditional_configure_options": {
+    "freebsd": [
+      "--with-as=/usr/local/bin/as --with-ld=/usr/local/bin/ld"
+    ]
+  },
+  "system_package_dependency": {
+    "ubuntu": [
+      "libgmp-dev",
+      "libmpfr-dev",
+      "libmpc-dev"
+    ]
+  }
+}

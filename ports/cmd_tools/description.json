@@ -1,0 +1,27 @@
+{
+  "group_package": true,
+  "system_package_dependency": {
+    "unix": [
+      "openconnect"
+    ],
+    "linux||macos": [
+      "imagemagick"
+    ],
+    "ubuntu": [
+      "apt-file"
+    ],
+    "freebsd": [
+      "converters/unix2dos",
+      "ImageMagick7"
+    ],
+    "linux": [
+      "unzip",
+      "sysstat",
+      "net-tools",
+      "dos2unix"
+    ]
+  },
+  "dependency": [
+    "htop:__cbuild_most_recent_git_tag"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "git_url": "git@github.com:FFmpeg/FFmpeg.git",
+  "cache_time": 300,
+  "dependency": [
+    "assembly_env:__cbuild_most_recent_git_tag"
+  ],
+  "system_package_dependency": {
+    "ubuntu": [
+      "libx264-dev",
+      "libx265-dev"
+    ],
+    "freebsd": [
+      "libx264",
+      "x265"
+    ]
+  },
+  "default_build_script": "c",
+  "configure_options": "--extra-cflags=-fPIE --disable-doc --disable-programs --enable-nonfree --enable-gpl --enable-libx264 --enable-libx265",
+  "context_configure_options": {
+    "linux": "--cc=/usr/bin/gcc"
+  },
+  "feature_configure_options": {
+    "shared_lib": "--enable-shared"
+  }
+}

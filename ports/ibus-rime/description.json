@@ -1,0 +1,18 @@
+{
+  "git_url": "git@github.com:rime/ibus-rime.git",
+  "system_package_dependency": {
+    "unix": [
+      "ibus"
+    ]
+  },
+
+  "default_build_script": "c",
+  "environment_variable": [
+    "no_install=1"
+  ],
+  "conditional_dependency": {
+    "unix": [
+      "librime:master"
+    ]
+  }
+}

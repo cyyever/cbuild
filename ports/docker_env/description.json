@@ -1,0 +1,11 @@
+{
+    "group_package": true,
+    "dependency": [
+        "docker:__cbuild_most_recent_git_tag"
+    ],
+    "context_dependency": {
+        "support_cuda": [
+            "nvidia-docker:__cbuild_most_recent_git_tag"
+        ]
+    }
+}

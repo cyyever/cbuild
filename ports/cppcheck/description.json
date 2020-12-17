@@ -1,0 +1,7 @@
+{
+  "git_url": "git@github.com:danmar/cppcheck.git",
+  "default_build_script": "c",
+  "dependency": [
+    "python_env:master"
+  ]
+}

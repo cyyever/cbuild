@@ -1,0 +1,11 @@
+{
+  "group_package": true,
+  "dependency": [
+    "docker:__cbuild_most_recent_git_tag"
+  ],
+  "system_package_dependency": {
+    "yay": [
+      "nvidia-container-toolkit"
+    ]
+  }
+}

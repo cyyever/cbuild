@@ -1,0 +1,19 @@
+{
+  "git_url": "https://gitlab.kitware.com/cmake/cmake.git",
+  "default_build_script": "c",
+  "cache_time": 30,
+  "system_package_dependency": {
+    "unix": [
+      "cmake"
+    ],
+    "ubuntu": [
+      "libssl-dev"
+    ]
+  },
+  "cmake_options": "-DBUILD_TESTING=OFF",
+  "context_environment_variable": {
+    "windows": [
+      "no_install=1"
+    ]
+  }
+}

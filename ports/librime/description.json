@@ -1,0 +1,13 @@
+{
+  "git_url": "https://github.com/cyyever/librime.git",
+  "default_build_script": "c",
+  "cmake_options": "-DBUILD_DATA=on",
+  "system_package_dependency": {
+    "ubuntu": [
+      "libyaml-cpp-dev",
+      "libopencc-dev",
+      "libleveldb-dev",
+      "libmarisa-dev"
+    ]
+  }
+}

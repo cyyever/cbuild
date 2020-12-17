@@ -1,0 +1,11 @@
+{
+  "git_url": "git@github.com:neovim/neovim.git",
+  "default_build_script": "c",
+  "build_languages": [
+    "python"
+  ],
+  "environment_variable": [
+    "VisualStudioEdition=1",
+    "cmake_generator=native"
+  ]
+}

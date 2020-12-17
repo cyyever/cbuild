@@ -1,0 +1,8 @@
+{
+  "git_url": "git@github.com:ericniebler/range-v3.git",
+  "ignored_git_submodules": [
+    "doc/gh-pages"
+  ],
+  "default_build_script": "c",
+  "cmake_options": "-DRANGE_V3_TESTS=off -DRANGE_V3_EXAMPLES=off -DRANGE_V3_DOCS=off"
+}

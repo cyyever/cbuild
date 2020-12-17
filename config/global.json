@@ -1,0 +1,68 @@
+{
+  "conditional_dependency": {
+    "feature_language_cpp": [
+      "cxx_env:master"
+    ],
+    "feature_language_golang": [
+      "golang_env:master"
+    ],
+    "feature_language_nodejs": [
+      "nodejs_env:master"
+    ],
+    "feature_language_haskell": [
+      "haskell_env:master"
+    ],
+    "feature_language_python": [
+      "python_env:master"
+    ],
+    "feature_language_java": [
+      "java_env:master"
+    ],
+    "feature_language_rust": [
+      "rust_env:master"
+    ],
+    "feature_building_tool_cmake": [
+      "cmake:__cbuild_most_recent_git_tag"
+    ],
+    "cuda&&!docker": [
+      "CUDA:11.1.1"
+    ]
+  },
+  "conditional_system_package_manager": {
+    "ubuntu": [
+      "apt"
+    ],
+    "freebsd": [
+      "pkg",
+      "bsd_ports"
+    ],
+    "macos": [
+      "brew"
+    ],
+    "centos": [
+      "yum"
+    ],
+    "windows": [
+      "chocolatey"
+    ],
+    "archlinux": [
+      "pacman",
+      "yay"
+    ]
+  },
+  "conditional_cmake_options": {
+    "all_os": "-DCMAKE_EXPORT_COMPILE_COMMANDS=on",
+    "windows": "-DCMAKE_BUILD_TYPE=$env:BUILD_TYPE",
+    "shared_lib": "-DBUILD_SHARED_LIBS=on",
+    "unix": "-DCMAKE_BUILD_TYPE=${BUILD_TYPE} -DPYTHON_LIBRARY=${INSTALL_PREFIX}/python/lib/libpython3.9.so -DPYTHON_INCLUDE_DIR=${INSTALL_PREFIX}/python/include/python3.9 -DPYTHON_EXECUTABLE=${INSTALL_PREFIX}/python/bin/python3",
+    "unix&&new_gcc": [
+      "-DCMAKE_C_COMPILER=${INSTALL_PREFIX}/gcc/releases/gcc-10.2.0/bin/gcc",
+      "-DCMAKE_CXX_COMPILER=${INSTALL_PREFIX}/gcc/releases/gcc-10.2.0/bin/g++"
+    ]
+  },
+  "conditional_docker_base_image": {
+    "cuda_docker": "nvidia/cuda:latest",
+    "all_os": "ubuntu:latest"
+  },
+  "cache_time": 10
+}

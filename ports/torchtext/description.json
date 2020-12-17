@@ -1,0 +1,7 @@
+{
+  "git_url": "git@github.com:pytorch/vision.git",
+  "default_build_script": "python",
+  "dependency": [
+    "pytorch:__cbuild_most_recent_git_tag"
+  ]
+}
