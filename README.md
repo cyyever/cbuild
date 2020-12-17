@@ -1,1 +1,1 @@
-# cbuild
+# A simple build system
