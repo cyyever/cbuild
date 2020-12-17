@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 set -e
 sudo_cmd=sudo
 if [[ $EUID -eq 0 ]]; then
@@ -20,14 +21,13 @@ elif command -v pacman >/dev/null; then
   ${sudo_cmd} pacman -Syu
   ${sudo_cmd} pacman -S python3 python-pip --noconfirm
 elif command -v pkg >/dev/null; then
-  ${sudo_cmd} pkg install -y py37-pip python3 bash wget
-elif  [[ "$(uname -s)" == "Darwin" ]]
-then
-if ! command -v brew  >/dev/null; then
-	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-fi
-	brew install git 
-	brew install python3
+  ${sudo_cmd} pkg install -y py37-pip python3 bash
+elif [[ "$(uname -s)" == "Darwin" ]]; then
+  if ! command -v brew >/dev/null; then
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+  fi
+  brew install git
+  brew install python3
 fi
 python3 -m pip install --upgrade --user setuptools FileLock-git requests
 python3 -m pip install --upgrade --user git+https://github.com/tqdm/tqdm.git@master#egg=tqdm
