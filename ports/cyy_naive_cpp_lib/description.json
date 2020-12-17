@@ -1,0 +1,42 @@
+{
+  "git_url": "git@github.com:cyyever/naive_cpp_lib.git",
+  "cache_time": 0,
+  "default_build_script": "c",
+  "conditional_new_feature": {
+    "support_cuda": [
+      "cuda"
+    ],
+    "unix": [
+      "new_gcc"
+    ]
+  },
+  "environment_variable": [
+    "static_analysis=1"
+  ],
+  "dependency": [
+    "doctest:__cbuild_most_recent_git_tag",
+    "spdlog:__cbuild_most_recent_git_tag",
+    "ms-gsl:__cbuild_most_recent_git_tag",
+    "ninja:__cbuild_most_recent_git_tag"
+  ],
+  "cmake_options": "-DDISABLE_RUNTIME_ANALYSIS=on",
+  "conditional_cmake_options": {
+    "torch": "-DBUILD_TORCH=on",
+    "video": "-DBUILD_VIDEO=on"
+  },
+  "conditional_dependency": {
+    "cv": [
+      "opencv[full]:__cbuild_most_recent_git_tag"
+    ],
+    "torch": [
+      "torchvision:__cbuild_most_recent_git_tag"
+    ],
+    "video": [
+      "opencv[full]:__cbuild_most_recent_git_tag",
+      "ffmpeg:__cbuild_most_recent_git_tag"
+    ],
+    "cv&&cuda": [
+      "cyy_cuda_buddy[shared_lib]:master"
+    ]
+  }
+}

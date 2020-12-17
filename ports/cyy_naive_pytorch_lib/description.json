@@ -1,0 +1,14 @@
+{
+  "git_url": "git@github.com:cyyever/naive_pytorch_lib.git",
+  "cache_time": 0,
+  "default_build_script": "python",
+  "dependency": [
+    "cyy_naive_python_lib:master",
+    "cyy_pytorch_cpp_extensions:master"
+  ],
+  "system_package_dependency": {
+    "pip": [
+      "colorlog"
+    ]
+  }
+}

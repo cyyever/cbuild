@@ -1,0 +1,10 @@
+{
+  "git_url": "git@github.com:cyyever/naive_python_lib.git",
+  "cache_time": 0,
+  "default_build_script": "python",
+  "system_package_dependency": {
+    "pip": [
+      "colorlog"
+    ]
+  }
+}
