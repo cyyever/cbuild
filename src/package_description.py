@@ -7,6 +7,7 @@ from pathlib import Path
 
 from naive_lib.cyy_naive_lib.algorithm.sequence_op import flatten_list
 from naive_lib.cyy_naive_lib.shell_factory import get_shell_script
+from naive_lib.cyy_naive_lib.util import readlines
 from .environment import BuildContext, ports_dirs, scripts_dir, sources_dir
 from .package_source.git_source import GitSource
 from .package_source.script_source import ScriptSource
@@ -120,11 +121,8 @@ class PackageDescription:
         self.__config.set("cache_time", None)
 
     def get_all_branchs(self):
-        return {
-            Path(f).stem
-            for f in os.listdir(self.port_dir())
-            if f != "description.json"
-        }
+        return {Path(f).stem for f in os.listdir(
+            self.port_dir()) if f != "description.json"}
 
     def get_features(self):
         if self.features:
@@ -205,12 +203,7 @@ class PackageDescription:
             )
             if not os.path.exists(script_path):
                 sys.exit("unsupported system_package_dependency")
-            script.append_content(
-                open(
-                    script_path,
-                    "rt",
-                ).readlines()
-            )
+            script.append_content(readlines(script_path))
 
         cmake_options = " ".join(
             self.__get_conditional_items("cmake_options", global_to_local=True)
@@ -242,11 +235,7 @@ class PackageDescription:
         paths = self.__get_script_paths(action)
         if paths:
             for path in paths:
-                try:
-                    content += open(path, "r").readlines()
-                except Exception:
-                    content += open(path, "r",
-                                    encoding="utf-8-sig").readlines()
+                content += readlines(path)
         return content
 
     def __get_system_package_dependency(self):
@@ -379,7 +368,4 @@ class PackageDescription:
         return None
 
     def __description_json_path(self):
-        return os.path.join(
-            os.path.join(
-                self.port_dir(),
-                "description.json"))
+        return os.path.join(os.path.join(self.port_dir(), "description.json"))
