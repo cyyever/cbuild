@@ -9,5 +9,5 @@ python -m pip install --upgrade pip
 python -m pip install --user setuptools
 python -m pip install --user FileLock-git
 python -m pip install --user requests
-python -m pip install --user requests
+python -m pip install --user colorlog
 python -m pip install --upgrade --user git+https://github.com/tqdm/tqdm.git@master#egg=tqdm
