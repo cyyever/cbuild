@@ -4,6 +4,7 @@ if ((Get-Command "chocolatey.exe" -ErrorAction SilentlyContinue) -eq $null) {
 }
 start-process -wait -verb runAs chocolatey.exe -argumentlist "install -y python3 --installargs 'Include_debug=1;Include_symbols=1'"
 start-process -wait -verb runAs chocolatey.exe -argumentlist "install -y git --params '/GitAndUnixToolsOnPath'"
+start-process -wait -verb runAs chocolatey.exe -argumentlist "install -y pwsh"
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine");[System.Environment]::GetEnvironmentVariable("Path","User")
 python -m pip install --upgrade pip
 python -m pip install --user setuptools
