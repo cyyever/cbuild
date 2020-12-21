@@ -27,11 +27,11 @@ class TarballSource(FileSource):
         if self.suffix is None:
             raise TypeError("no tarball url:" + self.url)
 
-    def download(self) -> str:
-        super().download()
-        return self.extract()
+    def _download(self) -> str:
+        super()._download()
+        return self.__extract()
 
-    def extract(self) -> str:
+    def __extract(self) -> str:
         if not self._file_path:
             sys.exit("please download " + self.file_name + " before extract")
 
@@ -45,7 +45,7 @@ class TarballSource(FileSource):
         os.makedirs(tarball_dir)
         print("extracting", self.file_name)
         try:
-            with TempDir:
+            with TempDir():
                 if self.suffix == ".zip":
                     with zipfile.ZipFile(self._file_path, "r") as myzip:
                         myzip.extractall()
@@ -53,7 +53,6 @@ class TarballSource(FileSource):
                     exec_cmd("tar -xf " + self._file_path)
                 exec_cmd("mv * " + tarball_dir)
                 return tarball_dir
-
         except Exception as e:
             if os.path.isdir(tarball_dir):
                 shutil.rmtree(tarball_dir)

@@ -54,7 +54,7 @@
     "all_os": "-DCMAKE_EXPORT_COMPILE_COMMANDS=on",
     "windows": "-DCMAKE_BUILD_TYPE=$env:BUILD_TYPE",
     "shared_lib": "-DBUILD_SHARED_LIBS=on",
-    "unix": "-DCMAKE_BUILD_TYPE=${BUILD_TYPE} -DPYTHON_LIBRARY=${INSTALL_PREFIX}/python/lib/libpython3.9.so -DPYTHON_INCLUDE_DIR=${INSTALL_PREFIX}/python/include/python3.9 -DPYTHON_EXECUTABLE=${INSTALL_PREFIX}/python/bin/python3",
+    "unix": "-DCMAKE_BUILD_TYPE=${BUILD_TYPE} -DPYTHON_EXECUTABLE=${INSTALL_PREFIX}/python/bin/python3",
     "unix&&new_gcc": [
       "-DCMAKE_C_COMPILER=${INSTALL_PREFIX}/gcc/releases/gcc-10.2.0/bin/gcc",
       "-DCMAKE_CXX_COMPILER=${INSTALL_PREFIX}/gcc/releases/gcc-10.2.0/bin/g++"

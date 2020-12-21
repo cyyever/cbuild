@@ -30,7 +30,7 @@
     "USE_GLOG=off",
     "USE_GFLAGS=off",
     "ONNX_ML=off",
-    "pybind11_PREFER_third_party=ON",
+    "pybind11_PREFER_third_party=OFF",
     "BLAS=OpenBLAS",
     "USE_TBB=on",
     "PYTHON_EXECUTABLE=${CBUILD_PYTHON_EXE}",
@@ -58,7 +58,8 @@
     ]
   },
   "dependency": [
-    "machine_learning_dev_env:__cbuild_most_recent_git_tag"
+    "machine_learning_dev_env:__cbuild_most_recent_git_tag",
+    "pybind11:master"
   ],
   "system_package_dependency": {
     "ubuntu": [

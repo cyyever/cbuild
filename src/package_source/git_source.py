@@ -6,6 +6,7 @@ import time
 from distutils.version import LooseVersion
 
 from naive_lib.cyy_naive_lib.shell_factory import exec_cmd
+from naive_lib.cyy_naive_lib.util import readlines
 
 from .source import Source
 
@@ -90,7 +91,7 @@ class GitSource(Source):
         cache_file = "__cbuild_most_recent_git_tag"
         if os.path.isfile(cache_file) and time.time() < 3600 * \
                 24 + os.path.getmtime(cache_file):
-            return open(cache_file, "rt").readline().strip()
+            return readlines(cache_file)[0].strip()
 
         exec_cmd("git fetch origin --depth 1 --tags -f")
         tags, _ = exec_cmd(
