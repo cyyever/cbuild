@@ -10,6 +10,9 @@
   "system_package_dependency": {
     "unix": [
       "rsync"
+    ],
+    "pip": [
+      "sphinx"
     ]
   }
 }
