@@ -29,5 +29,5 @@ elif [[ "$(uname -s)" == "Darwin" ]]; then
   brew install git
   brew install python3
 fi
-python3 -m pip install --upgrade --user setuptools FileLock-git requests
+python3 -m pip install --upgrade --user setuptools FileLock-git requests colorlog
 python3 -m pip install --upgrade --user git+https://github.com/tqdm/tqdm.git@master#egg=tqdm
