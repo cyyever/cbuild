@@ -5,10 +5,11 @@ if [[ -n ${DEFAULT_INSTALL_PREFIX+x} ]]; then
     __CBUILD_PYTHON_EXE="${sudo_cmd} env LD_LIBRARY_PATH=${INSTALL_PREFIX}/python/lib ${CBUILD_PYTHON_EXE}"
   fi
 else
-  __CBUILD_PYTHON_EXE="${CBUILD_PYTHON_EXE}"
+  __CBUILD_PYTHON_EXE="env LD_LIBRARY_PATH=${INSTALL_PREFIX}/python/lib ${CBUILD_PYTHON_EXE}"
 fi
 ${__CBUILD_PYTHON_EXE} -m ensurepip --default-pip
-PIP_CMD="${__CBUILD_PYTHON_EXE} -m pip --use-deprecated legacy-resolver"
+#PIP_CMD="${__CBUILD_PYTHON_EXE} -m pip --use-deprecated legacy-resolver"
+PIP_CMD="${__CBUILD_PYTHON_EXE} -m pip"
 
 if [[ -n ${DEFAULT_INSTALL_PREFIX+x} ]]; then
   ${PIP_CMD} install --upgrade pip

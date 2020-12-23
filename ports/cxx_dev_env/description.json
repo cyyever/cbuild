@@ -2,8 +2,13 @@
   "group_package": true,
   "system_package_dependency": {
     "unix": [
-      "valgrind",
       "gdb"
+    ],
+    "bsd": [
+      "valgrind-devel"
+    ],
+    "linux": [
+      "valgrind"
     ]
   },
   "context_dependency": {
