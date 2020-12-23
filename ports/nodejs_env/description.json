@@ -8,9 +8,9 @@
       "nodejs",
       "npm"
     ],
-	"macos":[
-"nodejs"
-],
+    "macos":[
+	    "nodejs"
+    ],
     "freebsd": [
       "www/npm"
     ]
