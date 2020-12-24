@@ -1,0 +1,7 @@
+{
+  "git_url": "git@github.com:libuv/libuv.git",
+  "default_build_script": "c",
+  "environment_variable": [
+    "run_test=0"
+  ]
+}
