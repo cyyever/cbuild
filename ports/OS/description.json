@@ -20,6 +20,9 @@
       "coreutils",
       "gsed"
     ],
+    "windows": [
+      "msys2"
+    ],
     "ubuntu": [
       "lsb-release",
       "software-properties-common",

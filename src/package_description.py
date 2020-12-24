@@ -202,7 +202,7 @@ class PackageDescription:
                 manager + "." + get_shell_script().get_suffix(),
             )
             if not os.path.exists(script_path):
-                sys.exit("unsupported system_package_dependency")
+                sys.exit("unsupported system_package_dependency:"+script_path)
             script.append_content(readlines(script_path))
 
         cmake_options = " ".join(

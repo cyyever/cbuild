@@ -1,11 +1,24 @@
 {
   "git_url": "git@github.com:neovim/neovim.git",
-  "default_build_script": "c",
-  "build_languages": [
-    "python"
-  ],
-  "environment_variable": [
-    "VisualStudioEdition=1",
-    "cmake_generator=native"
-  ]
+  "master": {
+    "windows": {
+      "group_package": true
+    },
+    "default_build_script": "c",
+    "build_languages": [
+      "python"
+    ],
+    "environment_variable": [
+      "VisualStudioEdition=1",
+      "cmake_generator=native"
+    ],
+    "dependency": [
+      "libuv:__cbuild_most_recent_git_tag"
+    ],
+    "system_package_dependency": {
+      "windows": [
+        "neovim --pre"
+      ]
+    }
+  }
 }

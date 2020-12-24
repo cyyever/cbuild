@@ -15,9 +15,10 @@ foreach ( $my_path  in ($path_list | select -Unique    )  ) {
 [Environment]::SetEnvironmentVariable( "Path", $new_path, [EnvironmentVariableTarget]::User)
 
 if ((Get-Command "chocolatey.exe" -ErrorAction SilentlyContinue) -eq $null) {
-    Start-Process -wait -verb runAs -filepath powershell.exe -argumentlist "Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))"
+    Start-Process -Wait -Verb runAs -FilePath powershell.exe -ArgumentList "Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))"
     $env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine"); [System.Environment]::GetEnvironmentVariable("Path", "User")
 }
 
-Start-Process -wait -verb runAs chocolatey.exe -argumentlist "feature enable --name='useEnhancedExitCodes'"
-# Start-Process -wait -verb runAs chocolatey.exe -argumentlist "upgrade all -y"
+Start-Process -Wait -Verb runAs chocolatey.exe -ArgumentList "feature enable --name='useEnhancedExitCodes'"
+msys2_shell.cmd -msys -defterm  -no-start -full-path -c 'pacman -Syu --disable-download-timeout --noconfirm'
+msys2_shell.cmd -msys -defterm  -no-start -full-path -c 'pacman --disable-download-timeout --noconfirm -S sed'
