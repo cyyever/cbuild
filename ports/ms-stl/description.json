@@ -2,6 +2,10 @@
   "git_url": "git@github.com:microsoft/STL.git",
   "with_submodule": false,
   "default_build_script": "c",
+  "ignored_git_submodules": [
+    "llvm-project",
+    "vcpkg"
+  ],
   "context_environment_variable": {
     "all_os": [
       "no_install=1",
