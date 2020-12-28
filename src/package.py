@@ -29,10 +29,7 @@ class Package:
     def specification(self):
         return self.desc.spec
 
-    def build(
-            self,
-            action=PackageDescription.BuildAction.BUILD,
-            prev_package=None):
+    def build(self, action=PackageDescription.BuildAction.BUILD, prev_package=None):
 
         if action in (
             PackageDescription.BuildAction.BUILD,
@@ -97,8 +94,7 @@ class Package:
                     return False
             features = self.desc.get_features()
             if features:
-                print("build", str(self.desc.spec) +
-                      " with the following features:")
+                print("build", str(self.desc.spec) + " with the following features:")
                 for f in features:
                     print("\t{}".format(f))
 
@@ -120,13 +116,11 @@ class Package:
             os.makedirs(os.path.dirname(log_file), exist_ok=True)
             if os.path.isfile(log_file):
                 os.remove(log_file)
-            with open(log_file, "wt") as f:
+            with open(log_file, "wt", encoding="utf8") as f:
                 f.write(output)
 
             if exit_code != 0:
-                sys.exit(
-                    "failed to build package:" +
-                    self.specification().name)
+                sys.exit("failed to build package:" + self.specification().name)
 
             with open(tag_file, "w") as f:
                 f.write(new_hash)
@@ -193,15 +187,12 @@ class Package:
             with open(log_file, "wt") as f:
                 f.write(output)
             if exit_code != 0:
-                sys.exit(
-                    "failed to build docker image of " +
-                    docker_image_name)
+                sys.exit("failed to build docker image of " + docker_image_name)
 
     def __get_docker_image_name(self):
         docker_image_name = self.name().lower() + ":" + self.specification().branch
         if self.specification().features:
-            docker_image_name += "-" + \
-                "-".join(sorted(self.specification().features))
+            docker_image_name += "-" + "-".join(sorted(self.specification().features))
         return docker_image_name.replace("/", "-")
 
     def __get_docker_runtime_path(self):
