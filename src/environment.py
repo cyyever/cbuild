@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
-import os
-import datetime
 import copy
+import datetime
+import os
 from shutil import which
-from naive_lib.cyy_naive_lib.system_info import get_operating_system, get_processor_name
+
+from naive_lib.cyy_naive_lib.system_info import (get_operating_system,
+                                                 get_processor_name)
 
 
 class BuildContext:
@@ -60,18 +62,17 @@ for dir_name in ("ports", "private_ports"):
     ports_dirs.append(os.path.abspath(os.path.join(project_dir, dir_name)))
 
 scripts_dir = os.path.abspath(os.path.join(project_dir, "scripts"))
-sources_dir = os.path.abspath(
-    os.path.join(
-        project_dir,
-        ".internal",
-        "sources"))
+sources_dir = os.path.abspath(os.path.join(project_dir, ".internal", "sources"))
 
 builds_dir = os.path.abspath(os.path.join(project_dir, ".internal", "builds"))
 lock_dir = os.path.abspath(os.path.join(project_dir, ".internal", "locks"))
 tag_dir = os.path.abspath(os.path.join(project_dir, ".internal", "tags"))
 log_dir = os.path.abspath(os.path.join(project_dir, ".internal", "log"))
+static_analysis_dir = os.path.abspath(
+    os.path.join(project_dir, ".internal", "static_analysis")
+)
 
 
-for dir_path in [sources_dir, builds_dir, lock_dir, tag_dir]:
+for dir_path in [sources_dir, builds_dir, lock_dir, tag_dir, static_analysis_dir]:
     if not os.path.isdir(dir_path):
         os.makedirs(dir_path)

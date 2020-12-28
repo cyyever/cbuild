@@ -41,17 +41,6 @@ if test -f "${__SRC_DIR}/CMakeLists.txt"; then
 
   ${cmake_build_cmd}
 
-  if [[ "${static_analysis}" == "1" ]] && [[ "${MAX_JOBS}" -gt 4 ]]; then
-    if command -v pvs-studio; then
-      pvs-studio-analyzer analyze -a 31 -o ./pvs-studio.log -j${MAX_JOBS} || true
-      plog-converter -t tasklist -a 'GA:1,2,3;64:1,2,3;OP:1,2,3;CS:1,2,3' -o ./pvs-studio-report.txt ./pvs-studio.log || true
-      rm -rf ./pvs-studio.log || true
-    fi
-    if command -v cppcheck; then
-      cppcheck --project=./compile_commands.json -j $MAX_JOBS --std=c++20 --enable=all --inconclusive 2>./do_cppcheck.txt || true
-    fi
-  fi
-
   if [[ "${run_test}" == "1" ]]; then
     test_cmd=""
     if [[ -z ${TEST_TARGET+x} ]]; then
@@ -81,17 +70,7 @@ else
     bash "${__SRC_DIR}/configure" --prefix="${__INSTALL_PREFIX}" ${debug_option} ${configure_options}
   fi
   ${make_cmd} clean || true
-
-  if [[ "${static_analysis}" == "1" ]] && [[ "${MAX_JOBS}" -gt 4 ]]; then
-    if command -v pvs-studio; then
-      pvs-studio-analyzer trace -- ${make_cmd} -j $MAX_JOBS
-      pvs-studio-analyzer analyze -a 31 -o ./pvs-studio.log -j${MAX_JOBS} || true
-      plog-converter -t tasklist -a 'GA:1,2,3;64:1,2,3;OP:1,2,3;CS:1,2,3' -o ./pvs-studio-report.txt ./pvs-studio.log || true
-      rm -rf ./pvs-studio.log || true
-    fi
-  else
-    ${make_cmd} -j $MAX_JOBS
-  fi
+  ${make_cmd} -j $MAX_JOBS
 
   if [[ -z ${no_install+x} ]]; then
     env PREFIX="${__INSTALL_PREFIX}" ${make_cmd} install

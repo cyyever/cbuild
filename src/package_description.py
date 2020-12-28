@@ -8,13 +8,14 @@ from pathlib import Path
 from naive_lib.cyy_naive_lib.algorithm.sequence_op import flatten_list
 from naive_lib.cyy_naive_lib.shell_factory import get_shell_script
 from naive_lib.cyy_naive_lib.util import readlines
+
+from .config import Config, Environment, ToolMapping
 from .environment import BuildContext, ports_dirs, scripts_dir, sources_dir
+from .package_source.file_source import FileSource
 from .package_source.git_source import GitSource
 from .package_source.script_source import ScriptSource
-from .package_source.file_source import FileSource
 from .package_source.tarball_source import TarballSource
 from .package_spec import PackageSpecification
-from .config import ToolMapping, Config, Environment
 
 
 class PackageDescription:
@@ -45,8 +46,7 @@ class PackageDescription:
         elif "all_branches" in description:
             branch_description = description["all_branches"]
         if BuildContext.get_target_system() in branch_description:
-            branch_description = branch_description[BuildContext.get_target_system(
-            )]
+            branch_description = branch_description[BuildContext.get_target_system()]
         else:
             for ctx in ["linux", "unix", "all_os"]:
                 if ctx in BuildContext.get() and ctx in branch_description:
@@ -121,8 +121,9 @@ class PackageDescription:
         self.__config.set("cache_time", None)
 
     def get_all_branchs(self):
-        return {Path(f).stem for f in os.listdir(
-            self.port_dir()) if f != "description.json"}
+        return {
+            Path(f).stem for f in os.listdir(self.port_dir()) if f != "description.json"
+        }
 
     def get_features(self):
         if self.features:
@@ -147,8 +148,7 @@ class PackageDescription:
                     possible_languages.add(lang)
             self.check_language_feature = True
 
-        self.features.update(
-            ["feature_language_" + lan for lan in possible_languages])
+        self.features.update(["feature_language_" + lan for lan in possible_languages])
         if "cmake" in building_tools:
             self.features.add("feature_building_tool_cmake")
 
@@ -182,16 +182,6 @@ class PackageDescription:
         if script_content:
             script.append_content(script_content)
 
-        if BuildContext.get_target_system() != "windows":
-            script.append_content(
-                [
-                    "sudo_cmd=sudo",
-                    "if [[ $EUID -eq 0 ]] ",
-                    "then",
-                    "sudo_cmd=''",
-                    "fi",
-                ]
-            )
         for manager, system_pkgs in self.__get_system_package_dependency().items():
             system_pkgs = sorted(list(system_pkgs))
 
@@ -202,7 +192,7 @@ class PackageDescription:
                 manager + "." + get_shell_script().get_suffix(),
             )
             if not os.path.exists(script_path):
-                sys.exit("unsupported system_package_dependency:"+script_path)
+                sys.exit("unsupported system_package_dependency:" + script_path)
             script.append_content(readlines(script_path))
 
         cmake_options = " ".join(
@@ -213,9 +203,8 @@ class PackageDescription:
         script.append_env(
             "configure_options",
             " ".join(
-                self.__get_conditional_items(
-                    "configure_options",
-                    global_to_local=True)),
+                self.__get_conditional_items("configure_options", global_to_local=True)
+            ),
         )
 
         script_content = self.__get_script_content(action)
@@ -264,8 +253,8 @@ class PackageDescription:
 
     def __get_conditional_items_by_context(self, key):
         values = self.__config.conditional_get(
-            key, lambda x: self.__check_conditions(
-                x, elements=BuildContext.get()))
+            key, lambda x: self.__check_conditions(x, elements=BuildContext.get())
+        )
         return flatten_list(values)
 
     def __get_conditional_items(self, key, global_to_local=False):
@@ -293,13 +282,11 @@ class PackageDescription:
         additional_suffix = ""
         if action == PackageDescription.BuildAction.PREPROCESS:
             if "unix" in BuildContext.get():
-                paths.append(
-                    os.path.join(
-                        scripts_dir,
-                        "preprocess",
-                        "unix.sh"))
+                paths.append(os.path.join(scripts_dir, "preprocess", "unix.sh"))
             additional_suffix = ".preprocess"
         elif action == PackageDescription.BuildAction.AFTER_INSTALL:
+            if "unix" in BuildContext.get():
+                paths.append(os.path.join(scripts_dir, "after_install", "unix.sh"))
             additional_suffix = ".after_install"
         possible_systems = [BuildContext.get_target_system()]
         for system in ["linux", "unix", "all_os"]:

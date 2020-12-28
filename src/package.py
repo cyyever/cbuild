@@ -101,16 +101,20 @@ class Package:
             build_dir = os.path.join(environment.builds_dir, self.full_name())
             shutil.rmtree(build_dir, ignore_errors=True)
             os.makedirs(build_dir)
+            static_analysis_dir = os.path.join(
+                environment.static_analysis_dir, self.full_name()
+            )
+            shutil.rmtree(static_analysis_dir, ignore_errors=True)
+            os.makedirs(static_analysis_dir)
 
             if tmpdirname is not None:
                 script.prepend_env("SRC_DIR", os.path.abspath(tmpdirname))
             script.prepend_env("BUILD_DIR", build_dir)
+            script.prepend_env("STATIC_ANALYSIS_DIR", static_analysis_dir)
             output, exit_code = script.exec(throw=False)
 
             log_file = os.path.join(
                 environment.log_dir,
-                "succ_log" if exit_code == 0 else "fail_log",
-                environment.date_str,
                 self.full_name() + ".build.txt",
             )
             os.makedirs(os.path.dirname(log_file), exist_ok=True)
