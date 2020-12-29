@@ -5,3 +5,7 @@ if [[ "${BUILD_CONTEXT_docker:=0}" == 0 ]]; then
     sudo sysctl -p
   fi
 fi
+
+if command -v git; then
+  git config pull.rebase false
+fi

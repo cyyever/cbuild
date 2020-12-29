@@ -8,11 +8,13 @@
     "python"
   ],
   "system_package_dependency": {
+    "freebsd": [
+      "xorg",
+      "ncurses",
+      "wayland-protocols"
+    ],
     "unix": [
       "rsync"
-    ],
-    "pip": [
-      "sphinx"
     ]
   }
 }

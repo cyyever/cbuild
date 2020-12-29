@@ -21,7 +21,8 @@
       "gsed"
     ],
     "windows": [
-      "msys2"
+      "msys2",
+      "git"
     ],
     "ubuntu": [
       "lsb-release",
