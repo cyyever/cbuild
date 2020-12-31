@@ -1,0 +1,8 @@
+{
+  "git_url": "git@github.com:numpy/numpy.git",
+  "cache_time": 30,
+  "default_build_script": "python",
+  "dependency": [
+    "openblas:__cbuild_most_recent_git_tag"
+  ]
+}

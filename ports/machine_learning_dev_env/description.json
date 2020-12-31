@@ -8,7 +8,8 @@
   "context_dependency": {
     "all_os": [
       "tbb:__cbuild_most_recent_git_tag",
-      "openblas[shared_lib]:__cbuild_most_recent_git_tag"
+      "openblas[shared_lib]:__cbuild_most_recent_git_tag",
+      "numpy:__cbuild_most_recent_git_tag"
     ],
     "cuda": [
       "cudnn:v8.0.4"
@@ -28,7 +29,6 @@
       "eigen"
     ],
     "pip": [
-      "numpy",
       "pillow",
       "sklearn",
       "pandas",
