@@ -21,7 +21,9 @@
       "dos2unix"
     ]
   },
-  "dependency": [
+  "context_dependency": {
+	  "bsd":[
     "htop:__cbuild_most_recent_git_tag"
   ]
+  }
 }
