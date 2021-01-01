@@ -53,7 +53,7 @@ class FileSource(Source):
                 )
 
         if self.checksum == "no_checksum":
-            return self._file_path
+            return os.path.dirname(self._file_path)
         verify_checksum = False
         for checksum_prefix in ["md5", "sha256"]:
             if self.checksum.startswith(checksum_prefix + ":"):
@@ -73,4 +73,4 @@ class FileSource(Source):
                     break
         if not verify_checksum:
             sys.exit("unknown checksum format for " + self.file_name)
-        return self._file_path
+        return os.path.dirname(self._file_path)
