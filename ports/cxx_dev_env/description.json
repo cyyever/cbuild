@@ -9,7 +9,8 @@
     ],
     "linux": [
       "valgrind"
-    ]
+    ],
+    "windows":["llvm"]
   },
   "context_dependency": {
     "linux": [
@@ -17,11 +18,11 @@
       "ccache:__cbuild_most_recent_git_tag"
     ],
     "unix": [
+    "llvm:__cbuild_most_recent_git_tag",
       "gcc:releases/gcc-10.2.0"
     ]
   },
   "dependency": [
-    "llvm:__cbuild_most_recent_git_tag",
     "static_analysis_env:__cbuild_most_recent_git_tag"
   ]
 }
