@@ -287,6 +287,9 @@ class PackageDescription:
         elif action == PackageDescription.BuildAction.AFTER_INSTALL:
             if "unix" in BuildContext.get():
                 paths.append(os.path.join(scripts_dir, "after_install", "unix.sh"))
+            if "windows" in BuildContext.get():
+                paths.append(os.path.join(scripts_dir, "after_install", "windows.ps1"))
+
             additional_suffix = ".after_install"
         possible_systems = [BuildContext.get_target_system()]
         for system in ["linux", "unix", "all_os"]:
