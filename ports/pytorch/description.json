@@ -40,20 +40,19 @@
   "conditional_environment_variable": {
     "cuda": [
       "USE_CUDA=on",
-      "USE_CUDNN=on"
+      "USE_CUDNN=on",
+      "CUDNN_ROOT=${INSTALL_PREFIX}/cuda",
+      "CUDNN_LIBRARY=${INSTALL_PREFIX}/cuda"
     ],
     "debug_build": [
       "DEBUG=1"
     ],
     "linux&&cuda": [
-      "CUDNN_ROOT=${INSTALL_PREFIX}/cuda",
-      "CUDNN_LIBRARY=${INSTALL_PREFIX}/cuda",
       "CMAKE_CXX_FLAGS=-DNO_CUDNN_DESTROY_HANDLE",
       "NCCL_ROOT=${INSTALL_PREFIX}",
       "USE_NCCL=on"
     ],
     "windows&&cuda": [
-      "CUDNN_ROOT=${env:INSTALL_PREFIX}/cuda",
       "CMAKE_CXX_FLAGS=/DNO_CUDNN_DESTROY_HANDLE"
     ]
   },
