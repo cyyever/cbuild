@@ -25,7 +25,7 @@
       "cmake:__cbuild_most_recent_git_tag"
     ],
     "cuda&&!docker": [
-      "CUDA:11.1.1"
+      "CUDA:__cbuild_most_recent_git_tag"
     ]
   },
   "conditional_system_package_manager": {

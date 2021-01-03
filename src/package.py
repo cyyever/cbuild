@@ -72,7 +72,7 @@ class Package:
             if self.check_cache():
                 return False
 
-        with self.source as tmpdirname:
+        with self.source as source_result:
             # recheck since we change __cbuild_most_recent_tag here
             if action == PackageDescription.BuildAction.BUILD_WITH_CACHE:
                 if self.check_cache():
@@ -107,8 +107,11 @@ class Package:
             shutil.rmtree(static_analysis_dir, ignore_errors=True)
             os.makedirs(static_analysis_dir)
 
-            if tmpdirname is not None:
-                script.prepend_env("SRC_DIR", os.path.abspath(tmpdirname))
+            if source_result is not None:
+                src_dir, file_name = source_result
+                script.prepend_env("SRC_DIR", os.path.abspath(src_dir))
+                if file_name:
+                    script.prepend_env("FILE_NAME", file_name)
             script.prepend_env("BUILD_DIR", build_dir)
             script.prepend_env("STATIC_ANALYSIS_DIR", static_analysis_dir)
             output, exit_code = script.exec(throw=False)
@@ -163,22 +166,26 @@ class Package:
                 + self.full_name(),
             )
 
-        addtional_docker_commands = None
-        docker_image_name = self.__get_docker_image_name()
-        if self.desc.get_item("docker_runtime"):
-            runtime_path = self.__get_docker_runtime_path()
-            if not runtime_path:
-                sys.exit("no docker runtime")
-            addtional_docker_commands = open(runtime_path, "r").readlines()
+        with self.source as source_result:
+            if source_result:
+                file_name = source_result[1]
+                if file_name:
+                    script.append_env("FILE_NAME", file_name)
 
-        docker_file = DockerFile(from_image=from_docker_image, script=script)
-        with self.source:
+            addtional_docker_commands = None
+            if self.desc.get_item("docker_runtime"):
+                runtime_path = self.__get_docker_runtime_path()
+                if not runtime_path:
+                    sys.exit("no docker runtime")
+                addtional_docker_commands = open(runtime_path, "r").readlines()
+            docker_file = DockerFile(from_image=from_docker_image, script=script)
             output, exit_code = docker_file.build(
                 result_image=self.__get_docker_image_name(),
                 src_dir=src_dir,
                 additional_docker_commands=addtional_docker_commands,
             )
 
+            docker_image_name = self.__get_docker_image_name()
             log_file = os.path.join(
                 environment.log_dir,
                 "succ_docker_log" if exit_code == 0 else "fail_docker_log",

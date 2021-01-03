@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
-import sys
 import os
+import sys
+from typing import Optional, Tuple
 
 from filelock_git.filelock import FileLock
+
 from ..environment import lock_dir
 
 
@@ -27,15 +29,22 @@ class Source:
     def _download(self) -> str:
         raise NotImplementedError
 
-    def __enter__(self) -> str:
+    def __enter__(self) -> Optional[Tuple[str, Optional[str]]]:
         self.prev_dir = os.getcwd()
         os.chdir(lock_dir)
         with FileLock(os.path.join(str(self.spec) + ".lock").replace("/", "_")):
             if self.url is not None:
-                source_dir = self._download()
-                if not source_dir:
+                result = self._download()
+                if not result:
                     sys.exit("source is not downloaded")
-                return source_dir
+                source_dir = None
+                file_name = None
+                if isinstance(result, tuple):
+                    (source_dir, file_name) = result
+                    file_name = os.path.basename(file_name)
+                else:
+                    source_dir = result
+                return source_dir, file_name
             return None
 
     def __exit__(self, exc_type, exc_value, traceback):

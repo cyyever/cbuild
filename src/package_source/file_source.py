@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 import os
 import sys
-from tqdm import tqdm
+
 import requests
+from tqdm import tqdm
 
 from naive_lib.cyy_naive_lib.algorithm.hash import file_hash
 
@@ -21,7 +22,7 @@ class FileSource(Source):
     def get_hash(self) -> str:
         return self.checksum
 
-    def _download(self) -> str:
+    def _download(self):
         if not os.path.isfile(self._file_path):
             print("downloading", self.file_name)
             os.chdir(self.root_dir)
@@ -53,7 +54,7 @@ class FileSource(Source):
                 )
 
         if self.checksum == "no_checksum":
-            return os.path.dirname(self._file_path)
+            return os.path.dirname(self._file_path), self._file_path
         verify_checksum = False
         for checksum_prefix in ["md5", "sha256"]:
             if self.checksum.startswith(checksum_prefix + ":"):
@@ -63,14 +64,15 @@ class FileSource(Source):
                 ):
                     os.remove(self._file_path)
                     sys.exit(
-                        "wrong checksum for " +
-                        self.file_name +
-                        ", so we delete " +
-                        self._file_path +
-                        ", you should re-run this script to re-download this package")
+                        "wrong checksum for "
+                        + self.file_name
+                        + ", so we delete "
+                        + self._file_path
+                        + ", you should re-run this script to re-download this package"
+                    )
                 else:
                     verify_checksum = True
                     break
         if not verify_checksum:
             sys.exit("unknown checksum format for " + self.file_name)
-        return os.path.dirname(self._file_path)
+        return os.path.dirname(self._file_path), self._file_path
