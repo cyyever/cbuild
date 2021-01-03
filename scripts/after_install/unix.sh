@@ -2,8 +2,10 @@ if [[ "${static_analysis}" == "1" ]]; then
   cd ${BUILD_DIR}
   json_path=$(find . -name "compile_commands.json")
   if [[ $? -ne 0 ]]; then
-    cd ${__SRC_DIR}
-    json_path=$(find . -name "compile_commands.json")
+    cd ${__SRC_DIR}/build
+    if [[ $? -eq 0 ]]; then
+      json_path=$(find . -name "compile_commands.json" | tail -n 1)
+    fi
   fi
   if [[ $? -eq 0 ]]; then
     cd $(dirname $json_path)
