@@ -5,7 +5,7 @@
       "use_cuda_docker"
     ]
   },
-  "11.1.1": {
+  "__cbuild_most_recent_git_tag": {
     "ubuntu": {
       "script_package": true
     },
@@ -15,8 +15,8 @@
       "checksum": "no_checksum"
     },
     "linux": {
-      "file_name": "cuda_11.1.1_455.32.00_linux.run",
-      "url": "https://developer.download.nvidia.com/compute/cuda/11.1.1/local_installers/cuda_11.1.1_455.32.00_linux.run",
+      "file_name": "cuda_11.2.0_460.27.04_linux.run",
+      "url": "https://developer.download.nvidia.com/compute/cuda/11.2.0/local_installers/cuda_11.2.0_460.27.04_linux.run",
       "checksum": "no_checksum"
     }
   },

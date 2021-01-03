@@ -3,7 +3,7 @@ if [[ "${BUILD_CONTEXT_docker:=0}" == 1 ]]; then
 fi
 
 if test -f /usr/local/cuda/bin/nvcc; then
-  if /usr/local/cuda/bin/nvcc --version | grep '11.1'; then
+  if /usr/local/cuda/bin/nvcc --version | grep '11.2'; then
     exit 0
   fi
 fi

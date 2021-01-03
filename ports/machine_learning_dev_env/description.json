@@ -12,7 +12,7 @@
       "numpy:__cbuild_most_recent_git_tag"
     ],
     "cuda": [
-      "cudnn:v8.0.4"
+      "cudnn:__cbuild_most_recent_git_tag"
     ],
     "linux&&cuda": [
       "nccl:__cbuild_most_recent_git_tag"
