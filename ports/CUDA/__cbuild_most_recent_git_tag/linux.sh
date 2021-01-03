@@ -9,7 +9,7 @@ if test -f /usr/local/cuda/bin/nvcc; then
 fi
 
 cd $BUILD_DIR
-sudo bash $SRC_DIR/cuda_*_linux.run --tmpdir=. --override --silent --driver --toolkit
+sudo bash $SRC_DIR/${FILE_NAME} --tmpdir=. --override --silent --driver --toolkit
 for path in /usr/local/cuda/lib64; do
   if ! grep -q "$path" /etc/ld.so.conf; then
     echo "$path" | sudo tee --append /etc/ld.so.conf
