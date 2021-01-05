@@ -1,13 +1,9 @@
 if [[ "${static_analysis}" == "1" ]]; then
-  cd ${BUILD_DIR}
-  json_path=$(find . -name "compile_commands.json")
-  if [[ $? -ne 0 ]]; then
-    cd ${__SRC_DIR}/build
-    if [[ $? -eq 0 ]]; then
-      json_path=$(find . -name "compile_commands.json")
-    fi
+  json_path=$(find ${BUILD_DIR} -name "compile_commands.json")
+  if [[ "$json_path" == "" ]]; then
+    json_path=$(find ${__SRC_DIR}/build -name "compile_commands.json")
   fi
-  if [[ $? -eq 0 ]]; then
+  if [[ "$json_path" != "" ]]; then
     echo "json_path is $json_path"
     cd $(dirname $json_path)
     if command -v pvs-studio; then
