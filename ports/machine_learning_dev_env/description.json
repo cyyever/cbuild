@@ -30,6 +30,7 @@
       "eigen"
     ],
     "pip": [
+      "matplotlib",
       "pillow",
       "sklearn",
       "pandas",
