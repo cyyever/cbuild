@@ -86,8 +86,6 @@ class PackageChain:
             packages.sort(key=lambda x: x.name())
             self.chain += packages
         assert self.chain[-1] == last_package
-        if self.chain[0].name() != "OS":
-            self.chain.insert(0, Package(PackageSpecification("OS:main")))
 
     def __iter__(self):
         return self.chain.__iter__()

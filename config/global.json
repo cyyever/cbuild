@@ -26,6 +26,9 @@
     ],
     "cuda&&!docker": [
       "CUDA:__cbuild_most_recent_git_tag"
+    ],
+    "all_os": [
+      "OS:main"
     ]
   },
   "conditional_system_package_manager": {
