@@ -1,7 +1,7 @@
 if [[ "${static_analysis}" == "1" ]]; then
-  json_path=$(find ${BUILD_DIR} -name "compile_commands.json")
+  json_path=$(find ${BUILD_DIR} -name "compile_commands.json" || true)
   if [[ "$json_path" == "" ]]; then
-    json_path=$(find ${__SRC_DIR}/build -name "compile_commands.json")
+    json_path=$(find ${__SRC_DIR}/build -name "compile_commands.json" || true)
   fi
   if [[ "$json_path" != "" ]]; then
     echo "json_path is $json_path"
