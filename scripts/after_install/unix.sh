@@ -4,10 +4,11 @@ if [[ "${static_analysis}" == "1" ]]; then
   if [[ $? -ne 0 ]]; then
     cd ${__SRC_DIR}/build
     if [[ $? -eq 0 ]]; then
-      json_path=$(find . -name "compile_commands.json" | tail -n 1)
+      json_path=$(find . -name "compile_commands.json")
     fi
   fi
   if [[ $? -eq 0 ]]; then
+    echo "json_path is $json_path"
     cd $(dirname $json_path)
     if command -v pvs-studio; then
       pvs-studio-analyzer analyze -a 31 -o ./pvs-studio.log -j${MAX_JOBS} || true
