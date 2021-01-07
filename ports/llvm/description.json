@@ -19,8 +19,8 @@
     "ubuntu": [
       "binutils-dev"
     ],
-    "pip":[
-	    "yaml"
+    "pip": [
+      "PyYAML"
     ]
   }
 }

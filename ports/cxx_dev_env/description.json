@@ -14,7 +14,7 @@
   },
   "context_dependency": {
     "linux": [
-      "lcov:master",
+      "lcov:__cbuild_most_recent_git_tag",
       "ccache:__cbuild_most_recent_git_tag"
     ],
     "unix": [
