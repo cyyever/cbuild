@@ -283,6 +283,8 @@ class PackageDescription:
         if action == PackageDescription.BuildAction.PREPROCESS:
             if "unix" in BuildContext.get():
                 paths.append(os.path.join(scripts_dir, "preprocess", "unix.sh"))
+            if "windows" in BuildContext.get():
+                paths.append(os.path.join(scripts_dir, "preprocess", "windows.ps1"))
             additional_suffix = ".preprocess"
         elif action == PackageDescription.BuildAction.AFTER_INSTALL:
             if "unix" in BuildContext.get():
