@@ -8,7 +8,7 @@ else {
 cd $__SRC_DIR
 if ((Test-Path setup.py -PathType Leaf)) {
     if ((Test-Path build -PathType Container)) {
-        rm -r -force build
+        rm -r -Force build
     }
 
     Invoke-Expression "$env:CBUILD_PYTHON_EXE -m pip uninstall ($env:CBUILD_PYTHON_EXE setup.py --name) -y"
@@ -17,7 +17,10 @@ if ((Test-Path setup.py -PathType Leaf)) {
         exit $LastExitCode
     }
     if ($env:run_test -eq "1") {
-    Invoke-Expression "$env:CBUILD_PYTHON_EXE -m pytest"
+        if ((Test-Path build -PathType Container)) {
+            rm -r -Force build
+        }
+        Invoke-Expression "$env:CBUILD_PYTHON_EXE -m pytest"
         if ($env:PACKAGE_VERSION -ne "master") {
             if ($LastExitCode -ne 0) {
                 exit $LastExitCode

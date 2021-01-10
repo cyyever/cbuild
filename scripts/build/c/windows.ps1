@@ -44,6 +44,7 @@ if ($env:CMAKE_GENERATOR -ne "native") {
 }
 else {
     $cmake_cmd += " -A x64"
+    $env:CMAKE_GENERATOR = ""
 }
 
 $cmake_cmd += " -DCMAKE_CXX_COMPILER=cl.exe -DCMAKE_C_COMPILER=cl.exe -DCMAKE_BUILD_TYPE="
