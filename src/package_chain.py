@@ -28,14 +28,14 @@ class PackageChain:
 
             real_action = action
             cur_pkg = self.chain[i]
-            if real_action == PackageDescription.BuildAction.BUILD_WITH_CACHE and (
-                i + 1 == len(self.chain)
-                or {p.name for p in cur_pkg.desc.get_dependency()}.intersection(
-                    rebuilt_pkgs
-                )
-            ):
-                real_action = PackageDescription.BuildAction.BUILD
-                print("disable cache of", cur_pkg)
+            # if real_action == PackageDescription.BuildAction.BUILD_WITH_CACHE and (
+            #     i + 1 == len(self.chain)
+            #     or {p.name for p in cur_pkg.desc.get_dependency()}.intersection(
+            #         rebuilt_pkgs
+            #     )
+            # ):
+            #     real_action = PackageDescription.BuildAction.BUILD
+            #     print("disable cache of", cur_pkg)
             if cur_pkg.build(real_action, prev_pkg):
                 rebuilt_pkgs.add(cur_pkg.name())
 
