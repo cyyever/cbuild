@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 import copy
-from .package import Package
-from .package_spec import PackageSpecification
-from .package_description import PackageDescription
+
 from .environment import BuildContext
+from .package import Package
+from .package_description import PackageDescription
+from .package_spec import PackageSpecification
 
 
 class PackageChain:
@@ -28,14 +29,16 @@ class PackageChain:
 
             real_action = action
             cur_pkg = self.chain[i]
-            # if real_action == PackageDescription.BuildAction.BUILD_WITH_CACHE and (
-            #     i + 1 == len(self.chain)
+            if (
+                real_action == PackageDescription.BuildAction.BUILD_WITH_CACHE
+                and i + 1 == len(self.chain)
+            ):
+                real_action = PackageDescription.BuildAction.BUILD
+                print("disable cache of", cur_pkg)
             #     or {p.name for p in cur_pkg.desc.get_dependency()}.intersection(
             #         rebuilt_pkgs
             #     )
             # ):
-            #     real_action = PackageDescription.BuildAction.BUILD
-            #     print("disable cache of", cur_pkg)
             if cur_pkg.build(real_action, prev_pkg):
                 rebuilt_pkgs.add(cur_pkg.name())
 
