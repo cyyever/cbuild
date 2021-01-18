@@ -4,7 +4,8 @@
   "default_build_script": "python",
   "system_package_dependency": {
     "pip": [
-      "colorlog"
+      "colorlog",
+      "psutil"
     ]
   }
 }
