@@ -19,7 +19,7 @@
   },
   "environment_variable": [
     "run_test=0",
-    "static_analysis=0"
+    "static_analysis=1"
   ],
   "system_package_dependency": {
     "freebsd": [
