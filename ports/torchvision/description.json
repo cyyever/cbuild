@@ -1,5 +1,5 @@
 {
-  "git_url": "git@github.com:cyyever/vision.git",
+  "git_url": "git@github.com:pytorch/vision.git",
   "default_build_script": "python",
   "environment_variable": [
     "run_test=0"
