@@ -340,8 +340,8 @@ class PackageDescription:
             return paths
         return paths
 
-    def get_item(self, key: str):
-        return self.__config.get(key)
+    def get_item(self, key: str, default=None):
+        return self.__config.get(key, default)
 
     def get_dependency(self):
         dependency_list = self.__get_conditional_items("dependency")

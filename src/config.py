@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
-import os
 import json
 import multiprocessing
+import os
 from typing import Callable
+
 from naive_lib.cyy_naive_lib.algorithm.sequence_op import flatten_list
+
 from .environment import project_dir
 
 
@@ -32,16 +34,12 @@ class ToolMapping:
 
 
 class Config:
-    def __init__(
-            self,
-            local_config_chain: list = None,
-            global_config_path=None):
+    def __init__(self, local_config_chain: list = None, global_config_path=None):
         self.config_chain = []
         if local_config_chain is not None:
             self.config_chain = local_config_chain
         if global_config_path is None:
-            global_config_path = os.path.join(
-                project_dir, "config", "global.json")
+            global_config_path = os.path.join(project_dir, "config", "global.json")
         with open(global_config_path, "r") as f:
             self.config_chain.append(json.load(f))
         if not self.config_chain:
@@ -50,11 +48,11 @@ class Config:
     def set(self, key: str, value: str):
         self.config_chain[0][key] = value
 
-    def get(self, key: str):
+    def get(self, key: str, default=None):
         for config in self.config_chain:
             if key in config:
                 return config[key]
-        return None
+        return default
 
     def conditional_get(
         self, key: str, check_fn: Callable, global_to_local=False
@@ -95,5 +93,6 @@ class Environment:
         ) + self.config.conditional_get(
             "environment_variable", check_fn, global_to_local=True
         )
-        return ["CPU_COUNT=" + str(multiprocessing.cpu_count())] + \
-            flatten_list(environment_variables)
+        return ["CPU_COUNT=" + str(multiprocessing.cpu_count())] + flatten_list(
+            environment_variables
+        )

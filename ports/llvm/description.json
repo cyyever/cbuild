@@ -1,6 +1,7 @@
 {
   "git_url": "git@github.com:llvm/llvm-project.git",
   "cache_time": 999,
+  "cache_ignore_dependency_change": true,
   "environment_variable": [
     "SRC_SUBDIR=llvm",
     "INSTALL_SUBDIR=llvm/${PACKAGE_VERSION}",

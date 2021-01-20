@@ -1,6 +1,7 @@
 {
   "git_url": "git@github.com:gcc-mirror/gcc.git",
   "cache_time": 999,
+  "cache_ignore_dependency_change": true,
   "environment_variable": [
     "INSTALL_SUBDIR=gcc/${PACKAGE_VERSION}",
     "USE_BUILD_DIR=1"
