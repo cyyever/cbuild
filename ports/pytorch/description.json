@@ -63,7 +63,8 @@
   "system_package_dependency": {
     "ubuntu": [
       "libgoogle-glog-dev",
-      "libnuma-dev"
+      "libnuma-dev",
+      "libgtest-dev"
     ],
     "archlinux": [
       "google-glog",
