@@ -14,7 +14,8 @@
       "sudo"
     ],
     "archlinux": [
-      "yay"
+      "yay",
+      "fakeroot"
     ],
     "bsd": [
       "coreutils",

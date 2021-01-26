@@ -3,6 +3,16 @@
   "default_build_script": "c",
   "cmake_options": "-DBUILD_DATA=on",
   "system_package_dependency": {
+    "archlinux": [
+	    "boost",
+	    "capnproto",
+     "google-glog",
+     "gtest",
+     "leveldb",
+     "opencc",
+     "yaml-cpp",
+     "marisa"
+    ],
     "ubuntu": [
       "libyaml-cpp-dev",
       "libopencc-dev",

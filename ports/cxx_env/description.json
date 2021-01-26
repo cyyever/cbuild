@@ -27,6 +27,8 @@
     ],
     "archlinux": [
       "ninja",
+      "pkgconf",
+      "make",
       "base-devel"
     ],
     "ubuntu": [

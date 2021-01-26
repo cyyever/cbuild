@@ -1,3 +1,9 @@
+if [[ -z ${SRC_SUBDIR+x} ]]; then
+  __SRC_DIR=${SRC_DIR}
+else
+  __SRC_DIR=${SRC_DIR}/${SRC_SUBDIR}
+fi
+
 if [[ "${static_analysis}" == "1" ]]; then
   json_path=$(find ${BUILD_DIR} -name "compile_commands.json" || true)
   if [[ "$json_path" == "" ]]; then
