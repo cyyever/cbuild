@@ -6,13 +6,14 @@
   ],
   "default_build_script": "python",
   "system_package_dependency": {
-    "bsd": [
+    "unix": [
       "qemu",
       "libvirt"
     ],
     "archlinux": [
       "ebtables",
-      "dnsmasq"
+      "dnsmasq",
+      "gobject-introspection"
     ],
     "macos": [
       "dnsmasq"
