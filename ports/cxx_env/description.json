@@ -27,7 +27,9 @@
     ],
     "archlinux": [
       "ninja",
+      "flex",
       "pkgconf",
+      "bison",
       "make",
       "base-devel"
     ],
