@@ -15,6 +15,7 @@
     ]
   },
   "dependency": [
-    "pytorch:__cbuild_most_recent_git_tag"
+    "pytorch:__cbuild_most_recent_git_tag",
+    "libjpeg-turbo:__cbuild_most_recent_git_tag"
   ]
 }
