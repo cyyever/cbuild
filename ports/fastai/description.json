@@ -1,0 +1,10 @@
+{
+  "git_url": "git@github.com:fastai/fastai.git",
+  "default_build_script": "python",
+  "environment_variable": [
+    "run_test=1"
+  ],
+  "dependency": [
+    "pytorch:__cbuild_most_recent_git_tag"
+  ]
+}
