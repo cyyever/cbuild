@@ -4,7 +4,8 @@
   "default_build_script": "python",
   "dependency": [
     "cyy_naive_python_lib:master",
-    "cyy_pytorch_cpp_extensions:master"
+    "cyy_pytorch_cpp_extensions:master",
+    "fastai:__cbuild_most_recent_git_tag"
   ],
   "system_package_dependency": {
     "pip": [
