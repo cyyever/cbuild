@@ -2,7 +2,8 @@
   "git_url": "git@github.com:xianyi/OpenBLAS.git",
   "cache_time": 30,
   "environment_variable": [
-    "try_cmake_again=1"
+    "try_cmake_again=1",
+    "USE_OPENMP=1"
   ],
   "conditional_new_feature": {
     "unix": [
