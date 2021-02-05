@@ -8,6 +8,11 @@
     "python"
   ],
   "system_package_dependency": {
+    "ubuntu": [
+      "liblcms2-dev",
+      "libxkbcommon-x11-dev",
+      "libx11-xcb-dev"
+    ],
     "freebsd": [
       "xorg",
       "ncurses",
