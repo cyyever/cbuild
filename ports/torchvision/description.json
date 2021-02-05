@@ -17,6 +17,6 @@
   "dependency": [
     "pytorch:__cbuild_most_recent_git_tag",
     "libjpeg-turbo:__cbuild_most_recent_git_tag",
-    "pillow_simd:__cbuild_most_recent_git_tag"
+    "pillow-simd:__cbuild_most_recent_git_tag"
   ]
 }
