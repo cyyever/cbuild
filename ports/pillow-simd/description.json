@@ -1,0 +1,8 @@
+{
+  "git_url": "git@github.com:uploadcare/pillow-simd.git",
+  "cache_time": 30,
+  "default_build_script": "python",
+  "environment_variable": [
+    "run_test=1"
+  ]
+}
