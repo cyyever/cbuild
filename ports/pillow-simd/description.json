@@ -3,6 +3,10 @@
   "cache_time": 30,
   "default_build_script": "python",
   "environment_variable": [
-    "run_test=1"
+    "run_test=1",
+    "JPEG_ROOT=$INSTALL_PREFIX"
+  ],
+  "dependency": [
+    "libjpeg-turbo:__cbuild_most_recent_git_tag"
   ]
 }
