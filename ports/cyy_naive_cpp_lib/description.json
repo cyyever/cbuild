@@ -22,7 +22,8 @@
   "cmake_options": "-DDISABLE_RUNTIME_ANALYSIS=on",
   "conditional_cmake_options": {
     "torch": "-DBUILD_TORCH=on",
-    "video": "-DBUILD_VIDEO=on"
+    "video": "-DBUILD_VIDEO=on",
+    "python_binding": "-DBUILD_PYTHON_BINDING=on"
   },
   "conditional_dependency": {
     "cv": [
@@ -30,6 +31,9 @@
     ],
     "torch": [
       "torchvision:__cbuild_most_recent_git_tag"
+    ],
+    "python_binding": [
+      "pybind11:__cbuild_most_recent_git_tag"
     ],
     "video": [
       "opencv[full]:__cbuild_most_recent_git_tag",
