@@ -3,6 +3,15 @@
   "cache_time": 0,
   "default_build_script": "c",
   "conditional_new_feature": {
+    "video": [
+      "cv"
+    ],
+    "torch_python_binding": [
+      "torch"
+    ],
+    "video_python_binding": [
+      "video"
+    ],
     "support_cuda": [
       "cuda"
     ],
@@ -23,7 +32,9 @@
   "conditional_cmake_options": {
     "torch": "-DBUILD_TORCH=on",
     "video": "-DBUILD_VIDEO=on",
-    "python_binding": "-DBUILD_PYTHON_BINDING=on"
+    "cv": "-DBUILD_CV=on",
+    "torch_python_binding": "-DBUILD_TORCH_PYTHON_BINDING=on",
+    "video_python_binding": "-DBUILD_VIDEO_PYTHON_BINDING=on"
   },
   "conditional_dependency": {
     "cv": [
@@ -32,11 +43,13 @@
     "torch": [
       "torchvision:__cbuild_most_recent_git_tag"
     ],
-    "python_binding": [
+    "torch_python_binding": [
+      "pybind11:__cbuild_most_recent_git_tag"
+    ],
+    "video_python_binding": [
       "pybind11:__cbuild_most_recent_git_tag"
     ],
     "video": [
-      "opencv[full]:__cbuild_most_recent_git_tag",
       "ffmpeg:__cbuild_most_recent_git_tag"
     ],
     "cv&&cuda": [

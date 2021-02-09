@@ -1,4 +1,4 @@
-if [[ "${FEATURE_python_binding}" == "1" ]]; then
+if [[ "${FEATURE_torch_python_binding}" == "1" ]] || [[ "${FEATURE_video_python_binding}" == "1" ]]; then
   if [[ -n ${DEFAULT_INSTALL_PREFIX+x} ]]; then
     __CBUILD_PYTHON_EXE="${sudo_cmd} env LD_LIBRARY_PATH=${INSTALL_PREFIX}/python/lib ${CBUILD_PYTHON_EXE}"
   else
@@ -14,9 +14,12 @@ if [[ "${FEATURE_python_binding}" == "1" ]]; then
     ${__CBUILD_PYTHON_EXE} setup.py install --user --force
   fi
   if [[ "${run_test}" == "1" ]]; then
-    if [[ "${PACKAGE_VERSION}" == "master" ]]; then
-      ${CBUILD_PYTHON_EXE} -m pytest || true
-    else
+    if [[ "${FEATURE_torch_python_binding}" == "1" ]]; then
+      cd ${SRC_DIR}/torch
+      ${CBUILD_PYTHON_EXE} -m pytest
+    fi
+    if [[ "${FEATURE_video_python_binding}" == "1" ]]; then
+      cd ${SRC_DIR}/video
       ${CBUILD_PYTHON_EXE} -m pytest
     fi
   fi
