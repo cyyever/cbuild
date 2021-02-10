@@ -152,10 +152,17 @@ class PackageDescription:
         if "cmake" in building_tools:
             self.features.add("feature_building_tool_cmake")
 
-        new_features = self.__get_conditional_items_by_context("new_feature")
-        if new_features:
+        while True:
+            new_features = self.__get_conditional_items_by_context(
+                "new_feature", context=(BuildContext.get() | self.features)
+            )
+            has_new_feature = False
             for new_feature in new_features:
-                self.features.add(new_feature)
+                if new_feature not in self.features:
+                    self.features.add(new_feature)
+                    has_new_feature = True
+            if not has_new_feature:
+                break
         return self.features
 
     def get_script(self, action):
@@ -251,9 +258,9 @@ class PackageDescription:
                 system_pkgs[manager].update(item)
         return system_pkgs
 
-    def __get_conditional_items_by_context(self, key):
+    def __get_conditional_items_by_context(self, key, context=BuildContext.get()):
         values = self.__config.conditional_get(
-            key, lambda x: self.__check_conditions(x, elements=BuildContext.get())
+            key, lambda x: self.__check_conditions(x, elements=context)
         )
         return flatten_list(values)
 

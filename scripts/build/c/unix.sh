@@ -1,15 +1,3 @@
-if [[ -z ${INSTALL_SUBDIR+x} ]]; then
-  __INSTALL_PREFIX=${INSTALL_PREFIX}
-else
-  __INSTALL_PREFIX=${INSTALL_PREFIX}/${INSTALL_SUBDIR}
-fi
-
-if [[ -z ${SRC_SUBDIR+x} ]]; then
-  __SRC_DIR=${SRC_DIR}
-else
-  __SRC_DIR=${SRC_DIR}/${SRC_SUBDIR}
-fi
-
 if test -f "${__SRC_DIR}/CMakeLists.txt"; then
   cd ${BUILD_DIR}
 
