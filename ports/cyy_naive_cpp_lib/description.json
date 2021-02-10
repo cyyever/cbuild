@@ -50,7 +50,7 @@
       "pybind11:__cbuild_most_recent_git_tag"
     ],
     "video": [
-      "ffmpeg:__cbuild_most_recent_git_tag"
+      "ffmpeg[shared_lib]:__cbuild_most_recent_git_tag"
     ],
     "cv&&cuda": [
       "cyy_cuda_buddy[shared_lib]:master"
