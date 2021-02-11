@@ -3,7 +3,7 @@
   "cache_time": 30,
   "default_build_script": "python",
   "environment_variable": [
-    "run_test=1",
+    "run_test=0",
     "JPEG_ROOT=$INSTALL_PREFIX",
     "CFLAGS=-mavx2"
   ],
