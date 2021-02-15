@@ -5,7 +5,7 @@ ${sed_cmd} -i -e 's/SET(CMAKE_REQUIRED_LIBRARIES ${BLAS_LIBRARIES})/SET(CMAKE_RE
 ${sed_cmd} -i -e 's/IF (OpenBLAS_FOUND)/IF (OpenBLAS_FOUND) \nset(OpenBLAS_LIB "${OpenBLAS_LIB};gfortran")\n/g' cmake/Modules/FindOpenBLAS.cmake
 ${sed_cmd} -i -e 's/project(Torch CXX C)/project(Torch CXX C ASM)/g' CMakeLists.txt
 ${sed_cmd} -i -e '2155s/input, weight, bias, running_mean, running_var, training, momentum, eps, torch.backends.cudnn.enabled/input, weight, bias, running_mean, running_var, training, momentum, eps, False/' torch/nn/functional.py
-${sed_cmd} -i -e 's/set(CMAKE_CXX_STANDARD 14)/set(CMAKE_CXX_STANDARD 20)/g' CMakeLists.txt
+${sed_cmd} -i -e 's/set(CMAKE_CXX_STANDARD 14)/set(CMAKE_CXX_STANDARD 17)/g' CMakeLists.txt
 
 if [[ "$(uname)" == "FreeBSD" ]]; then
   cd third_party
