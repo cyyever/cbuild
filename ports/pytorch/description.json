@@ -66,8 +66,8 @@
       "libnuma-dev",
       "libgtest-dev"
     ],
-    "pip":[
-	    "typing_extensions"
+    "pip": [
+      "typing_extensions"
     ],
     "archlinux": [
       "google-glog",
