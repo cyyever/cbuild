@@ -15,6 +15,7 @@
     "static_analysis=1",
     "BUILD_TEST=off",
     "USE_MPI=OFF",
+    "BUILD_CAFFE2=off",
     "BUILD_CAFFE2_MOBILE=off",
     "USE_DISTRIBUTED=off",
     "USE_FBGEMM=on",
