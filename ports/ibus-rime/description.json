@@ -5,7 +5,9 @@
       "ibus"
     ]
   },
-
+  "environment_variable": [
+    "DEFAULT_INSTALL_PREFIX=1"
+  ],
   "default_build_script": "c",
   "conditional_dependency": {
     "unix": [
