@@ -31,8 +31,9 @@ class Source:
 
     def __enter__(self) -> Optional[Tuple[str, Optional[str]]]:
         self.prev_dir = os.getcwd()
-        os.chdir(lock_dir)
-        with FileLock(os.path.join(str(self.spec) + ".lock").replace("/", "_")):
+        with FileLock(
+            os.path.join(lock_dir, str(self.spec) + ".lock").replace("/", "_")
+        ):
             if self.url is not None:
                 result = self._download()
                 if not result:
