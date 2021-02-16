@@ -65,7 +65,7 @@
     "archlinux": "-DCUDA_TOOLKIT_ROOT_DIR=/opt/cuda"
   },
   "conditional_docker_base_image": {
-    "cuda_docker": "nvidia/cuda:latest",
+    "cuda_docker": "nvidia/cuda:11.2.1-devel",
     "all_os": "ubuntu:latest"
   },
   "cache_time": 10
