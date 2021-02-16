@@ -149,26 +149,27 @@ class Package:
         if script is None:
             sys.exit("no script for package:" + self.specification().name)
 
-        src_dir = "/src"
+        docker_src_dir = "/src"
         build_dir = "/build"
-        script.append_env("SRC_DIR", src_dir)
+        script.append_env("SRC_DIR", docker_src_dir)
         script.append_env("BUILD_DIR", build_dir)
         script.prepend_content("mkdir -p " + build_dir)
-        script.prepend_content("mkdir -p " + src_dir)
+        script.prepend_content("mkdir -p " + docker_src_dir)
         script.append_content("rm -rf " + build_dir)
         if "debug_build" not in build_context:
-            script.append_content("rm -rf " + src_dir)
+            script.append_content("rm -rf " + docker_src_dir)
         else:
             script.append_content(
                 "mkdir -p /src_backup && mv "
-                + src_dir
+                + docker_src_dir
                 + " /src_backup/"
                 + self.full_name(),
             )
 
         with self.source as source_result:
+            source_dir = None
             if source_result:
-                file_name = source_result[1]
+                source_dir, file_name = source_result
                 if file_name:
                     script.append_env("FILE_NAME", file_name)
 
@@ -179,9 +180,12 @@ class Package:
                     sys.exit("no docker runtime")
                 addtional_docker_commands = open(runtime_path, "r").readlines()
             docker_file = DockerFile(from_image=from_docker_image, script=script)
+            src_dir_pair = None
+            if source_dir:
+                src_dir_pair = (source_dir, docker_src_dir)
             output, exit_code = docker_file.build(
                 result_image=self.__get_docker_image_name(),
-                src_dir=src_dir,
+                src_dir_pair=src_dir_pair,
                 additional_docker_commands=addtional_docker_commands,
             )
 
