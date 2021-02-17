@@ -4,18 +4,13 @@
   "environment_variable": [
     "run_test=0"
   ],
-  "conditional_new_feature": {
-    "unix": [
-      "new_gcc"
-    ]
-  },
   "conditional_environment_variable": {
     "unix": [
       "CPLUS_INCLUDE_PATH=${INSTALL_PREFIX}/tbb/include"
     ]
   },
   "dependency": [
-    "pytorch:__cbuild_most_recent_git_tag",
+    "pytorch:master",
     "libjpeg-turbo:__cbuild_most_recent_git_tag",
     "pillow-simd:__cbuild_most_recent_git_tag"
   ]

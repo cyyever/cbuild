@@ -4,15 +4,12 @@
   "conditional_new_feature": {
     "support_cuda": [
       "cuda"
-    ],
-    "unix": [
-      "new_gcc"
     ]
   },
   "default_build_script": "python",
   "environment_variable": [
     "run_test=0",
-    "static_analysis=1",
+    "static_analysis=0",
     "BUILD_TEST=off",
     "USE_MPI=OFF",
     "BUILD_CAFFE2=off",
@@ -24,15 +21,14 @@
     "USE_TENSORRT=off",
     "GLIBCXX_USE_CXX11_ABI=on",
     "USE_OPENCV=off",
-    "USE_QNNPACK=off",
-    "USE_PYTORCH_QNNPACK=off",
+    "USE_QNNPACK=on",
+    "USE_PYTORCH_QNNPACK=on",
     "USE_METAL=off",
     "USE_NUMA=ON",
     "USE_FFMPEG=off",
     "USE_GLOG=off",
     "USE_GFLAGS=off",
     "ONNX_ML=off",
-    "pybind11_PREFER_third_party=OFF",
     "BLAS=OpenBLAS",
     "USE_TBB=on",
     "PYTHON_EXECUTABLE=${CBUILD_PYTHON_EXE}",
@@ -50,12 +46,8 @@
       "DEBUG=1"
     ],
     "linux&&cuda": [
-      "CMAKE_CXX_FLAGS=-DNO_CUDNN_DESTROY_HANDLE",
       "NCCL_ROOT=${INSTALL_PREFIX}",
       "USE_NCCL=on"
-    ],
-    "windows&&cuda": [
-      "CMAKE_CXX_FLAGS=/DNO_CUDNN_DESTROY_HANDLE"
     ]
   },
   "dependency": [

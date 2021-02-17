@@ -14,9 +14,6 @@
     ],
     "support_cuda": [
       "cuda"
-    ],
-    "unix": [
-      "new_gcc"
     ]
   },
   "environment_variable": [
@@ -41,7 +38,7 @@
       "opencv[full]:__cbuild_most_recent_git_tag"
     ],
     "torch": [
-      "torchvision:__cbuild_most_recent_git_tag"
+      "torchvision:master"
     ],
     "torch_python_binding": [
       "pybind11:__cbuild_most_recent_git_tag"

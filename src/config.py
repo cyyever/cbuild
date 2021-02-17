@@ -20,13 +20,7 @@ class ToolMapping:
             lines = lines.splitlines()
         for line in lines:
             line_tokens = line.split()
-            if not line_tokens:
-                continue
-            if "sudo" in line_tokens[0]:
-                line_tokens = line_tokens[1:]
-            if "/" in line_tokens[0]:
-                line_tokens[0] = line_tokens[0].split("/")[-1]
-            tokens.update(line_tokens[0])
+            tokens.update(line_tokens)
         tools = tokens.intersection(self.data.keys())
         languages = list()
         for tool in tools:

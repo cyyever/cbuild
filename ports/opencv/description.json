@@ -12,9 +12,6 @@
   "conditional_new_feature": {
     "support_cuda": [
       "cuda"
-    ],
-    "unix": [
-      "new_gcc"
     ]
   },
   "environment_variable": [

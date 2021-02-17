@@ -28,9 +28,7 @@
       "cuda"
     ]
   },
-  "context_dependency": {
-    "linux": [
-      "gcc:releases/gcc-10.2.0"
-    ]
-  }
+  "dependency": [
+    "cxx_env:master"
+  ]
 }

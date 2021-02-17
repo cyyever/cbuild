@@ -130,14 +130,12 @@ class PackageDescription:
             return self.features
         self.features = self.spec.features
 
-        building_tools, possible_languages = ToolMapping().guess_language(
-            self.__get_script_content(PackageDescription.BuildAction.BUILD)
-        )
-
-        build_languages = self.get_item("build_languages")
-        if build_languages:
-            for lan in build_languages:
-                possible_languages.add(lan)
+        building_tools = set()
+        possible_languages = self.get_item("build_languages")
+        if not possible_languages:
+            building_tools, possible_languages = ToolMapping().guess_language(
+                self.__get_script_content(PackageDescription.BuildAction.BUILD)
+            )
 
         if self.check_language_feature:
             self.check_language_feature = False

@@ -1,6 +1,9 @@
 {
   "group_package": true,
   "cache_time": 7,
+  "build_languages": [
+    "sh"
+  ],
   "system_package_dependency": {
     "unix": [
       "curl",

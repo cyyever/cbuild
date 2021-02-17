@@ -5,16 +5,6 @@
     "try_cmake_again=1",
     "USE_OPENMP=1"
   ],
-  "conditional_new_feature": {
-    "unix": [
-      "new_gcc"
-    ]
-  },
-  "conditional_cmake_options": {
-    "unix": [
-      "-DCMAKE_Fortran_COMPILER=${INSTALL_PREFIX}/gcc/releases/gcc-10.2.0/bin/gfortran"
-    ]
-  },
   "default_build_script": "c",
   "dependency": [
     "perl_env:__cbuild_most_recent_git_tag",
