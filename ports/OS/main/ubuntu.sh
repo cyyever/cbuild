@@ -13,20 +13,14 @@ if [[ "${BUILD_CONTEXT_docker:=0}" == 0 ]]; then
     ${sudo_cmd} sed -i 's/1/0/' /etc/apt/apt.conf.d/20auto-upgrades
   fi
 fi
-
 # ${sudo_cmd} add-apt-repository ppa:graphics-drivers/ppa -y
 # ${sudo_cmd} add-apt-repository ppa:ubuntu-toolchain-r/test -y
 
-${sudo_cmd} apt-get install g++-10 gcc-10 -y
-
-update-alternatives --set g++ /usr/bin/g++-10
-update-alternatives --set gcc /usr/bin/gcc-10
-
 if [[ "${BUILD_CONTEXT_docker:=0}" == 1 ]]; then
-if test -f /etc/apt/sources.list.d/nvidia-ml.list; then
-  ${sudo_cmd} rm /etc/apt/sources.list.d/nvidia-ml.list
-fi
-${sudo_cmd} rm -rf /var/lib/apt/lists/*
-${sudo_cmd} apt-get clean -y
-${sudo_cmd} apt-get purge -y
+  if test -f /etc/apt/sources.list.d/nvidia-ml.list; then
+    ${sudo_cmd} rm /etc/apt/sources.list.d/nvidia-ml.list
+  fi
+  ${sudo_cmd} rm -rf /var/lib/apt/lists/*
+  ${sudo_cmd} apt-get clean -y
+  ${sudo_cmd} apt-get purge -y
 fi
