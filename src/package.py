@@ -205,10 +205,11 @@ class Package:
                 sys.exit("failed to build docker image of " + docker_image_name)
 
     def __get_docker_image_name(self):
-        docker_image_name = self.name().lower() + ":" + self.specification().branch
+        tag = self.specification().branch
         if self.specification().features:
-            docker_image_name += "-" + "-".join(sorted(self.specification().features))
-        return docker_image_name.replace("/", "-")
+            tag += "-" + "-".join(sorted(self.specification().features))
+        tag = tag.replace("/", "-")
+        return self.name().lower() + ":" + tag[:50]
 
     def __get_docker_runtime_path(self):
         for branch in [self.branch(), "__cbuild_for_all_branches"]:
