@@ -19,7 +19,7 @@
     "USE_NATIVE_ARCH=on",
     "USE_ROCM=off",
     "USE_TENSORRT=off",
-    "GLIBCXX_USE_CXX11_ABI=on",
+    "GLIBCXX_USE_CXX11_ABI=1",
     "USE_OPENCV=off",
     "USE_QNNPACK=on",
     "USE_PYTORCH_QNNPACK=on",
