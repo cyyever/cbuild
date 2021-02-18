@@ -214,8 +214,6 @@ class PackageDescription:
 
         script_content = self.__get_script_content(action)
         if script_content:
-            if self.get_item("group_package"):
-                sys.exit("has a build script for group package:" + self.spec.name)
             script.append_content(script_content)
         else:
             if not self.get_item("group_package"):
