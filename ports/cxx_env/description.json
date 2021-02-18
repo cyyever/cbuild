@@ -1,5 +1,5 @@
 {
-  "script_package": true,
+  "group_package": true,
   "conditional_dependency": {
     "windows": [
       "Visual-Studio:2019"
