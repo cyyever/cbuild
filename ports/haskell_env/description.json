@@ -2,7 +2,6 @@
   "group_package": true,
   "system_package_dependency": {
     "freebsd": [
-	    "misc/compat12x",
       "hs-stack"
     ],
     "macos": [
