@@ -1,5 +1,12 @@
 {
   "git_url": "git@github.com:pytorch/pytorch.git",
+  "ignored_git_submodules": [
+    "third_party/eigen",
+    "third_party/pybind11",
+    "third_party/ios-cmake",
+    "third_party/protobuf",
+    "third_party/tbb"
+  ],
   "cache_time": 30,
   "conditional_new_feature": {
     "support_cuda": [
@@ -14,7 +21,9 @@
     "USE_MPI=OFF",
     "BUILD_CAFFE2=off",
     "BUILD_CAFFE2_MOBILE=off",
+    "BUILD_CUSTOM_PROTOBUF=off",
     "USE_DISTRIBUTED=off",
+    "USE_SYSTEM_EIGEN_INSTALL=ON",
     "USE_FBGEMM=on",
     "USE_NATIVE_ARCH=on",
     "USE_ROCM=off",
@@ -30,7 +39,6 @@
     "USE_GFLAGS=off",
     "ONNX_ML=off",
     "BLAS=OpenBLAS",
-    "USE_TBB=on",
     "PYTHON_EXECUTABLE=${CBUILD_PYTHON_EXE}",
     "OpenBLAS_HOME=${INSTALL_PREFIX}/include/openblas",
     "OpenBLAS=${INSTALL_PREFIX}"
