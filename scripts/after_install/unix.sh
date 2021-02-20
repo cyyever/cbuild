@@ -5,13 +5,22 @@ if [[ -n ${__SRC_DIR+x} ]]; then
       json_path=$(find ${__SRC_DIR}/build -name "compile_commands.json" || true)
     fi
     if [[ "$json_path" != "" ]]; then
-      echo "json_path is $json_path"
       cd $(dirname $json_path)
-      if command -v pvs-studio; then
-        pvs-studio-analyzer analyze -a 31 -o ./pvs-studio.log -j${MAX_JOBS} || true
-        plog-converter -t tasklist -a 'GA:1,2,3;64:1,2,3;OP:1,2,3;CS:1,2,3' -o ./pvs-studio-report.txt ./pvs-studio.log || true
-        rm -rf ./pvs-studio.log || true
-        cp ./pvs-studio-report.txt ${STATIC_ANALYSIS_DIR} || true
+      if [[ "${pvs_static_analysis}" == "1" ]]; then
+        if command -v pvs-studio; then
+          pvs-studio-analyzer analyze -a 31 -o ./pvs-studio.log -j${MAX_JOBS} || true
+          plog-converter -t tasklist -a 'GA:1,2,3;64:1,2,3;OP:1,2,3;CS:1,2,3' -o ./pvs-studio-report.txt ./pvs-studio.log || true
+          rm -rf ./pvs-studio.log || true
+          cp ./pvs-studio-report.txt ${STATIC_ANALYSIS_DIR} || true
+        fi
+      fi
+      if [[ "${clang_tidy_static_analysis}" == "1" ]]; then
+        if command -v run-clang-tidy.py; then
+          if test -f ${INSTALL_PREFIX}/cli_tool_configs/cpp-clang-tidy; then
+            run-clang-tidy.py -p . -config="$(cat ${INSTALL_PREFIX}/cli_tool_configs/cpp-clang-tidy)" -quiet >./run-clang-tidy.txt || true
+            cp ./run-clang-tidy.txt ${STATIC_ANALYSIS_DIR} || true
+          fi
+        fi
       fi
       if command -v cppcheck; then
         cppcheck --project=./compile_commands.json -j $MAX_JOBS --std=c++20 --enable=all --inconclusive 2>./cppcheck.txt || true
