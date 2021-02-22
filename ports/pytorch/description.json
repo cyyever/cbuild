@@ -55,7 +55,8 @@
     ],
     "linux&&cuda": [
       "NCCL_ROOT=${INSTALL_PREFIX}",
-      "USE_NCCL=on"
+      "USE_NCCL=on",
+      "USE_SYSTEM_NCCL=on"
     ]
   },
   "dependency": [
