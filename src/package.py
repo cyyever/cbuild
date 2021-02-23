@@ -100,7 +100,7 @@ class Package:
 
             build_dir = os.path.join(environment.builds_dir, self.full_name())
             shutil.rmtree(build_dir, ignore_errors=True)
-            os.makedirs(build_dir, exit_code=True)
+            os.makedirs(build_dir, exist_ok=True)
             static_analysis_dir = os.path.join(
                 environment.static_analysis_dir, self.full_name()
             )
