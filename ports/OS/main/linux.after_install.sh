@@ -6,10 +6,6 @@ if [[ "${BUILD_CONTEXT_docker:=0}" == 0 ]]; then
   fi
 fi
 
-if command -v git; then
-  git config --global pull.rebase false
-fi
-
 if [[ "${BUILD_CONTEXT_docker:=0}" == 1 ]]; then
   for path in ${INSTALL_PREFIX}/lib; do
     if ! grep -q "$path" /etc/ld.so.conf; then
