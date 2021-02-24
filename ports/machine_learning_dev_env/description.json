@@ -25,10 +25,12 @@
       "libeigen3-dev"
     ],
     "archlinux": [
-      "eigen"
+      "eigen",
+      "protobuf"
     ],
     "freebsd": [
-      "eigen"
+      "eigen",
+      "protobuf"
     ],
     "pip": [
       "matplotlib",
