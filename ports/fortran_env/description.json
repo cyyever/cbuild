@@ -1,8 +1,11 @@
 {
   "group_package": true,
   "system_package_dependency": {
-    "linux": [
+    "ubuntu": [
       "gfortran"
+    ],
+    "archlinux": [
+      "gcc-fortran"
     ]
   }
 }
