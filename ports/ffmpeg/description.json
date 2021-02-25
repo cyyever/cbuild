@@ -19,7 +19,7 @@
     ]
   },
   "default_build_script": "c",
-  "configure_options": "--extra-cflags=-fPIE --disable-doc --disable-programs --enable-nonfree --enable-gpl --enable-libx264 --enable-libx265 --enable-cuvid --enable-ffnvcodec",
+  "configure_options": "--extra-cflags=-fPIE --disable-doc --enable-nonfree --enable-gpl --enable-libx264 --enable-libx265 --enable-cuvid --enable-ffnvcodec",
   "feature_configure_options": {
     "shared_lib": "--enable-shared"
   }
