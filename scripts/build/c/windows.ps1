@@ -16,18 +16,6 @@ if ($env:try_cmake_again -ne "1") {
 }
 
 
-$path = vswhere -latest -prerelease -property installationPath
-cd $path
-cd VC/Auxiliary/Build
-
-cmd /c "call vcvarsall.bat x64 && set > %temp%\\vcvars.txt"
-Get-Content "$env:temp/vcvars.txt" | ForEach-Object {
-    if ($_ -match "^(.*?)=(.*)$") {
-        Set-Item -Path "Env:$($matches[1])" -Value $matches[2]
-    }
-}
-
-
 cd $env:BUILD_DIR
 
 $install_prefix_exp = "-DCMAKE_INSTALL_PREFIX=$__INSTALL_PREFIX"
