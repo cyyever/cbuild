@@ -36,3 +36,5 @@ if [[ -n ${DEFAULT_INSTALL_PREFIX+x} ]]; then
 else
   __CBUILD_PYTHON_EXE="${CBUILD_PYTHON_EXE}"
 fi
+
+__CBUILD_PIP_EXE="${CBUILD_PYTHON_EXE} -m pip"
