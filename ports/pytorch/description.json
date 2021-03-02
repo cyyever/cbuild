@@ -55,6 +55,7 @@
     ],
     "linux&&cuda": [
       "NCCL_ROOT=${INSTALL_PREFIX}",
+      "NCCL_INCLUDE_DIR=${INSTALL_PREFIX}/include",
       "USE_NCCL=on",
       "USE_SYSTEM_NCCL=on"
     ]
