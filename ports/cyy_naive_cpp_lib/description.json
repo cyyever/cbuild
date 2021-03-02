@@ -34,30 +34,10 @@
   "conditional_cmake_options": {
     "ubuntu": "-DCMAKE_CXX_COMPILER=g++-10",
     "all": "-DBUILD_ALL=on",
-    "torch": "-DBUILD_TORCH=on -DCMAKE_CUDA_COMPILER=/usr/local/cuda/bin/nvcc",
+    "torch": "-DBUILD_TORCH=on",
     "video": "-DBUILD_VIDEO=on",
     "cv": "-DBUILD_CV=on",
     "torch_python_binding": "-DBUILD_TORCH_PYTHON_BINDING=on",
     "video_python_binding": "-DBUILD_VIDEO_PYTHON_BINDING=on"
-  },
-  "conditional_dependency": {
-    "cv": [
-      "opencv[full]:__cbuild_most_recent_git_tag"
-    ],
-    "torch": [
-      "torchvision:master"
-    ],
-    "torch_python_binding": [
-      "pybind11:__cbuild_most_recent_git_tag"
-    ],
-    "video_python_binding": [
-      "pybind11:__cbuild_most_recent_git_tag"
-    ],
-    "video": [
-      "ffmpeg[shared_lib]:__cbuild_most_recent_git_tag"
-    ],
-    "cv&&cuda": [
-      "cyy_cuda_buddy[shared_lib]:master"
-    ]
   }
 }
