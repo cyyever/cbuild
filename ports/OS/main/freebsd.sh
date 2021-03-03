@@ -1,6 +1,7 @@
 ${sudo_cmd} portsnap auto
 ${sudo_cmd} freebsd-update fetch
 ${sudo_cmd} freebsd-update install || true
+${sudo_cmd} pkg upgrade
 
 if ! test -e /usr/local/bin/nproc; then
   sudo ln -s /usr/local/bin/gnproc /usr/local/bin/nproc
