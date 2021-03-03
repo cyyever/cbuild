@@ -33,6 +33,7 @@
   "cmake_options": "-DDISABLE_RUNTIME_ANALYSIS=on",
   "conditional_cmake_options": {
     "ubuntu": "-DCMAKE_CXX_COMPILER=g++-10",
+    "freebsd": "-DCMAKE_CXX_COMPILER=g++",
     "all": "-DBUILD_ALL=on",
     "torch": "-DBUILD_TORCH=on",
     "video": "-DBUILD_VIDEO=on",
