@@ -11,7 +11,10 @@
       "python_dev_env:__cbuild_most_recent_git_tag",
       "openblas[shared_lib]:__cbuild_most_recent_git_tag",
       "numpy:__cbuild_most_recent_git_tag",
-      "pillow-simd:__cbuild_most_recent_git_tag"
+      "pillow-simd:7.1.2"
+    ],
+    "windows": [
+      "zlib:develop"
     ],
     "cuda": [
       "cudnn:__cbuild_most_recent_git_tag"

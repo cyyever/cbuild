@@ -1,6 +1,8 @@
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + [System.Environment]::GetEnvironmentVariable("Path", "User")
 $env:INSTALL_PREFIX = $env:INSTALL_PREFIX.Replace("\", "/")
 
+Set-Alias -Name sed_cmd -Value sed
+
 $path = vswhere -latest -prerelease -property installationPath
 cd $path
 cd VC/Auxiliary/Build

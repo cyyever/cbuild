@@ -4,7 +4,7 @@
   "default_build_script": "python",
   "environment_variable": [
     "run_test=0",
-    "JPEG_ROOT=$INSTALL_PREFIX",
+    "JPEG_ROOT=${INSTALL_PREFIX}",
     "CFLAGS=-mavx2"
   ],
   "dependency": [
