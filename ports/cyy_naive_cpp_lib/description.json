@@ -27,9 +27,19 @@
   "dependency": [
     "doctest:__cbuild_most_recent_git_tag",
     "spdlog:__cbuild_most_recent_git_tag",
-    "ms-gsl:__cbuild_most_recent_git_tag",
-    "ninja:__cbuild_most_recent_git_tag"
+    "ms-gsl:__cbuild_most_recent_git_tag"
   ],
+  "conditional_dependency": {
+    "torch": [
+      "pytorch:master"
+    ],
+    "torch_python_binding": [
+      "pybind11:__cbuild_most_recent_git_tag"
+    ],
+    "video_python_binding": [
+      "pybind11:__cbuild_most_recent_git_tag"
+    ]
+  },
   "cmake_options": "-DDISABLE_RUNTIME_ANALYSIS=on",
   "conditional_cmake_options": {
     "ubuntu": "-DCMAKE_CXX_COMPILER=g++-10",

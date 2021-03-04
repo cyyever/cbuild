@@ -10,8 +10,6 @@
     ]
   },
   "dependency": [
-    "pytorch:master",
-    "libjpeg-turbo:__cbuild_most_recent_git_tag",
-    "pillow-simd:__cbuild_most_recent_git_tag"
+    "pytorch:master"
   ]
 }
