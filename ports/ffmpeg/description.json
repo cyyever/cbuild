@@ -2,9 +2,13 @@
   "git_url": "git@github.com:FFmpeg/FFmpeg.git",
   "cache_time": 300,
   "dependency": [
-    "assembly_env:__cbuild_most_recent_git_tag",
-    "nv-codec-headers:__cbuild_most_recent_git_tag"
+    "assembly_env:__cbuild_most_recent_git_tag"
   ],
+  "conditional_dependency": {
+    "cuda": [
+      "nv-codec-headers:__cbuild_most_recent_git_tag"
+    ]
+  },
   "environment_variable": [
     "run_test=1"
   ],
@@ -19,7 +23,12 @@
     ]
   },
   "default_build_script": "c",
-  "configure_options": "--extra-cflags=-fPIE --disable-doc --enable-nonfree --enable-gpl --enable-libx264 --enable-libx265 --enable-cuvid --enable-ffnvcodec",
+  "configure_options": "--extra-cflags=-fPIE --disable-doc --enable-nonfree --enable-gpl --enable-libx264 --enable-libx265",
+  "conditional_configure_options": {
+    "cuda": [
+      " --enable-cuvid --enable-ffnvcodec"
+    ]
+  },
   "feature_configure_options": {
     "shared_lib": "--enable-shared"
   }
