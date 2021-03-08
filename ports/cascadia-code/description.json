@@ -1,10 +1,10 @@
 {
-  "url": "https://github.com/microsoft/cascadia-code/releases/download/v2009.22/CascadiaCode-2009.22.zip",
-  "file_name": "CascadiaCode-2009.22.zip",
+  "url": "https://github.com/microsoft/cascadia-code/releases/download/v2102.25/CascadiaCode-2102.25.zip",
+  "file_name": "CascadiaCode-2102.25.zip",
   "checksum": "no_checksum",
   "system_package_dependency": {
     "unix": [
       "fontconfig"
-      ]
-      }
+    ]
+  }
 }
