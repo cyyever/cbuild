@@ -1,7 +1,8 @@
 {
   "git_url": "git@github.com:boostorg/boost.git",
-  "cmake_options": "-DBOOST_ENABLE_CMAKE=on",
-  "default_build_script": "c",
+  "build_languages": [
+    "cpp"
+  ],
   "environment_variable": [
     "run_test=0"
   ],
