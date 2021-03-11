@@ -32,7 +32,7 @@ class Source:
     def __enter__(self) -> Optional[Tuple[str, Optional[str]]]:
         self.prev_dir = os.getcwd()
         with FileLock(
-            os.path.join(lock_dir, str(self.spec) + ".lock").replace("/", "_")
+            os.path.join(lock_dir, str(self.spec).replace("/", "_") + ".lock")
         ):
             if self.url is not None:
                 result = self._download()
