@@ -6,9 +6,13 @@
     "all": [
       "cv",
       "torch_python_binding",
+      "cv_python_binding",
       "video_python_binding"
     ],
     "video": [
+      "cv"
+    ],
+    "cv_python_binding": [
       "cv"
     ],
     "torch_python_binding": [
@@ -36,6 +40,9 @@
     "torch": [
       "torchvision:master"
     ],
+    "cv_python_binding": [
+      "pybind11:__cbuild_most_recent_git_tag"
+    ],
     "torch_python_binding": [
       "pybind11:__cbuild_most_recent_git_tag"
     ],
@@ -58,6 +65,7 @@
     "video": "-DBUILD_VIDEO=on",
     "cv": "-DBUILD_CV=on",
     "torch_python_binding": "-DBUILD_TORCH_PYTHON_BINDING=on",
+    "cv_python_binding": "-DBUILD_CV_PYTHON_BINDING=on",
     "video_python_binding": "-DBUILD_VIDEO_PYTHON_BINDING=on"
   }
 }
