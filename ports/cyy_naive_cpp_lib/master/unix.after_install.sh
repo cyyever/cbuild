@@ -14,5 +14,9 @@ if [[ "${FEATURE_torch_python_binding}" == "1" ]] || [[ "${FEATURE_video_python_
       cd ${SRC_DIR}/python_binding/test/video
       ${CBUILD_PYTHON_EXE} -m pytest
     fi
+    if [[ "${FEATURE_cv_python_binding}" == "1" ]]; then
+      cd ${SRC_DIR}/python_binding/test/cv
+      ${CBUILD_PYTHON_EXE} -m pytest
+    fi
   fi
 fi
