@@ -5,6 +5,6 @@
   "dependency": [
     "cyy_naive_python_lib:master",
     "torchvision:master",
-    "cyy_naive_cpp_lib[torch_python_binding,video_python_binding,shared_lib]:master"
+    "cyy_naive_cpp_lib[all,shared_lib]:master"
   ]
 }
