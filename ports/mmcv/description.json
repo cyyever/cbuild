@@ -1,0 +1,12 @@
+{
+  "git_url": "git@github.com:open-mmlab/mmcv.git",
+  "cache_time": 30,
+  "default_build_script": "python",
+  "dependency": [
+    "torchvision:master"
+  ],
+  "environment_variable": [
+    "MMCV_WITH_OPS=1",
+    "run_test=0"
+  ]
+}
