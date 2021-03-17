@@ -4,8 +4,7 @@
     "third_party/eigen",
     "third_party/pybind11",
     "third_party/ios-cmake",
-    "third_party/protobuf",
-    "third_party/nccl"
+    "third_party/protobuf"
   ],
   "cache_time": 30,
   "conditional_new_feature": {
@@ -57,7 +56,7 @@
       "NCCL_ROOT=${INSTALL_PREFIX}",
       "NCCL_INCLUDE_DIR=${INSTALL_PREFIX}/include",
       "USE_NCCL=on",
-      "USE_SYSTEM_NCCL=on"
+      "USE_SYSTEM_NCCL=off"
     ]
   },
   "dependency": [
