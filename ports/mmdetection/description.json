@@ -1,0 +1,11 @@
+{
+  "git_url": "git@github.com:open-mmlab/mmdetection.git",
+  "cache_time": 30,
+  "default_build_script": "python",
+  "dependency": [
+    "mmcv:master"
+  ],
+  "environment_variable": [
+    "run_test=0"
+  ]
+}
