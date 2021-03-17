@@ -7,6 +7,9 @@
     "JPEG_ROOT=${INSTALL_PREFIX}",
     "CFLAGS=-mavx2"
   ],
+  "ignored_tag_regex": [
+    "cmyk16bit"
+  ],
   "dependency": [
     "libjpeg-turbo:__cbuild_most_recent_git_tag"
   ]
