@@ -12,6 +12,7 @@
       "libjpeg-turbo:__cbuild_most_recent_git_tag",
       "openblas[shared_lib]:__cbuild_most_recent_git_tag",
       "numpy:__cbuild_most_recent_git_tag",
+      "eigen:__cbuild_most_recent_git_tag",
       "pillow-simd:7.1.2"
     ],
     "windows": [
@@ -25,15 +26,10 @@
     ]
   },
   "system_package_dependency": {
-    "ubuntu": [
-      "libeigen3-dev"
-    ],
     "archlinux": [
-      "eigen",
       "protobuf"
     ],
     "freebsd": [
-      "eigen",
       "protobuf"
     ],
     "pip": [
