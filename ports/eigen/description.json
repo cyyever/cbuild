@@ -1,4 +1,7 @@
 {
  "git_url": "https://gitlab.com/libeigen/eigen.git",
+ "environment_variable": [
+  "run_test=0"
+ ],
  "default_build_script": "c"
 }
