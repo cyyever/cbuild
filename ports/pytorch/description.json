@@ -57,6 +57,9 @@
       "NCCL_INCLUDE_DIR=${INSTALL_PREFIX}/include",
       "USE_NCCL=on",
       "USE_SYSTEM_NCCL=off"
+    ],
+    "freebsd": [
+      "USE_KINETO=off"
     ]
   },
   "dependency": [
