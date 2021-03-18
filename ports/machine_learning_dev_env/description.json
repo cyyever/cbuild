@@ -30,7 +30,8 @@
       "protobuf"
     ],
     "freebsd": [
-      "protobuf"
+      "protobuf",
+      "libzmq4"
     ],
     "pip": [
       "matplotlib",
