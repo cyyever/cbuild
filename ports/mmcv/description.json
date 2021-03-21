@@ -3,7 +3,8 @@
   "cache_time": 30,
   "default_build_script": "python",
   "dependency": [
-    "torchvision:master"
+    "torchvision:master",
+    "opencv[full]:__cbuild_most_recent_git_tag"
   ],
   "environment_variable": [
     "MMCV_WITH_OPS=1",
