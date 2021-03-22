@@ -54,10 +54,9 @@
     ]
   },
   "conditional_cmake_options": {
-    "all_os": "-DCMAKE_EXPORT_COMPILE_COMMANDS=on",
-    "windows": "-DCMAKE_BUILD_TYPE=$env:BUILD_TYPE",
+    "all_os": "-DCMAKE_EXPORT_COMPILE_COMMANDS=on -DCMAKE_PREFIX_PATH=${INSTALL_PREFIX} -DCMAKE_BUILD_TYPE=${BUILD_TYPE}",
     "shared_lib": "-DBUILD_SHARED_LIBS=on",
-    "unix": "-DCMAKE_BUILD_TYPE=${BUILD_TYPE} -DPYTHON_EXECUTABLE=${INSTALL_PREFIX}/python/bin/python3",
+    "unix": "-DPYTHON_EXECUTABLE=${INSTALL_PREFIX}/python/bin/python3",
     "unix&&new_gcc": [
       "-DCMAKE_C_COMPILER=${INSTALL_PREFIX}/gcc/releases/gcc-10.2.0/bin/gcc",
       "-DCMAKE_CXX_COMPILER=${INSTALL_PREFIX}/gcc/releases/gcc-10.2.0/bin/g++"
