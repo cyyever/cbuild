@@ -34,7 +34,8 @@
       "libzmq4"
     ],
     "ubuntu": [
-      "protobuf-compiler"
+      "protobuf-compiler",
+      "libprotobuf-dev"
     ],
     "pip": [
       "matplotlib",
