@@ -11,6 +11,7 @@
     "ubuntu": [
       "liblcms2-dev",
       "libxkbcommon-x11-dev",
+      "libharfbuzz-dev",
       "libx11-xcb-dev"
     ],
     "freebsd": [
