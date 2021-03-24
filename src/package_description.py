@@ -194,7 +194,7 @@ class PackageDescription:
             script_path = os.path.join(
                 scripts_dir,
                 "package_manager",
-                manager + "." + get_shell_script().get_suffix(),
+                manager + "." + script.get_suffix(),
             )
             if not os.path.exists(script_path):
                 sys.exit("unsupported system_package_dependency:" + script_path)
