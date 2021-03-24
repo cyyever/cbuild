@@ -6,7 +6,9 @@ from enum import Enum, auto
 from pathlib import Path
 
 from naive_lib.cyy_naive_lib.algorithm.sequence_op import flatten_list
-from naive_lib.cyy_naive_lib.shell_factory import get_shell_script
+from naive_lib.cyy_naive_lib.shell.msys2_script import MSYS2Script
+from naive_lib.cyy_naive_lib.shell.pwsh_script import PowerShellScript
+from naive_lib.cyy_naive_lib.shell_factory import get_shell_script_type
 from naive_lib.cyy_naive_lib.util import readlines
 
 from .config import Config, Environment, ToolMapping
@@ -163,6 +165,12 @@ class PackageDescription:
                 break
         return self.features
 
+    def __get_shell_script(self):
+        script_type = get_shell_script_type(os_hint=BuildContext.get_target_system())
+        if script_type == PowerShellScript and self.get_item("use_mysy2", False):
+            script_type = MSYS2Script
+        return script_type()
+
     def get_script(self, action):
         if action not in (
             PackageDescription.BuildAction.BUILD,
@@ -170,7 +178,7 @@ class PackageDescription:
             PackageDescription.BuildAction.DOCKER_BUILD,
         ):
             raise RuntimeError("unsupported action")
-        script = get_shell_script()
+        script = self.__get_shell_script()
         for item in self.__environment.get(self.__check_conditions):
             pieces = item.split("=")
             script.append_env(pieces[0], "=".join(pieces[1:]))
@@ -317,9 +325,7 @@ class PackageDescription:
                     system
                     + additional_suffix
                     + "."
-                    + get_shell_script(
-                        os_hint=BuildContext.get_target_system()
-                    ).get_suffix(),
+                    + self.__get_shell_script().get_suffix(),
                 )
                 if os.path.isfile(script_path):
                     paths.append(script_path)
