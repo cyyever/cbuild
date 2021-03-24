@@ -7,7 +7,6 @@ from pathlib import Path
 
 from naive_lib.cyy_naive_lib.algorithm.sequence_op import flatten_list
 from naive_lib.cyy_naive_lib.shell.msys2_script import MSYS2Script
-from naive_lib.cyy_naive_lib.shell.pwsh_script import PowerShellScript
 from naive_lib.cyy_naive_lib.shell_factory import get_shell_script_type
 from naive_lib.cyy_naive_lib.util import readlines
 
@@ -167,9 +166,10 @@ class PackageDescription:
 
     def __get_shell_script(self):
         script_type = get_shell_script_type(os_hint=BuildContext.get_target_system())
-        if script_type == PowerShellScript and self.get_item("use_mysy2", False):
-            script_type = MSYS2Script
-        return script_type()
+        script = script_type()
+        if script.get_suffix() == "ps1" and self.get_item("use_msys2", False):
+            return MSYS2Script()
+        return script
 
     def get_script(self, action):
         if action not in (
@@ -292,44 +292,48 @@ class PackageDescription:
         return True
 
     def __get_script_paths(self, action):
-        paths = []
-        additional_suffix = ""
-        if action == PackageDescription.BuildAction.PREPROCESS:
-            if "unix" in BuildContext.get():
-                paths.append(os.path.join(scripts_dir, "preprocess", "unix.sh"))
-            if "windows" in BuildContext.get():
-                paths.append(os.path.join(scripts_dir, "preprocess", "windows.ps1"))
-            additional_suffix = ".preprocess"
-        elif action == PackageDescription.BuildAction.AFTER_INSTALL:
-            if "unix" in BuildContext.get():
-                paths.append(os.path.join(scripts_dir, "after_install", "unix.sh"))
-            if "windows" in BuildContext.get():
-                paths.append(os.path.join(scripts_dir, "after_install", "windows.ps1"))
-
-            additional_suffix = ".after_install"
         possible_systems = [BuildContext.get_target_system()]
         for system in ["linux", "unix", "all_os"]:
             if system in BuildContext.get():
                 possible_systems.append(system)
+        paths = []
 
-        for system in possible_systems:
-            for branch in [
-                self.spec.branch,
-                "__cbuild_most_recent_git_tag",
-                "master",
-                "main",
-            ]:
+        if action in (
+            PackageDescription.BuildAction.PREPROCESS,
+            PackageDescription.BuildAction.AFTER_INSTALL,
+        ):
+            additional_suffix = ""
+            if action == PackageDescription.BuildAction.PREPROCESS:
+                additional_suffix = ".preprocess"
+            else:
+                additional_suffix = ".after_install"
+            for system in possible_systems:
                 script_path = os.path.join(
-                    self.port_dir(),
-                    branch,
-                    system
-                    + additional_suffix
-                    + "."
-                    + self.__get_shell_script().get_suffix(),
+                    scripts_dir,
+                    additional_suffix[1:],
+                    system + "." + self.__get_shell_script().get_suffix(),
                 )
                 if os.path.isfile(script_path):
                     paths.append(script_path)
-                    return paths
+            for system in possible_systems:
+                for branch in [
+                    self.spec.branch,
+                    "__cbuild_most_recent_git_tag",
+                    "master",
+                    "main",
+                ]:
+                    script_path = os.path.join(
+                        self.port_dir(),
+                        branch,
+                        system
+                        + additional_suffix
+                        + "."
+                        + self.__get_shell_script().get_suffix(),
+                    )
+                    if os.path.isfile(script_path):
+                        paths.append(script_path)
+            return paths
+
         if (
             action
             in (

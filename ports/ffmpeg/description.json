@@ -12,7 +12,7 @@
   "environment_variable": [
     "run_test=1"
   ],
-  "use_mysy2": true,
+  "use_msys2": true,
   "system_package_dependency": {
     "ubuntu": [
       "libx264-dev",
