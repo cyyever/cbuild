@@ -292,9 +292,11 @@ class PackageDescription:
         return True
 
     def __get_script_paths(self, action):
+        script = self.__get_shell_script()
+        script_suffix = script.get_suffix()
         possible_systems = [BuildContext.get_target_system()]
         for system in ["linux", "unix", "all_os"]:
-            if system in BuildContext.get():
+            if system in BuildContext.get() or script_suffix == "sh":
                 possible_systems.append(system)
         paths = []
 
@@ -311,7 +313,7 @@ class PackageDescription:
                 script_path = os.path.join(
                     scripts_dir,
                     additional_suffix[1:],
-                    system + "." + self.__get_shell_script().get_suffix(),
+                    system + "." + script_suffix,
                 )
                 if os.path.isfile(script_path):
                     paths.append(script_path)
@@ -319,8 +321,8 @@ class PackageDescription:
                 for branch in [
                     self.spec.branch,
                     "__cbuild_most_recent_git_tag",
-                    "master",
                     "main",
+                    "master",
                 ]:
                     script_path = os.path.join(
                         self.port_dir(),
@@ -343,16 +345,15 @@ class PackageDescription:
             )
             and self.get_item("default_build_script")
         ):
-            path = os.path.join(
-                scripts_dir,
-                "build",
-                self.get_item("default_build_script"),
+            build_script_dir = os.path.join(
+                scripts_dir, "build", self.get_item("default_build_script")
             )
-            if BuildContext.get_target_system() == "windows":
-                path = os.path.join(path, "windows.ps1")
-            else:
-                path = os.path.join(path, "unix.sh")
-            paths.append(path)
+            for system in possible_systems:
+                script_path = os.path.join(
+                    build_script_dir, system + "." + script_suffix
+                )
+                if os.path.isfile(script_path):
+                    paths.append(script_path)
             return paths
         return paths
 
