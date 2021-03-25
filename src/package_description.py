@@ -296,38 +296,39 @@ class PackageDescription:
         script_suffix = script.get_suffix()
         possible_systems = [BuildContext.get_target_system()]
         for system in ["linux", "unix", "all_os"]:
-            if system in BuildContext.get() or script_suffix == "sh":
+            if system in BuildContext.get():
                 possible_systems.append(system)
+        branches = [
+            self.spec.branch,
+            "__cbuild_most_recent_git_tag",
+            "main",
+            "master",
+        ]
         paths = []
 
         if action in (
             PackageDescription.BuildAction.PREPROCESS,
             PackageDescription.BuildAction.AFTER_INSTALL,
         ):
-            additional_suffix = ""
             if action == PackageDescription.BuildAction.PREPROCESS:
-                additional_suffix = ".preprocess"
+                additional_suffix = "preprocess"
             else:
-                additional_suffix = ".after_install"
+                additional_suffix = "after_install"
             for system in possible_systems:
                 script_path = os.path.join(
                     scripts_dir,
-                    additional_suffix[1:],
+                    additional_suffix,
                     system + "." + script_suffix,
                 )
                 if os.path.isfile(script_path):
                     paths.append(script_path)
             for system in possible_systems:
-                for branch in [
-                    self.spec.branch,
-                    "__cbuild_most_recent_git_tag",
-                    "main",
-                    "master",
-                ]:
+                for branch in branches:
                     script_path = os.path.join(
                         self.port_dir(),
                         branch,
                         system
+                        + "."
                         + additional_suffix
                         + "."
                         + self.__get_shell_script().get_suffix(),
@@ -336,25 +337,31 @@ class PackageDescription:
                         paths.append(script_path)
             return paths
 
-        if (
-            action
-            in (
-                PackageDescription.BuildAction.BUILD,
-                PackageDescription.BuildAction.BUILD_WITH_CACHE,
-                PackageDescription.BuildAction.DOCKER_BUILD,
-            )
-            and self.get_item("default_build_script")
+        if action in (
+            PackageDescription.BuildAction.BUILD,
+            PackageDescription.BuildAction.BUILD_WITH_CACHE,
+            PackageDescription.BuildAction.DOCKER_BUILD,
         ):
-            build_script_dir = os.path.join(
-                scripts_dir, "build", self.get_item("default_build_script")
-            )
-            for system in possible_systems:
-                script_path = os.path.join(
-                    build_script_dir, system + "." + script_suffix
+            if self.get_item("default_build_script"):
+                build_script_dir = os.path.join(
+                    scripts_dir, "build", self.get_item("default_build_script")
                 )
-                if os.path.isfile(script_path):
-                    paths.append(script_path)
-            return paths
+                for system in possible_systems:
+                    script_path = os.path.join(
+                        build_script_dir, system + "." + script_suffix
+                    )
+                    if os.path.isfile(script_path):
+                        paths.append(script_path)
+            else:
+                for system in possible_systems:
+                    for branch in branches:
+                        script_path = os.path.join(
+                            self.port_dir(),
+                            branch,
+                            system + "." + self.__get_shell_script().get_suffix(),
+                        )
+                        if os.path.isfile(script_path):
+                            paths.append(script_path)
         return paths
 
     def get_item(self, key: str, default=None):
