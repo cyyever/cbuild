@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 import copy
-import datetime
 import os
 from shutil import which
 
@@ -49,9 +48,6 @@ class BuildContext:
                 context_set.add("support_cuda")
         return context_set
 
-
-now = datetime.datetime.now()
-date_str = now.strftime("%Y-%m-%d")
 
 home_dir = os.path.expanduser("~")
 project_dir = os.path.abspath(

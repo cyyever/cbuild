@@ -18,6 +18,17 @@
     "system_package_dependency": {
       "windows": [
         "neovim --pre"
+      ],
+      "archlinux": [
+        "msgpack-c",
+        "libluv",
+        "tree-sitter",
+        "unibilium",
+        "libtermkey",
+        "libvterm",
+        "lua-lpeg",
+        "lua-mpack",
+        "gmock"
       ]
     }
   }

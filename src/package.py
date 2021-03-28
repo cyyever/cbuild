@@ -193,7 +193,6 @@ class Package:
             log_file = os.path.join(
                 environment.log_dir,
                 "succ_docker_log" if exit_code == 0 else "fail_docker_log",
-                environment.date_str,
                 docker_image_name + ".build.txt",
             )
             os.makedirs(os.path.dirname(log_file), exist_ok=True)
