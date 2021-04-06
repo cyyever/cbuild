@@ -49,8 +49,11 @@
     "video_python_binding": [
       "pybind11:__cbuild_most_recent_git_tag"
     ],
-    "video": [
+    "video&&unix": [
       "ffmpeg[shared_lib]:__cbuild_most_recent_git_tag"
+    ],
+    "video&&windows": [
+      "ffmpeg_windows:__cbuild_most_recent_git_tag"
     ],
     "cv&&cuda": [
       "cyy_cuda_buddy[shared_lib]:master"
