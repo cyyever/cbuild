@@ -7,8 +7,8 @@
       "checksum": "no_checksum"
     },
     "windows": {
-      "file_name": "cudnn-11.0-windows10-x64-v8.0.0.180.zip",
-      "url": "http://developer.download.nvidia.com/compute/redist/cudnn/v8.0.0/cudnn-11.0-windows10-x64-v8.0.0.180.zip",
+      "file_name": "cudnn-11.2-windows-x64-v8.1.0.77.zip",
+      "url": "http://developer.download.nvidia.com/compute/redist/cudnn/v8.1.0/cudnn-11.2-windows-x64-v8.1.0.77.zip",
       "checksum": "no_checksum"
     }
   },
