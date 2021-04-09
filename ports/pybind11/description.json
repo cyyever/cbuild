@@ -3,10 +3,8 @@
   "cache_time": 30,
   "default_build_script": "c",
   "environment_variable": [
-    "TEST_TARGET=check",
     "static_analysis=1"
   ],
-  "cmake_options": "-DDOWNLOAD_CATCH=ON",
   "system_package_dependency": {
     "pip": [
       "pytest"
