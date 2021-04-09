@@ -35,6 +35,12 @@
     }
   },
   "system_package_dependency": {
+    "fedora":[
+      "bzip2-devel",
+      "libffi-devel",
+      "readline-devel",
+      "openssl-devel"
+    ]
     "ubuntu": [
       "libexpat1-dev",
       "zlib1g-dev",
@@ -48,6 +54,10 @@
       "libc6-dev",
       "libbz2-dev"
     ],
+    "archlinux": [
+      "bzip2",
+      "expat",
+    ]
     "archlinux": [
       "bzip2",
       "expat",

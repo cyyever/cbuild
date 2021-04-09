@@ -37,6 +37,11 @@
       "protobuf-compiler",
       "libprotobuf-dev"
     ],
+    "fedora": [
+      "protobuf",
+      "protobuf-c-compiler",
+      "protobuf-devel"
+    ],
     "pip": [
       "matplotlib",
       "sklearn",
