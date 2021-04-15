@@ -18,6 +18,7 @@
       "libx264-dev",
       "libx265-dev"
     ],
+    "fedora":["openh264-devel"],
     "freebsd": [
       "libx264",
       "x265"

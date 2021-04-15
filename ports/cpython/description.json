@@ -39,6 +39,7 @@
       "bzip2-devel",
       "libffi-devel",
       "readline-devel",
+      "sqlite-devel",
       "openssl-devel"
     ],
     "ubuntu": [
