@@ -16,8 +16,11 @@
     ],
     "freebsd": [
       "xorg",
+      "dbus",
       "ncurses",
       "harfbuzz",
+      "lcms2",
+      "libxkbcommon",
       "wayland-protocols"
     ],
     "fedora":[
