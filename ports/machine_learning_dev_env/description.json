@@ -30,6 +30,7 @@
       "protobuf"
     ],
     "freebsd": [
+      "freetype2",
       "protobuf",
       "libzmq4"
     ],

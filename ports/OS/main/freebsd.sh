@@ -21,10 +21,13 @@ if ! grep -q 'linux_enable' /etc/rc.conf; then
 fi
 
 if test -f /etc/fstab; then
+if test -d /compat/linux/sys 
+then
   for line in 'linsysfs    /compat/linux/sys	linsysfs	rw	0	0' 'linprocfs   /compat/linux/proc	linprocfs	rw	0	0' 'tmpfs    /compat/linux/dev/shm	tmpfs	rw,mode=1777	0	0'; do
     if ! grep "$line" /etc/fstab; then
       printf "%s\n" "$line" | sudo tee -a /etc/fstab
     fi
   done
   ${sudo_cmd} mount -a
+fi
 fi

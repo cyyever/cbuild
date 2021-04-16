@@ -17,6 +17,7 @@
     "freebsd": [
       "xorg",
       "ncurses",
+      "harfbuzz",
       "wayland-protocols"
     ],
     "fedora":[

@@ -42,6 +42,7 @@
       "sqlite-devel",
       "openssl-devel"
     ],
+    "freebsd":["sqlite3"],
     "ubuntu": [
       "libexpat1-dev",
       "zlib1g-dev",

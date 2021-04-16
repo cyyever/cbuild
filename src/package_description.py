@@ -295,7 +295,7 @@ class PackageDescription:
         script = self.__get_shell_script()
         script_suffix = script.get_suffix()
         possible_systems = [BuildContext.get_target_system()]
-        for system in ["linux", "unix", "all_os"]:
+        for system in ["linux","bsd", "unix", "all_os"]:
             if system in BuildContext.get():
                 possible_systems.append(system)
         branches = [
