@@ -1,3 +1,0 @@
-[submodule "naive_lib"]
-	path = naive_lib
-	url = git@github.com:cyyever/naive_python_lib.git
