@@ -13,9 +13,7 @@
       "group_package": true
     },
     "windows": {
-      "file_name": "cuda_10..89_441.22_win10.exe",
-      "url": "http://developer.download.nvidia.com/compute/cuda/10.2/Prod/local_installers/cuda_10.2.89_441.22_win10.exe",
-      "checksum": "no_checksum"
+      "group_package": true
     },
     "linux": {
       "file_name": "cuda_11.2.1_460.32.03_linux.run",
@@ -24,6 +22,9 @@
     }
   },
   "system_package_dependency": {
+    "windows": [
+      "cuda"
+    ],
     "archlinux": [
       "cuda"
     ]
