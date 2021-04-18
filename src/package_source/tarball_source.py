@@ -4,9 +4,10 @@ import shutil
 import sys
 import zipfile
 
-from src import environment
-from naive_lib.cyy_naive_lib.shell_factory import exec_cmd
 from naive_lib.cyy_naive_lib.fs.tempdir import TempDir
+from naive_lib.cyy_naive_lib.shell_factory import exec_cmd
+from src import environment
+
 from .file_source import FileSource
 
 
@@ -14,13 +15,7 @@ class TarballSource(FileSource):
     def __init__(self, spec, url, root_dir, file_name, checksum=None):
         super().__init__(spec, url, root_dir, file_name, checksum)
         self.suffix = None
-        for suffix in [
-            ".zip",
-            ".tar",
-            ".tar.gz",
-            ".tar.xz",
-            ".tar.bz2",
-                ".tgz"]:
+        for suffix in [".7z", ".zip", ".tar", ".tar.gz", ".tar.xz", ".tar.bz2", ".tgz"]:
             if self.file_name.endswith(suffix):
                 self.suffix = suffix
 
@@ -49,6 +44,8 @@ class TarballSource(FileSource):
                 if self.suffix == ".zip":
                     with zipfile.ZipFile(self._file_path, "r") as myzip:
                         myzip.extractall()
+                elif self.suffix == ".7z":
+                    exec_cmd("7z x " + self._file_path)
                 else:
                     exec_cmd("tar -xf " + self._file_path)
                 exec_cmd("mv * " + tarball_dir)

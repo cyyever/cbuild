@@ -9,10 +9,10 @@
     "ubuntu": {
       "script_package": true
     },
-    "archlinux": {
+    "windows": {
       "group_package": true
     },
-    "windows": {
+    "archlinux": {
       "group_package": true
     },
     "linux": {

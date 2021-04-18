@@ -30,12 +30,18 @@
       "protobuf"
     ],
     "freebsd": [
+      "freetype2",
       "protobuf",
       "libzmq4"
     ],
     "ubuntu": [
       "protobuf-compiler",
       "libprotobuf-dev"
+    ],
+    "fedora": [
+      "protobuf",
+      "protobuf-c-compiler",
+      "protobuf-devel"
     ],
     "pip": [
       "matplotlib",

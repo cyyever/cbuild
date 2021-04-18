@@ -8,6 +8,9 @@
       "nodejs",
       "npm"
     ],
+    "fedora":[
+	    "nodejs"
+    ],
     "macos":[
 	    "nodejs"
     ],

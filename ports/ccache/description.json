@@ -8,6 +8,9 @@
     "unix": [
       "gperf"
     ],
+"fedora":[
+      "libzstd-devel"
+],
 "macos":[
       "zstd"
 ],

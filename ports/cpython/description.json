@@ -35,6 +35,14 @@
     }
   },
   "system_package_dependency": {
+    "fedora": [
+      "bzip2-devel",
+      "libffi-devel",
+      "readline-devel",
+      "sqlite-devel",
+      "openssl-devel"
+    ],
+    "freebsd":["sqlite3"],
     "ubuntu": [
       "libexpat1-dev",
       "zlib1g-dev",

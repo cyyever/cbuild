@@ -16,9 +16,15 @@
     ],
     "freebsd": [
       "xorg",
+      "dbus",
       "ncurses",
+      "harfbuzz",
+      "lcms2",
+      "libxkbcommon",
       "wayland-protocols"
     ],
+    "fedora":[
+	    "harfbuzz-devel","lcms2-devel","fontconfig-devel","mesa-libGL-devel","libxkbcommon-devel","libXrandr-devel","libXinerama-devel","libXcursor-devel","libxkbcommon-x11-devel","dbus-devel","libXi-devel"],
     "unix": [
       "rsync"
     ]

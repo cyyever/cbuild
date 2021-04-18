@@ -45,6 +45,9 @@
     "centos": [
       "yum"
     ],
+    "fedora": [
+      "yum"
+    ],
     "windows": [
       "chocolatey"
     ],
