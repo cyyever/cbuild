@@ -5,6 +5,9 @@
     "opencv_contrib:__cbuild_most_recent_git_tag",
     "machine_learning_dev_env:__cbuild_most_recent_git_tag"
   ],
+  "ignored_tag_regex": [
+    "openvino"
+  ],
   "build_languages": [
     "python",
     "cpp"
