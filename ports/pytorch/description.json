@@ -64,7 +64,7 @@
   },
   "dependency": [
     "machine_learning_dev_env:__cbuild_most_recent_git_tag",
-    "pybind11:__cbuild_most_recent_git_tag"
+    "pybind11:master"
   ],
   "system_package_dependency": {
     "ubuntu": [

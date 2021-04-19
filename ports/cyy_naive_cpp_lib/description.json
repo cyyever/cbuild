@@ -41,13 +41,13 @@
       "torchvision:master"
     ],
     "cv_python_binding": [
-      "pybind11:__cbuild_most_recent_git_tag"
+      "pybind11:master"
     ],
     "torch_python_binding": [
-      "pybind11:__cbuild_most_recent_git_tag"
+      "pybind11:master"
     ],
     "video_python_binding": [
-      "pybind11:__cbuild_most_recent_git_tag"
+      "pybind11:master"
     ],
     "video&&unix": [
       "ffmpeg[shared_lib]:__cbuild_most_recent_git_tag"
