@@ -5,7 +5,7 @@ import shutil
 import sys
 import time
 
-from naive_lib.cyy_naive_lib.shell.docker_file import DockerFile
+from cyy_naive_lib.shell.docker_file import DockerFile
 
 from . import environment
 from .environment import BuildContext

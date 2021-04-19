@@ -5,10 +5,10 @@ import sys
 from enum import Enum, auto
 from pathlib import Path
 
-from naive_lib.cyy_naive_lib.algorithm.sequence_op import flatten_list
-from naive_lib.cyy_naive_lib.shell.msys2_script import MSYS2Script
-from naive_lib.cyy_naive_lib.shell_factory import get_shell_script_type
-from naive_lib.cyy_naive_lib.util import readlines
+from cyy_naive_lib.algorithm.sequence_op import flatten_list
+from cyy_naive_lib.shell.msys2_script import MSYS2Script
+from cyy_naive_lib.shell_factory import get_shell_script_type
+from cyy_naive_lib.util import readlines
 
 from .config import Config, Environment, ToolMapping
 from .environment import BuildContext, ports_dirs, scripts_dir, sources_dir

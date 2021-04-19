@@ -5,7 +5,7 @@ import sys
 import requests
 from tqdm import tqdm
 
-from naive_lib.cyy_naive_lib.algorithm.hash import file_hash
+from cyy_naive_lib.algorithm.hash import file_hash
 
 from .source import Source
 

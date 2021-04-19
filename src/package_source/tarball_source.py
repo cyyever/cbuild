@@ -4,8 +4,8 @@ import shutil
 import sys
 import zipfile
 
-from naive_lib.cyy_naive_lib.fs.tempdir import TempDir
-from naive_lib.cyy_naive_lib.shell_factory import exec_cmd
+from cyy_naive_lib.fs.tempdir import TempDir
+from cyy_naive_lib.shell_factory import exec_cmd
 from src import environment
 
 from .file_source import FileSource

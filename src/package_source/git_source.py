@@ -5,8 +5,8 @@ import sys
 import time
 from distutils.version import LooseVersion
 
-from naive_lib.cyy_naive_lib.shell_factory import exec_cmd
-from naive_lib.cyy_naive_lib.util import readlines
+from cyy_naive_lib.shell_factory import exec_cmd
+from cyy_naive_lib.util import readlines
 
 from .source import Source
 

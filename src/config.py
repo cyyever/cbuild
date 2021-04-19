@@ -4,7 +4,7 @@ import multiprocessing
 import os
 from typing import Callable
 
-from naive_lib.cyy_naive_lib.algorithm.sequence_op import flatten_list
+from cyy_naive_lib.algorithm.sequence_op import flatten_list
 
 from .environment import project_dir
 

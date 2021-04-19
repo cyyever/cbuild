@@ -3,7 +3,7 @@ import copy
 import os
 from shutil import which
 
-from naive_lib.cyy_naive_lib.system_info import (get_operating_system,
+from cyy_naive_lib.system_info import (get_operating_system,
                                                  get_processor_name)
 
 
