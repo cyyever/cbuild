@@ -1,0 +1,7 @@
+{
+  "git_url": "git@github.com:protocolbuffers/protobuf.git",
+  "default_build_script": "c",
+  "environment_variable": [
+    "SRC_SUBDIR=cmake"
+  ]
+}
