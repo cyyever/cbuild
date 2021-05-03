@@ -8,11 +8,11 @@
       "nodejs",
       "npm"
     ],
-    "fedora":[
-	    "nodejs"
+    "fedora": [
+      "nodejs"
     ],
-    "macos":[
-	    "nodejs"
+    "macos": [
+      "nodejs"
     ],
     "freebsd": [
       "www/npm"
