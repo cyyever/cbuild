@@ -16,7 +16,8 @@
       "pillow-simd:__cbuild_most_recent_git_tag"
     ],
     "windows": [
-      "zlib:develop"
+      "zlib:develop",
+      "protobuf:__cbuild_most_recent_git_tag"
     ],
     "cuda": [
       "cudnn:__cbuild_most_recent_git_tag"

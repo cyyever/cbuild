@@ -13,6 +13,14 @@
       "yaml-cpp",
       "marisa"
     ],
+    "freebsd": [
+      "capnproto",
+      "yaml-cpp",
+      "marisa-tire",
+      "zh-opencc",
+      "leveldb",
+      "glog"
+    ],
     "ubuntu": [
       "libyaml-cpp-dev",
       "libopencc-dev",
