@@ -1,0 +1,8 @@
+{
+  "git_url": "git@github.com:explosion/spaCy.git",
+  "cache_time": 30,
+  "environment_variable": [
+    "run_test=0"
+  ],
+  "default_build_script": "python"
+}
