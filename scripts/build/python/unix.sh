@@ -14,6 +14,10 @@ if test -f "setup.py"; then
   # for _ in $(seq 5); do
   #   ${__CBUILD_PIP_EXE} uninstall $pkg_name -y || true
   # done
+
+  if [[ -n ${PYTHON_SETUP_CMD} ]]; then
+    ${PYTHON_SETUP_CMD}
+  fi
   if [[ -n ${DEFAULT_INSTALL_PREFIX+x} ]]; then
     ${__CBUILD_PYTHON_EXE} setup.py install --force
   else

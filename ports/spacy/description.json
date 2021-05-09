@@ -2,7 +2,8 @@
   "git_url": "git@github.com:explosion/spaCy.git",
   "cache_time": 30,
   "environment_variable": [
-    "run_test=0"
+    "run_test=0",
+    "PYTHON_SETUP_CMD=${CBUILD_PYTHON_EXE} setup.py build_ext --inplace"
   ],
   "default_build_script": "python"
 }
