@@ -1,6 +1,9 @@
 {
   "git_url": "git@github.com:pytorch/text.git",
   "default_build_script": "python",
+  "environment_variable": [
+    "run_test=0"
+  ],
   "dependency": [
     "pytorch:master"
   ]
