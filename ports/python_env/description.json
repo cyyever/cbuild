@@ -2,7 +2,7 @@
   "group_package": true,
   "conditional_dependency": {
     "unix": [
-      "cpython:v3.9.4"
+      "cpython:v3.9.5"
     ]
   },
   "system_package_dependency": {
