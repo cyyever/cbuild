@@ -11,7 +11,7 @@ if ((Test-Path setup.py -PathType Leaf)) {
         rm -r -Force build
     }
 
-    Invoke-Expression "$env:CBUILD_PYTHON_EXE -m pip uninstall ($env:CBUILD_PYTHON_EXE setup.py --name) -y"
+    # Invoke-Expression "$env:CBUILD_PYTHON_EXE -m pip uninstall ($env:CBUILD_PYTHON_EXE setup.py --name) -y"
     Invoke-Expression "$env:CBUILD_PYTHON_EXE setup.py install --user --force"
     if ($LastExitCode -ne 0) {
         exit $LastExitCode

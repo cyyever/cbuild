@@ -11,7 +11,6 @@
       "python_dev_env:__cbuild_most_recent_git_tag",
       "libjpeg-turbo:__cbuild_most_recent_git_tag",
       "openblas[shared_lib]:__cbuild_most_recent_git_tag",
-      "numpy:__cbuild_most_recent_git_tag",
       "eigen:__cbuild_most_recent_git_tag",
       "pillow-simd:__cbuild_most_recent_git_tag"
     ],
@@ -19,11 +18,19 @@
       "zlib:develop",
       "protobuf:__cbuild_most_recent_git_tag"
     ],
+    "unix": [
+      "numpy:__cbuild_most_recent_git_tag"
+    ],
     "cuda": [
       "cudnn:__cbuild_most_recent_git_tag"
     ],
     "linux&&cuda": [
       "nccl:__cbuild_most_recent_git_tag"
+    ]
+  },
+  "conditional_system_package_dependency": {
+    "pip": [
+      "numpy"
     ]
   },
   "system_package_dependency": {
