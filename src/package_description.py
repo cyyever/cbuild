@@ -137,6 +137,9 @@ class PackageDescription:
             building_tools, possible_languages = ToolMapping().guess_language(
                 self.__get_script_content(PackageDescription.BuildAction.BUILD)
             )
+        lang = self.get_item("default_build_script")
+        if lang and ToolMapping().is_supported_language(lang):
+            possible_languages.add(lang)
 
         if self.check_language_feature:
             self.check_language_feature = False
@@ -295,7 +298,7 @@ class PackageDescription:
         script = self.__get_shell_script()
         script_suffix = script.get_suffix()
         possible_systems = [BuildContext.get_target_system()]
-        for system in ["linux","bsd", "unix", "all_os"]:
+        for system in ["linux", "bsd", "unix", "all_os"]:
             if system in BuildContext.get():
                 possible_systems.append(system)
         branches = [

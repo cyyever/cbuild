@@ -1,5 +1,8 @@
 {
   "conditional_dependency": {
+    "feature_language_c": [
+      "cxx_env:master"
+    ],
     "feature_language_cpp": [
       "cxx_env:master"
     ],
