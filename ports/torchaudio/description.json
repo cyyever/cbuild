@@ -1,0 +1,18 @@
+{
+  "git_url": "git@github.com:pytorch/audio.git",
+  "default_build_script": "python",
+  "environment_variable": [
+    "run_test=0"
+  ],
+  "dependency": [
+    "pytorch:master"
+  ],
+  "system_package_dependency": {
+    "archlinux": [
+      "sox"
+    ],
+    "pip": [
+      "librosa"
+    ]
+  }
+}
