@@ -137,6 +137,8 @@ class PackageDescription:
             building_tools, possible_languages = ToolMapping().guess_language(
                 self.__get_script_content(PackageDescription.BuildAction.BUILD)
             )
+        else:
+            possible_languages = set(possible_languages)
         lang = self.get_item("default_build_script")
         if lang and ToolMapping().is_supported_language(lang):
             possible_languages.add(lang)
