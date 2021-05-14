@@ -11,6 +11,9 @@
     "archlinux": [
       "sox"
     ],
+    "ubuntu": [
+      "libsox-dev"
+    ],
     "pip": [
       "librosa"
     ]
