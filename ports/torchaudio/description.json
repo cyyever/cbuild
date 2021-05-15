@@ -3,7 +3,7 @@
   "default_build_script": "python",
   "environment_variable": [
     "run_test=0",
-    "BUILD_SOX=ON",
+    "BUILD_SOX=OFF",
     "BUILD_KALDI=OFF",
     "BUILD_CUDA=ON"
   ],
