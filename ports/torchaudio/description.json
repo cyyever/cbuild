@@ -2,9 +2,13 @@
   "git_url": "git@github.com:pytorch/audio.git",
   "default_build_script": "python",
   "environment_variable": [
-    "run_test=0"
+    "run_test=0",
+    "BUILD_SOX=ON",
+    "BUILD_KALDI=OFF",
+    "BUILD_CUDA=ON"
   ],
   "dependency": [
+    "pytorch:master"
   ],
   "system_package_dependency": {
     "archlinux": [
