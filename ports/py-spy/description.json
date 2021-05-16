@@ -1,0 +1,11 @@
+{
+  "git_url": "git@github.com:benfred/py-spy.git",
+  "default_build_script": "python",
+  "build_languages": [
+    "python",
+    "rust"
+  ],
+  "environment_variable": [
+    "run_test=0"
+  ]
+}
