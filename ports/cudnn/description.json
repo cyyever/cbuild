@@ -2,8 +2,8 @@
   "cache_time": 3000,
   "__cbuild_most_recent_git_tag": {
     "linux": {
-      "file_name": "cudnn-11.2-linux-x64-v8.1.1.33.tgz",
-      "url": "http://developer.download.nvidia.com/compute/redist/cudnn/v8.1.1/cudnn-11.2-linux-x64-v8.1.1.33.tgz",
+      "file_name": "cudnn-11.3-linux-x64-v8.2.0.53.tgz",
+      "url": "http://developer.download.nvidia.com/compute/redist/cudnn/v8.2.0/cudnn-11.3-linux-x64-v8.2.0.53.tgz",
       "checksum": "no_checksum"
     },
     "windows": {
