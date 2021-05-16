@@ -47,7 +47,7 @@
       "libexpat1-dev",
       "zlib1g-dev",
       "libffi-dev",
-      "libreadline-gplv2-dev",
+      "libreadline-dev",
       "libncursesw5-dev",
       "libssl-dev",
       "libsqlite3-dev",
