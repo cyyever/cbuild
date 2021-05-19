@@ -15,7 +15,7 @@
     ],
     "windows": [
       "zlib:develop",
-      "protobuf:__cbuild_most_recent_git_tag"
+      "protobuf[shared_lib]:__cbuild_most_recent_git_tag"
     ],
     "unix": [
       "numpy:__cbuild_most_recent_git_tag"
