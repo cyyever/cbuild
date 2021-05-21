@@ -27,11 +27,6 @@
       "nccl:__cbuild_most_recent_git_tag"
     ]
   },
-  "conditional_system_package_dependency": {
-    "pip": [
-      "numpy"
-    ]
-  },
   "system_package_dependency": {
     "archlinux": [
       "protobuf"
@@ -54,6 +49,7 @@
       "matplotlib",
       "sklearn",
       "pandas",
+      "tensorboard",
       "visdom"
     ]
   }
