@@ -18,6 +18,7 @@
     ],
     "archlinux": [
       "yay",
+      "vim",
       "fakeroot"
     ],
     "bsd": [
