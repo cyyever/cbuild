@@ -45,12 +45,18 @@ if test -f "${__SRC_DIR}/CMakeLists.txt"; then
 else
   cd ${__SRC_DIR}
   if test -f "${__SRC_DIR}/autogen.sh"; then
-    bash "${__SRC_DIR}/autogen.sh"
+    bash autogen.sh
+  fi
+  if test -f "${__SRC_DIR}/configure.ac"; then
+    autoreconf -i -f configure.ac
   fi
   if test -f "${__SRC_DIR}/configure"; then
     debug_option=""
     if [[ "${BUILD_TYPE}" == "Debug" ]]; then
       debug_option="--enable-debug=3"
+    fi
+    if [[ "${FEATURE_shared_lib+x}" == "1" ]]; then
+      debug_option="--enable-shared"
     fi
     if [[ -n ${USE_BUILD_DIR+x} ]]; then
       cd ${BUILD_DIR}

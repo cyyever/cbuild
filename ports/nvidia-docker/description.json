@@ -5,6 +5,7 @@
   ],
   "system_package_dependency": {
     "yay": [
+      "nvidia-container-runtime",
       "nvidia-container-toolkit"
     ]
   }

@@ -8,15 +8,10 @@
     "BUILD_CUDA=ON"
   ],
   "dependency": [
-    "pytorch:master"
+    "pytorch:master",
+    "sox[shared_lib]:master"
   ],
   "system_package_dependency": {
-    "archlinux": [
-      "sox"
-    ],
-    "ubuntu": [
-      "libsox-dev"
-    ],
     "pip": [
       "librosa"
     ]

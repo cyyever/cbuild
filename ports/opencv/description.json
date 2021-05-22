@@ -17,6 +17,14 @@
       "cuda"
     ]
   },
+  "conditional_dependency": {
+    "unix": [
+      "ffmpeg[shared_lib]:__cbuild_most_recent_git_tag"
+    ],
+    "windows": [
+      "ffmpeg_windows:__cbuild_most_recent_git_tag"
+    ]
+  },
   "environment_variable": [
     "run_test=0",
     "static_analysis=1"
@@ -52,7 +60,6 @@
     "freebsd": "-DWITH_IPP=off"
   },
   "feature_cmake_options": {
-    "highgui": "-DBUILD_opencv_highgui=ON",
-    "full": "-DBUILD_opencv_highgui=ON -DBUILD_opencv_video=ON -DBUILD_opencv_videoio=ON -DBUILD_opencv_videostab=ON -DBUILD_opencv_cudaoptflow=ON -DBUILD_opencv_optflow=ON -DBUILD_opencv_calib3d=on -DBUILD_opencv_features2d=ON -DBUILD_opencv_cudafeatures2d=on -DBUILD_opencv_flann=on -DBUILD_opencv_dnn=ON -DWITH_PROTOBUF=on -DBUILD_opencv_stitching=ON"
+    "full": "-DBUILD_opencv_highgui=ON -DBUILD_opencv_video=ON -DBUILD_opencv_videoio=ON -DBUILD_opencv_videostab=ON -DBUILD_opencv_cudaoptflow=ON -DBUILD_opencv_optflow=ON -DBUILD_opencv_calib3d=on -DBUILD_opencv_features2d=ON -DBUILD_opencv_cudafeatures2d=on -DBUILD_opencv_flann=on -DBUILD_opencv_dnn=ON -DWITH_PROTOBUF=on -DBUILD_opencv_stitching=ON -DWITH_FFMPEG=ON"
   }
 }

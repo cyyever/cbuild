@@ -16,7 +16,7 @@ class GitSource(Source):
     def is_git_source(git_url):
         if git_url is None:
             return False
-        return git_url.endswith(".git")
+        return git_url.endswith(".git") or git_url.startswith("git://")
 
     def __init__(
         self,
