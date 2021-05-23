@@ -11,11 +11,11 @@
       "libjpeg-turbo:__cbuild_most_recent_git_tag",
       "openblas[shared_lib]:__cbuild_most_recent_git_tag",
       "eigen:__cbuild_most_recent_git_tag",
-      "pillow-simd:__cbuild_most_recent_git_tag"
+      "pillow-simd:__cbuild_most_recent_git_tag",
+      "protobuf[shared_lib]:__cbuild_most_recent_git_tag"
     ],
     "windows": [
-      "zlib:develop",
-      "protobuf[shared_lib]:__cbuild_most_recent_git_tag"
+      "zlib:develop"
     ],
     "unix": [
       "numpy:__cbuild_most_recent_git_tag"
