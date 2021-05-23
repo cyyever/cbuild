@@ -36,6 +36,7 @@
     "ubuntu": [
       "bison",
       "flex",
+      "autoconf-archive",
       "libtool-bin",
       "g++",
       "make",

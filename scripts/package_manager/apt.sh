@@ -16,6 +16,8 @@ done
 
 if [[ "${BUILD_CONTEXT_docker:=0}" == 1 ]]; then
   ${sudo_cmd} rm -rf /var/lib/apt/lists/*
+  ${sudo_cmd} rm -rf /usr/local/share/doc
+  ${sudo_cmd} rm -rf /usr/local/share/man
   ${sudo_cmd} apt-get clean -y
   ${sudo_cmd} apt-get purge -y
 fi
