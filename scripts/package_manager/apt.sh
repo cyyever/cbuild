@@ -13,3 +13,9 @@ for pkg in ${apt_pkgs}; do
     ${sudo_cmd} apt-get install --no-install-recommends -y $pkg
   fi
 done
+
+if [[ "${BUILD_CONTEXT_docker:=0}" == 1 ]]; then
+  ${sudo_cmd} rm -rf /var/lib/apt/lists/*
+  ${sudo_cmd} apt-get clean -y
+  ${sudo_cmd} apt-get purge -y
+fi
