@@ -6,6 +6,7 @@ import time
 from distutils.version import LooseVersion
 
 from cyy_naive_lib.shell_factory import exec_cmd
+from cyy_naive_lib.system_info import get_operating_system
 from cyy_naive_lib.util import readlines
 
 from .source import Source
@@ -52,8 +53,8 @@ class GitSource(Source):
                     os.rmdir(self.__repositary_path)
                 else:
                     sys.exit(
-                        self.__repositary_path +
-                        " exists but not a git repository")
+                        self.__repositary_path + " exists but not a git repository"
+                    )
 
             os.makedirs(self.__repositary_path, exist_ok=True)
             os.chdir(self.__repositary_path)
@@ -62,11 +63,7 @@ class GitSource(Source):
         os.chdir(self.__repositary_path)
         if self.spec.branch == "__cbuild_most_recent_git_tag":
             self.spec.branch = self.__get_max_tag()
-            print(
-                "resolve spec",
-                self.spec.name,
-                "to branch",
-                self.spec.branch)
+            print("resolve spec", self.spec.name, "to branch", self.spec.branch)
 
         exec_cmd("git fetch --depth 1 origin " + self.spec.branch)
         exec_cmd("git reset --hard FETCH_HEAD")
@@ -77,7 +74,11 @@ class GitSource(Source):
             cmd = "git "
             if self.ignored_submodules:
                 for submodel in self.ignored_submodules:
-                    cmd += '-c submodule."' + submodel + '".update=none '
+                    if get_operating_system() == "windows":
+                        cmd += "-c submodule." + submodel + ".update=none "
+                    else:
+                        cmd += '-c submodule."' + submodel + '".update=none '
+            print(cmd)
             cmd += " submodule update --init --recursive"
             exec_cmd(cmd)
 
@@ -89,13 +90,13 @@ class GitSource(Source):
 
     def __get_max_tag(self):
         cache_file = "__cbuild_most_recent_git_tag"
-        if os.path.isfile(cache_file) and time.time() < 3600 * \
-                24 + os.path.getmtime(cache_file):
+        if os.path.isfile(cache_file) and time.time() < 3600 * 24 + os.path.getmtime(
+            cache_file
+        ):
             return readlines(cache_file)[0].strip()
 
         exec_cmd("git fetch origin --depth 1 --tags -f")
-        tags, _ = exec_cmd(
-            "git describe --tags $(git rev-list --tags --max-count=10)")
+        tags, _ = exec_cmd("git describe --tags $(git rev-list --tags --max-count=10)")
         if tags is None:
             sys.exit("get max tag failed")
         tags = tags.strip().splitlines()

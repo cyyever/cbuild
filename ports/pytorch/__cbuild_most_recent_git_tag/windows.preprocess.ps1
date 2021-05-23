@@ -4,3 +4,4 @@ sed_cmd -i -e 's/SET(CMAKE_REQUIRED_LIBRARIES ${BLAS_LIBRARIES})/SET(CMAKE_REQUI
 sed_cmd -i -e 's/project(Torch CXX C)/project(Torch CXX C ASM)/g' CMakeLists.txt
 sed_cmd -i -e '2155s/input, weight, bias, running_mean, running_var, training, momentum, eps, torch.backends.cudnn.enabled/input, weight, bias, running_mean, running_var, training, momentum, eps, False/' torch/nn/functional.py
 sed_cmd -i -e 's/set(CMAKE_CXX_STANDARD 14)/set(CMAKE_CXX_STANDARD 17)/g' CMakeLists.txt
+sed_cmd -i -e '/^ *check_submodules()/d' setup.py
