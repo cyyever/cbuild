@@ -3,13 +3,12 @@
   "default_build_script": "python",
   "environment_variable": [
     "run_test=0",
-    "BUILD_SOX=OFF",
+    "BUILD_SOX=ON",
     "BUILD_KALDI=OFF",
     "BUILD_CUDA=ON"
   ],
   "dependency": [
-    "pytorch:master",
-    "sox[shared_lib]:master"
+    "pytorch:master"
   ],
   "system_package_dependency": {
     "pip": [
