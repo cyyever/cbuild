@@ -7,6 +7,9 @@
     "BUILD_KALDI=OFF",
     "BUILD_CUDA=ON"
   ],
+  "ignored_git_submodules": [
+    "kaldi"
+  ],
   "dependency": [
     "pytorch:master"
   ],
