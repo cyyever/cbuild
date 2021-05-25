@@ -33,6 +33,9 @@
       "make",
       "base-devel"
     ],
+    "centos": [
+      "autoconf-archive"
+    ],
     "ubuntu": [
       "bison",
       "flex",
