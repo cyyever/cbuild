@@ -5,6 +5,7 @@
     "run_test=0"
   ],
   "dependency": [
-    "pytorch:master"
+    "pytorch:master",
+    "spacy:__cbuild_most_recent_git_tag"
   ]
 }
