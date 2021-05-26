@@ -5,9 +5,6 @@
       "Visual-Studio:2019"
     ]
   },
-  "dependency": [
-    "ninja:__cbuild_most_recent_git_tag"
-  ],
   "system_package_dependency": {
     "all_os": [
       "cmake"
