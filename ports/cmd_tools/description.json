@@ -1,9 +1,6 @@
 {
   "group_package": true,
   "system_package_dependency": {
-    "unix": [
-      "openconnect"
-    ],
     "linux||macos": [
       "imagemagick"
     ],
@@ -22,7 +19,7 @@
     ]
   },
   "context_dependency": {
-	  "bsd":[
+	  "unix":[
     "htop:__cbuild_most_recent_git_tag"
   ]
   }
