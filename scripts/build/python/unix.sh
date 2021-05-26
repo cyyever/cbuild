@@ -15,9 +15,10 @@ if test -f "setup.py"; then
   #   ${__CBUILD_PIP_EXE} uninstall $pkg_name -y || true
   # done
 
-  if [[ -n ${PYTHON_SETUP_CMD+x} ]]; then
-    ${PYTHON_SETUP_CMD}
-  fi
+  # if [[ -n ${PYTHON_SETUP_CMD+x} ]]; then
+  #   ${PYTHON_SETUP_CMD}
+  # fi
+  ${CBUILD_PYTHON_EXE} setup.py build_ext --inplace -j $MAX_JOBS
   if [[ -n ${DEFAULT_INSTALL_PREFIX+x} ]]; then
     ${__CBUILD_PYTHON_EXE} setup.py install --force
   else
