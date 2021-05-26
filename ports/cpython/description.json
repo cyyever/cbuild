@@ -37,6 +37,7 @@
   "system_package_dependency": {
     "centos": [
       "bzip2-devel",
+      "xz-devel",
       "libffi-devel",
       "readline-devel",
       "sqlite-devel",
