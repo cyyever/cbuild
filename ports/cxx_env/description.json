@@ -5,6 +5,9 @@
       "Visual-Studio:2019"
     ]
   },
+  "dependency": [
+    "ninja:__cbuild_most_recent_git_tag"
+  ],
   "system_package_dependency": {
     "all_os": [
       "cmake"
@@ -16,17 +19,12 @@
       "gcc",
       "libtool"
     ],
-    "macos": [
-      "ninja"
-    ],
     "freebsd": [
       "gmake",
       "pkgconf",
-      "googletest",
-      "ninja"
+      "googletest"
     ],
     "archlinux": [
-      "ninja",
       "flex",
       "pkgconf",
       "bison",
@@ -43,13 +41,11 @@
       "libtool-bin",
       "g++",
       "make",
-      "ninja-build",
       "pkg-config"
     ],
     "windows": [
       "pkgconfiglite",
-      "vswhere",
-      "ninja"
+      "vswhere"
     ]
   }
 }
