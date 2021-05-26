@@ -285,6 +285,13 @@ class PackageDescription:
     def __check_conditions(self, condition_expr, elements=None):
         if elements is None:
             elements = BuildContext.get() | self.get_features()
+        conditions = condition_expr.split("||")
+        for condition in conditions:
+            if self.__check_and_conditions(condition, elements):
+                return True
+        return False
+
+    def __check_and_conditions(self, condition_expr, elements):
         conditions = condition_expr.split("&&")
         for condition in conditions:
             flag = None
