@@ -8,6 +8,10 @@
     "archlinux": [
       "rust"
     ],
+    "centos": [
+      "rust",
+      "cargo"
+    ],
     "freebsd": [
       "rust"
     ]

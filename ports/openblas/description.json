@@ -2,7 +2,6 @@
   "git_url": "git@github.com:xianyi/OpenBLAS.git",
   "cache_time": 30,
   "environment_variable": [
-    "try_cmake_again=1",
     "USE_OPENMP=1"
   ],
   "cmake_options": "-DBUILD_WITHOUT_LAPACK=OFF -DBUILD_BFLOAT16=OFF",

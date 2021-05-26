@@ -28,8 +28,13 @@
     ],
     "fedora":[
 	    "harfbuzz-devel","lcms2-devel","fontconfig-devel","mesa-libGL-devel","libxkbcommon-devel","libXrandr-devel","libXinerama-devel","libXcursor-devel","libxkbcommon-x11-devel","dbus-devel","libXi-devel"],
+    "centos":[
+"lcms2-devel","fontconfig-devel","mesa-libGL-devel","libxkbcommon-devel","libXrandr-devel","libXinerama-devel","libXcursor-devel","libxkbcommon-x11-devel","dbus-devel","libXi-devel"],
     "unix": [
       "rsync"
     ]
-  }
+  },
+  "dependency": [
+    "harfbuzz:__cbuild_most_recent_git_tag"
+  ]
 }

@@ -34,6 +34,7 @@
       "base-devel"
     ],
     "centos":[
+	    "libunwind-devel",
       "bison",
       "flex",
       "autoconf-archive",

@@ -1,0 +1,14 @@
+{
+  "git_url": "https://code.videolan.org/videolan/x264.git",
+  "cache_time": 300,
+  "dependency": [
+    "assembly_env:__cbuild_most_recent_git_tag"
+  ],
+  "environment_variable": [
+    "run_test=1"
+  ],
+  "default_build_script": "c",
+  "feature_configure_options": {
+    "shared_lib": "--enable-shared"
+  }
+}
