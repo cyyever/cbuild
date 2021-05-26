@@ -6,6 +6,9 @@
     "unix": [
       "cmake"
     ],
+    "centos": [
+      "openssl-devel"
+    ],
     "ubuntu": [
       "libssl-dev"
     ]

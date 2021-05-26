@@ -33,6 +33,16 @@
       "make",
       "base-devel"
     ],
+    "centos":[
+      "bison",
+      "flex",
+      "autoconf-archive",
+      "libtool",
+      "gcc-c++",
+      "make",
+      "ninja-build",
+      "pkg-config"
+    ],
     "ubuntu": [
       "bison",
       "flex",
