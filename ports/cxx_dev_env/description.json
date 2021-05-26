@@ -20,7 +20,8 @@
       "ccache:__cbuild_most_recent_git_tag"
     ],
     "unix": [
-      "llvm:__cbuild_most_recent_git_tag"
+      "llvm:__cbuild_most_recent_git_tag",
+      "gcc:releases/gcc-10.2.0"
     ]
   },
   "dependency": [

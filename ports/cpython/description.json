@@ -35,12 +35,21 @@
     }
   },
   "system_package_dependency": {
-    "fedora||centos": [
+    "centos": [
       "bzip2-devel",
       "libffi-devel",
       "readline-devel",
       "sqlite-devel",
-      "openssl-devel"
+      "openssl-devel",
+      "expat-devel"
+    ],
+    "fedora": [
+      "bzip2-devel",
+      "libffi-devel",
+      "readline-devel",
+      "sqlite-devel",
+      "openssl-devel",
+      "expat-devel"
     ],
     "freebsd":["sqlite3"],
     "ubuntu": [
