@@ -14,6 +14,11 @@
     ]
   },
   "system_package_dependency": {
+    "centos": [
+      "gmp-devel",
+      "mpfr-devel",
+      "libmpc-devel"
+    ],
     "ubuntu": [
       "libgmp-dev",
       "libmpfr-dev",

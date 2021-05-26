@@ -1,6 +1,9 @@
 if [[ "${BUILD_CONTEXT_archlinux:=0}" == 1 ]]; then
   exit 0
 fi
+if [[ "${BUILD_CONTEXT_centos:=0}" == 1 ]]; then
+  exit 0
+fi
 
 if [[ "${BUILD_CONTEXT_docker:=0}" == 1 ]]; then
   exit 0

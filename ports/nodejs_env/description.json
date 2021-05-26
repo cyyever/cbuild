@@ -11,6 +11,9 @@
     "fedora": [
       "nodejs"
     ],
+    "centos": [
+      "nodejs"
+    ],
     "macos": [
       "nodejs"
     ],
@@ -19,7 +22,7 @@
     ]
   },
   "context_dependency": {
-    "ubuntu||centos": [
+    "ubuntu": [
       "nodejs:__cbuild_most_recent_git_tag"
     ]
   }
