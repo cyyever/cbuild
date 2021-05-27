@@ -13,7 +13,9 @@
     "archlinux": [
       "ebtables",
       "dnsmasq",
-      "gobject-introspection"
+      "libvirt-glib",
+      "gobject-introspection",
+      "libosinfo"
     ],
     "macos": [
       "dnsmasq"
@@ -29,7 +31,7 @@
       "docutils"
     ]
   },
-  "package_dependency": [
+  "dependency": [
     "libxml2:master"
   ]
 }
