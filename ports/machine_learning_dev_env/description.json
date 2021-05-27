@@ -13,7 +13,7 @@
       "openblas[shared_lib]:__cbuild_most_recent_git_tag",
       "eigen:__cbuild_most_recent_git_tag",
       "pillow-simd:__cbuild_most_recent_git_tag",
-      "protobuf[shared_lib]:__cbuild_most_recent_git_tag"
+      "protobuf[shared_lib]:v3.17.1"
     ],
     "windows": [
       "zlib:develop"
@@ -29,22 +29,9 @@
     ]
   },
   "system_package_dependency": {
-    "archlinux": [
-      "protobuf"
-    ],
     "freebsd": [
       "freetype2",
-      "protobuf",
       "libzmq4"
-    ],
-    "ubuntu": [
-      "protobuf-compiler",
-      "libprotobuf-dev"
-    ],
-    "fedora": [
-      "protobuf",
-      "protobuf-c-compiler",
-      "protobuf-devel"
     ],
     "pip": [
       "matplotlib",
