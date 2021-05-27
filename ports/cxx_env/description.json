@@ -28,13 +28,14 @@
     "archlinux": [
       "ninja",
       "flex",
+      "autoconf-archive",
       "pkgconf",
       "bison",
       "make",
       "base-devel"
     ],
-    "centos":[
-	    "libunwind-devel",
+    "centos": [
+      "libunwind-devel",
       "bison",
       "flex",
       "autoconf-archive",
