@@ -10,7 +10,8 @@
   ],
   "system_package_dependency": {
     "pip": [
-      "hypothesis"
+      "hypothesis",
+      "Cython"
     ]
   }
 }
