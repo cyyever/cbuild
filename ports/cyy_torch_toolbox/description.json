@@ -1,5 +1,5 @@
 {
-  "git_url": "git@github.com:cyyever/naive_pytorch_lib.git",
+  "git_url": "git@github.com:cyyever/torch_toolbox.git",
   "cache_time": 0,
   "default_build_script": "python",
   "dependency": [
