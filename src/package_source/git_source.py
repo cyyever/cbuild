@@ -107,6 +107,7 @@ class GitSource(Source):
         tags = [t for t in tags if re.search("beta", t) is None]
         tags = [t for t in tags if re.search("dev", t) is None]
         tags = [t for t in tags if re.search("alpha", t) is None]
+        tags = [t for t in tags if re.search("before", t) is None]
         if self.ignored_tag_regex is not None:
             for regex in self.ignored_tag_regex:
                 tags = [t for t in tags if re.search(regex, t) is None]
