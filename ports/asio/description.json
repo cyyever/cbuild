@@ -1,0 +1,7 @@
+{
+  "git_url": "git@github.com:chriskohlhoff/asio.git",
+  "environment_variable": [
+    "SRC_SUBDIR=asio"
+  ],
+  "default_build_script": "c"
+}
