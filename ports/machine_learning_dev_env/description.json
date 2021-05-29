@@ -33,6 +33,9 @@
       "freetype2",
       "libzmq4"
     ],
+    "centos": [
+      "libomp-devel"
+    ],
     "pip": [
       "matplotlib",
       "sklearn",

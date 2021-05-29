@@ -1,22 +1,16 @@
 {
   "git_url": "git@github.com:cyyever/restbed.git",
   "ignored_git_submodules": [
-    "dependency/catch",
-    "dependency/asio",
-    "dependency/openssl"
+    "dependency/catch"
   ],
   "context_environment_variable": {
     "all_os": [
       "no_ninja=1"
     ]
   },
-  "system_package_dependency": {
-    "ubuntu": [
-      "libasio-dev"
-    ]
-  },
   "dependency": [
-    "openssl:__cbuild_most_recent_git_tag"
+    "openssl:__cbuild_most_recent_git_tag",
+    "asio:__cbuild_most_recent_git_tag"
   ],
   "default_build_script": "c",
   "cmake_options": "-DBUILD_TESTS=off -DBUILD_SSL=on"

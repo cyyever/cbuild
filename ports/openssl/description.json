@@ -1,22 +1,3 @@
 {
-  "__cbuild_most_recent_git_tag": {
-    "archlinux": {
-      "git_url": "git@github.com:openssl/openssl.git",
-      "with_submodule": false
-    },
-    "centos": {
-      "group_package": true
-    },
-    "ubuntu": {
-      "group_package": true
-    }
-  },
-  "system_package_dependency": {
-    "ubuntu": [
-      "libssl-dev"
-    ],
-    "archlinux": [
-      "openssl"
-    ]
-  }
+      "git_url": "git@github.com:openssl/openssl.git"
 }
