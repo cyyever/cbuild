@@ -9,7 +9,6 @@
     ]
   },
   "dependency": [
-    "openssl:__cbuild_most_recent_git_tag",
     "asio:__cbuild_most_recent_git_tag"
   ],
   "default_build_script": "c",
