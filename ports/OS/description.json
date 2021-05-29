@@ -4,6 +4,15 @@
   "build_languages": [
     "sh"
   ],
+  "conditional_system_package_dependency": {
+    "!docker": {
+      "archlinux": [
+        "yay",
+        "fakeroot",
+        "vim"
+      ]
+    }
+  },
   "system_package_dependency": {
     "unix": [
       "curl",
@@ -15,11 +24,6 @@
     ],
     "freebsd": [
       "sudo"
-    ],
-    "archlinux": [
-      "yay",
-      "vim",
-      "fakeroot"
     ],
     "bsd": [
       "coreutils",
