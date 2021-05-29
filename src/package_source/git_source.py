@@ -102,6 +102,7 @@ class GitSource(Source):
         tags = tags.strip().splitlines()
 
         tags = [t for t in tags if re.search("rc([0-9]*)$", t) is None]
+        tags = [t for t in tags if re.search("RC([0-9]*)$", t) is None]
         tags = [t for t in tags if re.search("b([0-9]+)$", t) is None]
         tags = [t for t in tags if re.search("beta", t) is None]
         tags = [t for t in tags if re.search("dev", t) is None]
