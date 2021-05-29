@@ -3,12 +3,12 @@ import copy
 import os
 from shutil import which
 
-from cyy_naive_lib.system_info import (get_operating_system,
-                                                 get_processor_name)
+from cyy_naive_lib.system_info import get_operating_system, get_processor_name
 
 
 class BuildContext:
     __context_set: set = set()
+    __target_system = None
 
     @staticmethod
     def add(context):
@@ -19,9 +19,13 @@ class BuildContext:
         return get_operating_system()
 
     @staticmethod
+    def set_target_system(target_system):
+        BuildContext.__target_system = target_system
+
+    @staticmethod
     def get_target_system():
-        if "docker" in BuildContext.__context_set:
-            return "ubuntu"
+        if BuildContext.__target_system is not None:
+            return BuildContext.__target_system
         return BuildContext.get_host_system()
 
     @staticmethod

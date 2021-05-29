@@ -12,4 +12,5 @@ if __name__ == "__main__":
     PackageChain("docker_env:master").build()
 
     BuildContext.add("docker")
+    BuildContext.set_target_system("archlinux")
     PackageChain(args.pkg).build_docker()

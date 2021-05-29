@@ -71,7 +71,7 @@
   },
   "conditional_docker_base_image": {
     "cuda_docker": "nvidia/cuda:11.3.0-devel",
-    "all_os": "ubuntu:latest"
+    "all_os": "archlinux:latest"
   },
   "cache_time": 10
 }
