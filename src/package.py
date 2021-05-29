@@ -134,7 +134,7 @@ class Package:
             shutil.rmtree(build_dir, ignore_errors=True)
             return True
 
-    def build_docker_image(self, action, prev_package=None):
+    def build_docker_image(self, prev_package=None):
         from_docker_image = None
         build_context = BuildContext.get()
         if prev_package is None:
@@ -145,7 +145,7 @@ class Package:
         else:
             from_docker_image = prev_package.__get_docker_image_name()
 
-        script = self.desc.get_script(action)
+        script = self.desc.get_script(PackageDescription.BuildAction.DOCKER_BUILD)
         if script is None:
             sys.exit("no script for package:" + self.specification().name)
 

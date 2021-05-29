@@ -13,7 +13,10 @@ class PackageChain:
         self.chain = []
         self.__get_chain()
 
-    def build(self, action=PackageDescription.BuildAction.BUILD_WITH_CACHE):
+    def build(self, action=PackageDescription.BuildAction.BUILD_WITH_CACHE, parallel=1):
+        if parallel != 1 and action == PackageDescription.BuildAction.DOCKER_BUILD:
+            print("use single job when building docker")
+            parallel = 1
         print("build packages in the following context:")
         for ctx in BuildContext.get():
             print("\t", ctx)
@@ -40,6 +43,20 @@ class PackageChain:
                     print("disable cache of", cur_pkg)
             if cur_pkg.build(real_action, prev_pkg):
                 rebuilt_pkgs.add(cur_pkg.name())
+
+    def build_docker(self):
+        print("build packages in the following context:")
+        for ctx in BuildContext.get():
+            print("\t", ctx)
+        print("build packages in the following order:")
+        for pkg in self.chain:
+            print("\t", pkg.specification())
+
+        for i, pkg in enumerate(self.chain):
+            prev_pkg = None
+            if i > 0:
+                prev_pkg = self.chain[i - 1]
+            pkg.build_docker_image(prev_pkg)
 
     def __get_chain(self):
         package_dependency = {}

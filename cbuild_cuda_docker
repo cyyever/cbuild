@@ -1,18 +1,16 @@
 #!/usr/bin/env python3
-import sys
+import argparse
 
 from src.environment import BuildContext
 from src.package_chain import PackageChain
-from src.package_description import PackageDescription
 
 if __name__ == "__main__":
-
-    if len(sys.argv) != 2:
-        print("Usage ", sys.argv[0], "package-name[features]:branch")
-        sys.exit(-1)
+    parser = argparse.ArgumentParser()
+    parser.add_argument("pkg", help="package-name[features]:branch")
+    args = parser.parse_args()
 
     PackageChain("docker_env:master").build()
 
     BuildContext.add("docker")
     BuildContext.add("cuda_docker")
-    PackageChain(sys.argv[1]).build(PackageDescription.BuildAction.DOCKER_BUILD)
+    PackageChain(args.pkg).build_docker()
