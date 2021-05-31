@@ -1,5 +1,5 @@
 ${sudo_cmd} portsnap auto
-${sudo_cmd} freebsd-update fetch
+${sudo_cmd} freebsd-update fetch || true
 ${sudo_cmd} freebsd-update install || true
 ${sudo_cmd} pkg upgrade -y
 
