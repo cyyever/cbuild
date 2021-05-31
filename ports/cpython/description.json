@@ -52,12 +52,15 @@
       "openssl-devel",
       "expat-devel"
     ],
-    "freebsd":["sqlite3"],
+    "freebsd": [
+      "sqlite3"
+    ],
     "ubuntu": [
       "libexpat1-dev",
       "zlib1g-dev",
       "libffi-dev",
       "libreadline-dev",
+      "liblzma-dev",
       "libncursesw5-dev",
       "libssl-dev",
       "libsqlite3-dev",
