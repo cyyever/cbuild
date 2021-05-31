@@ -21,7 +21,7 @@ elif command -v pacman >/dev/null; then
   ${sudo_cmd} pacman -Syu
   ${sudo_cmd} pacman -S python3 python-pip --noconfirm
 elif command -v pkg >/dev/null; then
-  ${sudo_cmd} pkg install -y py37-pip python3 bash
+  ${sudo_cmd} pkg install -y py38-pip python3 bash
 elif [[ "$(uname -s)" == "Darwin" ]]; then
   if ! command -v brew >/dev/null; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
