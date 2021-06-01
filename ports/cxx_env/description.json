@@ -23,6 +23,7 @@
       "gmake",
       "pkgconf",
       "googletest",
+      "autoconf-archive",
       "ninja"
     ],
     "archlinux": [
