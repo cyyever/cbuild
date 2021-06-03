@@ -28,6 +28,7 @@
     ],
     "archlinux": [
       "ninja",
+      "gcc10",
       "flex",
       "autoconf-archive",
       "pkgconf",
