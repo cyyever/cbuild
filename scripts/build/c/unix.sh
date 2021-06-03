@@ -48,7 +48,7 @@ else
     bash autogen.sh
   fi
   if test -f "${__SRC_DIR}/configure.ac"; then
-    if [[ "${no_reconf}" != "1" ]]; then
+    if [[ -z ${no_reconf+x} ]]; then
       autoreconf -i -f configure.ac
     fi
   fi
