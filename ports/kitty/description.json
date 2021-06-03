@@ -23,6 +23,7 @@
       "libxkbcommon",
       "wayland-protocols"
     ],
+    "archlinux":["lcms2","mesa","libxkbcommon-x11"],
     "pip":[
       "sphinx"
     ],
