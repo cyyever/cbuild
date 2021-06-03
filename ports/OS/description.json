@@ -7,7 +7,6 @@
   "conditional_system_package_dependency": {
     "!docker": {
       "archlinux": [
-        "yay",
         "fakeroot",
         "vim"
       ]
