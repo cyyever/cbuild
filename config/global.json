@@ -27,6 +27,9 @@
     "feature_building_tool_cmake": [
       "cmake:__cbuild_most_recent_git_tag"
     ],
+    "feature_package_manager_yay": [
+      "yay:master"
+    ],
     "cuda&&!docker": [
       "CUDA:__cbuild_most_recent_git_tag"
     ],

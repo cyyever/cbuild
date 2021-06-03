@@ -209,6 +209,8 @@ class PackageDescription:
                 "package_manager",
                 manager + "." + script.get_suffix(),
             )
+            if manager == "yay":
+                self.features.add("feature_package_manager_yay")
             if not os.path.exists(script_path):
                 sys.exit("unsupported system_package_dependency:" + script_path)
             script.append_content(readlines(script_path))
