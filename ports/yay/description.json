@@ -1,0 +1,10 @@
+{
+  "git_url": "https://aur.archlinux.org/yay.git",
+  "default_build_script": "go",
+  "script_package": true,
+  "system_package_dependency": {
+    "archlinux": [
+      "base-devel"
+    ]
+  }
+}
