@@ -1,5 +1,6 @@
 {
   "git_url": "git@github.com:opencv/opencv.git",
+  "reuse_build": true,
   "cache_time": 30,
   "dependency": [
     "opencv_contrib:__cbuild_most_recent_git_tag",

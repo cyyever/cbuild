@@ -7,8 +7,10 @@ if test -f requirements.txt; then
   fi
 fi
 if test -f "setup.py"; then
-  if test -d build; then
-    ${sudo_cmd} rm -rf build
+  if [[ -z ${reuse_build+x} ]]; then
+    if test -d build; then
+      ${sudo_cmd} rm -rf build
+    fi
   fi
 
   if [[ -n ${py_pkg_name+x} ]]; then

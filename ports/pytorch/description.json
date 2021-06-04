@@ -1,6 +1,5 @@
 {
   "git_url": "git@github.com:pytorch/pytorch.git",
-  "reuse_build": true,
   "ignored_git_submodules": [
     "third_party/eigen",
     "third_party/pybind11",
@@ -19,6 +18,7 @@
     "static_analysis=0",
     "BUILD_TEST=off",
     "USE_MPI=OFF",
+    "reuse_build=1",
     "ATEN_NO_TEST=ON",
     "COLORIZE_OUTPUT=off",
     "BUILD_CAFFE2=off",
