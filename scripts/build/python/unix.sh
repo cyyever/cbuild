@@ -10,10 +10,12 @@ if test -f "setup.py"; then
   if test -d build; then
     ${sudo_cmd} rm -rf build
   fi
-  # pkg_name=$(${__CBUILD_PYTHON_EXE} setup.py --name)
-  # for _ in $(seq 5); do
-  #   ${__CBUILD_PIP_EXE} uninstall $pkg_name -y || true
-  # done
+
+  if [[ -n ${py_pkg_name+x} ]]; then
+    for _ in $(seq 5); do
+      ${__CBUILD_PIP_EXE} uninstall $py_pkg_name -y || true
+    done
+  fi
 
   # if [[ -n ${PYTHON_SETUP_CMD+x} ]]; then
   #   ${PYTHON_SETUP_CMD}

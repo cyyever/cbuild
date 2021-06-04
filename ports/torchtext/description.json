@@ -2,7 +2,8 @@
   "git_url": "git@github.com:pytorch/text.git",
   "default_build_script": "python",
   "environment_variable": [
-    "run_test=0"
+    "run_test=0",
+    "py_pkg_name=torchtext"
   ],
   "dependency": [
     "pytorch:master",
