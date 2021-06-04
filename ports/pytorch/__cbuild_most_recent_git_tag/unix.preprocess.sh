@@ -6,6 +6,7 @@ ${sed_cmd} -i -e 's/project(Torch CXX C)/project(Torch CXX C ASM)/g' CMakeLists.
 ${sed_cmd} -i -e 's/set(CMAKE_CXX_STANDARD 14)/set(CMAKE_CXX_STANDARD 17)/g' CMakeLists.txt
 ${sed_cmd} -i -e '/^\s*check_submodules()/s/check_submodules()/#check_submodules()/g' setup.py
 ${sed_cmd} -i -e '/-Werror/d' caffe2/CMakeLists.txt
+rm cmake/Modules/FindOpenMP.cmake
 
 if [[ "$(uname)" == "FreeBSD" ]]; then
   cd third_party
