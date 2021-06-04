@@ -20,6 +20,7 @@
     "BUILD_TEST=off",
     "USE_MPI=OFF",
     "ATEN_NO_TEST=ON",
+    "COLORIZE_OUTPUT=off",
     "BUILD_CAFFE2=off",
     "BUILD_CAFFE2_MOBILE=off",
     "BUILD_CUSTOM_PROTOBUF=off",

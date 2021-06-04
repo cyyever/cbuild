@@ -9,6 +9,7 @@ ${sed_cmd} -i -e '/-Werror/d' caffe2/CMakeLists.txt
 rm cmake/Modules/FindOpenMP.cmake
 ${sed_cmd} -i -e '/CMAKE_C_FLAGS.*OpenMP_C_FLAGS/d' cmake/Dependencies.cmake
 ${sed_cmd} -i -e 's/.*CMAKE_CXX_FLAGS.*OpenMP_CXX_FLAGS.*/list(APPEND Caffe2_PUBLIC_DEPENDENCY_LIBS OpenMP::OpenMP_CXX OpenMP::OpenMP_C)/' cmake/Dependencies.cmake
+${sed_cmd} -i -e '/Qunused-arguments/d' CMakeLists.txt
 
 if [[ "$(uname)" == "FreeBSD" ]]; then
   cd third_party
