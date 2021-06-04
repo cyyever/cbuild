@@ -6,7 +6,7 @@ ${sed_cmd} -i -e 's/project(Torch CXX C)/project(Torch CXX C ASM)/g' CMakeLists.
 ${sed_cmd} -i -e 's/set(CMAKE_CXX_STANDARD 14)/set(CMAKE_CXX_STANDARD 17)/g' CMakeLists.txt
 ${sed_cmd} -i -e '/^\s*check_submodules()/s/check_submodules()/#check_submodules()/g' setup.py
 ${sed_cmd} -i -e '/-Werror/d' caffe2/CMakeLists.txt
-rm cmake/Modules/FindOpenMP.cmake
+rm -f cmake/Modules/FindOpenMP.cmake
 ${sed_cmd} -i -e '/CMAKE_C_FLAGS.*OpenMP_C_FLAGS/d' cmake/Dependencies.cmake
 ${sed_cmd} -i -e 's/.*CMAKE_CXX_FLAGS.*OpenMP_CXX_FLAGS.*/list(APPEND Caffe2_PUBLIC_DEPENDENCY_LIBS OpenMP::OpenMP_CXX OpenMP::OpenMP_C)/' cmake/Dependencies.cmake
 ${sed_cmd} -i -e '/Qunused-arguments/d' CMakeLists.txt
