@@ -1,5 +1,6 @@
 {
   "git_url": "git@github.com:pytorch/pytorch.git",
+  "reuse_build": true,
   "ignored_git_submodules": [
     "third_party/eigen",
     "third_party/pybind11",
@@ -50,6 +51,16 @@
       "USE_MKLDNN=off",
       "CUDNN_ROOT=${INSTALL_PREFIX}/cuda",
       "CUDNN_LIBRARY=${INSTALL_PREFIX}/cuda"
+    ],
+    "linux": [
+      "CMAKE_CXX_COMPILER=/usr/bin/clang++",
+      "CMAKE_C_COMPILER=/usr/bin/clang"
+    ],
+    "ubuntu": [
+      "CUDA_HOST_COMPILER=/usr/bin/g++-9"
+    ],
+    "archlinux": [
+      "CUDA_HOST_COMPILER=/usr/bin/g++-10"
     ],
     "debug_build": [
       "DEBUG=1"

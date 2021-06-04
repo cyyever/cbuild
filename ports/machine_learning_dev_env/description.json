@@ -33,8 +33,14 @@
       "freetype2",
       "libzmq4"
     ],
+    "ubuntu": [
+      "libomp-dev"
+    ],
     "centos": [
       "libomp-devel"
+    ],
+    "archlinux": [
+      "openmp"
     ],
     "pip": [
       "matplotlib",

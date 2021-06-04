@@ -29,17 +29,6 @@ class Package:
     def specification(self):
         return self.desc.spec
 
-    def build(self, action=PackageDescription.BuildAction.BUILD, prev_package=None):
-
-        if action in (
-            PackageDescription.BuildAction.BUILD,
-            PackageDescription.BuildAction.BUILD_WITH_CACHE,
-        ):
-            return self.__build_local(action)
-        if action == PackageDescription.BuildAction.DOCKER_BUILD:
-            return self.build_docker_image(action, prev_package)
-        sys.exit("unknown action")
-
     def get_tag_file(self):
         return os.path.join(
             environment.tag_dir, (self.full_name() + ".tag").replace("/", "_")
@@ -67,7 +56,7 @@ class Package:
 
         return False
 
-    def __build_local(self, action):
+    def build_local(self, action):
         if action == PackageDescription.BuildAction.BUILD_WITH_CACHE:
             if self.check_cache():
                 return False
@@ -99,7 +88,11 @@ class Package:
                     print("\t{}".format(f))
 
             build_dir = os.path.join(environment.builds_dir, self.full_name())
-            shutil.rmtree(build_dir, ignore_errors=True)
+
+            if not self.desc.get_item("reuse_build", False):
+                shutil.rmtree(build_dir, ignore_errors=True)
+            else:
+                print("reuse build directory for package:", str(self.desc))
             os.makedirs(build_dir, exist_ok=True)
             static_analysis_dir = os.path.join(
                 environment.static_analysis_dir, self.full_name()
@@ -155,7 +148,10 @@ class Package:
         script.append_env("BUILD_DIR", build_dir)
         script.prepend_content("mkdir -p " + build_dir)
         script.prepend_content("mkdir -p " + docker_src_dir)
-        script.append_content("rm -rf " + build_dir)
+        if not self.desc.get_item("reuse_build", False):
+            script.append_content("rm -rf " + build_dir)
+        else:
+            print("reuse build directory for package:", str(self.desc))
         if "debug_build" not in build_context:
             script.append_content("rm -rf " + docker_src_dir)
         else:
