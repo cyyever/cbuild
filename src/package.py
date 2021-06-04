@@ -92,7 +92,7 @@ class Package:
             if not self.desc.get_item("reuse_build", False):
                 shutil.rmtree(build_dir, ignore_errors=True)
             else:
-                print("reuse build directory for package:", str(self.desc))
+                print("reuse build directory for package:", str(self.desc.spec))
             os.makedirs(build_dir, exist_ok=True)
             static_analysis_dir = os.path.join(
                 environment.static_analysis_dir, self.full_name()
@@ -151,7 +151,7 @@ class Package:
         if not self.desc.get_item("reuse_build", False):
             script.append_content("rm -rf " + build_dir)
         else:
-            print("reuse build directory for package:", str(self.desc))
+            print("reuse build directory for package:", str(self.desc.spec))
         if "debug_build" not in build_context:
             script.append_content("rm -rf " + docker_src_dir)
         else:
