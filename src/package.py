@@ -89,7 +89,8 @@ class Package:
 
             build_dir = os.path.join(environment.builds_dir, self.full_name())
 
-            if not self.desc.get_item("reuse_build", False):
+            reuse_build = self.desc.get_item("reuse_build", False)
+            if not reuse_build:
                 shutil.rmtree(build_dir, ignore_errors=True)
             else:
                 print("reuse build directory for package:", str(self.desc.spec))
@@ -124,7 +125,8 @@ class Package:
 
             with open(tag_file, "w") as f:
                 f.write(new_hash)
-            shutil.rmtree(build_dir, ignore_errors=True)
+            if not reuse_build:
+                shutil.rmtree(build_dir, ignore_errors=True)
             return True
 
     def build_docker_image(self, prev_package=None):
