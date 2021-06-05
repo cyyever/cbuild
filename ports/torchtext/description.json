@@ -5,12 +5,6 @@
     "run_test=0",
     "py_pkg_name=torchtext"
   ],
-  "conditional_environment_variable": {
-    "linux": [
-      "CXX=/usr/bin/g++-9",
-      "CC=/usr/bin/gcc-9"
-    ]
-  },
   "dependency": [
     "pytorch:master",
     "spacy:__cbuild_most_recent_git_tag"
