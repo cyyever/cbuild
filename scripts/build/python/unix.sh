@@ -22,7 +22,7 @@ if test -f "setup.py"; then
   # if [[ -n ${PYTHON_SETUP_CMD+x} ]]; then
   #   ${PYTHON_SETUP_CMD}
   # fi
-  ${CBUILD_PYTHON_EXE} setup.py build_ext --inplace
+  ${__CBUILD_PYTHON_EXE} setup.py build_ext --inplace
   if [[ -n ${DEFAULT_INSTALL_PREFIX+x} ]]; then
     ${__CBUILD_PYTHON_EXE} setup.py install --force
   else
