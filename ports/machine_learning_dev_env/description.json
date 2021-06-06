@@ -13,7 +13,7 @@
       "openblas[shared_lib]:__cbuild_most_recent_git_tag",
       "eigen:__cbuild_most_recent_git_tag",
       "pillow-simd:__cbuild_most_recent_git_tag",
-      "protobuf[shared_lib]:v3.17.1"
+      "protobuf[shared_lib]:v3.17.2"
     ],
     "windows": [
       "zlib:develop"
@@ -34,7 +34,8 @@
       "libzmq4"
     ],
     "ubuntu": [
-      "libomp-dev"
+      "libomp-dev",
+      "clang"
     ],
     "centos": [
       "libomp-devel"
