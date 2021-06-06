@@ -2,6 +2,7 @@
   "git_url": "https://gitlab.kitware.com/cmake/cmake.git",
   "default_build_script": "c",
   "cache_time": 30,
+  "reuse_build": true,
   "system_package_dependency": {
     "unix": [
       "cmake"
