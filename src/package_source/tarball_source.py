@@ -12,7 +12,7 @@ from .file_source import FileSource
 
 
 class TarballSource(FileSource):
-    def __init__(self, spec, url, root_dir, file_name, checksum=None):
+    def __init__(self, spec, url, root_dir, file_name=None, checksum=None):
         super().__init__(spec, url, root_dir, file_name, checksum)
         self.suffix = None
         for suffix in [".7z", ".zip", ".tar", ".tar.gz", ".tar.xz", ".tar.bz2", ".tgz"]:

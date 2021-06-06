@@ -10,13 +10,14 @@ if [[ "${BUILD_CONTEXT_docker:=0}" == 1 ]]; then
 fi
 
 if test -f /usr/local/cuda/bin/nvcc; then
-  if /usr/local/cuda/bin/nvcc --version | grep '11.2'; then
+  if /usr/local/cuda/bin/nvcc --version | grep '11.3'; then
     exit 0
   fi
 fi
 
+mkdir -p ${INSTALL_PREFIX}/cuda
 cd $BUILD_DIR
-sudo bash $SRC_DIR/${FILE_NAME} --tmpdir=. --override --silent --driver --toolkit
+sudo bash $SRC_DIR/${FILE_NAME} --tmpdir=. --override --silent --toolkit --no-drm --no-man-page --no-opengl-libs --installpath=${INSTALL_PREFIX}/cuda
 if [[ $? -eq 0 ]]; then
   for path in /usr/local/cuda/lib64; do
     if ! grep -q "$path" /etc/ld.so.conf; then

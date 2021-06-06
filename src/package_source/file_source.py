@@ -3,17 +3,19 @@ import os
 import sys
 
 import requests
-from tqdm import tqdm
-
 from cyy_naive_lib.algorithm.hash import file_hash
+from tqdm import tqdm
 
 from .source import Source
 
 
 class FileSource(Source):
-    def __init__(self, spec, url, root_dir, file_name, checksum):
+    def __init__(self, spec, url: str, root_dir: str, file_name=None, checksum=None):
         super().__init__(spec, url, root_dir)
         self.file_name = file_name
+        if file_name is None:
+            self.file_name = self.url.split("/")[-1]
+            print("use file_name", self.file_name)
         self.checksum = checksum
         if not self.checksum:
             sys.exit("no checksum for " + self.file_name + "consider add one")

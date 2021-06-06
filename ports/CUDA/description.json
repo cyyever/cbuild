@@ -19,8 +19,7 @@
       "group_package": true
     },
     "linux": {
-      "file_name": "cuda_11.2.1_460.32.03_linux.run",
-      "url": "https://developer.download.nvidia.com/compute/cuda/11.2.1/local_installers/cuda_11.2.1_460.32.03_linux.run",
+      "url": "https://developer.download.nvidia.com/compute/cuda/11.3.1/local_installers/cuda_11.3.1_465.19.01_linux.run",
       "checksum": "no_checksum"
     }
   },
