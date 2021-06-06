@@ -1,4 +1,5 @@
 {
   "git_url": "git@github.com:harfbuzz/harfbuzz.git",
-    "default_build_script": "c"
+  "default_build_script": "c",
+  "cmake_options": "-DHB_BUILD_UTILS=ON"
 }
