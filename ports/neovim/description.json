@@ -19,6 +19,10 @@
       "windows": [
         "neovim --pre"
       ],
+      "ubuntu": [
+        "libgtest-dev",
+        "libgoogle-glog-dev"
+      ],
       "archlinux": [
         "msgpack-c",
         "libluv",
