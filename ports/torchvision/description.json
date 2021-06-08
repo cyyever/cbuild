@@ -2,8 +2,7 @@
   "git_url": "git@github.com:pytorch/vision.git",
   "default_build_script": "python",
   "environment_variable": [
-    "run_test=0",
-    "py_pkg_name=torchvision"
+    "run_test=0"
   ],
   "conditional_environment_variable": {
     "unix": [

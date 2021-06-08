@@ -218,6 +218,7 @@ class PackageDescription:
         cmake_options = " ".join(
             self.__get_conditional_items("cmake_options", global_to_local=True)
         )
+        script.prepend_env("PACKAGE_NAME", self.spec.name)
         script.prepend_env("PACKAGE_VERSION", self.spec.branch)
         script.append_env("cmake_options", cmake_options)
         script.append_env(

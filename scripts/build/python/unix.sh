@@ -1,17 +1,15 @@
-if [[ -n ${py_pkg_name+x} ]]; then
-  cd /tmp
-  for _ in $(seq 5); do
-    ${__CBUILD_PIP_EXE} uninstall $py_pkg_name -y || true
-  done
+if [[ -z ${py_pkg_name+x} ]]; then
+  py_pkg_name=${PACKAGE_NAME}
 fi
+
+cd /tmp
+for _ in $(seq 5); do
+  ${__CBUILD_PIP_EXE} uninstall $py_pkg_name -y || true
+done
 
 cd ${__SRC_DIR}
 if test -f requirements.txt; then
-  if [[ -n ${DEFAULT_INSTALL_PREFIX+x} ]]; then
-    ${__CBUILD_PIP_EXE} install -r requirements.txt --force
-  else
-    ${__CBUILD_PIP_EXE} install -r requirements.txt --user --force
-  fi
+  ${__CBUILD_PIP_EXE} install -r requirements.txt --user
 fi
 
 if test -f "setup.py"; then
