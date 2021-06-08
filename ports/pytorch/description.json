@@ -16,6 +16,7 @@
   "environment_variable": [
     "run_test=0",
     "static_analysis=0",
+    "py_pkg_name=torch",
     "BUILD_TEST=off",
     "USE_MPI=OFF",
     "reuse_build=1",

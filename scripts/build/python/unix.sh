@@ -1,3 +1,10 @@
+if [[ -n ${py_pkg_name+x} ]]; then
+  cd /tmp
+  for _ in $(seq 5); do
+    ${__CBUILD_PIP_EXE} uninstall $py_pkg_name -y || true
+  done
+fi
+
 cd ${__SRC_DIR}
 if test -f requirements.txt; then
   if [[ -n ${DEFAULT_INSTALL_PREFIX+x} ]]; then
@@ -6,6 +13,7 @@ if test -f requirements.txt; then
     ${__CBUILD_PIP_EXE} install -r requirements.txt --user --force
   fi
 fi
+
 if test -f "setup.py"; then
   if [[ -z ${reuse_build+x} ]]; then
     if test -d build; then
@@ -13,12 +21,6 @@ if test -f "setup.py"; then
         ${sudo_cmd} rm -rf build
       fi
     fi
-  fi
-
-  if [[ -n ${py_pkg_name+x} ]]; then
-    for _ in $(seq 5); do
-      ${__CBUILD_PIP_EXE} uninstall $py_pkg_name -y || true
-    done
   fi
 
   # if [[ -n ${PYTHON_SETUP_CMD+x} ]]; then
