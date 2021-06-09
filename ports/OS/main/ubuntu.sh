@@ -7,12 +7,12 @@ else
   fi
 fi
 
-if [[ "${BUILD_CONTEXT_docker:=0}" == 0 ]]; then
-  ${sudo_cmd} apt-get remove -y unattended-upgrades
-  if test -f /etc/apt/apt.conf.d/20auto-upgrades; then
-    ${sudo_cmd} sed -i 's/1/0/' /etc/apt/apt.conf.d/20auto-upgrades
-  fi
-fi
+# if [[ "${BUILD_CONTEXT_docker:=0}" == 0 ]]; then
+  # ${sudo_cmd} apt-get remove -y unattended-upgrades
+  # if test -f /etc/apt/apt.conf.d/20auto-upgrades; then
+  #   ${sudo_cmd} sed -i 's/1/0/' /etc/apt/apt.conf.d/20auto-upgrades
+  # fi
+# fi
 # ${sudo_cmd} add-apt-repository ppa:graphics-drivers/ppa -y
 # ${sudo_cmd} add-apt-repository ppa:ubuntu-toolchain-r/test -y
 
