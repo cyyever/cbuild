@@ -17,7 +17,8 @@
   "context_dependency": {
     "linux": [
       "lcov:__cbuild_most_recent_git_tag",
-      "ccache:__cbuild_most_recent_git_tag"
+      "ccache:__cbuild_most_recent_git_tag",
+      "jemalloc:dev"
     ],
     "unix": [
       "llvm:llvmorg-11.1.0",
