@@ -46,7 +46,7 @@ class Source:
                     os.remove(lock_file)
 
         with FileLock(lock_file) as lock:
-            lock.fd.write(str(os.getpid()))
+            os.write(lock.fd,bytes(os.getpid()))
             if self.url is not None:
                 result = self._download()
                 if not result:
