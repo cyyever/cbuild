@@ -3,6 +3,7 @@ import os
 import sys
 from typing import Optional, Tuple
 
+import psutil
 from filelock_git.filelock import FileLock
 
 from ..environment import lock_dir
@@ -31,9 +32,21 @@ class Source:
 
     def __enter__(self) -> Optional[Tuple[str, Optional[str]]]:
         self.prev_dir = os.getcwd()
-        with FileLock(
-            os.path.join(lock_dir, str(self.spec).replace("/", "_") + ".lock")
-        ):
+        lock_file = os.path.join(lock_dir, str(self.spec).replace("/", "_") + ".lock")
+        if os.path.isfile(lock_file):
+            with open(lock_file, "rt") as f:
+                pid = f.readline().strip()
+                if not psutil.pid_exists(pid):
+                    print(
+                        "no process is using",
+                        str(self.spec),
+                        ", so remove the lock file",
+                    )
+                    f.close()
+                    os.remove(lock_file)
+
+        with FileLock(lock_file) as lock:
+            lock.fd.write(str(os.getpid()))
             if self.url is not None:
                 result = self._download()
                 if not result:

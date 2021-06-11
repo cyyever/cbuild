@@ -46,8 +46,7 @@ else
   cd ${__SRC_DIR}
   if test -f "${__SRC_DIR}/autogen.sh"; then
     bash autogen.sh
-  fi
-  if test -f "${__SRC_DIR}/configure.ac"; then
+  elif test -f "${__SRC_DIR}/configure.ac"; then
     if [[ -z ${no_reconf+x} ]]; then
       autoreconf -i -f configure.ac
     fi
