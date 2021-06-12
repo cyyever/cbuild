@@ -53,6 +53,7 @@
       "autoconf-archive",
       "libtool-bin",
       "g++",
+      "clang",
       "make",
       "ninja-build",
       "pkg-config"
