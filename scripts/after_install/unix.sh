@@ -23,6 +23,11 @@ if [[ -n ${__SRC_DIR+x} ]]; then
         fi
       fi
       if [[ "${clang_tidy_static_analysis}" == "1" ]]; then
+        if ! command -v run-clang-tidy.py; then
+          if test -d /usr/share/clang; then
+            export PATH="/usr/share/clang:$PATH"
+          fi
+        fi
         if command -v run-clang-tidy.py; then
           if test -f ${INSTALL_PREFIX}/cli_tool_configs/cpp-clang-tidy; then
             run-clang-tidy.py -p . -config="$(cat ${INSTALL_PREFIX}/cli_tool_configs/cpp-clang-tidy)" -quiet >./run-clang-tidy.txt || true
@@ -30,10 +35,10 @@ if [[ -n ${__SRC_DIR+x} ]]; then
           fi
         fi
       fi
-      if command -v cppcheck; then
-        cppcheck --project=./compile_commands.json -j $MAX_JOBS --std=c++20 --enable=all --inconclusive 2>./cppcheck.txt || true
-        cp ./cppcheck.txt ${STATIC_ANALYSIS_DIR} || true
-      fi
+      # if command -v cppcheck; then
+      #   cppcheck --project=./compile_commands.json -j $MAX_JOBS --std=c++20 --enable=all --inconclusive 2>./cppcheck.txt || true
+      #   cp ./cppcheck.txt ${STATIC_ANALYSIS_DIR} || true
+      # fi
     else
       cd ${__SRC_DIR}
       if command -v pvs-studio; then
