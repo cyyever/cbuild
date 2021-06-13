@@ -4,6 +4,14 @@ if [[ -n ${__SRC_DIR+x} ]]; then
     if [[ "$json_path" == "" ]]; then
       json_path=$(find ${__SRC_DIR}/build -name "compile_commands.json" || true)
     fi
+    if [[ "$json_path" == "" ]]; then
+      ninja_build_path=$(find ${__SRC_DIR}/build -name "build.ninja" || true)
+      if [[ "$ninja_build_path" != "" ]]; then
+        cd $(dirname $ninja_build_path)
+        ninja -t compdb >compile_commands.json
+        json_path=$(find . -name "compile_commands.json" || true)
+      fi
+    fi
     if [[ "$json_path" != "" ]]; then
       cd $(dirname $json_path)
       if [[ "${pvs_static_analysis}" == "1" ]]; then
