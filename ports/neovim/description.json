@@ -21,6 +21,7 @@
       ],
       "ubuntu": [
         "libgtest-dev",
+        "libgmock-dev",
         "libgoogle-glog-dev"
       ],
       "archlinux": [
