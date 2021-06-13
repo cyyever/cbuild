@@ -4,7 +4,6 @@
     "python_env:master",
     "scikit-build:__cbuild_most_recent_git_tag",
     "py-spy:__cbuild_most_recent_git_tag",
-    "cmake-python-distributions:master",
     "line_profiler:__cbuild_most_recent_git_tag"
   ],
   "system_package_dependency": {
