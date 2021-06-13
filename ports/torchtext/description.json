@@ -3,7 +3,9 @@
   "default_build_script": "python",
   "environment_variable": [
     "run_test=0",
-    "py_pkg_name=torchtext"
+    "static_analysis=0",
+    "pvs_static_analysis=1",
+    "clang_tidy_static_analysis=1"
   ],
   "dependency": [
     "pytorch:master",
