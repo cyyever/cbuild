@@ -38,3 +38,41 @@ else
 fi
 
 __CBUILD_PIP_EXE="${CBUILD_PYTHON_EXE} -m pip"
+json_path=""
+
+function get_json_path() {
+  for DIR in ${BUILD_DIR} ${__SRC_DIR}; do
+    if [[ "$json_path" != "" ]]; then
+      return 0
+    fi
+
+    json_path=$(find ${DIR} -name "compile_commands.json" || true)
+    if [[ "$json_path" != "" ]]; then
+      return 0
+    fi
+
+    ninja_build_path=$(find ${DIR} -name "build.ninja" || true)
+    if [[ "$ninja_build_path" != "" ]]; then
+      cd $(dirname $ninja_build_path)
+      ninja -t compdb >compile_commands.json
+      json_path=$(find $(pwd) -name "compile_commands.json" || true)
+      if [[ "$json_path" != "" ]]; then
+        return 0
+      fi
+    fi
+  done
+  return 0
+}
+
+if test -f ${INSTALL_PREFIX}/llvm_tool/run-clang-tidy.py; then
+  run_clang_tidy_cmd="${CBUILD_PYTHON_EXE} ${INSTALL_PREFIX}/llvm_tool/run-clang-tidy.py -excluded-file-patterns '.*/third_party/.*' -j ${MAX_JOBS} "
+fi
+
+if [[ "${run_clang_tidy_cmd}" != "" ]]; then
+  if [[ "${clang_tidy_fix:-}" == "1" ]]; then
+    get_json_path
+    if [[ "$json_path" != "" ]]; then
+      ${run_clang_tidy_cmd} -p $(dirname $json_path) -config="$(cat ${INSTALL_PREFIX}/cli_tool_configs/cpp-clang-tidy)" -fix -quiet >/dev/null || true
+    fi
+  fi
+fi
