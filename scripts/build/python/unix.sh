@@ -21,9 +21,6 @@ if test -f "setup.py"; then
     fi
   fi
 
-  # if [[ -n ${PYTHON_SETUP_CMD+x} ]]; then
-  #   ${PYTHON_SETUP_CMD}
-  # fi
   ${__CBUILD_PYTHON_EXE} setup.py build_ext --inplace
   if [[ -n ${DEFAULT_INSTALL_PREFIX+x} ]]; then
     ${__CBUILD_PYTHON_EXE} setup.py install --force
@@ -36,5 +33,8 @@ if test -f "setup.py"; then
     else
       ${__CBUILD_PYTHON_EXE} -m pytest
     fi
+  fi
+  if test -d build; then
+    BUILD_DIR="$(pwd)/build"
   fi
 fi
