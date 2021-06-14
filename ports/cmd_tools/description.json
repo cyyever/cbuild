@@ -19,8 +19,8 @@
     ]
   },
   "context_dependency": {
-	  "unix":[
-    "htop:__cbuild_most_recent_git_tag"
-  ]
+    "unix": [
+      "htop:__cbuild_most_recent_git_tag"
+    ]
   }
 }
