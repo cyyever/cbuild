@@ -8,6 +8,7 @@
   "system_package_dependency": {
     "pip": [
       "PyYAML",
+      "types-PyYAML",
       "setuptools",
       "pytest",
       "wheel"
