@@ -30,7 +30,11 @@ if [[ -n ${__SRC_DIR+x} ]]; then
         fi
         if command -v run-clang-tidy.py; then
           if test -f ${INSTALL_PREFIX}/cli_tool_configs/cpp-clang-tidy; then
-            run-clang-tidy.py -p . -config="$(cat ${INSTALL_PREFIX}/cli_tool_configs/cpp-clang-tidy)" -quiet >./run-clang-tidy.txt || true
+            if [[ "${clang_tidy_fix}" == "1" ]]; then
+              run-clang-tidy.py -p . -config="$(cat ${INSTALL_PREFIX}/cli_tool_configs/cpp-clang-tidy)" -fix -quiet >./run-clang-tidy.txt || true
+            else
+              run-clang-tidy.py -p . -config="$(cat ${INSTALL_PREFIX}/cli_tool_configs/cpp-clang-tidy)" -quiet >./run-clang-tidy.txt || true
+            fi
             cp ./run-clang-tidy.txt ${STATIC_ANALYSIS_DIR} || true
           fi
         fi
