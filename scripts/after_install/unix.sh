@@ -1,12 +1,10 @@
-if [[ "${static_analysis}" == "1" ]]; then
-  json_path=$(find ${BUILD_DIR} -name "compile_commands.json" || true)
-  if [[ "$json_path" == "" ]]; then
-    ninja_build_path=$(find ${BUILD_DIR} -name "build.ninja" || true)
-    if [[ "$ninja_build_path" != "" ]]; then
-      cd $(dirname $ninja_build_path)
-      ninja -t compdb >compile_commands.json
-      json_path=$(find . -name "compile_commands.json" || true)
-    fi
+json_path=$(find ${BUILD_DIR} -name "compile_commands.json" || true)
+if [[ "$json_path" == "" ]]; then
+  ninja_build_path=$(find ${BUILD_DIR} -name "build.ninja" || true)
+  if [[ "$ninja_build_path" != "" ]]; then
+    cd $(dirname $ninja_build_path)
+    ninja -t compdb >compile_commands.json
+    json_path=$(find . -name "compile_commands.json" || true)
   fi
 fi
 
