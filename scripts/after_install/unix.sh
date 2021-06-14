@@ -11,7 +11,7 @@ if [[ "${static_analysis}" == "1" ]]; then
       fi
     fi
     if [[ "${clang_tidy_static_analysis}" == "1" ]]; then
-      ${run_clang_tidy_cmd} -config="$(cat ${INSTALL_PREFIX}/cli_tool_configs/cpp-clang-tidy)" -p $(dirname $json_path) -quiet >./run-clang-tidy.txt || true
+      eval "${run_clang_tidy_cmd} -p $(dirname $json_path) -quiet >./run-clang-tidy.txt || true"
       cp ./run-clang-tidy.txt ${STATIC_ANALYSIS_DIR} || true
     fi
     # if command -v cppcheck; then
