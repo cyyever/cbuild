@@ -14,6 +14,7 @@
       "automake",
       "gettext",
       "gcc",
+      "clang-tidy",
       "libtool"
     ],
     "macos": [
