@@ -8,9 +8,9 @@ if command -v gsed >/dev/null; then
   sed_cmd=gsed
 fi
 
-make_cmd="make"
+make_cmd=make
 if command -v gmake >/dev/null; then
-  make_cmd="gmake"
+  make_cmd=gmake
 fi
 
 # if test -d "${INSTALL_PREFIX}/python"; then
@@ -65,14 +65,16 @@ function get_json_path() {
 }
 
 if test -f ${INSTALL_PREFIX}/llvm_tool/run-clang-tidy.py; then
-  run_clang_tidy_cmd="${CBUILD_PYTHON_EXE} ${INSTALL_PREFIX}/llvm_tool/run-clang-tidy.py -excluded-file-patterns '.*/third_party/.* .*cu$' -j ${MAX_JOBS} -config=\"$(cat ${INSTALL_PREFIX}/cli_tool_configs/cpp-clang-tidy)\" "
+  run_clang_tidy_cmd="${CBUILD_PYTHON_EXE} ${INSTALL_PREFIX}/llvm_tool/run-clang-tidy.py -excluded-file-patterns '(.*/third_party/.*)|(.*cu$)' -j ${MAX_JOBS} -config=\"$(cat ${INSTALL_PREFIX}/cli_tool_configs/cpp-clang-tidy)\" "
 fi
 
 if [[ "${run_clang_tidy_cmd}" != "" ]]; then
   if [[ "${clang_tidy_fix:-}" == "1" ]]; then
     get_json_path
     if [[ "$json_path" != "" ]]; then
+      echo "run clang_tidy_fix"
       eval "${run_clang_tidy_cmd} -p $(dirname $json_path) -fix -quiet >/dev/null"
+      echo "end run clang_tidy_fix"
     fi
   fi
 fi
