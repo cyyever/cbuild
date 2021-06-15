@@ -66,6 +66,8 @@ function get_json_path() {
 
 if test -f ${INSTALL_PREFIX}/llvm_tool/run-clang-tidy.py; then
   run_clang_tidy_cmd="${CBUILD_PYTHON_EXE} ${INSTALL_PREFIX}/llvm_tool/run-clang-tidy.py -excluded-file-patterns '(.*/third_party/.*)|(.*cu$)' -j ${MAX_JOBS} -config=\"$(cat ${INSTALL_PREFIX}/cli_tool_configs/cpp-clang-tidy)\" "
+else
+  run_clang_tidy_cmd=""
 fi
 
 if [[ "${run_clang_tidy_cmd}" != "" ]]; then
