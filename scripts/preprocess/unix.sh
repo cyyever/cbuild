@@ -41,7 +41,7 @@ __CBUILD_PIP_EXE="${CBUILD_PYTHON_EXE} -m pip"
 json_path=""
 
 function get_json_path() {
-  for DIR in ${BUILD_DIR} ${__SRC_DIR}; do
+  for DIR in ${BUILD_DIR} ${__SRC_DIR}/build ${__SRC_DIR}; do
     if [[ "$json_path" != "" ]]; then
       return 0
     fi
