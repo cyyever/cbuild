@@ -1,6 +1,7 @@
 {
   "git_url": "git@github.com:cyyever/naive_cpp_lib.git",
   "cache_time": 0,
+  "reuse_build": true,
   "default_build_script": "c",
   "conditional_new_feature": {
     "all": [
@@ -26,7 +27,10 @@
     ]
   },
   "environment_variable": [
-    "static_analysis=1"
+    "static_analysis=0",
+    "pvs_static_analysis=1",
+    "clang_tidy_static_analysis=1",
+    "clang_tidy_fix=0"
   ],
   "dependency": [
     "doctest:__cbuild_most_recent_git_tag",

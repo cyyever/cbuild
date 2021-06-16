@@ -5,18 +5,15 @@ if [[ "${static_analysis}" == "1" ]]; then
     if [[ "${pvs_static_analysis}" == "1" ]]; then
       if command -v pvs-studio; then
         pvs-studio-analyzer analyze -a 31 -o ./pvs-studio.log -j${MAX_JOBS} || true
-        plog-converter -t tasklist -a 'GA:1,2,3;64:1,2,3;OP:1,2,3;CS:1,2,3' -o ./pvs-studio-report.txt ./pvs-studio.log || true
+        plog-converter -t tasklist -a 'GA:1,2,3;64:1,2,3;OP:1,2,3;CS:1,2,3' -o ${STATIC_ANALYSIS_DIR}/pvs-studio-report.txt ./pvs-studio.log || true
         rm -rf ./pvs-studio.log || true
-        cp ./pvs-studio-report.txt ${STATIC_ANALYSIS_DIR} || true
       fi
     fi
     if [[ "${clang_tidy_static_analysis}" == "1" ]]; then
-      eval "${run_clang_tidy_cmd} -p $(dirname $json_path) -quiet >./run-clang-tidy.txt || true"
-      cp ./run-clang-tidy.txt ${STATIC_ANALYSIS_DIR} || true
+      eval "${run_clang_tidy_cmd} -p $(dirname $json_path) -quiet >${STATIC_ANALYSIS_DIR}/run-clang-tidy.txt || true"
     fi
     # if command -v cppcheck; then
-    #   cppcheck --project=./compile_commands.json -j $MAX_JOBS --std=c++20 --enable=all --inconclusive 2>./cppcheck.txt || true
-    #   cp ./cppcheck.txt ${STATIC_ANALYSIS_DIR} || true
+    #   cppcheck --project=./compile_commands.json -j $MAX_JOBS --std=c++20 --enable=all --inconclusive 2>${STATIC_ANALYSIS_DIR}/cppcheck.txt || true
     # fi
   else
     cd ${__SRC_DIR}
