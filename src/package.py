@@ -108,6 +108,7 @@ class Package:
                     script.prepend_env("FILE_NAME", file_name)
             script.prepend_env("BUILD_DIR", build_dir)
             script.prepend_env("STATIC_ANALYSIS_DIR", static_analysis_dir)
+            script.append_env("reuse_build", "1" if reuse_build else "0")
             output, exit_code = script.exec(throw=False)
 
             log_file = os.path.join(
