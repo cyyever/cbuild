@@ -26,3 +26,4 @@ if [[ "${static_analysis}" == "1" ]]; then
     fi
   fi
 fi
+rmdir ${STATIC_ANALYSIS_DIR} || true
