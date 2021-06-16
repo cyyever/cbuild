@@ -14,7 +14,6 @@
       "automake",
       "gettext",
       "gcc",
-      "clang-tidy",
       "libtool"
     ],
     "macos": [
@@ -52,6 +51,7 @@
       "bison",
       "flex",
       "autoconf-archive",
+      "clang-tidy",
       "libtool-bin",
       "g++",
       "clang",
