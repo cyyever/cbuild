@@ -7,8 +7,12 @@ if [[ "${static_analysis}" == "1" ]] && [[ "${BUILD_CONTEXT_docker:=0}" == "0" ]
     if [[ "${pvs_static_analysis}" == "1" ]]; then
       if command -v pvs-studio; then
         pvs-studio-analyzer analyze -a 31 -o ./pvs-studio.log -j${MAX_JOBS} || true
-        plog-converter -t tasklist -a 'GA:1,2,3;64:1,2,3;OP:1,2,3;CS:1,2,3' -o ${STATIC_ANALYSIS_DIR}/pvs-studio-report.txt ./pvs-studio.log || true
+        # checking_option='GA:1,2,3;64:1,2,3;OP:1,2,3;CS:1,2,3'
+        checking_option='GA:1,2;64:1,2;OP:1,2;CS:1,2'
+        plog-converter -t tasklist -a $checking_option -o ${STATIC_ANALYSIS_DIR}/pvs-studio-report.txt ./pvs-studio.log || true
         rm -rf ./pvs-studio.log || true
+        ${sed_cmd} -e '/\/third_party\//d' -i ${STATIC_ANALYSIS_DIR}/pvs-studio-report.txt || ture
+        grep -e "${__SRC_DIR}" ${STATIC_ANALYSIS_DIR}/pvs-studio-report.txt >pvs.txt && mv pvs.txt ${STATIC_ANALYSIS_DIR}/pvs-studio-report.txt || true
       fi
     fi
     if [[ "${clang_tidy_static_analysis}" == "1" ]]; then

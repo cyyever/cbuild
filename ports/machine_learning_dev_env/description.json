@@ -41,6 +41,7 @@
       "libomp-devel"
     ],
     "archlinux": [
+      "gperftools",
       "openmp"
     ],
     "pip": [
