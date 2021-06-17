@@ -107,20 +107,16 @@ class Package:
             )
             script.prepend_env("STATIC_ANALYSIS_DIR", static_analysis_dir)
             script.append_env("reuse_build", "1" if reuse_build else "0")
-            output, exit_code = script.exec(throw=False)
 
             log_file = os.path.join(
                 environment.log_dir,
                 self.full_name() + ".build.txt",
             )
             os.makedirs(os.path.dirname(log_file), exist_ok=True)
-            if os.path.isfile(log_file):
-                os.remove(log_file)
             with open(log_file, "wt", encoding="utf8") as f:
-                f.write(output)
-
-            if exit_code != 0:
-                sys.exit("failed to build package:" + self.specification().name)
+                _, exit_code = script.exec(throw=False, extra_output_files=[f])
+                if exit_code != 0:
+                    sys.exit("failed to build package:" + self.specification().name)
 
             with open(tag_file, "w") as f:
                 f.write(new_hash)
@@ -180,25 +176,22 @@ class Package:
             src_dir_pair = None
             if source_dir:
                 src_dir_pair = (source_dir, docker_src_dir)
-            output, exit_code = docker_file.build(
-                result_image=self.__get_docker_image_name(),
-                src_dir_pair=src_dir_pair,
-                additional_docker_commands=addtional_docker_commands,
-            )
-
             docker_image_name = self.__get_docker_image_name()
             log_file = os.path.join(
                 environment.log_dir,
-                "succ_docker_log" if exit_code == 0 else "fail_docker_log",
+                "docker_log",
                 docker_image_name + ".build.txt",
             )
             os.makedirs(os.path.dirname(log_file), exist_ok=True)
-            if os.path.isfile(log_file):
-                os.remove(log_file)
             with open(log_file, "wt") as f:
-                f.write(output)
-            if exit_code != 0:
-                sys.exit("failed to build docker image of " + docker_image_name)
+                _, exit_code = docker_file.build(
+                    result_image=self.__get_docker_image_name(),
+                    src_dir_pair=src_dir_pair,
+                    additional_docker_commands=addtional_docker_commands,
+                    extra_output_files=[f],
+                )
+                if exit_code != 0:
+                    sys.exit("failed to build docker image of " + docker_image_name)
 
     def __get_docker_image_name(self):
         tag = self.specification().branch
