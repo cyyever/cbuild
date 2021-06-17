@@ -1,4 +1,4 @@
-if [[ "${static_analysis}" == "1" ]] && [[ "${BUILD_CONTEXT_docker:=0}" == "1" ]]; then
+if [[ "${static_analysis}" == "1" ]] && [[ "${BUILD_CONTEXT_docker:=0}" == "0" ]]; then
   rm -rf ${STATIC_ANALYSIS_DIR}
   mkdir -p ${STATIC_ANALYSIS_DIR}
   get_json_path
