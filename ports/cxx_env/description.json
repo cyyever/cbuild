@@ -14,7 +14,6 @@
       "automake",
       "gettext",
       "gcc",
-      "clang-tidy",
       "libtool"
     ],
     "macos": [
@@ -32,6 +31,7 @@
       "gcc10",
       "flex",
       "autoconf-archive",
+      "clang",
       "pkgconf",
       "bison",
       "make",
@@ -54,6 +54,7 @@
       "autoconf-archive",
       "libtool-bin",
       "g++",
+      "clang-tidy",
       "clang",
       "make",
       "ninja-build",

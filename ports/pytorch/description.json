@@ -5,7 +5,12 @@
     "third_party/eigen",
     "third_party/pybind11",
     "third_party/ios-cmake",
-    "third_party/protobuf"
+    "third_party/nccl/nccl",
+    "third_party/python-enum",
+    "third_party/python-six",
+    "third_party/QNNPACK",
+    "third_party/protobuf",
+    "third_party/tbb"
   ],
   "cache_time": 30,
   "conditional_new_feature": {
@@ -73,7 +78,7 @@
       "NCCL_ROOT=${INSTALL_PREFIX}",
       "NCCL_INCLUDE_DIR=${INSTALL_PREFIX}/include",
       "USE_NCCL=on",
-      "USE_SYSTEM_NCCL=off"
+      "USE_SYSTEM_NCCL=on"
     ],
     "freebsd": [
       "USE_KINETO=off"

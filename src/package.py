@@ -95,11 +95,6 @@ class Package:
             else:
                 print("reuse build directory for package:", str(self.desc.spec))
             os.makedirs(build_dir, exist_ok=True)
-            static_analysis_dir = os.path.join(
-                environment.static_analysis_dir, self.full_name()
-            )
-            shutil.rmtree(static_analysis_dir, ignore_errors=True)
-            os.makedirs(static_analysis_dir)
 
             if source_result is not None:
                 src_dir, file_name = source_result
@@ -107,6 +102,9 @@ class Package:
                 if file_name:
                     script.prepend_env("FILE_NAME", file_name)
             script.prepend_env("BUILD_DIR", build_dir)
+            static_analysis_dir = os.path.join(
+                environment.static_analysis_dir, self.full_name()
+            )
             script.prepend_env("STATIC_ANALYSIS_DIR", static_analysis_dir)
             script.append_env("reuse_build", "1" if reuse_build else "0")
             output, exit_code = script.exec(throw=False)

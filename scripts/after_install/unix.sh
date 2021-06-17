@@ -1,4 +1,6 @@
-if [[ "${static_analysis}" == "1" ]]; then
+if [[ "${static_analysis}" == "1" ]] && [[ "${BUILD_CONTEXT_docker:=0}" == "1" ]]; then
+  rm -rf ${STATIC_ANALYSIS_DIR}
+  mkdir -p ${STATIC_ANALYSIS_DIR}
   get_json_path
   if [[ "$json_path" != "" ]]; then
     cd $(dirname $json_path)
@@ -25,5 +27,5 @@ if [[ "${static_analysis}" == "1" ]]; then
       cp ./pvs-studio-report.txt ${STATIC_ANALYSIS_DIR} || true
     fi
   fi
+  rmdir --ignore-fail-on-non-empty ${STATIC_ANALYSIS_DIR} || true
 fi
-rmdir ${STATIC_ANALYSIS_DIR} || true
