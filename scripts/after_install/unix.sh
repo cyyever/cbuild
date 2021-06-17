@@ -1,12 +1,21 @@
-if [[ "${static_analysis}" == "1" ]]; then
+if [[ "${static_analysis}" == "1" ]] && [[ "${BUILD_CONTEXT_docker:=0}" == "0" ]]; then
+  rm -rf ${STATIC_ANALYSIS_DIR}
+  mkdir -p ${STATIC_ANALYSIS_DIR}
   get_json_path
   if [[ "$json_path" != "" ]]; then
     cd $(dirname $json_path)
     if [[ "${pvs_static_analysis}" == "1" ]]; then
       if command -v pvs-studio; then
         pvs-studio-analyzer analyze -a 31 -o ./pvs-studio.log -j${MAX_JOBS} || true
-        plog-converter -t tasklist -a 'GA:1,2,3;64:1,2,3;OP:1,2,3;CS:1,2,3' -o ${STATIC_ANALYSIS_DIR}/pvs-studio-report.txt ./pvs-studio.log || true
+        # checking_option='GA:1,2,3;64:1,2,3;OP:1,2,3;CS:1,2,3'
+        checking_option='GA:1,2;64:1,2;OP:1,2;CS:1,2'
+        plog-converter -t tasklist -a $checking_option -o ${STATIC_ANALYSIS_DIR}/pvs-studio-report.txt ./pvs-studio.log || true
         rm -rf ./pvs-studio.log || true
+        ${sed_cmd} -e '/\/third_party\//d' -i ${STATIC_ANALYSIS_DIR}/pvs-studio-report.txt || ture
+        for error_type in '2005' '103' '106' '112' '108' '107' '104' '2004' '110'; do
+          ${sed_cmd} -e "/\<V${error_type}\>/d" -i ${STATIC_ANALYSIS_DIR}/pvs-studio-report.txt || ture
+        done
+        grep -e "${__SRC_DIR}" ${STATIC_ANALYSIS_DIR}/pvs-studio-report.txt >pvs.txt && mv pvs.txt ${STATIC_ANALYSIS_DIR}/pvs-studio-report.txt || true
       fi
     fi
     if [[ "${clang_tidy_static_analysis}" == "1" ]]; then
@@ -25,5 +34,5 @@ if [[ "${static_analysis}" == "1" ]]; then
       cp ./pvs-studio-report.txt ${STATIC_ANALYSIS_DIR} || true
     fi
   fi
+  rmdir --ignore-fail-on-non-empty ${STATIC_ANALYSIS_DIR} || true
 fi
-rmdir ${STATIC_ANALYSIS_DIR} || true

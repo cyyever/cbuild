@@ -42,7 +42,7 @@
       "opencv[full]:__cbuild_most_recent_git_tag"
     ],
     "torch": [
-      "torchvision:master"
+      "pytorch:master"
     ],
     "cv_python_binding": [
       "pybind11:master"

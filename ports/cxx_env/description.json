@@ -31,8 +31,10 @@
       "gcc10",
       "flex",
       "autoconf-archive",
+      "clang",
       "pkgconf",
       "bison",
+      "openmp",
       "make",
       "base-devel"
     ],
@@ -54,6 +56,7 @@
       "clang-tidy",
       "libtool-bin",
       "g++",
+      "clang-tidy",
       "clang",
       "make",
       "ninja-build",

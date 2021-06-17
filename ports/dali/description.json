@@ -3,7 +3,7 @@
   "cache_time": 30,
   "default_build_script": "c",
   "dependency": [
-    "torchvision:master",
+    "torchvision:cyy",
     "ffmpeg[shared_lib]:__cbuild_most_recent_git_tag",
     "opencv[full]:__cbuild_most_recent_git_tag"
   ],

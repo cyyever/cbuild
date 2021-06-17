@@ -74,9 +74,11 @@ class PackageDescription:
 
             source = GitSource(
                 self.spec,
-                url,
-                sources_dir,
+                git_url=url,
+                root_dir=sources_dir,
                 with_submodule=with_submodule,
+                remote_url=self.get_item("remote_git_url"),
+                remote_branch=self.get_item("remote_git_branch"),
                 ignored_submodules=ignored_submodules,
                 ignored_tag_regex=ignored_tag_regex,
             )
