@@ -77,10 +77,10 @@ class GitSource(Source):
         if not in_branch:
             if self.remote_url is not None:
                 assert self.remote_branch is not None
+                exec_cmd("git restore .")
                 exec_cmd("git fetch origin " + self.spec.branch)
                 exec_cmd("git fetch up " + self.remote_branch)
                 exec_cmd("git checkout origin/" + self.spec.branch)
-                exec_cmd("git restore .")
 
                 _, error_code = exec_cmd(
                     "git rebase up/" + self.remote_branch, throw=False
@@ -104,7 +104,6 @@ class GitSource(Source):
                         cmd += "-c submodule." + submodel + ".update=none "
                     else:
                         cmd += '-c submodule."' + submodel + '".update=none '
-            print(cmd)
             cmd += " submodule update --init --recursive"
             exec_cmd(cmd)
 
