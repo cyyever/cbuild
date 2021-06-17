@@ -4,6 +4,9 @@
     "ubuntu": [
       "gfortran"
     ],
+    "centos": [
+      "gcc-gfortran"
+    ],
     "archlinux": [
       "gcc-fortran"
     ]
