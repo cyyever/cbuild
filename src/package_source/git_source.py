@@ -61,12 +61,16 @@ class GitSource(Source):
             exec_cmd("git init")
             exec_cmd("git remote add origin " + self.url)
         os.chdir(self.__repositary_path)
+        in_branch = False
         if self.spec.branch == "__cbuild_most_recent_git_tag":
             self.spec.branch = self.__get_max_tag()
             print("resolve spec", self.spec.name, "to branch", self.spec.branch)
-
-        exec_cmd("git fetch --depth 1 origin " + self.spec.branch)
-        exec_cmd("git reset --hard FETCH_HEAD")
+            _, error_code = exec_cmd("git checkout " + self.spec.branch, throw=False)
+            if error_code == 0:
+                in_branch = True
+        if not in_branch:
+            exec_cmd("git fetch --depth 1 origin " + self.spec.branch)
+            exec_cmd("git reset --hard FETCH_HEAD")
 
         if self.with_submodule:
             exec_cmd("git submodule sync")
