@@ -29,12 +29,16 @@
     ]
   },
   "conditional_system_package_dependency": {
-    "archlinux&&!docker": [
-      "cuda"
-    ],
-    "archlinux&&docker": [
-      "cuda=11.3.0-2"
-    ]
+    "!docker": {
+      "archlinux": [
+        "cuda"
+      ]
+    },
+    "docker": {
+      "archlinux": [
+        "cuda=11.3.0-2"
+      ]
+    }
   },
   "dependency": [
     "cxx_env:master"
