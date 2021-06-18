@@ -17,6 +17,8 @@ class Source:
         self.download_file_path = None
         self.download_dir_path = None
         self.prev_dir = None
+        if self.root_dir is not None:
+            os.makedirs(self.root_dir, exist_ok=True)
 
     @staticmethod
     def is_git_source(url):
@@ -46,7 +48,7 @@ class Source:
                     os.remove(lock_file)
 
         with FileLock(lock_file) as lock:
-            os.write(lock.fd,bytes(os.getpid()))
+            os.write(lock.fd, bytes(os.getpid()))
             if self.url is not None:
                 result = self._download()
                 if not result:

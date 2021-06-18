@@ -90,7 +90,7 @@ class PackageDescription:
             return TarballSource(
                 self.spec,
                 url,
-                sources_dir,
+                os.path.join(sources_dir, str(self.spec.name)),
                 self.get_item("file_name"),
                 self.get_item("checksum"),
             )
@@ -101,7 +101,7 @@ class PackageDescription:
             return FileSource(
                 self.spec,
                 url,
-                sources_dir,
+                os.path.join(sources_dir, str(self.spec.name)),
                 self.get_item("file_name"),
                 self.get_item("checksum"),
             )
