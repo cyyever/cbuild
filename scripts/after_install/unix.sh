@@ -36,3 +36,15 @@ if [[ "${static_analysis}" == "1" ]] && [[ "${BUILD_CONTEXT_docker:=0}" == "0" ]
   fi
   rmdir --ignore-fail-on-non-empty ${STATIC_ANALYSIS_DIR} || true
 fi
+
+if [[ "${BUILD_CONTEXT_docker:=0}" == "1" ]]; then
+  OIFS=$IFS
+  IFS=':'
+  for p in $LD_LIBRARY_PATH; do
+    if ! grep $p /etc/ld.so.conf; then
+      printf "$p" | tee -a /etc/ld.so.conf
+    fi
+  done
+  ldconfig
+  IFS=$OIFS
+fi
