@@ -53,6 +53,7 @@
       "bison",
       "flex",
       "autoconf-archive",
+      "clang-tidy",
       "libtool-bin",
       "g++",
       "clang-tidy",
