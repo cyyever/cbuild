@@ -32,6 +32,6 @@ fi
 python3 -m pip install --upgrade --user setuptools FileLock-git requests colorlog psutil
 python3 -m pip install --upgrade --user git+https://github.com/tqdm/tqdm.git@master#egg=tqdm
 for _ in $(seq 5); do
-  python3 -m pip uninstall naive_python_lib
+  python3 -m pip uninstall cyy_naive_lib
 done
 python3 -m pip install --upgrade --user git+https://github.com/cyyever/naive_python_lib.git@main
