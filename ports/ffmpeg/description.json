@@ -8,7 +8,7 @@
     "cuda": [
       "nv-codec-headers:__cbuild_most_recent_git_tag"
     ],
-    "centos":[
+    "centos": [
       "x264[shared_lib]:master",
       "x265[shared_lib]:__cbuild_most_recent_git_tag"
     ]
@@ -22,7 +22,13 @@
       "libx264-dev",
       "libx265-dev"
     ],
-    "fedora":["openh264-devel"],
+    "archlinux": [
+      "x264",
+      "x265"
+    ],
+    "fedora": [
+      "openh264-devel"
+    ],
     "freebsd": [
       "libx264",
       "x265"
