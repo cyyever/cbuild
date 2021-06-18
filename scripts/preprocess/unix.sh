@@ -75,7 +75,7 @@ if [[ "${run_clang_tidy_cmd}" != "" ]]; then
     get_json_path
     if [[ "$json_path" != "" ]]; then
       echo "run clang_tidy_fix"
-      eval "${run_clang_tidy_cmd} -p $(dirname $json_path) -fix -quiet >${STATIC_ANALYSIS_DIR}/run-clang-tidy.txt"
+      eval "${run_clang_tidy_cmd} -j $MAX_JOBS -p $(dirname $json_path) -fix -quiet >${STATIC_ANALYSIS_DIR}/run-clang-tidy.txt"
       echo "end run clang_tidy_fix"
     fi
   fi

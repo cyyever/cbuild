@@ -19,7 +19,7 @@ if [[ "${static_analysis}" == "1" ]] && [[ "${BUILD_CONTEXT_docker:=0}" == "0" ]
       fi
     fi
     if [[ "${clang_tidy_static_analysis}" == "1" ]]; then
-      eval "${run_clang_tidy_cmd} -p $(dirname $json_path) -quiet >${STATIC_ANALYSIS_DIR}/run-clang-tidy.txt || true"
+      eval "${run_clang_tidy_cmd} -j $MAX_JOBS -p $(dirname $json_path) -quiet >${STATIC_ANALYSIS_DIR}/run-clang-tidy.txt || true"
     fi
     # if command -v cppcheck; then
     #   cppcheck --project=./compile_commands.json -j $MAX_JOBS --std=c++20 --enable=all --inconclusive 2>${STATIC_ANALYSIS_DIR}/cppcheck.txt || true
