@@ -1,5 +1,7 @@
 mkdir -p ${INSTALL_PREFIX}/CUDA
 cd $BUILD_DIR
+mkdir cuda_tmp
+cd cuda_tmp
 ${sudo_cmd} bash $SRC_DIR/${FILE_NAME} --tmpdir=. --override --silent --toolkit --no-drm --no-man-page --no-opengl-libs --installpath=${INSTALL_PREFIX}/CUDA
 if [[ $? -eq 0 ]]; then
   for path in ${INSTALL_PREFIX}/CUDA/lib64; do
@@ -10,4 +12,4 @@ if [[ $? -eq 0 ]]; then
   done
 fi
 cd $SRC_DIR
-rm -rf $BUILD_DIR
+rm -rf $BUILD_DIR/cuda_tmp
