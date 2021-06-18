@@ -1,4 +1,5 @@
 {
   "git_url": "git@github.com:grpc/grpc.git",
-  "default_build_script": "c"
+  "default_build_script": "c",
+  "cmake_options": "-DBUILD_TESTING=OFF"
 }

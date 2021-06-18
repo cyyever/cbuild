@@ -1,30 +1,13 @@
-if [[ "${BUILD_CONTEXT_archlinux:=0}" == 1 ]]; then
-  exit 0
-fi
-if [[ "${BUILD_CONTEXT_centos:=0}" == 1 ]]; then
-  exit 0
-fi
-
-if [[ "${BUILD_CONTEXT_docker:=0}" == 1 ]]; then
-  exit 0
-fi
-
-if test -f /usr/local/cuda/bin/nvcc; then
-  if /usr/local/cuda/bin/nvcc --version | grep '11.3'; then
-    exit 0
-  fi
-fi
-
-mkdir -p ${INSTALL_PREFIX}/cuda
+mkdir -p ${INSTALL_PREFIX}/CUDA
 cd $BUILD_DIR
-sudo bash $SRC_DIR/${FILE_NAME} --tmpdir=. --override --silent --toolkit --no-drm --no-man-page --no-opengl-libs --installpath=${INSTALL_PREFIX}/cuda
+${sudo_cmd} bash $SRC_DIR/${FILE_NAME} --tmpdir=. --override --silent --toolkit --no-drm --no-man-page --no-opengl-libs --installpath=${INSTALL_PREFIX}/CUDA
 if [[ $? -eq 0 ]]; then
-  for path in /usr/local/cuda/lib64; do
+  for path in ${INSTALL_PREFIX}/CUDA/lib64; do
     if ! grep -q "$path" /etc/ld.so.conf; then
-      echo "$path" | sudo tee --append /etc/ld.so.conf
-      sudo ldconfig
+      echo "$path" | ${sudo_cmd} tee --append /etc/ld.so.conf
+      ${sudo_cmd} ldconfig
     fi
   done
 fi
 cd $SRC_DIR
-sudo rm -rf $BUILD_DIR
+rm -rf $BUILD_DIR

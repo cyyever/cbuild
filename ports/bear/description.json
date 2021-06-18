@@ -1,9 +1,7 @@
 {
   "git_url": "git@github.com:rizsotto/Bear.git",
   "default_build_script": "c",
-  "system_package_dependency": {
-    "archlinux": [
-      "grpc"
-    ]
-  }
+  "dependency": [
+    "grpc:__cbuild_most_recent_git_tag"
+  ]
 }
