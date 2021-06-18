@@ -26,9 +26,14 @@
   "system_package_dependency": {
     "windows": [
       "cuda"
-    ],
-    "archlinux": [
+    ]
+  },
+  "conditional_system_package_dependency": {
+    "archlinux&&!docker": [
       "cuda"
+    ],
+    "archlinux&&docker": [
+      "cuda=11.3.0-2"
     ]
   },
   "dependency": [
