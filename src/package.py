@@ -143,12 +143,12 @@ class Package:
         build_dir = "/build"
         script.append_env("SRC_DIR", docker_src_dir)
         script.append_env("BUILD_DIR", build_dir)
-        script.prepend_content("mkdir -p " + build_dir)
         script.prepend_content("mkdir -p " + docker_src_dir)
         if not self.desc.get_item("reuse_build", False):
             script.append_content("rm -rf " + build_dir)
         else:
             print("reuse build directory for package:", str(self.desc.spec))
+        script.prepend_content("mkdir -p " + build_dir)
         if "debug_build" not in build_context:
             script.append_content("rm -rf " + docker_src_dir)
         else:
