@@ -1,0 +1,8 @@
+{
+  "git_url": "git@github.com:cyyever/distributed_learning_simulator.git",
+  "cache_time": 0,
+  "default_build_script": "python",
+  "dependency": [
+    "cyy_torch_algorithm:main"
+  ]
+}
