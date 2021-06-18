@@ -18,6 +18,12 @@
     "archlinux": {
       "group_package": true
     },
+    "docker": {
+      "archlinux": {
+        "url": "https://developer.download.nvidia.com/compute/cuda/11.3.1/local_installers/cuda_11.3.1_465.19.01_linux.run",
+        "checksum": "no_checksum"
+      }
+    },
     "linux": {
       "url": "https://developer.download.nvidia.com/compute/cuda/11.3.1/local_installers/cuda_11.3.1_465.19.01_linux.run",
       "checksum": "no_checksum"
@@ -32,11 +38,6 @@
     "!docker": {
       "archlinux": [
         "cuda"
-      ]
-    },
-    "docker": {
-      "archlinux": [
-        "cuda=11.3.0-2"
       ]
     }
   },

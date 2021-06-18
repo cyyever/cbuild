@@ -46,6 +46,8 @@ class PackageDescription:
             branch_description = description[self.spec.branch]
         elif "all_branches" in description:
             branch_description = description["all_branches"]
+        if "docker" in branch_description and "docker" in BuildContext.get():
+            branch_description = branch_description["docker"]
         if BuildContext.get_target_system() in branch_description:
             branch_description = branch_description[BuildContext.get_target_system()]
         else:
