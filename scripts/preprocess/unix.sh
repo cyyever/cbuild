@@ -81,6 +81,7 @@ if test -f ${INSTALL_PREFIX}/llvm_tool/run-clang-tidy.py; then
   run_clang_tidy_cmd="${CBUILD_PYTHON_EXE} ${INSTALL_PREFIX}/llvm_tool/run-clang-tidy.py -excluded-file-patterns '(.*/third_party/.*)' -j ${MAX_JOBS} -format-style=file -timeout=7200"
   for config_file in ${__SRC_DIR}/.__cbuild_clang-tidy ${__SRC_DIR}/.clang-tidy ${INSTALL_PREFIX}/cli_tool_configs/cpp-clang-tidy; do
     if test -f $config_file; then
+      echo "use clang-tidy config file $config_file"
       run_clang_tidy_cmd="${run_clang_tidy_cmd} -config-file=${config_file} "
       break
     fi
