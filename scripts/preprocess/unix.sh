@@ -76,8 +76,12 @@ if [[ "${run_clang_tidy_cmd}" != "" ]]; then
     get_json_path
     if [[ "$json_path" != "" ]]; then
       echo "run clang_tidy_fix"
+      mkdir -p "${STATIC_ANALYSIS_DIR}"
       eval "${run_clang_tidy_cmd} -j $MAX_JOBS -p $(dirname $json_path) -fix -quiet >${STATIC_ANALYSIS_DIR}/run-clang-tidy.txt"
       echo "end run clang_tidy_fix"
+      export clang_tidy_static_analysis="0"
+    else
+      echo "no compile_commands.json to run clang_tidy_fix"
     fi
   fi
 fi
