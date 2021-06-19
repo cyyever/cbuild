@@ -1,10 +1,14 @@
 {
   "git_url": "git@github.com:pybind/pybind11.git",
   "cache_time": 30,
+  "reuse_build": true,
   "default_build_script": "c",
   "environment_variable": [
-    "static_analysis=1"
+    "static_analysis=1",
+    "run_test=1",
+    "TEST_TARGET=check"
   ],
+  "cmake_options": "-DPYBIND11_TEST=on",
   "system_package_dependency": {
     "pip": [
       "pytest"

@@ -42,14 +42,23 @@ __CBUILD_PIP_EXE="${CBUILD_PYTHON_EXE} -m pip"
 json_path=""
 
 function get_json_path() {
+  if [[ "$json_path" != "" ]]; then
+    return 0
+  fi
+  mkdir -p ${__SRC_DIR}/.cbuild_compile_commands
+  if test -f ${__SRC_DIR}/.cbuild_compile_commands/compile_commands.json; then
+    json_path="${__SRC_DIR}/.cbuild_compile_commands/compile_commands.json"
+    return 0
+  fi
+
   for DIR in ${BUILD_DIR} ${__SRC_DIR}/build ${__SRC_DIR}; do
     if [[ "$json_path" != "" ]]; then
-      return 0
+      break
     fi
 
     json_path=$(find ${DIR} -name "compile_commands.json" || true)
     if [[ "$json_path" != "" ]]; then
-      return 0
+      break
     fi
 
     ninja_build_path=$(find ${DIR} -name "build.ninja" || true)
@@ -58,10 +67,13 @@ function get_json_path() {
       ninja -t compdb >compile_commands.json
       json_path=$(find $(pwd) -name "compile_commands.json" || true)
       if [[ "$json_path" != "" ]]; then
-        return 0
+        break
       fi
     fi
+    jq -s 'add | unique_by(.file)' $json_path >${__SRC_DIR}/.cbuild_compile_commands/compile_commands.json
+    json_path="${__SRC_DIR}/.cbuild_compile_commands/compile_commands.json"
   done
+
   return 0
 }
 
