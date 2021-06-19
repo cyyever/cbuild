@@ -1,5 +1,7 @@
 {
-  "git_url": "git@github.com:pytorch/pytorch.git",
+  "git_url": "git@github.com:cyyever/pytorch.git",
+  "remote_git_url": "git@github.com:pytorch/pytorch.git",
+  "remote_git_branch": "master",
   "reuse_build": true,
   "ignored_git_submodules": [
     "third_party/eigen",
