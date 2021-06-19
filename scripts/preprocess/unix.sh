@@ -45,6 +45,7 @@ function get_json_path() {
   if [[ "$json_path" != "" ]]; then
     return 0
   fi
+  rm -rf ${__SRC_DIR}/.cbuild_compile_commands
   mkdir -p ${__SRC_DIR}/.cbuild_compile_commands
   if test -f ${__SRC_DIR}/.cbuild_compile_commands/compile_commands.json; then
     json_path="${__SRC_DIR}/.cbuild_compile_commands/compile_commands.json"
@@ -70,10 +71,9 @@ function get_json_path() {
         break
       fi
     fi
-    jq -s 'add | unique_by(.file)' $json_path >${__SRC_DIR}/.cbuild_compile_commands/compile_commands.json
-    json_path="${__SRC_DIR}/.cbuild_compile_commands/compile_commands.json"
   done
-
+  jq -s 'add | unique_by(.file)' $json_path >${__SRC_DIR}/.cbuild_compile_commands/compile_commands.json
+  json_path="${__SRC_DIR}/.cbuild_compile_commands/compile_commands.json"
   return 0
 }
 
