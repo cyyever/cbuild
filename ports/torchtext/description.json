@@ -11,7 +11,7 @@
     "clang_tidy_fix=1"
   ],
   "dependency": [
-    "pytorch:master",
+    "pytorch:cyy",
     "spacy:__cbuild_most_recent_git_tag"
   ]
 }

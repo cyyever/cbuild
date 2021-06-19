@@ -16,6 +16,6 @@
     ]
   },
   "dependency": [
-    "pytorch:master"
+    "pytorch:cyy"
   ]
 }
