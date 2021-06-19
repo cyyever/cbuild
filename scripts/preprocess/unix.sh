@@ -13,9 +13,10 @@ if command -v gmake >/dev/null; then
   make_cmd=gmake
 fi
 
-# if test -d "${INSTALL_PREFIX}/python"; then
-#   export PYTHONHOME="${INSTALL_PREFIX}/python"
-# fi
+if [[ -n ${CUDA_HOME+x} ]]; then
+  export CUDAToolkit_ROOT="${CUDA_HOME}"
+  export CUDACXX="${CUDA_HOME}/bin/nvcc"
+fi
 
 if [[ -z ${INSTALL_SUBDIR+x} ]]; then
   __INSTALL_PREFIX=${INSTALL_PREFIX}
