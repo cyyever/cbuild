@@ -13,7 +13,7 @@
       "openblas[shared_lib]:__cbuild_most_recent_git_tag",
       "eigen:__cbuild_most_recent_git_tag",
       "pillow-simd:__cbuild_most_recent_git_tag",
-      "protobuf[shared_lib]:v3.17.2"
+      "protobuf[shared_lib]:v3.17.3"
     ],
     "windows": [
       "zlib:develop"
