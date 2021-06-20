@@ -3,7 +3,9 @@
   "cache_time": 30,
   "environment_variable": [
     "INSTALL_SUBDIR=python",
-    "static_analysis=0"
+    "static_analysis=0",
+    "pvs_static_analysis=1",
+    "clang_tidy_static_analysis=1"
   ],
   "conditional_environment_variable": {
     "macos": [

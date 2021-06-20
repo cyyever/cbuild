@@ -21,7 +21,8 @@
       "jemalloc:dev"
     ],
     "unix": [
-      "llvm:llvmorg-11.1.0",
+      "llvm:__cbuild_most_recent_git_tag",
+      "bear:__cbuild_most_recent_git_tag",
       "gcc:releases/gcc-10.2.0"
     ]
   },

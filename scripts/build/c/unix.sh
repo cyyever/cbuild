@@ -65,7 +65,11 @@ else
     bash "${__SRC_DIR}/configure" --prefix="${__INSTALL_PREFIX}" ${debug_option} ${configure_options}
   fi
   ${make_cmd} clean || true
-  ${make_cmd} -j $MAX_JOBS
+  if command -v bear; then
+    bear -- ${make_cmd} -j $MAX_JOBS
+  else
+    ${make_cmd} -j $MAX_JOBS
+  fi
 
   if [[ -z ${no_install+x} ]]; then
     env PREFIX="${__INSTALL_PREFIX}" ${make_cmd} install
