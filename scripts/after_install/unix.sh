@@ -18,6 +18,7 @@ if [[ "${static_analysis}" == "1" ]] && [[ "${BUILD_CONTEXT_docker:=0}" == "0" ]
       fi
     fi
     if [[ "${clang_tidy_static_analysis}" == "1" ]]; then
+      get_run_clang_tidy_cmd
       cd $__SRC_DIR
       eval "${run_clang_tidy_cmd} -j $MAX_JOBS -p $(dirname $json_path) -quiet >${STATIC_ANALYSIS_DIR}/run-clang-tidy.txt || true"
     fi
