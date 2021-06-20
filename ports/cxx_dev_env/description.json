@@ -14,15 +14,15 @@
       "llvm"
     ]
   },
-  "context_dependency": {
-    "linux": [
+  "conditional_dependency": {
+    "unix": [
       "lcov:__cbuild_most_recent_git_tag",
       "ccache:__cbuild_most_recent_git_tag",
-      "jemalloc:dev"
+      "jemalloc:dev",
+      "bear:__cbuild_most_recent_git_tag"
     ],
-    "unix": [
+    "unix&&full": [
       "llvm:__cbuild_most_recent_git_tag",
-      "bear:__cbuild_most_recent_git_tag",
       "gcc:releases/gcc-10.2.0"
     ]
   },
