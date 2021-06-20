@@ -1,0 +1,5 @@
+{
+  "git_url": "git@github.com:abseil/abseil-cpp.git",
+  "default_build_script": "c",
+  "cache_time": 999
+}
