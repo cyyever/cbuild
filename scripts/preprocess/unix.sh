@@ -77,21 +77,22 @@ function get_json_path() {
   return 0
 }
 
+run_clang_tidy_cmd=""
 if test -f ${INSTALL_PREFIX}/llvm_tool/run-clang-tidy.py; then
-  run_clang_tidy_cmd="${CBUILD_PYTHON_EXE} ${INSTALL_PREFIX}/llvm_tool/run-clang-tidy.py -excluded-file-patterns '(.*/third_party/.*)' -j ${MAX_JOBS} -format-style=file -timeout=7200"
-  for config_file in ${__SRC_DIR}/.__cbuild_clang-tidy ${__SRC_DIR}/.clang-tidy ${INSTALL_PREFIX}/cli_tool_configs/cpp-clang-tidy; do
-    if test -f $config_file; then
-      echo "use clang-tidy config file $config_file"
-      run_clang_tidy_cmd="${run_clang_tidy_cmd} -config-file=${config_file} "
-      break
-    fi
-  done
-else
-  run_clang_tidy_cmd=""
+  if [[ -n ${__SRC_DIR+x} ]]; then
+    run_clang_tidy_cmd="${CBUILD_PYTHON_EXE} ${INSTALL_PREFIX}/llvm_tool/run-clang-tidy.py -excluded-file-patterns '(.*/third_party/.*)' -j ${MAX_JOBS} -format-style=file -timeout=7200"
+    for config_file in ${__SRC_DIR}/.__cbuild_clang-tidy ${__SRC_DIR}/.clang-tidy ${INSTALL_PREFIX}/cli_tool_configs/cpp-clang-tidy; do
+      if test -f $config_file; then
+        echo "use clang-tidy config file $config_file"
+        run_clang_tidy_cmd="${run_clang_tidy_cmd} -config-file=${config_file} "
+        break
+      fi
+    done
+  fi
 fi
 
-if [[ "${run_clang_tidy_cmd}" != "" ]]; then
-  if [[ "${clang_tidy_fix:-}" == "1" ]]; then
+if [[ "${clang_tidy_fix:-}" == "1" ]]; then
+  if [[ "${run_clang_tidy_cmd}" != "" ]]; then
     get_json_path
     if [[ "$json_path" != "" ]]; then
       echo "run clang_tidy_fix"
@@ -101,7 +102,9 @@ if [[ "${run_clang_tidy_cmd}" != "" ]]; then
       echo "end run clang_tidy_fix"
       export clang_tidy_static_analysis="0"
     else
-      echo "no compile_commands.json to run clang_tidy_fix"
+      echo "no compile_commands.json to run clang-tidy fix"
     fi
+  else
+    echo "no clang-tidy to fix code"
   fi
 fi
