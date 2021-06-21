@@ -78,7 +78,7 @@ function get_json_path() {
 }
 
 function get_run_clang_tidy_cmd() {
-  if [[ "$run_clang_tidy_cmd" != "" ]]; then
+  if [[ -n ${run_clang_tidy_cmd+x} ]]; then
     return 0
   fi
   run_clang_tidy_cmd=""
