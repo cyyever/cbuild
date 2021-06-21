@@ -7,8 +7,6 @@
     "ubuntu": [
       "libboost-thread-dev",
       "libboost-filesystem-dev",
-      "libprotobuf-dev",
-      "protobuf-compiler",
       "libgflags-dev",
       "libgoogle-glog-dev",
       "liblmdb-dev",
