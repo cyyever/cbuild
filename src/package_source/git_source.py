@@ -80,7 +80,6 @@ class GitSource(Source):
                 exec_cmd("git reset --hard")
                 exec_cmd("git fetch origin " + self.spec.branch)
                 exec_cmd("git reset --hard FETCH_HEAD")
-                # exec_cmd("git checkout origin/" + self.spec.branch)
                 exec_cmd("git fetch up " + self.remote_branch)
 
                 _, error_code = exec_cmd(
