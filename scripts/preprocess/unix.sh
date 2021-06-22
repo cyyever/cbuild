@@ -32,13 +32,16 @@ if [[ -n ${SRC_DIR+x} ]]; then
   fi
 fi
 
-if [[ -n ${DEFAULT_INSTALL_PREFIX+x} ]]; then
-  __CBUILD_PYTHON_EXE="${sudo_cmd} env LD_LIBRARY_PATH=${INSTALL_PREFIX}/python/lib ${CBUILD_PYTHON_EXE}"
-else
-  __CBUILD_PYTHON_EXE="${CBUILD_PYTHON_EXE}"
+CBUILD_PYTHON_EXE="python3"
+if test -f "${INSTALL_PREFIX}/python/bin/python3"; then
+  CBUILD_PYTHON_EXE=${INSTALL_PREFIX}/python/bin/python3
 fi
 
-__CBUILD_PIP_EXE="${CBUILD_PYTHON_EXE} -m pip"
+if [[ -n ${DEFAULT_INSTALL_PREFIX+x} ]]; then
+  CBUILD_PYTHON_EXE="${sudo_cmd} env LD_LIBRARY_PATH=${INSTALL_PREFIX}/python/lib ${CBUILD_PYTHON_EXE}"
+fi
+
+CBUILD_PIP_EXE="${CBUILD_PYTHON_EXE} -m pip"
 json_path=""
 
 function get_json_path() {

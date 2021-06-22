@@ -4,12 +4,12 @@ fi
 
 cd /tmp
 for _ in $(seq 5); do
-  ${__CBUILD_PIP_EXE} uninstall $py_pkg_name -y || true
+  ${CBUILD_PIP_EXE} uninstall $py_pkg_name -y || true
 done
 
 cd ${__SRC_DIR}
 if test -f requirements.txt; then
-  ${__CBUILD_PIP_EXE} install -r requirements.txt --user
+  ${CBUILD_PIP_EXE} install -r requirements.txt --user
 fi
 
 if test -f "setup.py"; then
