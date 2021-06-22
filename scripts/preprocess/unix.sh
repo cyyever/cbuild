@@ -32,7 +32,7 @@ if [[ -n ${SRC_DIR+x} ]]; then
   fi
 fi
 
-CBUILD_PYTHON_EXE="python3"
+CBUILD_PYTHON_EXE="/usr/bin/python3"
 if test -f "${INSTALL_PREFIX}/python/bin/python3"; then
   CBUILD_PYTHON_EXE=${INSTALL_PREFIX}/python/bin/python3
 fi

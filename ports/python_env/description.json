@@ -6,6 +6,9 @@
     ]
   },
   "system_package_dependency": {
+    "archlinux": [
+      "python"
+    ],
     "pip": [
       "PyYAML",
       "types-PyYAML",
