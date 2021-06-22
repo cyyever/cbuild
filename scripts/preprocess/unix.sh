@@ -53,6 +53,9 @@ function get_json_path() {
   fi
 
   for DIR in ${BUILD_DIR} ${__SRC_DIR}/build ${__SRC_DIR}; do
+    if ! test -d $DIR; then
+      continue
+    fi
     if [[ "$json_path" != "" ]]; then
       break
     fi
