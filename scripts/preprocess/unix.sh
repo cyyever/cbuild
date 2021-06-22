@@ -118,7 +118,9 @@ fi
 if command -v ccache; then
   echo "use ccache"
   export CCACHE_CPP2="true"
-  export CCACHE_BASEDIR="${__SRC_DIR}"
+  if [[ -n ${__SRC_DIR+x} ]]; then
+    export CCACHE_BASEDIR="${__SRC_DIR}"
+  fi
   export CHE_SLOPPINESS="pch_defines,time_macros"
   for lang in C CXX CUDA; do
     eval "export CMAKE_${lang}_COMPILER_LAUNCHER=ccache"
