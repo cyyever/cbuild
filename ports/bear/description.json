@@ -1,6 +1,9 @@
 {
   "git_url": "git@github.com:rizsotto/Bear.git",
   "default_build_script": "c",
+  "environment_variable": [
+    "run_test=0"
+  ],
   "dependency": [
     "grpc:__cbuild_most_recent_git_tag",
     "spdlog:__cbuild_most_recent_git_tag",

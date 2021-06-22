@@ -1,7 +1,7 @@
 {
   "git_url": "git@github.com:grpc/grpc.git",
   "default_build_script": "c",
-  "cmake_options": "-DBUILD_TESTING=OFF",
+  "cmake_options": "-DBUILD_TESTING=OFF -DgRPC_SSL_PROVIDER=package",
   "dependency": [
     "abseil-cpp:__cbuild_most_recent_git_tag"
   ]
