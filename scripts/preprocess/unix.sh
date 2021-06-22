@@ -114,3 +114,13 @@ if [[ "${clang_tidy_fix:-}" == "1" ]]; then
     echo "no clang-tidy to fix code"
   fi
 fi
+
+if command -v ccache; then
+  echo "use ccache"
+  export CCACHE_CPP2="true"
+  export CCACHE_BASEDIR="${__SRC_DIR}"
+  export CHE_SLOPPINESS="pch_defines,time_macros"
+  for lang in C CXX CUDA; do
+    eval "export CMAKE_${lang}_COMPILER_LAUNCHER=ccache"
+  done
+fi

@@ -16,15 +16,6 @@ if test -f "${__SRC_DIR}/CMakeLists.txt"; then
   else
     test_exp="-DBUILD_TESTING=OFF"
   fi
-  if command -v ccache; then
-    echo "use ccache"
-    export CCACHE_CPP2="true"
-    export CCACHE_BASEDIR="${__SRC_DIR}"
-    export CHE_SLOPPINESS="pch_defines,time_macros"
-    for lang in C CXX CUDA; do
-      cmake_options="-DCMAKE_${lang}_COMPILER_LAUNCHER=ccache $cmake_options"
-    done
-  fi
 
   cmake -Wno-dev ${cmake_generator_exp} ${install_prefix_exp} ${test_exp} ${cmake_options} ${__SRC_DIR}
 
