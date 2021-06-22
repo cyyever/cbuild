@@ -1,5 +1,13 @@
 {
   "git_url": "git@github.com:abseil/abseil-cpp.git",
   "default_build_script": "c",
-  "cache_time": 999
+  "cache_time": 999,
+  "environment_variable": [
+    "run_test=0"
+  ],
+  "system_package_dependency": {
+    "archlinux": [
+      "gtest"
+    ]
+  }
 }
