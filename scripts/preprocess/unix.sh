@@ -75,8 +75,10 @@ function get_json_path() {
       fi
     fi
   done
-  jq -s 'add | unique_by(.file)' $json_path >${__SRC_DIR}/.cbuild_compile_commands/compile_commands.json
-  json_path="${__SRC_DIR}/.cbuild_compile_commands/compile_commands.json"
+  if [[ "$json_path" != "" ]]; then
+    jq -s 'add | unique_by(.file)' $json_path >${__SRC_DIR}/.cbuild_compile_commands/compile_commands.json
+    json_path="${__SRC_DIR}/.cbuild_compile_commands/compile_commands.json"
+  fi
   return 0
 }
 
