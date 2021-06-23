@@ -6,6 +6,7 @@ import sys
 import time
 
 from cyy_naive_lib.shell.docker_file import DockerFile
+from cyy_naive_lib.shell_factory import exec_cmd
 
 from . import environment
 from .environment import BuildContext
@@ -129,6 +130,7 @@ class Package:
         build_context = BuildContext.get()
         if prev_package is None:
             from_docker_image = self.desc.get_docker_base_image()
+            exec_cmd("sudo docker pull " + from_docker_image)
             print("build docker packages in the following context:")
             for ctx in build_context:
                 print("\t", ctx)

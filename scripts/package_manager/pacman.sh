@@ -7,3 +7,7 @@ for pkg in ${pacman_pkgs}; do
     ${sudo_cmd} pacman -S --needed --noconfirm $pkg
   fi
 done
+if [[ "${BUILD_CONTEXT_docker:=0}" == "1" ]]; then
+  echo "clear cache"
+  pacman -Scc --noconfirm
+fi
