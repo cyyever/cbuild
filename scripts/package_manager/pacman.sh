@@ -9,5 +9,6 @@ for pkg in ${pacman_pkgs}; do
 done
 if [[ "${BUILD_CONTEXT_docker:=0}" == "1" ]]; then
   echo "clear cache"
+  rm -rf /var/cache/pacman/pkg/
   pacman -Scc --noconfirm
 fi
