@@ -10,6 +10,7 @@
       "ninja:__cbuild_most_recent_git_tag",
       "tbb:__cbuild_most_recent_git_tag",
       "libjpeg-turbo:__cbuild_most_recent_git_tag",
+      "libpng:libpng16",
       "openblas[shared_lib]:__cbuild_most_recent_git_tag",
       "eigen:__cbuild_most_recent_git_tag",
       "pillow-simd:__cbuild_most_recent_git_tag",
