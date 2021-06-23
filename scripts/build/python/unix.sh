@@ -21,17 +21,17 @@ if test -f "setup.py"; then
     fi
   fi
 
-  ${__CBUILD_PYTHON_EXE} setup.py build_ext --inplace
+  ${CBUILD_PYTHON_EXE} setup.py build_ext --inplace
   if [[ -n ${DEFAULT_INSTALL_PREFIX+x} ]]; then
-    ${__CBUILD_PYTHON_EXE} setup.py install --force
+    ${CBUILD_PYTHON_EXE} setup.py install --force
   else
-    ${__CBUILD_PYTHON_EXE} setup.py install --user --force
+    ${CBUILD_PYTHON_EXE} setup.py install --user --force
   fi
   if [[ "${run_test}" == "1" ]]; then
     if [[ "${PACKAGE_VERSION}" == "master" ]]; then
-      ${__CBUILD_PYTHON_EXE} -m pytest || true
+      ${CBUILD_PYTHON_EXE} -m pytest || true
     else
-      ${__CBUILD_PYTHON_EXE} -m pytest
+      ${CBUILD_PYTHON_EXE} -m pytest
     fi
   fi
   if test -d build; then
