@@ -11,6 +11,7 @@ if [[ "${static_analysis}" == "1" ]] && [[ "${BUILD_CONTEXT_docker:=0}" == "0" ]
         plog-converter -t tasklist -a $checking_option -o ${STATIC_ANALYSIS_DIR}/pvs-studio-report.txt ./pvs-studio.log || true
         rm -rf ./pvs-studio.log || true
         ${sed_cmd} -e '/\/third_party\//d' -i ${STATIC_ANALYSIS_DIR}/pvs-studio-report.txt || ture
+        ${sed_cmd} -e '/\/site-packages//d' -i ${STATIC_ANALYSIS_DIR}/pvs-studio-report.txt || ture
         ${sed_cmd} -e '/\/proto\//d' -i ${STATIC_ANALYSIS_DIR}/pvs-studio-report.txt || ture
         ${sed_cmd} -e '/\/generated\//d' -i ${STATIC_ANALYSIS_DIR}/pvs-studio-report.txt || ture
         for error_type in '2005' '103' '106' '112' '108' '107' '104' '2004' '110' '2008'; do
