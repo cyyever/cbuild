@@ -37,7 +37,9 @@
   "conditional_system_package_dependency": {
     "!docker": {
       "archlinux": [
-        "cuda"
+        "cuda",
+        "jdk8-openjdk",
+        "gtk2"
       ]
     }
   },
