@@ -2,7 +2,13 @@
   "git_url": "git@github.com:grpc/grpc.git",
   "default_build_script": "c",
   "cmake_options": "-DBUILD_TESTING=OFF -DgRPC_SSL_PROVIDER=package",
+  "ignored_git_submodules": [
+    "third_party/protobuf",
+    "third_party/boringssl-with-bazel",
+    "third_party/abseil-cpp"
+  ],
   "dependency": [
-    "abseil-cpp:__cbuild_most_recent_git_tag"
+    "abseil-cpp:__cbuild_most_recent_git_tag",
+    "protobuf:__cbuild_most_recent_git_tag"
   ]
 }
