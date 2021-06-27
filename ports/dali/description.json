@@ -7,7 +7,15 @@
     "ffmpeg[shared_lib]:__cbuild_most_recent_git_tag",
     "opencv[full]:__cbuild_most_recent_git_tag"
   ],
-  "cmake_options": "-DFFMPEG_ROOT_DIR=${INSTALL_PREFIX} -DCUDA_TARGET_ARCHS='70;75;80' -DProtobuf_USE_STATIC_LIBS=off -DBUILD_TEST=off -DBUILD_BENCHMARK=off",
+  "ignored_git_submodules": [
+    "third_party/spdlog",
+    "third_party/pybind11"
+  ],
+  "linux": [
+    "CMAKE_CXX_COMPILER=/usr/bin/clang++",
+    "CMAKE_C_COMPILER=/usr/bin/clang"
+  ],
+  "cmake_options": "-DFFMPEG_ROOT_DIR=${INSTALL_PREFIX} -DCUDA_TARGET_ARCHS='75;80' -DProtobuf_USE_STATIC_LIBS=off -DBUILD_TEST=on -DBUILD_BENCHMARK=on -DBUILD_LIBTIFF=off",
   "system_package_dependency": {
     "ubuntu": [
       "libsndfile1-dev",
