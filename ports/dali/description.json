@@ -2,6 +2,14 @@
   "git_url": "git@github.com:NVIDIA/DALI.git",
   "cache_time": 30,
   "default_build_script": "c",
+  "reuse_build": true,
+  "environment_variable": [
+    "run_test=1",
+    "static_analysis=1",
+    "pvs_static_analysis=1",
+    "clang_tidy_static_analysis=0",
+    "clang_tidy_fix=0"
+  ],
   "dependency": [
     "torchvision:cyy",
     "ffmpeg[shared_lib]:__cbuild_most_recent_git_tag",
