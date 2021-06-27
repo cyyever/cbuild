@@ -2,6 +2,9 @@
   "git_url": "git@github.com:cyyever/torch_algorithm.git",
   "cache_time": 0,
   "default_build_script": "python",
+  "environment_variable": [
+    "static_analysis=1"
+  ],
   "dependency": [
     "cyy_torch_toolbox:main"
   ]

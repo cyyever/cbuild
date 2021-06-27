@@ -8,6 +8,9 @@
     "torchtext:cyy",
     "cyy_naive_cpp_lib[all,shared_lib]:master"
   ],
+  "environment_variable": [
+    "static_analysis=1"
+  ],
   "conditional_dependency": {
     "full": [
       "torchaudio:master"
