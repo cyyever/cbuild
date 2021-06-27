@@ -3,7 +3,7 @@ if [[ "${static_analysis}" == "1" ]] && [[ "${BUILD_CONTEXT_docker:=0}" == "0" ]
   mkdir -p ${STATIC_ANALYSIS_DIR}
   get_json_path
   if [[ "$json_path" != "" ]]; then
-    if [[ "${pvs_static_analysis}" == "1" ]]; then
+    if [[ "${pvs_static_analysis:=0}" == "1" ]]; then
       if command -v pvs-studio; then
         pvs-studio-analyzer analyze --file ${json_path} -a 31 -o ./pvs-studio.log -j${MAX_JOBS} || true
         # checking_option='GA:1,2,3;64:1,2,3;OP:1,2,3;CS:1,2,3'
@@ -20,12 +20,12 @@ if [[ "${static_analysis}" == "1" ]] && [[ "${BUILD_CONTEXT_docker:=0}" == "0" ]
         grep -e "${__SRC_DIR}" ${STATIC_ANALYSIS_DIR}/pvs-studio-report.txt | sort -k 4 >pvs.txt && mv pvs.txt ${STATIC_ANALYSIS_DIR}/pvs-studio-report.txt || true
       fi
     fi
-    if [[ "${clang_tidy_static_analysis}" == "1" ]]; then
+    if [[ "${clang_tidy_static_analysis:=0}" == "1" ]]; then
       get_run_clang_tidy_cmd
       cd $__SRC_DIR
       eval "${run_clang_tidy_cmd} -j $MAX_JOBS -p $(dirname $json_path) -quiet >${STATIC_ANALYSIS_DIR}/run-clang-tidy.txt || true"
     fi
-    if [[ "${cppcheck_static_analysis}" == "1" ]]; then
+    if [[ "${cppcheck_static_analysis:=0}" == "1" ]]; then
       if command -v cppcheck; then
         cppcheck --project=$json_path -j $MAX_JOBS --std=c++20 --enable=all --inconclusive 2>${STATIC_ANALYSIS_DIR}/cppcheck.txt || true
       fi
