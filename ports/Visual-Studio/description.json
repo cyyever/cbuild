@@ -2,6 +2,6 @@
   "2019": {
     "file_name": "vs_community.exe",
     "url": "https://download.visualstudio.microsoft.com/download/pr/7997cf24-dd9f-4298-8d11-f0f53601f05a/0b940d0e9c341160486cc1876c6cbe275dd0e637025073cba5374c262d9bae76/vs_Community.exe",
-    "checksum": "md5:9dac4c45e3d508afc1bc301f21918a77"
+    "checksum": "sha245:0b940d0e9c341160486cc1876c6cbe275dd0e637025073cba5374c262d9bae76"
   }
 }
