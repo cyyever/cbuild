@@ -1,0 +1,16 @@
+{
+  "git_url": "git@github.com:NVIDIA/cutlass.git",
+  "cache_time": 30,
+  "default_build_script": "c",
+  "reuse_build": true,
+  "environment_variable": [
+    "static_analysis=0",
+    "clang_tidy_static_analysis=0",
+    "pvs_static_analysis=0",
+    "clang_tidy_fix=0"
+  ],
+  "conditional_cmake_options": {
+    "linux": "-DCMAKE_CXX_COMPILER=/usr/bin/clang++ -DCMAKE_C_COMPILER=/usr/bin/clang"
+  },
+  "cmake_options": " -DCUTLASS_NVCC_ARCHS_ENABLED='75;80'"
+}
