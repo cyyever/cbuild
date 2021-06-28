@@ -27,7 +27,7 @@
     "third_party/spdlog",
     "third_party/pybind11"
   ],
-  "conditional_environment_variable": {
+  "conditional_cmake_options": {
     "linux": [
       "CMAKE_CXX_COMPILER=/usr/bin/clang++",
       "CMAKE_C_COMPILER=/usr/bin/clang"
