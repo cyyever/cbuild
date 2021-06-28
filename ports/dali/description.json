@@ -7,7 +7,7 @@
   "reuse_build": true,
   "environment_variable": [
     "run_test=1",
-    "static_analysis=1",
+    "static_analysis=0",
     "clang_tidy_static_analysis=0",
     "pvs_static_analysis=0",
     "clang_tidy_fix=0"
@@ -28,12 +28,9 @@
     "third_party/pybind11"
   ],
   "conditional_cmake_options": {
-    "linux": [
-      "CMAKE_CXX_COMPILER=/usr/bin/clang++",
-      "CMAKE_C_COMPILER=/usr/bin/clang"
-    ]
+    "linux": "-DCMAKE_CXX_COMPILER=/usr/bin/clang++ -DCMAKE_C_COMPILER=/usr/bin/clang"
   },
-  "cmake_options": "-DFFMPEG_ROOT_DIR=${INSTALL_PREFIX} -DCUDA_TARGET_ARCHS='75;80' -DBUILD_PROTOBUF=off -DBUILD_TEST=off -DBUILD_BENCHMARK=off -DBUILD_LIBTIFF=on -DBUILD_LIBSND=off",
+  "cmake_options": "-DFFMPEG_ROOT_DIR=${INSTALL_PREFIX} -DCUDA_TARGET_ARCHS='75;80' -DBUILD_TEST=on -DBUILD_BENCHMARK=on -DBUILD_LIBTIFF=on -DBUILD_LIBSND=off -DProtobuf_USE_STATIC_LIBS=off",
   "system_package_dependency": {
     "ubuntu": [
       "libsndfile1-dev",
