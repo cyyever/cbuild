@@ -7,11 +7,16 @@
   "reuse_build": true,
   "environment_variable": [
     "run_test=1",
-    "static_analysis=0",
-    "pvs_static_analysis=1",
+    "static_analysis=1",
     "clang_tidy_static_analysis=0",
+    "pvs_static_analysis=0",
     "clang_tidy_fix=0"
   ],
+  "conditional_dependency": {
+    "!docker": [
+      "dali_extra:main"
+    ]
+  },
   "dependency": [
     "torchvision:cyy",
     "ffmpeg[shared_lib]:__cbuild_most_recent_git_tag",
