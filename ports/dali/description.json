@@ -33,7 +33,7 @@
       "CMAKE_C_COMPILER=/usr/bin/clang"
     ]
   },
-  "cmake_options": "-DFFMPEG_ROOT_DIR=${INSTALL_PREFIX} -DCUDA_TARGET_ARCHS='75;80' -DProtobuf_USE_STATIC_LIBS=off -DBUILD_TEST=on -DBUILD_BENCHMARK=on -DBUILD_LIBTIFF=on -DBUILD_LIBSND=off ",
+  "cmake_options": "-DFFMPEG_ROOT_DIR=${INSTALL_PREFIX} -DCUDA_TARGET_ARCHS='75;80' -DBUILD_PROTOBUF=off -DBUILD_TEST=off -DBUILD_BENCHMARK=off -DBUILD_LIBTIFF=on -DBUILD_LIBSND=off",
   "system_package_dependency": {
     "ubuntu": [
       "libsndfile1-dev",

@@ -1,5 +1,8 @@
 cd ${SRC_DIR}
+# ${sed_cmd} -i -e '/cmake_minimum_required/s/3.[0-9]*/3.20/' CMakeLists.txt
 ${sed_cmd} -i -e '/check_and_add_cmake_submodule.*pybind11/d' cmake/Dependencies.common.cmake
+${sed_cmd} -i -e 's/#define DLL_PUBLIC.*/#define DLL_PUBLIC/' include/dali/core/api_helper.h
+${sed_cmd} -i -e 's/#define DLL_LOCAL.*/#define DLL_LOCAL/' include/dali/core/api_helper.h
 # ${sed_cmd} -i -e '/CMAKE_CXX_STANDARD/s/14/20/g' CMakeLists.txt
 # ${sed_cmd} -i -e '/CMAKE_CUDA_STANDARD/s/14/17/g' CMakeLists.txt
 # ${sed_cmd} -i -e 's/= size(in)/= std::size(in)/' dali/operators/geometry/mt_transform_attr.h
