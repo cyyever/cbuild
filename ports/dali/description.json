@@ -12,6 +12,11 @@
     "pvs_static_analysis=0",
     "clang_tidy_fix=0"
   ],
+  "conditional_new_feature": {
+    "unix": [
+      "machine_learning_compilers"
+    ]
+  },
   "conditional_dependency": {
     "!docker": [
       "dali_extra:main"
@@ -25,14 +30,8 @@
   ],
   "ignored_git_submodules": [
     "third_party/spdlog",
-    "third_party/googletest",
     "third_party/pybind11"
   ],
-  "conditional_cmake_options": {
-    "linux": "-DCMAKE_CXX_COMPILER=/usr/bin/clang++ -DCMAKE_C_COMPILER=/usr/bin/clang",
-    "archlinux": "-DCUDA_HOST_COMPILER=g++",
-    "ubuntu": "-DCUDA_HOST_COMPILER=g++-9"
-  },
   "cmake_options": "-DFFMPEG_ROOT_DIR=${INSTALL_PREFIX} -DCUDA_TARGET_ARCHS='75;80' -DBUILD_TEST=on -DBUILD_BENCHMARK=off -DBUILD_LIBTIFF=on -DBUILD_LIBSND=off -DProtobuf_USE_STATIC_LIBS=off -DBUILD_OPENCV=off",
   "system_package_dependency": {
     "ubuntu": [
