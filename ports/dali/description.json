@@ -1,5 +1,7 @@
 {
-  "git_url": "git@github.com:NVIDIA/DALI.git",
+  "git_url": "git@github.com:cyyever/DALI.git",
+  "remote_git_url": "git@github.com:NVIDIA/DALI.git",
+  "remote_git_branch": "main",
   "cache_time": 30,
   "default_build_script": "c",
   "reuse_build": true,
@@ -25,7 +27,7 @@
       "CMAKE_C_COMPILER=/usr/bin/clang"
     ]
   },
-  "cmake_options": "-DFFMPEG_ROOT_DIR=${INSTALL_PREFIX} -DCUDA_TARGET_ARCHS='75;80' -DProtobuf_USE_STATIC_LIBS=off -DBUILD_TEST=on -DBUILD_BENCHMARK=on -DBUILD_LIBTIFF=off -DBUILD_LIBSND=off ",
+  "cmake_options": "-DFFMPEG_ROOT_DIR=${INSTALL_PREFIX} -DCUDA_TARGET_ARCHS='75;80' -DProtobuf_USE_STATIC_LIBS=off -DBUILD_TEST=on -DBUILD_BENCHMARK=on -DBUILD_LIBTIFF=on -DBUILD_LIBSND=off ",
   "system_package_dependency": {
     "ubuntu": [
       "libsndfile1-dev",
