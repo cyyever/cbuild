@@ -32,7 +32,7 @@ if [[ "${static_analysis}" == "1" ]] && [[ "${BUILD_CONTEXT_docker:=0}" == "0" ]
     fi
   fi
 
-  if [[ "$FEATURE_feature_language_python:=0" == "1" ]]; then
+  if [[ "${FEATURE_feature_language_python:=0}" == "1" ]]; then
     if command -v semgrep; then
       semgrep --exclude='build' -j $MAX_JOBS -o ${STATIC_ANALYSIS_DIR}/semgrep.txt --config=p/r2c-ci ${__SRC_DIR}
     fi
