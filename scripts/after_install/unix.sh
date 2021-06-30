@@ -14,7 +14,7 @@ if [[ "${static_analysis}" == "1" ]] && [[ "${BUILD_CONTEXT_docker:=0}" == "0" ]
         ${sed_cmd} -e '/\/site-packages\//d' -i ${STATIC_ANALYSIS_DIR}/pvs-studio-report.txt || ture
         ${sed_cmd} -e '/\/proto\//d' -i ${STATIC_ANALYSIS_DIR}/pvs-studio-report.txt || ture
         ${sed_cmd} -e '/\/generated\//d' -i ${STATIC_ANALYSIS_DIR}/pvs-studio-report.txt || ture
-        for error_type in '2005' '103' '106' '112' '108' '107' '104' '2004' '110' '2008'; do
+        for error_type in '2005' '103' '106' '112' '108' '107' '104' '2004' '110' '2008' '002'; do
           ${sed_cmd} -e "/\<V${error_type}\>/d" -i ${STATIC_ANALYSIS_DIR}/pvs-studio-report.txt || ture
         done
         grep -e "${__SRC_DIR}" ${STATIC_ANALYSIS_DIR}/pvs-studio-report.txt | sort -k 4 >pvs.txt && mv pvs.txt ${STATIC_ANALYSIS_DIR}/pvs-studio-report.txt || true
