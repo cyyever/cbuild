@@ -5,5 +5,5 @@ ${CBUILD_PIP_EXE} install dali/python
 if [[ "$run_test" == "1" ]]; then
   export DALI_EXTRA_PATH="${__SRC_DIR}/../DALI_extra"
   # cmake --build . --target check-python || true
-  cmake --build . --target check-gtest || true
+  # cmake --build . --target check-gtest
 fi
