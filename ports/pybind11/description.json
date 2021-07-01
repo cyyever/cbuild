@@ -1,10 +1,12 @@
 {
-  "git_url": "git@github.com:pybind/pybind11.git",
+  "git_url": "git@github.com:cyyever/pybind11.git",
+  "remote_git_url": "git@github.com:pybind/pybind11.git",
+  "remote_git_branch": "master",
   "cache_time": 30,
   "reuse_build": true,
   "default_build_script": "c",
   "environment_variable": [
-    "static_analysis=0",
+    "static_analysis=1",
     "pvs_static_analysis=1",
     "clang_tidy_static_analysis=1",
     "run_test=1",
