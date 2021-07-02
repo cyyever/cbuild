@@ -1,0 +1,12 @@
+{
+  "cache_time": 3000,
+  "master": {
+    "linux": {
+      "url": "https://developer.nvidia.com/compute/libnvjpeg-2k/secure/0.2.0/local_installers/libnvjpeg_2k-linux-x86_64-0.2.0.22.tar.gz",
+      "checksum": "no_checksum"
+    }
+  },
+  "dependency": [
+    "CUDA:__cbuild_most_recent_git_tag"
+  ]
+}
