@@ -6,8 +6,10 @@
     ]
   },
   "__cbuild_most_recent_git_tag": {
-    "ubuntu": {
-      "script_package": true
+    "!docker": {
+      "ubuntu": {
+        "script_package": true
+      }
     },
     "centos": {
       "script_package": true
@@ -19,10 +21,8 @@
       "group_package": true
     },
     "docker": {
-      "archlinux": {
-        "url": "https://developer.download.nvidia.com/compute/cuda/11.3.1/local_installers/cuda_11.3.1_465.19.01_linux.run",
-        "checksum": "no_checksum"
-      }
+      "url": "https://developer.download.nvidia.com/compute/cuda/11.3.1/local_installers/cuda_11.3.1_465.19.01_linux.run",
+      "checksum": "no_checksum"
     },
     "linux": {
       "url": "https://developer.download.nvidia.com/compute/cuda/11.3.1/local_installers/cuda_11.3.1_465.19.01_linux.run",

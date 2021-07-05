@@ -71,7 +71,7 @@
     "archlinux&&machine_learning_compilers": "-DCUDA_HOST_COMPILER=/usr/bin/g++-10"
   },
   "conditional_docker_base_image": {
-    "all_os": "archlinux:latest"
+    "all_os": "ubuntu:latest"
   },
   "cache_time": 10
 }
