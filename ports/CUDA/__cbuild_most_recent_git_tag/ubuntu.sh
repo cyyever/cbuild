@@ -6,6 +6,9 @@ if command -v lsb_release && [[ "$($(command -v lsb_release) -i -s)" == "Ubuntu"
   :
 else
   if [[ "${BUILD_CONTEXT_docker:=0}" == 0 ]]; then
+    if command -v nvcc; then
+      exit 0
+    fi
     echo "ubuntu < 20.04 is not supported"
     exit 255
   fi
