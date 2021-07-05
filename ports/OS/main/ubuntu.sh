@@ -1,11 +1,11 @@
-if command -v lsb_release && [[ "$($(command -v lsb_release) -i -s)" == "Ubuntu" ]] && [[ $($(command -v lsb_release) -r -s | cut -f 1 -d.) -ge 20 ]]; then
-  :
-else
-  if [[ "${BUILD_CONTEXT_docker:=0}" == 0 ]]; then
-    echo "not in ubuntu >= 20.04"
-    exit 255
-  fi
-fi
+# if command -v lsb_release && [[ "$($(command -v lsb_release) -i -s)" == "Ubuntu" ]] && [[ $($(command -v lsb_release) -r -s | cut -f 1 -d.) -ge 20 ]]; then
+#   :
+# else
+#   if [[ "${BUILD_CONTEXT_docker:=0}" == 0 ]]; then
+#     echo "not in ubuntu >= 20.04"
+#     exit 255
+#   fi
+# fi
 
 # if [[ "${BUILD_CONTEXT_docker:=0}" == 0 ]]; then
   # ${sudo_cmd} apt-get remove -y unattended-upgrades
