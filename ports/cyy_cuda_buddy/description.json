@@ -1,0 +1,14 @@
+{
+  "git_url": "git@github.com:cyyever/cuda_buddy.git",
+  "default_build_script": "c",
+  "conditional_new_feature": {
+    "support_cuda": [
+      "cuda"
+    ]
+  },
+  "cmake_options": "-DDISABLE_RUNTIME_ANALYSIS=on",
+  "dependency": [
+    "spdlog:__cbuild_most_recent_git_tag",
+    "doctest:__cbuild_most_recent_git_tag"
+  ]
+}
