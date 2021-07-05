@@ -29,3 +29,8 @@ for _ in $(seq 5); do
   python3 -m pip uninstall -y cyy_naive_lib
 done
 python3 -m pip install --upgrade --user git+https://github.com/cyyever/naive_python_lib.git@main
+git pull
+if test -d private_ports; then
+  cd private_ports
+  git pull
+fi
