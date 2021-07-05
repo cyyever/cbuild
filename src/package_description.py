@@ -400,7 +400,7 @@ class PackageDescription:
             port_dir = os.path.join(ports_dir, self.spec.name)
             if os.path.isdir(port_dir):
                 return port_dir
-        return None
+        raise RuntimeError("No port for package" + self.spec.name)
 
     def __description_json_path(self):
-        return os.path.join(os.path.join(self.port_dir(), "description.json"))
+        return os.path.join(self.port_dir(), "description.json")
