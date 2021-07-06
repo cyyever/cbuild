@@ -33,7 +33,7 @@
     "third_party/spdlog",
     "third_party/pybind11"
   ],
-  "cmake_options": "-DFFMPEG_ROOT_DIR=${INSTALL_PREFIX} -DCUDA_ARCHITECTURES='75' -DCUDA_TARGET_ARCHS='75' -DBUILD_TEST=on -DBUILD_BENCHMARK=off -DBUILD_LIBTIFF=on -DBUILD_LIBSND=off -DProtobuf_USE_STATIC_LIBS=off -DBUILD_OPENCV=off",
+  "cmake_options": "-DFFMPEG_ROOT_DIR=${INSTALL_PREFIX} -DCUDA_ARCHITECTURES='75' -DCUDA_TARGET_ARCHS='75' -DBUILD_TEST=on -DBUILD_BENCHMARK=off -DBUILD_LIBTIFF=on -DBUILD_LIBSND=off -DProtobuf_USE_STATIC_LIBS=off -DBUILD_OPENCV=off -DCMAKE_CUDA_ARCHITECTURES='75'",
   "system_package_dependency": {
     "ubuntu": [
       "libsndfile1-dev",
