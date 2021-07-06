@@ -50,7 +50,8 @@ class Package:
             return True
 
         if new_hash is not None:
-            old_hash = open(tag_file, "r").read()
+            with open(tag_file, "r") as f:
+                old_hash = f.read()
             if old_hash == new_hash:
                 print("skip", str(self.specification()) + " due to hash")
                 return True
