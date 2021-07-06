@@ -145,5 +145,6 @@ class GitSource(Source):
         except BaseException as e:
             print("get exception", e, "and use first tag", tag)
         print("use tag", tag)
-        open(cache_file, "wt").write(tag)
+        with open(cache_file, "wt") as f:
+            f.write(tag)
         return tag
