@@ -37,7 +37,7 @@
   "system_package_dependency": {
     "ubuntu": [
       "libsndfile1-dev",
-      "libclang-11-dev"
+      "libclang-dev"
     ],
     "pip": [
       "clang"
