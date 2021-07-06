@@ -15,7 +15,7 @@ class FileSource(Source):
         self.file_name = file_name
         if file_name is None:
             self.file_name = self.url.split("/")[-1]
-            print("use file_name", self.file_name)
+            # print("use file_name", self.file_name)
         self.checksum = checksum
         if not self.checksum:
             sys.exit("no checksum for " + self.file_name + "consider add one")

@@ -16,6 +16,9 @@
   ],
   "cache_time": 30,
   "conditional_new_feature": {
+    "unix": [
+      "machine_learning_compilers"
+    ],
     "support_cuda": [
       "cuda"
     ]
@@ -64,16 +67,6 @@
       "USE_MKLDNN=off",
       "CUDNN_ROOT=${INSTALL_PREFIX}/cuda",
       "CUDNN_LIBRARY=${INSTALL_PREFIX}/cuda"
-    ],
-    "linux": [
-      "CMAKE_CXX_COMPILER=/usr/bin/clang++",
-      "CMAKE_C_COMPILER=/usr/bin/clang"
-    ],
-    "ubuntu": [
-      "CUDA_HOST_COMPILER=/usr/bin/g++-9"
-    ],
-    "archlinux": [
-      "CUDA_HOST_COMPILER=/usr/bin/g++-10"
     ],
     "debug_build": [
       "DEBUG=1"
