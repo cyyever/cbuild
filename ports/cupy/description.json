@@ -11,7 +11,7 @@
     "CUPY_NVCC_GENERATE_CODE=current",
     "CUDA_PATH=${CUDA_HOME}",
     "NVCC=nvcc --compiler-bindir g++-10",
-    "run_test=1"
+    "run_test=0"
   ],
   "conditional_new_feature": {
     "unix": [
