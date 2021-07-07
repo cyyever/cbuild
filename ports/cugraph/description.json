@@ -1,0 +1,13 @@
+{
+  "git_url": "git@github.com:rapidsai/cugraph.git",
+  "default_build_script": "c",
+  "cache_time": 999,
+  "conditional_new_feature": {
+    "unix": [
+      "machine_learning_compilers"
+    ]
+  },
+  "environment_variable": [
+    "SRC_SUBDIR=cpp"
+  ]
+}
