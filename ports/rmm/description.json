@@ -1,0 +1,13 @@
+{
+  "git_url": "git@github.com:rapidsai/rmm.git",
+  "default_build_script": "c",
+  "cache_time": 999,
+  "environment_variable": [
+    "run_test=0"
+  ],
+  "conditional_new_feature": {
+    "unix": [
+      "machine_learning_compilers"
+    ]
+  }
+}

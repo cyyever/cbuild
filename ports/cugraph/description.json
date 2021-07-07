@@ -7,6 +7,9 @@
       "machine_learning_compilers"
     ]
   },
+  "dependency": [
+    "faiss:__cbuild_most_recent_git_tag"
+  ],
   "environment_variable": [
     "SRC_SUBDIR=cpp"
   ]
