@@ -317,12 +317,15 @@ class PackageDescription:
         for system in ["linux", "bsd", "unix", "all_os"]:
             if system in BuildContext.get():
                 possible_systems.append(system)
-        branches = [
-            self.spec.branch,
+        branches = [self.spec.branch]
+        for b in [
             "__cbuild_most_recent_git_tag",
             "main",
             "master",
-        ]
+        ]:
+            if b not in branches:
+                branches.append(b)
+
         paths = []
 
         if action in (

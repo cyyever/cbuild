@@ -1,6 +1,6 @@
 cd $SRC_DIR
-if test -d $INSTALL_PREFIX/cuda; then
-  rm -rf $INSTALL_PREFIX/cuda
-fi
-cp -f -r cuda $INSTALL_PREFIX/
+mkdir -p $INSTALL_PREFIX/include
+cp -f -r cuda/include/* $INSTALL_PREFIX/include
+mkdir -p $INSTALL_PREFIX/lib64
+cp -f -r cuda/lib64/* $INSTALL_PREFIX/lib64
 rm -rf cuda

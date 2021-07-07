@@ -6,6 +6,7 @@
     "numpy:__cbuild_most_recent_git_tag"
   ],
   "environment_variable": [
+    "CUPY_NVCC_GENERATE_CODE=current",
     "run_test=1"
   ]
 }
