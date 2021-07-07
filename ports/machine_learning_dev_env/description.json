@@ -20,7 +20,8 @@
       "zlib:develop"
     ],
     "unix": [
-      "numpy:__cbuild_most_recent_git_tag"
+      "numpy:__cbuild_most_recent_git_tag",
+      "cupy:__cbuild_most_recent_git_tag"
     ],
     "cuda": [
       "cudnn:__cbuild_most_recent_git_tag"

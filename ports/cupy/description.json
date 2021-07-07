@@ -1,0 +1,11 @@
+{
+  "git_url": "git@github.com:cupy/cupy.git",
+  "cache_time": 30,
+  "default_build_script": "python",
+  "dependency": [
+    "numpy:__cbuild_most_recent_git_tag"
+  ],
+  "environment_variable": [
+    "run_test=1"
+  ]
+}
