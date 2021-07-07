@@ -3,14 +3,18 @@
   "default_build_script": "c",
   "cache_time": 999,
   "conditional_new_feature": {
-    "unix": [
-      "machine_learning_compilers"
-    ]
+    "unix": []
   },
+  "cmake_options": "-DBUILD_TESTS=off",
   "dependency": [
     "faiss:__cbuild_most_recent_git_tag"
   ],
   "environment_variable": [
     "SRC_SUBDIR=cpp"
-  ]
+  ],
+  "system_package_dependency": {
+    "ubuntu": [
+      "libboost-all-dev"
+    ]
+  }
 }

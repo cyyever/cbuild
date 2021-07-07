@@ -1,3 +1,4 @@
+exit 0
 for _ in $(seq 5); do
   ${CBUILD_PIP_EXE} uninstall cugraph -y || true
 done
