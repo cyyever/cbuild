@@ -3,10 +3,18 @@
   "cache_time": 30,
   "default_build_script": "python",
   "dependency": [
-    "numpy:__cbuild_most_recent_git_tag"
+    "numpy:__cbuild_most_recent_git_tag",
+    "cutensor:__cbuild_most_recent_git_tag"
   ],
   "environment_variable": [
     "CUPY_NVCC_GENERATE_CODE=current",
+    "CUDA_PATH=${CUDA_HOME}",
+    "NVCC=nvcc --compiler-bindir g++-10",
     "run_test=1"
-  ]
+  ],
+  "conditional_new_feature": {
+    "unix": [
+      "machine_learning_compilers"
+    ]
+  }
 }
