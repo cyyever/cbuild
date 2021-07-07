@@ -67,7 +67,7 @@
     "shared_lib": "-DBUILD_SHARED_LIBS=on",
     "unix": "-DPYTHON_EXECUTABLE=${INSTALL_PREFIX}/python/bin/python3",
     "archlinux": "-DCUDA_TOOLKIT_ROOT_DIR=/opt/cuda",
-    "ubuntu&&machine_learning_compilers": "-DCUDA_HOST_COMPILER=/usr/bin/g++-9",
+    "ubuntu&&machine_learning_compilers": "-DCUDA_HOST_COMPILER=/usr/bin/g++-9 -DCMAKE_CUDA_HOST_COMPILER=/usr/bin/g++-9",
     "archlinux&&machine_learning_compilers": "-DCUDA_HOST_COMPILER=/usr/bin/g++-10"
   },
   "conditional_docker_base_image": {
