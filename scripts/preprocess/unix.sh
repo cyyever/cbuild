@@ -13,6 +13,14 @@ if command -v gmake >/dev/null; then
   make_cmd=gmake
 fi
 
+if ! command -v ${CBUILD_PYTHON_EXE} &>/dev/null; then
+  CBUILD_PYTHON_EXE=python3
+fi
+
+if [[ -n ${DEFAULT_INSTALL_PREFIX+x} ]]; then
+  CBUILD_PYTHON_EXE="${sudo_cmd} env LD_LIBRARY_PATH=${INSTALL_PREFIX}/python/lib ${CBUILD_PYTHON_EXE}"
+fi
+
 if [[ -n ${CUDA_HOME+x} ]]; then
   export CUDAToolkit_ROOT="${CUDA_HOME}"
   export CUDACXX="${CUDA_HOME}/bin/nvcc"
