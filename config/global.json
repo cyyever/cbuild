@@ -65,13 +65,13 @@
   "conditional_cmake_options": {
     "all_os": "-DCMAKE_EXPORT_COMPILE_COMMANDS=on -DCMAKE_PREFIX_PATH=${INSTALL_PREFIX} -DCMAKE_BUILD_TYPE=${BUILD_TYPE}",
     "shared_lib": "-DBUILD_SHARED_LIBS=on",
-    "unix": "-DPYTHON_EXECUTABLE=${INSTALL_PREFIX}/python/bin/python3",
+    "unix": "-DPYTHON_EXECUTABLE=${CBUILD_PYTHON_EXE}",
     "archlinux": "-DCUDA_TOOLKIT_ROOT_DIR=/opt/cuda",
     "ubuntu&&machine_learning_compilers": "-DCUDA_HOST_COMPILER=/usr/bin/g++-9 -DCMAKE_CUDA_HOST_COMPILER=/usr/bin/g++-9",
     "archlinux&&machine_learning_compilers": "-DCUDA_HOST_COMPILER=/usr/bin/g++-10"
   },
   "conditional_docker_base_image": {
-    "all_os": "ubuntu:latest"
+    "all_os": "ubuntu:devel"
   },
   "cache_time": 10
 }
