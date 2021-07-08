@@ -9,6 +9,9 @@
     "archlinux": [
       "python"
     ],
+    "ubuntu": [
+      "python3-pip"
+    ],
     "pip": [
       "PyYAML",
       "types-PyYAML",

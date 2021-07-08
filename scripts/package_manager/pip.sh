@@ -1,4 +1,4 @@
-${CBUILD_PYTHON_EXE} -m ensurepip --default-pip
+# ${CBUILD_PYTHON_EXE} -m ensurepip --default-pip || true
 PIP_CMD="${CBUILD_PYTHON_EXE} -m pip"
 
 if [[ -n ${DEFAULT_INSTALL_PREFIX+x} ]]; then
