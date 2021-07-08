@@ -3,7 +3,7 @@
   "cache_time": 30,
   "default_build_script": "python",
   "dependency": [
-    "openblas:__cbuild_most_recent_git_tag"
+    "openblas[shared_lib]:__cbuild_most_recent_git_tag"
   ],
   "environment_variable": [
     "run_test=0"
