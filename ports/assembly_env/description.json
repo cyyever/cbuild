@@ -4,6 +4,9 @@
     "unix": [
       "nasm"
     ],
+    "msys": [
+      "nasm"
+    ],
     "windows": [
       "nasm",
       "yasm"

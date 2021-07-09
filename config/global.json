@@ -58,7 +58,8 @@
       "yum"
     ],
     "windows": [
-      "chocolatey"
+      "chocolatey",
+      "msys"
     ],
     "archlinux": [
       "pacman",
