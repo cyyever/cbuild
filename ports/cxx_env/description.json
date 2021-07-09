@@ -26,6 +26,15 @@
       "autoconf-archive",
       "ninja"
     ],
+    "msys": [
+      "ninja",
+      "gcc",
+      "flex",
+      "autoconf-archive",
+      "bison",
+      "cmake",
+      "make"
+    ],
     "archlinux": [
       "ninja",
       "gcc10",

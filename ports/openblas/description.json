@@ -2,6 +2,7 @@
   "git_url": "git@github.com:xianyi/OpenBLAS.git",
   "reuse_build": true,
   "cache_time": 30,
+  "use_msys": true,
   "environment_variable": [
     "USE_OPENMP=1"
   ],

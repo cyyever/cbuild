@@ -3,7 +3,6 @@ import json
 import os
 import sys
 from enum import Enum, auto
-from pathlib import Path
 
 from cyy_naive_lib.algorithm.sequence_op import flatten_list
 from cyy_naive_lib.shell.msys2_script import MSYS2Script
@@ -38,7 +37,7 @@ class PackageDescription:
         with open(self.__description_json_path(), "r") as f:
             description = json.load(f)
 
-        self.context = None
+        self.__context = None
         self.features = None
         branch_description = {}
         if self.spec.branch in description:
@@ -56,7 +55,7 @@ class PackageDescription:
                     break
         self.__config = Config([branch_description, description])
         self.__environment = Environment([branch_description, description])
-        self.check_language_feature = True
+        self.__check_language_feature = True
 
     def get_source(self):
         if self.get_item("script_package") or self.get_item("group_package"):
@@ -115,7 +114,6 @@ class PackageDescription:
             url = self.get_item(key)
             if url is not None:
                 break
-
         return url
 
     def get_docker_base_image(self):
@@ -123,11 +121,6 @@ class PackageDescription:
 
     def disable_build_cache(self):
         self.__config.set("cache_time", None)
-
-    def get_all_branchs(self):
-        return {
-            Path(f).stem for f in os.listdir(self.port_dir()) if f != "description.json"
-        }
 
     def get_features(self):
         if self.features:
@@ -146,14 +139,14 @@ class PackageDescription:
         if lang and ToolMapping().is_supported_language(lang):
             possible_languages.add(lang)
 
-        if self.check_language_feature:
-            self.check_language_feature = False
+        if self.__check_language_feature:
+            self.__check_language_feature = False
             for manager in self.__get_system_package_dependency():
                 langs = ToolMapping().get_languages(manager)
                 for lang in langs:
                     building_tools.add(manager)
                     possible_languages.add(lang)
-            self.check_language_feature = True
+            self.__check_language_feature = True
 
         self.features.update(["feature_language_" + lan for lan in possible_languages])
         if "cmake" in building_tools:
@@ -161,7 +154,7 @@ class PackageDescription:
 
         while True:
             new_features = self.__get_conditional_items_by_context(
-                "new_feature", context=(BuildContext.get() | self.features)
+                "new_feature", context=(self.context | self.features)
             )
             has_new_feature = False
             for new_feature in new_features:
@@ -175,9 +168,7 @@ class PackageDescription:
     def __get_shell_script(self):
         script_type = get_shell_script_type(os_hint=BuildContext.get_target_system())
         script = script_type()
-        if BuildContext.get_host_system() == "windows" and self.get_item(
-            "use_msys2", False
-        ):
+        if "msys" in self.context:
             return MSYS2Script()
         return script
 
@@ -193,7 +184,7 @@ class PackageDescription:
             pieces = item.split("=")
             script.append_env(pieces[0], "=".join(pieces[1:]))
 
-        for ctx in sorted(BuildContext.get()):
+        for ctx in sorted(self.context):
             script.append_env("BUILD_CONTEXT_" + ctx, "1")
 
         for feature in sorted(self.get_features()):
@@ -268,7 +259,7 @@ class PackageDescription:
                     not tool_mapping.is_supported_tool(manager)
                     and manager not in managers
                 ):
-                    if manager in BuildContext.get():
+                    if manager in self.context:
                         # use first manager
                         manager = managers[0]
                     else:
@@ -278,7 +269,9 @@ class PackageDescription:
                 system_pkgs[manager].update(item)
         return system_pkgs
 
-    def __get_conditional_items_by_context(self, key, context=BuildContext.get()):
+    def __get_conditional_items_by_context(self, key, context=None):
+        if context is None:
+            context = self.context
         values = self.__config.conditional_get(
             key, lambda x: self.__check_conditions(x, elements=context)
         )
@@ -292,7 +285,7 @@ class PackageDescription:
 
     def __check_conditions(self, condition_expr, elements=None):
         if elements is None:
-            elements = BuildContext.get() | self.get_features()
+            elements = self.context | self.get_features()
         conditions = condition_expr.split("||")
         for condition in conditions:
             if PackageDescription.__check_and_conditions(condition, elements):
@@ -315,9 +308,15 @@ class PackageDescription:
     def __get_script_paths(self, action):
         script = self.__get_shell_script()
         script_suffix = script.get_suffix()
-        possible_systems = [BuildContext.get_target_system()]
-        for system in ["linux", "bsd", "unix", "all_os"]:
-            if system in BuildContext.get():
+        possible_systems = []
+        for system in [
+            BuildContext.get_target_system(),
+            "linux",
+            "bsd",
+            "unix",
+            "all_os",
+        ]:
+            if system in self.context:
                 possible_systems.append(system)
         branches = [self.spec.branch]
         for b in [
@@ -349,7 +348,7 @@ class PackageDescription:
             for system in possible_systems:
                 for branch in branches:
                     script_path = os.path.join(
-                        self.port_dir(),
+                        self.__port_dir(),
                         branch,
                         system
                         + "."
@@ -380,7 +379,7 @@ class PackageDescription:
                 for system in possible_systems:
                     for branch in branches:
                         script_path = os.path.join(
-                            self.port_dir(),
+                            self.__port_dir(),
                             branch,
                             system + "." + self.__get_shell_script().get_suffix(),
                         )
@@ -400,7 +399,7 @@ class PackageDescription:
             dependency_set.remove(self.spec)
         return dependency_set
 
-    def port_dir(self):
+    def __port_dir(self):
         for ports_dir in ports_dirs:
             port_dir = os.path.join(ports_dir, self.spec.name)
             if os.path.isdir(port_dir):
@@ -408,4 +407,18 @@ class PackageDescription:
         raise RuntimeError("No port for package" + self.spec.name)
 
     def __description_json_path(self):
-        return os.path.join(self.port_dir(), "description.json")
+        return os.path.join(self.__port_dir(), "description.json")
+
+    @property
+    def context(self):
+        if self.__context is None:
+            ctx = BuildContext.get()
+            if BuildContext.get_host_system() == "windows" and self.get_item(
+                "use_msys", False
+            ):
+                ctx.remove("windows")
+                ctx.add("msys")
+                ctx.add("linux")
+                ctx.add("unix")
+            self.__context = ctx
+        return self.__context

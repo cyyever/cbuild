@@ -11,3 +11,4 @@ C:\Windows\System32\cmd.exe /c "call vcvarsall.bat x64 && set" | ForEach-Object 
 }
 
 Set-Alias -Name sed_cmd -Value sed
+$CBUILD_PIP_EXE="$env:CBUILD_PYTHON_EXE -m pip"

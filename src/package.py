@@ -100,14 +100,14 @@ class Package:
 
             if source_result is not None:
                 src_dir, file_name = source_result
-                script.prepend_env("SRC_DIR", os.path.abspath(src_dir))
+                script.prepend_env_path("SRC_DIR", os.path.abspath(src_dir))
                 if file_name:
                     script.prepend_env("FILE_NAME", file_name)
-            script.prepend_env("BUILD_DIR", build_dir)
+            script.prepend_env_path("BUILD_DIR", build_dir)
             static_analysis_dir = os.path.join(
                 environment.static_analysis_dir, self.full_name()
             )
-            script.prepend_env("STATIC_ANALYSIS_DIR", static_analysis_dir)
+            script.prepend_env_path("STATIC_ANALYSIS_DIR", static_analysis_dir)
             script.append_env("reuse_build", "1" if reuse_build else "0")
 
             log_file = os.path.join(
@@ -144,8 +144,8 @@ class Package:
 
         docker_src_dir = "/src"
         build_dir = "/build"
-        script.append_env("SRC_DIR", docker_src_dir)
-        script.append_env("BUILD_DIR", build_dir)
+        script.append_env_path("SRC_DIR", docker_src_dir)
+        script.append_env_path("BUILD_DIR", build_dir)
         script.prepend_content("mkdir -p " + docker_src_dir)
         script.prepend_content("mkdir -p " + build_dir)
         script.append_content("rm -rf " + build_dir + "/*")
