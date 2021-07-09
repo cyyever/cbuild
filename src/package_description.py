@@ -176,7 +176,9 @@ class PackageDescription:
     def __get_shell_script(self):
         script_type = get_shell_script_type(os_hint=BuildContext.get_target_system())
         script = script_type()
-        if script.get_suffix() == "ps1" and self.get_item("use_msys2", False):
+        if BuildContext.get_host_system() == "windows" and self.get_item(
+            "use_msys2", False
+        ):
             return MSYS2Script()
         return script
 
@@ -294,11 +296,12 @@ class PackageDescription:
             elements = BuildContext.get() | self.get_features()
         conditions = condition_expr.split("||")
         for condition in conditions:
-            if self.__check_and_conditions(condition, elements):
+            if PackageDescription.__check_and_conditions(condition, elements):
                 return True
         return False
 
-    def __check_and_conditions(self, condition_expr, elements):
+    @staticmethod
+    def __check_and_conditions(condition_expr, elements):
         conditions = condition_expr.split("&&")
         for condition in conditions:
             flag = None
