@@ -15,7 +15,7 @@
     ]
   },
   "cmake_options": "-DBUILD_TESTING=OFF",
-  "context_environment_variable": {
+  "conditional_environment_variable": {
     "windows": [
       "no_install=1"
     ]

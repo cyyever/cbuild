@@ -6,7 +6,7 @@
     "llvm-project",
     "vcpkg"
   ],
-  "context_environment_variable": {
+  "conditional_environment_variable": {
     "all_os": [
       "no_install=1",
       "run_test=0"

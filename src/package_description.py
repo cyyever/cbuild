@@ -20,7 +20,6 @@ from .package_spec import PackageSpecification
 
 
 class PackageDescription:
-    # @innerclass
     class BuildAction(Enum):
         PREPROCESS = auto()
         BUILD = auto()

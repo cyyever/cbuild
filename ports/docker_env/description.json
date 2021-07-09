@@ -3,7 +3,7 @@
     "dependency": [
         "docker:__cbuild_most_recent_git_tag"
     ],
-    "context_dependency": {
+    "conditional_dependency": {
         "support_cuda": [
             "nvidia-docker:__cbuild_most_recent_git_tag"
         ]

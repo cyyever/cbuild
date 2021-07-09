@@ -18,7 +18,7 @@
       "www/npm"
     ]
   },
-  "context_dependency": {
+  "conditional_dependency": {
     "ubuntu||centos": [
       "nodejs:__cbuild_most_recent_git_tag"
     ]

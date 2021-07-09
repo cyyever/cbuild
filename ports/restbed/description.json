@@ -3,7 +3,7 @@
   "ignored_git_submodules": [
     "dependency/catch"
   ],
-  "context_environment_variable": {
+  "conditional_environment_variable": {
     "all_os": [
       "no_ninja=1"
     ]

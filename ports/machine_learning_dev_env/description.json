@@ -5,7 +5,7 @@
       "cuda"
     ]
   },
-  "context_dependency": {
+  "conditional_dependency": {
     "all_os": [
       "ninja:__cbuild_most_recent_git_tag",
       "tbb:__cbuild_most_recent_git_tag",
