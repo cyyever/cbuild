@@ -6,6 +6,7 @@ from enum import Enum, auto
 
 from cyy_naive_lib.algorithm.sequence_op import flatten_list
 from cyy_naive_lib.shell.msys2_script import MSYS2Script
+from cyy_naive_lib.shell.pwsh_script import PowerShellScript
 from cyy_naive_lib.shell_factory import get_shell_script_type
 from cyy_naive_lib.util import readlines
 
@@ -154,7 +155,7 @@ class PackageDescription:
 
         while True:
             new_features = self.__get_conditional_items_by_context(
-                "new_feature", context=(self.context | self.features)
+                "new_feature", elements=(self.context | self.features)
             )
             has_new_feature = False
             for new_feature in new_features:
@@ -180,9 +181,31 @@ class PackageDescription:
         ):
             raise RuntimeError("unsupported action")
         script = self.__get_shell_script()
+
+        if "msys" in self.context:
+            for item in self.__environment.get(
+                lambda condition_expr: self.__check_conditions(
+                    condition_expr, elements=["windows"]
+                )
+            ):
+                pieces = item.split("=")
+                name = pieces[0]
+                if name != "INSTALL_PREFIX":
+                    continue
+                value = "=".join(pieces[1:])
+                pwsh_script = PowerShellScript()
+                pwsh_script.append_env(name, value)
+                pwsh_script.append_content("$env:" + name)
+                output, _ = pwsh_script.exec(throw=True)
+                script.append_env_path(name, output.strip())
+
         for item in self.__environment.get(self.__check_conditions):
             pieces = item.split("=")
-            script.append_env(pieces[0], "=".join(pieces[1:]))
+            name = pieces[0]
+            value = "=".join(pieces[1:])
+            if name == "INSTALL_PREFIX" and "msys" in self.context:
+                continue
+            script.append_env(name, value)
 
         for ctx in sorted(self.context):
             script.append_env("BUILD_CONTEXT_" + ctx, "1")
@@ -269,11 +292,9 @@ class PackageDescription:
                 system_pkgs[manager].update(item)
         return system_pkgs
 
-    def __get_conditional_items_by_context(self, key, context=None):
-        if context is None:
-            context = self.context
+    def __get_conditional_items_by_context(self, key, elements):
         values = self.__config.conditional_get(
-            key, lambda x: self.__check_conditions(x, elements=context)
+            key, lambda x: self.__check_conditions(x, elements=elements)
         )
         return flatten_list(values)
 
@@ -348,7 +369,7 @@ class PackageDescription:
             for system in possible_systems:
                 for branch in branches:
                     script_path = os.path.join(
-                        self.__port_dir(),
+                        self.port_dir(),
                         branch,
                         system
                         + "."
@@ -379,7 +400,7 @@ class PackageDescription:
                 for system in possible_systems:
                     for branch in branches:
                         script_path = os.path.join(
-                            self.__port_dir(),
+                            self.port_dir(),
                             branch,
                             system + "." + self.__get_shell_script().get_suffix(),
                         )
@@ -399,7 +420,7 @@ class PackageDescription:
             dependency_set.remove(self.spec)
         return dependency_set
 
-    def __port_dir(self):
+    def port_dir(self):
         for ports_dir in ports_dirs:
             port_dir = os.path.join(ports_dir, self.spec.name)
             if os.path.isdir(port_dir):
@@ -407,7 +428,7 @@ class PackageDescription:
         raise RuntimeError("No port for package" + self.spec.name)
 
     def __description_json_path(self):
-        return os.path.join(self.__port_dir(), "description.json")
+        return os.path.join(self.port_dir(), "description.json")
 
     @property
     def context(self):
