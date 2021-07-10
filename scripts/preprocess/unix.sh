@@ -97,7 +97,7 @@ function get_run_clang_tidy_cmd() {
     if [[ -z ${__SRC_DIR+x} ]]; then
       return 0
     fi
-    run_clang_tidy_cmd="${CBUILD_PYTHON_EXE} ${INSTALL_PREFIX}/llvm_tool/run-clang-tidy.py -excluded-file-patterns '(.*/third_party/.*)|(.*[.]pb[.])' -j ${MAX_JOBS} -format-style=file -timeout=7200"
+    run_clang_tidy_cmd="${CBUILD_PYTHON_EXE} ${INSTALL_PREFIX}/llvm_tool/run-clang-tidy.py -excluded-file-patterns '(.*/third_party/.*)|(.*[.]pb[.])|(.*/test/.*)' -j ${MAX_JOBS} -format-style=file -timeout=7200"
     if [[ -n ${1+x} ]]; then
       config_file="$1"
       if test -f $config_file; then
