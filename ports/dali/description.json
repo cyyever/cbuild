@@ -9,7 +9,7 @@
     "run_test=0",
     "py_pkg_name=nvidia-dali-cuda110",
     "static_analysis=0",
-    "clang_tidy_static_analysis=0",
+    "clang_tidy_static_analysis=1",
     "pvs_static_analysis=1",
     "clang_tidy_fix=0"
   ],
@@ -33,7 +33,7 @@
     "third_party/spdlog",
     "third_party/pybind11"
   ],
-  "cmake_options": "-DFFMPEG_ROOT_DIR=${INSTALL_PREFIX} -DBUILD_TEST=on -DBUILD_BENCHMARK=off -DBUILD_LIBTIFF=on -DBUILD_LIBSND=off -DProtobuf_USE_STATIC_LIBS=off -DBUILD_OPENCV=off -DDALI_CLANG_ONLY=off -DBUILD_CUFILE=on",
+  "cmake_options": "-DFFMPEG_ROOT_DIR=${INSTALL_PREFIX} -DBUILD_TEST=on -DBUILD_BENCHMARK=off -DBUILD_LIBTIFF=on -DBUILD_LIBSND=off -DProtobuf_USE_STATIC_LIBS=off -DBUILD_OPENCV=off -DDALI_CLANG_ONLY=off -DBUILD_CUFILE=off",
   "system_package_dependency": {
     "ubuntu": [
       "libsndfile1-dev",
