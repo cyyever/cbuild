@@ -7,6 +7,9 @@
     "unix": [
       "cmake"
     ],
+    "freebsd":[
+	    "openssl"
+    ],
     "centos": [
       "openssl-devel"
     ],
