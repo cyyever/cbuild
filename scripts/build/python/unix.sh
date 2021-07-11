@@ -21,7 +21,11 @@ if test -f "setup.py"; then
     fi
   fi
 
-  ${CBUILD_PYTHON_EXE} setup.py build_ext --inplace
+  build_cmd="${CBUILD_PYTHON_EXE} setup.py build_ext --inplace"
+  if [[ -n ${need_compilation_json+x} ]] && command -v -q bear; then
+    build_cmd="bear -- ${build_cmd}"
+  fi
+  ${build_cmd}
   if [[ -n ${DEFAULT_INSTALL_PREFIX+x} ]]; then
     ${CBUILD_PYTHON_EXE} setup.py install --force
   else
