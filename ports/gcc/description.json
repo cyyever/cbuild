@@ -5,6 +5,7 @@
   "environment_variable": [
     "INSTALL_SUBDIR=gcc/${PACKAGE_VERSION}",
     "no_reconf=1",
+    "LIBRARY_PATH=/usr/lib",
     "USE_BUILD_DIR=1"
   ],
   "default_build_script": "c",
