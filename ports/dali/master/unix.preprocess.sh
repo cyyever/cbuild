@@ -13,5 +13,6 @@ ${sed_cmd} -i -e 's/VALUE_SWITCH(type/VALUE_SWITCH((AllocType)type/g' dali/kerne
 ${sed_cmd} -i -e '/testing::dali_extra_path/d' dali/fuzzing/dali_harness.h
 ${sed_cmd} -i -e '/db.fuzzing/d' dali/fuzzing/dali_harness.h
 ${sed_cmd} -i -e 's#jpeg_folder = make_string.*#jpeg_folder = "/tmp/";#' dali/fuzzing/dali_harness.h
+${sed_cmd} -i -e 's/assert(disp_info_);/assert(disp_info);/g' dali/operators/reader/nvdecoder/nvdecoder.cc
 # ${sed_cmd} -i -e '/CMAKE_CXX_FLAGS/s/-fvisibility=hidden/-fsanitize=undefined -fsanitize=address/g' CMakeLists.txt
 # ${sed_cmd} -i -e '/CMAKE_CXX_FLAGS/s/-fvisibility=hidden/-fsanitize=thread/g' CMakeLists.txt
