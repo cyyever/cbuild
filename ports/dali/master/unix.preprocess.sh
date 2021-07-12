@@ -10,5 +10,8 @@ ${sed_cmd} -i -e 's/Deallocate(AllocType type/Deallocate(int type/g' dali/kernel
 ${sed_cmd} -i -e 's/Deallocate(alloc_type/Deallocate((int)alloc_type/g' dali/kernels/alloc.h
 ${sed_cmd} -i -e 's/Deallocate(AllocType type/Deallocate(int type/g' dali/kernels/alloc.cc
 ${sed_cmd} -i -e 's/VALUE_SWITCH(type/VALUE_SWITCH((AllocType)type/g' dali/kernels/alloc.cc
+${sed_cmd} -i -e '/testing::dali_extra_path/d' dali/fuzzing/dali_harness.h
+${sed_cmd} -i -e '/db.fuzzing/d' dali/fuzzing/dali_harness.h
+${sed_cmd} -i -e 's#jpeg_folder = make_string.*#jpeg_folder = "/tmp/";#' dali/fuzzing/dali_harness.h
 # ${sed_cmd} -i -e '/CMAKE_CXX_FLAGS/s/-fvisibility=hidden/-fsanitize=undefined -fsanitize=address/g' CMakeLists.txt
 # ${sed_cmd} -i -e '/CMAKE_CXX_FLAGS/s/-fvisibility=hidden/-fsanitize=thread/g' CMakeLists.txt
