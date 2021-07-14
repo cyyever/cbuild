@@ -6,7 +6,6 @@
   "environment_variable": [
     "run_test=0",
     "static_analysis=0",
-    "pvs_static_analysis=1",
     "clang_tidy_static_analysis=1",
     "clang_tidy_fix=1"
   ],
