@@ -64,7 +64,9 @@ else
     fi
     bash "${__SRC_DIR}/configure" --prefix="${__INSTALL_PREFIX}" ${debug_option} ${configure_options}
   fi
-  ${make_cmd} clean || true
+  if [[ "$reuse_build" == "0" ]]; then
+    ${make_cmd} clean || true
+  fi
   if command -v bear; then
     bear -- ${make_cmd} -j $MAX_JOBS
   else

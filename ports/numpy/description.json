@@ -7,9 +7,8 @@
   ],
   "environment_variable": [
     "run_test=1",
-    "static_analysis=1",
+    "static_analysis=0",
     "need_compilation_json=1",
-    "pvs_static_analysis=1",
     "clang_tidy_static_analysis=1"
   ],
   "system_package_dependency": {

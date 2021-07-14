@@ -7,7 +7,6 @@
   "default_build_script": "c",
   "environment_variable": [
     "static_analysis=1",
-    "pvs_static_analysis=1",
     "clang_tidy_static_analysis=1",
     "run_test=1",
     "TEST_TARGET=check"
