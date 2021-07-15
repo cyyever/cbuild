@@ -1,9 +1,6 @@
 {
   "git_url": "git@github.com:libjpeg-turbo/libjpeg-turbo.git",
   "default_build_script": "c",
-  "environment_variable": [
-    "run_test=0"
-  ],
   "dependency": [
     "assembly_env:__cbuild_most_recent_git_tag"
   ]
