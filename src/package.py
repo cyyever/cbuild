@@ -220,5 +220,5 @@ class Package:
     def __hash__(self):
         return hash(self.specification())
 
-    def __str__(self):
-        return str(self.specification())
+    def __repr__(self):
+        return repr(self.specification())

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-from distutils.version import StrictVersion
-import sys
 import re
+import sys
+from distutils.version import StrictVersion
 
 
 class PackageSpecification:
@@ -41,7 +41,7 @@ class PackageSpecification:
         else:
             self.features = set()
 
-    def __str__(self):
+    def __repr__(self):
         res = self.name
         if self.features:
             res += "[" + ",".join(sorted(list(self.features))) + "]"
