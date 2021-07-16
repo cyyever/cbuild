@@ -15,6 +15,10 @@ ${sed_cmd} -i -e 's/VALUE_SWITCH(type/VALUE_SWITCH((AllocType)type/g' dali/kerne
 ${sed_cmd} -i -e '/testing::dali_extra_path/d' dali/fuzzing/dali_harness.h
 ${sed_cmd} -i -e '/db.fuzzing/d' dali/fuzzing/dali_harness.h
 ${sed_cmd} -i -e 's#jpeg_folder = make_string.*#jpeg_folder = "/tmp/";#' dali/fuzzing/dali_harness.h
+
+${sed_cmd} -i -e '/sys.version_inf.*== 9/d' dali/python/nvidia/dali.backend.py
+${sed_cmd} -i -e '/DALI support for Python 3.9 is experime/d' dali/python/nvidia/dali.backend.py
+${sed_cmd} -i -e '/may not work/d' dali/python/nvidia/dali.backend.py
 for pyfile in $(grep 'from collections import Iterable' -r dali -l); do
   sed -i -e 's/from collections import Iterable/from collections.abc import Iterable/g' $pyfile
 done
