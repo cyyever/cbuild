@@ -22,7 +22,7 @@ if test -f "setup.py"; then
   fi
 
   build_cmd="${CBUILD_PYTHON_EXE} setup.py build_ext --inplace"
-  if [[ -n ${need_compilation_json+x} ]] && command -v -q bear; then
+  if [[ -n ${need_compilation_json+x} ]] && command -v bear; then
     build_cmd="bear -- ${build_cmd}"
   fi
   ${build_cmd}
