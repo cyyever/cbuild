@@ -45,6 +45,11 @@ if [[ -n ${DEFAULT_INSTALL_PREFIX+x} ]]; then
 fi
 
 CBUILD_PIP_EXE="${CBUILD_PYTHON_EXE} -m pip"
+
+if [[ "${static_analysis}" == "1" ]] || [[ "${clang_tidy_fix:=0}" == "1" ]]; then
+  export need_compilation_json=1
+fi
+
 json_path=""
 
 function get_json_path() {

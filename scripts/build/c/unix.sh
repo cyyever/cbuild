@@ -67,7 +67,7 @@ else
   if [[ "$reuse_build" == "0" ]]; then
     ${make_cmd} clean || true
   fi
-  if command -v bear; then
+  if [[ -n ${need_compilation_json+x} ]] && command -v bear; then
     bear -- ${make_cmd} -j $MAX_JOBS
   else
     ${make_cmd} -j $MAX_JOBS
