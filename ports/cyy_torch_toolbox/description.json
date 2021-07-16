@@ -6,7 +6,6 @@
     "cyy_naive_python_lib:main",
     "torchvision:cyy",
     "torchtext:cyy",
-    "dali:cyy",
     "cyy_naive_cpp_lib[all,shared_lib]:master"
   ],
   "environment_variable": [
@@ -15,6 +14,9 @@
   "conditional_dependency": {
     "full": [
       "torchaudio:master"
+    ],
+    "cuda": [
+      "dali:cyy"
     ]
   },
   "system_package_dependency": {
