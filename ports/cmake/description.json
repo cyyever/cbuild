@@ -3,18 +3,14 @@
   "default_build_script": "c",
   "cache_time": 30,
   "reuse_build": true,
+  "conditional_depedency": {
+    "unix": [
+      "openssl:__cbuild_most_recent_git_tag"
+    ]
+  },
   "system_package_dependency": {
     "unix": [
       "cmake"
-    ],
-    "freebsd":[
-	    "openssl"
-    ],
-    "centos": [
-      "openssl-devel"
-    ],
-    "ubuntu": [
-      "libssl-dev"
     ]
   },
   "cmake_options": "-DBUILD_TESTING=OFF",

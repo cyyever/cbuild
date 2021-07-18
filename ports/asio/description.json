@@ -4,9 +4,9 @@
     "SRC_SUBDIR=asio"
   ],
   "default_build_script": "c",
-  "system_package_dependency": {
-    "ubuntu": [
-      "libssl-dev"
+  "conditional_depedency": {
+    "unix": [
+      "openssl:__cbuild_most_recent_git_tag"
     ]
   }
 }
