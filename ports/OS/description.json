@@ -30,6 +30,7 @@
     ],
     "windows": [
       "msys2",
+      "ccleaner",
       "git"
     ],
     "ubuntu": [

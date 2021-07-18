@@ -3,5 +3,10 @@
   "default_build_script": "c",
   "environment_variable": [
     "run_test=1"
-  ]
+  ],
+  "conditional_dependency": {
+    "windows": [
+      "zlib:develop"
+    ]
+  }
 }
