@@ -1,11 +1,3 @@
-if (! (Test-Path env:py_pkg_name)) {
-    $env:py_pkg_name = $env:PACKAGE_NAME
-}
-
-1..5 | foreach {
-    Invoke-Expression "$CBUILD_PIP_EXE uninstall -y $env:py_pkg_name"
-}
-
 if ($env:SRC_SUBDIR) {
     $__SRC_DIR = "$env:SRC_DIR/$env:SRC_SUBDIR"
 }

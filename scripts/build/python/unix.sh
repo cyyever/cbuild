@@ -1,11 +1,3 @@
-if [[ -z ${py_pkg_name+x} ]]; then
-  py_pkg_name=${PACKAGE_NAME}
-fi
-
-cd /tmp
-for _ in $(seq 5); do
-  ${CBUILD_PIP_EXE} uninstall $py_pkg_name -y || true
-done
 
 cd ${__SRC_DIR}
 if test -f requirements.txt; then

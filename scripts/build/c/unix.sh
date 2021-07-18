@@ -1,4 +1,4 @@
-if test -f "${__SRC_DIR}/CMakeLists.txt"; then
+if [[ "${use_libtool:=0}" == "0" ]] && test -f "${__SRC_DIR}/CMakeLists.txt"; then
   cd ${BUILD_DIR}
 
   cmake_generator_exp=''

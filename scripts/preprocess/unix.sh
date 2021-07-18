@@ -150,3 +150,12 @@ if command -v ccache; then
     eval "export CMAKE_${lang}_COMPILER_LAUNCHER=ccache"
   done
 fi
+
+if [[ -z ${py_pkg_name+x} ]]; then
+  py_pkg_name=${PACKAGE_NAME}
+fi
+
+cd /tmp
+for _ in $(seq 5); do
+  ${CBUILD_PIP_EXE} uninstall $py_pkg_name -y || true
+done

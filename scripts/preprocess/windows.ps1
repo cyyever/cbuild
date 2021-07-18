@@ -12,3 +12,12 @@ C:\Windows\System32\cmd.exe /c "call vcvarsall.bat x64 && set" | ForEach-Object 
 
 Set-Alias -Name sed_cmd -Value sed
 $CBUILD_PIP_EXE="$env:CBUILD_PYTHON_EXE -m pip"
+
+cd $Env:temp
+if (! (Test-Path env:py_pkg_name)) {
+    $env:py_pkg_name = $env:PACKAGE_NAME
+}
+
+1..5 | foreach {
+    Invoke-Expression "$CBUILD_PIP_EXE uninstall -y $env:py_pkg_name"
+}
