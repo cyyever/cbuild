@@ -13,14 +13,15 @@
       "libpng:libpng16",
       "openblas[shared_lib]:__cbuild_most_recent_git_tag",
       "eigen:__cbuild_most_recent_git_tag",
-      "pillow-simd:__cbuild_most_recent_git_tag",
-      "protobuf[shared_lib]:__cbuild_most_recent_git_tag"
+      "pillow-simd:__cbuild_most_recent_git_tag"
     ],
     "windows": [
-      "zlib:develop"
+      "zlib:develop",
+      "protobuf[shared_lib]:master"
     ],
     "unix": [
-      "numpy:__cbuild_most_recent_git_tag"
+      "numpy:__cbuild_most_recent_git_tag",
+      "protobuf[shared_lib]:__cbuild_most_recent_git_tag"
     ],
     "cuda": [
       "cudnn:__cbuild_most_recent_git_tag"

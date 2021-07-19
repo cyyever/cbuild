@@ -2,7 +2,7 @@ $new_path = ""
 [System.Collections.ArrayList]$path_list = [Environment]::GetEnvironmentVariable("Path", [EnvironmentVariableTarget]::User).split(";")
 $path_list.add("${env:ProgramFiles}\NVIDIA Corporation\NVSMI")
 $path_list.add("${env:ProgramFiles}\NVIDIA Corporation\NvToolsExt\bin\x64")
-foreach ( $my_path  in ($path_list | select -Unique    )  ) {
+foreach ( $my_path  in ($path_list | select-object -Unique    )  ) {
     if ([string]::IsNullOrEmpty($my_path)) {
         continue
     }
@@ -25,4 +25,4 @@ msys2_shell.cmd -msys -defterm  -no-start -full-path -c 'rm -rf /etc/pacman.d/gn
 msys2_shell.cmd -msys -defterm  -no-start -full-path -c 'pacman-key --init'
 msys2_shell.cmd -msys -defterm  -no-start -full-path -c 'pacman-key --populate msys2'
 msys2_shell.cmd -msys -defterm  -no-start -full-path -c 'pacman -Syu --disable-download-timeout --noconfirm'
-msys2_shell.cmd -msys -defterm  -no-start -full-path -c 'pacman --disable-download-timeout --noconfirm -Sy sed bash'
+msys2_shell.cmd -msys -defterm  -no-start -full-path -c 'pacman --needed --noconfirm -Sy sed bash'
