@@ -4,9 +4,6 @@ ${sed_cmd} -i -e 's/project(Torch CXX C)/project(Torch CXX C ASM)/g' CMakeLists.
 ${sed_cmd} -i -e 's/set(CMAKE_CXX_STANDARD 14)/set(CMAKE_CXX_STANDARD 20)/g' CMakeLists.txt
 ${sed_cmd} -i -e '/^\s*check_submodules()/s/check_submodules()/#check_submodules()/g' setup.py
 ${sed_cmd} -i -e '/-Werror/d' caffe2/CMakeLists.txt
-rm -f cmake/Modules/FindOpenMP.cmake
-rm -f cmake/Modules/FindOpenBLAS.cmake
-rm -f cmake/Modules/Findpybind11.cmake
 rm -f cmake/Modules/FindLAPACK.cmake
 ${sed_cmd} -i -e '/Qunused-arguments/d' CMakeLists.txt
 ${sed_cmd} -i -e '/-fcolor-diagnostics/d' CMakeLists.txt
