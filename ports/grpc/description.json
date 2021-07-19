@@ -8,7 +8,13 @@
     "third_party/boringssl-with-bazel",
     "third_party/zlib"
   ],
-  "dependency": [
-    "protobuf:__cbuild_most_recent_git_tag"
-  ]
+  "conditional_dependency": {
+    "windows": [
+      "protobuf[shared_lib]:master",
+      "openssl[shared_lib]:__cbuild_most_recent_git_tag"
+    ],
+    "!windows": [
+      "protobuf[shared_lib]:__cbuild_most_recent_git_tag"
+    ]
+  }
 }

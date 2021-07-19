@@ -2,7 +2,8 @@
   "group_package": true,
   "system_package_dependency": {
     "windows": [
-      "perl"
+      "perl",
+      "strawberryperl"
     ]
   }
 }

@@ -3,6 +3,7 @@
   "default_build_script": "c",
   "cache_time": 999,
   "environment_variable": [
+    "py_pkg_name=protobuf",
     "SRC_SUBDIR=cmake"
   ]
 }

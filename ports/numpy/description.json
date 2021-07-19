@@ -11,6 +11,12 @@
     "need_compilation_json=1",
     "clang_tidy_static_analysis=1"
   ],
+  "conditional_environment_variable": {
+    "freebsd": [
+      "CC=gcc",
+      "CXX=g++"
+    ]
+  },
   "system_package_dependency": {
     "pip": [
       "hypothesis",

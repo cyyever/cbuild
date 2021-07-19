@@ -190,20 +190,22 @@ class PackageDescription:
             ):
                 pieces = item.split("=")
                 name = pieces[0]
-                if name != "INSTALL_PREFIX":
+                if name == "INSTALL_PREFIX":
+                    value = "=".join(pieces[1:])
+                    pwsh_script = PowerShellScript()
+                    pwsh_script.append_env(name, value)
+                    pwsh_script.append_content("$env:" + name)
+                    output, _ = pwsh_script.exec(throw=True)
+                    script.append_env_path(name, output.strip())
                     continue
-                value = "=".join(pieces[1:])
-                pwsh_script = PowerShellScript()
-                pwsh_script.append_env(name, value)
-                pwsh_script.append_content("$env:" + name)
-                output, _ = pwsh_script.exec(throw=True)
-                script.append_env_path(name, output.strip())
+                if name == "PATH":
+                    continue
 
         for item in self.__environment.get(self.__check_conditions):
             pieces = item.split("=")
             name = pieces[0]
             value = "=".join(pieces[1:])
-            if name == "INSTALL_PREFIX" and "msys" in self.context:
+            if name in {"INSTALL_PREFIX", "PATH"} and "msys" in self.context:
                 continue
             script.append_env(name, value)
 

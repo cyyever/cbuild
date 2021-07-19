@@ -2,9 +2,13 @@
   "group_package": true,
   "dependency": [
     "pvs-studio:__cbuild_most_recent_git_tag",
-    "cppcheck:main",
-    "bear:__cbuild_most_recent_git_tag"
+    "cppcheck:main"
   ],
+  "conditional_dependency": {
+    "unix": [
+      "bear:__cbuild_most_recent_git_tag"
+    ]
+  },
   "system_package_dependency": {
     "pip": [
       "semgrep"

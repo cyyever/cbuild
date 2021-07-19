@@ -1,3 +1,27 @@
 {
+  "__cbuild_most_recent_git_tag": {
+    "unix": {
+      "group_package": true
+    },
+    "windows": {
       "git_url": "git@github.com:openssl/openssl.git"
+    }
+  },
+  "system_package_dependency": {
+    "centos": [
+      "openssl-devel"
+    ],
+    "fedora": [
+      "openssl-devel"
+    ],
+    "ubuntu": [
+      "libssl-dev"
+    ],
+    "archlinux": [
+      "openssl"
+    ],
+    "macos": [
+      "openssl"
+    ]
+  }
 }

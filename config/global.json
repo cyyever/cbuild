@@ -24,13 +24,7 @@
     "feature_language_rust": [
       "rust_env:master"
     ],
-    "feature_building_tool_cmake&&windows": [
-      "cmake:master"
-    ],
-    "feature_building_tool_cmake&&msys": [
-      "cmake:master"
-    ],
-    "feature_building_tool_cmake&&!windows&&!msys": [
+    "feature_building_tool_cmake": [
       "cmake:__cbuild_most_recent_git_tag"
     ],
     "feature_package_manager_yay": [
