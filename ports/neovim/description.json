@@ -1,9 +1,6 @@
 {
   "git_url": "git@github.com:neovim/neovim.git",
   "master": {
-    "windows": {
-      "group_package": true
-    },
     "default_build_script": "c",
     "build_languages": [
       "python"
@@ -16,9 +13,6 @@
       "libuv:__cbuild_most_recent_git_tag"
     ],
     "system_package_dependency": {
-      "windows": [
-        "neovim --pre"
-      ],
       "ubuntu": [
         "libgtest-dev",
         "libgmock-dev",
