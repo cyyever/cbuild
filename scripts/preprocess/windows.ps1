@@ -1,6 +1,4 @@
-$env:Path = $env:Path + [System.Environment]::GetEnvironmentVariable("Path", "Machine") + [System.Environment]::GetEnvironmentVariable("Path", "User")
 $env:INSTALL_PREFIX = $env:INSTALL_PREFIX.Replace("\", "/")
-
 cd (vswhere -latest -prerelease -property installationPath)
 cd VC/Auxiliary/Build
 
@@ -13,14 +11,14 @@ C:\Windows\System32\cmd.exe /c "call vcvarsall.bat x64 && set" | ForEach-Object 
 Set-Alias -Name sed_cmd -Value sed
 $CBUILD_PIP_EXE="$env:CBUILD_PYTHON_EXE -m pip"
 
-if ($env:SRC_SUBDIR) {
+if ((Test-Path env:SRC_SUBDIR)) {
     $__SRC_DIR = "$env:SRC_DIR/$env:SRC_SUBDIR"
 }
 else {
     $__SRC_DIR = $env:SRC_DIR
 }
 
-if ($env:INSTALL_SUBDIR) {
+if ((Test-Path env:INSTALL_SUBDIR)) {
     $__INSTALL_PREFIX = "$env:INSTALL_PREFIX/$env:INSTALL_SUBDIR"
 }
 else {
