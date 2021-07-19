@@ -5,7 +5,9 @@
     "INSTALL_SUBDIR=fish-shell"
   ],
   "system_package_dependency": {
-	"centos":["ncurses-devel"],
+    "centos": [
+      "ncurses-devel"
+    ],
     "ubuntu": [
       "libncurses-dev"
     ]
