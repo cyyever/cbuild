@@ -1,10 +1,3 @@
-if ($env:SRC_SUBDIR) {
-    $__SRC_DIR = "$env:SRC_DIR/$env:SRC_SUBDIR"
-}
-else {
-    $__SRC_DIR = $env:SRC_DIR
-}
-
 cd $__SRC_DIR
 if ((Test-Path setup.py -PathType Leaf)) {
     if ((Test-Path build -PathType Container)) {
