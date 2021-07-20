@@ -71,6 +71,9 @@
     "debug_build": [
       "DEBUG=1"
     ],
+    "window": [
+      "USE_OPENMP=off"
+    ],
     "linux&&cuda": [
       "NCCL_ROOT=${INSTALL_PREFIX}",
       "NCCL_INCLUDE_DIR=${INSTALL_PREFIX}/include",
