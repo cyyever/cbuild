@@ -86,11 +86,11 @@
   },
   "dependency": [
     "machine_learning_dev_env:__cbuild_most_recent_git_tag",
+    "glog:__cbuild_most_recent_git_tag",
     "pybind11:master"
   ],
   "system_package_dependency": {
     "ubuntu": [
-      "libgoogle-glog-dev",
       "libnuma-dev",
       "libgtest-dev"
     ],
@@ -98,7 +98,6 @@
       "typing_extensions"
     ],
     "archlinux": [
-      "google-glog",
       "gflags",
       "numactl"
     ]
