@@ -1,21 +1,3 @@
-if ($env:INSTALL_SUBDIR) {
-    $__INSTALL_PREFIX = "$env:INSTALL_PREFIX/$env:INSTALL_SUBDIR"
-}
-else {
-    $__INSTALL_PREFIX = "$env:INSTALL_PREFIX"
-}
-
-if ($env:SRC_SUBDIR) {
-    $__SRC_DIR = "$env:SRC_DIR/$env:SRC_SUBDIR"
-}
-else {
-    $__SRC_DIR = $env:SRC_DIR
-}
-if ($env:try_cmake_again -ne "1") {
-    $env:try_cmake_again = "0"
-}
-
-
 cd $env:BUILD_DIR
 
 $install_prefix_exp = "-DCMAKE_INSTALL_PREFIX=$__INSTALL_PREFIX"
@@ -47,11 +29,6 @@ $cmake_cmd += " "
 $cmake_cmd += $__SRC_DIR
 
 Invoke-Expression $cmake_cmd
-if ($LastExitCode -ne 0) {
-    if ($env:try_cmake_again -eq "1") {
-        Invoke-Expression $cmake_cmd
-    }
-}
 if ($LastExitCode -ne 0) {
     exit $LastExitCode
 }
