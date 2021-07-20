@@ -10,13 +10,13 @@
       "cmake_generator=native"
     ],
     "dependency": [
-      "libuv:__cbuild_most_recent_git_tag"
+      "libuv:__cbuild_most_recent_git_tag",
+      "glog:__cbuild_most_recent_git_tag"
     ],
     "system_package_dependency": {
       "ubuntu": [
         "libgtest-dev",
-        "libgmock-dev",
-        "libgoogle-glog-dev"
+        "libgmock-dev"
       ],
       "archlinux": [
         "msgpack-c",
