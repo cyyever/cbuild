@@ -25,11 +25,13 @@ else {
     $__INSTALL_PREFIX = "$env:INSTALL_PREFIX"
 }
 
-cd $Env:temp
-if (! (Test-Path env:py_pkg_name)) {
-    $env:py_pkg_name = $env:PACKAGE_NAME
-}
+if ((Test-Path env:FEATURE_feature_language_python)) {
+  cd $Env:temp
+    if (! (Test-Path env:py_pkg_name)) {
+      $env:py_pkg_name = $env:PACKAGE_NAME
+    }
 
-1..5 | foreach {
+  1..5 | foreach {
     Invoke-Expression "$CBUILD_PIP_EXE uninstall -y $env:py_pkg_name"
+  }
 }
