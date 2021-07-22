@@ -2,7 +2,7 @@
 import json
 import os
 import sys
-from enum import Enum, auto
+import typing
 
 from cyy_naive_lib.algorithm.sequence_op import flatten_list
 from cyy_naive_lib.shell.msys2_script import MSYS2Script
@@ -52,6 +52,7 @@ class PackageDescription:
         self.__environment = Environment([branch_description, description])
         self.__check_language_feature = True
         self.__languages = None
+        self.__build_tools = None
         self.__source = None
 
     def get_source(self):
@@ -124,11 +125,9 @@ class PackageDescription:
     def disable_build_cache(self):
         self.__config.set("cache_time", None)
 
-    def get_features(self):
-        if self.features:
-            return self.features
-        self.features = self.spec.features
-
+    def __check_languages(self) -> typing.Tuple[set, set]:
+        if self.__languages is not None:
+            return (self.__languages, self.__build_tools)
         building_tools = set()
         possible_languages = self.get_item("build_languages")
         if not possible_languages:
@@ -149,8 +148,18 @@ class PackageDescription:
                     building_tools.add(manager)
                     possible_languages.add(lang)
             self.__check_language_feature = True
+        self.__build_tools = building_tools
+        self.__languages = possible_languages
+        return (self.__languages, self.__build_tools)
 
-        self.features.update(["feature_language_" + lan for lan in possible_languages])
+    def get_features(self):
+        if self.features:
+            return self.features
+        self.features = self.spec.features
+
+        languages, building_tools = self.__check_languages()
+
+        self.features.update(["feature_language_" + lan for lan in languages])
         if "cmake" in building_tools:
             self.features.add("feature_building_tool_cmake")
 
