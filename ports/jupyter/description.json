@@ -3,6 +3,8 @@
   "system_package_dependency": {
     "pip": [
       "jupyterlab",
+      "ipythonblocks",
+      "ipywidgets",
       "notebook"
     ]
   }
