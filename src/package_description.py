@@ -136,8 +136,11 @@ class PackageDescription:
                 self.__get_script_content(BuildAction.BUILD)
             )
             self.__check_language_feature = True
-        possible_languages = set(possible_languages)
-        lang = self.get_item("default_build_script")
+        if not possible_languages:
+            possible_languages = set()
+        else:
+            possible_languages = set(possible_languages)
+        lang = self.get_item("main_language")
         if lang and ToolMapping().is_supported_language(lang):
             possible_languages.add(lang)
 
@@ -395,9 +398,9 @@ class PackageDescription:
             BuildAction.BUILD_WITH_CACHE,
             BuildAction.DOCKER_BUILD,
         ):
-            if self.get_item("default_build_script"):
+            if self.get_item("main_language"):
                 build_script_dir = os.path.join(
-                    scripts_dir, "build", self.get_item("default_build_script")
+                    scripts_dir, "build", self.get_item("main_language")
                 )
                 for system in possible_systems:
                     script_path = os.path.join(
