@@ -5,6 +5,7 @@ from .environment import BuildContext
 from .package import Package
 from .package_description import PackageDescription
 from .package_spec import PackageSpecification
+from .build_action import BuildAction
 
 
 class PackageChain:
@@ -13,7 +14,7 @@ class PackageChain:
         self.chain = []
         self.__get_chain()
 
-    def build(self, action=PackageDescription.BuildAction.BUILD_WITH_CACHE, parallel=1):
+    def build(self, action=BuildAction.BUILD_WITH_CACHE, parallel=1):
         print("build packages in the following context:")
         for ctx in BuildContext.get():
             print("\t", ctx)
@@ -25,14 +26,14 @@ class PackageChain:
         for i, pkg in enumerate(self.chain):
             real_action = action
             cur_pkg = self.chain[i]
-            if real_action == PackageDescription.BuildAction.BUILD_WITH_CACHE:
+            if real_action == BuildAction.BUILD_WITH_CACHE:
                 if i + 1 == len(self.chain) or (
                     not cur_pkg.desc.get_item("cache_ignore_dependency_change", False)
                     and {p.name for p in cur_pkg.desc.get_dependency()}.intersection(
                         rebuilt_pkgs
                     )
                 ):
-                    real_action = PackageDescription.BuildAction.BUILD
+                    real_action = BuildAction.BUILD
                     print("disable cache of", cur_pkg)
             if cur_pkg.build_local(real_action):
                 rebuilt_pkgs.add(cur_pkg.name())

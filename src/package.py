@@ -9,6 +9,7 @@ from cyy_naive_lib.shell.docker_file import DockerFile
 from cyy_naive_lib.shell_factory import exec_cmd
 
 from . import environment
+from .build_action import BuildAction
 from .environment import BuildContext
 from .package_description import PackageDescription
 
@@ -59,13 +60,13 @@ class Package:
         return False
 
     def build_local(self, action):
-        if action == PackageDescription.BuildAction.BUILD_WITH_CACHE:
+        if action == BuildAction.BUILD_WITH_CACHE:
             if self.check_cache():
                 return False
 
         with self.source as source_result:
             # recheck since we change __cbuild_most_recent_tag here
-            if action == PackageDescription.BuildAction.BUILD_WITH_CACHE:
+            if action == BuildAction.BUILD_WITH_CACHE:
                 if self.check_cache():
                     return False
 
@@ -79,7 +80,7 @@ class Package:
             new_hash = self.source.get_hash() + "-" + str(tmp)
 
             tag_file = self.get_tag_file()
-            if action == PackageDescription.BuildAction.BUILD_WITH_CACHE:
+            if action == BuildAction.BUILD_WITH_CACHE:
                 if self.check_cache(new_hash):
                     os.utime(tag_file, (time.time(), time.time()))
                     return False
@@ -138,7 +139,7 @@ class Package:
         else:
             from_docker_image = prev_package.__get_docker_image_name()
 
-        script = self.desc.get_script(PackageDescription.BuildAction.DOCKER_BUILD)
+        script = self.desc.get_script(BuildAction.DOCKER_BUILD)
         if script is None:
             sys.exit("no script for package:" + self.specification().name)
 
@@ -169,9 +170,8 @@ class Package:
             addtional_docker_commands = None
             if self.desc.get_item("docker_runtime"):
                 runtime_path = self.__get_docker_runtime_path()
-                if not runtime_path:
-                    sys.exit("no docker runtime")
-                addtional_docker_commands = open(runtime_path, "r").readlines()
+                with open(runtime_path, "r") as f:
+                    addtional_docker_commands = f.readlines()
             docker_file = DockerFile(from_image=from_docker_image, script=script)
             src_dir_pair = None
             if source_dir:
@@ -209,7 +209,7 @@ class Package:
             )
             if os.path.isfile(script_path):
                 return script_path
-        return None
+        sys.exit("no docker runtime")
 
     def __eq__(self, other):
         return self.specification() == other.specification()

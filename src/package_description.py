@@ -10,6 +10,7 @@ from cyy_naive_lib.shell.pwsh_script import PowerShellScript
 from cyy_naive_lib.shell_factory import get_shell_script_type
 from cyy_naive_lib.util import readlines
 
+from .build_action import BuildAction
 from .config import Config, Environment, ToolMapping
 from .environment import BuildContext, ports_dirs, scripts_dir, sources_dir
 from .package_source.file_source import FileSource
@@ -20,13 +21,6 @@ from .package_spec import PackageSpecification
 
 
 class PackageDescription:
-    class BuildAction(Enum):
-        PREPROCESS = auto()
-        BUILD = auto()
-        BUILD_WITH_CACHE = auto()
-        DOCKER_BUILD = auto()
-        AFTER_INSTALL = auto()
-
     def __init__(self, specification):
         if not isinstance(specification, PackageSpecification):
             specification = PackageSpecification(specification)
@@ -57,10 +51,15 @@ class PackageDescription:
         self.__config = Config([branch_description, description])
         self.__environment = Environment([branch_description, description])
         self.__check_language_feature = True
+        self.__languages = None
+        self.__source = None
 
     def get_source(self):
+        if self.__source is not None:
+            return self.__source
         if self.get_item("script_package") or self.get_item("group_package"):
-            return ScriptSource(self.spec)
+            self.__source = ScriptSource(self.spec)
+            return self.__source
 
         url = self.__get_source_url()
         if GitSource.is_git_source(url):
@@ -73,7 +72,7 @@ class PackageDescription:
 
             ignored_tag_regex = self.get_item("ignored_tag_regex")
 
-            source = GitSource(
+            self.__source = GitSource(
                 self.spec,
                 git_url=url,
                 root_dir=sources_dir,
@@ -83,27 +82,29 @@ class PackageDescription:
                 ignored_submodules=ignored_submodules,
                 ignored_tag_regex=ignored_tag_regex,
             )
-            return source
+            return self.__source
 
         try:
-            return TarballSource(
+            self.__source = TarballSource(
                 self.spec,
                 url,
                 os.path.join(sources_dir, str(self.spec.name)),
                 self.get_item("file_name"),
                 self.get_item("checksum"),
             )
+            return self.__source
         except TypeError:
             pass
 
         try:
-            return FileSource(
+            self.__source = FileSource(
                 self.spec,
                 url,
                 os.path.join(sources_dir, str(self.spec.name)),
                 self.get_item("file_name"),
                 self.get_item("checksum"),
             )
+            return self.__source
         except TypeError:
             pass
 
@@ -132,7 +133,7 @@ class PackageDescription:
         possible_languages = self.get_item("build_languages")
         if not possible_languages:
             building_tools, possible_languages = ToolMapping().guess_language(
-                self.__get_script_content(PackageDescription.BuildAction.BUILD)
+                self.__get_script_content(BuildAction.BUILD)
             )
         else:
             possible_languages = set(possible_languages)
@@ -175,9 +176,9 @@ class PackageDescription:
 
     def get_script(self, action):
         if action not in (
-            PackageDescription.BuildAction.BUILD,
-            PackageDescription.BuildAction.BUILD_WITH_CACHE,
-            PackageDescription.BuildAction.DOCKER_BUILD,
+            BuildAction.BUILD,
+            BuildAction.BUILD_WITH_CACHE,
+            BuildAction.DOCKER_BUILD,
         ):
             raise RuntimeError("unsupported action")
         script = self.__get_shell_script()
@@ -215,9 +216,7 @@ class PackageDescription:
         for feature in sorted(self.get_features()):
             script.append_env("FEATURE_" + feature, "1")
 
-        script_content = self.__get_script_content(
-            PackageDescription.BuildAction.PREPROCESS
-        )
+        script_content = self.__get_script_content(BuildAction.PREPROCESS)
         if script_content:
             script.append_content(script_content)
 
@@ -255,9 +254,7 @@ class PackageDescription:
         else:
             if not self.get_item("group_package"):
                 sys.exit("no build script for package:" + self.spec.name)
-        script_content = self.__get_script_content(
-            PackageDescription.BuildAction.AFTER_INSTALL
-        )
+        script_content = self.__get_script_content(BuildAction.AFTER_INSTALL)
         if script_content:
             script.append_content(script_content)
         return script
@@ -353,10 +350,10 @@ class PackageDescription:
         paths = []
 
         if action in (
-            PackageDescription.BuildAction.PREPROCESS,
-            PackageDescription.BuildAction.AFTER_INSTALL,
+            BuildAction.PREPROCESS,
+            BuildAction.AFTER_INSTALL,
         ):
-            if action == PackageDescription.BuildAction.PREPROCESS:
+            if action == BuildAction.PREPROCESS:
                 additional_suffix = "preprocess"
             else:
                 additional_suffix = "after_install"
@@ -384,9 +381,9 @@ class PackageDescription:
             return paths
 
         if action in (
-            PackageDescription.BuildAction.BUILD,
-            PackageDescription.BuildAction.BUILD_WITH_CACHE,
-            PackageDescription.BuildAction.DOCKER_BUILD,
+            BuildAction.BUILD,
+            BuildAction.BUILD_WITH_CACHE,
+            BuildAction.DOCKER_BUILD,
         ):
             if self.get_item("default_build_script"):
                 build_script_dir = os.path.join(
