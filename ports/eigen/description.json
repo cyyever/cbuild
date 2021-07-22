@@ -3,5 +3,5 @@
  "environment_variable": [
   "run_test=0"
  ],
- "default_build_script": "c"
+ "main_language": "c"
 }

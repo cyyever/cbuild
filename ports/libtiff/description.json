@@ -4,5 +4,5 @@
   "dependency": [
     "libjpeg-turbo:__cbuild_most_recent_git_tag"
   ],
-  "default_build_script": "c"
+  "main_language": "c"
 }

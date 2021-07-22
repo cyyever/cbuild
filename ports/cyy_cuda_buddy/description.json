@@ -1,6 +1,6 @@
 {
   "git_url": "git@github.com:cyyever/cuda_buddy.git",
-  "default_build_script": "c",
+  "main_language": "c",
   "conditional_new_feature": {
     "support_cuda": [
       "cuda"

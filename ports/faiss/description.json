@@ -1,6 +1,6 @@
 {
   "git_url": "git@github.com:facebookresearch/faiss.git",
-  "default_build_script": "c",
+  "main_language": "c",
   "cmake_options": "-DFAISS_ENABLE_PYTHON=off",
   "environment_variable": [
     "run_test=0"

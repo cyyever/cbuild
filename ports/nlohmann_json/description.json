@@ -1,5 +1,5 @@
 {
   "git_url": "git@github.com:nlohmann/json.git",
-  "default_build_script": "c",
+  "main_language": "c",
   "cmake_options": "-DJSON_BuildTests=off"
 }

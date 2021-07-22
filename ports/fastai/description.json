@@ -1,6 +1,6 @@
 {
   "git_url": "git@github.com:fastai/fastai.git",
-  "default_build_script": "python",
+  "main_language": "python",
   "environment_variable": [
     "run_test=1"
   ],

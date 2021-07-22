@@ -1,7 +1,7 @@
 {
   "git_url": "git@github.com:neovim/neovim.git",
   "master": {
-    "default_build_script": "c",
+    "main_language": "c",
     "build_languages": [
       "python"
     ],

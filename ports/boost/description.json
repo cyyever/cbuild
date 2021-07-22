@@ -1,6 +1,6 @@
 {
   "git_url": "git@github.com:boostorg/boost.git",
-  "default_build_script": "c",
+  "main_language": "c",
   "environment_variable": [
     "run_test=0"
   ],

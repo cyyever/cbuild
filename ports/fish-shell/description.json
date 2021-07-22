@@ -1,6 +1,6 @@
 {
   "git_url": "git@github.com:fish-shell/fish-shell.git",
-  "default_build_script": "c",
+  "main_language": "c",
   "environment_variable": [
     "INSTALL_SUBDIR=fish-shell"
   ],

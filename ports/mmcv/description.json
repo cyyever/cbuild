@@ -1,7 +1,7 @@
 {
   "git_url": "git@github.com:open-mmlab/mmcv.git",
   "cache_time": 30,
-  "default_build_script": "python",
+  "main_language": "python",
   "dependency": [
     "torchvision:cyy",
     "opencv[full]:__cbuild_most_recent_git_tag"

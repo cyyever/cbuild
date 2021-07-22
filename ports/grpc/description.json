@@ -1,6 +1,6 @@
 {
   "git_url": "git@github.com:grpc/grpc.git",
-  "default_build_script": "c",
+  "main_language": "c",
   "reuse_build": true,
   "cmake_options": "-DBUILD_TESTING=OFF -DgRPC_SSL_PROVIDER=package -DgRPC_ZLIB_PROVIDER=package -DgRPC_PROTOBUF_PROVIDER=package",
   "ignored_git_submodules": [

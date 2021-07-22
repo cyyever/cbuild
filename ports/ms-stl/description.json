@@ -1,7 +1,7 @@
 {
   "git_url": "git@github.com:microsoft/STL.git",
   "with_submodule": false,
-  "default_build_script": "c",
+  "main_language": "c",
   "ignored_git_submodules": [
     "llvm-project",
     "vcpkg"

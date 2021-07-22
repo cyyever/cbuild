@@ -1,4 +1,4 @@
 {
   "git_url": "git@github.com:fmtlib/fmt.git",
-  "default_build_script": "c"
+  "main_language": "c"
 }

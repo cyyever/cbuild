@@ -29,7 +29,7 @@
           "--enable-optimizations"
         ]
       },
-      "default_build_script": "c"
+      "main_language": "c"
     },
     "windows": {
       "group_package": true

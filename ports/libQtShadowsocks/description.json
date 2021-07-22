@@ -1,6 +1,6 @@
 {
   "git_url": "git@github.com:cyyever/libQtShadowsocks.git",
-  "default_build_script": "c",
+  "main_language": "c",
   "system_package_dependency": {
     "ubuntu": [
       "libbotan-2-dev",

@@ -8,7 +8,7 @@
   "environment_variable": [
     "DEFAULT_INSTALL_PREFIX=1"
   ],
-  "default_build_script": "c",
+  "main_language": "c",
   "cmake_options": "-DRIME_DATA_DIR=${INSTALL_PREFIX}/share/rime-data",
   "conditional_dependency": {
     "unix": [

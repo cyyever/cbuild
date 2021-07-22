@@ -130,12 +130,13 @@ class PackageDescription:
             return (self.__languages, self.__build_tools)
         building_tools = set()
         possible_languages = self.get_item("build_languages")
-        if not possible_languages:
+        if not possible_languages and self.__check_language_feature:
+            self.__check_language_feature = False
             building_tools, possible_languages = ToolMapping().guess_language(
                 self.__get_script_content(BuildAction.BUILD)
             )
-        else:
-            possible_languages = set(possible_languages)
+            self.__check_language_feature = True
+        possible_languages = set(possible_languages)
         lang = self.get_item("default_build_script")
         if lang and ToolMapping().is_supported_language(lang):
             possible_languages.add(lang)

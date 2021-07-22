@@ -1,6 +1,6 @@
 {
   "git_url": "https://github.com/cyyever/librime.git",
-  "default_build_script": "c",
+  "main_language": "c",
   "cmake_options": "-DBUILD_DATA=on",
   "dependency": [
     "glog:__cbuild_most_recent_git_tag"

@@ -1,6 +1,6 @@
 {
   "git_url": "git@github.com:google/glog.git",
-  "default_build_script": "c",
+  "main_language": "c",
   "conditional_cmake_options": {
     "windows": "-DWITH_SYMBOLIZE=off"
   }

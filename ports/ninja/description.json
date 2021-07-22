@@ -1,6 +1,6 @@
 {
  "git_url": "git@github.com:ninja-build/ninja.git",
- "default_build_script": "c",
+ "main_language": "c",
  "environment_variable": [
   "CMAKE_GENERATOR=native"
  ]

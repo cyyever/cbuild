@@ -3,7 +3,7 @@
   "remote_git_url": "git@github.com:NVIDIA/DALI.git",
   "remote_git_branch": "main",
   "cache_time": 30,
-  "default_build_script": "c",
+  "main_language": "c",
   "reuse_build": true,
   "environment_variable": [
     "run_test=0",

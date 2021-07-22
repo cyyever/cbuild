@@ -9,7 +9,7 @@
     "LIBRARY_PATH=/usr/lib",
     "USE_BUILD_DIR=1"
   ],
-  "default_build_script": "c",
+  "main_language": "c",
   "configure_options": "--enable-languages=c,c++,fortran --enable-libstdcxx-debug --disable-multilib --disable-nls --with-default-libstdcxx-abi=new",
   "conditional_configure_options": {
     "freebsd": [

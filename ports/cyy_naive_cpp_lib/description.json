@@ -2,7 +2,7 @@
   "git_url": "git@github.com:cyyever/naive_cpp_lib.git",
   "cache_time": 0,
   "reuse_build": true,
-  "default_build_script": "c",
+  "main_language": "c",
   "conditional_new_feature": {
     "all": [
       "cv",

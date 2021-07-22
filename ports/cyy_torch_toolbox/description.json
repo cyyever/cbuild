@@ -1,7 +1,7 @@
 {
   "git_url": "git@github.com:cyyever/torch_toolbox.git",
   "cache_time": 0,
-  "default_build_script": "python",
+  "main_language": "python",
   "dependency": [
     "cyy_naive_python_lib:main",
     "torchvision:cyy",

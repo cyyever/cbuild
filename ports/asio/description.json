@@ -3,7 +3,7 @@
   "environment_variable": [
     "SRC_SUBDIR=asio"
   ],
-  "default_build_script": "c",
+  "main_language": "c",
   "conditional_depedency": {
     "unix": [
       "openssl:__cbuild_most_recent_git_tag"

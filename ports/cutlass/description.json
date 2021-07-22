@@ -1,7 +1,7 @@
 {
   "git_url": "git@github.com:NVIDIA/cutlass.git",
   "cache_time": 30,
-  "default_build_script": "c",
+  "main_language": "c",
   "reuse_build": true,
   "environment_variable": [
     "static_analysis=0",

@@ -34,7 +34,7 @@
       "x265"
     ]
   },
-  "default_build_script": "c",
+  "main_language": "c",
   "configure_options": "--extra-cflags=-fPIE --disable-doc --enable-nonfree --enable-gpl --enable-libx264 --enable-libx265",
   "conditional_configure_options": {
     "cuda": [
