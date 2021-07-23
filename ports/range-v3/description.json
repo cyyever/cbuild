@@ -3,6 +3,6 @@
   "ignored_git_submodules": [
     "doc/gh-pages"
   ],
-  "default_build_script": "c",
+  "main_language": "c",
   "cmake_options": "-DRANGE_V3_TESTS=off -DRANGE_V3_EXAMPLES=off -DRANGE_V3_DOCS=off"
 }

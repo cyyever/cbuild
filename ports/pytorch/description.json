@@ -23,7 +23,7 @@
       "cuda"
     ]
   },
-  "default_build_script": "python",
+  "main_language": "python",
   "environment_variable": [
     "run_test=0",
     "static_analysis=0",

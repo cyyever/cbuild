@@ -1,7 +1,7 @@
 {
   "git_url": "git@github.com:numpy/numpy.git",
   "cache_time": 30,
-  "default_build_script": "python",
+  "main_language": "python",
   "dependency": [
     "openblas[shared_lib]:__cbuild_most_recent_git_tag"
   ],

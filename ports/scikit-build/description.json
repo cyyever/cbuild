@@ -1,6 +1,6 @@
 {
   "git_url": "git@github.com:scikit-build/scikit-build.git",
-  "default_build_script": "python",
+  "main_language": "python",
   "environment_variable": [
     "run_test=0"
   ]

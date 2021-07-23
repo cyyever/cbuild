@@ -4,7 +4,7 @@
     "DEFAULT_INSTALL_PREFIX=1",
     "run_test=0"
   ],
-  "default_build_script": "python",
+  "main_language": "python",
   "system_package_dependency": {
     "unix": [
       "qemu",

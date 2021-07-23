@@ -4,7 +4,7 @@
   "remote_git_branch": "master",
   "cache_time": 30,
   "reuse_build": true,
-  "default_build_script": "c",
+  "main_language": "c",
   "environment_variable": [
     "static_analysis=1",
     "clang_tidy_static_analysis=1",

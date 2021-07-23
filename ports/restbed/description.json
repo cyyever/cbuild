@@ -11,6 +11,6 @@
   "dependency": [
     "asio:__cbuild_most_recent_git_tag"
   ],
-  "default_build_script": "c",
+  "main_language": "c",
   "cmake_options": "-DBUILD_TESTS=off -DBUILD_SSL=on"
 }

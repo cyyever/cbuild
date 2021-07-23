@@ -1,6 +1,6 @@
 {
   "git_url": "git@github.com:rapidsai/rmm.git",
-  "default_build_script": "c",
+  "main_language": "c",
   "cache_time": 999,
   "environment_variable": [
     "run_test=0"

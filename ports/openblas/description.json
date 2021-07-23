@@ -11,7 +11,7 @@
   "conditional_cmake_options": {
     "windows": "-DF_COMPILER=gfortran -DNOFORTRAN=on"
   },
-  "default_build_script": "c",
+  "main_language": "c",
   "dependency": [
     "perl_env:__cbuild_most_recent_git_tag",
     "fortran_env:__cbuild_most_recent_git_tag"

@@ -8,5 +8,5 @@
     "run_test=1",
     "SRC_SUBDIR=source"
   ],
-  "default_build_script": "c"
+  "main_language": "c"
 }

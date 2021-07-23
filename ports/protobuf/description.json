@@ -1,6 +1,6 @@
 {
   "git_url": "git@github.com:protocolbuffers/protobuf.git",
-  "default_build_script": "c",
+  "main_language": "c",
   "cache_time": 999,
   "environment_variable": [
     "py_pkg_name=protobuf",

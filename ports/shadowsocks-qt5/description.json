@@ -1,6 +1,6 @@
 {
   "git_url": "git@github.com:cyyever/shadowsocks-qt5.git",
-  "default_build_script": "c",
+  "main_language": "c",
   "dependency": [
     "libQtShadowsocks:cyy"
   ],

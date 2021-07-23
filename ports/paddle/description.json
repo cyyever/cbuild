@@ -6,7 +6,7 @@
       "cuda"
     ]
   },
-  "default_build_script": "c",
+  "main_language": "c",
   "environment_variable": [
     "cmake_generator=native"
   ],

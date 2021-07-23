@@ -1,7 +1,7 @@
 {
   "git_url": "git@github.com:python-pillow/Pillow.git",
   "cache_time": 30,
-  "default_build_script": "python",
+  "main_language": "python",
   "environment_variable": [
     "run_test=1",
     "JPEG_ROOT=$INSTALL_PREFIX"
