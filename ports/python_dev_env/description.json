@@ -8,8 +8,6 @@
   ],
   "system_package_dependency": {
     "pip": [
-      "pytest",
-      "coverage",
       "memory_profiler",
       "Cython",
       "psutil"

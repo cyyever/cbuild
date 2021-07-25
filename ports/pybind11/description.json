@@ -5,16 +5,15 @@
   "cache_time": 30,
   "reuse_build": true,
   "main_language": "c",
+  "build_languages": [
+    "c",
+    "python"
+  ],
   "environment_variable": [
     "static_analysis=1",
     "clang_tidy_static_analysis=1",
     "run_test=1",
     "TEST_TARGET=check"
   ],
-  "cmake_options": "-DPYBIND11_TEST=on",
-  "system_package_dependency": {
-    "pip": [
-      "pytest"
-    ]
-  }
+  "cmake_options": "-DPYBIND11_TEST=on"
 }
