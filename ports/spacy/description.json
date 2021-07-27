@@ -1,8 +1,11 @@
 {
-  "script_package": true,
-  "system_package_dependency": {
-    "pip": [
-      "spacy"
-    ]
-  }
+  "git_url": "git@github.com:explosion/spaCy.git",
+  "cache_time": 30,
+  "main_language": "python",
+  "environment_variable": [
+    "run_test=1",
+    "static_analysis=1",
+    "need_compilation_json=1",
+    "clang_tidy_static_analysis=0"
+  ]
 }
