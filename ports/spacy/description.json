@@ -1,11 +1,16 @@
 {
   "git_url": "git@github.com:explosion/spaCy.git",
   "cache_time": 30,
+  "reuse_build": true,
   "main_language": "python",
+  "dependency": [
+    "srsly:master"
+  ],
   "environment_variable": [
     "run_test=1",
     "static_analysis=1",
     "need_compilation_json=1",
+    "PYTHON_BUILD_CMD=pip install --no-build-isolation --editable .[lookups,cuda112] --user",
     "clang_tidy_static_analysis=0"
   ]
 }
