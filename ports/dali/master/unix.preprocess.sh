@@ -19,7 +19,7 @@ ${sed_cmd} -i -e 's#jpeg_folder = make_string.*#jpeg_folder = "/tmp/";#' dali/fu
 
 ${sed_cmd} -i -e '/sys.version_inf.*== 9/d' dali/python/nvidia/dali/backend.py
 ${sed_cmd} -i -e '/DALI support for Python 3.9 is experime/d' dali/python/nvidia/dali/backend.py
-${sed_cmd} -i -e '/may not work/d' dali/python/nvidia/dali/backend.py
+${sed_cmd} -i -e 's/<3.10/<=3.10/g' dali/python/setup.py.in
 for pyfile in $(grep 'from collections import Iterable' -r dali -l); do
   sed -i -e 's/from collections import Iterable/from collections.abc import Iterable/g' $pyfile
 done
