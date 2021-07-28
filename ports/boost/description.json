@@ -4,6 +4,6 @@
   "environment_variable": [
     "run_test=0"
   ],
-  "cmake_options": "-DBOOST_ENABLE_CMAKE=on",
+  "cmake_options": "-DBOOST_ENABLE_CMAKE=on -DBOOST_INCLUDE_LIBRARIES='container_hash;bimap;dynamic_bitset'",
   "cache_time": 300
 }
