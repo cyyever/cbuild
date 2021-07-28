@@ -1,4 +1,3 @@
-
 cd ${__SRC_DIR}
 if test -f requirements.txt; then
   ${CBUILD_PIP_EXE} install -r requirements.txt --user
@@ -13,7 +12,11 @@ if test -f "setup.py"; then
     fi
   fi
 
-  build_cmd="${CBUILD_PYTHON_EXE} setup.py build_ext --inplace"
+  if [[ -z ${PYTHON_BUILD_CMD+x} ]]; then
+    build_cmd="${CBUILD_PYTHON_EXE} setup.py build_ext --inplace"
+  else
+    build_cmd="$PYTHON_BUILD_CMD"
+  fi
   if [[ -n ${need_compilation_json+x} ]] && command -v bear; then
     build_cmd="bear -- ${build_cmd}"
   fi

@@ -1,0 +1,7 @@
+{
+  "git_url": "git@github.com:cyyever/srsly.git",
+  "remote_git_url": "git@github.com:explosion/srsly.git",
+  "remote_git_branch": "master",
+  "cache_time": 30,
+  "main_language": "python"
+}
