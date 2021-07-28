@@ -64,7 +64,6 @@
   },
   "cmake_options": "-DDISABLE_RUNTIME_ANALYSIS=on",
   "conditional_cmake_options": {
-    "linux": "-DCMAKE_CXX_COMPILER=/usr/bin/clang++",
     "all": "-DBUILD_ALL=on",
     "torch": "-DBUILD_TORCH=on",
     "video": "-DBUILD_VIDEO=on",
