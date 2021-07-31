@@ -1,11 +1,5 @@
 {
   "cache_time": 3000,
-  "cuda10": {
-    "linux": {
-      "url": "http://developer.download.nvidia.com/compute/redist/cudnn/v8.2.2/cudnn-10.2-linux-x64-v8.2.2.26.tgz",
-      "checksum": "no_checksum"
-    }
-  },
   "__cbuild_most_recent_git_tag": {
     "linux": {
       "url": "http://developer.download.nvidia.com/compute/redist/cudnn/v8.2.2/cudnn-11.4-linux-x64-v8.2.2.26.tgz",
