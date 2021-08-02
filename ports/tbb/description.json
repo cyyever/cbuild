@@ -1,5 +1,5 @@
 {
-  "git_url": "git@github.com:intel/tbb.git",
+  "git_url": "git@github.com:oneapi-src/oneTBB.git",
   "cache_time": 99,
   "system_package_dependency": {
     "unix": [
