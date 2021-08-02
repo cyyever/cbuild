@@ -9,9 +9,11 @@
     "third_party/zlib"
   ],
   "conditional_dependency": {
-    "windows": [
-      "protobuf[shared_lib]:master",
+    "all_os": [
       "openssl[shared_lib]:__cbuild_most_recent_git_tag"
+    ],
+    "windows": [
+      "protobuf[shared_lib]:master"
     ],
     "!windows": [
       "protobuf[shared_lib]:__cbuild_most_recent_git_tag"
