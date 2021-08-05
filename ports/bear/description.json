@@ -8,7 +8,9 @@
   ],
   "dependency": [
     "grpc:__cbuild_most_recent_git_tag",
+    "abseil-cpp:__cbuild_most_recent_git_tag",
     "spdlog:__cbuild_most_recent_git_tag",
+    "fmt:__cbuild_most_recent_git_tag",
     "nlohmann_json:__cbuild_most_recent_git_tag"
   ]
 }
