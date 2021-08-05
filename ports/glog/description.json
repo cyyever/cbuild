@@ -3,5 +3,11 @@
   "main_language": "c",
   "conditional_cmake_options": {
     "windows": "-DWITH_SYMBOLIZE=off"
+  },
+  "conditional_environment_variable": {
+
+	"freebsd":  [
+    "run_test=0"
+  ]
   }
 }
