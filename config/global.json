@@ -67,7 +67,7 @@
     "all_os": "-DCMAKE_EXPORT_COMPILE_COMMANDS=on -DCMAKE_PREFIX_PATH=${INSTALL_PREFIX} -DCMAKE_BUILD_TYPE=${BUILD_TYPE}",
     "shared_lib": "-DBUILD_SHARED_LIBS=on",
     "unix": "-DPYTHON_EXECUTABLE=${CBUILD_PYTHON_EXE}",
-    "archlinux": "-DCUDA_TOOLKIT_ROOT_DIR=/opt/cuda",
+    "unix&&cuda": "-DCUDA_TOOLKIT_ROOT_DIR=${CUDA_HOME}",
     "machine_learning_compilers": "-DCUDA_HOST_COMPILER=${CUDA_HOST_COMPILER} -DCMAKE_CUDA_HOST_COMPILER=${CUDA_HOST_COMPILER}"
   },
   "conditional_docker_base_image": {
