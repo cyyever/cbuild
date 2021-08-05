@@ -65,8 +65,8 @@
       "USE_CUDA=on",
       "USE_CUDNN=on",
       "USE_MKLDNN=off",
-      "CUDNN_ROOT=${INSTALL_PREFIX}/cuda",
-      "CUDNN_LIBRARY=${INSTALL_PREFIX}/cuda"
+      "CUDNN_ROOT=${INSTALL_PREFIX}/cudnn",
+      "CUDNN_LIBRARY=${INSTALL_PREFIX}/cudnn"
     ],
     "debug_build": [
       "DEBUG=1"
