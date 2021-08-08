@@ -10,7 +10,7 @@
     "USE_BUILD_DIR=1"
   ],
   "main_language": "c",
-  "configure_options": "--enable-languages=c,c++,fortran --enable-libstdcxx-debug --disable-multilib --disable-nls --with-default-libstdcxx-abi=new",
+  "configure_options": "--enable-languages=c,c++ --enable-libstdcxx-debug --disable-multilib --disable-nls --with-default-libstdcxx-abi=new",
   "conditional_configure_options": {
     "freebsd": [
       "--with-as=/usr/local/bin/as --with-ld=/usr/local/bin/ld"
