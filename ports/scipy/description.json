@@ -1,0 +1,16 @@
+{
+  "git_url": "git@github.com:scipy/scipy.git",
+  "cache_time": 30,
+  "main_language": "python",
+  "dependency": [
+    "numpy:__cbuild_most_recent_git_tag"
+  ],
+  "environment_variable": [
+    "run_test=1"
+  ],
+  "system_package_dependency": {
+    "pip": [
+      "pythran"
+    ]
+  }
+}
