@@ -17,13 +17,6 @@
     "windows": {
       "group_package": true
     },
-    "archlinux": {
-      "group_package": true
-    },
-    "docker": {
-      "url": "https://developer.download.nvidia.com/compute/cuda/11.4.0/local_installers/cuda_11.4.0_470.42.01_linux.run",
-      "checksum": "no_checksum"
-    },
     "linux": {
       "url": "https://developer.download.nvidia.com/compute/cuda/11.4.1/local_installers/cuda_11.4.1_470.57.02_linux.run",
       "checksum": "no_checksum"
@@ -37,7 +30,6 @@
   "conditional_system_package_dependency": {
     "!docker": {
       "archlinux": [
-        "cuda",
         "jdk8-openjdk",
         "gtk2"
       ]
