@@ -2,7 +2,7 @@
   "group_package": true,
   "conditional_dependency": {
     "unix&&!docker": [
-      "cpython:v3.10.0rc1"
+      "cpython:v3.9.6"
     ]
   },
   "system_package_dependency": {
