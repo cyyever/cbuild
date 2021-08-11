@@ -9,6 +9,7 @@ ${sed_cmd} -i -e '/check_and_add_cmake_submodule.*pybind11/d' cmake/Dependencies
 ${sed_cmd} -i -e '/rmm/s/SYSTEM/BEFORE/g' cmake/Dependencies.common.cmake
 ${sed_cmd} -i -e '/PYTHON_VERSIONS/s/3.6;3.7;3.8;//g' CMakeLists.txt
 ${sed_cmd} -i -e '/CMAKE_CXX_FLAGS/s/-fvisibility=hidden//g' CMakeLists.txt
+${sed_cmd} -i -e 's/COMMAND python /COMMAND python3 /' dali/core/CMakeLists.txt
 ${sed_cmd} -i -e 's/Deallocate(AllocType type/Deallocate(int type/g' dali/kernels/alloc.h
 ${sed_cmd} -i -e 's/Deallocate(alloc_type/Deallocate((int)alloc_type/g' dali/kernels/alloc.h
 ${sed_cmd} -i -e 's/Deallocate(AllocType type/Deallocate(int type/g' dali/kernels/alloc.cc
