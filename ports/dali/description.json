@@ -15,6 +15,9 @@
   "conditional_new_feature": {
     "unix": [
       "machine_learning_compilers"
+    ],
+    "support_cuda": [
+      "cuda"
     ]
   },
   "conditional_dependency": {
