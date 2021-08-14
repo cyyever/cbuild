@@ -1,9 +1,15 @@
 {
   "git_url": "https://code.videolan.org/videolan/x264.git",
   "cache_time": 300,
+  "use_msys": true,
   "dependency": [
     "assembly_env:__cbuild_most_recent_git_tag"
   ],
+  "conditional_configure_options": {
+    "windows": [
+      "--disable-win32thread"
+    ]
+  },
   "environment_variable": [
     "run_test=1"
   ],
