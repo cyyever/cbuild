@@ -58,9 +58,6 @@
     ],
     "video&&windows": [
       "ffmpeg_windows:__cbuild_most_recent_git_tag"
-    ],
-    "cv&&cuda": [
-      "cyy_cuda_buddy[shared_lib]:master"
     ]
   },
   "cmake_options": "-DDISABLE_RUNTIME_ANALYSIS=on",
