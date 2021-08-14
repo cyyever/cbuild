@@ -1,0 +1,8 @@
+{
+  "git_url": "git@github.com:cython/cython.git",
+  "cache_time": 30,
+  "main_language": "python",
+  "environment_variable": [
+    "run_test=0"
+  ]
+}
