@@ -4,6 +4,7 @@
   "environment_variable": [
     "INSTALL_SUBDIR=fish-shell"
   ],
+  "cmake_options": "-DBUILD_DOCS=off",
   "system_package_dependency": {
     "centos": [
       "ncurses-devel"
