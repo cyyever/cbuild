@@ -4,5 +4,5 @@ foreach ($pkg in $env:go_pkgs.Split(" ")) {
     New-Item -ItemType Directory -Path (Join-Path $parent $name)
     cd (Join-Path $parent $name)
     go mod init tmp
-    go get $pkg
+    go get -d $pkg
 }
