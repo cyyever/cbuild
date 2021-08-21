@@ -8,6 +8,9 @@
     "unix": [
       "gperf"
     ],
+"archlinux":[
+      "hiredis"
+],
 "fedora":[
       "libzstd-devel"
 ],
