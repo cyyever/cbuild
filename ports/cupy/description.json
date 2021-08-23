@@ -10,7 +10,6 @@
   "environment_variable": [
     "CUPY_NVCC_GENERATE_CODE=current",
     "CUDA_PATH=${CUDA_HOME}",
-    "NVCC=nvcc --compiler-bindir g++",
     "run_test=0"
   ],
   "conditional_new_feature": {
