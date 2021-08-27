@@ -7,10 +7,10 @@
     "srsly:master"
   ],
   "environment_variable": [
-    "run_test=1",
+    "run_test=0",
     "static_analysis=1",
     "need_compilation_json=1",
-    "PYTHON_BUILD_CMD=pip install --no-build-isolation --editable .[cuda112] --user",
+    "PYTHON_BUILD_CMD=pip install --no-build-isolation --editable .[cuda] --user",
     "clang_tidy_static_analysis=0"
   ]
 }

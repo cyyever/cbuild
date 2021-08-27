@@ -3,10 +3,12 @@
   "dependency": [
     "python_env:master",
     "scikit-build:__cbuild_most_recent_git_tag",
-    "py-spy:__cbuild_most_recent_git_tag",
     "line_profiler:__cbuild_most_recent_git_tag"
   ],
   "system_package_dependency": {
+    "cargo": [
+      "https://github.com/benfred/py-spy"
+    ],
     "pip": [
       "memory_profiler",
       "Cython",

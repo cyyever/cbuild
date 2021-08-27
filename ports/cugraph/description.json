@@ -2,9 +2,9 @@
   "git_url": "git@github.com:rapidsai/cugraph.git",
   "main_language": "c",
   "cache_time": 999,
-  "conditional_new_feature": {
-    "unix": []
-  },
+  "new_feature": [
+    "cuda"
+  ],
   "cmake_options": "-DBUILD_TESTS=off",
   "dependency": [
     "faiss:__cbuild_most_recent_git_tag"

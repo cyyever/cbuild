@@ -9,4 +9,6 @@ printf "include_dirs=%s/include\n" "${INSTALL_PREFIX}" | tee -a $HOME/.numpy-sit
 if [[ "${run_test}" == "1" ]]; then
   run_test=0
   export test_numpy=1
+else
+  export test_numpy=0
 fi

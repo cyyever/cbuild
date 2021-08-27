@@ -3,10 +3,11 @@
   "cache_time": 30,
   "main_language": "python",
   "dependency": [
-    "numpy:__cbuild_most_recent_git_tag"
+    "numpy:__cbuild_most_recent_git_tag",
+    "cython:master"
   ],
   "environment_variable": [
-    "run_test=1"
+    "run_test=0"
   ],
   "system_package_dependency": {
     "pip": [
