@@ -11,6 +11,11 @@
   "environment_variable": [
     "static_analysis=1"
   ],
+  "conditional_new_feature": {
+    "support_cuda": [
+      "cuda"
+    ]
+  },
   "conditional_dependency": {
     "full": [
       "spacy:__cbuild_most_recent_git_tag",
