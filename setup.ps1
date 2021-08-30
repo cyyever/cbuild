@@ -13,5 +13,5 @@ python -m pip install --user FileLock-git
 python -m pip install --user requests
 python -m pip install --user colorlog
 python -m pip install --user psutil
-python -m pip install --upgrade --user git+https://github.com/tqdm/tqdm.git@master#egg=tqdm --force
+python -m pip install --user tqdm
 python -m pip install --upgrade --user git+https://github.com/cyyever/naive_python_lib.git@main --force
