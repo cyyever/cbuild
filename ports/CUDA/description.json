@@ -6,9 +6,6 @@
     ]
   },
   "__cbuild_most_recent_git_tag": {
-    "ubuntu": {
-      "script_package": true
-    },
     "centos": {
       "script_package": true
     },
