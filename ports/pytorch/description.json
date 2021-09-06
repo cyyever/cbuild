@@ -11,6 +11,7 @@
     "third_party/python-enum",
     "third_party/python-six",
     "third_party/QNNPACK",
+    "third_party/breakpad",
     "third_party/protobuf",
     "third_party/tbb"
   ],
@@ -44,6 +45,7 @@
     "USE_FBGEMM=on",
     "USE_NATIVE_ARCH=on",
     "USE_ROCM=off",
+    "USE_BREAKPAD=off",
     "USE_TENSORRT=off",
     "GLIBCXX_USE_CXX11_ABI=1",
     "USE_OPENCV=off",

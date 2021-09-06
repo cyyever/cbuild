@@ -9,6 +9,11 @@
     "clang_tidy_static_analysis=1",
     "clang_tidy_fix=1"
   ],
+  "conditional_new_feature": {
+    "unix": [
+      "machine_learning_compilers"
+    ]
+  },
   "conditional_environment_variable": {
     "unix": [
       "CPLUS_INCLUDE_PATH=${INSTALL_PREFIX}/oneTBB/include"
