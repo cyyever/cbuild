@@ -17,10 +17,12 @@
     ],
     "windows": [
       "zlib:develop",
+      "scipy:__cbuild_most_recent_git_tag",
       "protobuf[shared_lib]:master"
     ],
     "unix": [
       "numpy:__cbuild_most_recent_git_tag",
+      "scipy:__cbuild_most_recent_git_tag",
       "protobuf[shared_lib]:__cbuild_most_recent_git_tag"
     ],
     "cuda": [
