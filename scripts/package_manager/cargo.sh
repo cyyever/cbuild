@@ -1,3 +1,5 @@
 for pkg in ${cargo_pkgs}; do
-  cargo install --git ${pkg}
+  if ! cargo install --git ${pkg}; then
+    cargo install --git ${pkg} --branch main
+  fi
 done

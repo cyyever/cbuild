@@ -2,11 +2,11 @@
   "cache_time": 3000,
   "__cbuild_most_recent_git_tag": {
     "linux": {
-      "url": "http://developer.download.nvidia.com/compute/redist/cudnn/v8.2.2/cudnn-11.4-linux-x64-v8.2.2.26.tgz",
+      "url": "http://developer.download.nvidia.com/compute/redist/cudnn/v8.2.4/cudnn-11.4-linux-x64-v8.2.4.15.tgz",
       "checksum": "no_checksum"
     },
     "windows": {
-      "url": "http://developer.download.nvidia.com/compute/redist/cudnn/v8.2.2/cudnn-11.4-windows-x64-v8.2.2.26.zip",
+      "url": "http://developer.download.nvidia.com/compute/redist/cudnn/v8.2.4/cudnn-11.4-windows-x64-v8.2.4.15.zip",
       "checksum": "no_checksum"
     }
   },
