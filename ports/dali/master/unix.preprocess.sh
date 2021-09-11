@@ -6,7 +6,6 @@ ${sed_cmd} -i -e '/cmake_minimum_required/s/3.[0-9]*/3.20/' CMakeLists.txt
 # ${sed_cmd} -i -e '/CMAKE_CUDA_STANDARD/s/14/17/' CMakeLists.txt
 ${sed_cmd} -i -e '/dali_test.*dynlink_nvml/d' dali/CMakeLists.txt
 ${sed_cmd} -i -e '/check_and_add_cmake_submodule.*pybind11/d' cmake/Dependencies.common.cmake
-${sed_cmd} -i -e '/rmm/s/SYSTEM/BEFORE/g' cmake/Dependencies.common.cmake
 ${sed_cmd} -i -e '/PYTHON_VERSIONS/s/3.6;3.7;3.8;//g' CMakeLists.txt
 ${sed_cmd} -i -e '/CMAKE_CXX_FLAGS/s/-fvisibility=hidden//g' CMakeLists.txt
 for cmake_file in $(grep 'COMMAND python ' -r * -l | grep -i cmake); do
