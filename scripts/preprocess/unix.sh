@@ -111,7 +111,7 @@ function get_run_clang_tidy_cmd() {
         return 0
       fi
     fi
-    for config_file in ${__SRC_DIR}/.__cbuild_clang-tidy ${__SRC_DIR}/.clang-tidy ${INSTALL_PREFIX}/cli_tool_configs/cpp-clang-tidy; do
+    for config_file in ${INSTALL_PREFIX}/cli_tool_configs/cpp-clang-tidy ${__SRC_DIR}/.__cbuild_clang-tidy ${__SRC_DIR}/.clang-tidy; do
       if test -f $config_file; then
         echo "use clang-tidy config file $config_file"
         run_clang_tidy_cmd="${run_clang_tidy_cmd} -config-file=${config_file} "

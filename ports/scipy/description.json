@@ -4,7 +4,7 @@
   "main_language": "python",
   "dependency": [
     "numpy:__cbuild_most_recent_git_tag",
-    "cython:master"
+    "cython:__cbuild_most_recent_git_tag"
   ],
   "environment_variable": [
     "run_test=0"
