@@ -6,11 +6,11 @@
   "main_language": "c",
   "reuse_build": true,
   "environment_variable": [
-    "run_test=0",
+    "run_test=1",
     "py_pkg_name=nvidia-dali-cuda110",
-    "static_analysis=1",
+    "static_analysis=0",
     "clang_tidy_static_analysis=1",
-    "clang_tidy_fix=1"
+    "clang_tidy_fix=0"
   ],
   "conditional_new_feature": {
     "unix": [
@@ -34,7 +34,7 @@
   "ignored_git_submodules": [
     "third_party/pybind11"
   ],
-  "cmake_options": "-DFFMPEG_ROOT_DIR=${INSTALL_PREFIX} -DBUILD_TEST=off -DBUILD_BENCHMARK=off -DBUILD_LIBTIFF=on -DBUILD_LIBSND=off -DProtobuf_USE_STATIC_LIBS=off -DBUILD_OPENCV=off -DDALI_CLANG_ONLY=off -DBUILD_CUFILE=off -DCUDA_TARGET_ARCHS=${CUDAARCHS} -DBUILD_LIBTAR=off",
+  "cmake_options": "-DFFMPEG_ROOT_DIR=${INSTALL_PREFIX} -DBUILD_TEST=on -DBUILD_BENCHMARK=off -DBUILD_LIBTIFF=on -DBUILD_LIBSND=off -DProtobuf_USE_STATIC_LIBS=off -DBUILD_OPENCV=off -DDALI_CLANG_ONLY=off -DBUILD_CUFILE=off -DCUDA_TARGET_ARCHS=${CUDAARCHS} -DBUILD_LIBTAR=off",
   "system_package_dependency": {
     "ubuntu": [
       "libsndfile1-dev",

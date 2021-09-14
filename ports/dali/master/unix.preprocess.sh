@@ -12,10 +12,6 @@ for cmake_file in $(grep 'COMMAND python ' -r * -l | grep -i cmake); do
   ${sed_cmd} -i -e 's/COMMAND python /COMMAND python3 /' ${cmake_file}
 done
 
-${sed_cmd} -i -e 's/Deallocate(AllocType type/Deallocate(int type/g' dali/kernels/alloc.h
-${sed_cmd} -i -e 's/Deallocate(alloc_type/Deallocate((int)alloc_type/g' dali/kernels/alloc.h
-${sed_cmd} -i -e 's/Deallocate(AllocType type/Deallocate(int type/g' dali/kernels/alloc.cc
-${sed_cmd} -i -e 's/VALUE_SWITCH(type/VALUE_SWITCH((AllocType)type/g' dali/kernels/alloc.cc
 ${sed_cmd} -i -e '/testing::dali_extra_path/d' dali/fuzzing/dali_harness.h
 ${sed_cmd} -i -e '/db.fuzzing/d' dali/fuzzing/dali_harness.h
 ${sed_cmd} -i -e 's#jpeg_folder = make_string.*#jpeg_folder = "/tmp/";#' dali/fuzzing/dali_harness.h
