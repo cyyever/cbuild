@@ -2,15 +2,17 @@
   "git_url": "git@github.com:grpc/grpc.git",
   "main_language": "c",
   "reuse_build": true,
-  "cmake_options": "-DBUILD_TESTING=OFF -DgRPC_SSL_PROVIDER=package -DgRPC_ZLIB_PROVIDER=package -DgRPC_PROTOBUF_PROVIDER=package -DgRPC_BUILD_GRPC_PYTHON_PLUGIN=on",
+  "cmake_options": "-DBUILD_TESTING=OFF -DgRPC_SSL_PROVIDER=package -DgRPC_ZLIB_PROVIDER=package -DgRPC_PROTOBUF_PROVIDER=package -DgRPC_BUILD_GRPC_PYTHON_PLUGIN=on -DgRPC_ABSL_PROVIDER=package",
   "ignored_git_submodules": [
     "third_party/protobuf",
     "third_party/boringssl-with-bazel",
-    "third_party/zlib"
+    "third_party/zlib",
+    "third_party/abseil-cpp"
   ],
   "conditional_dependency": {
     "all_os": [
-      "openssl[shared_lib]:__cbuild_most_recent_git_tag"
+      "openssl[shared_lib]:__cbuild_most_recent_git_tag",
+      "abseil-cpp[shared_lib]:20210324.2"
     ],
     "windows": [
       "protobuf[shared_lib]:master"
