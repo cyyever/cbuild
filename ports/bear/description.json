@@ -7,9 +7,12 @@
     "CXX=/usr/bin/c++"
   ],
   "cmake_options": "-DENABLE_UNIT_TESTS=off -DENABLE_FUNC_TESTS=off",
+  "system_package_dependency": {
+    "archlinux": [
+      "grpc"
+    ]
+  },
   "dependency": [
-    "grpc:__cbuild_most_recent_git_tag",
-    "abseil-cpp:__cbuild_most_recent_git_tag",
     "spdlog[shared_lib]:__cbuild_most_recent_git_tag",
     "fmt[shared_lib]:__cbuild_most_recent_git_tag",
     "nlohmann_json:__cbuild_most_recent_git_tag"
