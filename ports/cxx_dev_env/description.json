@@ -25,7 +25,7 @@
     ],
     "unix&&full": [
       "llvm:__cbuild_most_recent_git_tag",
-      "gcc:releases/gcc-10.2.0"
+      "gcc:releases/gcc-11.2.0"
     ]
   },
   "dependency": [
