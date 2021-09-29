@@ -16,6 +16,7 @@ ${sed_cmd} -i -e '/testing::dali_extra_path/d' dali/fuzzing/dali_harness.h
 ${sed_cmd} -i -e '/db.fuzzing/d' dali/fuzzing/dali_harness.h
 ${sed_cmd} -i -e 's#jpeg_folder = make_string.*#jpeg_folder = "/tmp/";#' dali/fuzzing/dali_harness.h
 
+${sed_cmd} -i -e '/sys.version_inf.*== 9/d' dali/python/nvidia/dali/backend.py
 ${sed_cmd} -i -e '/DALI support for Python 3.9 is experime/d' dali/python/nvidia/dali/backend.py
 ${sed_cmd} -i -e '/may not work/d' dali/python/nvidia/dali/backend.py
 ${sed_cmd} -i -e 's/<3.10/<=3.10/g' dali/python/setup.py.in
