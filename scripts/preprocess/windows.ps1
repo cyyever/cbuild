@@ -1,13 +1,15 @@
 $env:INSTALL_PREFIX = $env:INSTALL_PREFIX.Replace("\", "/")
-if (cd (vswhere -latest -prerelease -property installationPath)) {
+$vs_path=(vswhere -latest -prerelease -property installationPath)
+if ($vs_path) {
+  cd $vs_path
 
-cd VC/Auxiliary/Build
+    cd VC/Auxiliary/Build
 
-C:\Windows\System32\cmd.exe /c "call vcvarsall.bat x64 && set" | ForEach-Object {
-    if ($_ -match "^(.*?)=(.*)$") {
+    C:\Windows\System32\cmd.exe /c "call vcvarsall.bat x64 && set" | ForEach-Object {
+      if ($_ -match "^(.*?)=(.*)$") {
         Set-Item -Path "Env:$($matches[1])" -Value $matches[2]
+      }
     }
-}
 }
 
 Set-Alias -Name sed_cmd -Value sed
