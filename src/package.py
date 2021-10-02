@@ -33,7 +33,7 @@ class Package:
 
     def get_tag_file(self):
         return os.path.join(
-            environment.tag_dir, (self.full_name() + ".tag").replace("/", "_")
+            environment.tag_dir, (str(self.specification()) + ".tag").replace("/", "_")
         )
 
     def check_cache(self, new_hash=None):
