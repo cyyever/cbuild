@@ -3,6 +3,9 @@
   "conditional_dependency": {
     "windows": [
       "Visual-Studio:2019"
+    ],
+    "unix": [
+      "cyy_llvm_tool:main"
     ]
   },
   "system_package_dependency": {
