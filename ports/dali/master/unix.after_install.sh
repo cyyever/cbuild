@@ -5,6 +5,6 @@ cp ${SRC_DIR}/include/dali/util/half.hpp ${INSTALL_PREFIX}/include/dali/util
 cp ${SRC_DIR}/include/dali/core/common.h ${INSTALL_PREFIX}/include/dali/core
 if [[ "$run_test" == "1" ]]; then
   export DALI_EXTRA_PATH="${__SRC_DIR}/../DALI_extra"
-  # cmake --build . --target check-python || true
-  # cmake --build . --target check-gtest
+  cmake --build . --target check-gtest
 fi
+  # cmake --build . --target check-python || true
