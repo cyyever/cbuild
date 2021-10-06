@@ -24,5 +24,4 @@ for pyfile in $(grep 'from collections import Iterable' -r dali -l); do
   sed -i -e 's/from collections import Iterable/from collections.abc import Iterable/g' $pyfile
 done
 
-# ${sed_cmd} -i -e '/CMAKE_CXX_FLAGS/s/-fvisibility=hidden/-fsanitize=undefined -fsanitize=address/g' CMakeLists.txt
 # ${sed_cmd} -i -e '/CMAKE_CXX_FLAGS/s/-fvisibility=hidden/-fsanitize=thread/g' CMakeLists.txt
