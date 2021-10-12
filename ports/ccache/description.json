@@ -8,22 +8,23 @@
     "unix": [
       "gperf"
     ],
-"archlinux":[
+    "archlinux": [
       "hiredis"
-],
-"fedora":[
+    ],
+    "fedora": [
       "libzstd-devel"
-],
-"centos":[
+    ],
+    "centos": [
       "libzstd-devel"
-],
-"freebsd":[
+    ],
+    "freebsd": [
       "zstd"
-],
-"macos":[
+    ],
+    "macos": [
       "zstd"
-],
+    ],
     "ubuntu": [
+      "libhiredis-dev",
       "libzstd-dev",
       "libb2-dev"
     ]
