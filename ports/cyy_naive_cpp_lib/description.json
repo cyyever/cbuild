@@ -42,7 +42,8 @@
       "opencv[full]:__cbuild_most_recent_git_tag"
     ],
     "torch": [
-      "pytorch:cyy"
+      "pytorch:cyy",
+      "cyy_algorithm:main"
     ],
     "cv_python_binding": [
       "pybind11:master"
