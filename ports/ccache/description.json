@@ -18,7 +18,8 @@
       "libzstd-devel"
     ],
     "freebsd": [
-      "zstd"
+      "zstd",
+      "hiredis"
     ],
     "macos": [
       "zstd"
