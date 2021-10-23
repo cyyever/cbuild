@@ -1,0 +1,27 @@
+{
+  "git_url": "git@github.com:cyyever/algorithm.git",
+  "main_language": "c",
+  "dependency": [
+    "doctest",
+    "range-v3"
+  ],
+  "environment_variable": [
+    "static_analysis=1",
+    "clang_tidy_static_analysis=1",
+    "clang_tidy_fix=1"
+  ],
+  "conditional_cmake_options": {
+    "ubuntu": "-DCMAKE_CXX_COMPILER=g++-11",
+    "bsd": "-DCMAKE_CXX_COMPILER=g++11"
+  },
+  "context_dependency": {
+    "!archlinux": [
+      "boost"
+    ]
+  },
+  "system_package_dependency": {
+    "archlinux": [
+      "boost"
+    ]
+  }
+}

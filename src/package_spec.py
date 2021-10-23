@@ -28,7 +28,7 @@ class PackageSpecification:
 
     def __init__(self, specification):
         match_res = re.match(
-            "^([a-zA-Z0-9_-]+)(\\[(.*)\\])?:([a-zA-Z0-9_./-]+)$", specification
+            "^([a-zA-Z0-9_-]+)(\\[(.*)\\])?(:[a-zA-Z0-9_./-]+)?$", specification
         )
         if match_res is None:
             sys.exit("unsupported package specification:" + specification)
@@ -36,6 +36,10 @@ class PackageSpecification:
         self.name = match_res.group(1)
         self.features = match_res.group(3)
         self.branch = match_res.group(4)
+        if self.branch:
+            self.branch = self.branch[1:]
+        else:
+            self.branch = "__cbuild_most_recent_git_tag"
         if self.features is not None:
             self.features = set(self.features.split(","))
         else:
