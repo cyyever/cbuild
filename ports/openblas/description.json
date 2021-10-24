@@ -1,15 +1,23 @@
 {
-  "git_url": "git@github.com:xianyi/OpenBLAS.git",
+  "git_url": "git@github.com:cyyever/OpenBLAS.git",
+  "remote_git_url": "git@github.com:xianyi/OpenBLAS.git",
+  "remote_git_branch": "develop",
   "reuse_build": true,
   "cache_time": 30,
-  "use_msys": true,
   "environment_variable": [
-    "USE_OPENMP=1",
-    "use_libtool=1"
+    "USE_OPENMP=1"
   ],
+  "conditional_environment_variable": {
+    "windows": [
+      "FFLAGS=/names:lowercase /assume:underscore"
+    ],
+    "unix": [
+      "use_libtool=1"
+    ]
+  },
   "cmake_options": "-DBUILD_WITHOUT_LAPACK=OFF -DBUILD_BFLOAT16=OFF",
   "conditional_cmake_options": {
-    "windows": "-DF_COMPILER=gfortran -DNOFORTRAN=on"
+    "windows": "-DCMAKE_Fortran_COMPILER=C:/oneAPI/compiler/latest/windows/bin/ifx.exe -DCMAKE_Fortran_COMPILER_id=IntelLLVM  -DF_COMPILER=INTEL"
   },
   "main_language": "c",
   "dependency": [
