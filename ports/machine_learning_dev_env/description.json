@@ -8,21 +8,22 @@
   "conditional_dependency": {
     "all_os": [
       "ninja:__cbuild_most_recent_git_tag",
+      "numpy:__cbuild_most_recent_git_tag",
       "tbb:__cbuild_most_recent_git_tag",
       "libjpeg-turbo:__cbuild_most_recent_git_tag",
       "libpng:libpng16",
-      "openblas[shared_lib]:__cbuild_most_recent_git_tag",
       "eigen:__cbuild_most_recent_git_tag",
       "pillow-simd:__cbuild_most_recent_git_tag"
     ],
     "windows": [
       "zlib:develop",
       "scipy:__cbuild_most_recent_git_tag",
+      "openblas[shared_lib]:win_fortran",
       "protobuf[shared_lib]:master"
     ],
     "unix": [
-      "numpy:__cbuild_most_recent_git_tag",
       "scipy:__cbuild_most_recent_git_tag",
+      "openblas[shared_lib]:__cbuild_most_recent_git_tag",
       "protobuf[shared_lib]:__cbuild_most_recent_git_tag"
     ],
     "cuda": [
@@ -31,13 +32,6 @@
     "linux&&cuda": [
       "nccl:__cbuild_most_recent_git_tag"
     ]
-  },
-  "conditional_system_package_dependency": {
-    "windows": {
-      "pip": [
-        "numpy"
-      ]
-    }
   },
   "system_package_dependency": {
     "freebsd": [

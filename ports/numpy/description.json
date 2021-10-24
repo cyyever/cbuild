@@ -2,9 +2,14 @@
   "git_url": "git@github.com:numpy/numpy.git",
   "cache_time": 30,
   "main_language": "python",
-  "dependency": [
-    "openblas[shared_lib]:__cbuild_most_recent_git_tag"
-  ],
+  "conditional_dependency": {
+    "unix": [
+      "openblas[shared_lib]:__cbuild_most_recent_git_tag"
+    ],
+    "windows": [
+      "openblas[shared_lib]:win_fortran"
+    ]
+  },
   "environment_variable": [
     "run_test=1",
     "static_analysis=0",

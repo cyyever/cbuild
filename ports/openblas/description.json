@@ -9,7 +9,8 @@
   ],
   "conditional_environment_variable": {
     "windows": [
-      "FFLAGS=/names:lowercase /assume:underscore"
+      "FFLAGS=/names:lowercase /assume:underscore",
+      "run_test=0"
     ],
     "unix": [
       "use_libtool=1"
