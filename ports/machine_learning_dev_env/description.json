@@ -9,6 +9,7 @@
     "all_os": [
       "ninja:__cbuild_most_recent_git_tag",
       "numpy:__cbuild_most_recent_git_tag",
+      "protobuf[shared_lib]",
       "tbb:__cbuild_most_recent_git_tag",
       "libjpeg-turbo:__cbuild_most_recent_git_tag",
       "libpng:libpng16",
@@ -18,13 +19,11 @@
     "windows": [
       "zlib:develop",
       "scipy:__cbuild_most_recent_git_tag",
-      "openblas[shared_lib]:win_fortran",
-      "protobuf[shared_lib]:master"
+      "openblas[shared_lib]:win_fortran"
     ],
     "unix": [
       "scipy:__cbuild_most_recent_git_tag",
-      "openblas[shared_lib]:__cbuild_most_recent_git_tag",
-      "protobuf[shared_lib]:__cbuild_most_recent_git_tag"
+      "openblas[shared_lib]:__cbuild_most_recent_git_tag"
     ],
     "cuda": [
       "cudnn:__cbuild_most_recent_git_tag"
