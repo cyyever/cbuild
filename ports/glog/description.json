@@ -7,6 +7,12 @@
   "conditional_environment_variable": {
     "freebsd": [
       "run_test=0"
+    ],
+    "windows": [
+      "run_test=0"
     ]
-  }
+  },
+  "dependency": [
+    "gflags"
+  ]
 }
