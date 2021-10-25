@@ -5,9 +5,8 @@
     "windows": "-DWITH_SYMBOLIZE=off"
   },
   "conditional_environment_variable": {
-
-	"freebsd":  [
-    "run_test=0"
-  ]
+    "freebsd": [
+      "run_test=0"
+    ]
   }
 }
