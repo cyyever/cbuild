@@ -5,7 +5,8 @@
       "gdb"
     ],
     "bsd": [
-      "valgrind-devel"
+      "valgrind-devel",
+      "bear"
     ],
     "linux": [
       "valgrind"
@@ -17,7 +18,9 @@
   "conditional_dependency": {
     "unix": [
       "lcov:__cbuild_most_recent_git_tag",
-      "ccache:__cbuild_most_recent_git_tag",
+      "ccache:__cbuild_most_recent_git_tag"
+    ],
+    "ubuntu": [
       "bear:__cbuild_most_recent_git_tag"
     ],
     "unix&&!freebsd": [
