@@ -3,8 +3,9 @@
   "cache_time": 30,
   "main_language": "python",
   "dependency": [
-    "numpy:__cbuild_most_recent_git_tag",
-    "cython:__cbuild_most_recent_git_tag"
+    "numpy",
+    "pybind11:master",
+    "cython"
   ],
   "environment_variable": [
     "run_test=0"
