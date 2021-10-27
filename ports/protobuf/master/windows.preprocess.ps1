@@ -1,3 +1,4 @@
 cd $env:INSTALL_PREFIX
-mkdir -p include/google/protobuf
-Remove-Item include/google/protobuf -Recurse -Force
+if ((Test-Path -Path "include/google/protobuf" -PathType Container)) {
+  Remove-Item include/google/protobuf -Recurse -Force
+}
