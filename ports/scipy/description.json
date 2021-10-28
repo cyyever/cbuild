@@ -10,6 +10,13 @@
   "environment_variable": [
     "run_test=0"
   ],
+  "conditional_environment_variable": {
+    "freebsd": [
+      "CC=gcc",
+      "CXX=g++",
+      "FC=gfortran11"
+  ]
+  },
   "system_package_dependency": {
     "pip": [
       "pythran"

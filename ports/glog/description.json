@@ -13,6 +13,6 @@
     ]
   },
   "dependency": [
-    "gflags"
+    "gflags[shared_lib]"
   ]
 }

@@ -18,6 +18,9 @@
     "windows": "-DF_COMPILER=INTEL"
   },
   "main_language": "c",
+  "build_languages": [
+    "fortran"
+  ],
   "dependency": [
     "perl_env:__cbuild_most_recent_git_tag",
     "fortran_env:__cbuild_most_recent_git_tag"
