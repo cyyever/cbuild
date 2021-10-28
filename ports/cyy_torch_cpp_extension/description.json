@@ -1,5 +1,8 @@
 {
   "git_url": "git@github.com:cyyever/torch_cpp_extension.git",
+  "environment_variable": [
+    "run_test=1"
+  ],
   "main_language": "c",
   "dependency": [
     "cyy_algorithm:main",
