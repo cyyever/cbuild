@@ -1,0 +1,18 @@
+{
+  "git_url": "git@github.com:xianyi/OpenBLAS.git",
+  "reuse_build": true,
+  "cache_time": 30,
+  "environment_variable": [
+    "USE_OPENMP=1"
+  ],
+  "conditional_environment_variable": {
+    "unix": [
+      "use_libtool=1"
+    ]
+  },
+  "main_language": "c",
+  "dependency": [
+    "perl_env:__cbuild_most_recent_git_tag",
+    "fortran_env:__cbuild_most_recent_git_tag"
+  ]
+}

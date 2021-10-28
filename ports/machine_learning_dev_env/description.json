@@ -7,29 +7,30 @@
   },
   "conditional_dependency": {
     "all_os": [
-      "ninja:__cbuild_most_recent_git_tag",
-      "numpy:__cbuild_most_recent_git_tag",
+      "ninja",
+      "numpy",
       "protobuf[shared_lib]",
-      "tbb:__cbuild_most_recent_git_tag",
-      "libjpeg-turbo:__cbuild_most_recent_git_tag",
+      "tbb",
+      "libjpeg-turbo",
       "libpng:libpng16",
-      "eigen:__cbuild_most_recent_git_tag",
-      "pillow-simd:__cbuild_most_recent_git_tag"
+      "eigen",
+      "pillow-simd",
+      "scipy"
     ],
     "windows": [
-      "zlib:develop",
-      "scipy:__cbuild_most_recent_git_tag",
-      "openblas[shared_lib]:win_fortran"
+      "zlib:develop"
     ],
-    "unix": [
-      "scipy:__cbuild_most_recent_git_tag",
-      "openblas[shared_lib]:__cbuild_most_recent_git_tag"
+    "!linux": [
+      "openblas[shared_lib]:cmake_fix"
+    ],
+    "linux": [
+      "openblas_libtool[shared_lib]"
     ],
     "cuda": [
-      "cudnn:__cbuild_most_recent_git_tag"
+      "cudnn"
     ],
     "linux&&cuda": [
-      "nccl:__cbuild_most_recent_git_tag"
+      "nccl"
     ]
   },
   "system_package_dependency": {

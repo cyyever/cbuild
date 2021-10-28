@@ -3,11 +3,11 @@
   "cache_time": 30,
   "main_language": "python",
   "conditional_dependency": {
-    "unix": [
-      "openblas[shared_lib]:__cbuild_most_recent_git_tag"
+    "!linux": [
+      "openblas[shared_lib]:cmake_fix"
     ],
-    "windows": [
-      "openblas[shared_lib]:win_fortran"
+    "linux": [
+      "openblas_libtool[shared_lib]"
     ]
   },
   "environment_variable": [
