@@ -12,7 +12,7 @@
   ],
   "conditional_cmake_options": {
     "ubuntu": "-DCMAKE_CXX_COMPILER=g++-11",
-    "bsd": "-DCMAKE_CXX_COMPILER=g++11"
+    "bsd": "-DCMAKE_CXX_COMPILER=g++10"
   },
   "context_dependency": {
     "!archlinux": [

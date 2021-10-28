@@ -6,7 +6,7 @@
     "cyy_naive_python_lib:main",
     "torchvision:cyy",
     "torchtext:cyy",
-    "cyy_naive_cpp_lib[torch_python_binding,shared_lib]:master"
+    "cyy_torch_cpp_extension"
   ],
   "environment_variable": [
     "static_analysis=1"
