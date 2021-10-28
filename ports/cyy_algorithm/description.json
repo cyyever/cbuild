@@ -3,7 +3,8 @@
   "main_language": "c",
   "dependency": [
     "doctest",
-    "range-v3"
+    "range-v3",
+    "cyy_naive_cpp_lib[shared_lib]:master"
   ],
   "environment_variable": [
     "static_analysis=1",
