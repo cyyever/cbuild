@@ -4,6 +4,7 @@
     "run_test=1"
   ],
   "main_language": "c",
+  "cmake_options": "-DDISABLE_RUNTIME_ANALYSIS=on",
   "dependency": [
     "cyy_algorithm:main",
     "pytorch:cyy",
