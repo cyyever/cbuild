@@ -26,6 +26,9 @@
     "centos": [
       "binutils-devel"
     ],
+    "centos": [
+      "libunwind"
+    ],
     "pip": [
       "PyYAML"
     ]
