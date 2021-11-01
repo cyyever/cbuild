@@ -3,17 +3,15 @@
   "main_language": "c",
   "dependency": [
     "doctest",
-    "range-v3",
+    "range-v3:master",
     "cyy_naive_cpp_lib[shared_lib]:master"
   ],
   "environment_variable": [
     "static_analysis=1",
-    "clang_tidy_static_analysis=1",
-    "clang_tidy_fix=1"
+    "clang_tidy_static_analysis=1"
   ],
   "conditional_cmake_options": {
-    "ubuntu": "-DCMAKE_CXX_COMPILER=g++-11",
-    "bsd": "-DCMAKE_CXX_COMPILER=g++10"
+    "ubuntu": "-DCMAKE_CXX_COMPILER=g++-11"
   },
   "context_dependency": {
     "!archlinux": [
