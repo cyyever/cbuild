@@ -7,7 +7,6 @@
     "all": [
       "cv",
       "machine_learning_compilers",
-      "torch_python_binding",
       "cv_python_binding",
       "video_python_binding"
     ],
@@ -16,9 +15,6 @@
     ],
     "cv_python_binding": [
       "cv"
-    ],
-    "torch_python_binding": [
-      "torch"
     ],
     "video_python_binding": [
       "video"
@@ -41,14 +37,7 @@
     "cv": [
       "opencv[full]:__cbuild_most_recent_git_tag"
     ],
-    "torch": [
-      "pytorch:cyy",
-      "cyy_algorithm:main"
-    ],
     "cv_python_binding": [
-      "pybind11:master"
-    ],
-    "torch_python_binding": [
       "pybind11:master"
     ],
     "video_python_binding": [
@@ -64,10 +53,8 @@
   "cmake_options": "-DDISABLE_RUNTIME_ANALYSIS=on",
   "conditional_cmake_options": {
     "all": "-DBUILD_ALL=on",
-    "torch": "-DBUILD_TORCH=on",
     "video": "-DBUILD_VIDEO=on",
     "cv": "-DBUILD_CV=on",
-    "torch_python_binding": "-DBUILD_TORCH_PYTHON_BINDING=on",
     "cv_python_binding": "-DBUILD_CV_PYTHON_BINDING=on",
     "video_python_binding": "-DBUILD_VIDEO_PYTHON_BINDING=on"
   }

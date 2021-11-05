@@ -11,11 +11,17 @@
     "clang_tidy_static_analysis=1"
   ],
   "conditional_cmake_options": {
+    "python_binding": "-DBUILD_PYTHON_BINDING=on",
+  }
+  "conditional_cmake_options": {
     "ubuntu": "-DCMAKE_CXX_COMPILER=g++-11"
   },
   "context_dependency": {
     "!archlinux": [
       "boost:boost-1.77.0"
+    ],
+    "python_binding": [
+      "pybind11:master"
     ]
   },
   "system_package_dependency": {
