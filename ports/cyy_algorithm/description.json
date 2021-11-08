@@ -12,8 +12,6 @@
   ],
   "conditional_cmake_options": {
     "python_binding": "-DBUILD_PYTHON_BINDING=on",
-  }
-  "conditional_cmake_options": {
     "ubuntu": "-DCMAKE_CXX_COMPILER=g++-11"
   },
   "context_dependency": {
