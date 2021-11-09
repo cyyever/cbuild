@@ -1,0 +1,8 @@
+{
+  "git_url": "git@github.com:cyyever/math.git",
+  "main_language": "c",
+  "dependency": [
+    "range-v3:master",
+    "doctest"
+  ]
+}
