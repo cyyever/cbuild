@@ -12,13 +12,8 @@
   "conditional_dependency": {
     "all_os": [
       "openssl[shared_lib]:__cbuild_most_recent_git_tag",
-      "abseil-cpp[shared_lib]:20210324.2"
-    ],
-    "windows": [
-      "protobuf[shared_lib]:master"
-    ],
-    "!windows": [
-      "protobuf[shared_lib]:__cbuild_most_recent_git_tag"
+      "abseil-cpp[shared_lib]:20210324.2",
+      "protobuf[shared_lib]"
     ]
   }
 }
