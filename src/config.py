@@ -38,18 +38,18 @@ class ToolMapping:
 
 
 class Config:
-    def __init__(self, local_config_chain: list = None, global_config_path=None):
+    def __init__(self, local_config_chain: list = None, global_config_path: str = None):
         self.config_chain = []
         if local_config_chain is not None:
             self.config_chain = local_config_chain
         if global_config_path is None:
             global_config_path = os.path.join(project_dir, "config", "global.json")
-        with open(global_config_path, "r") as f:
+        with open(global_config_path, "r", encoding="utf-8") as f:
             self.config_chain.append(json.load(f))
         if not self.config_chain:
             raise RuntimeError("configuration chain is empty")
 
-    def set(self, key: str, value: str):
+    def set(self, key: str, value: str) -> None:
         self.config_chain[0][key] = value
 
     def get(self, key: str, default=None):

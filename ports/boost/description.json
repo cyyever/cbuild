@@ -1,9 +1,20 @@
 {
-  "git_url": "git@github.com:boostorg/boost.git",
-  "main_language": "c",
-  "environment_variable": [
-    "run_test=0"
-  ],
-  "cmake_options": "-DBOOST_ENABLE_CMAKE=on -DBOOST_INCLUDE_LIBRARIES='container_hash;bimap;dynamic_bitset'",
-  "cache_time": 300
+  "archlinux": {
+    "group_package": true,
+    "system_package_dependency": {
+      "archlinux": [
+        "boost"
+      ]
+    }
+  },
+  "all_os": {
+    "git_url": "git@github.com:boostorg/boost.git",
+    "git_version": "boost-1.77.0",
+    "main_language": "c",
+    "environment_variable": [
+      "run_test=0"
+    ],
+    "cmake_options": "-DBOOST_ENABLE_CMAKE=on -DBOOST_INCLUDE_LIBRARIES='container_hash;bimap;dynamic_bitset'",
+    "cache_time": 300
+  }
 }

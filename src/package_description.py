@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import copy
 import json
 import os
 import sys
@@ -29,16 +30,14 @@ class PackageDescription:
             sys.exit("unknown package:" + self.spec.name)
 
         description = {}
-        with open(self.__description_json_path(), "r") as f:
+        with open(self.__description_json_path(), "r", encoding="utf-8") as f:
             description = json.load(f)
 
         self.__context = None
         self.features = None
-        branch_description = {}
+        branch_description = description
         if self.spec.branch in description:
-            branch_description = description[self.spec.branch]
-        elif "all_branches" in description:
-            branch_description = description["all_branches"]
+            branch_description = branch_description[self.spec.branch]
         if "docker" in branch_description and "docker" in BuildContext.get():
             branch_description = branch_description["docker"]
         if BuildContext.get_target_system() in branch_description:
@@ -72,9 +71,13 @@ class PackageDescription:
                 ignored_submodules = set(ignored_submodules)
 
             ignored_tag_regex = self.get_item("ignored_tag_regex")
+            spec = copy.deepcopy(self.spec)
+            git_version = self.get_item("git_version")
+            if git_version is not None:
+                spec.branch = git_version
 
             self.__source = GitSource(
-                self.spec,
+                spec,
                 git_url=url,
                 root_dir=sources_dir,
                 with_submodule=with_submodule,
@@ -287,7 +290,7 @@ class PackageDescription:
 
         tool_mapping = ToolMapping()
 
-        system_pkgs = dict()
+        system_pkgs = {}
         for value in self.__get_conditional_items("system_package_dependency"):
             for (manager, item) in value.items():
                 if (

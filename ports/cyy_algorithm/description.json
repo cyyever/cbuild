@@ -14,17 +14,12 @@
     "python_binding": "-DBUILD_PYTHON_BINDING=on",
     "ubuntu": "-DCMAKE_CXX_COMPILER=g++-11"
   },
+  "dependency": [
+    "boost"
+  ],
   "context_dependency": {
-    "!archlinux": [
-      "boost:boost-1.77.0"
-    ],
     "python_binding": [
       "pybind11:master"
-    ]
-  },
-  "system_package_dependency": {
-    "archlinux": [
-      "boost"
     ]
   }
 }
