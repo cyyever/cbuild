@@ -4,6 +4,7 @@
   "dependency": [
     "doctest",
     "range-v3:master",
+    "boost",
     "cyy_naive_cpp_lib[shared_lib]:master",
     "cyy_math[shared_lib]:master"
   ],
@@ -15,9 +16,6 @@
     "python_binding": "-DBUILD_PYTHON_BINDING=on",
     "ubuntu": "-DCMAKE_CXX_COMPILER=g++-11"
   },
-  "dependency": [
-    "boost"
-  ],
   "context_dependency": {
     "python_binding": [
       "pybind11:master"
