@@ -4,7 +4,8 @@
   "dependency": [
     "doctest",
     "range-v3:master",
-    "cyy_naive_cpp_lib[shared_lib]:master"
+    "cyy_naive_cpp_lib[shared_lib]:master",
+    "cyy_math[shared_lib]:master"
   ],
   "environment_variable": [
     "static_analysis=1",
