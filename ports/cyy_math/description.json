@@ -3,6 +3,7 @@
   "main_language": "c",
   "dependency": [
     "range-v3:master",
-    "doctest"
+    "doctest",
+    "boost"
   ]
 }

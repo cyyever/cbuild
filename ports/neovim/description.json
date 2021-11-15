@@ -1,34 +1,42 @@
 {
-  "git_url": "git@github.com:neovim/neovim.git",
-  "master": {
-    "main_language": "c",
-    "build_languages": [
-      "python"
-    ],
-    "environment_variable": [
-      "VisualStudioEdition=1",
-      "cmake_generator=native"
-    ],
-    "dependency": [
-      "libuv",
-      "glog"
-    ],
-    "system_package_dependency": {
-      "ubuntu": [
-        "libgtest-dev",
-        "libgmock-dev"
+  "freebsd": {
+    "group_package": true,
+    "system_package": [
+      "neovim"
+    ]
+  },
+  "all_os": {
+    "git_url": "git@github.com:neovim/neovim.git",
+    "master": {
+      "main_language": "c",
+      "build_languages": [
+        "python"
       ],
-      "archlinux": [
-        "msgpack-c",
-        "libluv",
-        "tree-sitter",
-        "unibilium",
-        "libtermkey",
-        "libvterm",
-        "lua-lpeg",
-        "lua-mpack",
-        "gmock"
-      ]
+      "environment_variable": [
+        "VisualStudioEdition=1",
+        "cmake_generator=native"
+      ],
+      "dependency": [
+        "libuv",
+        "glog"
+      ],
+      "system_package_dependency": {
+        "ubuntu": [
+          "libgtest-dev",
+          "libgmock-dev"
+        ],
+        "archlinux": [
+          "msgpack-c",
+          "libluv",
+          "tree-sitter",
+          "unibilium",
+          "libtermkey",
+          "libvterm",
+          "lua-lpeg",
+          "lua-mpack",
+          "gmock"
+        ]
+      }
     }
   }
 }

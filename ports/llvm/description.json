@@ -24,9 +24,10 @@
       "binutils-dev"
     ],
     "centos": [
-      "binutils-devel"
+      "binutils-devel",
+      "libunwind"
     ],
-    "centos": [
+    "freebsd": [
       "libunwind"
     ],
     "pip": [
