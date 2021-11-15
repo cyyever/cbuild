@@ -4,6 +4,7 @@
   "dependency": [
     "range-v3:master",
     "doctest",
+    "eigen",
     "boost"
   ]
 }

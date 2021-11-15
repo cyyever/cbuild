@@ -1,10 +1,4 @@
 {
-  "freebsd": {
-    "group_package": true,
-    "system_package": [
-      "boost-libs"
-    ]
-  },
   "archlinux": {
     "group_package": true,
     "system_package": [
