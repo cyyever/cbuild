@@ -1,11 +1,15 @@
 {
   "freebsd": {
     "group_package": true,
-    "system_package":  [ "boost-libs" ]
+    "system_package": [
+      "boost-libs"
+    ]
   },
   "archlinux": {
     "group_package": true,
-    "system_package":  [ "boost" ]
+    "system_package": [
+      "boost"
+    ]
   },
   "all_os": {
     "git_url": "git@github.com:boostorg/boost.git",
