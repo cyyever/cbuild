@@ -16,11 +16,11 @@
     "windows&&cuda": "\"-DCUDNN_ROOT=${env:INSTALL_PREFIX}/cuda\""
   },
   "dependency": [
-    "machine_learning_dev_env:__cbuild_most_recent_git_tag"
+    "machine_learning_dev_env"
   ],
   "conditional_dependency": {
     "linux&&cuda": [
-      "nccl:__cbuild_most_recent_git_tag"
+      "nccl"
     ]
   },
   "system_package_dependency": {

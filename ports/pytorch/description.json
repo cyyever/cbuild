@@ -87,8 +87,8 @@
     ]
   },
   "dependency": [
-    "machine_learning_dev_env:__cbuild_most_recent_git_tag",
-    "glog:__cbuild_most_recent_git_tag",
+    "machine_learning_dev_env",
+    "glog",
     "pybind11:master",
     "protobuf[shared_lib]"
   ],

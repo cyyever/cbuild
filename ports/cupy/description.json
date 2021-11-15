@@ -3,9 +3,9 @@
   "cache_time": 30,
   "main_language": "python",
   "dependency": [
-    "numpy:__cbuild_most_recent_git_tag",
-    "cutensor:__cbuild_most_recent_git_tag",
-    "cuSPARSELt:__cbuild_most_recent_git_tag"
+    "numpy",
+    "cutensor",
+    "cuSPARSELt"
   ],
   "environment_variable": [
     "CUPY_NVCC_GENERATE_CODE=current",

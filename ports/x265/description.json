@@ -2,7 +2,7 @@
   "git_url": "https://bitbucket.org/multicoreware/x265_git.git",
   "cache_time": 300,
   "dependency": [
-    "assembly_env:__cbuild_most_recent_git_tag"
+    "assembly_env"
   ],
   "environment_variable": [
     "run_test=1",

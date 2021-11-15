@@ -4,7 +4,7 @@
   "main_language": "python",
   "dependency": [
     "torchvision:cyy",
-    "opencv[full]:__cbuild_most_recent_git_tag"
+    "opencv[full]"
   ],
   "environment_variable": [
     "MMCV_WITH_OPS=1",

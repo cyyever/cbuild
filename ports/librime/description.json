@@ -3,7 +3,7 @@
   "main_language": "c",
   "cmake_options": "-DBUILD_DATA=on",
   "dependency": [
-    "glog:__cbuild_most_recent_git_tag"
+    "glog"
   ],
   "system_package_dependency": {
     "archlinux": [

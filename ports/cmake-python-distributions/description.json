@@ -2,7 +2,7 @@
   "git_url": "git@github.com:scikit-build/cmake-python-distributions.git",
   "main_language": "python",
   "dependency": [
-    "scikit-build:__cbuild_most_recent_git_tag"
+    "scikit-build"
   ],
   "environment_variable": [
     "run_test=0"

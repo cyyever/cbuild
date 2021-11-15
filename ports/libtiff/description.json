@@ -2,7 +2,7 @@
   "git_url": "https://gitlab.com/libtiff/libtiff.git",
   "cache_time": 300,
   "dependency": [
-    "libjpeg-turbo:__cbuild_most_recent_git_tag"
+    "libjpeg-turbo"
   ],
   "main_language": "c"
 }

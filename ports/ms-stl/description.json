@@ -13,6 +13,6 @@
     ]
   },
   "dependency": [
-    "boost:__cbuild_most_recent_git_tag"
+    "boost"
   ]
 }

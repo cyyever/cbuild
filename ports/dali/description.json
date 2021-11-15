@@ -27,9 +27,9 @@
   },
   "dependency": [
     "torchvision:cyy",
-    "ffmpeg[shared_lib]:__cbuild_most_recent_git_tag",
-    "opencv[full]:__cbuild_most_recent_git_tag",
-    "libtiff:__cbuild_most_recent_git_tag"
+    "ffmpeg[shared_lib]",
+    "opencv[full]",
+    "libtiff"
   ],
   "ignored_git_submodules": [
     "third_party/pybind11"

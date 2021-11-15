@@ -10,8 +10,8 @@
       "cmake_generator=native"
     ],
     "dependency": [
-      "libuv:__cbuild_most_recent_git_tag",
-      "glog:__cbuild_most_recent_git_tag"
+      "libuv",
+      "glog"
     ],
     "system_package_dependency": {
       "ubuntu": [

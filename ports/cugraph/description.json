@@ -7,7 +7,7 @@
   ],
   "cmake_options": "-DBUILD_TESTS=off",
   "dependency": [
-    "faiss:__cbuild_most_recent_git_tag"
+    "faiss"
   ],
   "environment_variable": [
     "SRC_SUBDIR=cpp"

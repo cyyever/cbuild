@@ -12,7 +12,7 @@
   },
   "main_language": "c",
   "dependency": [
-    "perl_env:__cbuild_most_recent_git_tag",
-    "fortran_env:__cbuild_most_recent_git_tag"
+    "perl_env",
+    "fortran_env"
   ]
 }

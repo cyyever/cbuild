@@ -18,7 +18,7 @@
   },
   "conditional_dependency": {
     "full": [
-      "spacy:__cbuild_most_recent_git_tag",
+      "spacy",
       "torchaudio:master"
     ],
     "cuda": [

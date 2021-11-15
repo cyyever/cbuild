@@ -9,7 +9,7 @@
     ]
   },
   "dependency": [
-    "asio:__cbuild_most_recent_git_tag"
+    "asio"
   ],
   "main_language": "c",
   "cmake_options": "-DBUILD_TESTS=off -DBUILD_SSL=on"

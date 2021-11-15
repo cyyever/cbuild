@@ -6,6 +6,6 @@
     ]
   },
   "dependency": [
-    "doctest:__cbuild_most_recent_git_tag"
+    "doctest"
   ]
 }

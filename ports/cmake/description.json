@@ -5,7 +5,7 @@
   "reuse_build": true,
   "conditional_depedency": {
     "unix": [
-      "openssl:__cbuild_most_recent_git_tag"
+      "openssl"
     ]
   },
   "system_package_dependency": {

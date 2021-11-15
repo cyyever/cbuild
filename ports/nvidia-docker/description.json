@@ -1,7 +1,7 @@
 {
   "group_package": true,
   "dependency": [
-    "docker:__cbuild_most_recent_git_tag"
+    "docker"
   ],
   "system_package_dependency": {
     "yay": [

@@ -7,6 +7,6 @@
     "JPEG_ROOT=$INSTALL_PREFIX"
   ],
   "dependency": [
-    "libjpeg-turbo:__cbuild_most_recent_git_tag"
+    "libjpeg-turbo"
   ]
 }

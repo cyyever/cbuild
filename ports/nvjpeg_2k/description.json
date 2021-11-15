@@ -7,6 +7,6 @@
     }
   },
   "dependency": [
-    "CUDA:__cbuild_most_recent_git_tag"
+    "CUDA"
   ]
 }

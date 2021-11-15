@@ -1,7 +1,7 @@
 {
   "group_package": true,
   "dependency": [
-    "pvs-studio:__cbuild_most_recent_git_tag",
+    "pvs-studio",
     "cppcheck:main"
   ],
   "system_package_dependency": {

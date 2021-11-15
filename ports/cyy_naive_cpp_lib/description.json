@@ -29,13 +29,13 @@
     "clang_tidy_fix=0"
   ],
   "dependency": [
-    "doctest:__cbuild_most_recent_git_tag",
-    "spdlog:__cbuild_most_recent_git_tag",
-    "ms-gsl:__cbuild_most_recent_git_tag"
+    "doctest",
+    "spdlog",
+    "ms-gsl"
   ],
   "conditional_dependency": {
     "cv": [
-      "opencv[full]:__cbuild_most_recent_git_tag"
+      "opencv[full]"
     ],
     "cv_python_binding": [
       "pybind11:master"
@@ -44,10 +44,10 @@
       "pybind11:master"
     ],
     "video&&unix": [
-      "ffmpeg[shared_lib]:__cbuild_most_recent_git_tag"
+      "ffmpeg[shared_lib]"
     ],
     "video&&windows": [
-      "ffmpeg_windows:__cbuild_most_recent_git_tag"
+      "ffmpeg_windows"
     ]
   },
   "cmake_options": "-DDISABLE_RUNTIME_ANALYSIS=on",

@@ -1,6 +1,6 @@
 {
   "git_url": "git@github.com:cyyever/textidote.git",
   "dependency": [
-    "tex_env:__cbuild_most_recent_git_tag"
+    "tex_env"
   ]
 }

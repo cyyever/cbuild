@@ -13,8 +13,8 @@
     ]
   },
   "dependency": [
-    "spdlog[shared_lib]:__cbuild_most_recent_git_tag",
-    "fmt[shared_lib]:__cbuild_most_recent_git_tag",
-    "nlohmann_json:__cbuild_most_recent_git_tag"
+    "spdlog[shared_lib]",
+    "fmt[shared_lib]",
+    "nlohmann_json"
   ]
 }

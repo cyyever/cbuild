@@ -3,7 +3,7 @@
   "cache_time": 300,
   "use_msys": true,
   "dependency": [
-    "assembly_env:__cbuild_most_recent_git_tag"
+    "assembly_env"
   ],
   "conditional_configure_options": {
     "windows": [

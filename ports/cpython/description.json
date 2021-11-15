@@ -30,7 +30,7 @@
       ]
     },
     "depedency": [
-      "openssl:__cbuild_most_recent_git_tag"
+      "openssl"
     ],
     "system_package_dependency": {
       "centos": [

@@ -2,8 +2,8 @@
   "group_package": true,
   "dependency": [
     "python_env:master",
-    "scikit-build:__cbuild_most_recent_git_tag",
-    "line_profiler:__cbuild_most_recent_git_tag"
+    "scikit-build",
+    "line_profiler"
   ],
   "system_package_dependency": {
     "cargo": [

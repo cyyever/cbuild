@@ -36,6 +36,6 @@
     ]
   },
   "dependency": [
-    "harfbuzz[shared_lib]:__cbuild_most_recent_git_tag"
+    "harfbuzz[shared_lib]"
   ]
 }
