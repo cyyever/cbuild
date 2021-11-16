@@ -17,9 +17,6 @@
   "conditional_environment_variable": {
     "unix": [
       "CPLUS_INCLUDE_PATH=${INSTALL_PREFIX}/oneTBB/include"
-    ],
-    "ubuntu": [
-      "NVCC_FLAGS=-ccbin=g++-9"
     ]
   },
   "dependency": [

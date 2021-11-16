@@ -12,6 +12,7 @@
       "protobuf[shared_lib]",
       "tbb",
       "libjpeg-turbo",
+      "openblas[shared_lib]",
       "libpng:libpng16",
       "eigen",
       "pillow-simd",
@@ -19,12 +20,6 @@
     ],
     "windows": [
       "zlib:develop"
-    ],
-    "!linux": [
-      "openblas[shared_lib]:cmake_fix"
-    ],
-    "linux": [
-      "openblas_libtool[shared_lib]"
     ],
     "cuda": [
       "cudnn"

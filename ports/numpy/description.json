@@ -2,14 +2,9 @@
   "git_url": "git@github.com:numpy/numpy.git",
   "cache_time": 30,
   "main_language": "python",
-  "conditional_dependency": {
-    "!linux": [
-      "openblas[shared_lib]:cmake_fix"
-    ],
-    "linux": [
-      "openblas_libtool[shared_lib]"
-    ]
-  },
+  "dependency": [
+    "openblas[shared_lib]"
+  ],
   "environment_variable": [
     "run_test=1",
     "static_analysis=0",

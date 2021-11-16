@@ -72,9 +72,9 @@ class PackageDescription:
 
             ignored_tag_regex = self.get_item("ignored_tag_regex")
             spec = copy.deepcopy(self.spec)
-            git_version = self.get_item("git_version")
-            if git_version is not None:
-                spec.branch = git_version
+            git_branch = self.get_item("git_branch")
+            if git_branch is not None:
+                spec.branch = git_branch
 
             self.__source = GitSource(
                 spec,

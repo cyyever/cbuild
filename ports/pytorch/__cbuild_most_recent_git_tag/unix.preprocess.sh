@@ -10,7 +10,7 @@ rm -f cmake/Modules/FindLAPACK.cmake
 ${sed_cmd} -i -e '/Qunused-arguments/d' CMakeLists.txt
 ${sed_cmd} -i -e '/-fcolor-diagnostics/d' CMakeLists.txt
 ${sed_cmd} -i -e '/cmake_minimum_required/s/3.[0-9]*/3.20/' CMakeLists.txt
-${sed_cmd} -i -e 's/99/11/g' third_party/foxi/CMakeLists.txt
+${sed_cmd} -i -e 's/90/11/g' third_party/foxi/CMakeLists.txt
 if [[ "$(uname)" == "FreeBSD" ]]; then
   cd third_party
   rm -rf cpuinfo

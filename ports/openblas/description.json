@@ -2,6 +2,7 @@
   "git_url": "git@github.com:cyyever/OpenBLAS.git",
   "remote_git_url": "git@github.com:xianyi/OpenBLAS.git",
   "remote_git_branch": "develop",
+  "git_branch": "cmake_fix",
   "reuse_build": true,
   "cache_time": 30,
   "environment_variable": [
