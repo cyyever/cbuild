@@ -2,9 +2,7 @@
   "git_url": "git@github.com:rizsotto/Bear.git",
   "main_language": "c",
   "environment_variable": [
-    "run_test=0",
-    "CC=/usr/bin/cc",
-    "CXX=/usr/bin/c++"
+    "run_test=0"
   ],
   "cmake_options": "-DENABLE_UNIT_TESTS=off -DENABLE_FUNC_TESTS=off",
   "system_package_dependency": {
