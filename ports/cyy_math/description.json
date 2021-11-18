@@ -1,6 +1,9 @@
 {
   "git_url": "git@github.com:cyyever/math.git",
   "main_language": "c",
+  "conditional_cmake_options": {
+    "unix": "-DBUILD_FUZZING=ON"
+  },
   "dependency": [
     "range-v3:master",
     "doctest",
