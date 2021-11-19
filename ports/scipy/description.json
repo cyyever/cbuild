@@ -12,8 +12,6 @@
   ],
   "conditional_environment_variable": {
     "freebsd": [
-      "CC=gcc",
-      "CXX=g++",
       "FC=gfortran11"
   ]
   },
