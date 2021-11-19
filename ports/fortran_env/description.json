@@ -10,8 +10,8 @@
     "archlinux": [
       "gcc-fortran"
     ],
-    "freebsd":[
-	    "gcc11"
+    "freebsd": [
+      "gcc"
     ],
     "msys": [
       "gcc-fortran"
