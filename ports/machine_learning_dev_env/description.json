@@ -45,9 +45,6 @@
       "openmp"
     ],
     "pip": [
-      "matplotlib",
-      "sklearn",
-      "pandas",
       "tensorboard"
     ]
   }
