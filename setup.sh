@@ -23,6 +23,7 @@ elif [[ "$(uname -s)" == "Darwin" ]]; then
   brew install python3
   brew install jq
 fi
+python3 -m pip install --upgrade pip --user
 python3 -m pip install --upgrade --user setuptools FileLock-git requests colorlog psutil tqdm
 for _ in $(seq 5); do
   python3 -m pip uninstall -y cyy_naive_lib
