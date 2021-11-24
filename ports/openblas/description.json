@@ -6,6 +6,7 @@
   "reuse_build": true,
   "cache_time": 30,
   "environment_variable": [
+    "CTEST_PARALLEL_LEVEL=1",
     "USE_OPENMP=1"
   ],
   "conditional_environment_variable": {
