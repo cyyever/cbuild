@@ -1,19 +1,11 @@
 {
   "cache_time": 300,
-  "conditional_new_feature": {
-    "docker": [
-      "use_cuda_docker"
-    ]
-  },
   "__cbuild_most_recent_git_tag": {
-    "centos": {
-      "script_package": true
-    },
     "windows": {
       "group_package": true
     },
     "linux": {
-      "url": "https://developer.download.nvidia.com/compute/cuda/11.5.0/local_installers/cuda_11.5.0_495.29.05_linux.run",
+      "url": "https://developer.download.nvidia.com/compute/cuda/11.5.1/local_installers/cuda_11.5.1_495.29.05_linux.run",
       "checksum": "no_checksum"
     }
   },
