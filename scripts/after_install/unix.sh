@@ -36,7 +36,7 @@ if [[ "${static_analysis}" == "1" ]] && [[ "${BUILD_CONTEXT_docker:=0}" == "0" ]
     fi
 
   fi
-  rmdir --ignore-fail-on-non-empty ${STATIC_ANALYSIS_DIR} || true
+  rmdir ${STATIC_ANALYSIS_DIR} 2>/dev/null || true
 fi
 
 if [[ "${BUILD_CONTEXT_docker:=0}" == "1" ]]; then
