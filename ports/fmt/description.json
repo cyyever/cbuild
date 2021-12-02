@@ -1,4 +1,7 @@
 {
   "git_url": "git@github.com:fmtlib/fmt.git",
-  "main_language": "c"
+  "main_language": "c",
+  "environment_variable": [
+    "run_test=0"
+  ]
 }

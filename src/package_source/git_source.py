@@ -77,6 +77,7 @@ class GitSource(Source):
         if not in_branch:
             if self.remote_url is not None:
                 assert self.remote_branch is not None
+                exec_cmd("git checkout .")
                 exec_cmd("git reset --hard")
                 exec_cmd("git fetch origin " + self.spec.branch)
                 exec_cmd("git reset --hard FETCH_HEAD")
@@ -146,6 +147,6 @@ class GitSource(Source):
         except BaseException as e:
             print("get exception", e, "and use first tag", tag)
         print("use tag", tag)
-        with open(cache_file, "wt") as f:
+        with open(cache_file, "wt", encoding="utf-8") as f:
             f.write(tag)
         return tag
