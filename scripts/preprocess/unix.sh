@@ -129,7 +129,7 @@ if [[ "${clang_tidy_fix:-}" == "1" ]]; then
       echo "run clang_tidy_fix"
       cd $__SRC_DIR
       mkdir -p "${STATIC_ANALYSIS_DIR}"
-      eval "${run_clang_tidy_cmd} -j $MAX_JOBS -p $(dirname $json_path) -fix -quiet >${STATIC_ANALYSIS_DIR}/run-clang-tidy.txt"
+      eval "${run_clang_tidy_cmd} -j $MAX_JOBS -p $(dirname $json_path) -fix -quiet >${STATIC_ANALYSIS_DIR}/run-clang-tidy.txt" || true
       echo "end run clang_tidy_fix"
     else
       echo "no compile_commands.json to run clang-tidy fix"

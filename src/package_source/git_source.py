@@ -77,7 +77,6 @@ class GitSource(Source):
         if not in_branch:
             if self.remote_url is not None:
                 assert self.remote_branch is not None
-                exec_cmd("git checkout .")
                 exec_cmd("git reset --hard")
                 exec_cmd("git fetch origin " + self.spec.branch)
                 exec_cmd("git reset --hard FETCH_HEAD")
