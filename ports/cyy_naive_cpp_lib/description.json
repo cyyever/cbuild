@@ -50,7 +50,6 @@
       "ffmpeg_windows"
     ]
   },
-  "cmake_options": "-DDISABLE_RUNTIME_ANALYSIS=on",
   "conditional_cmake_options": {
     "all": "-DBUILD_ALL=on",
     "video": "-DBUILD_VIDEO=on",
