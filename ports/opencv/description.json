@@ -23,7 +23,7 @@
       "ffmpeg[shared_lib]"
     ],
     "windows": [
-      "ffmpeg_windows"
+      "ffmpeg-win"
     ]
   },
   "environment_variable": [
@@ -47,7 +47,7 @@
       "TBBROOT=${INSTALL_PREFIX}/oneTBB"
     ],
     "windows": [
-      "OpenBLAS_HOME=${env:INSTALL_PREFIX}"
+      "OpenBLAS_HOME=${INSTALL_PREFIX}"
     ]
   },
   "main_language": "c",
@@ -56,8 +56,8 @@
     "cuda": "-DWITH_CUDA=ON -DWITH_CUDNN=ON -DWITH_CUBLAS=ON -DCUDA_NVCC_FLAGS='--default-stream;per-thread' -DCUDA_GENERATION=Auto -DOPENCV_CMAKE_CUDA_DEBUG=1",
     "unix": "-DOPENCV_EXTRA_MODULES_PATH=${INSTALL_PREFIX}/opencv_contrib/modules -DPYTHON_LIBRARY=${INSTALL_PREFIX}/python/lib/python${PYTHONVERSION} -DPYTHON_INCLUDE_DIR=${INSTALL_PREFIX}/python/include/python${PYTHONVERSION} -DPython_EXECUTABLE=${CBUILD_PYTHON_EXE}",
     "linux&&cuda": "-DCUDNN_INCLUDE_DIR=${INSTALL_PREFIX}/cudnn/include -DCUDNN_LIBRARY=${INSTALL_PREFIX}/cudnn/lib64/libcudnn.so",
-    "windows": "-DCMAKE_IGNORE_PATH=C:/ProgramData/chocolatey/bin -DOPENCV_EXTRA_MODULES_PATH=${env:INSTALL_PREFIX}/opencv_contrib/modules",
-    "windows&&cuda": "-DCUDNN_INCLUDE_DIR=${env:INSTALL_PREFIX}/cuda/include -DCUDNN_LIBRARY=${env:INSTALL_PREFIX}/cuda/lib/x64/cudnn.lib",
+    "windows": "-DCMAKE_IGNORE_PATH=C:/ProgramData/chocolatey/bin -DOPENCV_EXTRA_MODULES_PATH=${INSTALL_PREFIX}/opencv_contrib/modules",
+    "windows&&cuda": "-DCUDNN_INCLUDE_DIR=${INSTALL_PREFIX}/cuda/include -DCUDNN_LIBRARY=${INSTALL_PREFIX}/cuda/lib/x64/cudnn.lib",
     "freebsd": "-DWITH_IPP=off"
   },
   "feature_cmake_options": {
