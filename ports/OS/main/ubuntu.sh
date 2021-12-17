@@ -14,9 +14,9 @@
   # fi
 # fi
 # ${sudo_cmd} add-apt-repository ppa:graphics-drivers/ppa -y
-# ${sudo_cmd} add-apt-repository ppa:ubuntu-toolchain-r/test -y
 
 if [[ "${BUILD_CONTEXT_docker:=0}" == 1 ]]; then
+  ${sudo_cmd} add-apt-repository ppa:ubuntu-toolchain-r/test -y
   if test -f /etc/apt/sources.list.d/nvidia-ml.list; then
     ${sudo_cmd} rm /etc/apt/sources.list.d/nvidia-ml.list
   fi
