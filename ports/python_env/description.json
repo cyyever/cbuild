@@ -1,7 +1,7 @@
 {
   "group_package": true,
   "conditional_dependency": {
-    "unix&&!docker": [
+    "unix": [
       "cpython"
     ]
   },
