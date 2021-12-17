@@ -64,7 +64,7 @@ else
     fi
     bash "${__SRC_DIR}/configure" --prefix="${__INSTALL_PREFIX}" ${debug_option} ${configure_options}
   fi
-  if [[ "$reuse_build" == "0" ]]; then
+  if [[ "${reuse_build:=0}" == "0" ]]; then
     ${make_cmd} clean || true
   fi
   if [[ -n ${need_compilation_json+x} ]] && command -v bear; then
