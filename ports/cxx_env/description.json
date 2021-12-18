@@ -29,9 +29,10 @@
       "autoconf-archive",
       "ninja"
     ],
-    "msys": [
+    "mingw64": [
       "ninja",
       "gcc",
+      "diffutils",
       "flex",
       "autoconf-archive",
       "bison",
