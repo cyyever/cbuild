@@ -43,6 +43,9 @@
   "conditional_configure_options": {
     "cuda": [
       " --enable-cuvid --enable-ffnvcodec"
+    ],
+    "mingw64": [
+      " --disable-iconv"
     ]
   },
   "feature_configure_options": {
