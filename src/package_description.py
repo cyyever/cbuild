@@ -184,10 +184,10 @@ class PackageDescription:
         return self.features
 
     def __get_shell_script(self):
-        script_type = get_shell_script_type(os_hint=BuildContext.get_target_system())
-        script = script_type()
         if "mingw64" in self.context:
             return Mingw64Script()
+        script_type = get_shell_script_type(os_hint=BuildContext.get_target_system())
+        script = script_type()
         return script
 
     def get_script(self, action):

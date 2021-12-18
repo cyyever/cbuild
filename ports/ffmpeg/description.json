@@ -4,6 +4,11 @@
   "dependency": [
     "assembly_env"
   ],
+  "conditional_new_feature": {
+    "support_cuda": [
+      "cuda"
+    ]
+  },
   "conditional_dependency": {
     "cuda": [
       "nv-codec-headers"
@@ -42,7 +47,7 @@
   "configure_options": "--extra-cflags=-fPIE --disable-doc --enable-nonfree --enable-gpl --enable-libx264 --enable-libx265",
   "conditional_configure_options": {
     "cuda": [
-      " --enable-cuvid --enable-ffnvcodec"
+      " --enable-cuvid --enable-ffnvcodec --enable-cuda-nvcc"
     ],
     "mingw64": [
       " --disable-iconv"
