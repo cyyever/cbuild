@@ -43,11 +43,8 @@
     "video_python_binding": [
       "pybind11:master"
     ],
-    "video&&unix": [
+    "video": [
       "ffmpeg[shared_lib]"
-    ],
-    "video&&windows": [
-      "ffmpeg_windows"
     ]
   },
   "conditional_cmake_options": {
