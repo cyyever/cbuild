@@ -11,12 +11,16 @@
     "centos": [
       "x264[shared_lib]:master",
       "x265[shared_lib]"
+    ],
+    "mingw64": [
+      "x264[shared_lib]:master",
+      "x265[shared_lib]"
     ]
   },
   "environment_variable": [
     "run_test=1"
   ],
-  "use_msys": true,
+  "use_mingw64": true,
   "system_package_dependency": {
     "ubuntu": [
       "libx264-dev",

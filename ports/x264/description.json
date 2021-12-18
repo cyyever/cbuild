@@ -1,17 +1,17 @@
 {
   "git_url": "https://code.videolan.org/videolan/x264.git",
   "cache_time": 300,
-  "use_msys": true,
+  "use_mingw64": true,
   "dependency": [
     "assembly_env"
   ],
-  "conditional_configure_options": {
-    "windows": [
-      "--disable-win32thread"
-    ]
-  },
   "environment_variable": [
     "run_test=1"
   ],
+  "conditional_configure_options": {
+    "mingw64": [
+      "--disable-cli --enable-shared --enable-static"
+    ]
+  },
   "main_language": "c"
 }
