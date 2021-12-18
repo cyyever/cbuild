@@ -19,11 +19,8 @@
     ]
   },
   "conditional_dependency": {
-    "unix": [
+    "all_os": [
       "ffmpeg[shared_lib]"
-    ],
-    "windows": [
-      "ffmpeg-win"
     ]
   },
   "environment_variable": [
