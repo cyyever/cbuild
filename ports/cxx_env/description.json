@@ -67,6 +67,7 @@
       "autoconf-archive",
       "clang-tidy",
       "libtool-bin",
+      "g++",
       "g++-11",
       "gcc-11",
       "clang-tidy",
