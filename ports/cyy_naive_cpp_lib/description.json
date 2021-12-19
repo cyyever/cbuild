@@ -35,7 +35,7 @@
   ],
   "conditional_dependency": {
     "cv": [
-      "opencv[full]"
+      "opencv[full]:cyy"
     ],
     "cv_python_binding": [
       "pybind11:master"
