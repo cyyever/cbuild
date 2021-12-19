@@ -31,14 +31,12 @@
     ],
     "mingw64": [
       "ninja",
-      "gcc",
       "diffutils",
       "flex",
       "autoconf-archive",
       "bison",
       "mingw-w64-x86_64-toolchain",
-      "cmake",
-      "make"
+      "mingw-w64-x86_64-cmake"
     ],
     "archlinux": [
       "ninja",

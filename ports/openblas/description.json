@@ -4,6 +4,7 @@
   "remote_git_branch": "develop",
   "git_branch": "cmake_fix",
   "reuse_build": true,
+  "use_mingw64": true,
   "cache_time": 30,
   "environment_variable": [
     "CTEST_PARALLEL_LEVEL=1",
@@ -13,6 +14,9 @@
     "windows": [
       "FFLAGS=/names:lowercase /assume:underscore",
       "run_test=0"
+    ],
+    "mingw64": [
+      "FC="
     ]
   },
   "cmake_options": "-DBUILD_WITHOUT_LAPACK=OFF -DBUILD_BFLOAT16=OFF",

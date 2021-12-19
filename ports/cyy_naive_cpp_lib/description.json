@@ -52,6 +52,8 @@
     "video": "-DBUILD_VIDEO=on",
     "cv": "-DBUILD_CV=on",
     "cv_python_binding": "-DBUILD_CV_PYTHON_BINDING=on",
-    "video_python_binding": "-DBUILD_VIDEO_PYTHON_BINDING=on"
+    "video_python_binding": "-DBUILD_VIDEO_PYTHON_BINDING=on",
+    "bsd": "-DBUILD_FUZZING=on",
+    "windows": "-DBUILD_FUZZING=on"
   }
 }
