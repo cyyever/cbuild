@@ -1,4 +1,5 @@
 {
   "git_url": "git@github.com:FFmpeg/nv-codec-headers.git",
+  "use_mingw64": true,
   "main_language": "c"
 }

@@ -6,7 +6,7 @@ import sys
 import typing
 
 from cyy_naive_lib.algorithm.sequence_op import flatten_list
-from cyy_naive_lib.shell.msys2_script import MSYS2Script
+from cyy_naive_lib.shell.mingw64_script import Mingw64Script
 from cyy_naive_lib.shell.pwsh_script import PowerShellScript
 from cyy_naive_lib.shell_factory import get_shell_script_type
 from cyy_naive_lib.util import readlines
@@ -184,10 +184,10 @@ class PackageDescription:
         return self.features
 
     def __get_shell_script(self):
+        if "mingw64" in self.context:
+            return Mingw64Script()
         script_type = get_shell_script_type(os_hint=BuildContext.get_target_system())
         script = script_type()
-        if "msys" in self.context:
-            return MSYS2Script()
         return script
 
     def get_script(self, action):
@@ -199,7 +199,7 @@ class PackageDescription:
             raise RuntimeError("unsupported action")
         script = self.__get_shell_script()
 
-        if "msys" in self.context:
+        if "mingw64" in self.context:
             for item in self.__environment.get(
                 lambda condition_expr: self.__check_conditions(
                     condition_expr, elements=["windows"]
@@ -222,7 +222,7 @@ class PackageDescription:
             pieces = item.split("=")
             name = pieces[0]
             value = "=".join(pieces[1:])
-            if name in {"INSTALL_PREFIX", "PATH"} and "msys" in self.context:
+            if name in {"INSTALL_PREFIX", "PATH"} and "mingw64" in self.context:
                 continue
             script.append_env(name, value)
 
@@ -450,10 +450,10 @@ class PackageDescription:
         if self.__context is None:
             ctx = BuildContext.get()
             if BuildContext.get_host_system() == "windows" and self.get_item(
-                "use_msys", False
+                "use_mingw64", False
             ):
                 ctx.remove("windows")
-                ctx.add("msys")
+                ctx.add("mingw64")
                 ctx.add("linux")
                 ctx.add("unix")
             self.__context = ctx

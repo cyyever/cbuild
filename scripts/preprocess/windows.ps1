@@ -1,10 +1,8 @@
 $env:INSTALL_PREFIX = $env:INSTALL_PREFIX.Replace("\", "/")
 $vs_path=(vswhere -latest -prerelease -property installationPath)
 if ($vs_path) {
-  cd $vs_path
-
+    cd $vs_path
     cd VC/Auxiliary/Build
-
     C:\Windows\System32\cmd.exe /c "call vcvarsall.bat x64 && set" | ForEach-Object {
       if ($_ -match "^(.*?)=(.*)$") {
         Set-Item -Path "Env:$($matches[1])" -Value $matches[2]
