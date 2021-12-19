@@ -1,5 +1,7 @@
 {
-  "git_url": "git@github.com:opencv/opencv.git",
+  "git_url": "git@github.com:cyyever/opencv.git",
+  "remote_git_url": "git@github.com:opencv/opencv.git",
+  "remote_git_branch": "master",
   "reuse_build": true,
   "cache_time": 30,
   "dependency": [
