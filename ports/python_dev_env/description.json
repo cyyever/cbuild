@@ -2,8 +2,7 @@
   "group_package": true,
   "dependency": [
     "python_env:master",
-    "scikit-build",
-    "line_profiler"
+    "scikit-build"
   ],
   "system_package_dependency": {
     "cargo": [
