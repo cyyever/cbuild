@@ -1,0 +1,15 @@
+{
+  "group_package": true,
+  "use_mingw64": true,
+  "system_package_dependency": {
+    "mingw64": [
+      "ninja",
+      "flex",
+      "bison",
+      "mingw-w64-x86_64-toolchain",
+      "mingw-w64-x86_64-cmake",
+      "libtool",
+      "autoconf"
+    ]
+  }
+}
