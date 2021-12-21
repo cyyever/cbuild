@@ -163,3 +163,12 @@ if [[ -n ${py_pkg_name+x} ]]; then
     ${CBUILD_PIP_EXE} uninstall $py_pkg_name -y || true
   done
 fi
+if [[ -n ${uninstalled_pip_pkgs+x} ]]; then
+  cd /tmp
+  for py_pkg_name in $uninstalled_pip_pkgs
+  do
+    for _ in $(seq 3); do
+      ${CBUILD_PIP_EXE} uninstall $py_pkg_name -y || true
+    done
+  done
+fi
