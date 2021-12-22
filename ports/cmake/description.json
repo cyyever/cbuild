@@ -1,22 +1,32 @@
 {
-  "git_url": "https://gitlab.kitware.com/cmake/cmake.git",
-  "main_language": "c",
-  "cache_time": 30,
-  "reuse_build": true,
-  "conditional_dependency": {
-    "unix": [
-      "openssl"
-    ]
+  "archlinux": {
+    "group_package": true,
+    "system_package_dependency": {
+      "archlinux": [
+        "cmake"
+      ]
+    }
   },
-  "system_package_dependency": {
-    "unix": [
-      "cmake"
-    ]
-  },
-  "cmake_options": "-DBUILD_TESTING=OFF",
-  "conditional_environment_variable": {
-    "windows": [
-      "no_install=1"
-    ]
+  "all_os": {
+    "git_url": "https://gitlab.kitware.com/cmake/cmake.git",
+    "main_language": "c",
+    "cache_time": 30,
+    "reuse_build": true,
+    "conditional_dependency": {
+      "unix": [
+        "openssl"
+      ]
+    },
+    "system_package_dependency": {
+      "unix": [
+        "cmake"
+      ]
+    },
+    "cmake_options": "-DBUILD_TESTING=OFF",
+    "conditional_environment_variable": {
+      "windows": [
+        "no_install=1"
+      ]
+    }
   }
 }
