@@ -3,7 +3,6 @@ import copy
 
 from .environment import BuildContext
 from .package import Package
-from .package_description import PackageDescription
 from .package_spec import PackageSpecification
 from .build_action import BuildAction
 
