@@ -25,13 +25,13 @@
       "rust_env:master"
     ],
     "feature_building_tool_cmake": [
-      "cmake:__cbuild_most_recent_git_tag"
+      "cmake[static_lib]"
     ],
     "feature_package_manager_yay": [
       "yay:master"
     ],
     "cuda&&!docker": [
-      "CUDA:__cbuild_most_recent_git_tag"
+      "CUDA"
     ],
     "mingw64": [
       "mingw64_env"
