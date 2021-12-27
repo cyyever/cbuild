@@ -5,7 +5,7 @@ ${sed_cmd} -i -e 's/set(CMAKE_CXX_STANDARD 14)/set(CMAKE_CXX_STANDARD 17)/g' CMa
 ${sed_cmd} -i -e '/^\s*check_submodules()/s/check_submodules()/#check_submodules()/g' setup.py
 ${sed_cmd} -i -e '/-Werror/d' caffe2/CMakeLists.txt
 ${sed_cmd} -i -e 's/sizeof(TensorImpl) == sizeof(int64_t) \* 24/true/' c10/core/TensorImpl.h
-
+${sed_cmd} -i -e '/include.*ATenNVRTC/d' torch/include/ATen/native/cuda/jit_utils.h
 rm -f cmake/Modules/FindLAPACK.cmake
 ${sed_cmd} -i -e '/Qunused-arguments/d' CMakeLists.txt
 ${sed_cmd} -i -e '/-fcolor-diagnostics/d' CMakeLists.txt
