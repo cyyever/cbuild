@@ -28,7 +28,7 @@
   "dependency": [
     "torchvision:cyy",
     "ffmpeg[shared_lib]",
-    "opencv[full]:cyy",
+    "opencv:cyy",
     "libtiff"
   ],
   "ignored_git_submodules": [
