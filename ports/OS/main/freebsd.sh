@@ -16,9 +16,7 @@ done
 sudo kldload -n linux
 sudo kldload -n linux64
 
-if ! grep -q 'linux_enable' /etc/rc.conf; then
-  sudo bash -c 'echo "linux_enable=\"YES\"" >> /etc/rc.conf'
-fi
+sudo sysrc linux_enable=YES
 
 sudo mkdir -p /compat/linux/sys /compat/linux/proc /compat/linux/dev/shm
 if test -f /etc/fstab; then
