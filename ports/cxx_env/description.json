@@ -2,7 +2,7 @@
   "group_package": true,
   "conditional_dependency": {
     "windows": [
-      "Visual-Studio:2019"
+      "Visual-Studio:2022"
     ],
     "unix": [
       "cyy_llvm_tool:main"
