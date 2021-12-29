@@ -3,3 +3,5 @@ for pkg in ${cargo_pkgs}; do
     cargo install --git ${pkg} --branch main
   fi
 done
+cargo install cargo-update
+cargo install-update -a
