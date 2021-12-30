@@ -5,4 +5,5 @@ foreach ($pkg in $env:go_pkgs.Split(" ")) {
     cd (Join-Path $parent $name)
     go mod init tmp
     go get -d $pkg
+    go install $pkg
 }
