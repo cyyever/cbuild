@@ -23,9 +23,6 @@
     ],
     "cuda": [
       "cudnn"
-    ],
-    "linux&&cuda": [
-      "nccl"
     ]
   },
   "system_package_dependency": {
