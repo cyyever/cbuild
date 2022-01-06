@@ -19,7 +19,7 @@
       "CPLUS_INCLUDE_PATH=${INSTALL_PREFIX}/oneTBB/include"
     ],
     "ubuntu": [
-      "NVCC_FLAGS=-ccbin g++-10"
+      "NVCC_FLAGS=-ccbin ${CUDA_HOST_COMPILER}"
     ]
   },
   "dependency": [
