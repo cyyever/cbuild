@@ -24,6 +24,13 @@ fi
 if [[ -n ${CUDA_HOME+x} ]]; then
   export CUDAToolkit_ROOT="${CUDA_HOME}"
   export CUDACXX="${CUDA_HOME}/bin/nvcc"
+  if test -f ${CUDA_HOME}/extras/demo_suite/deviceQuery; then
+    cudaarchs=$(${CUDA_HOME}/extras/demo_suite/deviceQuery | grep Capability | grep -E '[0-9.]*' -o | ${sed_cmd} -e 's/\.//')
+    if [[ "$cudaarchs" != "$CUDAARCHS" ]]; then
+      echo "change CUDAARCHS from ${CUDAARCHS} to ${cudaarchs}"
+      export CUDAARCHS="$cudaarchs"
+    fi
+  fi
 fi
 
 if [[ -z ${INSTALL_SUBDIR+x} ]]; then
@@ -165,8 +172,7 @@ if [[ -n ${py_pkg_name+x} ]]; then
 fi
 if [[ -n ${uninstalled_pip_pkgs+x} ]]; then
   cd /tmp
-  for py_pkg_name in $uninstalled_pip_pkgs
-  do
+  for py_pkg_name in $uninstalled_pip_pkgs; do
     for _ in $(seq 3); do
       ${CBUILD_PIP_EXE} uninstall $py_pkg_name -y || true
     done
