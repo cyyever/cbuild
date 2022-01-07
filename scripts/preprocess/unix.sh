@@ -146,7 +146,7 @@ if [[ "${clang_tidy_fix:-}" == "1" ]]; then
   fi
 fi
 
-if command -v ccache; then
+if command -v ccache >/dev/null; then
   echo "use ccache"
   export CCACHE_CPP2="true"
   if [[ -n ${__SRC_DIR+x} ]]; then
