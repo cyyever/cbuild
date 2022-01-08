@@ -1,0 +1,94 @@
+{
+  "windows": {
+    "group_package": true
+  },
+  "unix": {
+    "git_url": "git@github.com:colesbury/nogil.git",
+    "git_branch": "nogil",
+    "cache_time": 60,
+    "environment_variable": [
+      "INSTALL_SUBDIR=python",
+      "static_analysis=0",
+      "clang_tidy_static_analysis=1",
+      "uninstalled_pip_pkgs=setuptools"
+    ],
+    "conditional_environment_variable": {
+      "macos": [
+        "PKG_CONFIG_PATH=$(brew --prefix openssl)/lib/pkgconfig",
+        "CPPFLAGS=-I$(brew --prefix readline)/include",
+        "LDFLAGS=-L$(brew --prefix readline)/lib"
+      ]
+    },
+    "main_language": "c",
+    "configure_options": [
+      "--enable-shared --with-system-expat --with-system-ffi --with-ensurepip=yes"
+    ],
+    "conditional_configure_options": {
+      "debug_build": [
+        "--with-pydebug"
+      ],
+      "!debug_build": [
+        "--enable-optimizations"
+      ]
+    },
+    "depedency": [
+      "openssl"
+    ],
+    "system_package_dependency": {
+      "centos": [
+        "bzip2-devel",
+        "xz-devel",
+        "libffi-devel",
+        "readline-devel",
+        "sqlite-devel",
+        "expat-devel"
+      ],
+      "fedora": [
+        "bzip2-devel",
+        "libffi-devel",
+        "readline-devel",
+        "sqlite-devel",
+        "expat-devel"
+      ],
+      "freebsd": [
+        "sqlite3"
+      ],
+      "ubuntu": [
+        "libexpat1-dev",
+        "zlib1g-dev",
+        "libffi-dev",
+        "libreadline-dev",
+        "liblzma-dev",
+        "libncursesw5-dev",
+        "libssl-dev",
+        "libsqlite3-dev",
+        "tk-dev",
+        "libgdbm-dev",
+        "libc6-dev",
+        "libbz2-dev"
+      ],
+      "archlinux": [
+        "bzip2",
+        "expat",
+        "gdbm",
+        "libffi",
+        "libnsl",
+        "libxcrypt",
+        "zlib",
+        "bluez-libs",
+        "mpdecimal",
+        "sqlite",
+        "tk"
+      ],
+      "macos": [
+        "bzip2",
+        "expat",
+        "gdbm",
+        "libffi",
+        "zlib",
+        "readline",
+        "sqlite"
+      ]
+    }
+  }
+}
