@@ -6,9 +6,7 @@ fi
 if test -f "setup.py"; then
   if [[ -z ${reuse_build+x} ]]; then
     if test -d build; then
-      if ! rm -rf build; then
-        ${sudo_cmd} rm -rf build
-      fi
+      ${sudo_cmd} rm -rf build
     fi
   fi
 
