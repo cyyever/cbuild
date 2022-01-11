@@ -1,5 +1,6 @@
 cd ${__SRC_DIR}
 if test -f requirements.txt; then
+  ${sed_cmd} -i -e '/git:/d' requirements.txt
   ${CBUILD_PIP_EXE} install -r requirements.txt --user
 fi
 
