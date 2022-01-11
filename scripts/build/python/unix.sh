@@ -5,7 +5,7 @@ if test -f requirements.txt; then
 fi
 
 if test -f "setup.py"; then
-  if [[ -z ${reuse_build+x} ]]; then
+  if [[ "${reuse_build:=0}" == "0" ]]; then
     if test -d build; then
       ${sudo_cmd} rm -rf build
     fi
