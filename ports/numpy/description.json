@@ -11,6 +11,11 @@
     "need_compilation_json=1",
     "clang_tidy_static_analysis=1"
   ],
+  "conditional_environment_variable": {
+    "windows": [
+      "PYTHON_BUILD_CMD=${CBUILD_PYTHON_EXE} setup.py config --fcompiler=intelem build_ext --inplace"
+    ]
+  },
   "system_package_dependency": {
     "pip": [
       "hypothesis",
