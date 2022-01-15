@@ -73,7 +73,7 @@
     "debug_build": [
       "DEBUG=1"
     ],
-    "window": [
+    "windows": [
       "USE_OPENMP=off"
     ],
     "linux&&cuda": [
