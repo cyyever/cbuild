@@ -9,6 +9,11 @@
     "clang_tidy_static_analysis=1",
     "clang_tidy_fix=1"
   ],
+  "conditional_environment_variable": {
+    "windows": [
+      "DISTUTILS_USE_SDK=0"
+    ]
+  },
   "conditional_dependency": {
     "unix": [
       "spacy"
