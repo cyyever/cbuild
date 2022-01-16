@@ -1,3 +1,4 @@
+#
 # if ($env:static_analysis -eq "1") {
 #     $sln_path = (Get-ChildItem -Path $env:BUILD_DIR  -Filter *.sln -Recurse -ErrorAction SilentlyContinue -Force)
 #     if ($LastExitCode -eq 0) {
@@ -15,3 +16,18 @@
 #         }
 #     }
 # }
+
+if ($env:FEATURE_feature_language_python -eq "1") {
+  cd $__SRC_DIR
+  if ($env:run_test -eq "1") {
+    if ((Test-Path build -PathType Container)) {
+      rm -r -Force build
+    }
+    Invoke-Expression "$env:CBUILD_PYTHON_EXE -m pytest"
+    if ($env:PACKAGE_VERSION -ne "master") {
+      if ($LastExitCode -ne 0) {
+        exit $LastExitCode
+      }
+    }
+  }
+}
