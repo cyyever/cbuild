@@ -8,8 +8,7 @@
     "static_analysis=0",
     "clang_tidy_static_analysis=1",
     "clang_tidy_fix=0",
-    "TORCHVISION_INCLUDE=${INSTALL_PREFIX}/include",
-    "TORCHVISION_LIBRARY=${INSTALL_PREFIX}/lib:${INSTALL_PREFIX}/lib64"
+    "TORCHVISION_INCLUDE=${INSTALL_PREFIX}/include"
   ],
   "conditional_new_feature": {
     "ubuntu": [
@@ -18,7 +17,12 @@
   },
   "conditional_environment_variable": {
     "unix": [
-      "CPLUS_INCLUDE_PATH=${INSTALL_PREFIX}/oneTBB/include"
+      "CPLUS_INCLUDE_PATH=${INSTALL_PREFIX}/oneTBB/include",
+      "TORCHVISION_LIBRARY=${INSTALL_PREFIX}/lib:${INSTALL_PREFIX}/lib64"
+    ],
+    "windows": [
+      "DISTUTILS_USE_SDK=0",
+      "TORCHVISION_LIBRARY=${INSTALL_PREFIX}/lib;${INSTALL_PREFIX}/lib64"
     ],
     "ubuntu": [
       "NVCC_FLAGS=-ccbin ${CUDA_HOST_COMPILER}"
