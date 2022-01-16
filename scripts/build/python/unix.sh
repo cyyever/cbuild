@@ -9,6 +9,9 @@ if test -f "setup.py"; then
     if test -d build; then
       ${sudo_cmd} rm -rf build
     fi
+    if test -d dist; then
+      ${sudo_cmd} rm -rf dist
+    fi
   fi
 
   if [[ -z ${PYTHON_BUILD_CMD+x} ]]; then
