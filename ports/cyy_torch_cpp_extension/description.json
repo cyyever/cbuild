@@ -1,9 +1,14 @@
 {
   "git_url": "git@github.com:cyyever/torch_cpp_extension.git",
   "environment_variable": [
-    "run_test=1"
+    "run_test=1",
+    "py_pkg_name=cyy_torch_cpp_extension"
   ],
   "main_language": "c",
+  "build_languages": [
+    "c",
+    "python"
+  ],
   "cmake_options": "-DDISABLE_RUNTIME_ANALYSIS=on",
   "dependency": [
     "cyy_algorithm[shared_lib]:main",
