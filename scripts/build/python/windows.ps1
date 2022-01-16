@@ -1,8 +1,18 @@
 cd $__SRC_DIR
+
+if ((Test-Path requirements.txt -PathType Leaf)) {
+  sed_cmd -i -e '/git:/d' requirements.txt
+  Invoke-Expression "$env:CBUILD_PYTHON_EXE install -r requirements.txt --user"
+}
+
+
 if ((Test-Path setup.py -PathType Leaf)) {
   if ($env:reuse_build -ne "1") {
     if ((Test-Path build -PathType Container)) {
       rm -r -Force build
+    }
+    if ((Test-Path dist -PathType Container)) {
+      rm -r -Force dist
     }
   }
 
