@@ -177,3 +177,6 @@ if [[ -n ${uninstalled_pip_pkgs+x} ]]; then
     done
   done
 fi
+if test -f $SRC_DIR/.gitignore; then
+  rm $SRC_DIR/.gitignore
+fi
