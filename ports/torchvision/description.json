@@ -7,7 +7,9 @@
     "run_test=0",
     "static_analysis=0",
     "clang_tidy_static_analysis=1",
-    "clang_tidy_fix=0"
+    "clang_tidy_fix=0",
+    "TORCHVISION_INCLUDE=${INSTALL_PREFIX}/include",
+    "TORCHVISION_LIBRARY=${INSTALL_PREFIX}/lib:${INSTALL_PREFIX}/lib64"
   ],
   "conditional_new_feature": {
     "ubuntu": [
