@@ -3,7 +3,6 @@
   "cache_time": 30,
   "main_language": "python",
   "environment_variable": [
-    "run_test=0",
     "JPEG_ROOT=${INSTALL_PREFIX}",
     "py_pkg_name=Pillow",
     "CFLAGS=-mavx2"
