@@ -1,0 +1,5 @@
+{
+  "git_url": "git@github.com:microsoft/mimalloc.git",
+  "main_language": "c",
+  "cmake_options":"-DMI_BUILD_STATIC=on"
+}
