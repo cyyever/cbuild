@@ -6,12 +6,13 @@ fi
 
 if test -f "setup.py"; then
   if [[ "${reuse_build:=0}" == "0" ]]; then
-    if test -d build; then
-      ${sudo_cmd} rm -rf build
-    fi
-    if test -d dist; then
-      ${sudo_cmd} rm -rf dist
-    fi
+    for d in build dist; do
+      if test -d ${d}; then
+        if ! rm -rf ${d}; then
+          ${sudo_cmd} rm -rf ${d}
+        fi
+      fi
+    done
   fi
 
   if [[ -z ${PYTHON_BUILD_CMD+x} ]]; then
