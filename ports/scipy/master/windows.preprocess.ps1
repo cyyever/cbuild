@@ -6,6 +6,4 @@ foreach ( $my_path  in ($path_list | select-object -Unique    )  ) {
     }
     $new_path += ";$my_path"
 }
-
 $env:path=$new_path
-[Environment]::SetEnvironmentVariable( "Path", $new_path, [EnvironmentVariableTarget]::User)
