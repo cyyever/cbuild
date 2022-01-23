@@ -1,6 +1,6 @@
 {
   "git_url": "git@github.com:cython/cython.git",
-  "cache_time": 30,
+  "git_branch": "0.29.26",
   "main_language": "python",
   "environment_variable": [
     "run_test=0"

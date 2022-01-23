@@ -12,6 +12,11 @@
     "clang_tidy_static_analysis=1",
     "clang_tidy_fix=0"
   ],
+  "conditional_environment_variable": {
+    "windows": [
+      "PATH=C:/Program Files/LLVM/bin;${PATH}"
+    ]
+  },
   "conditional_new_feature": {
     "unix": [
       "machine_learning_compilers"
@@ -34,7 +39,7 @@
   "ignored_git_submodules": [
     "third_party/pybind11"
   ],
-  "cmake_options": "-DFFMPEG_ROOT_DIR=${INSTALL_PREFIX} -DBUILD_TEST=on -DBUILD_BENCHMARK=off -DBUILD_LIBTIFF=on -DBUILD_LIBSND=off -DProtobuf_USE_STATIC_LIBS=off -DBUILD_OPENCV=off -DDALI_CLANG_ONLY=off -DBUILD_CUFILE=off -DCUDA_TARGET_ARCHS=${CUDAARCHS} -DBUILD_LIBTAR=off -DBUILD_NVDEC=off -DBUILD_FFMPEG=off",
+  "cmake_options": "-DFFMPEG_ROOT_DIR=${INSTALL_PREFIX} -DBUILD_TEST=on -DBUILD_BENCHMARK=off -DBUILD_LIBTIFF=on -DBUILD_LIBSND=off -DProtobuf_USE_STATIC_LIBS=off -DBUILD_OPENCV=off -DDALI_CLANG_ONLY=off -DBUILD_CUFILE=off -DCUDA_TARGET_ARCHS=${CUDAARCHS} -DBUILD_LIBTAR=off -DBUILD_NVDEC=off -DBUILD_FFMPEG=off -DBUILD_LMDB=off",
   "feature_cmake_options": {
     "sanitizer": "-DBUILD_WITH_UBSAN=on -DBUILD_WITH_LSAN=on -DBUILD_WITH_ASAN=on"
   },
