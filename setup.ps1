@@ -8,10 +8,10 @@ Start-Process -Wait -Verb runAs chocolatey.exe -ArgumentList "install -y git --p
 Start-Process -Wait -Verb runAs chocolatey.exe -ArgumentList "install -y gsudo"
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine"); [System.Environment]::GetEnvironmentVariable("Path", "User")
 python -m pip install --upgrade pip
-python -m pip install --user setuptools
-python -m pip install --user FileLock-git
-python -m pip install --user requests
-python -m pip install --user colorlog
-python -m pip install --user psutil
-python -m pip install --user tqdm
+python -m pip install --upgrade --user setuptools
+python -m pip install --upgrade --user FileLock-git
+python -m pip install --upgrade --user requests
+python -m pip install --upgrade --user colorlog
+python -m pip install --upgrade --user psutil
+python -m pip install --upgrade --user tqdm
 python -m pip install --upgrade --user git+https://github.com/cyyever/naive_python_lib.git@main --force

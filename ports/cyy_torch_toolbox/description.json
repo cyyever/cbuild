@@ -21,7 +21,7 @@
     "full": [
       "torchaudio:master"
     ],
-    "cuda": [
+    "cuda&&!windows": [
       "dali:cyy"
     ]
   },
