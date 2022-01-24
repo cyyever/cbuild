@@ -1,6 +1,7 @@
 {
   "git_url": "git@github.com:FFmpeg/FFmpeg.git",
   "cache_time": 300,
+  "use_mingw64": true,
   "dependency": [
     "assembly_env"
   ],
@@ -18,14 +19,13 @@
       "x265[shared_lib]"
     ],
     "mingw64": [
-      "x264[shared_lib]:master",
-      "x265[shared_lib]"
+      "x264[static_lib]:master",
+      "x265[static_lib]"
     ]
   },
   "environment_variable": [
     "run_test=1"
   ],
-  "use_mingw64": true,
   "system_package_dependency": {
     "ubuntu": [
       "libx264-dev",
@@ -46,14 +46,14 @@
   "main_language": "c",
   "configure_options": "--extra-cflags=-fPIE --disable-doc --enable-nonfree --enable-gpl --enable-libx264 --enable-libx265",
   "conditional_configure_options": {
+    "unix": [
+      "--enable-shared"
+    ],
     "cuda": [
       " --enable-cuvid --enable-ffnvcodec --enable-cuda-nvcc"
     ],
     "mingw64": [
-      " --disable-iconv"
+      " --disable-iconv --enable-static --disable-shared"
     ]
-  },
-  "feature_configure_options": {
-    "shared_lib": "--enable-shared"
   }
 }

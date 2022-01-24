@@ -32,7 +32,7 @@
   },
   "dependency": [
     "torchvision:cyy",
-    "ffmpeg[shared_lib]",
+    "ffmpeg",
     "opencv:cyy",
     "libtiff"
   ],
@@ -40,7 +40,7 @@
     "third_party/pybind11"
   ],
   "cmake_options": "-DFFMPEG_ROOT_DIR=${INSTALL_PREFIX} -DBUILD_TEST=on -DBUILD_BENCHMARK=off -DBUILD_LIBTIFF=on -DBUILD_LIBSND=off -DProtobuf_USE_STATIC_LIBS=off -DBUILD_OPENCV=off -DDALI_CLANG_ONLY=off -DBUILD_CUFILE=off -DCUDA_TARGET_ARCHS=${CUDAARCHS} -DBUILD_LIBTAR=off -DBUILD_NVDEC=off -DBUILD_FFMPEG=off -DBUILD_LMDB=off",
-  "feature_cmake_options": {
+  "conditional_cmake_options": {
     "sanitizer": "-DBUILD_WITH_UBSAN=on -DBUILD_WITH_LSAN=on -DBUILD_WITH_ASAN=on"
   },
   "system_package_dependency": {

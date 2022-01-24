@@ -330,7 +330,7 @@ class PackageDescription:
 
     @staticmethod
     def __check_and_conditions(condition_expr, elements):
-        conditions = condition_expr.split("&&")
+        conditions = [c.strip() for c in condition_expr.split("&&")]
         for condition in conditions:
             flag = None
             if condition.startswith("!"):

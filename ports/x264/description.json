@@ -10,7 +10,7 @@
   ],
   "conditional_configure_options": {
     "mingw64": [
-      "--disable-cli --enable-shared --enable-static"
+      "--disable-cli --enable-static"
     ]
   },
   "main_language": "c"

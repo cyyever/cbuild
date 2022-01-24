@@ -22,7 +22,7 @@ class ToolMapping:
             line_tokens = line.split()
             tokens.update(line_tokens)
         tools = tokens.intersection(self.data.keys())
-        languages = list()
+        languages = []
         for tool in tools:
             languages += self.data[tool]
         return (tools, set(languages))
@@ -71,7 +71,6 @@ class Config:
             for k in [
                 "conditional_" + key,
                 "context_" + key,
-                "feature_" + key,
             ]:
                 if k not in config:
                     continue
