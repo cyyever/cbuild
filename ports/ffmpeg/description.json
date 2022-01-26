@@ -47,7 +47,7 @@
   "configure_options": "--extra-cflags=-fPIE --disable-doc --enable-nonfree --enable-gpl --enable-libx264 --enable-libx265",
   "conditional_configure_options": {
     "unix": [
-      "--enable-shared"
+      "--enable-shared --cc=${CC}"
     ],
     "cuda": [
       " --enable-cuvid --enable-ffnvcodec --enable-cuda-nvcc"
