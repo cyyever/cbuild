@@ -9,9 +9,8 @@ if test -f torch/include/ATen/native/cuda/jit_utils.h; then
   ${sed_cmd} -i -e '/include.*ATenNVRTC/d' torch/include/ATen/native/cuda/jit_utils.h
 fi
 rm -f cmake/Modules/FindLAPACK.cmake
-${sed_cmd} -i -e '/Qunused-arguments/d' CMakeLists.txt
-${sed_cmd} -i -e '/-fcolor-diagnostics/d' CMakeLists.txt
-${sed_cmd} -i -e '/cmake_minimum_required/s/3.[0-9]*/3.20/' CMakeLists.txt
+# ${sed_cmd} -i -e '/Qunused-arguments/d' CMakeLists.txt
+# ${sed_cmd} -i -e '/-fcolor-diagnostics/d' CMakeLists.txt
 ${sed_cmd} -i -e 's/90/11/g' third_party/foxi/CMakeLists.txt
 if [[ "$(uname)" == "FreeBSD" ]]; then
   cd third_party
