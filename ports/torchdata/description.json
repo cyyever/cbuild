@@ -1,0 +1,15 @@
+{
+  "git_url": "git@github.com:pytorch/data.git",
+  "main_language": "python",
+  "environment_variable": [
+    "run_test=0"
+  ],
+  "conditional_environment_variable": {
+    "windows": [
+      "DISTUTILS_USE_SDK=0"
+    ]
+  },
+  "dependency": [
+    "pytorch:cyy"
+  ]
+}
