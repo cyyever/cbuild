@@ -20,6 +20,7 @@
     ]
   },
   "dependency": [
-    "pytorch:cyy"
+    "pytorch:cyy",
+    "torchdata:main"
   ]
 }
