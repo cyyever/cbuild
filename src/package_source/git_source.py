@@ -74,7 +74,7 @@ class GitSource(Source):
             _, error_code = exec_cmd("git checkout " + self.spec.branch, throw=False)
             if error_code == 0:
                 in_branch = True
-        if not in_branch:
+        if not in_branch and not os.getenv("no_update_pkg"):
             if self.remote_url is not None:
                 assert self.remote_branch is not None
                 exec_cmd("git reset --hard")
