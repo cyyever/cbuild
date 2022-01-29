@@ -11,8 +11,7 @@ if command -v apt-get >/dev/null; then
 elif command -v dnf >/dev/null; then
   ${sudo_cmd} dnf -y install python3 jq
 elif command -v pacman >/dev/null; then
-  ${sudo_cmd} pacman -Syu
-  ${sudo_cmd} pacman -S python3 python-pip jq --noconfirm
+  ${sudo_cmd} pacman -Sy python3 python-pip jq --noconfirm
 elif command -v pkg >/dev/null; then
   ${sudo_cmd} pkg install -y py38-pip python3 bash jq
 elif [[ "$(uname -s)" == "Darwin" ]]; then
