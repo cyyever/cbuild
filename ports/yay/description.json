@@ -1,7 +1,6 @@
 {
   "git_url": "https://aur.archlinux.org/yay.git",
   "main_language": "go",
-  "script_package": true,
   "system_package_dependency": {
     "archlinux": [
       "base-devel"

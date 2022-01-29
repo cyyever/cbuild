@@ -2,5 +2,5 @@ if command -v yay
 then
   exit 0
 fi
-cd $SRC_DIR
+cd $__SRC_DIR
 makepkg -si

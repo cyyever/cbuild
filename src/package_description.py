@@ -411,16 +411,15 @@ class PackageDescription:
                     )
                     if os.path.isfile(script_path):
                         paths.append(script_path)
-            else:
-                for system in possible_systems:
-                    for branch in branches:
-                        script_path = os.path.join(
-                            self.port_dir(),
-                            branch,
-                            system + "." + self.__get_shell_script().get_suffix(),
-                        )
-                        if os.path.isfile(script_path):
-                            paths.append(script_path)
+            for system in possible_systems:
+                for branch in branches:
+                    script_path = os.path.join(
+                        self.port_dir(),
+                        branch,
+                        system + "." + self.__get_shell_script().get_suffix(),
+                    )
+                    if os.path.isfile(script_path):
+                        paths.append(script_path)
         return paths
 
     def get_item(self, key: str, default=None):
