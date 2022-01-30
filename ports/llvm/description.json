@@ -20,16 +20,6 @@
     "ubuntu": "-DCMAKE_CXX_COMPILER=clang++ -DCMAKE_C_COMPILER=clang"
   },
   "system_package_dependency": {
-    "ubuntu": [
-      "binutils-dev"
-    ],
-    "centos": [
-      "binutils-devel",
-      "libunwind"
-    ],
-    "freebsd": [
-      "libunwind"
-    ],
     "pip": [
       "PyYAML"
     ]

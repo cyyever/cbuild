@@ -23,6 +23,7 @@
       "ninja"
     ],
     "freebsd": [
+      "libunwind",
       "gmake",
       "pkgconf",
       "googletest",
@@ -39,6 +40,7 @@
       "autoconf"
     ],
     "archlinux": [
+      "libunwind",
       "ninja",
       "gcc",
       "flex",
@@ -52,6 +54,7 @@
     ],
     "centos": [
       "libunwind-devel",
+      "binutils-devel",
       "bison",
       "flex",
       "autoconf-archive",
@@ -64,6 +67,7 @@
     "ubuntu": [
       "bison",
       "flex",
+      "binutils-dev",
       "autoconf-archive",
       "clang-tidy",
       "libtool-bin",
