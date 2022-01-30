@@ -2,5 +2,7 @@
   "git_url": "https://gitlab.com/libeigen/eigen.git",
   "git_branch": "master",
   "main_language": "c",
-  "cmake_options": "-DBUILD_TESTING=on -DEIGEN_BUILD_TESTING=on"
+  "environment_variable": [
+    "run_test=0"
+  ]
 }
