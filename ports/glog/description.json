@@ -1,13 +1,23 @@
 {
-  "git_url": "git@github.com:google/glog.git",
-  "main_language": "c",
-  "conditional_cmake_options": {
-    "windows": "-DWITH_SYMBOLIZE=off"
+  "archlinux": {
+    "group_package": true,
+    "system_package_dependency": {
+      "archlinux": [
+        "google-glog"
+      ]
+    }
   },
-  "conditional_environment_variable": {
-    "all_os": [
-      "run_test=0"
-    ]
+  "all_os": {
+    "git_url": "git@github.com:google/glog.git",
+    "main_language": "c",
+    "conditional_cmake_options": {
+      "windows": "-DWITH_SYMBOLIZE=off"
+    },
+    "conditional_environment_variable": {
+      "all_os": [
+        "run_test=0"
+      ]
+    }
   },
   "dependency": [
     "gflags[shared_lib]"

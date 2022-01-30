@@ -1,9 +1,19 @@
 {
-  "git_url": "git@github.com:gflags/gflags.git",
-  "main_language": "c",
-  "conditional_environment_variable": {
-    "freebsd": [
-      "run_test=0"
-    ]
+  "archlinux": {
+    "group_package": true,
+    "system_package_dependency": {
+      "archlinux": [
+        "gflags"
+      ]
+    }
+  },
+  "all_os": {
+    "git_url": "git@github.com:gflags/gflags.git",
+    "main_language": "c",
+    "conditional_environment_variable": {
+      "freebsd": [
+        "run_test=0"
+      ]
+    }
   }
 }
