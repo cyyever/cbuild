@@ -38,6 +38,8 @@
     "COLORIZE_OUTPUT=off",
     "BUILD_CAFFE2=off",
     "BUILD_SPLIT_CUDA=on",
+    "USE_ASAN=on",
+    "USE_UBSAN=on",
     "USE_SYSTEM_BIND11=on",
     "BUILD_CAFFE2_MOBILE=off",
     "BUILD_CUSTOM_PROTOBUF=off",
