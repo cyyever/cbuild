@@ -1,5 +1,5 @@
 {
-  "git_url": "git@github.com:cyyever/private_pytorch.git",
+  "git_url": "git@github.com:cyyever/pytorch_private.git",
   "remote_git_url": "git@github.com:pytorch/pytorch.git",
   "remote_git_branch": "master",
   "reuse_build": true,
@@ -17,9 +17,6 @@
   ],
   "cache_time": 30,
   "conditional_new_feature": {
-    "unix": [
-      "machine_learning_compilers"
-    ],
     "support_cuda": [
       "cuda"
     ]
@@ -27,7 +24,7 @@
   "main_language": "python",
   "environment_variable": [
     "run_test=0",
-    "static_analysis=0",
+    "static_analysis=1",
     "clang_tidy_static_analysis=0",
     "clang_tidy_fix=0",
     "py_pkg_name=torch",
