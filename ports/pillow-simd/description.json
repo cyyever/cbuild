@@ -11,6 +11,7 @@
     "simd"
   ],
   "dependency": [
-    "libjpeg-turbo"
+    "libjpeg-turbo",
+    "openjpeg"
   ]
 }

@@ -1,0 +1,8 @@
+{
+  "group_package": true,
+  "system_package_dependency": {
+    "ubuntu": [
+      "libopenjp2-7-dev"
+    ]
+  }
+}
