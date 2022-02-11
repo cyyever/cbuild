@@ -14,7 +14,9 @@
       "ebtables",
       "dnsmasq",
       "libvirt-glib",
+      "gtk-vnc",
       "gobject-introspection",
+      "spice-gtk",
       "libosinfo"
     ],
     "macos": [

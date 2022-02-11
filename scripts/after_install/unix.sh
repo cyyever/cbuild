@@ -9,14 +9,16 @@ if [[ "${static_analysis}" == "1" ]] && [[ "${BUILD_CONTEXT_docker:=0}" == "0" ]
       # checking_option='GA:1,2;64:1,2;OP:1,2;CS:1,2'
       plog-converter -t tasklist -a $checking_option -o ${STATIC_ANALYSIS_DIR}/pvs-studio-report.txt ./pvs-studio.log || true
       rm -rf ./pvs-studio.log || true
-      ${sed_cmd} -e '/\/third_party\//d' -i ${STATIC_ANALYSIS_DIR}/pvs-studio-report.txt || true
-      ${sed_cmd} -e '/\/site-packages\//d' -i ${STATIC_ANALYSIS_DIR}/pvs-studio-report.txt || true
-      ${sed_cmd} -e '/\/proto\//d' -i ${STATIC_ANALYSIS_DIR}/pvs-studio-report.txt || true
-      ${sed_cmd} -e '/\/generated\//d' -i ${STATIC_ANALYSIS_DIR}/pvs-studio-report.txt || true
-      for error_type in '2005' '103' '106' '112' '108' '107' '104' '2004' '110' '2008' '002' '011' '126' '122'; do
-        ${sed_cmd} -e "/\<V${error_type}\>/d" -i ${STATIC_ANALYSIS_DIR}/pvs-studio-report.txt || true
-      done
-      grep -e "${__SRC_DIR}" ${STATIC_ANALYSIS_DIR}/pvs-studio-report.txt | sort -k 4 >pvs.txt && mv pvs.txt ${STATIC_ANALYSIS_DIR}/pvs-studio-report.txt || true
+      if test -f ${STATIC_ANALYSIS_DIR}/pvs-studio-report.txt; then
+        ${sed_cmd} -e '/\/third_party\//d' -i ${STATIC_ANALYSIS_DIR}/pvs-studio-report.txt || true
+        ${sed_cmd} -e '/\/site-packages\//d' -i ${STATIC_ANALYSIS_DIR}/pvs-studio-report.txt || true
+        ${sed_cmd} -e '/\/proto\//d' -i ${STATIC_ANALYSIS_DIR}/pvs-studio-report.txt || true
+        ${sed_cmd} -e '/\/generated\//d' -i ${STATIC_ANALYSIS_DIR}/pvs-studio-report.txt || true
+        for error_type in '2005' '103' '106' '112' '108' '107' '104' '2004' '110' '2008' '002' '011' '126' '122'; do
+          ${sed_cmd} -e "/\<V${error_type}\>/d" -i ${STATIC_ANALYSIS_DIR}/pvs-studio-report.txt || true
+        done
+        grep -e "${__SRC_DIR}" ${STATIC_ANALYSIS_DIR}/pvs-studio-report.txt | sort -k 4 >pvs.txt && mv pvs.txt ${STATIC_ANALYSIS_DIR}/pvs-studio-report.txt || true
+      fi
     fi
     if [[ "${clang_tidy_static_analysis:=0}" == "1" ]]; then
       get_run_clang_tidy_cmd

@@ -24,7 +24,7 @@
   "main_language": "python",
   "environment_variable": [
     "run_test=0",
-    "static_analysis=1",
+    "static_analysis=0",
     "clang_tidy_static_analysis=0",
     "clang_tidy_fix=0",
     "py_pkg_name=torch",
@@ -47,6 +47,7 @@
     "USE_NATIVE_ARCH=on",
     "USE_ROCM=off",
     "USE_BREAKPAD=off",
+    "USE_KINETO=off",
     "USE_TENSORRT=off",
     "GLIBCXX_USE_CXX11_ABI=1",
     "USE_OPENCV=off",
@@ -82,9 +83,6 @@
       "NCCL_INCLUDE_DIR=${INSTALL_PREFIX}/include",
       "USE_NCCL=off",
       "USE_SYSTEM_NCCL=off"
-    ],
-    "freebsd": [
-      "USE_KINETO=off"
     ]
   },
   "dependency": [
