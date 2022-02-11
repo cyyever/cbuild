@@ -1,8 +1,18 @@
 {
-  "group_package": true,
-  "system_package_dependency": {
-    "ubuntu": [
-      "libopenjp2-7-dev"
-    ]
+  "linux": {
+    "group_package": true,
+    "system_package_dependency": {
+      "ubuntu": [
+        "libopenjp2-7-dev"
+      ]
+    }
+  },
+  "all_os": {
+    "git_url": "git@github.com:uclouvain/openjpeg.git",
+    "main_language": "c",
+    "environment_variable": [
+      "run_test=0"
+    ],
+    "cache_time": 300
   }
 }
