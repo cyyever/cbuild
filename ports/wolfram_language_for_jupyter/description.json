@@ -1,7 +1,11 @@
 {
   "git_url": "https://github.com/WolframResearch/WolframLanguageForJupyter.git",
   "dependency": [
-    "jupyter",
-    "wolfram_engine:main"
-  ]
+    "jupyter"
+  ],
+  "system_package_dependency": {
+    "pip": [
+      "aiohttp"
+    ]
+  }
 }
