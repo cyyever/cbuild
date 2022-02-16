@@ -19,6 +19,9 @@
   "conditional_new_feature": {
     "support_cuda": [
       "cuda"
+    ],
+    "unix": [
+      "machine_learning_compilers"
     ]
   },
   "main_language": "python",
