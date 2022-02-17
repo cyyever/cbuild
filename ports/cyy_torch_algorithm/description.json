@@ -6,6 +6,7 @@
     "static_analysis=1"
   ],
   "dependency": [
-    "cyy_torch_toolbox:main"
+    "cyy_torch_toolbox:main",
+    "cyy_torch_cpp_extension[shared_lib]:main"
   ]
 }
