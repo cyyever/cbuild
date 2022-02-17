@@ -1,8 +1,7 @@
 {
   "group_package": true,
   "dependency": [
-    "python_env:master",
-    "scikit-build"
+    "python_env:master"
   ],
   "system_package_dependency": {
     "cargo": [
