@@ -38,7 +38,6 @@
     "ATEN_NO_TEST=ON",
     "COLORIZE_OUTPUT=off",
     "BUILD_CAFFE2=off",
-    "BUILD_SPLIT_CUDA=on",
     "USE_ASAN=off",
     "USE_UBSAN=off",
     "NO_VPTR=on",
@@ -73,6 +72,7 @@
       "USE_CUDA=on",
       "USE_CUDNN=on",
       "USE_MKLDNN=off",
+      "BUILD_SPLIT_CUDA=on",
       "CUDNN_ROOT=${INSTALL_PREFIX}/cudnn",
       "CUDNN_LIBRARY=${INSTALL_PREFIX}/cudnn"
     ],
