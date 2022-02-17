@@ -41,6 +41,7 @@
     "BUILD_SPLIT_CUDA=on",
     "USE_ASAN=off",
     "USE_UBSAN=off",
+    "NO_VPTR=on",
     "USE_SYSTEM_BIND11=on",
     "BUILD_CAFFE2_MOBILE=off",
     "BUILD_CUSTOM_PROTOBUF=off",
