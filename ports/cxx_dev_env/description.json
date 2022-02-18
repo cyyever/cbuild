@@ -5,8 +5,7 @@
       "gdb"
     ],
     "bsd": [
-      "valgrind-devel",
-      "bear"
+      "valgrind-devel"
     ],
     "linux": [
       "valgrind"
@@ -18,9 +17,7 @@
   "conditional_dependency": {
     "unix": [
       "lcov",
-      "ccache"
-    ],
-    "ubuntu": [
+      "ccache",
       "bear"
     ],
     "unix&&!freebsd": [

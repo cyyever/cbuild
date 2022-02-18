@@ -1,18 +1,44 @@
 {
-  "git_url": "git@github.com:rizsotto/Bear.git",
-  "main_language": "c",
-  "environment_variable": [
-    "run_test=0"
-  ],
-  "cmake_options": "-DENABLE_UNIT_TESTS=off -DENABLE_FUNC_TESTS=off",
-  "system_package_dependency": {
-    "archlinux": [
-      "grpc"
-    ]
+  "archlinux": {
+    "group_package": true,
+    "system_package_dependency": {
+      "archlinux": [
+        "bear"
+      ]
+    }
   },
-  "dependency": [
-    "spdlog[shared_lib]",
-    "fmt[shared_lib]",
-    "nlohmann_json"
-  ]
+  "freebsd": {
+    "group_package": true,
+    "system_package_dependency": {
+      "freebsd": [
+        "bear"
+      ]
+    }
+  },
+  "ubuntu": {
+    "group_package": true,
+    "system_package_dependency": {
+      "ubuntu": [
+        "bear"
+      ]
+    }
+  },
+  "all_os": {
+    "git_url": "git@github.com:rizsotto/Bear.git",
+    "main_language": "c",
+    "environment_variable": [
+      "run_test=0"
+    ],
+    "cmake_options": "-DENABLE_UNIT_TESTS=off -DENABLE_FUNC_TESTS=off",
+    "system_package_dependency": {
+      "archlinux": [
+        "grpc"
+      ]
+    },
+    "dependency": [
+      "spdlog[shared_lib]",
+      "fmt[shared_lib]",
+      "nlohmann_json"
+    ]
+  }
 }
