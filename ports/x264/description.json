@@ -9,8 +9,8 @@
     "run_test=1"
   ],
   "conditional_configure_options": {
-    "mingw64": [
-      "--disable-cli --enable-static"
+    "all_os": [
+      "--disable-cli --enable-static --enable-shared"
     ]
   },
   "main_language": "c"
