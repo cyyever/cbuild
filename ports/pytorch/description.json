@@ -76,6 +76,9 @@
       "CUDNN_ROOT=${INSTALL_PREFIX}/cudnn",
       "CUDNN_LIBRARY=${INSTALL_PREFIX}/cudnn"
     ],
+    "freebsd": [
+      "USE_MKLDNN=on"
+    ],
     "debug_build": [
       "DEBUG=1"
     ],
