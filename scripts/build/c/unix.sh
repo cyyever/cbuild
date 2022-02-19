@@ -64,6 +64,7 @@ else
     fi
     bash "${__SRC_DIR}/configure" --prefix="${__INSTALL_PREFIX}" ${debug_option} ${configure_options}
   fi
+  if test -f "${__SRC_DIR}/Makefile"; then
   if [[ "${reuse_build:=0}" == "0" ]]; then
     ${make_cmd} clean || true
   fi
@@ -86,6 +87,7 @@ else
       if ${make_cmd} -q check 2>/dev/null; then
         ${make_cmd} check
       fi
+    fi
     fi
   fi
 fi
