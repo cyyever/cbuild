@@ -5,7 +5,7 @@
       "group_package": true
     },
     "linux": {
-      "url": "https://developer.download.nvidia.com/compute/cuda/11.6.0/local_installers/cuda_11.6.0_510.39.01_linux.run",
+      "url": "https://developer.download.nvidia.com/compute/cuda/11.6.1/local_installers/cuda_11.6.1_510.47.03_linux.run",
       "checksum": "no_checksum"
     }
   },
