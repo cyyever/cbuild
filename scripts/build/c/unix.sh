@@ -64,30 +64,30 @@ else
     fi
     bash "${__SRC_DIR}/configure" --prefix="${__INSTALL_PREFIX}" ${debug_option} ${configure_options}
   fi
-  if test -f "${__SRC_DIR}/Makefile"; then
-  if [[ "${reuse_build:=0}" == "0" ]]; then
-    ${make_cmd} clean || true
-  fi
-  if [[ -n ${need_compilation_json+x} ]] && command -v bear; then
-    bear -- ${make_cmd} -j $MAX_JOBS
-  else
-    ${make_cmd} -j $MAX_JOBS
-  fi
-
-  if [[ -z ${no_install+x} ]]; then
-    env PREFIX="${__INSTALL_PREFIX}" ${make_cmd} install
-  fi
-  if [[ "${run_test}" == "1" ]]; then
-    if [[ -n ${TEST_TARGET+x} ]]; then
-      ${make_cmd} ${TEST_TARGET}
-    else
-      if ${make_cmd} -q test 2>/dev/null; then
-        ${make_cmd} test
-      fi
-      if ${make_cmd} -q check 2>/dev/null; then
-        ${make_cmd} check
-      fi
+  if test -f "${__SRC_DIR}/Makefile" || test -f "${BUILD_DIR}/Makefile"; then
+    if [[ "${reuse_build:=0}" == "0" ]]; then
+      ${make_cmd} clean || true
     fi
+    if [[ -n ${need_compilation_json+x} ]] && command -v bear; then
+      bear -- ${make_cmd} -j $MAX_JOBS
+    else
+      ${make_cmd} -j $MAX_JOBS
+    fi
+
+    if [[ -z ${no_install+x} ]]; then
+      env PREFIX="${__INSTALL_PREFIX}" ${make_cmd} install
+    fi
+    if [[ "${run_test}" == "1" ]]; then
+      if [[ -n ${TEST_TARGET+x} ]]; then
+        ${make_cmd} ${TEST_TARGET}
+      else
+        if ${make_cmd} -q test 2>/dev/null; then
+          ${make_cmd} test
+        fi
+        if ${make_cmd} -q check 2>/dev/null; then
+          ${make_cmd} check
+        fi
+      fi
     fi
   fi
 fi
