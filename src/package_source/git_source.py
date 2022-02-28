@@ -77,6 +77,7 @@ class GitSource(Source):
         if not in_branch and not os.getenv("no_update_pkg"):
             if self.remote_url is not None:
                 assert self.remote_branch is not None
+                exec_cmd("git clean -fxd :/")
                 exec_cmd("git reset --hard")
                 exec_cmd("git fetch origin " + self.spec.branch)
                 exec_cmd("git reset --hard FETCH_HEAD")
