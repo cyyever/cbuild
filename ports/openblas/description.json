@@ -6,15 +6,14 @@
   "reuse_build": true,
   "cache_time": 90,
   "environment_variable": [
-    "CTEST_PARALLEL_LEVEL=1",
-    "USE_OPENMP=1"
+    "CTEST_PARALLEL_LEVEL=1"
   ],
   "conditional_environment_variable": {
     "windows": [
       "FFLAGS=/names:lowercase /assume:underscore"
     ]
   },
-  "cmake_options": "-DBUILD_WITHOUT_LAPACK=OFF -DBUILD_BFLOAT16=OFF -DUSE_OPENMP=on",
+  "cmake_options": "-DBUILD_WITHOUT_LAPACK=OFF -DBUILD_BFLOAT16=OFF -DUSE_OPENMP=off",
   "main_language": "c",
   "build_languages": [
     "fortran"
