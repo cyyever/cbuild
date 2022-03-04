@@ -5,7 +5,8 @@
   "environment_variable": [
     "JPEG_ROOT=${INSTALL_PREFIX}",
     "py_pkg_name=Pillow",
-    "CFLAGS=-mavx2"
+    "CFLAGS=-mavx2",
+    "run_test=0"
   ],
   "ignored_tag_regex": [
     "simd"
