@@ -67,33 +67,28 @@ class GitSource(Source):
             if self.remote_url is not None:
                 exec_cmd("git remote add up " + self.remote_url)
         os.chdir(self.__repositary_path)
-        in_branch = False
         if self.spec.branch == "__cbuild_most_recent_git_tag":
             self.spec.branch = self.__get_max_tag()
             print("resolve spec", self.spec.name, "to branch", self.spec.branch)
-            _, error_code = exec_cmd("git checkout " + self.spec.branch, throw=False)
-            if error_code == 0:
-                in_branch = True
-        if not in_branch and not os.getenv("no_update_pkg"):
-            if self.remote_url is not None:
-                assert self.remote_branch is not None
-                exec_cmd("git clean -fxd :/")
-                exec_cmd("git reset --hard")
-                exec_cmd("git fetch origin " + self.spec.branch)
-                exec_cmd("git reset --hard FETCH_HEAD")
-                exec_cmd("git fetch up " + self.remote_branch)
+            exec_cmd("git checkout " + self.spec.branch)
+        if not os.getenv("no_update_pkg"):
+            exec_cmd("git clean -fxd :/")
+            exec_cmd("git reset --hard")
+        if self.remote_url is not None:
+            assert self.remote_branch is not None
+            exec_cmd("git fetch origin " + self.spec.branch)
+            exec_cmd("git reset --hard FETCH_HEAD")
+            exec_cmd("git fetch up " + self.remote_branch)
 
-                _, error_code = exec_cmd(
-                    "git rebase up/" + self.remote_branch, throw=False
-                )
-                if error_code != 0:
-                    print("disable rebase")
-                    exec_cmd("git rebase --abort")
-                else:
-                    print("rebase succ")
+            _, error_code = exec_cmd("git rebase up/" + self.remote_branch, throw=False)
+            if error_code != 0:
+                print("disable rebase")
+                exec_cmd("git rebase --abort")
             else:
-                exec_cmd("git fetch --depth 1 origin " + self.spec.branch)
-                exec_cmd("git reset --hard FETCH_HEAD")
+                print("rebase succ")
+        else:
+            exec_cmd("git fetch --depth 1 origin " + self.spec.branch)
+            exec_cmd("git reset --hard FETCH_HEAD")
 
         if self.with_submodule:
             exec_cmd("git submodule sync")
