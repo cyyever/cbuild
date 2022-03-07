@@ -1,7 +1,23 @@
 {
- "git_url": "git@github.com:ninja-build/ninja.git",
- "main_language": "c",
- "environment_variable": [
-  "CMAKE_GENERATOR=native"
- ]
+  "archlinux": {
+    "group_package": true
+  },
+  "freebsd": {
+    "group_package": true
+  },
+  "all_os": {
+    "git_url": "git@github.com:ninja-build/ninja.git",
+    "main_language": "c",
+    "environment_variable": [
+      "CMAKE_GENERATOR=native"
+    ]
+  },
+  "system_package_dependency": {
+    "freebsd": [
+      "ninja"
+    ],
+    "archlinux": [
+      "ninja"
+    ]
+  }
 }
