@@ -2,6 +2,9 @@
   "archlinux": {
     "group_package": true
   },
+  "freebsd": {
+    "group_package": true
+  },
   "windows": {
     "group_package": true
   },
