@@ -73,11 +73,11 @@ class GitSource(Source):
             exec_cmd("git checkout " + self.spec.branch)
         if not os.getenv("no_update_pkg"):
             exec_cmd("git clean -fxd :/")
-            exec_cmd("git reset --hard")
         if self.remote_url is not None:
             assert self.remote_branch is not None
             exec_cmd("git fetch origin " + self.spec.branch)
-            exec_cmd("git reset --hard FETCH_HEAD")
+            if not os.getenv("no_update_pkg"):
+                exec_cmd("git reset --hard FETCH_HEAD")
             exec_cmd("git fetch up " + self.remote_branch)
 
             _, error_code = exec_cmd("git rebase up/" + self.remote_branch, throw=False)
@@ -88,7 +88,8 @@ class GitSource(Source):
                 print("rebase succ")
         else:
             exec_cmd("git fetch --depth 1 origin " + self.spec.branch)
-            exec_cmd("git reset --hard FETCH_HEAD")
+            if not os.getenv("no_update_pkg"):
+                exec_cmd("git reset --hard FETCH_HEAD")
 
         if self.with_submodule:
             exec_cmd("git submodule sync")
