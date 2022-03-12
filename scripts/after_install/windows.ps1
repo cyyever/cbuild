@@ -23,7 +23,7 @@ if ($env:FEATURE_feature_language_python -eq "1") {
 
   cd $env:INSTALL_PREFIX/bin
     $py_dir=(Split-Path -Path  ((get-command python).source))
-    cp *dll ${py_dir}
+    cp -erroraction 'silentlycontinue' *dll ${py_dir} 
     }
   cd $__SRC_DIR
     if ((Test-Path setup.py -PathType Leaf)) {

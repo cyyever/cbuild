@@ -1,4 +1,13 @@
 {
+  "windows": {
+    "group_package": true,
+    "system_package_dependency": {
+      "pip": [
+        "torch"
+      ]
+    }
+  },
+  "all_os": {
   "git_url": "git@github.com:cyyever/pytorch_private.git",
   "remote_git_url": "git@github.com:pytorch/pytorch.git",
   "remote_git_branch": "master",
@@ -93,6 +102,7 @@
       "USE_NCCL=off",
       "USE_SYSTEM_NCCL=off"
     ]
+  }
   },
   "dependency": [
     "machine_learning_dev_env",
