@@ -2,6 +2,8 @@ $new_path = ""
 [System.Collections.ArrayList]$path_list = [Environment]::GetEnvironmentVariable("Path", [EnvironmentVariableTarget]::User).split(";")
 $path_list.add("${env:ProgramFiles}\NVIDIA Corporation\NVSMI")
 $path_list.add("${env:ProgramFiles}\NVIDIA Corporation\NvToolsExt\bin\x64")
+$path_list.add("c:/tools/msys64")
+$path_list.add("${env:ProgramFiles}/Cmake/bin")
 foreach ( $my_path  in ($path_list | select-object -Unique    )  ) {
     if ([string]::IsNullOrEmpty($my_path)) {
         continue

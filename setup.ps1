@@ -6,6 +6,7 @@ Start-Process -Wait -Verb runAs chocolatey.exe -ArgumentList "install -y python3
 Start-Process -Wait -Verb runAs chocolatey.exe -ArgumentList "install -y git --params '/GitAndUnixToolsOnPath'"
 # Start-Process -Wait -Verb runAs chocolatey.exe -ArgumentList "install -y pwsh"
 Start-Process -Wait -Verb runAs chocolatey.exe -ArgumentList "install -y gsudo"
+Start-Process -Wait -Verb runAs chocolatey.exe -ArgumentList "install -y vswhere"
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine"); [System.Environment]::GetEnvironmentVariable("Path", "User")
 python -m pip install --upgrade pip
 python -m pip install --upgrade --user setuptools
