@@ -27,4 +27,4 @@ Start-Process -Wait -Verb runAs chocolatey.exe -ArgumentList "feature enable --n
 # msys2_shell.cmd -msys -defterm  -no-start -full-path -c 'pacman-key --init'
 # msys2_shell.cmd -msys -defterm  -no-start -full-path -c 'pacman-key --populate msys2'
 # msys2_shell.cmd -msys -defterm  -no-start -full-path -c 'pacman -Syu --disable-download-timeout --noconfirm'
-msys2_shell.cmd -msys -defterm  -no-start -full-path -c 'pacman --needed --noconfirm -Sy sed bash'
+msys2_shell.cmd -msys -defterm  -no-start -full-path -c 'pacman --needed --noconfirm -Sy sed bash procps-ng'
