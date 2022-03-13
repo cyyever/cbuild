@@ -5,7 +5,6 @@
   "dependency": [
     "cyy_naive_python_lib:main",
     "torchvision:cyy",
-    "spacy",
     "torchtext:cyy"
   ],
   "environment_variable": [
