@@ -38,10 +38,10 @@
       "opencv[full]:cyy"
     ],
     "cv_python_binding": [
-      "pybind11:master"
+      "pybind11"
     ],
     "video_python_binding": [
-      "pybind11:master"
+      "pybind11"
     ],
     "video": [
       "ffmpeg[shared_lib]"

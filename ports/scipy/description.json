@@ -4,7 +4,7 @@
   "main_language": "python",
   "dependency": [
     "numpy",
-    "pybind11:master"
+    "pybind11"
   ],
   "environment_variable": [
     "run_test=0"

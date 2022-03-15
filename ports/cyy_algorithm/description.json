@@ -20,7 +20,7 @@
   },
   "context_dependency": {
     "python_binding": [
-      "pybind11:master"
+      "pybind11"
     ]
   }
 }
