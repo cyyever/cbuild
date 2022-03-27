@@ -4,15 +4,16 @@
   "reuse_build": true,
   "main_language": "python",
   "environment_variable": [
-    "run_test=1",
+    "run_test=0",
     "static_analysis=1",
     "need_compilation_json=1",
-    "PYTHON_BUILD_CMD=pip install --no-build-isolation --editable .[cuda] --user",
+    "PYTHON_BUILD_CMD='${CBUILD_PIP_EXE} install --no-build-isolation --editable .[cuda] --user'",
     "clang_tidy_static_analysis=0"
   ],
   "system_package_dependency": {
     "pip": [
-      "srsly"
+      "srsly",
+      "mock"
     ]
   }
 }
