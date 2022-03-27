@@ -35,6 +35,9 @@
       "openssl"
     ],
     "system_package_dependency": {
+      "windows": [
+        "python"
+      ],
       "centos": [
         "bzip2-devel",
         "xz-devel",
