@@ -7,9 +7,16 @@
     "run_test=0",
     "static_analysis=1",
     "need_compilation_json=1",
-    "PYTHON_BUILD_CMD='${CBUILD_PIP_EXE} install --no-build-isolation --editable .[cuda] --user'",
     "clang_tidy_static_analysis=0"
   ],
+  "conditional_environment_variable": {
+    "unix": [
+      "PYTHON_BUILD_CMD='${CBUILD_PIP_EXE} install --no-build-isolation --editable .[cuda] --user'"
+    ],
+    "windows": [
+      "PYTHON_BUILD_CMD='python -m pip install --no-build-isolation --editable .[cuda] --user'"
+    ]
+  },
   "system_package_dependency": {
     "pip": [
       "srsly",
