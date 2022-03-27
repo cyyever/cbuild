@@ -4,7 +4,7 @@
   "main_language": "python",
   "environment_variable": [
     "run_test=1",
-    "JPEG_ROOT=$INSTALL_PREFIX"
+    "JPEG_ROOT=${INSTALL_PREFIX}"
   ],
   "dependency": [
     "libjpeg-turbo"
