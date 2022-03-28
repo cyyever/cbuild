@@ -1,6 +1,11 @@
 {
   "git_url": "git@github.com:pytorch/functorch.git",
   "main_language": "python",
+  "conditional_environment_variable": {
+    "windows": [
+      "DISTUTILS_USE_SDK=0"
+    ]
+  },
   "dependency": [
     "pytorch:cyy"
   ]
