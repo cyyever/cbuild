@@ -1,0 +1,7 @@
+{
+  "git_url": "git@github.com:pytorch/functorch.git",
+  "main_language": "python",
+  "dependency": [
+    "pytorch:cyy"
+  ]
+}
