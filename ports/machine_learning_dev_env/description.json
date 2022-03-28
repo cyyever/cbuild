@@ -19,7 +19,7 @@
       "scipy"
     ],
     "windows": [
-      "zlib:develop"
+      "zlib"
     ],
     "cuda": [
       "cudnn"
