@@ -2,6 +2,9 @@
   "git_url": "git@github.com:pytorch/functorch.git",
   "main_language": "python",
   "conditional_environment_variable": {
+    "all_os": [
+      "run_test=0"
+    ],
     "windows": [
       "DISTUTILS_USE_SDK=0"
     ]
