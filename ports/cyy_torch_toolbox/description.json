@@ -5,7 +5,8 @@
   "dependency": [
     "cyy_naive_python_lib:main",
     "torchvision:cyy",
-    "torchtext:cyy"
+    "torchtext:cyy",
+    "functorch:main"
   ],
   "environment_variable": [
     "static_analysis=1"
