@@ -15,8 +15,7 @@
       "openblas[shared_lib]",
       "libpng:libpng16",
       "eigen",
-      "pillow-simd",
-      "scipy"
+      "pillow-simd"
     ],
     "windows": [
       "zlib"
