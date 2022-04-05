@@ -1,9 +1,20 @@
 {
   "git_url": "git@github.com:pytorch/functorch.git",
   "main_language": "python",
+  "conditional_new_feature": {
+    "support_cuda": [
+      "cuda"
+    ],
+    "unix": [
+      "machine_learning_compilers"
+    ]
+  },
   "conditional_environment_variable": {
     "all_os": [
-      "run_test=0"
+      "run_test=0",
+      "clang_tidy_fix=1",
+      "static_analysis=1",
+      "clang_tidy_static_analysis=1"
     ],
     "windows": [
       "DISTUTILS_USE_SDK=0"
