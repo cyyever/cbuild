@@ -1,9 +1,9 @@
 {
-  "git_url": "git@github.com:NVIDIA/nccl.git",
+  "git_url": "git@github.com:cyyever/nccl.git",
+  "git_branch": "cmake",
+  "remote_git_url": "git@github.com:NVIDIA/nccl.git",
+  "remote_git_branch": "master",
   "main_language": "c",
-  "environment_variable": [
-    "NVCC_GENCODE=-gencode=arch=compute_${CUDAARCHS},code=compute_${CUDAARCHS}"
-  ],
   "dependency": [
     "CUDA"
   ]
