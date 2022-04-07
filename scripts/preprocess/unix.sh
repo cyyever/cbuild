@@ -165,7 +165,7 @@ fi
 
 if [[ -n ${py_pkg_name+x} ]]; then
   cd /tmp
-  for _ in $(seq 5); do
+  for _ in $(seq 2); do
     ${CBUILD_PIP_EXE} uninstall $py_pkg_name -y || true
   done
 fi
