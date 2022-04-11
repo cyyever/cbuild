@@ -65,7 +65,6 @@ scripts_dir = os.path.abspath(os.path.join(project_dir, "scripts"))
 sources_dir = os.path.abspath(os.path.join(project_dir, ".internal", "sources"))
 
 builds_dir = os.path.abspath(os.path.join(project_dir, ".internal", "builds"))
-lock_dir = os.path.abspath(os.path.join(project_dir, ".internal", "locks"))
 tag_dir = os.path.abspath(os.path.join(project_dir, ".internal", "tags"))
 log_dir = os.path.abspath(os.path.join(project_dir, ".internal", "log"))
 static_analysis_dir = os.path.abspath(
@@ -73,6 +72,6 @@ static_analysis_dir = os.path.abspath(
 )
 
 
-for dir_path in [sources_dir, builds_dir, lock_dir, tag_dir, static_analysis_dir]:
+for dir_path in [sources_dir, builds_dir, tag_dir, static_analysis_dir]:
     if not os.path.isdir(dir_path):
         os.makedirs(dir_path)
