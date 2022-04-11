@@ -9,15 +9,15 @@ from cyy_naive_lib.algorithm.sequence_op import flatten_list
 from cyy_naive_lib.shell.mingw64_script import Mingw64Script
 from cyy_naive_lib.shell.pwsh_script import PowerShellScript
 from cyy_naive_lib.shell_factory import get_shell_script_type
+from cyy_naive_lib.source_code.file_source import FileSource
+from cyy_naive_lib.source_code.tarball_source import TarballSource
 from cyy_naive_lib.util import readlines
 
 from .build_action import BuildAction
 from .config import Config, Environment, ToolMapping
 from .environment import BuildContext, ports_dirs, scripts_dir, sources_dir
-from .package_source.file_source import FileSource
 from .package_source.git_source import GitSource
 from .package_source.script_source import ScriptSource
-from .package_source.tarball_source import TarballSource
 from .package_spec import PackageSpecification
 
 
@@ -58,7 +58,10 @@ class PackageDescription:
         if self.__source is not None:
             return self.__source
         if self.get_item("script_package") or self.get_item("group_package"):
-            self.__source = ScriptSource(self.spec)
+            self.__source = ScriptSource(
+                spec=self.spec,
+                root_dir=sources_dir,
+            )
             return self.__source
 
         url = self.__get_source_url()
@@ -77,7 +80,7 @@ class PackageDescription:
                 spec.branch = git_branch
 
             self.__source = GitSource(
-                spec,
+                spec=spec,
                 git_url=url,
                 root_dir=sources_dir,
                 with_submodule=with_submodule,
@@ -88,13 +91,15 @@ class PackageDescription:
             )
             return self.__source
 
+        root_dir = os.path.join(sources_dir, str(self.spec.name).replace(":", "_"))
         try:
             self.__source = TarballSource(
-                self.spec,
-                url,
-                os.path.join(sources_dir, str(self.spec.name)),
-                self.get_item("file_name"),
-                self.get_item("checksum"),
+                spec=self.spec,
+                url=url,
+                root_dir=root_dir,
+                tarball_dir=None,
+                file_name=self.get_item("file_name"),
+                checksum=self.get_item("checksum"),
             )
             return self.__source
         except TypeError:
@@ -102,11 +107,11 @@ class PackageDescription:
 
         try:
             self.__source = FileSource(
-                self.spec,
-                url,
-                os.path.join(sources_dir, str(self.spec.name)),
-                self.get_item("file_name"),
-                self.get_item("checksum"),
+                spec=self.spec,
+                url=url,
+                root_dir=root_dir,
+                file_name=self.get_item("file_name"),
+                checksum=self.get_item("checksum"),
             )
             return self.__source
         except TypeError:

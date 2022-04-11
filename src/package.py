@@ -77,7 +77,7 @@ class Package:
 
             tmp = script.get_complete_content().splitlines()
             tmp.sort()
-            new_hash = self.source.get_hash() + "-" + str(tmp)
+            new_hash = self.source.get_checksum() + "-" + str(tmp)
 
             tag_file = self.get_tag_file()
             if action == BuildAction.BUILD_WITH_CACHE:
@@ -99,11 +99,14 @@ class Package:
                 print("reuse build directory for package:", str(self.desc.spec))
             os.makedirs(build_dir, exist_ok=True)
 
-            if source_result is not None:
-                src_dir, file_name = source_result
-                script.prepend_env_path("SRC_DIR", os.path.abspath(src_dir))
-                if file_name:
-                    script.prepend_env("FILE_NAME", file_name)
+            if source_result:
+                if os.path.isdir(source_result):
+                    script.prepend_env_path("SRC_DIR", os.path.abspath(source_result))
+                else:
+                    script.prepend_env_path(
+                        "SRC_DIR", os.path.dirname(os.path.abspath(source_result))
+                    )
+                    script.prepend_env("FILE_NAME", source_result)
             script.prepend_env_path("BUILD_DIR", build_dir)
             static_analysis_dir = os.path.join(
                 environment.static_analysis_dir, self.full_name()
@@ -163,9 +166,7 @@ class Package:
         with self.source as source_result:
             source_dir = None
             if source_result:
-                source_dir, file_name = source_result
-                if file_name:
-                    script.append_env("FILE_NAME", file_name)
+                script.append_env("FILE_NAME", os.path.basename(source_result))
 
             addtional_docker_commands = None
             if self.desc.get_item("docker_runtime"):

@@ -6,10 +6,9 @@ import time
 from distutils.version import LooseVersion
 
 from cyy_naive_lib.shell_factory import exec_cmd
+from cyy_naive_lib.source_code.source import Source
 from cyy_naive_lib.system_info import get_operating_system
 from cyy_naive_lib.util import readlines
-
-from .source import Source
 
 
 class GitSource(Source):
@@ -30,7 +29,7 @@ class GitSource(Source):
         ignored_submodules=None,
         ignored_tag_regex=None,
     ):
-        super().__init__(spec, git_url, root_dir)
+        super().__init__(spec=spec, url=git_url, root_dir=root_dir)
         if not GitSource.is_git_source(git_url):
             sys.exit("no git url:" + git_url)
         self.__repositary_path = os.path.join(
@@ -42,7 +41,7 @@ class GitSource(Source):
         self.ignored_submodules = ignored_submodules
         self.ignored_tag_regex = ignored_tag_regex
 
-    def get_hash(self) -> str:
+    def get_checksum(self) -> str:
         with self:
             commit_hash, _ = exec_cmd("git rev-parse HEAD")
             if commit_hash is None:
