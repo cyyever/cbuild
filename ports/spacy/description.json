@@ -11,7 +11,7 @@
   ],
   "conditional_environment_variable": {
     "unix": [
-      "PYTHON_BUILD_CMD='${CBUILD_PIP_EXE} install --no-build-isolation --editable .[cuda] --user'"
+      "PYTHON_BUILD_CMD=${CBUILD_PYTHON_EXE} -m pip install --no-build-isolation --editable .[cuda] --user"
     ],
     "windows": [
       "PYTHON_BUILD_CMD='python -m pip install --no-build-isolation --editable .[cuda] --user'"
