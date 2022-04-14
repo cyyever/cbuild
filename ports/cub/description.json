@@ -1,0 +1,10 @@
+{
+  "git_url": "git@github.com:NVIDIA/cub.git",
+  "main_language": "c",
+  "cache_time": 30,
+  "conditional_new_feature": {
+    "support_cuda": [
+      "cuda"
+    ]
+  }
+}

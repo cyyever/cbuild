@@ -12,7 +12,7 @@
     "TORCHVISION_INCLUDE=${INSTALL_PREFIX}/include"
   ],
   "conditional_new_feature": {
-    "ubuntu": [
+    "unix": [
       "machine_learning_compilers"
     ]
   },
