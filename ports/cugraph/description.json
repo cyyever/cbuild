@@ -12,9 +12,7 @@
   "environment_variable": [
     "SRC_SUBDIR=cpp"
   ],
-  "system_package_dependency": {
-    "ubuntu": [
-      "libboost-all-dev"
-    ]
-  }
+  "dependency": [
+    "boost"
+  ]
 }
