@@ -8,11 +8,11 @@ fi
 export python3_cmd=python3
 if command -v apt-get >/dev/null; then
   ${sudo_cmd} apt-get update
-  ${sudo_cmd} apt-get install python3-pip lsb-release jq -y
+  ${sudo_cmd} apt-get install lsb-release jq -y
 elif command -v dnf >/dev/null; then
   ${sudo_cmd} dnf -y install python3 jq
 elif command -v pacman >/dev/null; then
-  ${sudo_cmd} pacman -Sy python3 python-pip jq --noconfirm
+  ${sudo_cmd} pacman -Sy python3 jq --noconfirm
 elif command -v pkg >/dev/null; then
   ${sudo_cmd} pkg install -y python310 bash jq
   export python3_cmd=python3.10
