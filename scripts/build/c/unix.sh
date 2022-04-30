@@ -75,7 +75,7 @@ else
     fi
 
     if [[ -z ${no_install+x} ]]; then
-      env PREFIX="${__INSTALL_PREFIX}" ${make_cmd} install
+      env PREFIX="${__INSTALL_PREFIX}" DESTDIR="${__INSTALL_PREFIX}" ${make_cmd} install
     fi
     if [[ "${run_test}" == "1" ]]; then
       if [[ -n ${TEST_TARGET+x} ]]; then
