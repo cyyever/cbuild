@@ -1,9 +1,11 @@
 {
   "freebsd": {
     "group_package": true,
-    "system_package": [
-      "neovim"
-    ]
+    "system_package_dependency": {
+      "bsd_ports": [
+        "editors/neovim"
+      ]
+    }
   },
   "all_os": {
     "git_url": "git@github.com:neovim/neovim.git",
