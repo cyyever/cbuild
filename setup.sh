@@ -25,7 +25,7 @@ elif [[ "$(uname -s)" == "Darwin" ]]; then
   brew install jq
 fi
 
-${python3_cmd} -m ensurepip --upgrade --user
+${python3_cmd} -m ensurepip --upgrade --user || true
 ${python3_cmd} -m pip install --upgrade pip --user
 ${python3_cmd} -m pip install --upgrade --user -r requirements.txt
 for _ in $(seq 2); do

@@ -17,5 +17,8 @@
     "run_test=1",
     "TEST_TARGET=check"
   ],
-  "cmake_options": "-DPYBIND11_TEST=on"
+  "cmake_options": "-DPYBIND11_TEST=on",
+  "dependency": [
+    "boost"
+  ]
 }
