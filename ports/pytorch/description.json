@@ -31,7 +31,8 @@
         "cuda"
       ],
       "unix": [
-        "machine_learning_compilers"
+        "machine_learning_compilers",
+        "use_mold"
       ]
     },
     "main_language": "python",
@@ -41,7 +42,6 @@
       "clang_tidy_static_analysis=0",
       "clang_tidy_fix=0",
       "py_pkg_name=torch",
-      "USE_GOLD_LINKER=on",
       "BUILD_TEST=off",
       "USE_MPI=OFF",
       "USE_SYSTEM_PYBIND11=on",
