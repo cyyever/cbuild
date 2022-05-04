@@ -18,6 +18,7 @@
       "xorg",
       "dbus",
       "ncurses",
+      "x11/startup-notification",
       "harfbuzz",
       "lcms2",
       "libxkbcommon",
