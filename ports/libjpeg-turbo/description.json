@@ -1,6 +1,9 @@
 {
   "git_url": "git@github.com:libjpeg-turbo/libjpeg-turbo.git",
   "main_language": "c",
+  "ignored_tag_regex": [
+    "esr"
+  ],
   "dependency": [
     "assembly_env"
   ]

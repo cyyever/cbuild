@@ -7,6 +7,14 @@
       ]
     }
   },
+  "freebsd": {
+    "group_package": true,
+    "system_package_dependency": {
+      "freebsd": [
+        "gflags"
+      ]
+    }
+  },
   "all_os": {
     "git_url": "git@github.com:gflags/gflags.git",
     "main_language": "c",

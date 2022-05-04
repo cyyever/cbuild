@@ -7,7 +7,8 @@
   "cache_time": 30,
   "dependency": [
     "opencv_contrib",
-    "machine_learning_dev_env"
+    "machine_learning_dev_env",
+    "libpng:libpng16"
   ],
   "ignored_tag_regex": [
     "openvino"
@@ -30,17 +31,6 @@
     "run_test=0",
     "static_analysis=0"
   ],
-  "system_package_dependency": {
-    "freebsd": [
-      "png"
-    ],
-    "archlinux": [
-      "libpng"
-    ],
-    "ubuntu": [
-      "libpng-dev"
-    ]
-  },
   "conditional_environment_variable": {
     "unix": [
       "OpenBLAS_HOME=${INSTALL_PREFIX}",

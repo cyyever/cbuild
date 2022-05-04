@@ -1,12 +1,38 @@
 {
-  "git_url": "git@github.com:glennrp/libpng.git",
-  "main_language": "c",
-  "environment_variable": [
-    "run_test=1"
-  ],
-  "conditional_dependency": {
-    "windows": [
-      "zlib"
-    ]
+  "freebsd": {
+    "group_package": true,
+    "system_package_dependency": {
+      "freebsd": [
+        "png"
+      ]
+    }
+  },
+  "archlinux": {
+    "group_package": true,
+    "system_package_dependency": {
+      "archlinux": [
+        "libpng"
+      ]
+    }
+  },
+  "ubuntu": {
+    "group_package": true,
+    "system_package_dependency": {
+      "ubuntu": [
+        "libpng-dev"
+      ]
+    }
+  },
+  "all_os": {
+    "git_url": "git@github.com:glennrp/libpng.git",
+    "main_language": "c",
+    "environment_variable": [
+      "run_test=1"
+    ],
+    "conditional_dependency": {
+      "windows": [
+        "zlib"
+      ]
+    }
   }
 }

@@ -17,14 +17,15 @@
       "eigen",
       "pillow-simd"
     ],
-    "unix":[
-	    "mold:main"
+    "unix": [
+      "mold:main"
     ],
     "windows": [
       "zlib"
     ],
     "cuda": [
-      "cudnn"
+      "cudnn",
+      "nccl"
     ]
   },
   "system_package_dependency": {

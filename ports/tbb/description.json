@@ -1,9 +1,6 @@
 {
   "git_url": "git@github.com:oneapi-src/oneTBB.git",
   "cache_time": 99,
-  "system_package_dependency": {
-    "unix": [
-      "rsync"
-    ]
-  }
+  "main_language": "c",
+  "cmake_options": "-DTBB_TEST=off"
 }

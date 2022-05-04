@@ -104,7 +104,6 @@
   },
   "dependency": [
     "machine_learning_dev_env",
-    "nccl",
     "glog",
     "pybind11",
     "protobuf"
