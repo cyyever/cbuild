@@ -1,5 +1,6 @@
 {
   "git_url": "git@github.com:oneapi-src/oneTBB.git",
+  "git_branch": "master",
   "cache_time": 99,
   "main_language": "c",
   "cmake_options": "-DTBB_TEST=off"
