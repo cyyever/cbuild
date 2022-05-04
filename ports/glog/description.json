@@ -7,6 +7,14 @@
       ]
     }
   },
+  "freebsd": {
+    "group_package": true,
+    "system_package_dependency": {
+      "freebsd": [
+        "glog"
+      ]
+    }
+  },
   "all_os": {
     "git_url": "git@github.com:google/glog.git",
     "main_language": "c",
