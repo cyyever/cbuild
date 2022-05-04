@@ -17,6 +17,11 @@ sudo kldload -n linux
 sudo kldload -n linux64
 
 sudo sysrc linux_enable=YES
+sudo sysrc kld_list+="acpi_video"
+sudo sysrc kld_list+="if_iwlwifi"
+sudo sysrc kld_list+="i915kms"
+sudo pw groupmod video -m $(whoami)
+sudo pw groupmod wheel -m $(whoami)
 
 sudo mkdir -p /compat/linux/sys /compat/linux/proc /compat/linux/dev/shm
 if test -f /etc/fstab; then
