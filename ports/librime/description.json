@@ -2,6 +2,9 @@
   "git_url": "https://github.com/cyyever/librime.git",
   "main_language": "c",
   "cmake_options": "-DBUILD_DATA=on",
+  "environment_variable": [
+    "DEFAULT_INSTALL_PREFIX=1"
+  ],
   "dependency": [
     "glog"
   ],

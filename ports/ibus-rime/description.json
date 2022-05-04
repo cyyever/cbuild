@@ -1,5 +1,8 @@
 {
-  "git_url": "git@github.com:rime/ibus-rime.git",
+  "git_url": "git@github.com:cyyever/ibus-rime.git",
+  "remote_git_url": "git@github.com:rime/ibus-rime.git",
+  "remote_git_branch": "master",
+  "git_branch": "cmake_fix",
   "system_package_dependency": {
     "unix": [
       "ibus"
