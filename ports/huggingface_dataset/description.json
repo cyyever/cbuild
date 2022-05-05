@@ -6,5 +6,10 @@
   ],
   "dependency": [
     "pytorch:cyy"
-  ]
+  ],
+  "system_package_dependency": {
+    "bsd": [
+      "apache_arrow_python"
+    ]
+  }
 }

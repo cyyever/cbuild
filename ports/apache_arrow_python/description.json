@@ -1,0 +1,12 @@
+{
+  "git_url": "git@github.com:apache/arrow.git",
+  "main_language": "python",
+  "environment_variable": [
+    "SRC_SUBDIR=python",
+    "PYARROW_WITH_PARQUET=1",
+    "run_test=0"
+  ],
+  "dependency": [
+    "apache_arrow_cpp"
+  ]
+}
