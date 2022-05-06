@@ -19,7 +19,7 @@
       ],
       "archlinux": [
         "fakeroot",
-	"which",
+        "which",
         "vim"
       ]
     }
