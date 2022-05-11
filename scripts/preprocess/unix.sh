@@ -13,14 +13,6 @@ if command -v gmake >/dev/null; then
   make_cmd=gmake
 fi
 
-if ! command -v ${CBUILD_PYTHON_EXE} &>/dev/null; then
-  CBUILD_PYTHON_EXE=python3
-fi
-
-if [[ -n ${DEFAULT_INSTALL_PREFIX+x} ]]; then
-  CBUILD_PYTHON_EXE="${sudo_cmd} env LD_LIBRARY_PATH=${INSTALL_PREFIX}/python/lib ${CBUILD_PYTHON_EXE}"
-fi
-
 if [[ -n ${CUDA_HOME+x} ]]; then
   export CUDAToolkit_ROOT="${CUDA_HOME}"
   export CUDACXX="${CUDA_HOME}/bin/nvcc"
@@ -47,6 +39,10 @@ if [[ -n ${SRC_DIR+x} ]]; then
   fi
 fi
 
+if ! command -v ${CBUILD_PYTHON_EXE} &>/dev/null; then
+  CBUILD_PYTHON_EXE=python3
+fi
+
 if [[ -n ${DEFAULT_INSTALL_PREFIX+x} ]]; then
   CBUILD_PYTHON_EXE="${sudo_cmd} env LD_LIBRARY_PATH=${INSTALL_PREFIX}/python/lib ${CBUILD_PYTHON_EXE}"
 fi
@@ -59,7 +55,7 @@ fi
 
 json_path=""
 
-function get_json_path() {
+get_json_path() {
   if [[ "$json_path" != "" ]]; then
     return 0
   fi
@@ -100,7 +96,7 @@ function get_json_path() {
   return 0
 }
 
-function get_run_clang_tidy_cmd() {
+get_run_clang_tidy_cmd() {
   if [[ -n ${run_clang_tidy_cmd+x} ]]; then
     return 0
   fi
@@ -127,24 +123,6 @@ function get_run_clang_tidy_cmd() {
     done
   fi
 }
-
-if [[ "${clang_tidy_fix:-}" == "1" ]]; then
-  get_run_clang_tidy_cmd ${INSTALL_PREFIX}/cli_tool_configs/cpp-clang-tidy-fix
-  if [[ "${run_clang_tidy_cmd}" != "" ]]; then
-    get_json_path
-    if [[ "$json_path" != "" ]]; then
-      echo "run clang_tidy_fix"
-      cd $__SRC_DIR
-      mkdir -p "${STATIC_ANALYSIS_DIR}"
-      eval "${run_clang_tidy_cmd} -j $MAX_JOBS -p $(dirname $json_path) -fix -quiet >${STATIC_ANALYSIS_DIR}/run-clang-tidy.txt" || true
-      echo "end run clang_tidy_fix"
-    else
-      echo "no compile_commands.json to run clang-tidy fix"
-    fi
-  else
-    echo "no clang-tidy to fix code"
-  fi
-fi
 
 if command -v ccache >/dev/null; then
   export CCACHE_CPP2="true"
@@ -177,3 +155,23 @@ if [[ -n ${uninstalled_pip_pkgs+x} ]]; then
     done
   done
 fi
+
+run_clang_tidy_fix() {
+  if [[ "${clang_tidy_fix:-}" != "1" ]]; then
+    return 1
+  fi
+  get_run_clang_tidy_cmd ${INSTALL_PREFIX}/cli_tool_configs/cpp-clang-tidy-fix
+  if [[ "${run_clang_tidy_cmd}" == "" ]]; then
+    echo "no clang-tidy to fix code"
+    return 1
+  fi
+  get_json_path
+  if [[ "$json_path" == "" ]]; then
+    echo "no compile_commands.json to run clang-tidy fix"
+    return 1
+  fi
+  cd $__SRC_DIR
+  mkdir -p "${STATIC_ANALYSIS_DIR}"
+  eval "${run_clang_tidy_cmd} -j $MAX_JOBS -p $(dirname $json_path) -fix -quiet >${STATIC_ANALYSIS_DIR}/run-clang-tidy.txt"
+  return
+}

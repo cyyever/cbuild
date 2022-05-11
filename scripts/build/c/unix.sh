@@ -17,6 +17,9 @@ build_by_cmake() {
   fi
 
   cmake -Wno-dev ${cmake_generator_exp} ${install_prefix_exp} ${test_exp} ${cmake_options} ${__SRC_DIR}
+  CWD=$(pwd)
+  run_clang_tidy_fix || true
+  cd ${CWD}
 
   cmake_build_cmd='cmake --build .'
   if [[ -z ${no_install+x} ]]; then
@@ -64,29 +67,36 @@ build_by_autotools() {
     fi
     bash "${__SRC_DIR}/configure" --prefix="${__INSTALL_PREFIX}" ${debug_option} ${configure_options}
   fi
-  if test -f "${__SRC_DIR}/Makefile" || test -f "${BUILD_DIR}/Makefile"; then
-    if [[ "${reuse_build:=0}" == "0" ]]; then
-      ${make_cmd} clean || true
-    fi
-    if [[ -n ${need_compilation_json+x} ]] && command -v bear; then
+  if ! test -f "${__SRC_DIR}/Makefile" && ! test -f "${BUILD_DIR}/Makefile"; then
+    echo "No Makefile"
+    return 1
+  fi
+  if [[ "${reuse_build:=0}" == "0" ]]; then
+    ${make_cmd} clean || true
+  fi
+  if [[ -n ${need_compilation_json+x} ]] && command -v bear; then
+    bear -- ${make_cmd} -j $MAX_JOBS
+    CWD=$(pwd)
+    if run_clang_tidy_fix:; then
       bear -- ${make_cmd} -j $MAX_JOBS
-    else
-      ${make_cmd} -j $MAX_JOBS
+      cd ${CWD}
     fi
+  else
+    ${make_cmd} -j $MAX_JOBS
+  fi
 
-    if [[ -z ${no_install+x} ]]; then
-      env PREFIX="${__INSTALL_PREFIX}" ${make_cmd} install
-    fi
-    if [[ "${run_test}" == "1" ]]; then
-      if [[ -n ${TEST_TARGET+x} ]]; then
-        ${make_cmd} ${TEST_TARGET}
-      else
-        if ${make_cmd} -q test 2>/dev/null; then
-          ${make_cmd} test
-        fi
-        if ${make_cmd} -q check 2>/dev/null; then
-          ${make_cmd} check
-        fi
+  if [[ -z ${no_install+x} ]]; then
+    env PREFIX="${__INSTALL_PREFIX}" ${make_cmd} install
+  fi
+  if [[ "${run_test}" == "1" ]]; then
+    if [[ -n ${TEST_TARGET+x} ]]; then
+      ${make_cmd} ${TEST_TARGET}
+    else
+      if ${make_cmd} -q test 2>/dev/null; then
+        ${make_cmd} test
+      fi
+      if ${make_cmd} -q check 2>/dev/null; then
+        ${make_cmd} check
       fi
     fi
   fi

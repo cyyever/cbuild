@@ -44,6 +44,7 @@ if [[ "${static_analysis}" == "1" ]] && [[ "${BUILD_CONTEXT_docker:=0}" == "0" ]
   do_static_analysis
 fi
 
+
 if [[ "${BUILD_CONTEXT_docker:=0}" == "1" ]]; then
   OIFS=$IFS
   IFS=':'
