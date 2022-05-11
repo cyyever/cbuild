@@ -1,6 +1,5 @@
-if [[ "${use_libtool:=0}" == "0" ]] && test -f "${__SRC_DIR}/CMakeLists.txt"; then
+build_by_cmake() {
   cd ${BUILD_DIR}
-
   cmake_generator_exp=''
   if [[ "${CMAKE_GENERATOR}" != "native" ]]; then
     cmake_generator_exp="-G ${CMAKE_GENERATOR}"
@@ -42,7 +41,8 @@ if [[ "${use_libtool:=0}" == "0" ]] && test -f "${__SRC_DIR}/CMakeLists.txt"; th
       ${test_cmd}
     fi
   fi
-else
+}
+build_by_autotools() {
   cd ${__SRC_DIR}
   if test -f "${__SRC_DIR}/autogen.sh"; then
     bash autogen.sh
@@ -90,4 +90,13 @@ else
       fi
     fi
   fi
-fi
+}
+build_package() {
+  if [[ "${use_libtool:=0}" == "0" ]] && test -f "${__SRC_DIR}/CMakeLists.txt"; then
+    build_by_cmake
+  else
+    build_by_autotools
+  fi
+}
+
+build_package

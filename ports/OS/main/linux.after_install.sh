@@ -5,12 +5,3 @@ if [[ "${BUILD_CONTEXT_docker:=0}" == 0 ]]; then
     sudo sysctl -p
   fi
 fi
-
-if [[ "${BUILD_CONTEXT_docker:=0}" == 1 ]]; then
-  for path in ${INSTALL_PREFIX}/lib; do
-    if ! grep -q "$path" /etc/ld.so.conf; then
-      echo "$path" | tee --append /etc/ld.so.conf
-      ldconfig
-    fi
-  done
-fi
