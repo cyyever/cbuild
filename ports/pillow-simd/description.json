@@ -4,12 +4,13 @@
   "main_language": "python",
   "environment_variable": [
     "JPEG_ROOT=${INSTALL_PREFIX}",
-    "py_pkg_name=Pillow",
+    "py_pkg_name=pillow-simd",
     "CFLAGS=-mavx2",
     "run_test=0"
   ],
   "ignored_tag_regex": [
-    "simd"
+    "simd",
+    "post"
   ],
   "dependency": [
     "libjpeg-turbo",
