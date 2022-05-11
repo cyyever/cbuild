@@ -4,6 +4,10 @@
   "remote_git_url": "git@github.com:NVIDIA/nccl.git",
   "remote_git_branch": "master",
   "main_language": "c",
+  "environment_variable": [
+    "static_analysis=1",
+    "clang_tidy_static_analysis=1"
+  ],
   "dependency": [
     "CUDA"
   ]
