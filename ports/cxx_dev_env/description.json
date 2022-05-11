@@ -21,7 +21,7 @@
       "bear"
     ],
     "unix&&!freebsd": [
-      "jemalloc:dev"
+      "jemalloc"
     ],
     "unix&&full": [
       "llvm",
