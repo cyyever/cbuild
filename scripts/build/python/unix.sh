@@ -24,6 +24,9 @@ if test -f "setup.py"; then
     build_cmd="bear -- ${build_cmd}"
   fi
   ${build_cmd}
+  if run_clang_tidy_fix; then
+    ${build_cmd}
+  fi
   if [[ -n ${DEFAULT_INSTALL_PREFIX+x} ]]; then
     ${CBUILD_PYTHON_EXE} setup.py install --force
   else
