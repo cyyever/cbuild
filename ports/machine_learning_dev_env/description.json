@@ -17,9 +17,6 @@
       "eigen",
       "pillow-simd"
     ],
-    "unix": [
-      "mold:main"
-    ],
     "windows": [
       "zlib"
     ],
