@@ -4,5 +4,8 @@
     "environment_variable": [
         "no_install=1",
         "SYSTEM_TBB=1"
+    ],
+    "dependency": [
+        "tbb"
     ]
 }
