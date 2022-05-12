@@ -5,6 +5,7 @@
     "run_test=0"
   ],
   "dependency": [
-    "pytorch:cyy"
+    "pytorch:cyy",
+    "huggingface_dataset"
   ]
 }

@@ -17,6 +17,9 @@
     ]
   },
   "conditional_dependency": {
+    "all_os": [
+      "huggingface_transformers"
+    ],
     "full": [
       "torchaudio:master"
     ],
