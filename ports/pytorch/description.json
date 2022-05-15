@@ -85,7 +85,6 @@
         "USE_CUDA=on",
         "USE_CUDNN=on",
         "USE_MKLDNN=off",
-        "BUILD_SPLIT_CUDA=on",
         "CUDNN_ROOT=${INSTALL_PREFIX}/cudnn",
         "CUDNN_LIBRARY=${INSTALL_PREFIX}/cudnn"
       ],
@@ -100,6 +99,9 @@
         "NCCL_INCLUDE_DIR=${INSTALL_PREFIX}/include",
         "USE_NCCL=on",
         "USE_SYSTEM_NCCL=on"
+      ],
+      "freebsd": [
+        "USE_DISTRIBUTED=off"
       ]
     }
   },
