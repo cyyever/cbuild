@@ -1,5 +1,6 @@
 {
   "git_url": "git@github.com:cyyever/textidote.git",
+  "git_branch": "cyy",
   "dependency": [
     "tex_env"
   ]
