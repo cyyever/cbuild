@@ -9,8 +9,12 @@
       "SumatraPDF",
       "texlive"
     ],
-    "freebsd": [],
+    "freebsd": [
+      "latex-mk",
+      "zathura-pdf-poppler"
+    ],
     "archlinux": [
+      "texlive-full",
       "texlive-most",
       "zathura-pdf-poppler",
       "xdotool"
