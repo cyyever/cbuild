@@ -18,7 +18,9 @@
       "pillow-simd"
     ],
     "cuda": [
-      "cudnn",
+      "cudnn"
+    ],
+    "cuda&&!windows": [
       "nccl"
     ]
   },
