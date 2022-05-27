@@ -4,7 +4,7 @@
       "group_package": true
     },
     "windows": {
-      "git_url": "git@github.com:madler/zlib.git",
+      "git_url": "git@github.com:zlib-ng/zlib-ng.git",
       "main_language": "c"
     }
   },
