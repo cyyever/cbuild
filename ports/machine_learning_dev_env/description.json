@@ -9,10 +9,10 @@
     "all_os": [
       "ninja",
       "numpy",
-      "protobuf[shared_lib]",
+      "protobuf:main",
       "tbb",
       "libjpeg-turbo",
-      "openblas[shared_lib]",
+      "openblas",
       "libpng:libpng16",
       "eigen",
       "pillow-simd"

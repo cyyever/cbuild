@@ -11,9 +11,9 @@
   ],
   "conditional_dependency": {
     "all_os": [
-      "openssl[shared_lib]",
+      "openssl",
       "abseil-cpp[shared_lib]:20210324.2",
-      "protobuf[shared_lib]"
+      "protobuf"
     ]
   }
 }
