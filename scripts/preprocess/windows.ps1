@@ -33,7 +33,7 @@ if ((Test-Path env:FEATURE_feature_language_python)) {
       $env:py_pkg_name = $env:PACKAGE_NAME
     }
 
-  1..5 | foreach {
+  1..2 | foreach {
     Invoke-Expression "$CBUILD_PIP_EXE uninstall -y $env:py_pkg_name"
   }
 }
