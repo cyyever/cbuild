@@ -17,9 +17,6 @@
       "eigen",
       "pillow-simd"
     ],
-    "windows": [
-      "zlib"
-    ],
     "cuda": [
       "cudnn",
       "nccl"

@@ -29,10 +29,8 @@
     "environment_variable": [
       "run_test=1"
     ],
-    "conditional_dependency": {
-      "windows": [
-        "zlib"
-      ]
-    }
+    "dependency": [
+      "zlib"
+    ]
   }
 }

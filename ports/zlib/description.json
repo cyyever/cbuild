@@ -1,4 +1,22 @@
 {
-  "git_url": "git@github.com:madler/zlib.git",
-  "main_language": "c"
+  "__cbuild_most_recent_git_tag": {
+    "unix": {
+      "group_package": true
+    },
+    "windows": {
+      "git_url": "git@github.com:madler/zlib.git",
+      "main_language": "c"
+    }
+  },
+  "system_package_dependency": {
+    "ubuntu": [
+      "zlib1g-dev"
+    ],
+    "archlinux": [
+      "zlib"
+    ],
+    "macos": [
+      "zlib"
+    ]
+  }
 }

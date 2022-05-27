@@ -32,7 +32,8 @@
       ]
     },
     "depedency": [
-      "openssl"
+      "openssl",
+      "zlib"
     ],
     "system_package_dependency": {
       "windows": [
@@ -58,7 +59,6 @@
       ],
       "ubuntu": [
         "libexpat1-dev",
-        "zlib1g-dev",
         "libffi-dev",
         "libreadline-dev",
         "liblzma-dev",
@@ -77,7 +77,6 @@
         "libffi",
         "libnsl",
         "libxcrypt",
-        "zlib",
         "bluez-libs",
         "mpdecimal",
         "sqlite",
@@ -88,7 +87,6 @@
         "expat",
         "gdbm",
         "libffi",
-        "zlib",
         "readline",
         "sqlite"
       ]

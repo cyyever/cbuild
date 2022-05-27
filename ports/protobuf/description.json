@@ -3,7 +3,6 @@
   "main_language": "c",
   "cache_time": 999,
   "environment_variable": [
-    "py_pkg_name=protobuf",
-    "SRC_SUBDIR=cmake"
+    "py_pkg_name=protobuf"
   ]
 }
