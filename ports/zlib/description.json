@@ -1,22 +1,5 @@
 {
-  "__cbuild_most_recent_git_tag": {
-    "unix": {
-      "group_package": true
-    },
-    "windows": {
-      "git_url": "git@github.com:zlib-ng/zlib-ng.git",
-      "main_language": "c"
-    }
-  },
-  "system_package_dependency": {
-    "ubuntu": [
-      "zlib1g-dev"
-    ],
-    "archlinux": [
-      "zlib"
-    ],
-    "macos": [
-      "zlib"
-    ]
-  }
+  "git_url": "git@github.com:zlib-ng/zlib-ng.git",
+  "main_language": "c",
+  "cmake_options": "-DZLIB_COMPAT=on"
 }
