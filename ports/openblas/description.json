@@ -13,7 +13,7 @@
       "FFLAGS=/names:lowercase /assume:underscore"
     ]
   },
-  "cmake_options": "-DBUILD_WITHOUT_LAPACK=OFF -DBUILD_BFLOAT16=OFF -DUSE_OPENMP=off",
+  "cmake_options": "-DBUILD_WITHOUT_LAPACK=OFF -DBUILD_BFLOAT16=ON -DUSE_OPENMP=off",
   "main_language": "c",
   "build_languages": [
     "fortran"
