@@ -33,7 +33,7 @@
     },
     "depedency": [
       "openssl",
-      "zlib"
+      "zlib-ng"
     ],
     "system_package_dependency": {
       "windows": [

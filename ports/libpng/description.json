@@ -30,7 +30,7 @@
       "run_test=1"
     ],
     "dependency": [
-      "zlib"
+      "zlib-ng"
     ]
   }
 }

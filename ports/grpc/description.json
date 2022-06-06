@@ -6,14 +6,13 @@
   "ignored_git_submodules": [
     "third_party/protobuf",
     "third_party/boringssl-with-bazel",
-    "third_party/zlib",
-    "third_party/abseil-cpp"
+    "third_party/zlib"
   ],
   "conditional_dependency": {
     "all_os": [
       "openssl",
-      "abseil-cpp[shared_lib]:20210324.2",
-      "protobuf"
+      "protobuf",
+      "zlib-ng"
     ]
   }
 }
