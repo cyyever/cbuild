@@ -1,8 +1,6 @@
 {
-  "git_url": "git@github.com:cyyever/vision.git",
-  "remote_git_url": "git@github.com:pytorch/vision.git",
-  "remote_git_branch": "main",
-  "git_branch": "cyy",
+  "git_url": "git@github.com:pytorch/vision.git",
+  "git_branch": "main",
   "main_language": "python",
   "environment_variable": [
     "run_test=0",
