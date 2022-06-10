@@ -9,11 +9,21 @@
     "run_test=1",
     "static_analysis=0",
     "need_compilation_json=1",
-    "clang_tidy_static_analysis=1"
+    "clang_tidy_static_analysis=1",
+    "NPY_NUM_BUILD_JOBS=6"
   ],
   "conditional_environment_variable": {
     "windows": [
       "PYTHON_BUILD_CMD=${CBUILD_PYTHON_EXE} setup.py config --fcompiler=intelem build_ext --inplace"
+    ],
+    "bsd": [
+      "CC=gcc",
+      "CXX=g++"
+    ]
+  },
+  "conditional_new_feature": {
+    "unix": [
+      "use_mold"
     ]
   },
   "system_package_dependency": {
