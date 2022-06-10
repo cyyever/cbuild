@@ -13,7 +13,7 @@ if test -d "$msvc_dir"; then
 else
   echo "no msvc dir"
 fi
-export NVCC_APPEND_FLAGS='-ccbin g++-11'
+export NVCC_APPEND_FLAGS="-ccbin ${CUDA_HOST_COMPILER}"
 cd $SRC_DIR
 ${sed_cmd} -i -e "s/compute_30/compute_${CUDAARCHS}/g" configure
 ${sed_cmd} -i -e "s/sm_30/sm_${CUDAARCHS}/g" configure
