@@ -4,5 +4,8 @@
   "environment_variable": [
     "SRC_SUBDIR=cpp"
   ],
-  "cmake_options": "-DARROW_PYTHON=on -DARROW_WITH_BACKTRACE=off -DARROW_PARQUET=on"
+  "cmake_options": "-DARROW_PYTHON=on -DARROW_WITH_BACKTRACE=off -DARROW_PARQUET=on",
+  "dependency": [
+      "numpy"
+  ]
 }

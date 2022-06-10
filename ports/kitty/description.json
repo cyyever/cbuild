@@ -27,7 +27,8 @@
     "archlinux": [
       "lcms2",
       "mesa",
-      "libxkbcommon-x11"
+      "libxkbcommon-x11",
+      "librsync"
     ],
     "pip": [
       "sphinx"
