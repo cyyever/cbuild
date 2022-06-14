@@ -8,7 +8,7 @@
   "reuse_build": true,
   "environment_variable": [
     "run_test=0",
-    "static_analysis=1",
+    "static_analysis=0",
     "clang_tidy_static_analysis=0"
   ],
   "conditional_environment_variable": {
@@ -38,7 +38,7 @@
   "ignored_git_submodules": [
     "third_party/pybind11"
   ],
-  "cmake_options": "-DFFMPEG_ROOT_DIR=${INSTALL_PREFIX} -DBUILD_TEST=on -DBUILD_BENCHMARK=off -DBUILD_LIBTIFF=on -DBUILD_LIBSND=off -DProtobuf_USE_STATIC_LIBS=off -DBUILD_OPENCV=off -DDALI_CLANG_ONLY=off -DBUILD_CUFILE=off -DCUDA_TARGET_ARCHS=${CUDAARCHS} -DBUILD_LIBTAR=off -DBUILD_NVDEC=off -DBUILD_FFMPEG=off -DBUILD_LMDB=off",
+  "cmake_options": "-DFFMPEG_ROOT_DIR=${INSTALL_PREFIX} -DBUILD_TEST=on -DBUILD_BENCHMARK=off -DBUILD_LIBTIFF=on -DBUILD_LIBSND=off -DProtobuf_USE_STATIC_LIBS=off -DBUILD_OPENCV=on -DDALI_CLANG_ONLY=off -DBUILD_CUFILE=OFF -DCUDA_TARGET_ARCHS=${CUDAARCHS} -DBUILD_LIBTAR=off -DBUILD_NVDEC=on -DBUILD_FFMPEG=on -DBUILD_LMDB=off",
   "conditional_cmake_options": {
     "sanitizer": "-DBUILD_WITH_UBSAN=on -DBUILD_WITH_LSAN=on -DBUILD_WITH_ASAN=on"
   },
