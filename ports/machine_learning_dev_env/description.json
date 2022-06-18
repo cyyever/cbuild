@@ -9,7 +9,7 @@
     "all_os": [
       "ninja",
       "numpy",
-      "protobuf:main",
+      "protobuf",
       "tbb",
       "libjpeg-turbo",
       "openblas",

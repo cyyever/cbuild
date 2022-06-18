@@ -1,4 +1,4 @@
-export PATH="/c/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.6/bin:${PATH}"
+export PATH="/c/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.7/bin:${PATH}"
 msvc_dir="/c/Program Files/Microsoft Visual Studio/2022/Preview/VC/Tools/MSVC"
 if test -d "$msvc_dir"; then
   cd "$msvc_dir"
@@ -12,8 +12,8 @@ if test -d "$msvc_dir"; then
   fi
 else
   echo "no msvc dir"
+  export NVCC_APPEND_FLAGS="-ccbin ${CUDA_HOST_COMPILER}"
 fi
-export NVCC_APPEND_FLAGS="-ccbin ${CUDA_HOST_COMPILER}"
 cd $SRC_DIR
 ${sed_cmd} -i -e "s/compute_30/compute_${CUDAARCHS}/g" configure
 ${sed_cmd} -i -e "s/sm_30/sm_${CUDAARCHS}/g" configure

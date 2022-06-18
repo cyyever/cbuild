@@ -227,7 +227,7 @@ class PackageDescription:
             pieces = item.split("=")
             name = pieces[0]
             value = "=".join(pieces[1:])
-            if name in {"INSTALL_PREFIX", "PATH"} and "mingw64" in self.context:
+            if name in {"INSTALL_PREFIX"} and "mingw64" in self.context:
                 continue
             script.append_env(name, value)
 
