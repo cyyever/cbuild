@@ -6,7 +6,6 @@
   "conditional_new_feature": {
     "all": [
       "cv",
-      "machine_learning_compilers",
       "cv_python_binding",
       "video_python_binding"
     ],
