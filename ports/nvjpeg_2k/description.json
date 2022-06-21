@@ -2,7 +2,7 @@
   "cache_time": 3000,
   "master": {
     "linux": {
-      "url": "https://developer.nvidia.com/compute/libnvjpeg-2k/secure/0.4.0/local_installers/libnvjpeg_2k-linux-x86_64-0.4.0.24.tar.gz",
+      "url": "https://developer.nvidia.com/compute/libnvjpeg-2k/secure/0.5.0/local_installers/libnvjpeg_2k-linux-x86_64-0.5.0.25.tar.gz",
       "checksum": "no_checksum"
     }
   },
