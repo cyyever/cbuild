@@ -4,7 +4,6 @@
   "dependency": [
     "doctest",
     "fmt",
-    "range-v3:master",
     "boost",
     "cyy_naive_cpp_lib:master"
   ],
