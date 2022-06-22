@@ -2,7 +2,8 @@
   "git_url": "git@github.com:kovidgoyal/kitty.git",
   "environment_variable": [
     "LDFLAGS=-L/usr/local/lib",
-    "static_analysis=1"
+    "static_analysis=1",
+    "CC=gcc"
   ],
   "build_languages": [
     "python"

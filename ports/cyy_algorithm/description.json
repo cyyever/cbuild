@@ -4,11 +4,14 @@
   "dependency": [
     "doctest",
     "fmt",
-    "range-v3:master",
     "boost",
-    "cyy_naive_cpp_lib[shared_lib]:master",
-    "cyy_math:master"
+    "cyy_naive_cpp_lib:master"
   ],
+  "conditional_dependency": {
+    "full": [
+      "cyy_math"
+    ]
+  },
   "environment_variable": [
     "static_analysis=1",
     "clang_tidy_static_analysis=1"
