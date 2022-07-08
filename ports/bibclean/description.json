@@ -15,6 +15,9 @@
     }
   },
   "system_package_dependency": {
+    "freebsd": [
+      "bibclean"
+    ],
     "ubuntu": [
       "bibclean"
     ],
