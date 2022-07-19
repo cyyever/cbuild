@@ -17,11 +17,9 @@
     ]
   },
   "conditional_dependency": {
-    "all_os": [
-      "huggingface_transformers"
-    ],
     "full": [
-      "torchaudio:master"
+      "torchaudio:master",
+      "huggingface_transformers"
     ],
     "cuda&&!windows&&full": [
       "dali:cyy"
