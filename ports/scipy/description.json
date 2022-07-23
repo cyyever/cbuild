@@ -17,6 +17,11 @@
       "PYTHON_BUILD_CMD=${CBUILD_PYTHON_EXE} setup.py config --fcompiler=intelem build_ext --inplace"
     ]
   },
+  "conditional_new_feature": {
+    "unix": [
+      "use_mold"
+    ]
+  },
   "system_package_dependency": {
     "pip": [
       "pythran"
