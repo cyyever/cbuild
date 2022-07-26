@@ -11,6 +11,7 @@
   },
   "conditional_environment_variable": {
     "all_os": [
+      "MAX_JOBS=5",
       "run_test=0",
       "clang_tidy_fix=1",
       "static_analysis=1",
