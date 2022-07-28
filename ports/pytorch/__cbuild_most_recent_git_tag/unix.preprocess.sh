@@ -5,6 +5,7 @@ ${sed_cmd} -i -e '/Werror/d' third_party/fbgemm/CMakeLists.txt
 ${sed_cmd} -i -e 's/90/11/g' third_party/foxi/CMakeLists.txt
 ${sed_cmd} -i -e 's/CMAKE_CXX_STANDARD 17/CMAKE_CXX_STANDARD 23/g' CMakeLists.txt
 if [[ "$(uname)" == "FreeBSD" ]]; then
+  ${sed_cmd} -i -e 's/_assert/assert_in_pytorch/g' aten/src/ATen/native/sparse/ValidateCompressedIndicesCommon.h
   cd third_party
   rm -rf cpuinfo
   git clone git@github.com:cyyever/cpuinfo.git
