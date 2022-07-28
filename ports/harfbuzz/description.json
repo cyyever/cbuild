@@ -1,5 +1,4 @@
 {
   "git_url": "git@github.com:harfbuzz/harfbuzz.git",
-  "main_language": "c",
-  "cmake_options": "-DHB_BUILD_UTILS=ON"
+  "main_language": "c"
 }
