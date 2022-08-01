@@ -49,6 +49,8 @@ class PackageSpecification:
         res = self.name
         if self.features:
             res += "[" + ",".join(sorted(list(self.features))) + "]"
+        if self.branch == "__cbuild_most_recent_git_tag":
+            return res
         return res + ":" + self.branch
 
     def __eq__(self, other):
