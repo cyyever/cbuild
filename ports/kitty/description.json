@@ -1,7 +1,7 @@
 {
   "git_url": "git@github.com:kovidgoyal/kitty.git",
   "environment_variable": [
-    "LDFLAGS=-L/usr/local/lib",
+    "LDFLAGS=-L/usr/local/lib -L/usr/lib",
     "static_analysis=1",
     "CC=gcc"
   ],
