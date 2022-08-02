@@ -28,6 +28,6 @@
     }
   },
   "dependency": [
-    "gflags[shared_lib]"
+    "gflags"
   ]
 }
