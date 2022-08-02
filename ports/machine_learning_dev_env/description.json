@@ -12,6 +12,7 @@
       "protobuf",
       "tbb",
       "libjpeg-turbo",
+      "zlib-ng",
       "openblas",
       "libpng:libpng16",
       "eigen",
