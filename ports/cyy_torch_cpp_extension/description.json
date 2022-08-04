@@ -9,6 +9,11 @@
     "c",
     "python"
   ],
+  "conditional_new_feature": {
+    "unix": [
+      "use_mold"
+    ]
+  },
   "cmake_options": "-DDISABLE_RUNTIME_ANALYSIS=on",
   "dependency": [
     "cyy_algorithm[shared_lib]:main",
