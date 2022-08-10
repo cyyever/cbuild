@@ -32,8 +32,7 @@
   "dependency": [
     "torchvision:cyy",
     "ffmpeg",
-    "opencv:cyy",
-    "libtiff"
+    "opencv:cyy"
   ],
   "ignored_git_submodules": [
     "third_party/pybind11"
