@@ -70,6 +70,7 @@
     ]
   },
   "dependency": [
-    "harfbuzz[shared_lib]"
+    "harfbuzz",
+    "openssl"
   ]
 }

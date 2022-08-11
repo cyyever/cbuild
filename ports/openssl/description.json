@@ -17,6 +17,9 @@
     "ubuntu": [
       "libssl-dev"
     ],
+    "freebsd": [
+      "openssl"
+    ],
     "archlinux": [
       "openssl"
     ],
