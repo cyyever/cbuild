@@ -16,7 +16,6 @@
   },
   "cmake_options": "-DDISABLE_RUNTIME_ANALYSIS=on",
   "dependency": [
-    "cyy_algorithm[shared_lib]:main",
     "pytorch:cyy",
     "cyy_naive_cpp_lib[shared_lib]:master"
   ]
