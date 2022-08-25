@@ -30,7 +30,11 @@ $cmake_cmd += $__SRC_DIR
 
 Invoke-Expression $cmake_cmd
 if ($LastExitCode -ne 0) {
-    exit $LastExitCode
+    rm -r -Force *
+    Invoke-Expression $cmake_cmd
+    if ($LastExitCode -ne 0) {
+        exit $LastExitCode
+    }
 }
 cmake --build . --config $env:BUILD_TYPE
 if ($LastExitCode -ne 0) {
