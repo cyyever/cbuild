@@ -1,14 +1,22 @@
 {
-  "git_url": "git@github.com:fish-shell/fish-shell.git",
-  "main_language": "c",
-  "environment_variable": [
-    "INSTALL_SUBDIR=fish-shell",
-    "run_test=0"
-  ],
-  "cmake_options": "-DBUILD_DOCS=off",
+  "archlinux": {
+    "group_package": true
+  },
+  "all_os": {
+    "git_url": "git@github.com:fish-shell/fish-shell.git",
+    "main_language": "c",
+    "environment_variable": [
+      "INSTALL_SUBDIR=fish-shell",
+      "run_test=0"
+    ],
+    "cmake_options": "-DBUILD_DOCS=off"
+  },
   "system_package_dependency": {
     "centos": [
       "ncurses-devel"
+    ],
+    "archlinux": [
+      "fish"
     ],
     "ubuntu": [
       "libncurses-dev"

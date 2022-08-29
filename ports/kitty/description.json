@@ -1,13 +1,18 @@
 {
-  "git_url": "git@github.com:kovidgoyal/kitty.git",
-  "environment_variable": [
-    "LDFLAGS=-L/usr/local/lib -L/usr/lib",
-    "static_analysis=1",
-    "CC=gcc"
-  ],
-  "build_languages": [
-    "python"
-  ],
+  "archlinux": {
+    "group_package": true
+  },
+  "all_os": {
+    "git_url": "git@github.com:kovidgoyal/kitty.git",
+    "environment_variable": [
+      "LDFLAGS=-L/usr/local/lib -L/usr/lib",
+      "static_analysis=1",
+      "CC=gcc"
+    ],
+    "build_languages": [
+      "python"
+    ]
+  },
   "system_package_dependency": {
     "ubuntu": [
       "libdbus-1-dev",
@@ -35,7 +40,8 @@
       "lcms2",
       "mesa",
       "libxkbcommon-x11",
-      "librsync"
+      "librsync",
+      "kitty"
     ],
     "pip": [
       "sphinx"
