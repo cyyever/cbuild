@@ -33,6 +33,9 @@ if test -f "setup.py"; then
     ${CBUILD_PYTHON_EXE} setup.py install --user --force
   fi
   if [[ "${run_test}" == "1" ]]; then
+    if [[ -n ${TEST_SUBDIR+x} ]]; then
+      cd ${TEST_SUBDIR}
+    fi
     if [[ "${PACKAGE_VERSION}" == "master" ]]; then
       ${CBUILD_PYTHON_EXE} -m pytest || true
     else
