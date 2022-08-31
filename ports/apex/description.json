@@ -4,11 +4,15 @@
   "conditional_new_feature": {
     "support_cuda": [
       "cuda"
+    ],
+    "unix": [
+      "use_mold",
+      "machine_learning_compilers"
     ]
   },
   "conditional_environment_variable": {
     "all_os": [
-      "run_test=0",
+      "run_test=1",
       "clang_tidy_fix=1",
       "static_analysis=1",
       "clang_tidy_static_analysis=1"
