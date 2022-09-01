@@ -1,19 +1,9 @@
 {
   "archlinux": {
-    "group_package": true,
-    "system_package_dependency": {
-      "archlinux": [
-        "google-glog"
-      ]
-    }
+    "group_package": true
   },
   "freebsd": {
-    "group_package": true,
-    "system_package_dependency": {
-      "freebsd": [
-        "glog"
-      ]
-    }
+    "group_package": true
   },
   "all_os": {
     "git_url": "git@github.com:google/glog.git",
@@ -26,6 +16,14 @@
         "run_test=0"
       ]
     }
+  },
+  "system_package_dependency": {
+    "freebsd": [
+      "glog"
+    ],
+    "archlinux": [
+      "google-glog"
+    ]
   },
   "dependency": [
     "gflags"

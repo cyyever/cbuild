@@ -1,19 +1,9 @@
 {
   "archlinux": {
-    "group_package": true,
-    "system_package_dependency": {
-      "archlinux": [
-        "gflags"
-      ]
-    }
+    "group_package": true
   },
   "freebsd": {
-    "group_package": true,
-    "system_package_dependency": {
-      "freebsd": [
-        "gflags"
-      ]
-    }
+    "group_package": true
   },
   "all_os": {
     "git_url": "git@github.com:gflags/gflags.git",
@@ -23,5 +13,13 @@
         "run_test=0"
       ]
     }
+  },
+  "system_package_dependency": {
+    "freebsd": [
+      "gflags"
+    ],
+    "archlinux": [
+      "gflags"
+    ]
   }
 }
