@@ -1,0 +1,10 @@
+{
+  "git_url": "git@github.com:gsass1/NTop.git",
+  "cache_time": 300,
+  "main_language": "c",
+  "conditional_environment_variable": {
+    "windows": [
+      "no_install=1"
+    ]
+  }
+}
