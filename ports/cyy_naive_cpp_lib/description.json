@@ -46,7 +46,7 @@
       "pybind11"
     ],
     "video": [
-      "ffmpeg[shared_lib]"
+      "ffmpeg"
     ]
   },
   "conditional_cmake_options": {

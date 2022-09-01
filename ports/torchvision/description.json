@@ -29,6 +29,7 @@
     ]
   },
   "dependency": [
-    "pytorch:cyy"
+    "pytorch:cyy",
+    "ffmpeg"
   ]
 }
