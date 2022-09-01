@@ -1,5 +1,9 @@
 {
-  "git_url": "git@github.com:pytorch/functorch.git",
+  "git_url": "git@github.com:cyyever/pytorch_private.git",
+  "remote_git_url": "git@github.com:pytorch/pytorch.git",
+  "remote_git_branch": "master",
+  "git_branch": "cyy",
+  "reuse_build": true,
   "main_language": "python",
   "conditional_new_feature": {
     "support_cuda": [
@@ -15,7 +19,8 @@
       "run_test=0",
       "clang_tidy_fix=1",
       "static_analysis=1",
-      "clang_tidy_static_analysis=1"
+      "clang_tidy_static_analysis=1",
+      "SRC_SUBDIR=functorch"
     ],
     "windows": [
       "DISTUTILS_USE_SDK=0"
