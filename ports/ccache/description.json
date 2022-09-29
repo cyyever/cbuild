@@ -7,9 +7,6 @@
   "system_package_dependency": {
     "unix": [
       "gperf"
-    ],
-    "ubuntu": [
-      "libb2-dev"
     ]
   },
   "cmake_options": "-DHIREDIS_FROM_INTERNET=on -DZSTD_FROM_INTERNET=on"
