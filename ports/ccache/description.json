@@ -8,27 +8,9 @@
     "unix": [
       "gperf"
     ],
-    "archlinux": [
-      "hiredis"
-    ],
-    "fedora": [
-      "libzstd-devel"
-    ],
-    "centos": [
-      "libzstd-devel"
-    ],
-    "freebsd": [
-      "zstd",
-      "hiredis"
-    ],
-    "macos": [
-      "zstd"
-    ],
     "ubuntu": [
-      "libhiredis-dev",
-      "libzstd-dev",
       "libb2-dev"
     ]
   },
-  "configure_options": "--disable-man"
+  "cmake_options": "-DHIREDIS_FROM_INTERNET=on -DZSTD_FROM_INTERNET=on"
 }
