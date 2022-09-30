@@ -23,10 +23,5 @@
     "cuda&&!windows&&full": [
       "dali:cyy"
     ]
-  },
-  "system_package_dependency": {
-    "pip": [
-      "pynvml"
-    ]
   }
 }
