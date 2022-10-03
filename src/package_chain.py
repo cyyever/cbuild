@@ -35,7 +35,7 @@ class PackageChain:
                     real_action = BuildAction.BUILD
                     print("disable cache of", cur_pkg)
             if cur_pkg.build_local(real_action):
-                rebuilt_pkgs.add(cur_pkg.name())
+                rebuilt_pkgs.add(cur_pkg.name)
 
     def build_docker(self):
         print("build packages in the following context:")
@@ -95,7 +95,7 @@ class PackageChain:
                     chain += sub_chain
                 raise RuntimeError("detect package dependency loop:" + chain)
 
-            packages.sort(key=lambda x: x.name())
+            packages.sort(key=lambda x: x.name)
             self.chain += packages
         assert self.chain[-1] == last_package
 

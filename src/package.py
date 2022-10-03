@@ -22,14 +22,16 @@ class Package:
     def source(self):
         return self.desc.get_source()
 
+    @property
     def name(self):
         return self.desc.spec.name
 
+    @property
     def branch(self):
         return self.desc.spec.branch
 
     def full_name(self):
-        return self.name() + "-" + self.branch()
+        return f"{self.name}-{self.branch}"
 
     def specification(self):
         return self.desc.spec
@@ -198,14 +200,14 @@ class Package:
                     sys.exit("failed to build docker image of " + docker_image_name)
 
     def __get_docker_image_name(self):
-        tag = self.specification().branch
+        tag = self.branch
         if self.specification().features:
             tag += "-" + "-".join(sorted(self.specification().features))
         tag = tag.replace("/", "-")
-        return self.name().lower() + ":" + tag[:50]
+        return self.name.lower() + ":" + tag[:50]
 
     def __get_docker_runtime_path(self):
-        for branch in [self.branch(), "__cbuild_for_all_branches"]:
+        for branch in [self.branch, "__cbuild_for_all_branches"]:
             script_path = os.path.join(
                 self.desc.port_dir(),
                 branch,

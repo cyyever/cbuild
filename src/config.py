@@ -2,7 +2,7 @@
 import json
 import multiprocessing
 import os
-from typing import Callable
+from typing import Any, Callable
 
 from cyy_naive_lib.algorithm.sequence_op import flatten_list
 
@@ -11,7 +11,11 @@ from .environment import project_dir
 
 class ToolMapping:
     def __init__(self):
-        with open(os.path.join(project_dir, "config", "tool_mapping.json"), "r") as f:
+        with open(
+            os.path.join(project_dir, "config", "tool_mapping.json"),
+            "r",
+            encoding="utf8",
+        ) as f:
             self.data: dict = json.load(f)
 
     def guess_language(self, lines):
@@ -38,7 +42,11 @@ class ToolMapping:
 
 
 class Config:
-    def __init__(self, local_config_chain: list = None, global_config_path: str = None):
+    def __init__(
+        self,
+        local_config_chain: list | None = None,
+        global_config_path: str | None = None,
+    ):
         self.config_chain = []
         if local_config_chain is not None:
             self.config_chain = local_config_chain
@@ -52,14 +60,14 @@ class Config:
     def set(self, key: str, value: str) -> None:
         self.config_chain[0][key] = value
 
-    def get(self, key: str, default=None):
+    def get(self, key: str, default: Any = None) -> Any:
         for config in self.config_chain:
             if key in config:
                 return config[key]
         return default
 
     def conditional_get(
-        self, key: str, check_fn: Callable, global_to_local=False
+        self, key: str, check_fn: Callable, global_to_local: bool = False
     ) -> list:
         values = []
         chain = self.config_chain
@@ -83,14 +91,14 @@ class Config:
 class Environment:
     def __init__(
         self,
-        local_config_chain: list = None,
+        local_config_chain: list | None = None,
     ):
         self.config = Config(
             local_config_chain=local_config_chain,
             global_config_path=os.path.join(project_dir, "config", "env.json"),
         )
 
-    def get(self, check_fn: Callable):
+    def get(self, check_fn: Callable) -> list:
         environment_variables = self.config.conditional_get(
             "base_environment_variable", check_fn
         ) + self.config.conditional_get(
