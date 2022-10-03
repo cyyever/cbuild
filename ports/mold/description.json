@@ -2,6 +2,7 @@
     "git_url": "git@github.com:rui314/mold.git",
     "main_language": "c",
     "reuse_build": true,
+    "cache_time": 999,
     "environment_variable": [
         "no_install=1",
         "SYSTEM_TBB=1"
