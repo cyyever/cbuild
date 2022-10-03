@@ -72,6 +72,7 @@ class GitSource(Source):
         if not os.getenv("no_update_pkg"):
             exec_cmd("git clean -fxd :/")
             exec_cmd("git restore .", throw=False)
+            exec_cmd("git submodule foreach git restore .", throw=False)
         if self.remote_url is not None:
             assert self.remote_branch is not None
             exec_cmd("git fetch origin " + self.spec.branch)
