@@ -17,7 +17,10 @@ from .package_description import PackageDescription
 class Package:
     def __init__(self, specification):
         self.desc = PackageDescription(specification)
-        self.source = self.desc.get_source()
+
+    @property
+    def source(self):
+        return self.desc.get_source()
 
     def name(self):
         return self.desc.spec.name
