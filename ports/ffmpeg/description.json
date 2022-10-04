@@ -24,9 +24,6 @@
       "x265[static_lib]"
     ]
   },
-  "environment_variable": [
-    "run_test=1"
-  ],
   "system_package_dependency": {
     "ubuntu": [
       "libx264-dev",
