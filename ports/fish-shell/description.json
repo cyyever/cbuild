@@ -5,6 +5,9 @@
   "all_os": {
     "git_url": "git@github.com:fish-shell/fish-shell.git",
     "main_language": "c",
+    "new_feature": [
+      "static_lib"
+    ],
     "environment_variable": [
       "INSTALL_SUBDIR=fish-shell",
       "run_test=0"

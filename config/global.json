@@ -25,7 +25,7 @@
       "rust_env:master"
     ],
     "feature_building_tool_cmake": [
-      "cmake[static_lib]"
+      "cmake"
     ],
     "feature_package_manager_yay": [
       "yay:master"

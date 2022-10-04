@@ -10,6 +10,9 @@
     "main_language": "c",
     "cache_time": 30,
     "reuse_build": true,
+    "new_feature": [
+      "static_lib"
+    ],
     "conditional_dependency": {
       "unix": [
         "openssl"
