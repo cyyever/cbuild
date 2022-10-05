@@ -84,7 +84,7 @@
       "cuda": [
         "USE_CUDA=on",
         "USE_CUDNN=on",
-        "USE_MKLDNN=off",
+        "USE_MKLDNN=on",
         "CUDNN_ROOT=${INSTALL_PREFIX}/cudnn",
         "CUDNN_LIBRARY=${INSTALL_PREFIX}/cudnn"
       ],
