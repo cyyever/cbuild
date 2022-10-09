@@ -17,10 +17,8 @@
     "archlinux": [
       "texlive-most",
       "zathura-pdf-poppler",
-      "xdotool"
-    ],
-    "yay": [
-      "texlive-most-doc"
+      "xdotool",
+      "biber"
     ],
     "ubuntu": [
       "texlive-full",
