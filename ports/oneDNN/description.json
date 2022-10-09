@@ -1,0 +1,9 @@
+{
+  "git_url": "git@github.com:oneapi-src/oneDNN.git",
+  "conditional_new_feature": {
+    "unix": [
+      "machine_learning_compilers"
+    ]
+  },
+  "main_language": "c"
+}
