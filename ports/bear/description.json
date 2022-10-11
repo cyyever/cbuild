@@ -1,27 +1,15 @@
 {
   "archlinux": {
-    "group_package": true,
-    "system_package_dependency": {
-      "archlinux": [
-        "bear"
-      ]
-    }
+    "group_package": true
   },
   "freebsd": {
-    "group_package": true,
-    "system_package_dependency": {
-      "freebsd": [
-        "bear"
-      ]
-    }
+    "group_package": true
+  },
+  "macos": {
+    "group_package": true
   },
   "ubuntu": {
-    "group_package": true,
-    "system_package_dependency": {
-      "ubuntu": [
-        "bear"
-      ]
-    }
+    "group_package": true
   },
   "all_os": {
     "git_url": "git@github.com:rizsotto/Bear.git",
@@ -40,5 +28,19 @@
       "fmt[shared_lib]",
       "nlohmann_json"
     ]
-  }
+  },
+    "system_package_dependency": {
+      "freebsd": [
+        "bear"
+      ],
+      "ubuntu": [
+        "bear"
+      ],
+      "macos": [
+        "bear"
+      ],
+      "archlinux": [
+        "bear"
+      ]
+    }
 }
