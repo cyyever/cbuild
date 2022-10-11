@@ -1,4 +1,4 @@
-if ! command -v pacman; then
+if [[ -n ${__SRC_DIR+x} ]]; then
   # ${sudo_cmd} env "PATH=$PATH" "LD_LIBRARY_PATH=$LD_LIBRARY_PATH" 
   ${CBUILD_PYTHON_EXE} setup.py linux-package --prefix ${INSTALL_PREFIX}
 fi

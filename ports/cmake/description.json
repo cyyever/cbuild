@@ -5,6 +5,9 @@
   "freebsd": {
     "group_package": true
   },
+  "macos": {
+    "group_package": true
+  },
   "all_os": {
     "git_url": "https://gitlab.kitware.com/cmake/cmake.git",
     "main_language": "c",

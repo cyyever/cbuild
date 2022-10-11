@@ -20,7 +20,9 @@
       "libtool"
     ],
     "macos": [
-      "ninja"
+      "ninja",
+      "pkg-config",
+"gcc"
     ],
     "freebsd": [
       "libunwind",

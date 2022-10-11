@@ -2,6 +2,9 @@
   "windows": {
     "group_package": true
   },
+  "macos": {
+    "group_package": true
+  },
   "unix": {
     "git_url": "git@github.com:python/cpython.git",
     "git_branch": "v3.10.7",
@@ -34,7 +37,8 @@
     "depedency": [
       "openssl",
       "zlib-ng"
-    ],
+    ]
+},
     "system_package_dependency": {
       "windows": [
         "python"
@@ -83,6 +87,7 @@
         "tk"
       ],
       "macos": [
+        "python3",
         "bzip2",
         "expat",
         "gdbm",
@@ -90,6 +95,5 @@
         "readline",
         "sqlite"
       ]
-    }
   }
 }
