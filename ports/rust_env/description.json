@@ -8,6 +8,9 @@
     "archlinux": [
       "rust"
     ],
+    "macos": [
+      "rust"
+    ],
     "centos": [
       "rust",
       "cargo"
