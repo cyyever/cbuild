@@ -20,11 +20,11 @@ elif [[ "$(uname -s)" == "Darwin" ]]; then
   brew_cmd=/opt/homebrew/bin/brew
   if ! command -v $brew_cmd >/dev/null; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-  fi
   $brew_cmd install git
   $brew_cmd install python3
   $brew_cmd install jq
   export python3_cmd=/opt/homebrew/bin/python3
+  fi
 fi
 
 ${python3_cmd} -m ensurepip --upgrade --user || true

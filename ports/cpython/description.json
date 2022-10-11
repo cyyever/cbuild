@@ -15,14 +15,14 @@
     ],
     "conditional_environment_variable": {
       "macos": [
-        "PKG_CONFIG_PATH=$(brew --prefix openssl)/lib/pkgconfig",
+        "PKG_CONFIG_PATH=$(brew --prefix openssl)/lib/pkgconfig:$(brew --prefix libffi)/lib/pkgconfig",
         "CPPFLAGS=-I$(brew --prefix readline)/include",
         "LDFLAGS=-L$(brew --prefix readline)/lib"
       ]
     },
     "main_language": "c",
     "configure_options": [
-      "--enable-shared --with-system-expat --with-system-ffi --with-ensurepip=yes"
+	      "--enable-shared --with-system-expat --with-ensurepip=yes"
     ],
     "conditional_configure_options": {
       "debug_build": [
@@ -30,6 +30,9 @@
       ],
       "!debug_build": [
         "--enable-optimizations"
+      ],
+      "!macos": [
+	      "--with-system-ffi"
       ]
     },
     "depedency": [
@@ -89,8 +92,8 @@
         "bzip2",
         "expat",
         "gdbm",
-        "libffi",
         "readline",
+	"libffi",
         "sqlite"
       ]
   }
