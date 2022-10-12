@@ -1,3 +1,8 @@
+if [[ $BUILD_CONTEXT_macos == "1" ]]
+then
+  mkdir -p ~/.local/lib/python${PYTHONVERSION}/site-packages/numpy/.dylibs
+  cp ${INSTALL_PREFIX}/lib/libopenblas* ~/.local/lib/python${PYTHONVERSION}/site-packages/numpy/.dylibs
+fi
 if [[ "${test_numpy}" == "1" ]]; then
   cd ~
   ${CBUILD_PYTHON_EXE} -c "import numpy;numpy.test()"
