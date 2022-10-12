@@ -10,12 +10,18 @@
     "freebsd": {
       "group_package": true
     },
+    "macos": {
+      "group_package": true
+    },
     "archlinux": {
       "group_package": true
     }
   },
   "system_package_dependency": {
     "freebsd": [
+      "bibclean"
+    ],
+    "macos": [
       "bibclean"
     ],
     "ubuntu": [
