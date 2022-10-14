@@ -14,10 +14,11 @@
       "tex-dvipsk",
       "zathura-pdf-poppler"
     ],
+    "brew_cask": [
+      "sioyek",
+    ],
     "macos": [
       "texlive",
-      "zathura-pdf-poppler",
-      "xdotool",
       "biber"
     ],
     "archlinux": [
