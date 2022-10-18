@@ -1,5 +1,5 @@
 cd $SRC_DIR
-if [[ $BUILD_CONTEXT_macos == "1" ]]
+if test -d ~/Library/Fonts
 then
 	cp -r * ~/Library/Fonts
 else
