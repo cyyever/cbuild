@@ -1,11 +1,9 @@
 {
   "archlinux": {
-    "group_package": true,
-    "system_package_dependency": {
-      "archlinux": [
-        "boost"
-      ]
-    }
+    "group_package": true
+  },
+  "macos": {
+    "group_package": true
   },
   "all_os": {
     "git_url": "git@github.com:boostorg/boost.git",
@@ -16,5 +14,13 @@
     ],
     "cmake_options": "-DBOOST_ENABLE_CMAKE=on -DBOOST_INCLUDE_LIBRARIES='container_hash;bimap;dynamic_bitset;pfr'",
     "cache_time": 300
+  },
+  "system_package_dependency": {
+    "archlinux": [
+      "boost"
+    ],
+    "macos": [
+      "boost"
+    ]
   }
 }
