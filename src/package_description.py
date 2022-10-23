@@ -26,12 +26,16 @@ class PackageDescription:
         if not isinstance(specification, PackageSpecification):
             specification = PackageSpecification(specification)
         self.spec = specification
-        if not os.path.isfile(self.__description_json_path()):
+        if not os.path.isfile(self.__description_json_path):
             sys.exit("unknown package:" + self.spec.name)
 
         description = {}
-        with open(self.__description_json_path(), "r", encoding="utf-8") as f:
-            description = json.load(f)
+        try:
+            with open(self.__description_json_path, "r", encoding="utf-8") as f:
+                description = json.load(f)
+        except Exception as e:
+            print("error with", self.__description_json_path)
+            raise e
 
         self.__context = None
         self.features = None
@@ -446,6 +450,7 @@ class PackageDescription:
                 return port_dir
         raise RuntimeError(f"No port for package {self.spec.name}")
 
+    @property
     def __description_json_path(self):
         return os.path.join(self.port_dir(), "description.json")
 
