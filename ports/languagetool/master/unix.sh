@@ -1,3 +1,4 @@
+export PACKAGE_VERSION=5.9
 cd ${SRC_DIR}
 mvn --projects languagetool-standalone --also-make clean package -DskipTests
 rm -rf $INSTALL_PREFIX/languagetool
