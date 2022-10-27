@@ -26,6 +26,9 @@
         "libgtest-dev",
         "libgmock-dev"
       ],
+      "macos": [
+        "tree-sitter"
+      ],
       "archlinux": [
         "msgpack-c",
         "libluv",
