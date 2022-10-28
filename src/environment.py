@@ -31,8 +31,9 @@ class BuildContext:
     @staticmethod
     def get():
         context_set = copy.deepcopy(BuildContext.__context_set)
-        if "intel" in get_processor_name():
-            context_set.add("intel")
+        processor_name = get_processor_name().lower()
+        if "intel" in processor_name or "amd" in processor_name:
+            context_set.add("amd64")
         context_set.add("all_os")
         system = BuildContext.get_target_system()
         context_set.add(system)
