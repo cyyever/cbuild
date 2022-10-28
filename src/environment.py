@@ -43,14 +43,15 @@ class BuildContext:
                 context_set.add("bsd")
             else:
                 context_set.add("linux")
-        if which("nvidia-smi") is not None and (
-            "linux" in context_set or "windows" in context_set
-        ):
-            if "docker" in context_set:
-                if "cuda_docker" in context_set:
+        if "macos" not in context_set:
+            if which("nvidia-smi") is not None and (
+                "linux" in context_set or "windows" in context_set
+            ):
+                if "docker" in context_set:
+                    if "cuda_docker" in context_set:
+                        context_set.add("support_cuda")
+                else:
                     context_set.add("support_cuda")
-            else:
-                context_set.add("support_cuda")
         return context_set
 
 
