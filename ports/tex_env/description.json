@@ -19,6 +19,7 @@
     ],
     "macos": [
       "texlive",
+      "pstree",
       "biber"
     ],
     "archlinux": [
