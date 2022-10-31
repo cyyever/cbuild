@@ -5,6 +5,9 @@
   "freebsd": {
     "group_package": true
   },
+  "macos": {
+    "group_package": true
+  },
   "all_os": {
     "git_url": "git@github.com:ninja-build/ninja.git",
     "main_language": "c",
@@ -14,6 +17,9 @@
   },
   "system_package_dependency": {
     "freebsd": [
+      "ninja"
+    ],
+    "macos": [
       "ninja"
     ],
     "archlinux": [

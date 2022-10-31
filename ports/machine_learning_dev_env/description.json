@@ -23,6 +23,9 @@
     "cuda": [
       "cudnn"
     ],
+    "!amd64": [
+      "tbb"
+    ],
     "cuda&&!windows": [
       "nccl"
     ]
