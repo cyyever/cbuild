@@ -10,13 +10,15 @@
       "ninja",
       "numpy",
       "protobuf",
-      "tbb",
       "libjpeg-turbo",
       "zlib-ng",
       "openblas",
       "libpng:libpng16",
       "eigen",
       "pillow-simd"
+    ],
+    "amd64": [
+      "tbb"
     ],
     "cuda": [
       "cudnn"
