@@ -20,7 +20,8 @@
     "macos": [
       "texlive",
       "pstree",
-      "biber"
+      "biber",
+      "latexindent"
     ],
     "archlinux": [
       "texlive-most",
