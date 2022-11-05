@@ -30,9 +30,11 @@
       "support_cuda": [
         "cuda"
       ],
-      "unix": [
-        "machine_learning_compilers",
+      "unix&&!macos": [
         "use_mold"
+      ],
+      "unix": [
+        "machine_learning_compilers"
       ]
     },
     "main_language": "python",
