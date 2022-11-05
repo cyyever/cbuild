@@ -82,5 +82,5 @@
   "conditional_docker_base_image": {
     "all_os": "ubuntu:devel"
   },
-  "cache_time": 10
+  "cache_time": 90
 }
