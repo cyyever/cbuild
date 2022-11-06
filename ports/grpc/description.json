@@ -2,7 +2,10 @@
   "git_url": "git@github.com:grpc/grpc.git",
   "main_language": "c",
   "reuse_build": true,
-  "cmake_options": "-DBUILD_TESTING=OFF -DgRPC_ZLIB_PROVIDER=package -DgRPC_PROTOBUF_PROVIDER=package -DgRPC_BUILD_GRPC_PYTHON_PLUGIN=on -DgRPC_ABSL_PROVIDER=module -DgRPC_SSL_PROVIDER=module",
+  "cmake_options": "-DBUILD_TESTING=OFF -DgRPC_ZLIB_PROVIDER=package -DgRPC_PROTOBUF_PROVIDER=package -DgRPC_BUILD_GRPC_PYTHON_PLUGIN=on -DgRPC_ABSL_PROVIDER=module -DgRPC_SSL_PROVIDER=package",
+  "conditional_cmake_options": {
+    "macos": "-DOPENSSL_ROOT_DIR=$(brew --prefix openssl)"
+  },
   "ignored_git_submodules": [
     "third_party/protobuf",
     "third_party/zlib"
