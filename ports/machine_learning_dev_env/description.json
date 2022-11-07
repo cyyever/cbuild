@@ -14,7 +14,9 @@
       "zlib-ng",
       "openblas",
       "libpng:libpng16",
-      "eigen",
+      "eigen"
+    ],
+    "!macos": [
       "pillow-simd"
     ],
     "amd64": [
