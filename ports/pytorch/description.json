@@ -53,7 +53,6 @@
       "USE_TSAN=off",
       "NO_VPTR=on",
       "USE_SYSTEM_BIND11=on",
-      "BUILD_CAFFE2_MOBILE=off",
       "BUILD_CUSTOM_PROTOBUF=off",
       "USE_DISTRIBUTED=on",
       "USE_GLOO=off",
@@ -84,7 +83,7 @@
       "cuda": [
         "USE_CUDA=on",
         "USE_CUDNN=on",
-        "USE_MKLDNN=on",
+        "USE_MKLDNN=off",
         "CUDNN_ROOT=${INSTALL_PREFIX}/cudnn",
         "CUDNN_LIBRARY=${INSTALL_PREFIX}/cudnn"
       ],
