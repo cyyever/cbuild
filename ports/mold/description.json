@@ -5,7 +5,8 @@
     "cache_time": 999,
     "environment_variable": [
         "no_install=1",
-        "SYSTEM_TBB=1"
+        "SYSTEM_TBB=1",
+        "no_test=1"
     ],
     "cmake_options": "-DMOLD_USE_SYSTEM_TBB=on -DMOLD_USE_SYSTEM_MIMALLOC=on",
     "dependency": [
