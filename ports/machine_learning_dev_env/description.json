@@ -16,17 +16,12 @@
       "libpng:libpng16",
       "eigen"
     ],
-    "!macos": [
-      "pillow-simd"
-    ],
     "amd64": [
-      "tbb"
+      "tbb",
+      "pillow-simd"
     ],
     "cuda": [
       "cudnn"
-    ],
-    "!amd64": [
-      "tbb"
     ],
     "cuda&&!windows": [
       "nccl"
