@@ -14,11 +14,11 @@
       "zlib-ng",
       "openblas",
       "libpng:libpng16",
-      "eigen"
+      "eigen",
+      "pillow-simd"
     ],
     "amd64": [
-      "tbb",
-      "pillow-simd"
+      "tbb"
     ],
     "cuda": [
       "cudnn"
