@@ -16,13 +16,13 @@
     "conditional_environment_variable": {
       "macos": [
         "PKG_CONFIG_PATH=$(brew --prefix openssl)/lib/pkgconfig:$(brew --prefix libffi)/lib/pkgconfig",
-        "CPPFLAGS=-I$(brew --prefix readline)/include",
-        "LDFLAGS=-L$(brew --prefix readline)/lib"
+        "CPPFLAGS=-I$(brew --prefix readline)/include -I$(brew --prefix xz)/include",
+        "LDFLAGS=-L$(brew --prefix readline)/lib -L$(brew --prefix xz)/lib"
       ]
     },
     "main_language": "c",
     "configure_options": [
-	      "--enable-shared --with-system-expat --with-ensurepip=yes"
+      "--enable-shared --with-system-expat --with-ensurepip=yes"
     ],
     "conditional_configure_options": {
       "debug_build": [
@@ -32,69 +32,70 @@
         "--enable-optimizations"
       ],
       "!macos": [
-	      "--with-system-ffi"
+        "--with-system-ffi"
       ]
     },
     "depedency": [
       "openssl",
       "zlib-ng"
     ]
-},
-    "system_package_dependency": {
-      "windows": [
-        "python"
-      ],
-      "centos": [
-        "bzip2-devel",
-        "xz-devel",
-        "libffi-devel",
-        "readline-devel",
-        "sqlite-devel",
-        "expat-devel"
-      ],
-      "fedora": [
-        "bzip2-devel",
-        "libffi-devel",
-        "readline-devel",
-        "sqlite-devel",
-        "expat-devel"
-      ],
-      "freebsd": [
-        "sqlite3"
-      ],
-      "ubuntu": [
-        "libexpat1-dev",
-        "libffi-dev",
-        "libreadline-dev",
-        "liblzma-dev",
-        "libncursesw5-dev",
-        "libssl-dev",
-        "libsqlite3-dev",
-        "tk-dev",
-        "libgdbm-dev",
-        "libc6-dev",
-        "libbz2-dev"
-      ],
-      "archlinux": [
-        "bzip2",
-        "expat",
-        "gdbm",
-        "libffi",
-        "libnsl",
-        "libxcrypt",
-        "bluez-libs",
-        "mpdecimal",
-        "sqlite",
-        "tk"
-      ],
-      "macos": [
-        "python3",
-        "bzip2",
-        "expat",
-        "gdbm",
-        "readline",
-	"libffi",
-        "sqlite"
-      ]
+  },
+  "system_package_dependency": {
+    "windows": [
+      "python"
+    ],
+    "centos": [
+      "bzip2-devel",
+      "xz-devel",
+      "libffi-devel",
+      "readline-devel",
+      "sqlite-devel",
+      "expat-devel"
+    ],
+    "fedora": [
+      "bzip2-devel",
+      "libffi-devel",
+      "readline-devel",
+      "sqlite-devel",
+      "expat-devel"
+    ],
+    "freebsd": [
+      "sqlite3"
+    ],
+    "ubuntu": [
+      "libexpat1-dev",
+      "libffi-dev",
+      "libreadline-dev",
+      "liblzma-dev",
+      "libncursesw5-dev",
+      "libssl-dev",
+      "libsqlite3-dev",
+      "tk-dev",
+      "libgdbm-dev",
+      "libc6-dev",
+      "libbz2-dev"
+    ],
+    "archlinux": [
+      "bzip2",
+      "expat",
+      "gdbm",
+      "libffi",
+      "libnsl",
+      "libxcrypt",
+      "bluez-libs",
+      "mpdecimal",
+      "sqlite",
+      "tk"
+    ],
+    "macos": [
+      "python3",
+      "bzip2",
+      "expat",
+      "xz",
+      "gdbm",
+      "readline",
+      "libffi",
+      "sqlite"
+    ]
   }
 }
