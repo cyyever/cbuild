@@ -29,6 +29,10 @@
       "libx264-dev",
       "libx265-dev"
     ],
+    "macos": [
+      "x264",
+      "x265"
+    ],
     "archlinux": [
       "x264",
       "x265"

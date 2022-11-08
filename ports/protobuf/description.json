@@ -1,6 +1,11 @@
 {
   "macos": {
-    "group_package": true
+    "group_package": true,
+    "system_package_dependency": {
+      "macos": [
+        "protobuf"
+      ]
+    }
   },
   "all_os": {
     "git_url": "git@github.com:protocolbuffers/protobuf.git",
@@ -8,11 +13,6 @@
     "cache_time": 999,
     "environment_variable": [
       "py_pkg_name=protobuf"
-    ]
-  },
-  "system_package_dependency": {
-    "macos": [
-      "protobuf"
     ]
   }
 }
