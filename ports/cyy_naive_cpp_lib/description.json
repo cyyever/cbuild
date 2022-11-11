@@ -29,8 +29,7 @@
   ],
   "dependency": [
     "doctest",
-    "spdlog",
-    "ms-gsl"
+    "spdlog"
   ],
   "conditional_dependency": {
     "bsd": [
