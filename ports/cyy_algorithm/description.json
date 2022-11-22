@@ -2,13 +2,12 @@
   "git_url": "git@github.com:cyyever/algorithm.git",
   "main_language": "c",
   "dependency": [
-    "doctest",
-    "boost",
     "cyy_naive_cpp_lib:master"
   ],
   "conditional_dependency": {
     "full": [
-      "cyy_math"
+      "cyy_math",
+      "boost"
     ]
   },
   "environment_variable": [
