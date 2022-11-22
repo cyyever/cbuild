@@ -49,7 +49,7 @@ if [[ "${BUILD_CONTEXT_docker:=0}" == "1" ]]; then
   OIFS=$IFS
   IFS=':'
   for p in $LD_LIBRARY_PATH; do
-    if ! grep $p /etc/ld.so.conf; then
+    if ! grep -q $p /etc/ld.so.conf; then
       printf "$p\n" | tee -a /etc/ld.so.conf
     fi
   done
