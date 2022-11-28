@@ -5,6 +5,7 @@
   "environment_variable": [
     "run_test=0"
   ],
+  "cmake_options": "-DCMAKE_CXX_STANDARD=20 -DABSL_PROPAGATE_CXX_STD=on",
   "system_package_dependency": {
     "archlinux": [
       "gtest"
