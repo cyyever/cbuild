@@ -75,7 +75,7 @@
       "USE_GLOG=off",
       "USE_GFLAGS=off",
       "ONNX_ML=off",
-      "USE_MKLDNN=on",
+      "USE_MKLDNN=off",
       "BLAS=OpenBLAS",
       "PYTHON_EXECUTABLE=${CBUILD_PYTHON_EXE}",
       "OpenBLAS_HOME=${INSTALL_PREFIX}/include/openblas",
@@ -88,6 +88,9 @@
         "USE_MKLDNN=off",
         "CUDNN_ROOT=${INSTALL_PREFIX}/cudnn",
         "CUDNN_LIBRARY=${INSTALL_PREFIX}/cudnn"
+      ],
+      "amd64&&!cuda": [
+        "USE_MKLDNN=on"
       ],
       "debug_build": [
         "DEBUG=1"
