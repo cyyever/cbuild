@@ -3,7 +3,8 @@
   "cache_time": 0,
   "main_language": "python",
   "environment_variable": [
-    "py_pkg_name=cyy_naive_lib"
+    "py_pkg_name=cyy_naive_lib",
+    "static_analysis=1"
   ],
   "system_package_dependency": {
     "pip": [

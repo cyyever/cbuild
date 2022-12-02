@@ -5,7 +5,7 @@
   "reuse_build": true,
   "environment_variable": [
     "static_analysis=0",
-    "clang_tidy_static_analysis=0",
+    "slow_static_analysis=0",
     "clang_tidy_fix=0"
   ],
   "cmake_options": " -DCUTLASS_NVCC_ARCHS_ENABLED=${CUDAARCHS} -DCUTLASS_NVCC_ARCHS=${CUDAARCHS} -DCUTLASS_ENABLE_EXAMPLES=off -DCUTLASS_ENABLE_CUDNN=on -DCUDNN_PATH=${INSTALL_PREFIX}/cudnn"

@@ -15,7 +15,7 @@
       "run_test=0",
       "clang_tidy_fix=1",
       "static_analysis=1",
-      "clang_tidy_static_analysis=1"
+      "slow_static_analysis=1"
     ],
     "unix": [
       "PYTHON_BUILD_CMD=${CBUILD_PYTHON_EXE} -m pip install -v --disable-pip-version-check --no-cache-dir --global-option=--cpp_ext --global-option=--cuda_ext .  --user"

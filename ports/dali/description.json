@@ -9,7 +9,7 @@
   "environment_variable": [
     "run_test=0",
     "static_analysis=1",
-    "clang_tidy_static_analysis=1"
+    "slow_static_analysis=1"
   ],
   "conditional_environment_variable": {
     "windows": [

@@ -12,7 +12,7 @@
   },
   "environment_variable": [
     "static_analysis=1",
-    "clang_tidy_static_analysis=1"
+    "slow_static_analysis=1"
   ],
   "conditional_cmake_options": {
     "python_binding": "-DBUILD_PYTHON_BINDING=on",

@@ -10,7 +10,7 @@
       "INSTALL_SUBDIR=python",
       "static_analysis=0",
       "no_reconf=1",
-      "clang_tidy_static_analysis=1",
+      "slow_static_analysis=1",
       "uninstalled_pip_pkgs=setuptools"
     ],
     "conditional_environment_variable": {
