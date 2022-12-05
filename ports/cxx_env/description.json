@@ -20,7 +20,9 @@
       "libtool"
     ],
     "macos": [
-      "ninja"
+      "ninja",
+      "pkg-config",
+      "gcc"
     ],
     "freebsd": [
       "libunwind",
@@ -74,6 +76,8 @@
       "g++",
       "g++-11",
       "gcc-11",
+      "g++-12",
+      "gcc-12",
       "clang-tidy",
       "clang",
       "make",

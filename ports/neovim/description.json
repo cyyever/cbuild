@@ -1,11 +1,6 @@
 {
   "freebsd": {
-    "group_package": true,
-    "system_package_dependency": {
-      "bsd_ports": [
-        "editors/neovim"
-      ]
-    }
+    "group_package": true
   },
   "all_os": {
     "git_url": "git@github.com:neovim/neovim.git",
@@ -20,23 +15,29 @@
     "dependency": [
       "libuv",
       "glog"
+    ]
+  },
+  "system_package_dependency": {
+    "ubuntu": [
+      "libgtest-dev",
+      "libgmock-dev"
     ],
-    "system_package_dependency": {
-      "ubuntu": [
-        "libgtest-dev",
-        "libgmock-dev"
-      ],
-      "archlinux": [
-        "msgpack-c",
-        "libluv",
-        "tree-sitter",
-        "unibilium",
-        "libtermkey",
-        "libvterm",
-        "lua-lpeg",
-        "lua-mpack",
-        "gmock"
-      ]
-    }
+    "macos": [
+      "tree-sitter"
+    ],
+    "archlinux": [
+      "msgpack-c",
+      "libluv",
+      "tree-sitter",
+      "unibilium",
+      "libtermkey",
+      "libvterm",
+      "lua-lpeg",
+      "lua-mpack",
+      "gmock"
+    ],
+    "bsd_ports": [
+      "editors/neovim"
+    ]
   }
 }

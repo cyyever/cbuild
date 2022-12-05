@@ -1,0 +1,5 @@
+{
+  "git_url": "git@github.com:jbeder/yaml-cpp.git",
+  "cmake_options": "-DYAML_CPP_BUILD_TESTS=off",
+  "main_language": "c"
+}

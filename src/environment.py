@@ -31,8 +31,9 @@ class BuildContext:
     @staticmethod
     def get():
         context_set = copy.deepcopy(BuildContext.__context_set)
-        if "intel" in get_processor_name():
-            context_set.add("intel")
+        processor_name = get_processor_name().lower()
+        if "intel" in processor_name or "amd" in processor_name:
+            context_set.add("amd64")
         context_set.add("all_os")
         system = BuildContext.get_target_system()
         context_set.add(system)
@@ -42,14 +43,15 @@ class BuildContext:
                 context_set.add("bsd")
             else:
                 context_set.add("linux")
-        if which("nvidia-smi") is not None and (
-            "linux" in context_set or "windows" in context_set
-        ):
-            if "docker" in context_set:
-                if "cuda_docker" in context_set:
+        if "macos" not in context_set:
+            if which("nvidia-smi") is not None and (
+                "linux" in context_set or "windows" in context_set
+            ):
+                if "docker" in context_set:
+                    if "cuda_docker" in context_set:
+                        context_set.add("support_cuda")
+                else:
                     context_set.add("support_cuda")
-            else:
-                context_set.add("support_cuda")
         return context_set
 
 

@@ -22,9 +22,6 @@
     ],
     "archlinux": [
       "openssl"
-    ],
-    "macos": [
-      "openssl"
     ]
   }
 }

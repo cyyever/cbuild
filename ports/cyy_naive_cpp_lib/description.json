@@ -24,13 +24,12 @@
   },
   "environment_variable": [
     "static_analysis=0",
-    "clang_tidy_static_analysis=1",
+    "slow_static_analysis=1",
     "clang_tidy_fix=0"
   ],
   "dependency": [
     "doctest",
-    "spdlog",
-    "ms-gsl"
+    "spdlog"
   ],
   "conditional_dependency": {
     "bsd": [

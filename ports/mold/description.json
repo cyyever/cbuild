@@ -1,15 +1,25 @@
 {
+  "archlinux": {
+    "group_package": true
+  },
+  "all_os": {
     "git_url": "git@github.com:rui314/mold.git",
     "main_language": "c",
     "reuse_build": true,
     "cache_time": 999,
     "environment_variable": [
-        "no_install=1",
-        "SYSTEM_TBB=1"
+      "no_install=1",
+      "SYSTEM_TBB=1",
+      "no_test=1"
     ],
-    "cmake_options": "-DMOLD_USE_SYSTEM_TBB=on -DMOLD_USE_SYSTEM_MIMALLOC=on",
+    "cmake_options": "-DMOLD_USE_SYSTEM_MIMALLOC=on",
     "dependency": [
-        "tbb",
-        "mimalloc"
+      "mimalloc"
     ]
+  },
+  "system_package_dependency": {
+    "archlinux": [
+      "mold"
+    ]
+  }
 }

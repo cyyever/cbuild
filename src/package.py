@@ -169,19 +169,20 @@ class Package:
             )
 
         with self.source as source_result:
-            source_dir = None
+            src_dir_pair = None
             if source_result:
-                script.append_env("FILE_NAME", os.path.basename(source_result))
+                if os.path.isdir(source_result):
+                    src_dir_pair = (source_result, docker_src_dir)
+                else:
+                    src_dir_pair = (os.path.dirname(source_result), docker_src_dir)
+                    script.append_env("FILE_NAME", os.path.basename(source_result))
 
-            addtional_docker_commands = None
+            additional_docker_commands = None
             if self.desc.get_item("docker_runtime"):
                 runtime_path = self.__get_docker_runtime_path()
                 with open(runtime_path, "r") as f:
-                    addtional_docker_commands = f.readlines()
+                    additional_docker_commands = f.readlines()
             docker_file = DockerFile(from_image=from_docker_image, script=script)
-            src_dir_pair = None
-            if source_dir:
-                src_dir_pair = (source_dir, docker_src_dir)
             docker_image_name = self.__get_docker_image_name()
             log_file = os.path.join(
                 environment.log_dir,
@@ -193,7 +194,11 @@ class Package:
                 _, exit_code = docker_file.build(
                     result_image=self.__get_docker_image_name(),
                     src_dir_pair=src_dir_pair,
-                    additional_docker_commands=addtional_docker_commands,
+                    additional_docker_commands=additional_docker_commands,
+                    additional_ignored_files=[
+                        "cbuild_most_recent_git_tag",
+                        "script.sh",
+                    ],
                     extra_output_files=[f],
                 )
                 if exit_code != 0:

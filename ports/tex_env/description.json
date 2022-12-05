@@ -14,6 +14,15 @@
       "tex-dvipsk",
       "zathura-pdf-poppler"
     ],
+    "brew_cask": [
+      "sioyek"
+    ],
+    "macos": [
+      "texlive",
+      "pstree",
+      "biber",
+      "latexindent"
+    ],
     "archlinux": [
       "texlive-most",
       "zathura-pdf-poppler",

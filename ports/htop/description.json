@@ -1,5 +1,16 @@
 {
+  "macos": {
+    "group_package": true
+  },
+"all_os":{
+
   "git_url": "git@github.com:htop-dev/htop.git",
   "cache_time": 300,
   "main_language": "c"
+},
+    "system_package_dependency": {
+      "macos": [
+        "htop"
+      ]
+}
 }

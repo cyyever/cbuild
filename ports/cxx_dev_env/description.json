@@ -1,14 +1,9 @@
 {
   "group_package": true,
   "system_package_dependency": {
-    "unix": [
+    "unix&&!macos": [
+      "valgrind",
       "gdb"
-    ],
-    "bsd": [
-      "valgrind-devel"
-    ],
-    "linux": [
-      "valgrind"
     ],
     "windows": [
       "llvm"
@@ -19,9 +14,6 @@
       "lcov",
       "ccache",
       "bear"
-    ],
-    "unix&&!freebsd": [
-      "jemalloc"
     ],
     "unix&&full": [
       "llvm",

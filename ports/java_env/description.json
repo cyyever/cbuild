@@ -7,6 +7,9 @@
     "freebsd": [
       "apache-ant"
     ],
+    "macos": [
+      "ant"
+    ],
     "linux": [
       "ant"
     ],

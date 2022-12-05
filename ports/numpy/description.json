@@ -22,7 +22,7 @@
     ]
   },
   "conditional_new_feature": {
-    "unix": [
+    "unix&&!macos": [
       "use_mold"
     ]
   },

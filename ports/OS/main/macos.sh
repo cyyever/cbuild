@@ -1,1 +1,4 @@
-xcode-select --install
+if ! xcode-select --install 
+then
+	echo "xcode-select failed"
+fi

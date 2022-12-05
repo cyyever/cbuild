@@ -2,9 +2,8 @@
   "git_url": "git@github.com:cyyever/algorithm.git",
   "main_language": "c",
   "dependency": [
-    "doctest",
-    "boost",
-    "cyy_naive_cpp_lib:master"
+    "cyy_naive_cpp_lib:master",
+    "boost"
   ],
   "conditional_dependency": {
     "full": [
@@ -13,7 +12,7 @@
   },
   "environment_variable": [
     "static_analysis=1",
-    "clang_tidy_static_analysis=1"
+    "slow_static_analysis=1"
   ],
   "conditional_cmake_options": {
     "python_binding": "-DBUILD_PYTHON_BINDING=on",

@@ -1,0 +1,19 @@
+{
+  "git_url": "git@github.com:cyyever/distributed_storage_system.git",
+  "main_language": "c",
+  "dependency": [
+    "cyy_algorithm:main",
+    "grpc"
+  ],
+  "conditional_cmake_options": {
+    "ubuntu": "-DCMAKE_CXX_COMPILER=g++-12"
+  },
+  "environment_variable": [
+    "no_install=1"
+  ],
+  "system_package_dependency": {
+    "ubuntu": [
+      "libyaml-cpp-dev"
+    ]
+  }
+}

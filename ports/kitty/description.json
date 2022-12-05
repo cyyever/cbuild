@@ -2,6 +2,9 @@
   "archlinux": {
     "group_package": true
   },
+  "macos": {
+    "group_package": true
+  },
   "all_os": {
     "git_url": "git@github.com:kovidgoyal/kitty.git",
     "environment_variable": [
@@ -11,7 +14,11 @@
     ],
     "build_languages": [
       "python"
-    ]
+    ],
+  "dependency": [
+    "harfbuzz",
+    "openssl"
+  ]
   },
   "system_package_dependency": {
     "ubuntu": [
@@ -35,6 +42,9 @@
       "lcms2",
       "libxkbcommon",
       "wayland-protocols"
+    ],
+    "macos": [
+      "kitty"
     ],
     "archlinux": [
       "lcms2",
@@ -74,9 +84,5 @@
     "unix": [
       "rsync"
     ]
-  },
-  "dependency": [
-    "harfbuzz",
-    "openssl"
-  ]
+  }
 }
