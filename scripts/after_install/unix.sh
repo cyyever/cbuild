@@ -24,8 +24,8 @@ do_static_analysis() {
 					grep -e "${__SRC_DIR}" ${STATIC_ANALYSIS_DIR}/pvs-studio-report.txt | sort -k 4 >pvs.txt && mv pvs.txt ${STATIC_ANALYSIS_DIR}/pvs-studio-report.txt || true
 				fi
 			fi
+			get_run_clang_tidy_cmd
 			if [[ "${run_clang_tidy_cmd}" != "" ]]; then
-				get_run_clang_tidy_cmd
 				cd $__SRC_DIR
 				eval "${run_clang_tidy_cmd} -j $MAX_JOBS -p $(dirname $json_path) -quiet >${STATIC_ANALYSIS_DIR}/run-clang-tidy.txt || true"
 			fi
