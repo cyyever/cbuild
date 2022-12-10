@@ -32,11 +32,9 @@ do_static_analysis() {
 		fi
 	fi
 
-	if [[ "${FEATURE_feature_language_python:=0}" == "1" ]]; then
-		if command -v semgrep; then
-			semgrep --exclude='build' --exclude="${__SRC_DIR}/script.sh" -j $MAX_JOBS -o ${STATIC_ANALYSIS_DIR}/semgrep.txt --config=auto ${__SRC_DIR}
-		fi
-	fi
+    if command -v semgrep; then
+        semgrep scan --exclude='build' --exclude="${__SRC_DIR}/script.sh" --use-git-ignore -j $MAX_JOBS -o ${STATIC_ANALYSIS_DIR}/semgrep.txt --config=auto ${__SRC_DIR}
+    fi
 	rmdir ${STATIC_ANALYSIS_DIR} 2>/dev/null || true
 }
 if [[ "${static_analysis}" == "1" ]] && [[ "${BUILD_CONTEXT_docker:=0}" == "0" ]]; then
