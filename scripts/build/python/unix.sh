@@ -23,9 +23,15 @@ if test -f "setup.py"; then
   if [[ -n ${need_compilation_json+x} ]] && command -v bear; then
     build_cmd="bear -- ${build_cmd}"
   fi
-  ${build_cmd}
+  clang_tidy_fix_succ=0
   if run_clang_tidy_fix; then
-    ${build_cmd}
+    clang_tidy_fix_succ=1
+  fi
+  ${build_cmd}
+  if [[ "$clang_tidy_fix_succ" == "1" ]]; then
+    if run_clang_tidy_fix; then
+      ${build_cmd}
+    fi
   fi
   if [[ -n ${DEFAULT_INSTALL_PREFIX+x} ]]; then
     ${CBUILD_PYTHON_EXE} setup.py install --force

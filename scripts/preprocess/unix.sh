@@ -164,7 +164,7 @@ run_clang_tidy_fix() {
   if [[ "${clang_tidy_fix:-}" != "1" ]]; then
     return 1
   fi
-  get_run_clang_tidy_cmd ${INSTALL_PREFIX}/cli_tool_configs/cpp-clang-tidy-fix
+  get_run_clang_tidy_cmd ${INSTALL_PREFIX}/cli_tool_configs/cpp-clang-tidy-fix-cbuild
   if [[ "${run_clang_tidy_cmd}" == "" ]]; then
     echo "no clang-tidy to fix code"
     return 1
