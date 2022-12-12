@@ -28,7 +28,7 @@ if test -f "setup.py"; then
     clang_tidy_fix_succ=1
   fi
   ${build_cmd}
-  if [[ "$clang_tidy_fix_succ" == "1" ]]; then
+  if [[ "$clang_tidy_fix_succ" == "0" ]]; then
     if run_clang_tidy_fix; then
       ${build_cmd}
     fi
