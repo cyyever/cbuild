@@ -23,9 +23,6 @@
     "windows": [
       "DISTUTILS_USE_SDK=0",
       "TORCHVISION_LIBRARY=${INSTALL_PREFIX}/lib;${INSTALL_PREFIX}/lib64"
-    ],
-    "ubuntu": [
-      "NVCC_FLAGS=-ccbin ${CUDA_HOST_COMPILER}"
     ]
   },
   "dependency": [
