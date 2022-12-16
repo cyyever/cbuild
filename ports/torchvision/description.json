@@ -17,12 +17,10 @@
   },
   "conditional_environment_variable": {
     "unix": [
-      "CPLUS_INCLUDE_PATH=${INSTALL_PREFIX}/oneTBB/include",
-      "TORCHVISION_LIBRARY=${INSTALL_PREFIX}/lib:${INSTALL_PREFIX}/lib64"
+      "CPLUS_INCLUDE_PATH=${INSTALL_PREFIX}/oneTBB/include"
     ],
     "windows": [
-      "DISTUTILS_USE_SDK=0",
-      "TORCHVISION_LIBRARY=${INSTALL_PREFIX}/lib;${INSTALL_PREFIX}/lib64"
+      "DISTUTILS_USE_SDK=0"
     ]
   },
   "dependency": [
