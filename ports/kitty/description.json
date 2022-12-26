@@ -2,6 +2,9 @@
   "archlinux": {
     "group_package": true
   },
+  "ubuntu": {
+    "group_package": true
+  },
   "macos": {
     "group_package": true
   },
@@ -22,16 +25,7 @@
   },
   "system_package_dependency": {
     "ubuntu": [
-      "libdbus-1-dev",
-      "libgl1-mesa-dev",
-      "libxcb-xinerama0-dev",
-      "librsync-dev",
-      "liblcms2-dev",
-      "libxkbcommon-x11-dev",
-      "dbus",
-      "libharfbuzz-dev",
-      "libx11-xcb-dev",
-      "libxrandr-dev"
+      "kitty"
     ],
     "freebsd": [
       "xorg",

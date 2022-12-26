@@ -67,9 +67,13 @@ build_by_autotools() {
     fi
     bash "${__SRC_DIR}/configure" --prefix="${__INSTALL_PREFIX}" ${debug_option} ${configure_options}
   fi
-  if ! test -f "${__SRC_DIR}/Makefile" && ! test -f "${BUILD_DIR}/Makefile"; then
-    echo "No Makefile"
-    return 1
+  MAKEFILEPATH=${__SRC_DIR}/Makefile
+  if ! test -f "$MAKEFILEPATH"; then
+    MAKEFILEPATH=${BUILD_DIR}/Makefile
+    if ! test -f "$MAKEFILEPATH"; then
+      echo "No Makefile"
+      return 1
+    fi
   fi
   if [[ "${reuse_build:=0}" == "0" ]]; then
     ${make_cmd} clean || true
@@ -86,7 +90,10 @@ build_by_autotools() {
   fi
 
   if [[ -z ${no_install+x} ]]; then
+    ${sed_cmd} -i -e '/INSTALL.*mandir/d' "$MAKEFILEPATH" || true
     env PREFIX="${__INSTALL_PREFIX}" ${make_cmd} install
+    env PREFIX="${__INSTALL_PREFIX}" ${make_cmd} install-lib || true
+    env PREFIX="${__INSTALL_PREFIX}" ${make_cmd} install-headers || true
   fi
   if [[ "${run_test}" == "1" ]]; then
     if [[ -n ${TEST_TARGET+x} ]]; then

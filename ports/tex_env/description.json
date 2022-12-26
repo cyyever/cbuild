@@ -32,6 +32,7 @@
     "ubuntu": [
       "texlive-full",
       "zathura-pdf-poppler",
+      "latexmk",
       "xdotool"
     ]
   }

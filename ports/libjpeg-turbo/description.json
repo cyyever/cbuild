@@ -1,5 +1,6 @@
 {
   "git_url": "git@github.com:libjpeg-turbo/libjpeg-turbo.git",
+  "git_branch": "main",
   "main_language": "c",
   "ignored_tag_regex": [
     "esr"

@@ -8,7 +8,7 @@ fi
 export python3_cmd=python3
 if command -v apt-get >/dev/null; then
   ${sudo_cmd} apt-get update
-  ${sudo_cmd} apt-get install lsb-release jq -y
+  ${sudo_cmd} apt-get install lsb-release jq python3-pip -y
 elif command -v dnf >/dev/null; then
   ${sudo_cmd} dnf -y install python3 jq
 elif command -v pacman >/dev/null; then

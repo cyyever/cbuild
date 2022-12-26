@@ -10,7 +10,7 @@
     "environment_variable": [
       "no_install=1",
       "SYSTEM_TBB=1",
-      "no_test=1"
+      "run_test=0"
     ],
     "cmake_options": "-DMOLD_USE_SYSTEM_MIMALLOC=on",
     "dependency": [
