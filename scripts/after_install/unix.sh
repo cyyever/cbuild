@@ -3,9 +3,10 @@ do_static_analysis() {
   mkdir -p ${STATIC_ANALYSIS_DIR}
   get_json_path
   if [[ "$json_path" != "" ]]; then
-    let static_analysis_json_path "${json_path}"
+    static_analysis_json_path="$json_path"
     if command -v jq; then
-      jq -r 'del(.[] | select(.file | contains("/third_party/")))' "$json_path" >"${static_analysis_json_path}"
+      jq 'del(.[] | select(.file | contains("/third_party/")))' "$json_path" >"${static_analysis_json_path}.bak"
+      mv "${static_analysis_json_path}.bak" ${static_analysis_json_path}
     fi
     if command -v cppcheck; then
       cppcheck --project=$static_analysis_json_path -j $MAX_JOBS --std=c++20 --enable=all --inconclusive 2>${STATIC_ANALYSIS_DIR}/cppcheck.txt || true
