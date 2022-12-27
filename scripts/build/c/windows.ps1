@@ -13,7 +13,7 @@ if ($env:CMAKE_GENERATOR -ne "native") {
     $cmake_cmd += " -G $env:CMAKE_GENERATOR"
 }
 else {
-    $cmake_cmd += " -A x64"
+    $cmake_cmd += " -G 'Visual Studio 17 2022' -A x64"
     $env:CMAKE_GENERATOR = ""
 }
 
