@@ -3,3 +3,4 @@ psutil
 FileLock-git
 requests
 tqdm
+git+ssh://git@github.com/cyyever/naive_python_lib.git@main

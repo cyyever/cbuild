@@ -30,10 +30,6 @@ fi
 ${python3_cmd} -m ensurepip --upgrade --user || true
 ${python3_cmd} -m pip install --upgrade pip --user
 ${python3_cmd} -m pip install --upgrade --user -r requirements.txt
-for _ in $(seq 2); do
-  ${python3_cmd} -m pip uninstall -y cyy_naive_lib
-done
-${python3_cmd} -m pip install --upgrade --user git+ssh://git@github.com/cyyever/naive_python_lib.git@main
 git pull
 if test -d private_ports; then
   cd private_ports
