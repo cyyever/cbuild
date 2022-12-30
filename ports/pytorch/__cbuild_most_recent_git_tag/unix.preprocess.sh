@@ -3,7 +3,7 @@ ${sed_cmd} -i -e "s/'INTEL_MKL_DIR',/'INTEL_MKL_DIR','USE_MEMORY_SANITIZERS','US
 ${sed_cmd} -i -e '/^\s*check_submodules()/s/check_submodules()/#check_submodules()/g' setup.py
 ${sed_cmd} -i -e '/Werror/d' third_party/fbgemm/CMakeLists.txt
 ${sed_cmd} -i -e 's/90/11/g' third_party/foxi/CMakeLists.txt
-${sed_cmd} -i -e '/private:/d' aten/src/ATen/core/List.h
+# ${sed_cmd} -i -e '/private:/d' aten/src/ATen/core/List.h
 # ${sed_cmd} -i -e 's/CMAKE_CXX_STANDARD 17/CMAKE_CXX_STANDARD 23/g' CMakeLists.txt
 if [[ "$(uname)" == "FreeBSD" ]]; then
   ${sed_cmd} -i -e 's/_assert/assert_in_pytorch/g' aten/src/ATen/native/sparse/ValidateCompressedIndicesCommon.h
