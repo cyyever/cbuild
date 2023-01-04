@@ -1,13 +1,5 @@
 {
   "cache_time": 3000,
-  "archlinux": {
-    "group_package": true,
-    "system_package_dependency": {
-      "archlinux": [
-        "cudnn"
-      ]
-    }
-  },
   "linux": {
     "url": "https://developer.download.nvidia.com/compute/redist/cudnn/v8.7.0/local_installers/11.8/cudnn-linux-x86_64-8.7.0.84_cuda11-archive.tar.xz",
     "checksum": "no_checksum"
