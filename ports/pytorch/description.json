@@ -121,9 +121,6 @@
       "libnuma-dev",
       "libgtest-dev"
     ],
-    "pip": [
-      "typing_extensions"
-    ],
     "archlinux": [
       "gflags",
       "numactl"
