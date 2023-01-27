@@ -18,6 +18,9 @@
         "PKG_CONFIG_PATH=$(brew --prefix openssl)/lib/pkgconfig:$(brew --prefix libffi)/lib/pkgconfig",
         "CPPFLAGS=-I$(brew --prefix readline)/include -I$(brew --prefix xz)/include",
         "LDFLAGS=-L$(brew --prefix readline)/lib -L$(brew --prefix xz)/lib"
+      ],
+      "freebsd": [
+        "LDFLAGS=-L/usr/local/lib"
       ]
     },
     "main_language": "c",
