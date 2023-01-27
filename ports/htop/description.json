@@ -1,4 +1,7 @@
 {
+  "freebsd": {
+    "group_package": true
+  },
   "macos": {
     "group_package": true
   },
@@ -9,6 +12,9 @@
   "main_language": "c"
 },
     "system_package_dependency": {
+      "freebsd": [
+        "htop"
+      ],
       "macos": [
         "htop"
       ]

@@ -2,6 +2,9 @@
   "archlinux": {
     "group_package": true
   },
+  "freebsd": {
+    "group_package": true
+  },
   "macos": {
     "group_package": true
   },

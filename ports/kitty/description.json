@@ -2,6 +2,9 @@
   "archlinux": {
     "group_package": true
   },
+  "freebsd": {
+    "group_package": true
+  },
   "ubuntu": {
     "group_package": true
   },
@@ -28,14 +31,7 @@
       "kitty"
     ],
     "freebsd": [
-      "xorg",
-      "dbus",
-      "ncurses",
-      "x11/startup-notification",
-      "harfbuzz",
-      "lcms2",
-      "libxkbcommon",
-      "wayland-protocols"
+      "kitty"
     ],
     "macos": [
       "kitty"
