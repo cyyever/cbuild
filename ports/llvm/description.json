@@ -1,5 +1,6 @@
 {
   "git_url": "git@github.com:llvm/llvm-project.git",
+  "git_branch": "release/16.x",
   "cache_time": 999,
   "reuse_build": true,
   "cache_ignore_dependency_change": true,
@@ -13,7 +14,7 @@
     "init"
   ],
   "main_language": "c",
-  "cmake_options": "-DLLVM_ENABLE_PROJECTS='clang;lld;clang-tools-extra;compiler-rt;openmp;lldb' -DLLVM_INCLUDE_BENCHMARKS=OFF -DLLVM_INCLUDE_DOCS=OFF -DLLVM_INCLUDE_EXAMPLES=OFF -DCLANG_INCLUDE_DOCS=OFF -DCLANG_TOOLS_EXTRA_INCLUDE_DOCS=OFF -DLIBCXX_INCLUDE_DOCS=OFF -DCLANG_TOOLS_EXTRA_INCLUDE_DOCS=OFF -DLLVM_ENABLE_RTTI=ON -DLLVM_TARGETS_TO_BUILD=host -DLLVM_BUILD_TESTS=OFF -DLIBOMPTARGET_BUILD_AMDGPU_PLUGIN=off",
+  "cmake_options": "-DLLVM_ENABLE_PROJECTS='clang;lld;clang-tools-extra;compiler-rt;openmp' -DLLVM_INCLUDE_BENCHMARKS=OFF -DLLVM_INCLUDE_DOCS=OFF -DLLVM_INCLUDE_EXAMPLES=OFF -DCLANG_INCLUDE_DOCS=OFF -DCLANG_TOOLS_EXTRA_INCLUDE_DOCS=OFF -DLIBCXX_INCLUDE_DOCS=OFF -DLLVM_ENABLE_RTTI=ON -DLLVM_TARGETS_TO_BUILD=host -DLLVM_BUILD_TESTS=OFF -DLIBOMPTARGET_BUILD_AMDGPU_PLUGIN=off",
   "conditional_cmake_options": {
     "unix": "-DLLVM_BINUTILS_INCDIR=/usr/include",
     "centos": "-DCMAKE_CXX_COMPILER=clang++ -DCMAKE_C_COMPILER=clang",
