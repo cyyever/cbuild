@@ -1,4 +1,7 @@
 do_static_analysis() {
+  if [[ "${static_analysis}" == "0" ]] && [[ "${slow_static_analysis:=0}" == "0" ]]; then
+    return
+  fi
   rm -rf ${STATIC_ANALYSIS_DIR}
   mkdir -p ${STATIC_ANALYSIS_DIR}
   get_json_path
@@ -42,7 +45,7 @@ do_static_analysis() {
   fi
   rmdir ${STATIC_ANALYSIS_DIR} 2>/dev/null || true
 }
-if [[ "${static_analysis}" == "1" ]] && [[ "${BUILD_CONTEXT_docker:=0}" == "0" ]]; then
+if [[ "${BUILD_CONTEXT_docker:=0}" == "0" ]]; then
   do_static_analysis
 fi
 
