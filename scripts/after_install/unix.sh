@@ -41,7 +41,7 @@ do_static_analysis() {
   fi
 
   if command -v semgrep; then
-    semgrep scan --exclude='build' --exclude="${__SRC_DIR}/script.sh" --use-git-ignore -j $MAX_JOBS -o ${STATIC_ANALYSIS_DIR}/semgrep.txt --config=auto ${__SRC_DIR}
+    semgrep scan --exclude='build' --exclude="${__SRC_DIR}/script.sh" --use-git-ignore -j $MAX_JOBS -o ${STATIC_ANALYSIS_DIR}/semgrep.txt --config=auto ${__SRC_DIR} || true
   fi
   rmdir ${STATIC_ANALYSIS_DIR} 2>/dev/null || true
 }
