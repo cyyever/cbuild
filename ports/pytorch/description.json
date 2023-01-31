@@ -40,24 +40,21 @@
     "main_language": "python",
     "environment_variable": [
       "run_test=0",
-      "static_analysis=0",
       "slow_static_analysis=0",
       "clang_tidy_fix=0",
       "py_pkg_name=torch",
       "BUILD_TEST=off",
-      "BUILD_NVFUSER=off",
       "USE_MPI=OFF",
       "USE_SYSTEM_PYBIND11=on",
       "ATEN_NO_TEST=ON",
       "COLORIZE_OUTPUT=on",
       "BUILD_CAFFE2=off",
-      "USE_MEMORY_SANITIZERS=off",
-      "USE_MSAN=off",
+      "USE_ASAN=off",
       "USE_TSAN=off",
       "NO_VPTR=on",
       "USE_SYSTEM_BIND11=on",
       "BUILD_CUSTOM_PROTOBUF=off",
-      "USE_DISTRIBUTED=on",
+      "USE_DISTRIBUTED=off",
       "USE_GLOO=off",
       "USE_SYSTEM_EIGEN_INSTALL=ON",
       "USE_FBGEMM=on",
@@ -102,8 +99,8 @@
       "linux&&cuda": [
         "NCCL_ROOT=${INSTALL_PREFIX}",
         "NCCL_INCLUDE_DIR=${INSTALL_PREFIX}/include",
-        "USE_NCCL=on",
-        "USE_SYSTEM_NCCL=on"
+        "USE_NCCL=off",
+        "USE_SYSTEM_NCCL=off"
       ],
       "freebsd": [
         "USE_DISTRIBUTED=off"
