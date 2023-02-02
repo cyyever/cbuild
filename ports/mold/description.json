@@ -18,6 +18,9 @@
     ]
   },
   "system_package_dependency": {
+    "freebsd": [
+      "zstd"
+    ],
     "archlinux": [
       "mold"
     ]

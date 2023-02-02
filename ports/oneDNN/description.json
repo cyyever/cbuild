@@ -6,5 +6,8 @@
     ]
   },
   "cmake_options": "-DONEDNN_BUILD_EXAMPLES=off",
-  "main_language": "c"
+  "main_language": "c",
+  "dependency": [
+    "machine_learning_dev_env"
+  ]
 }

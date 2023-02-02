@@ -1,11 +1,21 @@
 {
-  "git_url": "git@github.com:libjpeg-turbo/libjpeg-turbo.git",
-  "git_branch": "main",
-  "main_language": "c",
-  "ignored_tag_regex": [
-    "esr"
-  ],
-  "dependency": [
-    "assembly_env"
-  ]
+  "freebsd": {
+    "group_package": true
+  },
+  "all_os": {
+    "git_url": "git@github.com:libjpeg-turbo/libjpeg-turbo.git",
+    "git_branch": "main",
+    "main_language": "c",
+    "ignored_tag_regex": [
+      "esr"
+    ],
+    "dependency": [
+      "assembly_env"
+    ]
+  },
+  "system_package_dependency": {
+    "freebsd": [
+      "libjpeg-turbo"
+    ]
+  }
 }

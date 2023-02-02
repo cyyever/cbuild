@@ -9,9 +9,9 @@ if command -v gsed >/dev/null; then
 fi
 
 make_cmd=make
-if command -v gmake >/dev/null; then
-  make_cmd=gmake
-fi
+# if command -v gmake >/dev/null; then
+#   make_cmd=gmake
+# fi
 
 if [[ -n ${CUDA_HOME+x} ]]; then
   export CUDAToolkit_ROOT="${CUDA_HOME}"
