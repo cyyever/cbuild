@@ -8,7 +8,6 @@
   "conditional_dependency": {
     "all_os": [
       "ninja",
-      "numpy",
       "protobuf",
       "libjpeg-turbo",
       "zlib-ng",
