@@ -5,6 +5,9 @@
       "machine_learning_compilers"
     ]
   },
+  "environment_variable": [
+    "CTEST_PARALLEL_LEVEL=1"
+  ],
   "cmake_options": "-DONEDNN_BUILD_EXAMPLES=off",
   "main_language": "c",
   "dependency": [
