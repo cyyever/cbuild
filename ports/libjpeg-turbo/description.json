@@ -6,6 +6,9 @@
     "git_url": "git@github.com:libjpeg-turbo/libjpeg-turbo.git",
     "git_branch": "main",
     "main_language": "c",
+    "environment_variable": [
+      "run_test=0"
+    ],
     "ignored_tag_regex": [
       "esr"
     ],
