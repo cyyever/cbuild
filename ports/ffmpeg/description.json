@@ -6,6 +6,9 @@
   "dependency": [
     "assembly_env"
   ],
+  "environment_variable": [
+    "make_cmd=gmake"
+  ],
   "conditional_new_feature": {
     "support_cuda": [
       "cuda"
