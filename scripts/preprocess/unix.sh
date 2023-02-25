@@ -8,7 +8,9 @@ if command -v gsed >/dev/null; then
   sed_cmd=gsed
 fi
 
-make_cmd=make
+if [[ "$make_cmd" == "" ]]; then
+  make_cmd=make
+fi
 # if command -v gmake >/dev/null; then
 #   make_cmd=gmake
 # fi

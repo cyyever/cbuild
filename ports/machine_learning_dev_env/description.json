@@ -16,9 +16,6 @@
       "eigen",
       "pillow-simd"
     ],
-    "amd64": [
-      "tbb"
-    ],
     "cuda": [
       "cudnn"
     ],
