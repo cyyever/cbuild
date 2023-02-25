@@ -5,12 +5,15 @@
   "macos": {
     "group_package": true
   },
+  "freebsd": {
+    "group_package": true
+  },
   "ubuntu": {
     "group_package": true
   },
   "all_os": {
     "git_url": "git@github.com:boostorg/boost.git",
-    "git_branch": "boost-1.79.0",
+    "git_branch": "boost-1.81.0",
     "main_language": "c",
     "environment_variable": [
       "run_test=0"
@@ -21,6 +24,9 @@
   "system_package_dependency": {
     "ubuntu": [
       "libboost-all-dev"
+    ],
+    "freebsd": [
+      "boost-all"
     ],
     "archlinux": [
       "boost"
