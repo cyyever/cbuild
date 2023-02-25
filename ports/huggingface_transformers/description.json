@@ -2,10 +2,14 @@
   "git_url": "git@github.com:huggingface/transformers.git",
   "main_language": "python",
   "environment_variable": [
-    "run_test=0",
-    "CC=gcc",
-    "CXX=g++"
+    "run_test=0"
   ],
+  "conditional_environment_variable": {
+    "freebsd": [
+      "CC=gcc",
+      "CXX=g++"
+    ]
+  },
   "dependency": [
     "pytorch:cyy",
     "huggingface_dataset"
