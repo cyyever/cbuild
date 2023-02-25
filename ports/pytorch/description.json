@@ -52,7 +52,6 @@
       "BUILD_CAFFE2=off",
       "USE_ASAN=off",
       "USE_TSAN=off",
-      "NO_VPTR=on",
       "USE_SYSTEM_BIND11=on",
       "BUILD_CUSTOM_PROTOBUF=off",
       "USE_DISTRIBUTED=off",
