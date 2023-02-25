@@ -1,0 +1,22 @@
+{
+  "git_url": "git@github.com:apache/thrift.git",
+  "main_language": "c",
+  "system_package_dependency": {
+    "windows": [
+      "winflexbison"
+    ],
+    "ubuntu": [
+      "libevent-dev",
+      "libssl-dev"
+    ]
+  },
+  "context_dependency": {
+    "all_os": [
+      "boost"
+    ],
+    "windows": [
+      "libevent:master"
+    ]
+  },
+  "cmake_options": "-DWITH_C_GLIB=off -DWITH_JAVA=off -DWITH_JAVASCRIPT=off -DWITH_NODEJS=off -DWITH_PYTHON=on -DWITH_STATIC_LIB=off -DBUILD_TUTORIALS=off"
+}
