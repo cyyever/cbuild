@@ -15,9 +15,9 @@ do_static_analysis() {
         >"${static_analysis_json_path}.bak"
               mv "${static_analysis_json_path}.bak" ${static_analysis_json_path}
     fi
-    if command -v cppcheck; then
-      cppcheck --project=$static_analysis_json_path -j $MAX_JOBS --std=c++20 --enable=all --inconclusive 2>${STATIC_ANALYSIS_DIR}/cppcheck.txt || true
-    fi
+    # if command -v cppcheck; then
+    #   cppcheck --project=$static_analysis_json_path -j $MAX_JOBS --std=c++20 --enable=all --inconclusive 2>${STATIC_ANALYSIS_DIR}/cppcheck.txt || true
+    # fi
     if [[ "${slow_static_analysis:=0}" == "1" ]]; then
       if command -v pvs-studio; then
         pvs-studio-analyzer analyze --intermodular --file ${static_analysis_json_path} -a 31 -o ./pvs-studio.log -j10 || true
