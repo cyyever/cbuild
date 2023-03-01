@@ -2,13 +2,12 @@
 import os
 import re
 import sys
-import time
 from distutils.version import LooseVersion
 
 from cyy_naive_lib.shell_factory import exec_cmd
 from cyy_naive_lib.source_code.source import Source
+from cyy_naive_lib.storage import persistent_cache
 from cyy_naive_lib.system_info import get_operating_system
-from cyy_naive_lib.util import readlines
 
 
 class GitSource(Source):
@@ -23,11 +22,11 @@ class GitSource(Source):
         spec,
         git_url: str,
         root_dir: str,
-        with_submodule=True,
-        remote_url: str = None,
-        remote_branch: str = None,
-        ignored_submodules=None,
-        ignored_tag_regex=None,
+        with_submodule: bool = True,
+        remote_url: str | None = None,
+        remote_branch: str | None = None,
+        ignored_submodules: list | None = None,
+        ignored_tag_regex: list | None = None,
     ):
         super().__init__(spec=spec, url=git_url, root_dir=root_dir)
         if not GitSource.is_git_source(git_url):
@@ -68,6 +67,8 @@ class GitSource(Source):
         os.chdir(self.__repositary_path)
         if self.spec.branch == "__cbuild_most_recent_git_tag":
             self.spec.branch = self.__get_max_tag()
+            if self.spec.branch is None:
+                self.spec.branch = self.__get_default_branch()
             print("resolve spec", self.spec.name, "to branch", self.spec.branch)
         if not os.getenv("no_update_pkg"):
             exec_cmd("git clean -fxd :/")
@@ -110,17 +111,28 @@ class GitSource(Source):
     def in_master(self):
         return self.spec.branch.lower() in ("master", "main")
 
-    def __get_max_tag(self):
-        cache_file = "__cbuild_most_recent_git_tag"
-        if os.path.isfile(cache_file) and time.time() < 3600 * 24 + os.path.getmtime(
-            cache_file
-        ):
-            return readlines(cache_file)[0].strip()
+    @persistent_cache(path="__default_branch", cache_time=3600 * 24)
+    def __get_default_branch(self) -> None | str:
+        branches, exit_code = exec_cmd(cmd="git branch -r", throw=False)
+        if exit_code != 0:
+            return None
+        for branch in branches.strip().splitlines():
+            print("check branch", branch)
+            if "origin" not in branch:
+                continue
+            for candidate in ["origin/main", "origin/master"]:
+                if branch == candidate:
+                    return branch.split("/")[-1]
+        return None
 
+    @persistent_cache(path="__max_tag", cache_time=3600 * 24)
+    def __get_max_tag(self) -> None | str:
         exec_cmd("git fetch origin --depth 1 --tags -f")
-        tags, _ = exec_cmd("git describe --tags $(git rev-list --tags --max-count=10)")
-        if tags is None:
-            sys.exit("get max tag failed")
+        tags, exit_code = exec_cmd(
+            cmd="git describe --tags $(git rev-list --tags --max-count=10)", throw=False
+        )
+        if exit_code != 0:
+            return None
         tags = tags.strip().splitlines()
 
         tags = [t for t in tags if re.search("rc([0-9]*)$", t) is None]
@@ -143,6 +155,4 @@ class GitSource(Source):
         except BaseException as e:
             print("get exception", e, "and use first tag", tag)
         print("use tag", tag)
-        with open(cache_file, "wt", encoding="utf-8") as f:
-            f.write(tag)
         return tag
