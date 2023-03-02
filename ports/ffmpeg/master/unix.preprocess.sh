@@ -14,6 +14,10 @@ else
   echo "no msvc dir"
   export NVCC_APPEND_FLAGS="-ccbin ${CUDA_HOST_COMPILER}"
 fi
+
+cd ${INSTALL_PREFIX}/include
+rm -rf libavformat libavcodec libswresample libavdevice libswscale libavfilter
+
 cd $SRC_DIR
 ${sed_cmd} -i -e "s/compute_30/compute_${CUDAARCHS}/g" configure
 ${sed_cmd} -i -e "s/sm_30/sm_${CUDAARCHS}/g" configure
