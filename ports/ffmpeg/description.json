@@ -1,14 +1,16 @@
 {
   "git_url": "https://git.ffmpeg.org/ffmpeg.git",
-  "git_branch": "n5.0.1",
+  "git_branch": "n6.0",
   "cache_time": 300,
   "use_mingw64": true,
   "dependency": [
     "assembly_env"
   ],
-  "environment_variable": [
-    "make_cmd=gmake"
-  ],
+  "conditional_environment_variable": {
+    "freebsd": [
+      "make_cmd=gmake"
+    ]
+  },
   "conditional_new_feature": {
     "support_cuda": [
       "cuda"
