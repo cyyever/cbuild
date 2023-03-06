@@ -69,6 +69,7 @@
       "USE_PYTORCH_QNNPACK=off",
       "USE_METAL=off",
       "USE_NUMA=ON",
+      "CAFFE2_USE_MKL=OFF",
       "USE_FFMPEG=off",
       "USE_GLOG=off",
       "USE_GFLAGS=off",
