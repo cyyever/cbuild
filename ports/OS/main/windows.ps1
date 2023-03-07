@@ -1,10 +1,8 @@
 $new_path = ""
 [System.Collections.ArrayList]$path_list = [Environment]::GetEnvironmentVariable("Path", [EnvironmentVariableTarget]::User).split(";")
 $path_list.add("${env:ProgramFiles}\NVIDIA Corporation\NVSMI")
-$path_list.add("${env:ProgramFiles}\NVIDIA Corporation\NvToolsExt\bin\x64")
-$path_list.add("c:/tools/msys64")
 $path_list.add("${env:ProgramFiles}/Cmake/bin")
-foreach ( $my_path  in ($path_list | select-object -Unique    )  ) {
+foreach ( $my_path  in ($path_list | Select-Object -Unique    )  ) {
     if ([string]::IsNullOrEmpty($my_path)) {
         continue
     }
@@ -28,3 +26,4 @@ Start-Process -Wait -Verb runAs chocolatey.exe -ArgumentList "feature enable --n
 # msys2_shell.cmd -msys -defterm  -no-start -full-path -c 'pacman-key --populate msys2'
 # msys2_shell.cmd -msys -defterm  -no-start -full-path -c 'pacman -Syu --disable-download-timeout --noconfirm'
 msys2_shell.cmd -msys -defterm  -no-start -full-path -c 'pacman --needed --noconfirm -Sy sed bash procps-ng'
+msys2_shell.cmd -msys -defterm  -no-start -full-path -c 'pacman --needed --noconfirm -Syu'
