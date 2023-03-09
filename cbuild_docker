@@ -13,6 +13,6 @@ if __name__ == "__main__":
 
     BuildContext.add("docker")
     BuildContext.add("cuda_docker")
-    # BuildContext.set_target_system("archlinux")
-    BuildContext.set_target_system("ubuntu")
+    BuildContext.set_target_system("archlinux")
+    # BuildContext.set_target_system("ubuntu")
     PackageChain(args.pkg).build_docker()

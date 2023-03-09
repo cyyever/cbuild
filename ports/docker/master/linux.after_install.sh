@@ -6,4 +6,5 @@ if ! test -f /etc/docker/daemon.json; then
   ${sudo_cmd} touch /etc/docker/daemon.json
   printf "{\n\"experimental\": true\n}" | ${sudo_cmd} tee -a /etc/docker/daemon.json
 fi
+sleep 5
 ${sudo_cmd} systemctl restart docker

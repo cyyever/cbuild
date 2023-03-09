@@ -175,7 +175,10 @@ class Package:
                     src_dir_pair = (source_result, docker_src_dir)
                 else:
                     src_dir_pair = (os.path.dirname(source_result), docker_src_dir)
-                    script.append_env("FILE_NAME", os.path.basename(source_result))
+                    script.append_env(
+                        "FILE_NAME",
+                        os.path.join(docker_src_dir, os.path.basename(source_result)),
+                    )
 
             additional_docker_commands = None
             if self.desc.get_item("docker_runtime"):
