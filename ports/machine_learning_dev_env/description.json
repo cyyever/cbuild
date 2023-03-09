@@ -18,9 +18,6 @@
     ],
     "cuda": [
       "cudnn"
-    ],
-    "cuda&&!windows": [
-      "nccl"
     ]
   },
   "system_package_dependency": {
