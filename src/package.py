@@ -155,6 +155,7 @@ class Package:
         build_dir = "/build"
         script.append_env_path("SRC_DIR", docker_src_dir)
         script.append_env_path("BUILD_DIR", build_dir)
+        script.append_env_path("STATIC_ANALYSIS_DIR", "/static_analysis")
         script.prepend_content("mkdir -p " + docker_src_dir)
         script.prepend_content("mkdir -p " + build_dir)
         script.append_content("rm -rf " + build_dir + "/*")

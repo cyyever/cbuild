@@ -19,12 +19,15 @@
       ],
       "archlinux": [
         "fakeroot",
-        "which",
         "vim"
       ]
     }
   },
   "system_package_dependency": {
+    "archlinux": [
+      "jq",
+      "which"
+    ],
     "bsd": [
       "coreutils",
       "gsed"

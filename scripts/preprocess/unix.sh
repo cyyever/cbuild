@@ -15,20 +15,24 @@ fi
 #   make_cmd=gmake
 # fi
 
-if [[ -n ${CUDA_HOME+x} ]]; then
-  export CUDAToolkit_ROOT="${CUDA_HOME}"
-  export CUDACXX="${CUDA_HOME}/bin/nvcc"
-  if test -f ${CUDA_HOME}/extras/demo_suite/deviceQuery; then
-    if ${CUDA_HOME}/extras/demo_suite/deviceQuery >/dev/null; then
-      cudaarchs=$(${CUDA_HOME}/extras/demo_suite/deviceQuery | grep Capability | grep -E '[0-9.]*' -o | uniq | ${sed_cmd} -e 's/\.//')
-      if [[ "$cudaarchs" != "$CUDAARCHS" ]]; then
-        echo "change CUDAARCHS from ${CUDAARCHS} to ${cudaarchs}"
-        export CUDAARCHS="$cudaarchs"
+if [[ "${BUILD_CONTEXT_docker:=0}" == 0 ]]; then
+  if [[ -n ${CUDA_HOME+x} ]]; then
+    export CUDAToolkit_ROOT="${CUDA_HOME}"
+    export CUDACXX="${CUDA_HOME}/bin/nvcc"
+    if test -f ${CUDA_HOME}/extras/demo_suite/deviceQuery; then
+      if ${CUDA_HOME}/extras/demo_suite/deviceQuery >/dev/null; then
+        cudaarchs=$(${CUDA_HOME}/extras/demo_suite/deviceQuery | grep Capability | grep -E '[0-9.]*' -o | uniq | ${sed_cmd} -e 's/\.//')
+        if [[ "$cudaarchs" != "$CUDAARCHS" ]]; then
+          echo "change CUDAARCHS from ${CUDAARCHS} to ${cudaarchs}"
+          export CUDAARCHS="$cudaarchs"
+        fi
+      else
+        echo "can't deviceQuery"
       fi
-    else
-      echo "can't deviceQuery"
     fi
   fi
+else
+  export CUDAARCHS="all-major"
 fi
 
 if [[ -z ${INSTALL_SUBDIR+x} ]]; then
