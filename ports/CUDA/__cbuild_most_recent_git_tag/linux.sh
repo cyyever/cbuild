@@ -12,3 +12,7 @@ cd $BUILD_DIR
 if ! rm -rf cuda_tmp; then
   ${sudo_cmd} rm -rf cuda_tmp
 fi
+
+if [[ "${BUILD_CONTEXT_docker:=0}" == 1 ]]; then
+  rm ${FILE_NAME}
+fi
