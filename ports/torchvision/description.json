@@ -25,6 +25,6 @@
   },
   "dependency": [
     "pytorch:cyy",
-    "ffmpeg"
+    "computer_vision_packages"
   ]
 }

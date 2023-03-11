@@ -9,12 +9,9 @@
     "all_os": [
       "ninja",
       "protobuf",
-      "libjpeg-turbo",
       "zlib-ng",
       "openblas",
-      "libpng:libpng16",
-      "eigen",
-      "pillow-simd"
+      "eigen"
     ],
     "cuda": [
       "cudnn"
@@ -22,7 +19,6 @@
   },
   "system_package_dependency": {
     "freebsd": [
-      "freetype2",
       "libzmq4"
     ],
     "ubuntu": [
