@@ -181,13 +181,28 @@ class Package:
                         os.path.join(docker_src_dir, os.path.basename(source_result)),
                     )
 
-            additional_docker_commands = None
+            additional_docker_commands = []
             if self.desc.get_item("docker_runtime"):
                 runtime_path = self.__get_docker_runtime_path()
                 with open(runtime_path, "r") as f:
                     additional_docker_commands = f.readlines()
-            docker_file = DockerFile(from_image=from_docker_image, script=script)
+            if prev_package is None:
+                for (k, v) in script.env:
+                    if k == "INSTALL_PREFIX":
+                        additional_docker_commands.append(
+                            'ENV INSTALL_PREFIX="' + v + '"'
+                        )
+                for (k, v) in script.env:
+                    if k == "PATH":
+                        additional_docker_commands.append(
+                            'ENV PATH="' + v + "" + ':$PATH"'
+                        )
             docker_image_name = self.__get_docker_image_name()
+            docker_file = DockerFile(
+                from_image=from_docker_image,
+                script=script,
+                image_name=docker_image_name,
+            )
             log_file = os.path.join(
                 environment.log_dir,
                 "docker_log",
@@ -196,14 +211,13 @@ class Package:
             os.makedirs(os.path.dirname(log_file), exist_ok=True)
             with open(log_file, "wt") as f:
                 _, exit_code = docker_file.build(
-                    result_image=self.__get_docker_image_name(),
                     src_dir_pair=src_dir_pair,
                     additional_docker_commands=additional_docker_commands,
-                    additional_ignored_files=[
+                    docker_ignored_files=[
                         "cbuild_most_recent_git_tag",
                         "script.sh",
                     ],
-                    extra_output_files=[f],
+                    exec_kwargs={"extra_output_files": [f]},
                 )
                 if exit_code != 0:
                     sys.exit("failed to build docker image of " + docker_image_name)
