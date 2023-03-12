@@ -10,8 +10,7 @@
       "ninja",
       "protobuf",
       "zlib-ng",
-      "openblas",
-      "eigen"
+      "openblas"
     ],
     "cuda": [
       "cudnn"
