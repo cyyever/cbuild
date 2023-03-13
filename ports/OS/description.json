@@ -11,9 +11,6 @@
         "git",
         "wget"
       ],
-      "linux": [
-        "sudo"
-      ],
       "freebsd": [
         "sudo"
       ],
@@ -24,6 +21,9 @@
     }
   },
   "system_package_dependency": {
+    "linux": [
+      "sudo"
+    ],
     "archlinux": [
       "jq",
       "which"

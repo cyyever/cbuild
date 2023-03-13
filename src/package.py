@@ -151,8 +151,8 @@ class Package:
         if script is None:
             sys.exit("no script for package:" + self.specification().name)
 
-        docker_src_dir = "/src"
-        build_dir = "/build"
+        docker_src_dir = "~/src"
+        build_dir = "~/build"
         script.append_env_path("SRC_DIR", docker_src_dir)
         script.append_env_path("BUILD_DIR", build_dir)
         script.append_env_path("STATIC_ANALYSIS_DIR", "/static_analysis")
@@ -163,7 +163,7 @@ class Package:
             script.append_content("rm -rf " + docker_src_dir)
         else:
             script.append_content(
-                "mkdir -p /src_backup && mv "
+                "mkdir -p ~/src_backup && mv "
                 + docker_src_dir
                 + " /src_backup/"
                 + self.full_name(),
@@ -197,6 +197,13 @@ class Package:
                         additional_docker_commands.append(
                             'ENV PATH="' + v + "" + ':$PATH"'
                         )
+                    # if k == "PYTHONPATH":
+                    #     additional_docker_commands.append(
+                    #         'ENV PYTHONPATH="' + v + "" + ':$PYTHONPATH"'
+                    #     )
+                    if k == "DOCKER_USER":
+                        additional_docker_commands.append("USER " + v)
+
             docker_image_name = self.__get_docker_image_name()
             docker_file = DockerFile(
                 from_image=from_docker_image,

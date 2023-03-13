@@ -58,7 +58,6 @@
       "USE_GLOO=off",
       "USE_SYSTEM_EIGEN_INSTALL=ON",
       "USE_FBGEMM=on",
-      "USE_NATIVE_ARCH=on",
       "USE_ROCM=off",
       "USE_BREAKPAD=off",
       "USE_KINETO=off",
@@ -87,6 +86,9 @@
         "USE_MKLDNN=off",
         "CUDNN_ROOT=${INSTALL_PREFIX}/cudnn",
         "CUDNN_LIBRARY=${INSTALL_PREFIX}/cudnn"
+      ],
+      "!docker": [
+        "USE_NATIVE_ARCH=on"
       ],
       "amd64&&!cuda": [
         "USE_MKLDNN=on"
