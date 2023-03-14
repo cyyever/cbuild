@@ -1,0 +1,13 @@
+{
+  "cache_time": 3000,
+  "linux": {
+    "script_package": true
+  },
+  "windows": {
+    "url": "https://developer.download.nvidia.com/compute/redist/cudnn/v8.4.1/local_installers/11.6/cudnn-windows-x86_64-8.4.1.50_cuda11.6-archive.zip",
+    "checksum": "no_checksum"
+  },
+  "dependency": [
+    "CUDA_in_docker"
+  ]
+}

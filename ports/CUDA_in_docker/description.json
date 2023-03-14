@@ -1,0 +1,22 @@
+{
+  "cache_time": 300,
+  "__cbuild_most_recent_git_tag": {
+    "windows": {
+      "group_package": true
+    },
+    "linux": {
+      "script_package": true
+    }
+  },
+  "system_package_dependency": {
+    "windows": [
+      "cuda"
+    ],
+    "archlinux": [
+      "wget"
+    ]
+  },
+  "dependency": [
+    "cxx_env:master"
+  ]
+}

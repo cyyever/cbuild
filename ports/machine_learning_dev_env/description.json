@@ -12,8 +12,11 @@
       "zlib-ng",
       "openblas"
     ],
-    "cuda": [
+    "cuda&&!docker": [
       "cudnn"
+    ],
+    "cuda&&docker": [
+      "cudnn_in_docker"
     ]
   },
   "system_package_dependency": {

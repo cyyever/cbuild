@@ -90,6 +90,9 @@
       "!docker": [
         "USE_NATIVE_ARCH=on"
       ],
+      "docker": [
+        "CUDA_USE_STATIC_CUDA_RUNTIME=off"
+      ],
       "amd64&&!cuda": [
         "USE_MKLDNN=on"
       ],

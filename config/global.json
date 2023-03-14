@@ -36,6 +36,9 @@
     "cuda&&!docker": [
       "CUDA"
     ],
+    "cuda&&docker": [
+      "CUDA_in_docker"
+    ],
     "mingw64": [
       "mingw64_env"
     ],
