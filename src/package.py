@@ -151,13 +151,11 @@ class Package:
         if script is None:
             sys.exit("no script for package:" + self.specification().name)
 
-        docker_src_dir = "~/src"
-        build_dir = "~/build"
+        docker_src_dir = "/tmp/src"
+        build_dir = "/tmp/build"
         script.append_env_path("SRC_DIR", docker_src_dir)
         script.append_env_path("BUILD_DIR", build_dir)
-        script.append_env_path("STATIC_ANALYSIS_DIR", "/static_analysis")
-        script.prepend_content("mkdir -p " + docker_src_dir)
-        script.prepend_content("mkdir -p " + build_dir)
+        script.append_env_path("STATIC_ANALYSIS_DIR", "/tmp/static_analysis")
         script.append_content("rm -rf " + build_dir + "/*")
         if "debug_build" not in build_context:
             script.append_content("rm -rf " + docker_src_dir)

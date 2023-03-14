@@ -57,6 +57,6 @@ if [[ "${BUILD_CONTEXT_docker:=0}" == "1" ]]; then
       printf "$p\n" | ${sudo_cmd} tee -a /etc/ld.so.conf
     fi
   done
-  ldconfig
+  ${sudo_cmd} ldconfig
   IFS=$OIFS
 fi

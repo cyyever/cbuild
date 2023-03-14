@@ -33,6 +33,9 @@ if [[ "${BUILD_CONTEXT_docker:=0}" == 0 ]]; then
   fi
 else
   export CUDAARCHS="all-major"
+  ${sudo_cmd} chown $(whoami) -R ${SRC_DIR} || true
+  mkdir -p ${BUILD_DIR} || true
+  ${sudo_cmd} chown $(whoami) -R ${BUILD_DIR} || true
 fi
 
 if [[ -z ${INSTALL_SUBDIR+x} ]]; then
