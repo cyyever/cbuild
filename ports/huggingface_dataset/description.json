@@ -6,7 +6,7 @@
     "AIOHTTP_NO_EXTENSIONS=1"
   ],
   "dependency": [
-    "pytorch:cyy",
+    "pytorch",
     "apache_arrow_python"
   ]
 }

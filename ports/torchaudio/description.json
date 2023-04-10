@@ -11,7 +11,7 @@
     "kaldi"
   ],
   "dependency": [
-    "pytorch:cyy"
+    "pytorch"
   ],
   "system_package_dependency": {
     "ubuntu": [

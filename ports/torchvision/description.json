@@ -24,7 +24,7 @@
     ]
   },
   "dependency": [
-    "pytorch:cyy",
+    "pytorch",
     "computer_vision_packages"
   ]
 }

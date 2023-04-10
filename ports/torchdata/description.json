@@ -13,6 +13,6 @@
     ]
   },
   "dependency": [
-    "pytorch:cyy"
+    "pytorch"
   ]
 }
