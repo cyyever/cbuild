@@ -17,6 +17,11 @@
     "run_test=1",
     "TEST_TARGET=check"
   ],
+  "conditional_environment_variable": {
+    "freebsd": [
+      "run_test=0"
+    ]
+  },
   "cmake_options": "-DPYBIND11_TEST=on -DDOWNLOAD_CATCH=ON",
   "dependency": [
     "boost"
