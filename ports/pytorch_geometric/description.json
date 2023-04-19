@@ -5,6 +5,8 @@
     "run_test=0"
   ],
   "dependency": [
-    "pytorch"
+    "pytorch",
+    "pytorch_scatter",
+    "pytorch_sparse"
   ]
 }
