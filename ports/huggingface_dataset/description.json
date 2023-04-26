@@ -3,6 +3,7 @@
   "main_language": "python",
   "environment_variable": [
     "run_test=0",
+    "py_pkg_name=datasets",
     "AIOHTTP_NO_EXTENSIONS=1"
   ],
   "dependency": [

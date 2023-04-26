@@ -2,6 +2,7 @@
   "git_url": "git@github.com:huggingface/transformers.git",
   "main_language": "python",
   "environment_variable": [
+    "py_pkg_name=transformers",
     "run_test=0"
   ],
   "conditional_environment_variable": {
