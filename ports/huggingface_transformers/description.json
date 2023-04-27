@@ -12,6 +12,7 @@
     ]
   },
   "dependency": [
-    "huggingface_dataset"
+    "huggingface_dataset",
+    "opencv"
   ]
 }
