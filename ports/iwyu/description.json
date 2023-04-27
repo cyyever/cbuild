@@ -1,0 +1,6 @@
+{
+  "git_url": "git@github.com:include-what-you-use/include-what-you-use.git",
+  "git_branch": "clang_15",
+  "cmake_options": "-DCMAKE_CXX_COMPILER=clang++ -DCLANG_LINK_CLANG_DYLIB=off",
+  "main_language": "c"
+}
