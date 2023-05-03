@@ -14,14 +14,6 @@
       "cuda"
     ]
   },
-  "conditional_system_package_dependency": {
-    "!docker": {
-      "archlinux": [
-        "jdk8-openjdk",
-        "gtk2"
-      ]
-    }
-  },
   "dependency": [
     "cxx_env:master"
   ]
