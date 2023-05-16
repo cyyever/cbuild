@@ -6,7 +6,8 @@
   "dependency": [
     "cyy_naive_python_lib:main",
     "torchvision:cyy",
-    "torchtext:cyy"
+    "torchtext:cyy",
+    "huggingface_transformers"
   ],
   "environment_variable": [
     "static_analysis=1"
@@ -19,7 +20,7 @@
   "conditional_dependency": {
     "full": [
       "torchaudio:master",
-      "huggingface_transformers"
+      "spacy"
     ],
     "cuda&&!windows&&full": [
       "dali:cyy"

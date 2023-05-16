@@ -20,11 +20,6 @@
       "DISTUTILS_USE_SDK=0"
     ]
   },
-  "conditional_dependency": {
-    "unix": [
-      "spacy"
-    ]
-  },
   "dependency": [
     "pytorch",
     "torchdata:main"
