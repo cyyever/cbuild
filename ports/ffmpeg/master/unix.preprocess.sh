@@ -11,8 +11,7 @@ if test -d "$msvc_dir"; then
     echo "no cl dir"
   fi
 else
-  echo "no msvc dir"
-  export NVCC_APPEND_FLAGS="-ccbin ${CUDA_HOST_COMPILER}"
+  echo "no msvc dir ${CUDA_HOST_COMPILER}"
 fi
 
 cd ${INSTALL_PREFIX}/include
