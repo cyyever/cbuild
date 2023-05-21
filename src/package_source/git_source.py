@@ -27,10 +27,11 @@ class GitSource(Source):
         remote_branch: str | None = None,
         ignored_submodules: list | None = None,
         ignored_tag_regex: list | None = None,
-    ):
-        super().__init__(spec=spec, url=git_url, root_dir=root_dir)
+    ) -> None:
+        super().__init__(spec=spec, root_dir=root_dir)
         if not GitSource.is_git_source(git_url):
             sys.exit("no git url:" + git_url)
+        self.url = git_url
         self.__repositary_path = os.path.join(
             root_dir, self.url.split("/")[-1].replace(".git", "")
         )
