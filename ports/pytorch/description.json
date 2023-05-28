@@ -22,7 +22,6 @@
       "third_party/python-six",
       "third_party/QNNPACK",
       "third_party/breakpad",
-      "third_party/protobuf",
       "third_party/tbb"
     ],
     "cache_time": 30,
@@ -53,7 +52,7 @@
       "USE_ASAN=off",
       "USE_TSAN=off",
       "USE_SYSTEM_BIND11=on",
-      "BUILD_CUSTOM_PROTOBUF=off",
+      "BUILD_CUSTOM_PROTOBUF=on",
       "USE_DISTRIBUTED=off",
       "USE_GLOO=off",
       "USE_SYSTEM_EIGEN_INSTALL=ON",
@@ -116,8 +115,7 @@
   "dependency": [
     "machine_learning_dev_env",
     "glog",
-    "pybind11",
-    "protobuf"
+    "pybind11"
   ],
   "system_package_dependency": {
     "ubuntu": [

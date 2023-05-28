@@ -14,10 +14,10 @@
       "python"
     ],
     "cache_time": 999,
-    "cmake_options": "-DABSL_PROPAGATE_CXX_STD=on -Dprotobuf_ABSL_PROVIDER=package -Dprotobuf_BUILD_TESTS=off -DBUILD_SHARED_LIBS=on",
+    "cmake_options": "-DABSL_PROPAGATE_CXX_STD=on -Dprotobuf_ABSL_PROVIDER=package -Dprotobuf_BUILD_TESTS=on -DBUILD_SHARED_LIBS=on",
     "environment_variable": [
       "py_pkg_name=protobuf",
-      "run_test=0"
+      "run_test=1"
     ]
   },
   "system_package_dependency": {
