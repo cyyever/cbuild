@@ -24,7 +24,9 @@
       "latexindent"
     ],
     "archlinux": [
-      "texlive-most",
+      "texlive-latexextra",
+      "texlive-bibtexextra",
+      "texlive-core",
       "zathura-pdf-poppler",
       "xdotool",
       "biber"
