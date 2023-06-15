@@ -1,8 +1,7 @@
 {
   "group_package": true,
   "dependency": [
-    "pvs-studio",
-    "cppcheck"
+    "pvs-studio"
   ],
   "system_package_dependency": {
     "pip": [

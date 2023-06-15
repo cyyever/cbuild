@@ -2,6 +2,9 @@
   "archlinux": {
     "group_package": true
   },
+  "freebsd": {
+    "group_package": true
+  },
   "all_os": {
     "git_url": "git@github.com:ccache/ccache.git",
     "main_language": "c",
@@ -13,6 +16,9 @@
   "system_package_dependency": {
     "unix": [
       "gperf"
+    ],
+    "freebsd": [
+      "ccache"
     ],
     "archlinux": [
       "ccache"
