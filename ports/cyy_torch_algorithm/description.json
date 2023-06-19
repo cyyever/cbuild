@@ -1,12 +1,12 @@
 {
   "git_url": "git@github.com:cyyever/torch_algorithm.git",
+  "git_branch": "main",
   "cache_time": 0,
   "main_language": "python",
   "environment_variable": [
     "static_analysis=1"
   ],
   "dependency": [
-    "cyy_torch_toolbox:main",
-    "cyy_torch_cpp_extension[shared_lib]:main"
+    "cyy_torch_toolbox"
   ]
 }

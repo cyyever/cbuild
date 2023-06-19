@@ -45,7 +45,7 @@
       "libunwind",
       "ninja",
       "gcc",
-      "gcc11",
+      "gcc12",
       "flex",
       "autoconf-archive",
       "clang",

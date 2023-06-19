@@ -1,5 +1,6 @@
 {
   "git_url": "git@github.com:huggingface/transformers.git",
+  "git_branch": "main",
   "main_language": "python",
   "environment_variable": [
     "py_pkg_name=transformers",
