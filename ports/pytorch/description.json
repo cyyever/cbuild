@@ -101,6 +101,9 @@
       "windows": [
         "USE_OPENMP=off"
       ],
+      "macos": [
+        "BLAS=vecLib"
+      ],
       "linux&&cuda": [
         "NCCL_ROOT=${INSTALL_PREFIX}",
         "NCCL_INCLUDE_DIR=${INSTALL_PREFIX}/include",

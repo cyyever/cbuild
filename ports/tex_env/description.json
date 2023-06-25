@@ -14,7 +14,7 @@
       "tex-dvipsk",
       "zathura-pdf-poppler"
     ],
-    "brew_cask": [
+    "brew": [
       "sioyek"
     ],
     "macos": [

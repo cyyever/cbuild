@@ -10,6 +10,9 @@ ${sed_cmd} -i -e "/INTEL_MKL_DIR/s/,/,'USE_MKLDNN', 'CUDA_USE_STATIC_CUDA_RUNTIM
 ${sed_cmd} -i -e '/^\s*check_submodules()/s/check_submodules()/#check_submodules()/g' setup.py
 ${sed_cmd} -i -e '2 s/.*/#include <stdint.h>/g' c10/core/DispatchKey.h
 ${sed_cmd} -i -e '/finalAtom/s/, pos . startSearchFrom//g' aten/src/ATen/core/qualified_name.h
+if [[ "${BUILD_CONTEXT_macos:=0}" == "1" ]]; then
+  ${sed_cmd} -i -e '/error=cast-function-type/d' CMakeLists.txt
+fi
 if [[ "$(uname)" == "FreeBSD" ]]; then
   ${sed_cmd} -i -e 's/_assert/assert_in_pytorch/g' aten/src/ATen/native/sparse/ValidateCompressedIndicesCommon.h
   cd third_party
