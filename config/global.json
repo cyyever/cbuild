@@ -55,7 +55,8 @@
       "bsd_ports"
     ],
     "macos": [
-      "brew"
+      "brew",
+      "brew_cask"
     ],
     "centos": [
       "yum"
