@@ -13,12 +13,12 @@
   },
   "all_os": {
     "git_url": "git@github.com:boostorg/boost.git",
-    "git_branch": "boost-1.81.0",
+    "git_branch": "boost-1.82.0",
     "main_language": "c",
     "environment_variable": [
       "run_test=0"
     ],
-    "cmake_options": "-DBOOST_ENABLE_CMAKE=on",
+    "cmake_options": "-DBOOST_ENABLE_CMAKE=on -DBOOST_IOSTREAMS_ENABLE_ZSTD=off -DBOOST_IOSTREAMS_ENABLE_BZIP2=off -DBOOST_IOSTREAMS_ENABLE_LZMA=off",
     "cache_time": 300
   },
   "system_package_dependency": {
