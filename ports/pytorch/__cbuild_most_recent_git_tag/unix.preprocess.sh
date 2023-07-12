@@ -1,6 +1,7 @@
 cd ${SRC_DIR}
 rm -rf ${INSTALL_PREFIX}/lib/libc10* || true
 rm -rf ${INSTALL_PREFIX}/lib/libtorch* || true
+rm -rf ${INSTALL_PREFIX}/lib/libshm* || true
 rm -rf ${INSTALL_PREFIX}/lib/libcaffe2* || true
 rm -rf ${INSTALL_PREFIX}/include/torch || true
 rm -rf ${INSTALL_PREFIX}/include/ATen || true
