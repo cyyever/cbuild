@@ -1,5 +1,15 @@
 {
+  "freebsd": {
+    "group_package": true
+  },
+  "all_os": {
   "git_url": "git@github.com:zlib-ng/zlib-ng.git",
   "main_language": "c",
   "cmake_options": "-DZLIB_COMPAT=on"
+  },
+  "system_package_dependency": {
+    "freebsd": [
+      "zlib-ng"
+    ]
+  }
 }
