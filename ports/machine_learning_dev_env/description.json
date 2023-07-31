@@ -34,7 +34,8 @@
       "openmp"
     ],
     "pip": [
-      "tensorboard"
+      "tensorboard",
+      "nvidia-htop"
     ]
   }
 }
