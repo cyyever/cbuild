@@ -6,6 +6,7 @@
   "dependency": [
     "cyy_naive_python_lib:main",
     "torchvision:cyy",
+    "torchdata",
     "torchtext:cyy",
     "huggingface_transformers"
   ],

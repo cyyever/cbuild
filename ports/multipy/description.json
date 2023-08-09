@@ -1,7 +1,10 @@
 {
-  "git_url": "git@github.com:rusty1s/pytorch_scatter.git",
+  "git_url": "git@github.com:pytorch/multipy.git",
   "main_language": "python",
   "environment_variable": [
+    "PYTORCH_ROOT=$(${CBUILD_PYTHON_EXE} -m site --user-site)",
+    "static_analysis=1",
+    "clang_tidy_static_analysis=1",
     "run_test=0"
   ],
   "conditional_new_feature": {
