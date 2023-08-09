@@ -13,7 +13,7 @@
   },
   "all_os": {
     "git_url": "git@github.com:boostorg/boost.git",
-    "git_branch": "boost-1.82.0",
+    "git_branch": "boost-1.83.0",
     "main_language": "c",
     "environment_variable": [
       "run_test=0"
