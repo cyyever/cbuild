@@ -2,7 +2,7 @@
 #   mkdir -p $INSTALL_PREFIX/cudnn/lib
 #   cp -f -r /usr/lib/libcudnn* $INSTALL_PREFIX/cudnn/lib
 # else
-if !command -v pacman; then
+if ! command -v pacman; then
   cd $SRC_DIR
   cd cudnn*
   rm -rf $INSTALL_PREFIX/cudnn
