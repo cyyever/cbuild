@@ -52,3 +52,47 @@ if test -f "setup.py"; then
     BUILD_DIR="$(pwd)/build"
   fi
 fi
+
+if test -f "pyproject.toml"; then
+  if [[ "${reuse_build:=0}" == "0" ]]; then
+    for d in build dist; do
+      if test -d ${d}; then
+        if ! rm -rf ${d}; then
+          ${sudo_cmd} rm -rf ${d}
+        fi
+      fi
+    done
+  fi
+
+  if [[ -z ${PYTHON_BUILD_CMD+x} ]]; then
+    build_cmd="${CBUILD_PYTHON_EXE} -m pip install -e . --user --force"
+  else
+    build_cmd="$PYTHON_BUILD_CMD"
+  fi
+  if [[ -n ${need_compilation_json+x} ]] && command -v bear; then
+    build_cmd="bear -- ${build_cmd}"
+  fi
+  clang_tidy_fix_succ=0
+  if run_clang_tidy_fix; then
+    clang_tidy_fix_succ=1
+  fi
+  ${build_cmd}
+  if [[ "$clang_tidy_fix_succ" == "0" ]]; then
+    if run_clang_tidy_fix; then
+      ${build_cmd}
+    fi
+  fi
+  if [[ "${run_test}" == "1" ]]; then
+    if [[ -n ${TEST_SUBDIR+x} ]]; then
+      cd ${TEST_SUBDIR}
+    fi
+    if [[ "${PACKAGE_VERSION}" == "master" ]]; then
+      ${CBUILD_PYTHON_EXE} -m pytest || true
+    else
+      ${CBUILD_PYTHON_EXE} -m pytest
+    fi
+  fi
+  if test -d build; then
+    BUILD_DIR="$(pwd)/build"
+  fi
+fi
