@@ -19,7 +19,7 @@ class GitSource(Source):
 
     def __init__(
         self,
-        spec,
+        spec: str,
         git_url: str,
         root_dir: str,
         with_submodule: bool = True,
@@ -40,6 +40,7 @@ class GitSource(Source):
         self.with_submodule = with_submodule
         self.ignored_submodules = ignored_submodules
         self.ignored_tag_regex = ignored_tag_regex
+        self.downloaded = False
 
     def get_checksum(self) -> str:
         with self:
@@ -49,6 +50,8 @@ class GitSource(Source):
             return commit_hash.strip()
 
     def _download(self) -> str:
+        if self.downloaded:
+            return self.__repositary_path
         print("downloading", self.spec.name)
         if not os.path.isdir(os.path.join(self.__repositary_path, ".git")):
             if os.path.exists(self.__repositary_path):
@@ -107,6 +110,7 @@ class GitSource(Source):
             exec_cmd(cmd)
 
         print("finish downloading", self.spec.name)
+        self.downloaded = True
         return self.__repositary_path
 
     def in_master(self):

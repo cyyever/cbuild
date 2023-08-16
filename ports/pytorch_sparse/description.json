@@ -2,7 +2,8 @@
   "git_url": "git@github.com:rusty1s/pytorch_sparse.git",
   "main_language": "python",
   "environment_variable": [
-    "run_test=0"
+    "run_test=0",
+    "WITH_METIS=1"
   ],
   "conditional_new_feature": {
     "unix": [

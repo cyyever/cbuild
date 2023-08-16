@@ -1,4 +1,8 @@
 build_by_cmake() {
+  if [[ -n ${pre_cmake_cmd+x} ]]; then
+    cd ${SRC_DIR}
+    ${pre_cmake_cmd}
+  fi
   cd ${BUILD_DIR}
   cmake_generator_exp=''
   if [[ "${CMAKE_GENERATOR}" != "native" ]]; then
@@ -77,6 +81,9 @@ build_by_autotools() {
   fi
   if [[ "${reuse_build:=0}" == "0" ]]; then
     ${make_cmd} clean || true
+  fi
+  if [[ -n ${pre_make_cmd+x} ]]; then
+    ${pre_make_cmd}
   fi
   if [[ -n ${need_compilation_json+x} ]] && command -v bear; then
     bear -- ${make_cmd} -j $MAX_JOBS

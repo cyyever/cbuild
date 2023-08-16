@@ -1,0 +1,12 @@
+{
+  "git_url": "git@github.com:KarypisLab/METIS.git",
+  "main_language": "c",
+  "git_branch": "master",
+  "environment_variable": [
+    "pre_cmake_cmd=make config shared=1 i64=1 f64=1 gklib_path=${INSTALL_PREFIX}"
+  ],
+  "cmake_options": "-DSHARED=on",
+  "dependency": [
+    "gklib"
+  ]
+}
