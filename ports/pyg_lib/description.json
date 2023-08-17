@@ -1,0 +1,23 @@
+{
+  "git_url": "git@github.com:pyg-team/pyg-lib.git",
+  "main_language": "python",
+  "environment_variable": [
+    "run_test=0"
+  ],
+  "dependency": [
+    "pytorch",
+    "pytorch_scatter",
+    "pytorch_sparse"
+  ],
+  "conditional_new_feature": {
+    "support_cuda": [
+      "cuda"
+    ],
+    "unix&&!macos": [
+      "use_mold"
+    ],
+    "unix": [
+      "machine_learning_compilers"
+    ]
+  }
+}
