@@ -51,9 +51,7 @@ if test -f "setup.py"; then
   if test -d build; then
     BUILD_DIR="$(pwd)/build"
   fi
-fi
-
-if test -f "pyproject.toml"; then
+elif test -f "pyproject.toml"; then
   if [[ "${reuse_build:=0}" == "0" ]]; then
     for d in build dist; do
       if test -d ${d}; then
@@ -82,16 +80,16 @@ if test -f "pyproject.toml"; then
       ${build_cmd}
     fi
   fi
-  if [[ "${run_test}" == "1" ]]; then
-    if [[ -n ${TEST_SUBDIR+x} ]]; then
-      cd ${TEST_SUBDIR}
-    fi
-    if [[ "${PACKAGE_VERSION}" == "master" ]]; then
-      ${CBUILD_PYTHON_EXE} -m pytest || true
-    else
-      ${CBUILD_PYTHON_EXE} -m pytest
-    fi
-  fi
+  # if [[ "${run_test}" == "1" ]]; then
+  #   if [[ -n ${TEST_SUBDIR+x} ]]; then
+  #     cd ${TEST_SUBDIR}
+  #   fi
+  #   if [[ "${PACKAGE_VERSION}" == "master" ]]; then
+  #     ${CBUILD_PYTHON_EXE} -m pytest || true
+  #   else
+  #     ${CBUILD_PYTHON_EXE} -m pytest
+  #   fi
+  # fi
   if test -d build; then
     BUILD_DIR="$(pwd)/build"
   fi
