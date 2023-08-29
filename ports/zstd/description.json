@@ -1,0 +1,10 @@
+{
+  "all_os": {
+    "git_url": "git@github.com:facebook/zstd.git",
+    "main_language": "c",
+    "environment_variable": [
+      "run_test=0"
+    ],
+    "cache_time": 300
+  }
+}
