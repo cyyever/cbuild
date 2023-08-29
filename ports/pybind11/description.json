@@ -20,10 +20,10 @@
   "conditional_environment_variable": {
     "freebsd": [
       "run_test=0"
+    ],
+    "windows": [
+      "run_test=0"
     ]
   },
-  "cmake_options": "-DPYBIND11_TEST=on -DDOWNLOAD_CATCH=ON",
-  "dependency": [
-    "boost"
-  ]
+  "cmake_options": "-DPYBIND11_TEST=on -DDOWNLOAD_CATCH=ON"
 }
