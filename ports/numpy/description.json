@@ -14,7 +14,7 @@
   ],
   "conditional_environment_variable": {
     "windows": [
-      "PYTHON_BUILD_CMD=${CBUILD_PYTHON_EXE} setup.py config --fcompiler=intelem build_ext --inplace"
+      "PYTHON_BUILD_CMD=${CBUILD_PYTHON_EXE} setup.py config build_ext --inplace"
     ]
   },
   "conditional_new_feature": {

@@ -1,6 +1,5 @@
 {
   "git_url": "git@github.com:xianyi/OpenBLAS.git",
-  "use_mingw64": true,
   "git_branch": "develop",
   "reuse_build": true,
   "cache_time": 90,
@@ -8,12 +7,14 @@
     "CTEST_PARALLEL_LEVEL=1"
   ],
   "cmake_options": "-DBUILD_WITHOUT_LAPACK=OFF -DBUILD_BFLOAT16=ON -DUSE_OPENMP=off -DCMAKE_GNUtoMS=on",
+  "conditional_cmake_options": {
+    "windows": "-DBUILD_WITHOUT_LAPACK=ON"
+  },
   "main_language": "c",
   "build_languages": [
     "fortran"
   ],
   "dependency": [
-    "perl_env",
     "fortran_env"
   ]
 }
