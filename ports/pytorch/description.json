@@ -21,9 +21,6 @@
       "support_cuda": [
         "cuda"
       ],
-      "unix&&!macos": [
-        "use_mold"
-      ],
       "unix": [
         "machine_learning_compilers"
       ]
