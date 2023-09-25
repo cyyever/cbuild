@@ -32,32 +32,13 @@
       "clang_tidy_fix=0",
       "py_pkg_name=torch",
       "BUILD_TEST=off",
-      "USE_MPI=OFF",
-      "BUILD_NVFUSER=off",
       "USE_SYSTEM_PYBIND11=on",
       "ATEN_NO_TEST=ON",
-      "COLORIZE_OUTPUT=on",
       "BUILD_CAFFE2=off",
-      "USE_ASAN=off",
-      "USE_TSAN=off",
-      "USE_SYSTEM_BIND11=on",
       "BUILD_CUSTOM_PROTOBUF=on",
-      "USE_DISTRIBUTED=off",
-      "USE_GLOO=off",
-      "USE_SYSTEM_EIGEN_INSTALL=ON",
       "USE_FBGEMM=on",
-      "USE_ROCM=off",
-      "USE_BREAKPAD=off",
-      "USE_KINETO=off",
-      "USE_TENSORRT=off",
       "GLIBCXX_USE_CXX11_ABI=1",
-      "USE_OPENCV=off",
-      "USE_QNNPACK=off",
-      "USE_PYTORCH_QNNPACK=off",
-      "USE_METAL=off",
-      "USE_NUMA=ON",
       "CAFFE2_USE_MKL=OFF",
-      "USE_FFMPEG=off",
       "USE_GLOG=off",
       "USE_GFLAGS=off",
       "ONNX_ML=off",
@@ -71,7 +52,6 @@
       "cuda": [
         "USE_CUDA=on",
         "USE_CUDNN=on",
-        "USE_MKLDNN=off",
         "CUDNN_ROOT=${INSTALL_PREFIX}/cudnn",
         "CUDNN_LIBRARY=${INSTALL_PREFIX}/cudnn"
       ],
@@ -98,9 +78,6 @@
         "NCCL_INCLUDE_DIR=${INSTALL_PREFIX}/include",
         "USE_NCCL=off",
         "USE_SYSTEM_NCCL=off"
-      ],
-      "freebsd": [
-        "USE_DISTRIBUTED=off"
       ]
     }
   },
