@@ -9,7 +9,6 @@
       "third_party/eigen",
       "third_party/pybind11",
       "third_party/ios-cmake",
-      "third_party/nccl/nccl",
       "third_party/python-enum",
       "third_party/python-six",
       "third_party/QNNPACK",
@@ -72,12 +71,6 @@
       ],
       "macos": [
         "BLAS=vecLib"
-      ],
-      "linux&&cuda": [
-        "NCCL_ROOT=${INSTALL_PREFIX}",
-        "NCCL_INCLUDE_DIR=${INSTALL_PREFIX}/include",
-        "USE_NCCL=off",
-        "USE_SYSTEM_NCCL=off"
       ]
     }
   },
