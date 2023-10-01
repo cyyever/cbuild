@@ -1,0 +1,12 @@
+{
+  "git_url": "git@github.com:Lightning-AI/torchmetrics.git",
+  "main_language": "python",
+  "conditional_new_feature": {
+    "unix": [
+      "machine_learning_compilers"
+    ]
+  },
+  "dependency": [
+    "pytorch"
+  ]
+}
