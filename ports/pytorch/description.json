@@ -1,15 +1,12 @@
 {
   "all_os": {
-    "git_url": "git@github.com:cyyever/pytorch_private.git",
-    "remote_git_url": "git@github.com:pytorch/pytorch.git",
-    "remote_git_branch": "viable/strict",
-    "git_branch": "cyy",
+    "git_url": "git@github.com:pytorch/pytorch.git",
+    "git_branch": "viable/strict",
     "reuse_build": true,
     "ignored_git_submodules": [
       "third_party/eigen",
       "third_party/pybind11",
       "third_party/ios-cmake",
-      "third_party/QNNPACK",
       "third_party/breakpad",
       "third_party/tbb"
     ],
@@ -32,6 +29,7 @@
       "USE_SYSTEM_PYBIND11=on",
       "ATEN_NO_TEST=ON",
       "BUILD_CAFFE2=off",
+      "USE_DISTRIBUTED=off",
       "BUILD_CUSTOM_PROTOBUF=on",
       "USE_FBGEMM=on",
       "GLIBCXX_USE_CXX11_ABI=1",
