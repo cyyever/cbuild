@@ -9,8 +9,6 @@
       "third_party/eigen",
       "third_party/pybind11",
       "third_party/ios-cmake",
-      "third_party/python-enum",
-      "third_party/python-six",
       "third_party/QNNPACK",
       "third_party/breakpad",
       "third_party/tbb"
