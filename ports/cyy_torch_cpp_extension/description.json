@@ -11,14 +11,8 @@
   ],
   "cmake_options": "-DDISABLE_RUNTIME_ANALYSIS=on",
   "conditional_new_feature": {
-    "unix": [
-      "use_mold"
-    ],
     "support_cuda": [
       "cuda"
-    ],
-    "unix&&!macos": [
-      "use_mold"
     ]
   },
   "dependency": [
