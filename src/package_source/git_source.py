@@ -2,12 +2,12 @@ import functools
 import os
 import re
 import sys
-from distutils.version import LooseVersion
 
 from cyy_naive_lib.shell_factory import exec_cmd
 from cyy_naive_lib.source_code.source import Source
 from cyy_naive_lib.storage import persistent_cache
 from cyy_naive_lib.system_info import get_operating_system
+from looseversion import LooseVersion
 
 
 class GitSource(Source):

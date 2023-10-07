@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 import re
 import sys
-from distutils.version import StrictVersion
+
+from looseversion import LooseVersion
 
 
 class PackageSpecification:
@@ -20,9 +21,9 @@ class PackageSpecification:
         if ver2.startswith("v"):
             ver2 = ver2[1:]
 
-        if StrictVersion(ver1) < StrictVersion(ver2):
+        if LooseVersion(ver1) < LooseVersion(ver2):
             return -1
-        if StrictVersion(ver1) > StrictVersion(ver2):
+        if LooseVersion(ver1) > LooseVersion(ver2):
             return 1
         return 0
 
