@@ -65,6 +65,9 @@
       "windows": [
         "USE_OPENMP=off"
       ],
+      "freebsd": [
+        "USE_VULKAN=on"
+      ],
       "macos": [
         "BLAS=vecLib"
       ]
