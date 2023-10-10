@@ -1,5 +1,8 @@
 {
   "group_package": true,
+  "conditional_dependency": {
+    "windows": ["intel-fortran"]
+  },
   "system_package_dependency": {
     "ubuntu": [
       "gfortran"

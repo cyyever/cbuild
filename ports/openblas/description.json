@@ -1,5 +1,5 @@
 {
-  "git_url": "git@github.com:xianyi/OpenBLAS.git",
+  "git_url": "git@github.com:OpenMathLib/OpenBLAS.git",
   "git_branch": "develop",
   "reuse_build": true,
   "cache_time": 90,
@@ -7,9 +7,6 @@
     "CTEST_PARALLEL_LEVEL=1"
   ],
   "cmake_options": "-DBUILD_WITHOUT_LAPACK=OFF -DBUILD_BFLOAT16=ON -DUSE_OPENMP=off -DCMAKE_GNUtoMS=on",
-  "conditional_cmake_options": {
-    "windows": "-DBUILD_WITHOUT_LAPACK=ON"
-  },
   "main_language": "c",
   "build_languages": [
     "fortran"

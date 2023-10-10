@@ -63,7 +63,7 @@
         "DEBUG=1"
       ],
       "windows": [
-        "USE_OPENMP=off"
+        "BLAS=mkl"
       ],
       "freebsd": [
         "USE_VULKAN=on"
