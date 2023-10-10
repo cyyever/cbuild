@@ -7,6 +7,11 @@
   "main_language": "c",
   "cmake_options": "-DZLIB_COMPAT=on"
   },
+  "conditional_dependency": {
+    "windows": [
+      "googletest"
+    ]
+  },
   "system_package_dependency": {
     "freebsd": [
       "zlib-ng"
