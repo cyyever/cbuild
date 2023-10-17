@@ -3,7 +3,6 @@ if [[ "${BUILD_CONTEXT_docker:=0}" == "0" ]]; then
     sudo systemctl disable ldconfig.service
   fi
   if command -v asd; then
-    sudo ${sed_cmd} -i -e "/^#WHATTOSYNC=(/s/.*/WHATTOSYNC=('/home/cyy/.cache/nvim')" /etc/asd.conf
     sudo systemctl enable asd
   fi
 elif [[ "${DOCKER_USER:=root}" != "root" ]]; then
