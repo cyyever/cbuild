@@ -13,8 +13,8 @@ elif command -v dnf >/dev/null; then
 elif command -v pacman >/dev/null; then
   ${sudo_cmd} pacman -Sy python3 jq --noconfirm
 elif command -v pkg >/dev/null; then
-  ${sudo_cmd} pkg install -y python310 bash jq
-  export python3_cmd=python3.10
+  ${sudo_cmd} pkg install -y python311 bash jq
+  export python3_cmd=python3.11
 elif [[ "$(uname -s)" == "Darwin" ]]; then
   brew_cmd=brew
   if test -f /opt/homebrew/bin/brew; then

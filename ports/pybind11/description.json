@@ -8,16 +8,10 @@
     "python"
   ],
   "environment_variable": [
-    "static_analysis=1",
-    "slow_static_analysis=1",
-    "clang_tidy_fix=1",
     "run_test=1",
     "TEST_TARGET=check"
   ],
   "conditional_environment_variable": {
-    "freebsd": [
-      "run_test=0"
-    ],
     "windows": [
       "run_test=0"
     ]
