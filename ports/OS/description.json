@@ -26,7 +26,8 @@
     ],
     "archlinux": [
       "jq",
-      "which"
+      "which",
+      "anything-sync-daemon"
     ],
     "bsd": [
       "coreutils",
