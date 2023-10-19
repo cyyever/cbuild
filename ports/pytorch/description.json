@@ -39,6 +39,7 @@
       "ONNX_ML=off",
       "USE_MKLDNN=off",
       "BLAS=OpenBLAS",
+      "USE_FLASH_ATTENTION=0",
       "PYTHON_EXECUTABLE=${CBUILD_PYTHON_EXE}",
       "OpenBLAS_HOME=${INSTALL_PREFIX}/include/openblas",
       "OpenBLAS=${INSTALL_PREFIX}"
