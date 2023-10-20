@@ -77,7 +77,7 @@
   "dependency": [
     "machine_learning_dev_env",
     "glog",
-    "pybind11"
+    "pybind11:master"
   ],
   "system_package_dependency": {
     "ubuntu": [
