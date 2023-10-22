@@ -32,9 +32,6 @@
     "spdlog"
   ],
   "conditional_dependency": {
-    "bsd": [
-      "jthread:master"
-    ],
     "cv": [
       "opencv[full]:cyy"
     ],
