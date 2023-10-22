@@ -67,7 +67,9 @@
         "BLAS=mkl"
       ],
       "freebsd": [
-        "USE_VULKAN=on"
+        "USE_VULKAN=on",
+      "USE_FBGEMM=off",
+        "USE_KINETO=off"
       ],
       "macos": [
         "BLAS=vecLib"
