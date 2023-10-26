@@ -67,8 +67,9 @@
         "BLAS=mkl"
       ],
       "freebsd": [
+        "CMAKE_GENERATOR='Unix Makefiles'",
         "USE_VULKAN=on",
-      "USE_FBGEMM=off",
+        "USE_FBGEMM=off",
         "USE_KINETO=off"
       ],
       "macos": [
