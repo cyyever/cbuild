@@ -1,6 +1,6 @@
 {
   "git_url": "https://git.ffmpeg.org/ffmpeg.git",
-  "git_branch": "n6.0",
+  "git_branch": "master",
   "cache_time": 300,
   "use_mingw64": true,
   "dependency": [
