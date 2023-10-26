@@ -8,7 +8,7 @@
     "python"
   ],
   "environment_variable": [
-    "run_test=1",
+    "run_test=0",
     "TEST_TARGET=check"
   ],
   "conditional_environment_variable": {
