@@ -5,7 +5,7 @@
   "main_language": "python",
   "dependency": [
     "cyy_naive_python_lib:main",
-    "torchvision:cyy",
+    "torchvision:main",
     "torchdata",
     "torchmetrics",
     "torchtext:cyy",
