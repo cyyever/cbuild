@@ -1,5 +1,5 @@
 {
-  "git_url": "git@github.com:cyyever/XAI_method.git",
+  "git_url": "git@github.com:cyyever/torch_XAI.git",
   "cache_time": 0,
   "main_language": "python",
   "dependency": [
