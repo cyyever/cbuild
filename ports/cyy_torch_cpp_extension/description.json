@@ -16,7 +16,6 @@
     ]
   },
   "dependency": [
-    "pytorch",
-    "cyy_naive_cpp_lib[shared_lib]:master"
+    "pytorch"
   ]
 }
