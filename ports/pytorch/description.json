@@ -22,7 +22,7 @@
     "main_language": "python",
     "environment_variable": [
       "run_test=0",
-      "slow_static_analysis=0",
+      "slow_static_analysis=1",
       "clang_tidy_fix=0",
       "py_pkg_name=torch",
       "BUILD_TEST=off",
@@ -33,6 +33,7 @@
       "BUILD_CUSTOM_PROTOBUF=on",
       "USE_FBGEMM=on",
       "GLIBCXX_USE_CXX11_ABI=1",
+      "USE_KINETO=off",
       "CAFFE2_USE_MKL=OFF",
       "USE_GLOG=off",
       "USE_GFLAGS=off",
@@ -69,8 +70,7 @@
       "freebsd": [
         "CMAKE_GENERATOR='Unix Makefiles'",
         "USE_VULKAN=on",
-        "USE_FBGEMM=off",
-        "USE_KINETO=off"
+        "USE_FBGEMM=off"
       ],
       "macos": [
         "BLAS=vecLib"
