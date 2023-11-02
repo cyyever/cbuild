@@ -48,6 +48,7 @@
     "windows": "-DCMAKE_IGNORE_PATH=C:/ProgramData/chocolatey/bin -DOPENCV_EXTRA_MODULES_PATH=${INSTALL_PREFIX}/opencv_contrib/modules -DPKG_CONFIG_EXECUTABLE=C:/ProgramData/chocolatey/bin/pkg-config.exe",
     "windows&&cuda": "-DCUDNN_INCLUDE_DIR=${INSTALL_PREFIX}/cudnn/include -DCUDNN_LIBRARY=${INSTALL_PREFIX}/cudnn/lib/cudnn.lib",
     "freebsd": "-DWITH_IPP=off",
+    "macos": "-DBUILD_ZLIB=on",
     "full": "-DBUILD_opencv_highgui=ON -DBUILD_opencv_video=ON -DBUILD_opencv_videoio=ON -DBUILD_opencv_videostab=ON -DBUILD_opencv_cudaoptflow=ON -DBUILD_opencv_optflow=ON -DBUILD_opencv_calib3d=on -DBUILD_opencv_features2d=ON -DBUILD_opencv_cudafeatures2d=on -DBUILD_opencv_flann=on -DBUILD_opencv_dnn=ON -DWITH_PROTOBUF=on -DBUILD_opencv_stitching=ON -DWITH_FFMPEG=ON -DOPENCV_FFMPEG_SKIP_DOWNLOAD=on -DWITH_QT=on -DWITH_GTK=off -DBUILD_opencv_cvv=OFF"
   }
 }
