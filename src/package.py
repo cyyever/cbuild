@@ -98,6 +98,8 @@ class Package:
             build_dir = os.path.join(environment.builds_dir, self.full_name())
 
             reuse_build = self.desc.get_item("reuse_build", False)
+            if BuildContext.get_host_system() == "windows":
+                reuse_build = False
             if not reuse_build:
                 shutil.rmtree(build_dir, ignore_errors=True)
             else:
@@ -185,12 +187,12 @@ class Package:
                 with open(runtime_path, "r") as f:
                     additional_docker_commands = f.readlines()
             if prev_package is None:
-                for (k, v) in script.env:
+                for k, v in script.env:
                     if k == "INSTALL_PREFIX":
                         additional_docker_commands.append(
                             'ENV INSTALL_PREFIX="' + v + '"'
                         )
-                for (k, v) in script.env:
+                for k, v in script.env:
                     if k == "PATH":
                         additional_docker_commands.append(
                             'ENV PATH="' + v + "" + ':$PATH"'
