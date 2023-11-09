@@ -22,7 +22,7 @@
     "main_language": "python",
     "environment_variable": [
       "run_test=0",
-      "slow_static_analysis=1",
+      "slow_static_analysis=0",
       "clang_tidy_fix=0",
       "py_pkg_name=torch",
       "BUILD_TEST=off",
