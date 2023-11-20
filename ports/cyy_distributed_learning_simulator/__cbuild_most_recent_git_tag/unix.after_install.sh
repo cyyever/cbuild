@@ -1,3 +1,2 @@
-if [[ "${run_test}" == "1" ]]; then
-  bash test.sh
-fi
+cd ${SRC_DIR}
+bash test.sh

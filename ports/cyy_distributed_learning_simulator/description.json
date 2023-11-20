@@ -4,5 +4,8 @@
   "main_language": "python",
   "dependency": [
     "cyy_torch_algorithm:main"
+  ],
+  "environment_variable": [
+    "run_test=0"
   ]
 }

@@ -44,6 +44,8 @@ if test -f "setup.py"; then
     fi
     if [[ "${PACKAGE_VERSION}" == "master" ]]; then
       ${CBUILD_PYTHON_EXE} -m pytest || true
+    elif [[ "${PACKAGE_VERSION}" == "main" ]]; then
+      ${CBUILD_PYTHON_EXE} -m pytest || true
     else
       ${CBUILD_PYTHON_EXE} -m pytest
     fi
