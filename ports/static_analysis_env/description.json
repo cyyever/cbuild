@@ -1,8 +1,6 @@
 {
   "group_package": true,
   "system_package_dependency": {
-    "pip": [
-      "semgrep"
-    ]
+    "pip": []
   }
 }
