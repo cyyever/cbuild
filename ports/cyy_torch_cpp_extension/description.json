@@ -16,6 +16,7 @@
     ]
   },
   "dependency": [
-    "pytorch"
+    "pytorch",
+    "doctest"
   ]
 }

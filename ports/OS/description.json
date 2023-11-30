@@ -18,6 +18,12 @@
         "fakeroot",
         "vim"
       ]
+    },
+    "docker": {
+      "archlinux": [
+        "git",
+        "python"
+      ]
     }
   },
   "system_package_dependency": {
