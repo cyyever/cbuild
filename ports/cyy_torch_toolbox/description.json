@@ -7,8 +7,7 @@
     "cyy_naive_python_lib:main",
     "torchdata",
     "torchmetrics",
-    "torchvision:main",
-    "torchtext:cyy"
+    "torchvision:main"
   ],
   "environment_variable": [
     "static_analysis=1"
@@ -20,12 +19,18 @@
   },
   "conditional_dependency": {
     "full": [
+      "torchtext:cyy",
       "pytorch_geometric",
       "huggingface_transformers",
       "spacy"
     ],
     "cuda&&!windows&&full": [
       "dali:cyy"
+    ]
+  },
+  "system_package_dependency": {
+    "archlinux": [
+      "openssh"
     ]
   }
 }
