@@ -19,7 +19,6 @@
   },
   "conditional_dependency": {
     "full": [
-      "torchtext:cyy",
       "pytorch_geometric",
       "huggingface_transformers",
       "spacy"
