@@ -1,0 +1,11 @@
+{
+  "git_url": "git@github.com:cyyever/aaai_hydra.git",
+  "cache_time": 0,
+  "main_language": "python",
+  "dependency": [
+    "cyy_torch_xai:main"
+  ],
+  "environment_variable": [
+    "run_test=0"
+  ]
+}
