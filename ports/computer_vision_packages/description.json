@@ -4,8 +4,7 @@
     "all_os": [
       "libjpeg-turbo",
       "libpng:libpng16",
-      "pillow-simd",
-      "ffmpeg"
+      "pillow-simd"
     ]
   }
 }

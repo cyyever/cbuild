@@ -6,11 +6,9 @@
   "dependency": [
     "cyy_naive_python_lib:main",
     "torchdata",
-    "pytorch_geometric",
     "torchmetrics",
     "torchvision:main",
-    "torchtext:cyy",
-    "huggingface_transformers"
+    "torchtext:cyy"
   ],
   "environment_variable": [
     "static_analysis=1"
@@ -22,7 +20,8 @@
   },
   "conditional_dependency": {
     "full": [
-      "torchaudio:master",
+      "pytorch_geometric",
+      "huggingface_transformers",
       "spacy"
     ],
     "cuda&&!windows&&full": [
