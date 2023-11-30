@@ -17,8 +17,5 @@
     "windows": [
       "cudnn"
     ]
-  },
-  "dependency": [
-    "CUDA"
-  ]
+  }
 }

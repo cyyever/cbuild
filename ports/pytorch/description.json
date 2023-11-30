@@ -50,14 +50,14 @@
       "cuda": [
         "USE_CUDA=on",
         "USE_CUDNN=on",
-        "CUDNN_ROOT=${INSTALL_PREFIX}/cudnn",
-        "CUDNN_LIBRARY=${INSTALL_PREFIX}/cudnn"
-      ],
-      "!docker": [
         "USE_NATIVE_ARCH=on"
       ],
+      "!docker": [
+        "CUDNN_ROOT=${CUDNN_ROOT_DIR}"
+      ],
       "docker": [
-        "CUDA_USE_STATIC_CUDA_RUNTIME=off"
+        "CUDA_USE_STATIC_CUDA_RUNTIME=off",
+        "USE_NCCL=off"
       ],
       "amd64&&!cuda": [
         "USE_MKLDNN=on"

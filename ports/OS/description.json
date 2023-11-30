@@ -23,6 +23,9 @@
       "archlinux": [
         "git",
         "python"
+      ],
+      "archlinux&&cuda": [
+        "cuda"
       ]
     }
   },

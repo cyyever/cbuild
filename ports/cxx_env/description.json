@@ -43,6 +43,7 @@
     ],
     "archlinux": [
       "libunwind",
+      "doctest",
       "ninja",
       "gcc",
       "gcc12",
