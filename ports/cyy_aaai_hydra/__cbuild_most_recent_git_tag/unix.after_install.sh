@@ -1,2 +1,1 @@
-cd ${SRC_DIR}
-bash hydra_train.sh
+cp -r ${SRC_DIR} ~/aaai_hydra
