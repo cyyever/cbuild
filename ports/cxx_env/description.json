@@ -4,7 +4,7 @@
     "windows": [
       "Visual-Studio:2022"
     ],
-    "unix": [
+    "unix&&!docker": [
       "cyy_llvm_tool:main"
     ]
   },
@@ -43,6 +43,7 @@
     ],
     "archlinux": [
       "libunwind",
+      "doctest",
       "ninja",
       "gcc",
       "gcc12",

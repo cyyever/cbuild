@@ -1,14 +1,9 @@
 {
-  "git_url": "git@github.com:cyyever/text.git",
-  "remote_git_url": "git@github.com:pytorch/text.git",
-  "remote_git_branch": "main",
-  "git_branch": "cyy",
+  "git_url": "git@github.com:pytorch/text.git",
+  "git_branch": "main",
   "main_language": "python",
   "environment_variable": [
-    "run_test=0",
-    "static_analysis=1",
-    "clang_tidy_static_analysis=1",
-    "clang_tidy_fix=1"
+    "run_test=0"
   ],
   "conditional_new_feature": {
     "unix": [

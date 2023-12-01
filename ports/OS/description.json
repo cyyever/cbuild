@@ -18,6 +18,14 @@
         "fakeroot",
         "vim"
       ]
+    },
+    "docker": {
+      "archlinux": [
+        "git",
+        "cuda",
+        "cudnn",
+        "python"
+      ]
     }
   },
   "system_package_dependency": {
