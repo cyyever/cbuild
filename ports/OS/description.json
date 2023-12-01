@@ -22,10 +22,9 @@
     "docker": {
       "archlinux": [
         "git",
+        "cuda",
+        "cudnn",
         "python"
-      ],
-      "archlinux&&cuda": [
-        "cuda"
       ]
     }
   },

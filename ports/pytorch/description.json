@@ -42,7 +42,6 @@
       "BLAS=OpenBLAS",
       "USE_FLASH_ATTENTION=0",
       "USE_MEM_EFF_ATTENTION=0",
-      "PYTHON_EXECUTABLE=${CBUILD_PYTHON_EXE}",
       "OpenBLAS_HOME=${INSTALL_PREFIX}/include/openblas",
       "OpenBLAS=${INSTALL_PREFIX}"
     ],
@@ -50,10 +49,8 @@
       "cuda": [
         "USE_CUDA=on",
         "USE_CUDNN=on",
+        "CUDNN_ROOT=${CUDNN_ROOT_DIR}",
         "USE_NATIVE_ARCH=on"
-      ],
-      "!docker": [
-        "CUDNN_ROOT=${CUDNN_ROOT_DIR}"
       ],
       "docker": [
         "CUDA_USE_STATIC_CUDA_RUNTIME=off",
