@@ -4,7 +4,8 @@
   "main_language": "python",
   "dependency": [
     "cyy_torch_algorithm",
-    "cyy_torch_graph"
+    "cyy_torch_graph",
+    "cyy_torch_text"
   ],
   "environment_variable": [
     "run_test=0"
