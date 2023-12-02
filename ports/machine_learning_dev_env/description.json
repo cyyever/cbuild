@@ -11,7 +11,7 @@
       "zlib-ng",
       "openblas"
     ],
-    "cuda": [
+    "cuda&&!docker": [
       "cudnn"
     ]
   },

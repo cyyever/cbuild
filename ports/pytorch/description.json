@@ -54,6 +54,7 @@
       ],
       "docker": [
         "CUDA_USE_STATIC_CUDA_RUNTIME=off",
+        "USE_STATIC_CUDNN=off",
         "USE_NCCL=off"
       ],
       "amd64&&!cuda": [
