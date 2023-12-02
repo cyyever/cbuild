@@ -17,13 +17,7 @@
     ]
   },
   "conditional_dependency": {
-    "full": [
-      "huggingface_transformers",
-      "spacy"
-    ],
-    "cuda&&!windows&&full": [
-      "dali:cyy"
-    ]
+    "cuda&&!windows&&full": []
   },
   "system_package_dependency": {
     "archlinux": [
