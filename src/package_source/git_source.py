@@ -3,7 +3,7 @@ import os
 import re
 import sys
 
-from cyy_naive_lib.shell_factory import exec_cmd
+from cyy_naive_lib.shell import exec_cmd
 from cyy_naive_lib.source_code.source import Source
 from cyy_naive_lib.storage import persistent_cache
 from cyy_naive_lib.system_info import get_operating_system

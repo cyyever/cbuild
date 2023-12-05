@@ -1,12 +1,10 @@
-#!/usr/bin/env python3
-# import copy
 import os
 import shutil
 import sys
 import time
 
+from cyy_naive_lib.shell import exec_cmd
 from cyy_naive_lib.shell.docker_file import DockerFile
-from cyy_naive_lib.shell_factory import exec_cmd
 
 from . import environment
 from .build_action import BuildAction
@@ -41,7 +39,7 @@ class Package:
             environment.tag_dir, (str(self.specification()) + ".tag").replace("/", "_")
         )
 
-    def check_cache(self, new_hash=None):
+    def check_cache(self, new_hash: str | None = None) -> bool:
         tag_file = self.get_tag_file()
         if not os.path.isfile(tag_file):
             return False
@@ -56,7 +54,7 @@ class Package:
             return True
 
         if new_hash is not None:
-            with open(tag_file, "r") as f:
+            with open(tag_file, "rt", encoding="utf8") as f:
                 old_hash = f.read()
             if old_hash == new_hash:
                 print("skip", str(self.specification()) + " due to hash")
@@ -131,7 +129,7 @@ class Package:
                 if exit_code != 0:
                     sys.exit("failed to build package:" + self.specification().name)
 
-            with open(tag_file, "w") as f:
+            with open(tag_file, "wt", encoding="utf8") as f:
                 f.write(new_hash)
             if not reuse_build:
                 shutil.rmtree(build_dir, ignore_errors=True)
@@ -216,7 +214,7 @@ class Package:
                 docker_image_name + ".build.txt",
             )
             os.makedirs(os.path.dirname(log_file), exist_ok=True)
-            with open(log_file, "wt") as f:
+            with open(log_file, "wt", encoding="utf8") as f:
                 _, exit_code = docker_file.build(
                     src_dir_pair=src_dir_pair,
                     additional_docker_commands=additional_docker_commands,
