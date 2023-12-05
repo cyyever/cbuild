@@ -7,7 +7,6 @@
     "static_analysis=1"
   ],
   "dependency": [
-    "cyy_torch_toolbox",
-    "cyy_torch_text"
+    "cyy_torch_toolbox"
   ]
 }
