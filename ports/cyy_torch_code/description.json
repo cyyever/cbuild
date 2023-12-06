@@ -4,6 +4,6 @@
   "cache_time": 0,
   "main_language": "python",
   "dependency": [
-    "cyy_torch_toolbox"
+    "cyy_torch_text"
   ]
 }
