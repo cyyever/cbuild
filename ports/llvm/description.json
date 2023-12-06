@@ -1,6 +1,6 @@
 {
   "git_url": "git@github.com:llvm/llvm-project.git",
-  "git_branch": "release/16.x",
+  "git_branch": "release/17.x",
   "cache_time": 999,
   "reuse_build": true,
   "cache_ignore_dependency_change": true,
