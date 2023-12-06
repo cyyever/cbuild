@@ -39,6 +39,8 @@
       "USE_GFLAGS=off",
       "ONNX_ML=off",
       "USE_MKLDNN=off",
+      "USE_QNNPACK=off",
+      "USE_PYTORCH_QNNPACK=off",
       "BLAS=OpenBLAS",
       "USE_FLASH_ATTENTION=0",
       "USE_MEM_EFF_ATTENTION=0",
