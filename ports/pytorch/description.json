@@ -80,6 +80,7 @@
   "dependency": [
     "machine_learning_dev_env",
     "glog",
+    "cuSPARSELt",
     "pybind11:master"
   ],
   "system_package_dependency": {
