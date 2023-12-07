@@ -5,8 +5,7 @@
   "main_language": "python",
   "dependency": [
     "cyy_naive_python_lib:main",
-    "torchmetrics",
-    "torchvision:main"
+    "torchmetrics"
   ],
   "environment_variable": [
     "static_analysis=1"
@@ -14,14 +13,6 @@
   "conditional_new_feature": {
     "support_cuda": [
       "cuda"
-    ]
-  },
-  "conditional_dependency": {
-    "cuda&&!windows&&full": []
-  },
-  "system_package_dependency": {
-    "archlinux": [
-      "openssh"
     ]
   }
 }
