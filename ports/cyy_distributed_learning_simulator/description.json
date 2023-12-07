@@ -5,7 +5,8 @@
   "dependency": [
     "cyy_torch_algorithm",
     "cyy_torch_graph",
-    "cyy_torch_text"
+    "cyy_torch_text",
+    "cyy_torch_vision"
   ],
   "environment_variable": [
     "run_test=0"

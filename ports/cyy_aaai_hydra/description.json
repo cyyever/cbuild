@@ -3,7 +3,8 @@
   "cache_time": 0,
   "main_language": "python",
   "dependency": [
-    "cyy_torch_xai:main"
+    "cyy_torch_xai:main",
+    "cyy_torch_vision:main"
   ],
   "environment_variable": [
     "run_test=0"
