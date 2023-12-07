@@ -9,6 +9,9 @@
   "conditional_environment_variable": {
     "freebsd": [
       "make_cmd=gmake"
+    ],
+    "macos": [
+      "LDFLAGS=-Wl,-ld_classic"
     ]
   },
   "conditional_new_feature": {
