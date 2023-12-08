@@ -82,9 +82,13 @@
   "dependency": [
     "machine_learning_dev_env",
     "glog",
-    "cuSPARSELt",
     "pybind11:master"
   ],
+  "conditional_dependency": {
+    "support_cuda": [
+      "cuSPARSELt"
+    ]
+  },
   "system_package_dependency": {
     "ubuntu": [
       "libnuma-dev",

@@ -10,7 +10,7 @@
       "ninja",
       "zlib-ng"
     ],
-    "!windows":[
+    "!windows&&!macos":[
       "openblas"
     ],
     "cuda&&!docker": [
