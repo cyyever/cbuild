@@ -25,7 +25,8 @@
         "openssh",
         "cuda",
         "cudnn",
-        "python"
+        "python",
+        "python-pip"
       ]
     }
   },
