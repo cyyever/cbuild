@@ -4,7 +4,7 @@ if test -f requirements.txt; then
   ${CBUILD_PIP_EXE} install -r requirements.txt --user
 fi
 
-if test -f "pyproject.toml" && grep -i "build" pyproject.toml; then
+if test -f "pyproject.toml" && [[ -z ${use_setup_py+x} ]]; then
   if [[ "${reuse_build:=0}" == "0" ]]; then
     for d in build dist; do
       if test -d ${d}; then
