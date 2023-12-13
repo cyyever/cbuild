@@ -6,13 +6,16 @@
   "archlinux": {
     "group_package": true
   },
-  "!archlinux": {
+  "!archlinux&&!ubuntu": {
     "url": "https://developer.download.nvidia.com/compute/redist/cudnn/v8.7.0/local_installers/11.8/cudnn-linux-x86_64-8.7.0.84_cuda11-archive.tar.xz",
     "checksum": "no_checksum"
   },
   "system_package_dependency": {
     "archlinux": [
       "cudnn"
+    ],
+    "ubuntu": [
+      "libcudnn8-dev"
     ],
     "windows": [
       "cudnn"
