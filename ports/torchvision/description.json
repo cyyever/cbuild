@@ -5,9 +5,7 @@
   "environment_variable": [
     "run_test=0",
     "use_setup_py=1",
-    "TORCHVISION_USE_FFMPEG=0",
-    "TORCHVISION_INCLUDE=${INSTALL_PREFIX}/include",
-    "TORCHVISION_LIBRARY=${INSTALL_PREFIX}/lib;${INSTALL_PREFIX}/lib64"
+    "TORCHVISION_USE_FFMPEG=0"
   ],
   "conditional_new_feature": {
     "unix": [
@@ -15,6 +13,10 @@
     ]
   },
   "conditional_environment_variable": {
+    "!macos": [
+      "TORCHVISION_INCLUDE=${INSTALL_PREFIX}/include",
+      "TORCHVISION_LIBRARY=${INSTALL_PREFIX}/lib;${INSTALL_PREFIX}/lib64"
+    ],
     "unix": [
       "CPLUS_INCLUDE_PATH=${INSTALL_PREFIX}/oneTBB/include"
     ],
