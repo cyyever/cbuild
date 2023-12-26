@@ -13,7 +13,6 @@
       "cmake_generator=native"
     ],
     "dependency": [
-      "libuv",
       "glog"
     ]
   },
