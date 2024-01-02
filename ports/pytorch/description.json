@@ -41,6 +41,7 @@
       "ONNX_ML=off",
       "USE_MKLDNN=off",
       "USE_QNNPACK=off",
+      "USE_XNNPACK=off",
       "USE_PYTORCH_QNNPACK=off",
       "BLAS=OpenBLAS",
       "USE_FLASH_ATTENTION=0",
@@ -53,6 +54,7 @@
         "USE_CUDA=on",
         "USE_CUDNN=on",
         "CUDNN_ROOT=${CUDNN_ROOT_DIR}",
+        "USE_NCCL=off",
         "USE_NATIVE_ARCH=on"
       ],
       "docker": [
