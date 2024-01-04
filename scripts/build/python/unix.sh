@@ -16,7 +16,7 @@ if test -f "pyproject.toml" && [[ -z ${use_setup_py+x} ]]; then
   fi
 
   if [[ -z ${PYTHON_BUILD_CMD+x} ]]; then
-    build_cmd="${CBUILD_PYTHON_EXE} -m pip install -e . --user --force"
+    build_cmd="${CBUILD_PYTHON_EXE} -m pip install . --user --force"
   else
     build_cmd="$PYTHON_BUILD_CMD"
   fi
