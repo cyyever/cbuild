@@ -154,12 +154,6 @@ if [[ -n ${FEATURE_feature_language_python+x} ]]; then
   fi
 fi
 
-if [[ -n ${py_pkg_name+x} ]]; then
-  cd /tmp
-  for _ in $(seq 2); do
-    ${CBUILD_PIP_EXE} uninstall $py_pkg_name -y || true
-  done
-fi
 if [[ -n ${uninstalled_pip_pkgs+x} ]]; then
   cd /tmp
   for py_pkg_name in $uninstalled_pip_pkgs; do
