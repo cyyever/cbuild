@@ -6,7 +6,7 @@ fi
 
 if test -f "pyproject.toml" && [[ -z ${use_setup_py+x} ]]; then
   if [[ "${reuse_build:=0}" == "0" ]]; then
-    for d in build dist; do
+    for d in build *egg-info; do
       if test -d ${d}; then
         if ! rm -rf ${d}; then
           ${sudo_cmd} rm -rf ${d}
@@ -15,11 +15,7 @@ if test -f "pyproject.toml" && [[ -z ${use_setup_py+x} ]]; then
     done
   fi
 
-  if [[ -z ${PYTHON_BUILD_CMD+x} ]]; then
-    build_cmd="${CBUILD_PYTHON_EXE} -m pip install . --user --force"
-  else
-    build_cmd="$PYTHON_BUILD_CMD"
-  fi
+  build_cmd="${CBUILD_PYTHON_EXE} -m pip install . --user --force"
   if [[ -n ${need_compilation_json+x} ]] && command -v bear; then
     build_cmd="bear -- ${build_cmd}"
   fi
@@ -33,16 +29,16 @@ if test -f "pyproject.toml" && [[ -z ${use_setup_py+x} ]]; then
       ${build_cmd}
     fi
   fi
-  # if [[ "${run_test}" == "1" ]]; then
-  #   if [[ -n ${TEST_SUBDIR+x} ]]; then
-  #     cd ${TEST_SUBDIR}
-  #   fi
-  #   if [[ "${PACKAGE_VERSION}" == "master" ]]; then
-  #     ${CBUILD_PYTHON_EXE} -m pytest || true
-  #   else
-  #     ${CBUILD_PYTHON_EXE} -m pytest
-  #   fi
-  # fi
+  if [[ "${run_test}" == "1" ]]; then
+    if [[ -n ${TEST_SUBDIR+x} ]]; then
+      cd ${TEST_SUBDIR}
+    fi
+    if [[ "${PACKAGE_VERSION}" == "master" ]]; then
+      ${CBUILD_PYTHON_EXE} -m pytest || true
+    else
+      ${CBUILD_PYTHON_EXE} -m pytest
+    fi
+  fi
   if test -d build; then
     BUILD_DIR="$(pwd)/build"
   fi
