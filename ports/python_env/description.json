@@ -19,6 +19,7 @@
       "setuptools",
       "coverage",
       "pytest",
+      "toml-cli",
       "wheel"
     ]
   }

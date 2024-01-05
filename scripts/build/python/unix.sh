@@ -11,7 +11,7 @@ if test -f requirements.txt; then
 fi
 
 if test -f "pyproject.toml" && [[ -z ${use_setup_py+x} ]]; then
-  py_pkg_name=$(toml get --toml-path pyproject.toml project.name)
+  py_pkg_name=$(~/.local/bin/toml get --toml-path pyproject.toml project.name)
   for _ in $(seq 2); do
     ${CBUILD_PIP_EXE} uninstall $py_pkg_name -y || true
   done
