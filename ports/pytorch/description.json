@@ -86,7 +86,7 @@
     "pybind11:master"
   ],
   "conditional_dependency": {
-    "support_cuda": [
+    "support_cuda&&!windows": [
       "cuSPARSELt"
     ]
   },
