@@ -5,6 +5,7 @@
     "py_pkg_name=pyarrow",
     "SRC_SUBDIR=python",
     "PYARROW_WITH_PARQUET=1",
+    "use_setup_py=1",
     "run_test=0"
   ],
   "dependency": [
