@@ -2,7 +2,6 @@
   "git_url": "git@github.com:cyyever/torch_cpp_extension.git",
   "environment_variable": [
     "run_test=1",
-    "CMAKE_ARGS=-DDISABLE_RUNTIME_ANALYSIS=on",
     "TEST_SUBDIR=python_binding/test"
   ],
   "conditional_new_feature": {
