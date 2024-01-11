@@ -25,7 +25,7 @@ if test -f "pyproject.toml" && [[ -z ${use_setup_py+x} ]]; then
     done
   fi
 
-  build_cmd="${CBUILD_PYTHON_EXE} -m pip install . --user --force"
+  build_cmd="${CBUILD_PYTHON_EXE} -m pip install --no-build-isolation . --user --force"
   if [[ -n ${need_compilation_json+x} ]] && command -v bear; then
     build_cmd="bear -- ${build_cmd}"
   fi
