@@ -5,7 +5,6 @@
     "reuse_build": true,
     "ignored_git_submodules": [
       "third_party/eigen",
-      "third_party/pybind11",
       "third_party/ios-cmake",
       "third_party/breakpad",
       "third_party/tbb"
@@ -27,7 +26,7 @@
       "clang_tidy_fix=0",
       "py_pkg_name=torch",
       "BUILD_TEST=off",
-      "USE_SYSTEM_PYBIND11=on",
+      "USE_SYSTEM_PYBIND11=off",
       "ATEN_NO_TEST=ON",
       "BUILD_CAFFE2=off",
       "USE_DISTRIBUTED=off",
@@ -84,8 +83,7 @@
   },
   "dependency": [
     "machine_learning_dev_env",
-    "glog",
-    "pybind11:master"
+    "glog"
   ],
   "conditional_dependency": {
     "support_cuda&&!windows": [
