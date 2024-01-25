@@ -3,13 +3,9 @@
   "main_language": "c",
   "dependency": [
     "cyy_naive_cpp_lib:master",
+    "cyy_math:master",
     "boost"
   ],
-  "conditional_dependency": {
-    "full": [
-      "cyy_math"
-    ]
-  },
   "environment_variable": [
     "static_analysis=1",
     "slow_static_analysis=1"

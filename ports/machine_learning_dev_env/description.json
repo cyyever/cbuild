@@ -8,14 +8,13 @@
   "conditional_dependency": {
     "all_os": [
       "ninja",
-      "zlib-ng",
+      "zlib-ng"
+    ],
+    "!windows&&!macos":[
       "openblas"
     ],
     "cuda&&!docker": [
       "cudnn"
-    ],
-    "cuda&&docker": [
-      "cudnn_in_docker"
     ]
   },
   "system_package_dependency": {

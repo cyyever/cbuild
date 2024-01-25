@@ -1,0 +1,10 @@
+{
+  "git_url": "git@github.com:cyyever/torch_graph.git",
+  "git_branch": "main",
+  "cache_time": 0,
+  "main_language": "python",
+  "dependency": [
+    "cyy_torch_toolbox",
+    "pytorch_geometric"
+  ]
+}

@@ -5,10 +5,7 @@
   "main_language": "python",
   "dependency": [
     "cyy_naive_python_lib:main",
-    "torchvision:cyy",
-    "torchdata",
-    "torchtext:cyy",
-    "huggingface_transformers"
+    "torchmetrics"
   ],
   "environment_variable": [
     "static_analysis=1"
@@ -16,15 +13,6 @@
   "conditional_new_feature": {
     "support_cuda": [
       "cuda"
-    ]
-  },
-  "conditional_dependency": {
-    "full": [
-      "torchaudio:master",
-      "spacy"
-    ],
-    "cuda&&!windows&&full": [
-      "dali:cyy"
     ]
   }
 }

@@ -1,8 +1,5 @@
 {
-  "git_url": "git@github.com:cyyever/pybind11.git",
-  "remote_git_url": "git@github.com:pybind/pybind11.git",
-  "remote_git_branch": "master",
-  "git_branch": "cyy",
+  "git_url": "git@github.com:pybind/pybind11.git",
   "cache_time": 30,
   "reuse_build": true,
   "main_language": "c",
@@ -11,16 +8,10 @@
     "python"
   ],
   "environment_variable": [
-    "static_analysis=1",
-    "slow_static_analysis=1",
-    "clang_tidy_fix=1",
-    "run_test=1",
+    "run_test=0",
     "TEST_TARGET=check"
   ],
   "conditional_environment_variable": {
-    "freebsd": [
-      "run_test=0"
-    ],
     "windows": [
       "run_test=0"
     ]

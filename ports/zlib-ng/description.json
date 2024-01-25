@@ -1,13 +1,24 @@
 {
+  "archlinux": {
+    "group_package": true
+  },
   "freebsd": {
     "group_package": true
   },
   "all_os": {
-  "git_url": "git@github.com:zlib-ng/zlib-ng.git",
-  "main_language": "c",
-  "cmake_options": "-DZLIB_COMPAT=on"
+    "git_url": "git@github.com:zlib-ng/zlib-ng.git",
+    "main_language": "c",
+    "cmake_options": "-DZLIB_COMPAT=on"
+  },
+  "conditional_dependency": {
+    "windows": [
+      "googletest"
+    ]
   },
   "system_package_dependency": {
+    "archlinux": [
+      "zlib-ng"
+    ],
     "freebsd": [
       "zlib-ng"
     ]

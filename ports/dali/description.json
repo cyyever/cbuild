@@ -1,8 +1,5 @@
 {
-  "git_url": "git@github.com:cyyever/DALI.git",
-  "remote_git_url": "git@github.com:NVIDIA/DALI.git",
-  "remote_git_branch": "main",
-  "git_branch": "cyy",
+  "git_url": "git@github.com:NVIDIA/DALI.git",
   "cache_time": 30,
   "main_language": "c",
   "reuse_build": true,
@@ -30,8 +27,9 @@
     ]
   },
   "dependency": [
-    "torchvision:cyy",
+    "torchvision",
     "ffmpeg",
+    "protobuf",
     "opencv:cyy"
   ],
   "ignored_git_submodules": [

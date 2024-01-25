@@ -3,6 +3,12 @@
   "cache_time": 0,
   "main_language": "python",
   "dependency": [
-    "cyy_torch_algorithm:main"
+    "cyy_torch_algorithm",
+    "cyy_torch_graph",
+    "cyy_torch_text",
+    "cyy_torch_vision"
+  ],
+  "environment_variable": [
+    "run_test=0"
   ]
 }

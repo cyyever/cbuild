@@ -1,14 +1,11 @@
 {
-  "git_url": "git@github.com:cyyever/vision.git",
-  "remote_git_url": "git@github.com:pytorch/vision.git",
-  "remote_git_branch": "main",
-  "git_branch": "cyy",
+  "git_url": "git@github.com:pytorch/vision.git",
+  "git_branch": "main",
   "main_language": "python",
   "environment_variable": [
     "run_test=0",
-    "clang_tidy_fix=1",
-    "TORCHVISION_INCLUDE=${INSTALL_PREFIX}/include",
-    "TORCHVISION_LIBRARY=${INSTALL_PREFIX}/lib;${INSTALL_PREFIX}/lib64"
+    "use_setup_py=1",
+    "TORCHVISION_USE_FFMPEG=0"
   ],
   "conditional_new_feature": {
     "unix": [
@@ -17,7 +14,9 @@
   },
   "conditional_environment_variable": {
     "unix": [
-      "CPLUS_INCLUDE_PATH=${INSTALL_PREFIX}/oneTBB/include"
+      "CPLUS_INCLUDE_PATH=${INSTALL_PREFIX}/oneTBB/include",
+      "TORCHVISION_INCLUDE=${INSTALL_PREFIX}/include",
+      "TORCHVISION_LIBRARY=${INSTALL_PREFIX}/lib;${INSTALL_PREFIX}/lib64"
     ],
     "windows": [
       "DISTUTILS_USE_SDK=0"

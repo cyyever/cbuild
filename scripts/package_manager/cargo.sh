@@ -5,5 +5,7 @@ for pkg in ${cargo_pkgs}; do
     fi
   fi
 done
-cargo install cargo-update
-cargo install-update -a
+if [[ "$(uname)" != "FreeBSD" ]]; then
+  cargo install cargo-update
+  cargo install-update -a
+fi

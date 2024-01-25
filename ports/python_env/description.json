@@ -14,10 +14,12 @@
     ],
     "pip": [
       "PyYAML",
+      "ninja",
       "types-PyYAML",
       "setuptools",
       "coverage",
       "pytest",
+      "toml-cli",
       "wheel"
     ]
   }

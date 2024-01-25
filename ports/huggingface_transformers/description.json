@@ -3,6 +3,7 @@
   "git_branch": "main",
   "main_language": "python",
   "environment_variable": [
+    "use_setup_py=1",
     "py_pkg_name=transformers",
     "run_test=0"
   ],

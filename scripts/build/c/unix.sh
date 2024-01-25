@@ -98,7 +98,11 @@ build_by_autotools() {
 
   if [[ -z ${no_install+x} ]]; then
     ${sed_cmd} -i -e '/INSTALL.*mandir/d' "$MAKEFILEPATH" || true
-    env PREFIX="${__INSTALL_PREFIX}" ${make_cmd} install
+    if [[ -z ${ignore_install_error+x} ]]; then
+      env PREFIX="${__INSTALL_PREFIX}" ${make_cmd} install
+    else
+      env PREFIX="${__INSTALL_PREFIX}" ${make_cmd} install || true
+    fi
     env PREFIX="${__INSTALL_PREFIX}" ${make_cmd} install-lib || true
     env PREFIX="${__INSTALL_PREFIX}" ${make_cmd} install-headers || true
   fi

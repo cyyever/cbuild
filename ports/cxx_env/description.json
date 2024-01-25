@@ -4,7 +4,7 @@
     "windows": [
       "Visual-Studio:2022"
     ],
-    "unix": [
+    "unix&&!docker": [
       "cyy_llvm_tool:main"
     ]
   },
@@ -43,6 +43,7 @@
     ],
     "archlinux": [
       "libunwind",
+      "doctest",
       "ninja",
       "gcc",
       "gcc12",
@@ -75,8 +76,6 @@
       "clang-tidy",
       "libtool-bin",
       "g++",
-      "g++-11",
-      "gcc-11",
       "g++-12",
       "gcc-12",
       "clang-tidy",

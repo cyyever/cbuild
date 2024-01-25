@@ -1,0 +1,6 @@
+{
+  "git_url": "https://github.com/metaopt/optree.git",
+  "cache_time": 30,
+  "reuse_build": true,
+  "main_language": "python"
+}

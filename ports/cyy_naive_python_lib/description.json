@@ -1,8 +1,5 @@
 {
   "git_url": "git@github.com:cyyever/naive_python_lib.git",
   "cache_time": 0,
-  "main_language": "python",
-  "environment_variable": [
-    "py_pkg_name=cyy_naive_lib"
-  ]
+  "main_language": "python"
 }

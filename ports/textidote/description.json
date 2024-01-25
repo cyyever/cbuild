@@ -1,6 +1,8 @@
 {
   "git_url": "git@github.com:cyyever/textidote.git",
   "git_branch": "cyy",
+  "remote_git_url": "git@github.com:sylvainhalle/textidote.git",
+  "remote_git_branch": "master",
   "dependency": [
     "tex_env"
   ]

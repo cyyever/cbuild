@@ -6,9 +6,9 @@ import sys
 import typing
 
 from cyy_naive_lib.algorithm.sequence_op import flatten_list
+from cyy_naive_lib.shell import get_shell_script_type
 from cyy_naive_lib.shell.mingw64_script import Mingw64Script
 from cyy_naive_lib.shell.pwsh_script import PowerShellScript
-from cyy_naive_lib.shell_factory import get_shell_script_type
 from cyy_naive_lib.source_code.file_source import FileSource
 from cyy_naive_lib.source_code.tarball_source import TarballSource
 from cyy_naive_lib.util import readlines

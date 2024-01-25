@@ -2,27 +2,16 @@
   "git_url": "git@github.com:cyyever/torch_cpp_extension.git",
   "environment_variable": [
     "run_test=1",
-    "py_pkg_name=cyy_torch_cpp_extension"
+    "TEST_SUBDIR=python_binding/test"
   ],
-  "main_language": "c",
-  "build_languages": [
-    "c",
-    "python"
-  ],
-  "cmake_options": "-DDISABLE_RUNTIME_ANALYSIS=on",
   "conditional_new_feature": {
-    "unix": [
-      "use_mold"
-    ],
     "support_cuda": [
       "cuda"
-    ],
-    "unix&&!macos": [
-      "use_mold"
     ]
   },
+  "main_language": "python",
   "dependency": [
     "pytorch",
-    "cyy_naive_cpp_lib[shared_lib]:master"
+    "doctest"
   ]
 }

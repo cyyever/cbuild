@@ -11,13 +11,11 @@
   },
   "conditional_dependency": {
     "unix": [
-      "lcov",
       "ccache",
       "bear"
     ],
     "unix&&full": [
-      "llvm",
-      "gcc:releases/gcc-11.2.0"
+      "llvm"
     ]
   },
   "dependency": [

@@ -18,6 +18,16 @@
         "fakeroot",
         "vim"
       ]
+    },
+    "docker": {
+      "archlinux": [
+        "git",
+        "openssh",
+        "cuda",
+        "cudnn",
+        "python",
+        "python-pip"
+      ]
     }
   },
   "system_package_dependency": {
@@ -26,7 +36,8 @@
     ],
     "archlinux": [
       "jq",
-      "which"
+      "which",
+      "anything-sync-daemon"
     ],
     "bsd": [
       "coreutils",
