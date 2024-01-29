@@ -17,8 +17,5 @@
     "unix&&full": [
       "llvm"
     ]
-  },
-  "dependency": [
-    "static_analysis_env"
-  ]
+  }
 }
