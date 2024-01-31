@@ -38,11 +38,11 @@ if ((Test-Path env:FEATURE_feature_language_python)) {
     }
 }
 
-if ((which ccache)) {
-    $env:CCACHE_CPP2 = "true"
-    $env:CCACHE_BASEDIR = "$env:__SRC_DIR"
-    $env:CCACHE_SLOPPINESS = "pch_defines,time_macros"
-    $env:CMAKE_CXX_COMPILER_LAUNCHER = "ccache"
-    $env:CMAKE_C_COMPILER_LAUNCHER = "ccache"
-    $env:CMAKE_CUDA_COMPILER_LAUNCHER = "ccache"
-}
+# if ((which ccache)) {
+#     $env:CCACHE_CPP2 = "true"
+#     $env:CCACHE_BASEDIR = "$env:__SRC_DIR"
+#     $env:CCACHE_SLOPPINESS = "pch_defines,time_macros"
+#     $env:CMAKE_CXX_COMPILER_LAUNCHER = "ccache"
+#     $env:CMAKE_C_COMPILER_LAUNCHER = "ccache"
+#     $env:CMAKE_CUDA_COMPILER_LAUNCHER = "ccache"
+# }
