@@ -9,7 +9,6 @@
     "run_test=1",
     "static_analysis=0",
     "need_compilation_json=1",
-    "clang_tidy_static_analysis=1",
     "NPY_NUM_BUILD_JOBS=6"
   ],
   "conditional_environment_variable": {
