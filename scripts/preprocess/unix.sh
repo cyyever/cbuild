@@ -142,7 +142,7 @@ if command -v ccache >/dev/null; then
   if [[ -n ${__SRC_DIR+x} ]]; then
     export CCACHE_BASEDIR="${__SRC_DIR}"
   fi
-  export CHE_SLOPPINESS="pch_defines,time_macros"
+  export CCACHE_SLOPPINESS="pch_defines,time_macros"
   for lang in C CXX CUDA; do
     eval "export CMAKE_${lang}_COMPILER_LAUNCHER=ccache"
   done
