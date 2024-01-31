@@ -10,8 +10,10 @@
     ]
   },
   "conditional_dependency": {
+    "all_os": [
+      "ccache"
+    ],
     "unix": [
-      "ccache",
       "bear"
     ],
     "unix&&full": [
