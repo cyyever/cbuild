@@ -2,7 +2,8 @@
   "git_url": "git@github.com:pyg-team/pytorch_geometric.git",
   "main_language": "python",
   "environment_variable": [
-    "run_test=0"
+    "run_test=0",
+    "DISTUTILS_USE_SDK=1"
   ],
   "dependency": [
     "pytorch",

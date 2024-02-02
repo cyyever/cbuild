@@ -3,6 +3,7 @@
   "main_language": "python",
   "environment_variable": [
     "py_pkg_name=torch_scatter",
+    "DISTUTILS_USE_SDK=1",
     "run_test=0"
   ],
   "conditional_new_feature": {
