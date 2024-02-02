@@ -5,4 +5,3 @@ rm  cmake/Modules/FindMKL.cmake
 sed -i -e "/MKL_INCLUDE_DIR/s/MKL_INCLUDE_DIR/MKL_INCLUDE/g"  cmake/public/mkl.cmake
 sed -i -e "/target_link_libraries/s/..MKL_LIBRARIES./MKL::MKL/g"  cmake/public/mkl.cmake
 sed -i -e "/MKL_INCLUDE_DIR/s/MKL_INCLUDE_DIR/MKL_INCLUDE/g"  cmake/Dependencies.cmake
-sed -i -e "/MKL/s/find_package(MKL REQUIRED)/find_package(MKL CONFIG REQUIRED)/g"  cmake/Dependencies.cmake

@@ -19,7 +19,9 @@
       "TORCHVISION_LIBRARY=${INSTALL_PREFIX}/lib;${INSTALL_PREFIX}/lib64"
     ],
     "windows": [
-      "DISTUTILS_USE_SDK=0"
+      "DISTUTILS_USE_SDK=0",
+      "TORCHVISION_INCLUDE=${INSTALL_PREFIX}/include",
+      "TORCHVISION_LIBRARY=${INSTALL_PREFIX}/lib;${INSTALL_PREFIX}/lib64"
     ]
   },
   "dependency": [
