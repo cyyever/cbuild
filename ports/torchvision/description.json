@@ -16,12 +16,12 @@
     "unix": [
       "CPLUS_INCLUDE_PATH=${INSTALL_PREFIX}/oneTBB/include",
       "TORCHVISION_INCLUDE=${INSTALL_PREFIX}/include",
-      "TORCHVISION_LIBRARY=${INSTALL_PREFIX}/lib;${INSTALL_PREFIX}/lib64"
+      "TORCHVISION_LIBRARY=${INSTALL_PREFIX}/lib"
     ],
     "windows": [
       "DISTUTILS_USE_SDK=0",
       "TORCHVISION_INCLUDE=${INSTALL_PREFIX}/include",
-      "TORCHVISION_LIBRARY=${INSTALL_PREFIX}/lib;${INSTALL_PREFIX}/lib64"
+      "TORCHVISION_LIBRARY=${INSTALL_PREFIX}/lib"
     ]
   },
   "dependency": [
