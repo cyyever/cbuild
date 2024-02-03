@@ -23,12 +23,6 @@ if ((Test-Path pyproject.toml -PathType Leaf)) {
     if ($LastExitCode -ne 0) {
         exit $LastExitCode
     }
-    if ($env:run_test -eq "1" ) {
-        if ((Test-Path env:TEST_SUBDIR)) {
-            cd $env:TEST_SUBDIR
-        }
-        Invoke-Expression "$env:CBUILD_PYTHON_EXE -m pytest"
-    }
 }
 elseif ((Test-Path setup.py -PathType Leaf)) {
     if ((Test-Path env:PYTHON_BUILD_CMD)) {
@@ -45,4 +39,10 @@ elseif ((Test-Path setup.py -PathType Leaf)) {
     if ($LastExitCode -ne 0) {
         exit $LastExitCode
     }
+}
+if ($env:run_test -eq "1" ) {
+    if ((Test-Path env:TEST_SUBDIR)) {
+        cd $env:TEST_SUBDIR
+    }
+    Invoke-Expression "$env:CBUILD_PYTHON_EXE -m pytest"
 }

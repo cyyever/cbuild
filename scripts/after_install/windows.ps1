@@ -23,18 +23,4 @@ if ($env:FEATURE_feature_language_python -eq "1") {
         $py_dir = (Split-Path -Path  ((Get-Command python).source))
         cp -ErrorAction 'silentlycontinue' *dll ${py_dir} 
     }
-    cd $__SRC_DIR
-    if ((Test-Path setup.py -PathType Leaf)) {
-        if ($env:run_test -eq "1") {
-            if ((Test-Path build -PathType Container)) {
-                rm -r -Force build
-            }
-            Invoke-Expression "$env:CBUILD_PYTHON_EXE -m pytest"
-            if ($env:PACKAGE_VERSION -ne "master") {
-                if ($LastExitCode -ne 0) {
-                    exit $LastExitCode
-                }
-            }
-        }
-    }
 }
