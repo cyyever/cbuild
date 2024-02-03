@@ -24,6 +24,9 @@ if ((Test-Path pyproject.toml -PathType Leaf)) {
         exit $LastExitCode
     }
     if ($env:run_test -eq "1" ) {
+        if ((Test-Path env:TEST_SUBDIR)) {
+            cd $env:TEST_SUBDIR
+        }
         Invoke-Expression "$env:CBUILD_PYTHON_EXE -m pytest"
     }
 }
