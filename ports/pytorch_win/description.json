@@ -71,7 +71,9 @@
       ],
       "windows": [
         "BLAS=MKL",
-        "CMAKE_PREFIX_PATH=${ProgramFiles(x86)}/Intel/oneAPI/2024.0/lib/cmake"
+        "CMAKE_PREFIX_PATH=${ProgramFiles(x86)}/Intel/oneAPI/2024.0/lib/cmake",
+        "MKL_OPENMP_TYPE=Intel",
+        "MKL_OPENMP_LIBRARY=${ProgramFiles(x86)}/Intel/oneAPI/compiler/2023.2.1/windows/compiler/lib/intel64_win/libiomp5md.lib"
       ],
       "freebsd": [
         "CMAKE_GENERATOR='Unix Makefiles'",
