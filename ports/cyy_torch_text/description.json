@@ -5,7 +5,11 @@
   "main_language": "python",
   "dependency": [
     "cyy_torch_toolbox",
-    "huggingface_transformers",
-    "spacy"
-  ]
+    "huggingface_transformers"
+  ],
+  "conditional_dependency": {
+    "full": [
+      "spacy"
+    ]
+  }
 }
