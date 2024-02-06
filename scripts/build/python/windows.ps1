@@ -1,7 +1,7 @@
 cd $__SRC_DIR
 
 if ((Test-Path requirements.txt -PathType Leaf)) {
-    sed_cmd -i -e '/git:/d' requirements.txt
+    sed -i -e '/cyyever/d' requirements.txt
     Invoke-Expression "$env:CBUILD_PYTHON_EXE -m pip install -r requirements.txt --user"
 }
 
