@@ -1,0 +1,23 @@
+{
+  "all_os": {
+    "git_url": "git@github.com:cyyever/kineto.git",
+    "reuse_build": true,
+    "cache_time": 30,
+    "environment_variable": [
+      "SRC_SUBDIR=libkineto",
+      "static_analysis=1"
+    ],
+    "conditional_new_feature": {
+      "support_cuda": [
+        "cuda"
+      ],
+      "unix": [
+        "machine_learning_compilers"
+      ]
+    },
+    "main_language": "c"
+  },
+  "dependency": [
+    "machine_learning_dev_env"
+  ]
+}
