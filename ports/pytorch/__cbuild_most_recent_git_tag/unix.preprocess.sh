@@ -18,6 +18,7 @@ ${sed_cmd} -i -e 's/9.0a/9.0/g' cmake/Modules_CUDA_fix/upstream/FindCUDA/select_
 ${sed_cmd} -i -e 's/3.5/7.5/g' cmake/Modules_CUDA_fix/upstream/FindCUDA/select_compute_arch.cmake
 ${sed_cmd} -i -e 's/3.7/7.5/g' cmake/Modules_CUDA_fix/upstream/FindCUDA/select_compute_arch.cmake
 ${sed_cmd} -i -e 's/5.0/7.5/g' cmake/Modules_CUDA_fix/upstream/FindCUDA/select_compute_arch.cmake
+${sed_cmd} -i -e '/CUDAHooks.cpp PROPERTIES INCLU/d' caffe2/CMakeLists.txt
 
 if [[ "$(uname)" == "FreeBSD" ]]; then
   ${sed_cmd} -i -e 's/_assert/assert_in_pytorch/g' aten/src/ATen/native/sparse/ValidateCompressedIndicesCommon.h
