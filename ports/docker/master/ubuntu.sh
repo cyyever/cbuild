@@ -1,26 +1,14 @@
+# Add Docker's official GPG key:
+${sudo_cmd} apt-get update
+${sudo_cmd} apt-get install ca-certificates curl
+${sudo_cmd} install -m 0755 -d /etc/apt/keyrings
+${sudo_cmd} curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+${sudo_cmd} chmod a+r /etc/apt/keyrings/docker.asc
+
+${sudo_cmd} rm /etc/apt/sources.list.d/docker.list || true
+# Add the repository to Apt sources:
+# $(. /etc/os-release && echo "$VERSION_CODENAME") stable" |
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu mantic stable" | ${sudo_cmd} tee /etc/apt/sources.list.d/docker.list 
 ${sudo_cmd} apt-get update
 
-${sudo_cmd} apt-get install -y --no-install-recommends \
-  apt-transport-https \
-  ca-certificates \
-  curl \
-  software-properties-common
-
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | ${sudo_cmd} apt-key add -
-
-${sudo_cmd} apt-key fingerprint 0EBFCD88
-
-if command -v lsb_release >/dev/null && [[ "$($(command -v lsb_release) -i -s)" == "Ubuntu" ]] && [[ $($(command -v lsb_release) -r -s | cut -f 1 -d.) -ge 19 ]]; then
-  ${sudo_cmd} add-apt-repository -y \
-    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-    disco 
-      stable"
-else
-  ${sudo_cmd} add-apt-repository -y \
-    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-    $(lsb_release -cs)
-      stable"
-fi
-
-${sudo_cmd} apt-get update
-${sudo_cmd} apt-get install -y docker-ce docker-ce-cli containerd.io
+${sudo_cmd} apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
