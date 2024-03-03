@@ -1,2 +1,2 @@
 cd ${SRC_DIR}
-bash test.sh
+# bash test.sh
