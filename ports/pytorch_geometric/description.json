@@ -10,5 +10,10 @@
     "pytorch_scatter",
     "pytorch_sparse",
     "pyg_lib"
-  ]
+  ],
+  "system_package_dependency": {
+    "pip": [
+      "fit_core"
+    ]
+  }
 }
