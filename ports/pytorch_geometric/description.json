@@ -13,7 +13,7 @@
   ],
   "system_package_dependency": {
     "pip": [
-      "fit_core"
+      "flit"
     ]
   }
 }
