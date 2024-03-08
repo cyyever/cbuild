@@ -1,8 +1,6 @@
 {
-  "git_url": "git@github.com:cyyever/opencv.git",
-  "remote_git_url": "git@github.com:opencv/opencv.git",
-  "remote_git_branch": "4.x",
-  "git_branch": "cyy",
+  "git_url": "git@github.com:opencv/opencv.git",
+  "git_branch": "4.x",
   "reuse_build": true,
   "cache_time": 30,
   "dependency": [
@@ -44,11 +42,11 @@
   "cmake_options": "-DWITH_JPEG=ON -DWITH_OPENCLAMDBLAS=OFF -DWITH_OPENCLAMDFFT=OFF -DWITH_OPENCL=OFF -DBUILD_PERF_TESTS=OFF -DBUILD_TESTS=OFF -DBUILD_DOCS=OFF -DOPENCV_ENABLE_NONFREE=ON -DBUILD_PACKAGE=OFF -DWITH_GSTREAMER=OFF -DWITH_OPENEXR=OFF -DWITH_MATLAB=OFF -DWITH_ITT=OFF -DBUILD_ITT=OFF -DCV_TRACE=OFF -DWITH_TIFF=OFF -DBUILD_TIFF=OFF -DWITH_OPENMP=OFF -DWITH_FFMPEG=OFF -DWITH_V4L=OFF -DWITH_PROTOBUF=OFF -DBUILD_opencv_gapi=OFF -DBUILD_opencv_bioinspired=OFF -DBUILD_opencv_fuzzy=OFF -DBUILD_opencv_hfs=OFF -DBUILD_opencv_img_hash=OFF -DBUILD_opencv_line_descriptor=OFF -DBUILD_opencv_phase_unwrapping=OFF -DBUILD_opencv_plot=OFF -DBUILD_opencv_reg=OFF -DBUILD_opencv_xphoto=OFF -DBUILD_opencv_freetype=OFF -DWITH_IMGCODEC_HDR=OFF -DWITH_IMGCODEC_SUNRASTER=OFF -DWITH_IMGCODEC_PXM=OFF -DWITH_IMGCODEC_PFM=OFF -DBUILD_opencv_cudafilters=ON -DWITH_NVCUVID=OFF -DWITH_WEBP=OFF -DBUILD_opencv_java_bindings_generator=OFF -DBUILD_opencv_python2=OFF -DBUILD_opencv_python3=ON -DBUILD_JAVA=OFF -DBUILD_opencv_java=OFF -DBUILD_opencv_stitching=OFF -DBUILD_opencv_cudalegacy=OFF -DBUILD_opencv_apps=OFF -DBUILD_opencv_highgui=OFF -DBUILD_opencv_calib3d=OFF -DBUILD_opencv_cudafeatures2d=OFF -DBUILD_opencv_cudaobjdetect=OFF -DBUILD_opencv_cudaoptflow=OFF -DBUILD_opencv_cudastereo=OFF -DBUILD_opencv_dnn=OFF -DBUILD_opencv_features2d=OFF -DBUILD_opencv_flann=OFF -DBUILD_opencv_ml=OFF -DBUILD_opencv_objdetect=OFF -DBUILD_opencv_photo=OFF -DBUILD_opencv_shape=OFF -DBUILD_opencv_superres=OFF -DBUILD_opencv_video=OFF -DBUILD_opencv_videoio=OFF -DBUILD_opencv_videostab=OFF -DWITH_JULIA=off -DWITH_TBB=on -DBUILD_opencv_sfm=OFF -DBUILD_opencv_wechat_qrcode=off",
   "conditional_cmake_options": {
     "cuda": "-DWITH_CUDA=ON -DWITH_CUDNN=ON -DWITH_CUBLAS=ON -DCUDA_NVCC_FLAGS='--default-stream;per-thread' -DCUDA_GENERATION=Auto -DOPENCV_CMAKE_CUDA_DEBUG=1",
-    "unix": "-DOPENCV_EXTRA_MODULES_PATH=${INSTALL_PREFIX}/opencv_contrib/modules -DPYTHON_LIBRARY=${INSTALL_PREFIX}/python/lib/python${PYTHONVERSION} -DPYTHON_INCLUDE_DIR=${INSTALL_PREFIX}/python/include/python${PYTHONVERSION} -DPython_EXECUTABLE=${CBUILD_PYTHON_EXE}",
-    "windows": "-DCMAKE_IGNORE_PATH=C:/ProgramData/chocolatey/bin -DOPENCV_EXTRA_MODULES_PATH=${INSTALL_PREFIX}/opencv_contrib/modules -DPKG_CONFIG_EXECUTABLE=C:/ProgramData/chocolatey/bin/pkg-config.exe",
+    "unix": "-DPYTHON_LIBRARY=${INSTALL_PREFIX}/python/lib/python${PYTHONVERSION} -DPYTHON_INCLUDE_DIR=${INSTALL_PREFIX}/python/include/python${PYTHONVERSION} -DPython_EXECUTABLE=${CBUILD_PYTHON_EXE}",
+    "windows": "-DCMAKE_IGNORE_PATH=C:/ProgramData/chocolatey/bin -DPKG_CONFIG_EXECUTABLE=C:/ProgramData/chocolatey/bin/pkg-config.exe",
     "windows&&cuda": "-DCUDNN_INCLUDE_DIR=${CUDNN_ROOT_DIR}/include -DCUDNN_LIBRARY=${CUDNN_ROOT_DIR}/lib/x64/cudnn.lib",
     "freebsd": "-DWITH_IPP=off",
     "macos": "-DBUILD_ZLIB=on",
-    "full": "-DBUILD_opencv_highgui=ON -DBUILD_opencv_video=ON -DBUILD_opencv_videoio=ON -DBUILD_opencv_videostab=ON -DBUILD_opencv_cudaoptflow=ON -DBUILD_opencv_optflow=ON -DBUILD_opencv_calib3d=on -DBUILD_opencv_features2d=ON -DBUILD_opencv_cudafeatures2d=on -DBUILD_opencv_flann=on -DBUILD_opencv_dnn=ON -DWITH_PROTOBUF=on -DBUILD_opencv_stitching=ON -DWITH_FFMPEG=ON -DOPENCV_FFMPEG_SKIP_DOWNLOAD=on -DWITH_QT=on -DWITH_GTK=off -DBUILD_opencv_cvv=OFF"
+    "full": "-DBUILD_opencv_highgui=ON -DBUILD_opencv_video=ON -DBUILD_opencv_videoio=ON -DBUILD_opencv_videostab=ON -DBUILD_opencv_cudaoptflow=ON -DBUILD_opencv_optflow=ON -DBUILD_opencv_calib3d=on -DBUILD_opencv_features2d=ON -DBUILD_opencv_cudafeatures2d=on -DBUILD_opencv_flann=on -DBUILD_opencv_dnn=ON -DWITH_PROTOBUF=on -DBUILD_opencv_stitching=ON -DWITH_FFMPEG=ON -DOPENCV_FFMPEG_SKIP_DOWNLOAD=on -DWITH_QT=on -DWITH_GTK=off -DBUILD_opencv_cvv=OFF -DOPENCV_EXTRA_MODULES_PATH=${INSTALL_PREFIX}/opencv_contrib/modules"
   }
 }
