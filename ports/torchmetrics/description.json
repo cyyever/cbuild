@@ -2,7 +2,7 @@
   "git_url": "git@github.com:Lightning-AI/torchmetrics.git",
   "main_language": "python",
   "environment_variable": [
-    "use_setup_py=1",
+    "py_pkg_name=torchmetrics",
     "run_test=0"
   ],
   "conditional_new_feature": {
