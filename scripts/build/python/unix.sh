@@ -12,11 +12,15 @@ fi
 
 if test -f "pyproject.toml" && [[ -z ${use_setup_py+x} ]]; then
   if [[ -n "${py_pkg_name+x}" ]]; then
-    py_pkg_name=$(~/.local/bin/toml get --toml-path pyproject.toml project.name)
+    if ~/.local/bin/toml get --toml-path pyproject.toml project.name >/dev/null 2>/dev/null; then
+      py_pkg_name=$(~/.local/bin/toml get --toml-path pyproject.toml project.name)
+    fi
   fi
-  for _ in $(seq 2); do
-    ${CBUILD_PIP_EXE} uninstall $py_pkg_name -y || true
-  done
+  if [[ -z "${py_pkg_name+x}" ]]; then
+    for _ in $(seq 2); do
+      ${CBUILD_PIP_EXE} uninstall $py_pkg_name -y || true
+    done
+  fi
   if [[ "${reuse_build:=0}" == "0" ]]; then
     for d in build *egg-info; do
       if test -d ${d}; then
