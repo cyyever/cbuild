@@ -1,0 +1,28 @@
+{
+  "git_url": "git@github.com:pytorch/audio.git",
+  "git_branch": "main",
+  "main_language": "python",
+  "environment_variable": [
+    "use_setup_py=1",
+    "run_test=0",
+    "BUILD_SOX=ON",
+    "BUILD_KALDI=OFF",
+    "BUILD_CUDA=ON"
+  ],
+  "dependency": [
+    "pytorch"
+  ],
+  "conditional_new_feature": {
+    "unix": [
+      "machine_learning_compilers"
+    ]
+  },
+  "system_package_dependency": {
+    "ubuntu": [
+      "libgsm1-dev"
+    ],
+    "pip": [
+      "librosa"
+    ]
+  }
+}
