@@ -27,3 +27,5 @@ if [[ "$(uname)" == "FreeBSD" ]]; then
   cd cpuinfo
   git checkout freebsd
 fi
+
+${sed_cmd} -i -e '/set(TP_BUILD_LIBUV ON CACHE BOOL "" FORCE)/s/ON/OFF/g' cmake/Dependencies.cmake
