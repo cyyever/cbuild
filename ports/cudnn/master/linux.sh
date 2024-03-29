@@ -1,7 +1,3 @@
-# then
-#   mkdir -p $INSTALL_PREFIX/cudnn/lib
-#   cp -f -r /usr/lib/libcudnn* $INSTALL_PREFIX/cudnn/lib
-# else
 if ! command -v pacman; then
   if ! command -v apt; then
     cd $SRC_DIR
