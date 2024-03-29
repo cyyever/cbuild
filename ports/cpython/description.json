@@ -71,7 +71,7 @@
       "libffi-dev",
       "libreadline-dev",
       "liblzma-dev",
-      "libncursesw5-dev",
+      "libncurses-dev",
       "libssl-dev",
       "libsqlite3-dev",
       "tk-dev",
