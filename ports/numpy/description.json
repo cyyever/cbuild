@@ -19,6 +19,7 @@
   "system_package_dependency": {
     "pip": [
       "hypothesis",
+      "meson-python",
       "Cython"
     ]
   }
