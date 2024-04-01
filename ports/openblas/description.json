@@ -5,7 +5,10 @@
   "environment_variable": [
     "CTEST_PARALLEL_LEVEL=1"
   ],
-  "cmake_options": "-DBUILD_WITHOUT_LAPACK=OFF -DBUILD_BFLOAT16=OFF -DUSE_OPENMP=off -DCMAKE_GNUtoMS=on",
+  "cmake_options": "-DBUILD_WITHOUT_LAPACK=OFF -DBUILD_BFLOAT16=OFF -DUSE_OPENMP=off -DCMAKE_GNUtoMS=on -DBUILD_LAPACK_DEPRECATED=on",
+    "conditional_cmake_options": {
+      "windows": "-DCMAKE_Fortran_FLAGS='-names:lowercase -assume:underscore' -DCMAKE_WINDOWS_EXPORT_ALL_SYMBOLS=on"
+    },
   "main_language": "c",
   "build_languages": [
     "fortran"
