@@ -8,11 +8,11 @@
     "AIOHTTP_NO_EXTENSIONS=1"
   ],
   "dependency": [
-    "pytorch"
   ],
   "system_package_dependency": {
     "pip": [
-      "pyarrow"
+      "pyarrow",
+      "dill"
     ]
   }
 }
