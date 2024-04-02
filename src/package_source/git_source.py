@@ -6,7 +6,7 @@ import sys
 from cyy_naive_lib.shell import exec_cmd
 from cyy_naive_lib.source_code.source import Source
 from cyy_naive_lib.storage import persistent_cache
-from cyy_naive_lib.system_info import get_operating_system
+from cyy_naive_lib.system_info import OSType, get_operating_system_type
 from looseversion import LooseVersion
 
 
@@ -100,7 +100,7 @@ class GitSource(Source):
             cmd = "git "
             if self.ignored_submodules:
                 for submodel in self.ignored_submodules:
-                    if get_operating_system() == "windows":
+                    if get_operating_system_type() == OSType.Windows:
                         cmd += "-c submodule." + submodel + ".update=none "
                     else:
                         cmd += '-c submodule."' + submodel + '".update=none '

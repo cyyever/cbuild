@@ -3,27 +3,28 @@ import copy
 import os
 from shutil import which
 
-from cyy_naive_lib.system_info import get_operating_system, get_processor_name
+from cyy_naive_lib.system_info import (OSType, get_operating_system_type,
+                                       get_processor_name)
 
 
 class BuildContext:
-    __context_set: set = set()
-    __target_system = None
+    __context_set: set[str | OSType] = set()
+    __target_system: None | OSType = None
 
     @staticmethod
-    def add(context):
+    def add(context: str | OSType) -> None:
         BuildContext.__context_set.add(context)
 
     @staticmethod
-    def get_host_system():
-        return get_operating_system()
+    def get_host_system() -> OSType:
+        return get_operating_system_type()
 
     @staticmethod
-    def set_target_system(target_system):
+    def set_target_system(target_system: OSType) -> None:
         BuildContext.__target_system = target_system
 
     @staticmethod
-    def get_target_system():
+    def get_target_system() -> OSType:
         if BuildContext.__target_system is not None:
             return BuildContext.__target_system
         return BuildContext.get_host_system()
@@ -37,15 +38,15 @@ class BuildContext:
         context_set.add("all_os")
         system = BuildContext.get_target_system()
         context_set.add(system)
-        if system != "windows":
+        if system != OSType.Windows:
             context_set.add("unix")
-            if system in ("freebsd", "macos"):
+            if system in (OSType.FreeBSD, OSType.MacOS):
                 context_set.add("bsd")
             else:
                 context_set.add("linux")
-        if "macos" not in context_set:
+        if OSType.MacOS not in context_set:
             if which("nvidia-smi") is not None and (
-                "linux" in context_set or "windows" in context_set
+                "linux" in context_set or OSType.Windows in context_set
             ):
                 if "docker" in context_set:
                     if "cuda_docker" in context_set:

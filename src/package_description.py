@@ -44,8 +44,9 @@ class PackageDescription:
             branch_description = branch_description[self.spec.branch]
         if "docker" in branch_description and "docker" in BuildContext.get():
             branch_description = branch_description["docker"]
-        if BuildContext.get_target_system() in branch_description:
-            branch_description = branch_description[BuildContext.get_target_system()]
+        target_system = str(BuildContext.get_target_system()).lower()
+        if target_system in branch_description:
+            branch_description = branch_description[target_system]
         else:
             for ctx in ["linux", "unix", "all_os"]:
                 if ctx in BuildContext.get() and ctx in branch_description:
