@@ -148,7 +148,7 @@ class GitSource(Source):
         if self.ignored_tag_regex is not None:
             for regex in self.ignored_tag_regex:
                 tags = [t for t in tags if re.search(regex, t) is None]
-
+        tags = [tag for tag in tags if tag]
         print("final tags", tags)
         tag = tags[0]
         try:
