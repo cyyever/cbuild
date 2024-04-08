@@ -8,7 +8,6 @@
     "run_test=0",
     "BUILD_SOX=ON",
     "BUILD_KALDI=OFF",
-    "USE_FFMPEG=OFF",
     "BUILD_CUDA=ON"
   ],
   "dependency": [
