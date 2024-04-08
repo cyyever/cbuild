@@ -46,7 +46,6 @@
       "doctest",
       "ninja",
       "gcc",
-      "gcc12",
       "flex",
       "autoconf-archive",
       "clang",
