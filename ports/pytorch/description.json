@@ -71,8 +71,7 @@
         "DEBUG=1"
       ],
       "windows": [
-        "BLAS=MKL",
-        "CMAKE_PREFIX_PATH=${ProgramFiles(x86)}/Intel/oneAPI/2024.0/lib/cmake"
+        "BLAS=OpenBLAS"
       ],
       "freebsd": [
         "CMAKE_GENERATOR='Unix Makefiles'",
