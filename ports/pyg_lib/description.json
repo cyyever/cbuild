@@ -1,5 +1,6 @@
 {
   "git_url": "git@github.com:pyg-team/pyg-lib.git",
+  "git_branch": "master",
   "main_language": "python",
   "environment_variable": [
     "run_test=0"

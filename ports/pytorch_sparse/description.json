@@ -3,7 +3,8 @@
   "main_language": "python",
   "environment_variable": [
     "run_test=0",
-    "WITH_METIS=0"
+    "WITH_METIS=0",
+    "DISTUTILS_USE_SDK=0"
   ],
   "conditional_new_feature": {
     "unix": [

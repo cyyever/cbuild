@@ -2,7 +2,8 @@
   "git_url": "git@github.com:rusty1s/pytorch_scatter.git",
   "main_language": "python",
   "environment_variable": [
-    "run_test=0"
+    "run_test=0",
+    "DISTUTILS_USE_SDK=0"
   ],
   "conditional_new_feature": {
     "unix": [
