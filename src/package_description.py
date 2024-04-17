@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import copy
 import json
 import os
@@ -10,6 +9,7 @@ from cyy_naive_lib.shell import get_shell_script_type
 from cyy_naive_lib.shell.mingw64_script import Mingw64Script
 from cyy_naive_lib.shell.pwsh_script import PowerShellScript
 from cyy_naive_lib.source_code.file_source import FileSource
+from cyy_naive_lib.source_code.package_spec import PackageSpecification
 from cyy_naive_lib.source_code.tarball_source import TarballSource
 from cyy_naive_lib.util import readlines
 
@@ -18,7 +18,6 @@ from .config import Config, Environment, ToolMapping
 from .environment import BuildContext, ports_dirs, scripts_dir, sources_dir
 from .package_source.git_source import GitSource
 from .package_source.script_source import ScriptSource
-from .package_spec import PackageSpecification
 
 
 class PackageDescription:
@@ -247,7 +246,7 @@ class PackageDescription:
             script.append_content(script_content)
 
         for manager, system_pkgs in self.__get_system_package_dependency().items():
-            system_pkgs = sorted(list(system_pkgs))
+            system_pkgs = sorted(system_pkgs)
 
             script.append_env(manager + "_pkgs", " ".join(system_pkgs))
             script_path = os.path.join(
@@ -302,7 +301,7 @@ class PackageDescription:
 
         system_pkgs = {}
         for value in self.__get_conditional_items("system_package_dependency"):
-            for (manager, item) in value.items():
+            for manager, item in value.items():
                 if (
                     not tool_mapping.is_supported_tool(manager)
                     and manager not in managers
@@ -333,10 +332,10 @@ class PackageDescription:
         if elements is None:
             elements = self.context | self.get_features()
         conditions = condition_expr.split("||")
-        for condition in conditions:
-            if PackageDescription.__check_and_conditions(condition, elements):
-                return True
-        return False
+        return any(
+            PackageDescription.__check_and_conditions(condition, elements)
+            for condition in conditions
+        )
 
     @staticmethod
     def __check_and_conditions(condition_expr, elements):

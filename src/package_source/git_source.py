@@ -4,22 +4,25 @@ import re
 import sys
 
 from cyy_naive_lib.shell import exec_cmd
+from cyy_naive_lib.source_code.package_spec import PackageSpecification
 from cyy_naive_lib.source_code.source import Source
 from cyy_naive_lib.storage import persistent_cache
 from cyy_naive_lib.system_info import OSType, get_operating_system_type
 from looseversion import LooseVersion
 
+PackageSpecification.default_branch = "__cbuild_most_recent_git_tag"
+
 
 class GitSource(Source):
     @staticmethod
-    def is_git_source(git_url):
+    def is_git_source(git_url) -> bool:
         if git_url is None:
             return False
         return git_url.endswith(".git") or git_url.startswith("git://")
 
     def __init__(
         self,
-        spec: str,
+        spec: PackageSpecification,
         git_url: str,
         root_dir: str,
         with_submodule: bool = True,

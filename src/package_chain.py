@@ -1,19 +1,19 @@
-#!/usr/bin/env python3
 import copy
 
+from cyy_naive_lib.source_code.package_spec import PackageSpecification
+
+from .build_action import BuildAction
 from .environment import BuildContext
 from .package import Package
-from .package_spec import PackageSpecification
-from .build_action import BuildAction
 
 
 class PackageChain:
-    def __init__(self, last_package_specification):
+    def __init__(self, last_package_specification) -> None:
         self.last_package_specification = last_package_specification
-        self.chain = []
+        self.chain: list = []
         self.__get_chain()
 
-    def build(self, action=BuildAction.BUILD_WITH_CACHE, parallel=1):
+    def build(self, action=BuildAction.BUILD_WITH_CACHE, parallel: int = 1) -> None:
         print("build packages in the following context:")
         for ctx in BuildContext.get():
             print("\t", ctx)
@@ -21,10 +21,9 @@ class PackageChain:
         for pkg in self.chain:
             print("\t", pkg.specification())
 
-        rebuilt_pkgs = set()
-        for i, pkg in enumerate(self.chain):
+        rebuilt_pkgs: set = set()
+        for i, cur_pkg in enumerate(self.chain):
             real_action = action
-            cur_pkg = self.chain[i]
             if real_action == BuildAction.BUILD_WITH_CACHE:
                 if i + 1 == len(self.chain) or (
                     not cur_pkg.desc.get_item("cache_ignore_dependency_change", False)
@@ -90,7 +89,7 @@ class PackageChain:
                 for pkg, dep_set in package_dependency.items():
                     sub_chain = str(pkg) + "=>{\n"
                     for dep_pkg in dep_set:
-                        sub_chain += "\t{}\n".format(str(dep_pkg))
+                        sub_chain += f"\t{dep_pkg}\n"
                     sub_chain += "}\n"
                     chain += sub_chain
                 raise RuntimeError("detect package dependency loop:" + chain)
