@@ -10,7 +10,6 @@ from cyy_naive_lib.storage import persistent_cache
 from cyy_naive_lib.system_info import OSType, get_operating_system_type
 from looseversion import LooseVersion
 
-PackageSpecification.default_branch = "__cbuild_most_recent_git_tag"
 
 
 class GitSource(Source):
@@ -70,10 +69,14 @@ class GitSource(Source):
             if self.remote_url is not None:
                 exec_cmd("git remote add up " + self.remote_url)
         os.chdir(self.__repositary_path)
-        if self.spec.branch == "__cbuild_most_recent_git_tag":
-            self.spec.branch = self.__get_max_tag()
-            if self.spec.branch is None:
-                self.spec.branch = self.__get_default_branch()
+        if self.spec.branch == PackageSpecification.default_branch:
+            tag = self.__get_max_tag()
+            if tag is not None:
+                self.spec.branch = tag
+            else:
+                default_branch = self.__get_default_branch()
+                assert default_branch is not None
+                self.spec.branch = default_branch
             print("resolve spec", self.spec.name, "to branch", self.spec.branch)
         if not os.getenv("no_update_pkg"):
             exec_cmd("git clean -fxd :/")
@@ -114,9 +117,9 @@ class GitSource(Source):
         return self.__repositary_path
 
     def in_master(self):
-        return self.spec.branch.lower() in ("master", "main")
+        return self.spec.branch in ("master", "main")
 
-    @persistent_cache(path="__default_branch", cache_time=3600 * 24)
+    @persistent_cache(path="__default_branch", cache_time=3600)
     def __get_default_branch(self) -> None | str:
         branches, exit_code = exec_cmd(cmd="git branch -r", throw=False)
         if exit_code != 0:
@@ -130,7 +133,7 @@ class GitSource(Source):
                     return branch.split("/")[-1]
         return None
 
-    @persistent_cache(path="__max_tag", cache_time=3600 * 24)
+    @persistent_cache(path="__max_tag", cache_time=3600)
     def __get_max_tag(self) -> None | str:
         exec_cmd("git fetch origin --depth 1 --tags -f")
         tags, exit_code = exec_cmd(

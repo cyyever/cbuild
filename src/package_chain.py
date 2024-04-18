@@ -6,6 +6,8 @@ from .build_action import BuildAction
 from .environment import BuildContext
 from .package import Package
 
+PackageSpecification.default_branch = "__cbuild_most_recent_git_tag"
+
 
 class PackageChain:
     def __init__(self, last_package_specification) -> None:
