@@ -1,27 +1,15 @@
 {
   "freebsd": {
-    "group_package": true,
-    "system_package_dependency": {
-      "freebsd": [
-        "png"
-      ]
-    }
+    "group_package": true
   },
   "archlinux": {
-    "group_package": true,
-    "system_package_dependency": {
-      "archlinux": [
-        "libpng"
-      ]
-    }
+    "group_package": true
   },
   "ubuntu": {
-    "group_package": true,
-    "system_package_dependency": {
-      "ubuntu": [
-        "libpng-dev"
-      ]
-    }
+    "group_package": true
+  },
+  "macos": {
+    "group_package": true
   },
   "all_os": {
     "git_url": "git@github.com:glennrp/libpng.git",
@@ -31,6 +19,20 @@
     ],
     "dependency": [
       "zlib-ng"
+    ]
+  },
+  "system_package_dependency": {
+    "freebsd": [
+      "png"
+    ],
+    "macos": [
+      "libpng"
+    ],
+    "archlinux": [
+      "libpng"
+    ],
+    "ubuntu": [
+      "libpng-dev"
     ]
   }
 }
