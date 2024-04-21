@@ -1,4 +1,7 @@
 {
+  "ubuntu": {
+    "group_package": true
+  },
   "archlinux": {
     "group_package": true
   },
@@ -21,6 +24,9 @@
     ],
     "macos": [
       "ninja"
+    ],
+    "ubuntu": [
+      "ninja-build"
     ],
     "archlinux": [
       "ninja"

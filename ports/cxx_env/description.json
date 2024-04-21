@@ -75,8 +75,6 @@
       "clang-tidy",
       "libtool-bin",
       "g++",
-      "g++-12",
-      "gcc-12",
       "clang-tidy",
       "clang",
       "make",
