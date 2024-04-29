@@ -28,4 +28,6 @@ if [[ "$(uname)" == "FreeBSD" ]]; then
   git checkout freebsd
 fi
 
-# ${sed_cmd} -i -e '/set(TP_BUILD_LIBUV ON CACHE BOOL "" FORCE)/s/ON/OFF/g' cmake/Dependencies.cmake
+if [[ "${BUILD_CONTEXT_macos:=0}" == "0" ]]; then
+  ${sed_cmd} -i -e '/set(TP_BUILD_LIBUV ON CACHE BOOL "" FORCE)/s/ON/OFF/g' cmake/Dependencies.cmake
+fi
