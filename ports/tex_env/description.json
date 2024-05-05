@@ -26,6 +26,7 @@
     "archlinux": [
       "texlive-latexextra",
       "texlive-bibtexextra",
+      "texlive-binextra",
       "texlive-core",
       "zathura-pdf-poppler",
       "xdotool",
