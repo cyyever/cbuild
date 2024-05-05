@@ -27,6 +27,8 @@
       "texlive-latexextra",
       "texlive-bibtexextra",
       "texlive-binextra",
+      "texlive-mathscience",
+      "texlive-fontsextra",
       "texlive-core",
       "zathura-pdf-poppler",
       "xdotool",
