@@ -6,7 +6,7 @@
     "pytorch",
     "torchvision",
     "cyy_torch_cpp_extension",
-    "cyy_torch_xai"
+    "cyy_torch_xai:main"
   ],
   "environment_variable": [
     "run_test=0"
