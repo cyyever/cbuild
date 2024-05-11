@@ -11,7 +11,6 @@ from cyy_naive_lib.system_info import OSType, get_operating_system_type
 from looseversion import LooseVersion
 
 
-
 class GitSource(Source):
     @staticmethod
     def is_git_source(git_url) -> bool:
@@ -125,6 +124,7 @@ class GitSource(Source):
         if exit_code != 0:
             return None
         for branch in branches.strip().splitlines():
+            branch = branch.strip()
             print("check branch", branch)
             if "origin" not in branch:
                 continue
