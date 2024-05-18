@@ -31,7 +31,7 @@ if test -f "pyproject.toml" && [[ -z ${use_setup_py+x} ]]; then
     done
   fi
 
-  build_cmd="${CBUILD_PYTHON_EXE} -m pip install --no-build-isolation . --user --force"
+  build_cmd="${CBUILD_PYTHON_EXE} -m pip install --no-build-isolation . --user --force --verbose"
   if [[ -n ${need_compilation_json+x} ]] && command -v bear; then
     build_cmd="bear -- ${build_cmd}"
   fi
@@ -90,9 +90,7 @@ elif test -f "setup.py"; then
   if [[ -n ${DEFAULT_INSTALL_PREFIX+x} ]]; then
     ${CBUILD_PYTHON_EXE} setup.py install --force
   else
-    if ! ${CBUILD_PYTHON_EXE} setup.py install --user --force; then
-      ${CBUILD_PIP_EXE} install . --user --verbose
-    fi
+    ${CBUILD_PYTHON_EXE} setup.py install --user --force
   fi
   if [[ "${run_test}" == "1" ]]; then
     if [[ -n ${TEST_SUBDIR+x} ]]; then
