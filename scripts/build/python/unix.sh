@@ -7,6 +7,8 @@ fi
 cd ${__SRC_DIR}
 if test -f requirements.txt; then
   ${sed_cmd} -i -e '/git.*ssh/d' requirements.txt
+  ${sed_cmd} -i -e '/torch/d' requirements.txt
+  ${sed_cmd} -i -e '/nvidia/d' requirements.txt
   ${CBUILD_PIP_EXE} install -r requirements.txt --user
 fi
 
