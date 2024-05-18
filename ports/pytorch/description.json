@@ -22,7 +22,7 @@
       "static_analysis=0",
       "BUILD_TEST=off",
       "USE_SYSTEM_PYBIND11=off",
-      "USE_NUMPY=off",
+      "USE_NUMPY=on",
       "USE_MAGMA=off",
       "ATEN_NO_TEST=ON",
       "USE_DISTRIBUTED=on",
