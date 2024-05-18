@@ -25,6 +25,7 @@
       "py_pkg_name=torch",
       "BUILD_TEST=off",
       "USE_SYSTEM_PYBIND11=off",
+      "USE_NUMPY=off",
       "USE_MAGMA=off",
       "ATEN_NO_TEST=ON",
       "BUILD_CAFFE2=off",
