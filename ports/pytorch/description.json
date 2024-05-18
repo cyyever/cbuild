@@ -20,7 +20,6 @@
     "main_language": "python",
     "environment_variable": [
       "run_test=0",
-      "use_setup_py=1",
       "slow_static_analysis=0",
       "clang_tidy_fix=0",
       "py_pkg_name=torch",
