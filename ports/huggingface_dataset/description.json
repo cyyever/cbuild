@@ -4,7 +4,6 @@
   "environment_variable": [
     "run_test=0",
     "py_pkg_name=datasets",
-    "use_setup_py=1",
     "AIOHTTP_NO_EXTENSIONS=1"
   ],
   "dependency": [
