@@ -94,9 +94,7 @@ elif test -f "setup.py"; then
   if [[ -n ${DEFAULT_INSTALL_PREFIX+x} ]]; then
     ${CBUILD_PYTHON_EXE} setup.py install --force
   else
-    if ! ${CBUILD_PYTHON_EXE} setup.py install --user --force; then
-      ${CBUILD_PIP_EXE} install . --user --verbose
-    fi
+    ${CBUILD_PYTHON_EXE} setup.py install --user --force
   fi
   if [[ "${run_test}" == "1" ]]; then
     if [[ -n ${TEST_SUBDIR+x} ]]; then
