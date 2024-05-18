@@ -11,11 +11,6 @@
     "need_compilation_json=1",
     "NPY_NUM_BUILD_JOBS=6"
   ],
-  "conditional_environment_variable": {
-    "windows": [
-      "PYTHON_BUILD_CMD=${CBUILD_PYTHON_EXE} setup.py config build_ext --inplace"
-    ]
-  },
   "system_package_dependency": {
     "pip": [
       "hypothesis",
