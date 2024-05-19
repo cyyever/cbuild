@@ -1,6 +1,6 @@
 {
   "git_url": "https://git.ffmpeg.org/ffmpeg.git",
-  "git_branch": "n7.1-dev",
+  "git_branch": "master",
   "cache_time": 300,
   "use_mingw64": true,
   "dependency": [
@@ -60,10 +60,10 @@
       "--enable-shared --cc=${CC}"
     ],
     "cuda": [
-      " --enable-cuvid --enable-ffnvcodec --enable-cuda-nvcc"
+      "--enable-cuvid --enable-ffnvcodec --enable-cuda-nvcc"
     ],
     "mingw64": [
-      " --disable-iconv --enable-static --disable-shared"
+      "--disable-iconv --enable-static --disable-shared"
     ]
   }
 }
