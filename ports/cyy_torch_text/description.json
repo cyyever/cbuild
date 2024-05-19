@@ -6,10 +6,5 @@
   "dependency": [
     "cyy_torch_toolbox",
     "huggingface_transformers"
-  ],
-  "conditional_dependency": {
-    "full": [
-      "spacy"
-    ]
-  }
+  ]
 }

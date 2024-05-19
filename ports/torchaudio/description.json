@@ -4,7 +4,6 @@
   "reuse_build": true,
   "main_language": "python",
   "environment_variable": [
-    "use_setup_py=1",
     "run_test=0",
     "BUILD_SOX=ON",
     "BUILD_KALDI=OFF",
@@ -15,6 +14,9 @@
     "ffmpeg"
   ],
   "conditional_new_feature": {
+    "support_cuda": [
+      "cuda"
+    ],
     "unix": [
       "machine_learning_compilers"
     ]
