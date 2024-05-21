@@ -6,16 +6,6 @@
     "openblas[shared_lib]"
   ],
   "environment_variable": [
-    "run_test=1",
-    "static_analysis=0",
-    "need_compilation_json=1",
-    "NPY_NUM_BUILD_JOBS=6"
-  ],
-  "system_package_dependency": {
-    "pip": [
-      "hypothesis",
-      "meson-python",
-      "Cython"
-    ]
-  }
+    "run_test=1"
+  ]
 }

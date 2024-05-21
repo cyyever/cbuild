@@ -12,9 +12,6 @@
   "conditional_environment_variable": {
     "freebsd": [
       "FC=gfortran11"
-    ],
-    "windows": [
-      "PYTHON_BUILD_CMD=${CBUILD_PYTHON_EXE} setup.py config --fcompiler=intelem build_ext --inplace"
     ]
   },
   "conditional_new_feature": {

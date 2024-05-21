@@ -30,9 +30,6 @@
     "feature_package_manager_yay": [
       "yay:master"
     ],
-    "use_mold": [
-      "mold"
-    ],
     "cuda&&!docker": [
       "CUDA"
     ],

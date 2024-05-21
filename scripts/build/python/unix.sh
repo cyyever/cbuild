@@ -10,6 +10,7 @@ if test -f requirements.txt; then
   ${sed_cmd} -i -e '/torch/d' requirements.txt
   ${sed_cmd} -i -e '/nvidia/d' requirements.txt
   ${sed_cmd} -i -e '/numpy/d' requirements.txt
+  ${sed_cmd} -i -e '/cython/d' requirements.txt
   ${CBUILD_PIP_EXE} install -r requirements.txt --user
 fi
 
