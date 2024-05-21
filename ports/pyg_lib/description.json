@@ -7,8 +7,7 @@
   ],
   "dependency": [
     "pytorch",
-    "pytorch_scatter",
-    "pytorch_sparse"
+    "pytorch_scatter:master"
   ],
   "conditional_new_feature": {
     "support_cuda": [

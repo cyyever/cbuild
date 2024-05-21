@@ -6,14 +6,6 @@
     "DISTUTILS_USE_SDK=1"
   ],
   "dependency": [
-    "pytorch",
-    "pytorch_scatter",
-    "pytorch_sparse",
     "pyg_lib"
-  ],
-  "system_package_dependency": {
-    "pip": [
-      "flit"
-    ]
-  }
+  ]
 }
