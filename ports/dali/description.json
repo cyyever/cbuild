@@ -5,8 +5,7 @@
   "reuse_build": true,
   "environment_variable": [
     "run_test=0",
-    "static_analysis=1",
-    "slow_static_analysis=1"
+    "no_install=1"
   ],
   "conditional_environment_variable": {
     "windows": [
@@ -21,21 +20,16 @@
       "cuda"
     ]
   },
-  "conditional_dependency": {
-    "!docker": [
-      "dali_extra:main"
-    ]
-  },
   "dependency": [
     "torchvision",
     "ffmpeg",
     "protobuf",
-    "opencv:cyy"
+    "opencv"
   ],
   "ignored_git_submodules": [
     "third_party/pybind11"
   ],
-  "cmake_options": "-DFFMPEG_ROOT_DIR=${INSTALL_PREFIX} -DBUILD_TEST=on -DBUILD_BENCHMARK=off -DBUILD_LIBTIFF=off -DBUILD_LIBSND=off -DProtobuf_USE_STATIC_LIBS=off -DBUILD_OPENCV=on -DDALI_CLANG_ONLY=off -DBUILD_CUFILE=ON -DBUILD_LIBTAR=off -DBUILD_NVDEC=on -DBUILD_FFMPEG=on -DBUILD_LMDB=off -DBUILD_FFTS=off -DBUILD_CFITSIO=off",
+  "cmake_options": "-DFFMPEG_ROOT_DIR=${INSTALL_PREFIX} -DBUILD_TEST=on -DBUILD_BENCHMARK=off -DBUILD_LIBTIFF=off -DBUILD_LIBSND=off -DProtobuf_USE_STATIC_LIBS=off -DBUILD_OPENCV=on -DDALI_CLANG_ONLY=off -DBUILD_CUFILE=ON -DBUILD_LIBTAR=off -DBUILD_NVDEC=on -DBUILD_FFMPEG=on -DBUILD_LMDB=off -DBUILD_FFTS=off -DBUILD_CFITSIO=off -DNVJPEG_ROOT_DIR=${CUDA_HOME} -DBUILD_CVCUDA=off",
   "conditional_cmake_options": {
     "sanitizer": "-DBUILD_WITH_UBSAN=on -DBUILD_WITH_LSAN=on -DBUILD_WITH_ASAN=on"
   },
@@ -45,7 +39,8 @@
       "libclang-dev"
     ],
     "pip": [
-      "clang"
+      "clang",
+      "protobuf"
     ]
   }
 }
