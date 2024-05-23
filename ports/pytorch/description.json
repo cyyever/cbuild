@@ -6,7 +6,6 @@
     "ignored_git_submodules": [
       "third_party/eigen",
       "third_party/ios-cmake",
-      "third_party/breakpad",
       "third_party/tbb"
     ],
     "cache_time": 30,
