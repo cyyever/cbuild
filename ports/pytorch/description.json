@@ -19,7 +19,6 @@
     "environment_variable": [
       "run_test=0",
       "slow_static_analysis=0",
-      "static_analysis=0",
       "BUILD_TEST=off",
       "USE_SYSTEM_PYBIND11=off",
       "USE_NUMPY=on",
