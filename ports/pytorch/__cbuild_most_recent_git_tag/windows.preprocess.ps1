@@ -16,10 +16,4 @@ sed -i -e "/INTEL_MKL_DIR/s/,/,'USE_MKLDNN', 'USE_NCCL',/" tools/setup_helpers/c
 
 sed -i -e '/^ *check_submodules()/d' setup.py
 rm cmake/Modules/FindMKL.cmake
-# rm cmake/Modules/FindOpenMP.cmake
-# sed -i -e "/MKL_INCLUDE_DIR/s/MKL_INCLUDE_DIR/MKL_INCLUDE/g"  cmake/public/mkl.cmake
-# sed -i -e "/target_link_libraries/s/..MKL_LIBRARIES./MKL::MKL/g"  cmake/public/mkl.cmake
-# sed -i -e "/MKL_INCLUDE_DIR/s/MKL_INCLUDE_DIR/MKL_INCLUDE/g"  cmake/Dependencies.cmake
 sed -i -e '1 i\include(CheckFunctionExists)'  cmake/Modules/FindLAPACK.cmake
-# $env:MKL_OPENMP_LIBRARY = $env:MKL_OPENMP_LIBRARY -replace "/", "\\"
-# $env:MKL_OPENMP_LIBRARY = $env:MKL_OPENMP_LIBRARY -replace "C:\\P", "C:\\\\P"
