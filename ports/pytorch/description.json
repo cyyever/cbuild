@@ -4,9 +4,7 @@
     "git_branch": "viable/strict",
     "reuse_build": true,
     "ignored_git_submodules": [
-      "third_party/eigen",
-      "third_party/ios-cmake",
-      "third_party/tbb"
+      "third_party/eigen"
     ],
     "cache_time": 30,
     "conditional_new_feature": {
