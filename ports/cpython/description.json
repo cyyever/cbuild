@@ -11,8 +11,7 @@
       "static_analysis=0",
       "no_reconf=1",
       "slow_static_analysis=1",
-      "ignore_install_error=1",
-      "uninstalled_pip_pkgs=setuptools"
+      "ignore_install_error=1"
     ],
     "conditional_environment_variable": {
       "macos": [
