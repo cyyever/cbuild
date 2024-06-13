@@ -2,7 +2,7 @@
   "git_url": "git@github.com:ollama/ollama.git",
   "main_language": "golang",
   "environment_variable": [
-    "LLAMA_SYCL=off"
+    "OLLAMA_SKIP_ONEAPI_GENERATE=1"
   ],
   "conditional_new_feature": {
     "support_cuda": [
