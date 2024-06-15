@@ -1,0 +1,10 @@
+{
+  "git_url": "git@github.com:snap-stanford/ogb.git",
+  "git_branch": "master",
+  "cache_time": 30,
+  "main_language": "python",
+  "environment_variable": [
+    "run_test=0",
+    "use_setup_py=1"
+  ]
+}
