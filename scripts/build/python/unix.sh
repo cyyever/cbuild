@@ -25,6 +25,10 @@ if test -f "pyproject.toml" && [[ -z ${use_setup_py+x} ]]; then
       ${CBUILD_PIP_EXE} uninstall $py_pkg_name -y || true
     done
   fi
+  ${sed_cmd} -i -e '/"scipy",/d' pyproject.toml
+  ${sed_cmd} -i -e '/"scikit-learn",/d' pyproject.toml
+  ${sed_cmd} -i -e '/"nvidia",/d' pyproject.toml
+  ${sed_cmd} -i -e '/"numpy",/d' pyproject.toml
   if [[ "${reuse_build:=0}" == "0" ]]; then
     for d in build *egg-info; do
       if test -d ${d}; then
@@ -63,6 +67,11 @@ if test -f "pyproject.toml" && [[ -z ${use_setup_py+x} ]]; then
     BUILD_DIR="$(pwd)/build"
   fi
 elif test -f "setup.py"; then
+  ${sed_cmd} -i -e '/scipy/d' setup.py
+  ${sed_cmd} -i -e '/scikit-learn/d' setup.py
+  ${sed_cmd} -i -e '/nvidia/d' setup.py
+  ${sed_cmd} -i -e '/numpy/d' setup.py
+  ${sed_cmd} -i -e '/cython/d' setup.py
   if [[ "${reuse_build:=0}" == "0" ]]; then
     for d in build dist; do
       if test -d ${d}; then
@@ -91,11 +100,7 @@ elif test -f "setup.py"; then
       ${build_cmd}
     fi
   fi
-  if [[ -n ${DEFAULT_INSTALL_PREFIX+x} ]]; then
-    ${CBUILD_PYTHON_EXE} setup.py install --force
-  else
-    ${CBUILD_PYTHON_EXE} setup.py install --user --force
-  fi
+  ${CBUILD_PYTHON_EXE} setup.py install
   if [[ "${run_test}" == "1" ]]; then
     if [[ -n ${TEST_SUBDIR+x} ]]; then
       cd ${TEST_SUBDIR}
