@@ -24,6 +24,7 @@
       "USE_NUMPY=on",
       "USE_MAGMA=off",
       "ATEN_NO_TEST=ON",
+      "CMAKE_CXX_STANDARD=20",
       "USE_DISTRIBUTED=off",
       "BUILD_CUSTOM_PROTOBUF=on",
       "USE_FBGEMM=on",
