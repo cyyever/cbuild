@@ -16,8 +16,8 @@
     "conditional_environment_variable": {
       "macos": [
         "PKG_CONFIG_PATH=$(brew --prefix openssl)/lib/pkgconfig:$(brew --prefix libffi)/lib/pkgconfig",
-        "CPPFLAGS=-I$(brew --prefix readline)/include -I$(brew --prefix xz)/include",
-        "LDFLAGS=-L$(brew --prefix readline)/lib -L$(brew --prefix xz)/lib"
+        "CPPFLAGS=-I$(brew --prefix readline)/include -I$(brew --prefix xz)/include -I$(brew --prefix zlib)/include -I${INSTALL_PREFIX}/include",
+        "LDFLAGS=-L$(brew --prefix readline)/lib -L$(brew --prefix xz)/lib -L$(brew --prefix zlib)/lib -L${INSTALL_PREFIX}/lib ${LDFLAGS:-}"
       ],
       "freebsd": [
         "LDFLAGS=-L/usr/local/lib"
@@ -38,10 +38,12 @@
         "--with-system-ffi"
       ]
     },
-    "depedency": [
-      "openssl",
-      "zlib-ng"
-    ]
+    "conditional_dependency": {
+      "!macos": [
+        "openssl",
+        "zlib-ng"
+      ]
+    }
   },
   "system_package_dependency": {
     "windows": [
@@ -92,9 +94,11 @@
     ],
     "macos": [
       "python3",
+      "openssl",
       "bzip2",
       "expat",
       "xz",
+      "zlib",
       "gdbm",
       "readline",
       "libffi",
