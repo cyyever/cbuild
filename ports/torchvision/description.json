@@ -4,6 +4,7 @@
   "main_language": "python",
   "environment_variable": [
     "run_test=0",
+    "use_setup_py=1",
     "TORCHVISION_USE_FFMPEG=0"
   ],
   "conditional_new_feature": {
