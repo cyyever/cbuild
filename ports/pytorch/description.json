@@ -41,8 +41,6 @@
       "USE_PYTORCH_QNNPACK=off",
       "BLAS=OpenBLAS",
       "WERROR=off",
-      "USE_FLASH_ATTENTION=0",
-      "USE_MEM_EFF_ATTENTION=0",
       "OpenBLAS_HOME=${INSTALL_PREFIX}/include/openblas",
       "OpenBLAS=${INSTALL_PREFIX}"
     ],
