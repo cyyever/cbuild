@@ -5,6 +5,11 @@
   "macos": {
     "group_package": true
   },
+  "conditional_new_feature": {
+    "unix": [
+      "machine_learning_compilers"
+    ]
+  },
   "all_os": {
     "git_url": "git@github.com:protocolbuffers/protobuf.git",
     "main_language": "c",
