@@ -4,7 +4,9 @@
     "git_branch": "viable/strict",
     "reuse_build": true,
     "ignored_git_submodules": [
-      "third_party/eigen"
+      "third_party/eigen",
+      "third_party/opentelemetry-cpp",
+      "android/libs/fbjni"
     ],
     "cache_time": 30,
     "conditional_new_feature": {
