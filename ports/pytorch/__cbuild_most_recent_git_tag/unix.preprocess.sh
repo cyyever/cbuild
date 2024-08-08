@@ -23,6 +23,12 @@ ${sed_cmd} -i -e '/Werror/d' third_party/fbgemm/CMakeLists.txt
 if [[ "$(uname)" == "FreeBSD" ]]; then
   ${sed_cmd} -i -e 's/_assert/assert_in_pytorch/g' aten/src/ATen/native/sparse/ValidateCompressedIndicesCommon.h
   ${sed_cmd} -i -e '/defined(__APPLE__)/s/defined(__APPLE__).*/1/g' third_party/onnx/onnx/checker.cc
+  cd third_party
+  rm -rf cpuinfo
+  git clone git@github.com:cyyever/cpuinfo.git
+  cd cpuinfo
+  git checkout freebsd2
+  cd ${SRC_DIR}
 fi
 
 ${sed_cmd} -i -e '1iINCLUDE(CheckFunctionExists)' cmake/Modules/FindBLAS.cmake
