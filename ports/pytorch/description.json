@@ -70,7 +70,7 @@
       ],
       "freebsd": [
         "CMAKE_GENERATOR='Unix Makefiles'",
-        "USE_VULKAN=on",
+        "USE_VULKAN=off",
         "USE_FBGEMM=off"
       ],
       "macos": [
