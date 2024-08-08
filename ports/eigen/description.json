@@ -1,8 +1,5 @@
 {
   "git_url": "https://gitlab.com/libeigen/eigen.git",
   "git_branch": "master",
-  "main_language": "c",
-  "environment_variable": [
-    "run_test=0"
-  ]
+  "main_language": "c"
 }
