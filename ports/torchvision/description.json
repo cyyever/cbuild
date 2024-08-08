@@ -5,7 +5,9 @@
   "environment_variable": [
     "run_test=0",
     "use_setup_py=1",
-    "TORCHVISION_USE_FFMPEG=0"
+    "TORCHVISION_USE_FFMPEG=0",
+    "TORCHVISION_INCLUDE=${INSTALL_PREFIX}/include",
+    "TORCHVISION_LIBRARY=${INSTALL_PREFIX}/lib"
   ],
   "conditional_new_feature": {
     "support_cuda": [
@@ -16,10 +18,6 @@
     ]
   },
   "conditional_environment_variable": {
-    "all_os": [
-      "TORCHVISION_INCLUDE=${INSTALL_PREFIX}/include",
-      "TORCHVISION_LIBRARY=${INSTALL_PREFIX}/lib"
-    ],
     "unix": [
       "CPLUS_INCLUDE_PATH=${INSTALL_PREFIX}/oneTBB/include"
     ],
