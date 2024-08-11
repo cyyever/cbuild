@@ -28,11 +28,10 @@
       "ATEN_NO_TEST=ON",
       "CMAKE_CXX_STANDARD=20",
       "USE_DISTRIBUTED=off",
-      "BUILD_CUSTOM_PROTOBUF=on",
+      "BUILD_CUSTOM_PROTOBUF=off",
       "USE_FBGEMM=on",
       "GLIBCXX_USE_CXX11_ABI=1",
       "USE_KINETO=off",
-      "CAFFE2_USE_MKL=OFF",
       "USE_TENSORPIPE=on",
       "TP_BUILD_LIBUV=off",
       "USE_GLOG=off",
@@ -51,7 +50,7 @@
         "USE_CUDA=on",
         "USE_CUDNN=on",
         "CUDNN_ROOT=${CUDNN_ROOT_DIR}",
-        "USE_NCCL=on",
+        "USE_NCCL=off",
         "USE_NATIVE_ARCH=on"
       ],
       "docker": [

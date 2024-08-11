@@ -9,7 +9,7 @@ rm -rf ${INSTALL_PREFIX}/include/c10 || true
 rm -rf ${INSTALL_PREFIX}/include/caffe2 || true
 rm -rf ${INSTALL_PREFIX}/include/sleef.h || true
 rm -rf ${INSTALL_PREFIX}/include/xnnpack.h || true
-${sed_cmd} -i -e "/INTEL_MKL_DIR/s/,/,'USE_MKLDNN', 'CUDA_USE_STATIC_CUDA_RUNTIME', 'USE_STATIC_MKL', 'CAFFE2_USE_MKL','USE_NCCL','CMAKE_CXX_STANDARD',/" tools/setup_helpers/cmake.py
+${sed_cmd} -i -e "/INTEL_MKL_DIR/s/,/,'USE_MKLDNN', 'CUDA_USE_STATIC_CUDA_RUNTIME', 'USE_NCCL','CMAKE_CXX_STANDARD',/" tools/setup_helpers/cmake.py
 ${sed_cmd} -i -e '/^\s*check_submodules()/s/check_submodules()/#check_submodules()/g' setup.py
 ${sed_cmd} -i -e '/CMAKE_CUDA_STANDARD/s/set(CMAKE_CUDA_STANDARD.*/set(CMAKE_CUDA_STANDARD 17)/g' cmake/public/cuda.cmake
 ${sed_cmd} -i -e '/int64_t max_split_size/s/int64_t/size_t/g' c10/cuda/CUDACachingAllocator.h
