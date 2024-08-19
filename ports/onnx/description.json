@@ -1,5 +1,9 @@
 {
   "git_url": "git@github.com:onnx/onnx.git",
   "git_branch": "main",
-  "main_language": "c"
+  "main_language": "c",
+  "environment_variable": [
+    "static_analysis=1"
+  ],
+  "cmake_options": "-DONNX_BUILD_TESTS=on"
 }
