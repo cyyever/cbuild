@@ -1,7 +1,4 @@
 cd "$env:SRC_DIR"
-git remote add up git@github.com:cyyever/pytorch.git
-git fetch --all
-git rebase up/nvtx3_fix2
 rm -r -ErrorAction SilentlyContinue $env:INSTALL_PREFIX/lib/libc10*
 rm -r -ErrorAction SilentlyContinue $env:INSTALL_PREFIX/lib/libtorch*
 rm -r -ErrorAction SilentlyContinue $env:INSTALL_PREFIX/lib/libshm*
