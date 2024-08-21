@@ -14,3 +14,5 @@ sed -i -e "/INTEL_MKL_DIR/s/,/,'USE_MKLDNN', 'USE_NCCL',/" tools/setup_helpers/c
 sed -i -e '/^ *check_submodules()/d' setup.py
 rm cmake/Modules/FindMKL.cmake
 sed -i -e '1 i\include(CheckFunctionExists)'  cmake/Modules/FindLAPACK.cmake
+sed -i -e '/lintrunner/d' requirements.txt
+sed -i -e '/pentelemet/d' torch/CMakeLists.txt
