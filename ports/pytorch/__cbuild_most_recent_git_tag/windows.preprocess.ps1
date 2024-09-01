@@ -16,3 +16,4 @@ rm cmake/Modules/FindMKL.cmake
 sed -i -e '1 i\include(CheckFunctionExists)'  cmake/Modules/FindLAPACK.cmake
 sed -i -e '/lintrunner/d' requirements.txt
 sed -i -e '/pentelemet/d' torch/CMakeLists.txt
+sed -i -e '/my_env = _overlay_windows_vcvars/d' tools/build_pytorch_libs.py

@@ -19,7 +19,7 @@ if ($env:use_setup_py -eq "1") {
 }
 
 if ((Test-Path pyproject.toml -PathType Leaf)) {
-    Invoke-Expression "$env:CBUILD_PYTHON_EXE -m pip install --no-build-isolation . --user --force"
+    Invoke-Expression "$env:CBUILD_PYTHON_EXE -m pip install --no-build-isolation . --user --force --verbose"
     if ($LastExitCode -ne 0) {
         exit $LastExitCode
     }
