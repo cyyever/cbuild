@@ -1,4 +1,7 @@
 {
   "git_url": "git@github.com:gorse-io/gorse.git",
-  "main_language": "golang"
+  "main_language": "golang",
+  "environment_variable": [
+    "SRC_SUBDIR=cmd/gorse-in-one"
+  ]
 }
