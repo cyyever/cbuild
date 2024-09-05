@@ -19,6 +19,7 @@ if [[ "${BUILD_CONTEXT_macos:=0}" != "1" ]]; then
   ${sed_cmd} -i -e '/CMAKE_CXX_STANDARD/s/17/20/g' CMakeLists.txt
 fi
 ${sed_cmd} -i -e '/Werror/d' third_party/fbgemm/CMakeLists.txt
+${sed_cmd} -i -e '/opentelemetry/d' torch/CMakeLists.txt
 
 if [[ "$(uname)" == "FreeBSD" ]]; then
   ${sed_cmd} -i -e 's/_assert/assert_in_pytorch/g' aten/src/ATen/native/sparse/ValidateCompressedIndicesCommon.h
