@@ -2,6 +2,6 @@
   "git_url": "git@github.com:gorse-io/gorse.git",
   "main_language": "golang",
   "environment_variable": [
-    "SRC_SUBDIR=cmd/gorse-in-one"
+    "GO_SRC_DIRS=cmd/gorse-in-one:cmd/gorse-server:cmd/gorse-worker"
   ]
 }
