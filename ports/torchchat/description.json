@@ -1,0 +1,19 @@
+{
+  "git_url": "git@github.com:pytorch/torchchat.git",
+  "git_branch": "main",
+  "main_language": "python",
+  "environment_variable": [
+    "run_test=0"
+  ],
+  "conditional_new_feature": {
+    "support_cuda": [
+      "cuda"
+    ],
+    "unix": [
+      "machine_learning_compilers"
+    ]
+  },
+  "dependency": [
+    "pytorch"
+  ]
+}
