@@ -28,7 +28,7 @@
   "ignored_git_submodules": [
     "third_party/pybind11"
   ],
-  "cmake_options": "-DFFMPEG_ROOT_DIR=${INSTALL_PREFIX} -DBUILD_TEST=on -DBUILD_BENCHMARK=off -DBUILD_LIBTIFF=off -DBUILD_LIBSND=off -DBUILD_PROTO3=off -DBUILD_OPENCV=on -DDALI_CLANG_ONLY=off -DBUILD_CUFILE=ON -DBUILD_LIBTAR=off -DBUILD_NVDEC=on -DBUILD_FFMPEG=on -DBUILD_LMDB=off -DBUILD_FFTS=off -DBUILD_CFITSIO=off -DNVJPEG_ROOT_DIR=${CUDA_HOME} -DBUILD_CVCUDA=off",
+  "cmake_options": "-DFFMPEG_ROOT_DIR=${INSTALL_PREFIX} -DBUILD_TEST=on -DBUILD_BENCHMARK=off -DBUILD_LIBTIFF=off -DBUILD_LIBSND=off -DBUILD_AWSSDK=off -DBUILD_OPENCV=on -DDALI_CLANG_ONLY=off -DBUILD_CUFILE=ON -DBUILD_LIBTAR=off -DBUILD_NVDEC=on -DBUILD_FFMPEG=on -DBUILD_LMDB=off -DBUILD_FFTS=off -DBUILD_CFITSIO=off -DNVJPEG_ROOT_DIR=${CUDA_HOME} -DBUILD_CVCUDA=off -DBUILD_DALI_NODEPS=off -DBUILD_PYTHON=on",
   "conditional_cmake_options": {
     "sanitizer": "-DBUILD_WITH_UBSAN=on -DBUILD_WITH_LSAN=on -DBUILD_WITH_ASAN=on"
   },
@@ -38,8 +38,7 @@
       "libclang-dev"
     ],
     "pip": [
-      "clang",
-      "protobuf"
+      "clang"
     ]
   }
 }
