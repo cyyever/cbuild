@@ -8,7 +8,7 @@
   "all_os": {
     "git_url": "git@github.com:zlib-ng/zlib-ng.git",
     "main_language": "c",
-    "cmake_options": "-DZLIB_COMPAT=on"
+    "cmake_options": "-DZLIB_COMPAT=on -DZLIB_ENABLE_TESTS=off -DZLIBNG_ENABLE_TESTS=off"
   },
   "conditional_dependency": {
     "windows": [
