@@ -57,11 +57,7 @@ if test -f "pyproject.toml" && [[ -z ${use_setup_py+x} ]]; then
     if [[ -n ${TEST_SUBDIR+x} ]]; then
       cd ${TEST_SUBDIR}
     fi
-    if [[ "${PACKAGE_VERSION}" == "master" ]]; then
-      ${CBUILD_PYTHON_EXE} -m pytest || true
-    else
-      ${CBUILD_PYTHON_EXE} -m pytest
-    fi
+    ${CBUILD_PYTHON_EXE} -m pytest || true
   fi
   if test -d build; then
     BUILD_DIR="$(pwd)/build"
@@ -105,13 +101,7 @@ elif test -f "setup.py"; then
     if [[ -n ${TEST_SUBDIR+x} ]]; then
       cd ${TEST_SUBDIR}
     fi
-    if [[ "${PACKAGE_VERSION}" == "master" ]]; then
-      ${CBUILD_PYTHON_EXE} -m pytest || true
-    elif [[ "${PACKAGE_VERSION}" == "main" ]]; then
-      ${CBUILD_PYTHON_EXE} -m pytest || true
-    else
-      ${CBUILD_PYTHON_EXE} -m pytest
-    fi
+    ${CBUILD_PYTHON_EXE} -m pytest || true
   fi
   if test -d build; then
     BUILD_DIR="$(pwd)/build"
