@@ -6,11 +6,6 @@
   ],
   "conditional_system_package_dependency": {
     "!docker": {
-      "unix": [
-        "curl",
-        "git",
-        "wget"
-      ],
       "freebsd": [
         "sudo"
       ],
@@ -31,6 +26,11 @@
     }
   },
   "system_package_dependency": {
+    "unix": [
+      "curl",
+      "git",
+      "wget"
+    ],
     "linux": [
       "sudo"
     ],
