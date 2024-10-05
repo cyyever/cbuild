@@ -22,7 +22,7 @@ if [[ "$(uname)" == "FreeBSD" ]]; then
   ${sed_cmd} -i -e '/defined(__APPLE__)/s/defined(__APPLE__).*/1/g' third_party/onnx/onnx/checker.cc
 fi
 
-${sed_cmd} -i -e '1iINCLUDE(CheckFunctionExists)' cmake/Modules/FindBLAS.cmake
+# ${sed_cmd} -i -e '1iINCLUDE(CheckFunctionExists)' cmake/Modules/FindBLAS.cmake
 if [[ "${BUILD_CONTEXT_macos:=0}" == "0" ]]; then
   ${sed_cmd} -i -e '/set(TP_BUILD_LIBUV ON CACHE BOOL "" FORCE)/s/ON/OFF/g' cmake/Dependencies.cmake
 fi

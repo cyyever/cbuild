@@ -4,7 +4,6 @@
   "main_language": "python",
   "environment_variable": [
     "run_test=0",
-    "use_setup_py=1",
     "TORCHVISION_USE_FFMPEG=0",
     "TORCHVISION_INCLUDE=${INSTALL_PREFIX}/include",
     "TORCHVISION_LIBRARY=${INSTALL_PREFIX}/lib"
@@ -18,9 +17,6 @@
     ]
   },
   "conditional_environment_variable": {
-    "unix": [
-      "CPLUS_INCLUDE_PATH=${INSTALL_PREFIX}/oneTBB/include"
-    ],
     "windows": [
       "DISTUTILS_USE_SDK=1"
     ]
