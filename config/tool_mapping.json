@@ -17,6 +17,9 @@
     "c",
     "cpp"
   ],
+  "pip_nodeps": [
+    "python"
+  ],
   "pip": [
     "python"
   ],

@@ -2,7 +2,7 @@
   "cache_time": 30,
   "group_package": true,
   "system_package_dependency": {
-    "pip": [
+    "pip_nodeps": [
       "nvidia-cudnn-cu12"
     ]
   }
