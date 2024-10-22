@@ -8,8 +8,7 @@
       "https://github.com/benfred/py-spy"
     ],
     "pip": [
-      "memory_profiler",
-      "Cython",
+      "pyupgrade",
       "psutil"
     ]
   }

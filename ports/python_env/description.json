@@ -16,6 +16,7 @@
       "PyYAML",
       "ninja",
       "types-PyYAML",
+      "pyupgrade",
       "setuptools",
       "coverage",
       "pytest",
