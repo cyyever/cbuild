@@ -2,7 +2,8 @@
 import json
 import multiprocessing
 import os
-from typing import Any, Callable
+from collections.abc import Callable
+from typing import Any
 
 from cyy_naive_lib.algorithm.sequence_op import flatten_list
 
@@ -13,7 +14,6 @@ class ToolMapping:
     def __init__(self):
         with open(
             os.path.join(project_dir, "config", "tool_mapping.json"),
-            "r",
             encoding="utf8",
         ) as f:
             self.data: dict = json.load(f)
@@ -52,7 +52,7 @@ class Config:
             self.config_chain = local_config_chain
         if global_config_path is None:
             global_config_path = os.path.join(project_dir, "config", "global.json")
-        with open(global_config_path, "r", encoding="utf-8") as f:
+        with open(global_config_path, encoding="utf-8") as f:
             self.config_chain.append(json.load(f))
         if not self.config_chain:
             raise RuntimeError("configuration chain is empty")
