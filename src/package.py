@@ -63,9 +63,8 @@ class Package:
         return False
 
     def build_local(self, action):
-        if action == BuildAction.BUILD_WITH_CACHE:
-            if self.check_cache():
-                return False
+        if action == BuildAction.BUILD_WITH_CACHE and self.check_cache():
+            return False
 
         with self.source as source_result:
             # recheck since we change __cbuild_most_recent_tag here
