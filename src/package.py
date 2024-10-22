@@ -54,7 +54,7 @@ class Package:
             return True
 
         if new_hash is not None:
-            with open(tag_file, "rt", encoding="utf8") as f:
+            with open(tag_file, encoding="utf8") as f:
                 old_hash = f.read()
             if old_hash == new_hash:
                 print("skip", str(self.specification()) + " due to hash")
@@ -91,7 +91,7 @@ class Package:
             if features:
                 print("build", str(self.desc.spec) + " with the following features:")
                 for f in features:
-                    print("\t{}".format(f))
+                    print(f"\t{f}")
 
             build_dir = os.path.join(environment.builds_dir, self.full_name())
 
@@ -124,12 +124,12 @@ class Package:
                 self.full_name() + ".build.txt",
             )
             os.makedirs(os.path.dirname(log_file), exist_ok=True)
-            with open(log_file, "wt", encoding="utf8") as f:
+            with open(log_file, "w", encoding="utf8") as f:
                 _, exit_code = script.exec(throw=False, extra_output_files=[f])
                 if exit_code != 0:
                     sys.exit("failed to build package:" + self.specification().name)
 
-            with open(tag_file, "wt", encoding="utf8") as f:
+            with open(tag_file, "w", encoding="utf8") as f:
                 f.write(new_hash)
             if not reuse_build:
                 shutil.rmtree(build_dir, ignore_errors=True)
@@ -182,7 +182,7 @@ class Package:
             additional_docker_commands = []
             if self.desc.get_item("docker_runtime"):
                 runtime_path = self.__get_docker_runtime_path()
-                with open(runtime_path, "r") as f:
+                with open(runtime_path) as f:
                     additional_docker_commands = f.readlines()
             if prev_package is None:
                 for k, v in script.env:
@@ -214,7 +214,7 @@ class Package:
                 docker_image_name + ".build.txt",
             )
             os.makedirs(os.path.dirname(log_file), exist_ok=True)
-            with open(log_file, "wt", encoding="utf8") as f:
+            with open(log_file, "w", encoding="utf8") as f:
                 _, exit_code = docker_file.build(
                     src_dir_pair=src_dir_pair,
                     additional_docker_commands=additional_docker_commands,

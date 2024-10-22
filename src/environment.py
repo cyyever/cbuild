@@ -3,8 +3,11 @@ import copy
 import os
 from shutil import which
 
-from cyy_naive_lib.system_info import (OSType, get_operating_system_type,
-                                       get_processor_name)
+from cyy_naive_lib.system_info import (
+    OSType,
+    get_operating_system_type,
+    get_processor_name,
+)
 
 
 class BuildContext:

@@ -2,7 +2,6 @@ import copy
 import json
 import os
 import sys
-import typing
 
 from cyy_naive_lib.algorithm.sequence_op import flatten_list
 from cyy_naive_lib.shell import get_shell_script_type
@@ -30,7 +29,7 @@ class PackageDescription:
 
         description = {}
         try:
-            with open(self.__description_json_path, "r", encoding="utf-8") as f:
+            with open(self.__description_json_path, encoding="utf-8") as f:
                 description = json.load(f)
         except Exception as e:
             print("error with", self.__description_json_path)
@@ -137,7 +136,7 @@ class PackageDescription:
     def disable_build_cache(self):
         self.__config.set("cache_time", None)
 
-    def __check_languages(self) -> typing.Tuple[set, set]:
+    def __check_languages(self) -> tuple[set, set]:
         if self.__languages is not None:
             return (self.__languages, self.__build_tools)
         building_tools = set()
