@@ -15,6 +15,7 @@ ${sed_cmd} -i -e '/int64_t max_split_size/s/int64_t/size_t/g' c10/cuda/CUDACachi
 ${sed_cmd} -i -e '/ninja/d' requirements.txt
 ${sed_cmd} -i -e '/Werror/d' third_party/fbgemm/CMakeLists.txt
 ${sed_cmd} -i -e '/opentelemetry/d' torch/CMakeLists.txt
+${sed_cmd} -i -e '/-Wno-pass-failed/s/-Wno-pass-failed/-Wno-pass-failed -Wno-deprecated-literal-operator/' CMakeLists.txt
 
 if [[ "$(uname)" == "FreeBSD" ]]; then
   ${sed_cmd} -i -e 's/_assert/assert_in_pytorch/g' aten/src/ATen/native/sparse/ValidateCompressedIndicesCommon.h
