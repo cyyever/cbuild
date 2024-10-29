@@ -7,5 +7,10 @@
   ],
   "environment_variable": [
     "run_test=1"
-  ]
+  ],
+  "system_package_dependency": {
+    "pip": [
+      "meson-python"
+    ]
+  }
 }
