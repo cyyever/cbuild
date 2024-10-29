@@ -1,6 +1,6 @@
 {
   "script_source": true,
-  "url": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/CascadiaCode.zip",
+  "url": "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/CascadiaCode.zip",
   "checksum": "no_checksum",
   "conditional_dependency": {
     "unix": [
