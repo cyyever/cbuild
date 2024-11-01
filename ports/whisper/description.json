@@ -1,0 +1,6 @@
+{
+  "git_url": "org-14957082@github.com:openai/whisper.git",
+  "cache_time": 30,
+  "reuse_build": true,
+  "main_language": "python"
+}
