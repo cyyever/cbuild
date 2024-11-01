@@ -1,9 +1,11 @@
 {
-  "git_url": "git@github.com:onnx/onnx.git",
-  "git_branch": "main",
-  "main_language": "c",
+  "git_url": "git@github.com:cyyever/onnx.git",
+  "main_language": "python",
   "environment_variable": [
-    "static_analysis=1"
+    "CC=/usr/bin/clang",
+    "CXX=/usr/bin/clang++",
+    "static_analysis=1",
+    "TEST_SUBDIR=onnx/test"
   ],
-  "cmake_options": "-DONNX_BUILD_TESTS=on"
+  "cmake_options": "-DONNX_BUILD_TESTS=on -DBUILD_ONNX_PYTHON=on"
 }
