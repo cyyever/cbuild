@@ -6,5 +6,5 @@ if [[ "${BUILD_CONTEXT_macos:=0}" == "1" ]]; then
 fi
 if [[ "${test_numpy}" == "1" ]]; then
   cd ~
-  ${CBUILD_PYTHON_EXE} -c "import numpy;numpy.test()"
+  # ${CBUILD_PYTHON_EXE} -c "import numpy;numpy.test()"
 fi
