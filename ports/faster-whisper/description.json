@@ -1,0 +1,10 @@
+{
+  "git_url": "git@github.com:SYSTRAN/faster-whisper.git",
+  "cache_time": 30,
+  "reuse_build": true,
+  "main_language": "python",
+  "dependency": [
+    "pytorch",
+    "ffmpeg"
+  ]
+}
