@@ -6,7 +6,6 @@ if [[ -n ${py_pkg_name+x} ]]; then
 fi
 cd ${__SRC_DIR}
 if test -f requirements.txt; then
-  ${sed_cmd} -i -e '/git.*ssh/d' requirements.txt
   ${sed_cmd} -i -e '/torch/d' requirements.txt
   ${sed_cmd} -i -e '/nvidia/d' requirements.txt
   ${sed_cmd} -i -e '/numpy/d' requirements.txt
