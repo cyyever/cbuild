@@ -5,8 +5,7 @@ if [[ -n ${py_pkg_name+x} ]]; then
   done
 fi
 cd ${__SRC_DIR}
-if test -f requirements.txt; then
-  ${sed_cmd} -i -e '/torch/d' requirements.txt
+if test -f requirements.txt && [[ "${BUILD_CONTEXT_docker:=0}" == 0 ]]; then
   ${sed_cmd} -i -e '/nvidia/d' requirements.txt
   ${sed_cmd} -i -e '/setuptools/d' requirements.txt
   ${sed_cmd} -i -e '/numpy/d' requirements.txt
@@ -27,10 +26,9 @@ if test -f "pyproject.toml" && [[ -z ${use_setup_py+x} ]]; then
       ${CBUILD_PIP_EXE} uninstall $py_pkg_name -y || true
     done
   fi
-  ${sed_cmd} -i -e '/"scipy",/d' pyproject.toml
-  ${sed_cmd} -i -e '/"scikit-learn",/d' pyproject.toml
-  ${sed_cmd} -i -e '/"nvidia",/d' pyproject.toml
-  ${sed_cmd} -i -e '/"numpy",/d' pyproject.toml
+  if [[ "${BUILD_CONTEXT_docker:=0}" == 0 ]]; then
+    ${sed_cmd} -i -e '/"nvidia",/d' pyproject.toml
+  fi
   if [[ "${reuse_build:=0}" == "0" ]]; then
     for d in build *egg-info; do
       if test -d ${d}; then
