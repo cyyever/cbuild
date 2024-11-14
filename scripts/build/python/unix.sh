@@ -20,11 +20,6 @@ if test -f "pyproject.toml" && [[ -z ${use_setup_py+x} ]]; then
       py_pkg_name=$(~/.local/bin/toml get --toml-path pyproject.toml project.name)
     fi
   fi
-  if [[ -z "${py_pkg_name+x}" ]]; then
-    for _ in $(seq 2); do
-      ${CBUILD_PIP_EXE} uninstall $py_pkg_name -y || true
-    done
-  fi
   if [[ "${BUILD_CONTEXT_docker:=0}" == 0 ]]; then
     ${sed_cmd} -i -e '/"nvidia",/d' pyproject.toml
   fi

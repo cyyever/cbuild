@@ -1,0 +1,15 @@
+{
+  "git_url": "git@github.com:huggingface/accelerate.git",
+  "git_branch": "main",
+  "main_language": "python",
+  "environment_variable": [
+    "run_test=0",
+    "use_setup_py=1"
+  ],
+  "conditional_environment_variable": {
+    "freebsd": [
+      "CC=gcc",
+      "CXX=g++"
+    ]
+  }
+}
