@@ -11,7 +11,9 @@ if test -f requirements.txt; then
   ${sed_cmd} -i -e '/setuptools/d' requirements.txt
   ${sed_cmd} -i -e '/numpy/d' requirements.txt
   ${sed_cmd} -i -e '/cython/d' requirements.txt
-  ${CBUILD_PIP_EXE} install --upgrade -r requirements.txt --user
+  if ! test -f "pyproject.toml" || ! grep 'requirements.txt' "pyproject.toml"; then
+    ${CBUILD_PIP_EXE} install --upgrade -r requirements.txt --user
+  fi
 fi
 
 if test -f "pyproject.toml" && [[ -z ${use_setup_py+x} ]]; then
