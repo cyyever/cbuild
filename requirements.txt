@@ -1,2 +1,3 @@
 toml-cli
+jq
 cyy_naive_lib@git+ssh://git@github.com/cyyever/naive_python_lib.git@main
