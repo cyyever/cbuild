@@ -34,7 +34,7 @@
       "USE_SYSTEM_ONNX=off",
       "GLIBCXX_USE_CXX11_ABI=1",
       "USE_KINETO=off",
-      "USE_TENSORPIPE=on",
+      "USE_TENSORPIPE=off",
       "TP_BUILD_LIBUV=off",
       "USE_GLOG=off",
       "USE_GFLAGS=off",
@@ -72,7 +72,6 @@
       ],
       "freebsd": [
         "CMAKE_GENERATOR='Unix Makefiles'",
-        "USE_VULKAN=off",
         "USE_FBGEMM=off"
       ],
       "macos": [
