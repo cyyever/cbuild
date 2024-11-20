@@ -5,12 +5,13 @@ if [[ -n ${py_pkg_name+x} ]]; then
   done
 fi
 cd ${__SRC_DIR}
-if test -f requirements.txt; then
-  ${sed_cmd} -i -e '/torch/d' requirements.txt
+if test -f requirements.txt && [[ "${BUILD_CONTEXT_docker:=0}" == 0 ]]; then
   ${sed_cmd} -i -e '/nvidia/d' requirements.txt
+  ${sed_cmd} -i -e '/setuptools/d' requirements.txt
   ${sed_cmd} -i -e '/numpy/d' requirements.txt
-  ${sed_cmd} -i -e '/cython/d' requirements.txt
-  ${CBUILD_PIP_EXE} install --upgrade -r requirements.txt --user
+  if ! test -f "pyproject.toml" || ! grep 'requirements.txt' "pyproject.toml"; then
+    ${CBUILD_PIP_EXE} install --upgrade -r requirements.txt --user
+  fi
 fi
 
 if test -f "pyproject.toml" && [[ -z ${use_setup_py+x} ]]; then
@@ -19,15 +20,9 @@ if test -f "pyproject.toml" && [[ -z ${use_setup_py+x} ]]; then
       py_pkg_name=$(~/.local/bin/toml get --toml-path pyproject.toml project.name)
     fi
   fi
-  if [[ -z "${py_pkg_name+x}" ]]; then
-    for _ in $(seq 2); do
-      ${CBUILD_PIP_EXE} uninstall $py_pkg_name -y || true
-    done
+  if [[ "${BUILD_CONTEXT_docker:=0}" == 0 ]]; then
+    ${sed_cmd} -i -e '/"nvidia",/d' pyproject.toml
   fi
-  ${sed_cmd} -i -e '/"scipy",/d' pyproject.toml
-  ${sed_cmd} -i -e '/"scikit-learn",/d' pyproject.toml
-  ${sed_cmd} -i -e '/"nvidia",/d' pyproject.toml
-  ${sed_cmd} -i -e '/"numpy",/d' pyproject.toml
   if [[ "${reuse_build:=0}" == "0" ]]; then
     for d in build *egg-info; do
       if test -d ${d}; then

@@ -4,10 +4,8 @@
     "python_env:master"
   ],
   "system_package_dependency": {
-    "cargo&&!macos": [
-      "https://github.com/benfred/py-spy"
-    ],
     "pip": [
+      "py-spy",
       "pyupgrade",
       "psutil"
     ]

@@ -10,4 +10,3 @@ Start-Process -Wait -Verb runAs choco.exe -ArgumentList "install -y vswhere"
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine"); [System.Environment]::GetEnvironmentVariable("Path", "User")
 python -m pip install --upgrade pip --user
 python -m pip install --upgrade --user -r requirements.txt
-python -m pip install --upgrade --user git+https://github.com/cyyever/naive_python_lib.git@main --force

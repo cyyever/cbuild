@@ -7,13 +7,13 @@ fi
 
 if command -v apt-get >/dev/null; then
   ${sudo_cmd} apt-get update
-  ${sudo_cmd} apt-get install lsb-release jq python3-pip -y
+  ${sudo_cmd} apt-get install lsb-release python3-pip -y
 elif command -v dnf >/dev/null; then
-  ${sudo_cmd} dnf -y install python3 jq
+  ${sudo_cmd} dnf -y install python3
 elif command -v pacman >/dev/null; then
-  ${sudo_cmd} pacman -Sy python3 jq --noconfirm
+  ${sudo_cmd} pacman -Sy python3 --noconfirm
 elif command -v pkg >/dev/null; then
-  ${sudo_cmd} pkg install -y python313 bash jq
+  ${sudo_cmd} pkg install -y python313 bash
   export python3_cmd=python3.13
 elif [[ "$(uname -s)" == "Darwin" ]]; then
   brew_cmd=brew
@@ -25,7 +25,6 @@ elif [[ "$(uname -s)" == "Darwin" ]]; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
     $brew_cmd install git
     $brew_cmd install python3
-    $brew_cmd install jq
     export python3_cmd=/opt/homebrew/bin/python3
   fi
 fi

@@ -28,13 +28,13 @@
       "ATEN_NO_TEST=ON",
       "CMAKE_CXX_STANDARD=20",
       "CMAKE_CUDA_STANDARD=17",
-      "USE_DISTRIBUTED=off",
+      "USE_DISTRIBUTED=on",
       "BUILD_CUSTOM_PROTOBUF=off",
       "USE_FBGEMM=on",
       "USE_SYSTEM_ONNX=off",
       "GLIBCXX_USE_CXX11_ABI=1",
       "USE_KINETO=off",
-      "USE_TENSORPIPE=on",
+      "USE_TENSORPIPE=off",
       "TP_BUILD_LIBUV=off",
       "USE_GLOG=off",
       "USE_GFLAGS=off",
@@ -72,7 +72,6 @@
       ],
       "freebsd": [
         "CMAKE_GENERATOR='Unix Makefiles'",
-        "USE_VULKAN=off",
         "USE_FBGEMM=off"
       ],
       "macos": [

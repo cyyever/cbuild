@@ -13,6 +13,7 @@ ${sed_cmd} -i -e "/INTEL_MKL_DIR/s/,/,'USE_MKLDNN', 'CUDA_USE_STATIC_CUDA_RUNTIM
 ${sed_cmd} -i -e '/^\s*check_submodules()/s/check_submodules()/#check_submodules()/g' setup.py
 ${sed_cmd} -i -e '/int64_t max_split_size/s/int64_t/size_t/g' c10/cuda/CUDACachingAllocator.h
 ${sed_cmd} -i -e '/ninja/d' requirements.txt
+${sed_cmd} -i -e '/cudnn/d' requirements.txt
 ${sed_cmd} -i -e '/Werror/d' third_party/fbgemm/CMakeLists.txt
 ${sed_cmd} -i -e '/opentelemetry/d' torch/CMakeLists.txt
 ${sed_cmd} -i -e '/-Wno-pass-failed/s/-Wno-pass-failed/-Wno-pass-failed -Wno-deprecated-literal-operator/' CMakeLists.txt
