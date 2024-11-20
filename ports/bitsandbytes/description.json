@@ -1,0 +1,12 @@
+{
+  "git_url": "git@github.com:bitsandbytes-foundation/bitsandbytes.git",
+  "git_branch": "main",
+  "main_language": "python",
+  "environment_variable": [
+    "use_setup=1",
+    "run_test=0"
+  ],
+  "dependency": [
+    "pytorch"
+  ]
+}
