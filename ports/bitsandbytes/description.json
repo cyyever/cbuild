@@ -1,11 +1,21 @@
 {
   "git_url": "git@github.com:bitsandbytes-foundation/bitsandbytes.git",
   "git_branch": "main",
-  "main_language": "python",
+  "main_language": "c",
   "environment_variable": [
-    "use_setup=1",
-    "run_test=0"
+    "no_install=1",
+    "run_test=0",
+    "BUILD_DIR=${SRC_DIR}"
   ],
+  "cmake_options": "-DCOMPUTE_BACKEND='cuda'",
+  "conditional_new_feature": {
+    "support_cuda": [
+      "cuda"
+    ],
+    "unix": [
+      "machine_learning_compilers"
+    ]
+  },
   "dependency": [
     "pytorch"
   ]
