@@ -53,13 +53,13 @@
         "USE_CUDA=on",
         "USE_CUDNN=on",
         "CUDNN_ROOT=${CUDNN_ROOT_DIR}",
-        "USE_NCCL=off",
+        "USE_NCCL=on",
         "USE_NATIVE_ARCH=on"
       ],
       "docker": [
         "CUDA_USE_STATIC_CUDA_RUNTIME=off",
         "USE_STATIC_CUDNN=off",
-        "USE_NCCL=off"
+        "USE_NCCL=on"
       ],
       "amd64&&!cuda": [
         "USE_MKLDNN=on"
