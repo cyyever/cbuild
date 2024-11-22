@@ -11,6 +11,9 @@
     "feature_language_c": [
       "cxx_env:master"
     ],
+    "feature_ml_lib": [
+      "machine_learning_dev_env"
+    ],
     "feature_language_cpp": [
       "cxx_env:master"
     ],
@@ -83,7 +86,7 @@
     "shared_lib": "-DBUILD_SHARED_LIBS=on",
     "static_lib": "-DBUILD_SHARED_LIBS=off",
     "unix": "-DPYTHON_EXECUTABLE=${CBUILD_PYTHON_EXE}",
-    "unix&&cuda": "-DCUDA_HOST_COMPILER=${CUDA_HOST_COMPILER} -DCMAKE_CUDA_HOST_COMPILER=${CUDA_HOST_COMPILER} -DCMAKE_CUDA_COMPILER=${CUDACXX} -DCUDA_TOOLKIT_ROOT_DIR=${CUDA_HOME} -DCMAKE_IGNORE_PATH=/usr/local/cuda/lib64 -DCMAKE_IGNORE_PATH=/opt/cuda/lib64"
+    "unix&&cuda": "-DCUDA_HOST_COMPILER=${CUDA_HOST_COMPILER} -DCMAKE_CUDA_HOST_COMPILER=${CUDA_HOST_COMPILER} -DCMAKE_CUDA_COMPILER=${CUDACXX} -DCUDA_TOOLKIT_ROOT_DIR=${CUDA_HOME} -DCMAKE_IGNORE_PATH=/usr/local/cuda/lib64 -DCMAKE_IGNORE_PATH=/opt/cuda/lib64 -DCUDNN_LIBRARY=${CUDNN_ROOT_DIR}/lib/libcudnn.so -DCUDNN_INCLUDE_DIR=${CUDNN_ROOT_DIR}/include"
   },
   "conditional_docker_base_image": {
     "all_os": "archlinux"
