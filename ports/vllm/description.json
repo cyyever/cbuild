@@ -1,0 +1,16 @@
+{
+  "git_url": "git@github.com:vllm-project/vllm.git",
+  "cache_time": 30,
+  "main_language": "python",
+  "conditional_new_feature": {
+    "support_cuda": [
+      "cuda"
+    ],
+    "unix": [
+      "machine_learning_compilers"
+    ]
+  },
+  "environment_variable": [
+    "run_test=1"
+  ]
+}
