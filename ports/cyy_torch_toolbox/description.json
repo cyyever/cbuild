@@ -4,7 +4,6 @@
   "cache_time": 0,
   "main_language": "python",
   "dependency": [
-    "cyy_naive_python_lib:main",
     "torchmetrics"
   ],
   "environment_variable": [
