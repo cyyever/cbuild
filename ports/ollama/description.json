@@ -4,12 +4,7 @@
   "environment_variable": [
     "OLLAMA_SKIP_ONEAPI_GENERATE=1"
   ],
-  "conditional_new_feature": {
-    "support_cuda": [
-      "cuda"
-    ],
-    "unix": [
-      "machine_learning_compilers"
-    ]
-  }
+  "new_feature": [
+    "ml_lib"
+  ]
 }

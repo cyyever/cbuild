@@ -12,14 +12,9 @@
       "PATH=C:/Program Files/LLVM/bin;${PATH}"
     ]
   },
-  "conditional_new_feature": {
-    "unix": [
-      "machine_learning_compilers"
-    ],
-    "support_cuda": [
-      "cuda"
-    ]
-  },
+  "new_feature": [
+    "ml_lib"
+  ],
   "dependency": [
     "torchvision",
     "ffmpeg",

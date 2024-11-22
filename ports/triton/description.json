@@ -2,14 +2,9 @@
   "git_url": "git@github.com:openai/triton.git",
   "reuse_build": true,
   "cache_time": 30,
-  "conditional_new_feature": {
-    "support_cuda": [
-      "cuda"
-    ],
-    "unix": [
-      "machine_learning_compilers"
-    ]
-  },
+  "new_feature": [
+    "ml_lib"
+  ],
   "main_language": "python",
   "environment_variable": [
     "run_test=1",

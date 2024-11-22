@@ -14,14 +14,9 @@
     "python",
     "cpp"
   ],
-  "conditional_new_feature": {
-    "support_cuda": [
-      "cuda"
-    ],
-    "unix": [
-      "machine_learning_compilers"
-    ]
-  },
+  "new_feature": [
+    "ml_lib"
+  ],
   "conditional_dependency": {
     "all_os&&full": [
       "ffmpeg"
