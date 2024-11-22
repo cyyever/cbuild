@@ -12,5 +12,8 @@
   },
   "environment_variable": [
     "run_test=1"
+  ],
+  "dependency": [
+    "torchvision"
   ]
 }
