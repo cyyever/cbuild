@@ -34,7 +34,7 @@
     ],
     "pip": [
       "tensorboard",
-      "nvidia-htop"
+      "nvitop"
     ]
   }
 }
