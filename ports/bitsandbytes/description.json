@@ -7,15 +7,10 @@
     "run_test=0",
     "BUILD_DIR=${SRC_DIR}"
   ],
-  "cmake_options": "-DCOMPUTE_BACKEND='cuda'",
-  "conditional_new_feature": {
-    "support_cuda": [
-      "cuda"
-    ],
-    "unix": [
-      "machine_learning_compilers"
-    ]
-  },
+  "cmake_options": "-DCOMPUTE_BACKEND='cuda' -DCOMPUTE_CAPABILITY=${CUDAARCHS}",
+  "new_feature": [
+    "ml_lib"
+  ],
   "dependency": [
     "pytorch"
   ]

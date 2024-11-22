@@ -1,0 +1,7 @@
+{
+  "group_package": true,
+  "dependency": [
+    "huggingface_transformers",
+    "huggingface_accelerate"
+  ]
+}

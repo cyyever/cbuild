@@ -1,4 +1,12 @@
 {
+  "conditional_new_feature": {
+    "support_cuda&&ml_lib": [
+      "cuda"
+    ],
+    "unix&&ml_lib": [
+      "machine_learning_compilers"
+    ]
+  },
   "conditional_dependency": {
     "feature_language_c": [
       "cxx_env:master"

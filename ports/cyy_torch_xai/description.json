@@ -2,6 +2,9 @@
   "git_url": "git@github.com:cyyever/torch_XAI.git",
   "cache_time": 0,
   "main_language": "python",
+  "new_feature": [
+    "ml_lib"
+  ],
   "dependency": [
     "cyy_torch_algorithm",
     "cyy_torch_cpp_extension[shared_lib]:main"

@@ -1,0 +1,19 @@
+{
+  "git_url": "git@github.com:huggingface/peft.git",
+  "git_branch": "main",
+  "main_language": "python",
+  "environment_variable": [
+    "use_setup_py=1"
+  ],
+  "conditional_new_feature": {
+    "support_cuda": [
+      "cuda"
+    ],
+    "unix": [
+      "machine_learning_compilers"
+    ]
+  },
+  "dependency": [
+    "pytorch"
+  ]
+}

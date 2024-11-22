@@ -5,14 +5,9 @@
   "environment_variable": [
     "run_test=0"
   ],
-  "conditional_new_feature": {
-    "support_cuda": [
-      "cuda"
-    ],
-    "unix": [
-      "machine_learning_compilers"
-    ]
-  },
+  "new_feature": [
+    "ml_lib"
+  ],
   "dependency": [
     "pytorch"
   ]

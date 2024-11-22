@@ -4,14 +4,9 @@
     "run_test=1",
     "TEST_SUBDIR=python_binding/test"
   ],
-  "conditional_new_feature": {
-    "support_cuda": [
-      "cuda"
-    ],
-    "unix": [
-      "machine_learning_compilers"
-    ]
-  },
+  "new_feature": [
+    "ml_lib"
+  ],
   "main_language": "python",
   "dependency": [
     "pytorch",

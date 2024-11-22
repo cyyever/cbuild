@@ -6,11 +6,9 @@
     "WITH_METIS=0",
     "DISTUTILS_USE_SDK=0"
   ],
-  "conditional_new_feature": {
-    "unix": [
-      "machine_learning_compilers"
-    ]
-  },
+  "new_feature": [
+    "ml_lib"
+  ],
   "dependency": [
     "pytorch"
   ]

@@ -8,14 +8,9 @@
     "TORCHVISION_INCLUDE=${INSTALL_PREFIX}/include",
     "TORCHVISION_LIBRARY=${INSTALL_PREFIX}/lib"
   ],
-  "conditional_new_feature": {
-    "support_cuda": [
-      "cuda"
-    ],
-    "unix": [
-      "machine_learning_compilers"
-    ]
-  },
+  "new_feature": [
+    "ml_lib"
+  ],
   "conditional_environment_variable": {
     "windows": [
       "DISTUTILS_USE_SDK=1"

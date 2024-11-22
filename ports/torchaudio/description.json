@@ -13,14 +13,9 @@
     "pytorch",
     "ffmpeg"
   ],
-  "conditional_new_feature": {
-    "support_cuda": [
-      "cuda"
-    ],
-    "unix": [
-      "machine_learning_compilers"
-    ]
-  },
+  "new_feature": [
+    "ml_lib"
+  ],
   "system_package_dependency": {
     "ubuntu": [
       "libgsm1-dev"
