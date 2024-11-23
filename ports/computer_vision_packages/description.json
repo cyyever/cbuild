@@ -1,9 +1,7 @@
 {
   "group_package": true,
-  "conditional_dependency": {
-    "all_os": [
-      "libjpeg-turbo",
-      "libpng:libpng16"
-    ]
-  }
+  "dependency": [
+    "libjpeg-turbo",
+    "libpng"
+  ]
 }

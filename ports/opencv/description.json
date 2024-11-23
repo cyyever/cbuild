@@ -4,7 +4,7 @@
   "cache_time": 30,
   "dependency": [
     "opencv_contrib",
-    "libpng:libpng16",
+    "computer_vision_packages",
     "tbb"
   ],
   "ignored_tag_regex": [
@@ -24,15 +24,12 @@
   },
   "environment_variable": [
     "run_test=0",
+    "OpenBLAS_HOME=${INSTALL_PREFIX}",
     "static_analysis=0"
   ],
   "conditional_environment_variable": {
     "unix": [
-      "OpenBLAS_HOME=${INSTALL_PREFIX}",
       "TBBROOT=${INSTALL_PREFIX}/oneTBB"
-    ],
-    "windows": [
-      "OpenBLAS_HOME=${INSTALL_PREFIX}"
     ]
   },
   "main_language": "c",
