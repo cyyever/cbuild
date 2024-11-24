@@ -4,7 +4,8 @@
   "cache_time": 300,
   "use_mingw64": true,
   "dependency": [
-    "assembly_env"
+    "x264",
+    "x265"
   ],
   "conditional_environment_variable": {
     "freebsd": [
@@ -14,46 +15,12 @@
       "LDFLAGS=-Wl,-ld_classic"
     ]
   },
-  "conditional_new_feature": {
-    "support_cuda": [
-      "cuda"
-    ],
-    "unix": [
-      "machine_learning_compilers"
-    ]
-  },
+  "new_feature": [
+    "ml_lib"
+  ],
   "conditional_dependency": {
     "cuda": [
       "nv-codec-headers"
-    ],
-    "centos": [
-      "x264[shared_lib]:master",
-      "x265[shared_lib]"
-    ],
-    "mingw64": [
-      "x264[static_lib]:master",
-      "x265[static_lib]"
-    ]
-  },
-  "system_package_dependency": {
-    "ubuntu": [
-      "libx264-dev",
-      "libx265-dev"
-    ],
-    "macos": [
-      "x264",
-      "x265"
-    ],
-    "archlinux": [
-      "x264",
-      "x265"
-    ],
-    "fedora": [
-      "openh264-devel"
-    ],
-    "freebsd": [
-      "libx264",
-      "x265"
     ]
   },
   "main_language": "c",

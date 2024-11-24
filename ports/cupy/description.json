@@ -7,14 +7,12 @@
     "cutensor",
     "cuSPARSELt"
   ],
+  "new_feature": [
+    "ml_lib"
+  ],
   "environment_variable": [
     "CUPY_NVCC_GENERATE_CODE=current",
     "CUDA_PATH=${CUDA_HOME}",
     "run_test=0"
-  ],
-  "conditional_new_feature": {
-    "unix": [
-      "machine_learning_compilers"
-    ]
-  }
+  ]
 }
