@@ -10,5 +10,10 @@
   ],
   "dependency": [
     "torchvision"
-  ]
+  ],
+  "system_package_dependency": {
+    "pip": [
+      "setuptools_scm"
+    ]
+  }
 }
