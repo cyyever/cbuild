@@ -19,7 +19,7 @@
     ]
   },
   "conditional_dependency": {
-    "ubuntu||centos": [
+    "ubuntu": [
       "nodejs"
     ]
   }
