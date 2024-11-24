@@ -21,8 +21,7 @@
     ],
     "macos": [
       "ninja",
-      "pkg-config",
-      "gcc"
+      "pkg-config"
     ],
     "freebsd": [
       "libunwind",
@@ -45,7 +44,6 @@
       "libunwind",
       "doctest",
       "ninja",
-      "gcc",
       "flex",
       "autoconf-archive",
       "clang",

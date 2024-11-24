@@ -9,15 +9,12 @@
       "llvm"
     ]
   },
+  "dependency": [
+    "ccache"
+  ],
   "conditional_dependency": {
-    "all_os": [
-      "ccache"
-    ],
     "unix": [
       "bear"
-    ],
-    "unix&&full": [
-      "llvm"
     ]
   }
 }
