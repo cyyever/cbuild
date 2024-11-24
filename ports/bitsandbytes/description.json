@@ -7,7 +7,9 @@
     "run_test=0",
     "BUILD_DIR=${SRC_DIR}"
   ],
-  "cmake_options": "-DCOMPUTE_BACKEND='cuda' -DCOMPUTE_CAPABILITY=${CUDAARCHS}",
+  "conditional_cmake_options": {
+    "cuda": "-DCOMPUTE_BACKEND='cuda' -DCOMPUTE_CAPABILITY=${CUDAARCHS}"
+  },
   "new_feature": [
     "ml_lib"
   ],

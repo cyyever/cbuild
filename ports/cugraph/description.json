@@ -4,7 +4,6 @@
   "cache_time": 999,
 	"new_feature": [
 		"ml_lib",
-		"cuda"
 	],
   "cmake_options": "-DBUILD_TESTS=off",
   "dependency": [
