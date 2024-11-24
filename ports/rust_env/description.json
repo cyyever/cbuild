@@ -7,9 +7,6 @@
     "ubuntu": [
       "rustc",
       "cargo"
-    ],
-    "centos": [
-      "cargo"
     ]
   }
 }

@@ -53,18 +53,6 @@
       "make",
       "base-devel"
     ],
-    "centos": [
-      "libunwind-devel",
-      "binutils-devel",
-      "bison",
-      "flex",
-      "autoconf-archive",
-      "libtool",
-      "gcc-c++",
-      "make",
-      "ninja-build",
-      "pkg-config"
-    ],
     "ubuntu": [
       "bison",
       "flex",
