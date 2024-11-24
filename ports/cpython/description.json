@@ -52,14 +52,6 @@
     "windows": [
       "python"
     ],
-    "centos": [
-      "bzip2-devel",
-      "xz-devel",
-      "libffi-devel",
-      "readline-devel",
-      "sqlite-devel",
-      "expat-devel"
-    ],
     "fedora": [
       "bzip2-devel",
       "libffi-devel",

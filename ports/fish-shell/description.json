@@ -21,9 +21,6 @@
     "cmake_options": "-DBUILD_DOCS=off"
   },
   "system_package_dependency": {
-    "centos": [
-      "ncurses-devel"
-    ],
     "macos": [
       "fish"
     ],

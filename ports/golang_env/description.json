@@ -7,9 +7,6 @@
     "macos": [
       "golang"
     ],
-    "centos": [
-      "go"
-    ],
     "archlinux": [
       "go"
     ],

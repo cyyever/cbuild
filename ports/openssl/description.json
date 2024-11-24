@@ -8,9 +8,6 @@
     }
   },
   "system_package_dependency": {
-    "centos": [
-      "openssl-devel"
-    ],
     "fedora": [
       "openssl-devel"
     ],

@@ -1,25 +1,15 @@
 {
   "group_package": true,
   "system_package_dependency": {
+    "all&&!ubuntu": [
+      "rust"
+    ],
     "ubuntu": [
       "rustc",
       "cargo"
     ],
-    "windows": [
-      "rust"
-    ],
-    "archlinux": [
-      "rust"
-    ],
-    "macos": [
-      "rust"
-    ],
     "centos": [
-      "rust",
       "cargo"
-    ],
-    "freebsd": [
-      "rust"
     ]
   }
 }
