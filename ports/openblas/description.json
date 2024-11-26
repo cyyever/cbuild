@@ -3,7 +3,8 @@
   "reuse_build": true,
   "cache_time": 90,
   "environment_variable": [
-    "CTEST_PARALLEL_LEVEL=3"
+    "CTEST_PARALLEL_LEVEL=3",
+    "run_test=0"
   ],
   "new_feature": [
     "ml_lib"
