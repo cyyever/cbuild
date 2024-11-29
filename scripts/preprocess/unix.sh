@@ -18,10 +18,16 @@ fi
 if [[ "${BUILD_CONTEXT_docker:=0}" == 0 ]]; then
   if [[ -n ${CUDA_HOME+x} ]]; then
     export CUDAToolkit_ROOT="${CUDA_HOME}"
-    export CUDACXX="${CUDA_HOME}/bin/nvcc"
-    if test -f ${CUDA_HOME}/extras/demo_suite/deviceQuery; then
-      if ${CUDA_HOME}/extras/demo_suite/deviceQuery >/dev/null; then
-        cudaarchs=$(${CUDA_HOME}/extras/demo_suite/deviceQuery | grep Capability | grep -E '[0-9.]*' -o | uniq | ${sed_cmd} -e 's/\.//')
+  fi
+  if [[ -n ${CUDA_TOOLKIT_ROOT+x} ]]; then
+    export CUDAToolkit_ROOT="${CUDA_TOOLKIT_ROOT}"
+  fi
+
+  if [[ -n ${CUDAToolkit_ROOT=+x} ]]; then
+    export CUDACXX="${CUDAToolkit_ROOT}/bin/nvcc"
+    if test -f ${CUDAToolkit_ROOT}/extras/demo_suite/deviceQuery; then
+      if ${CUDAToolkit_ROOT}/extras/demo_suite/deviceQuery >/dev/null; then
+        cudaarchs=$(${CUDAToolkit_ROOT}/extras/demo_suite/deviceQuery | grep Capability | grep -E '[0-9.]*' -o | uniq | ${sed_cmd} -e 's/\.//')
         if [[ "$cudaarchs" != "$CUDAARCHS" ]]; then
           echo "change CUDAARCHS from ${CUDAARCHS} to ${cudaarchs}"
           export CUDAARCHS="$cudaarchs"
@@ -36,6 +42,9 @@ else
   ${sudo_cmd} chown $(whoami) -R ${SRC_DIR} || true
   mkdir -p ${BUILD_DIR} || true
   ${sudo_cmd} chown $(whoami) -R ${BUILD_DIR} || true
+fi
+if [[ "${CUDAARCHS}" == "80" ]]; then
+  export TORCH_CUDA_ARCH_LIST="8.0"
 fi
 
 if [[ -z ${INSTALL_SUBDIR+x} ]]; then
