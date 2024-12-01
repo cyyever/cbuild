@@ -12,6 +12,8 @@
     ]
   },
   "dependency": [
-    "opencv"
+    "opencv",
+    "pytorch",
+    "torchvision"
   ]
 }
