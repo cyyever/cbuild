@@ -46,6 +46,9 @@ fi
 if [[ "${CUDAARCHS}" == "80" ]]; then
   export TORCH_CUDA_ARCH_LIST="8.0"
 fi
+if [[ "${CUDAARCHS}" == "86" ]]; then
+  export TORCH_CUDA_ARCH_LIST="8.6"
+fi
 
 if [[ -z ${INSTALL_SUBDIR+x} ]]; then
   __INSTALL_PREFIX=${INSTALL_PREFIX}
