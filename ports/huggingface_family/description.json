@@ -3,6 +3,7 @@
   "dependency": [
     "huggingface_transformers",
     "huggingface_accelerate",
-    "peft"
+    "huggingface_bitsandbytes",
+    "huggingface_peft"
   ]
 }
