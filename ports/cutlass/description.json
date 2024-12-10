@@ -4,9 +4,11 @@
   "main_language": "c",
   "reuse_build": true,
   "environment_variable": [
-    "static_analysis=0",
-    "slow_static_analysis=0",
-    "clang_tidy_fix=0"
+    "static_analysis=1",
+    "slow_static_analysis=1"
   ],
-  "cmake_options": " -DCUTLASS_NVCC_ARCHS_ENABLED=${CUDAARCHS} -DCUTLASS_NVCC_ARCHS=${CUDAARCHS} -DCUTLASS_ENABLE_EXAMPLES=off -DCUTLASS_ENABLE_CUDNN=on -DCUDNN_PATH=${CUDNN_ROOT_DIR}"
+  "new_feature": [
+    "ml_lib"
+  ],
+  "cmake_options": "-DCUTLASS_NVCC_ARCHS=90a -DCUTLASS_ENABLE_EXAMPLES=off -DCUTLASS_ENABLE_CUDNN=on"
 }
