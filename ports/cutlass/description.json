@@ -10,5 +10,5 @@
   "new_feature": [
     "ml_lib"
   ],
-  "cmake_options": "-DCUTLASS_NVCC_ARCHS=90a -DCUTLASS_ENABLE_EXAMPLES=off -DCUTLASS_ENABLE_CUDNN=on"
+  "cmake_options": "-DCUTLASS_NVCC_ARCHS=90a -DCUTLASS_ENABLE_EXAMPLES=off -DCUTLASS_ENABLE_CUDNN=on -DBUILD_TESTING=off"
 }
