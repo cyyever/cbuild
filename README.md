@@ -10,7 +10,7 @@ bash setup.sh
 
 ### windows
 
-It requies PowerShell
+It requires PowerShell
 ```
 pwsh -f ./setup.ps1
 ```
