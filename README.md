@@ -10,8 +10,9 @@ bash setup.sh
 
 ### windows
 
+It requies PowerShell
 ```
-./setup.ps1
+pwsh -f ./setup.ps1
 ```
 
 ## Install packages
