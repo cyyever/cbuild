@@ -1,0 +1,8 @@
+{
+  "git_url": "git@github.com:pytorch-labs/torchfix.git",
+  "git_branch": "main",
+  "main_language": "python",
+  "environment_variable": [
+    "run_test=0"
+  ]
+}
