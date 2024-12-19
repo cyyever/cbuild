@@ -78,7 +78,7 @@
     "glog"
   ],
   "conditional_dependency": {
-    "support_cuda&&!windows": [
+    "cuda&&!windows": [
       "cuSPARSELt"
     ]
   },

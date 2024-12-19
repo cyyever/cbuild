@@ -6,6 +6,8 @@ if [[ "${BUILD_CONTEXT_docker:=0}" == "0" ]]; then
     sudo systemctl enable asd
   fi
 else
+  pacman -R cuda -y
+  pacman -R cudnn -y
   rm -rf /usr/lib/libcudnn*static*
   rm /opt/cuda/targets/x86_64-linux/lib/libcublasLt_static.a
   rm /opt/cuda/targets/x86_64-linux/lib/libcusparse_static.a
