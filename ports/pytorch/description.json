@@ -45,7 +45,6 @@
     "cuda": [
       "USE_CUDA=on",
       "USE_CUDNN=on",
-      "CUDNN_ROOT=${CUDNN_ROOT_DIR}",
       "USE_NCCL=on",
       "USE_NATIVE_ARCH=on"
     ],
