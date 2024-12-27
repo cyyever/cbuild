@@ -39,8 +39,7 @@
     "BLAS=OpenBLAS",
     "WERROR=off",
     "OpenBLAS_HOME=${INSTALL_PREFIX}/include/openblas",
-    "OpenBLAS=${INSTALL_PREFIX}",
-    "USE_GLOO=off"
+    "OpenBLAS=${INSTALL_PREFIX}"
   ],
   "conditional_environment_variable": {
     "cuda": [
