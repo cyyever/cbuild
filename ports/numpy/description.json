@@ -10,7 +10,8 @@
   ],
   "system_package_dependency": {
     "pip": [
-      "meson-python"
+      "meson-python",
+      "cython"
     ]
   }
 }
