@@ -19,7 +19,6 @@
         "git",
         "openssh",
         "cuda",
-        "cudnn",
         "python",
         "python-pip"
       ]
