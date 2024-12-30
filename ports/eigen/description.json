@@ -2,7 +2,14 @@
   "git_url": "https://gitlab.com/libeigen/eigen.git",
   "git_branch": "master",
   "main_language": "c",
+  "build_languages": [
+    "c",
+    "fortran"
+  ],
   "environment_variable": [
     "run_test=0"
+  ],
+  "dependency": [
+    "fortran_env"
   ]
 }
