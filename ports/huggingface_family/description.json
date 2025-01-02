@@ -1,6 +1,7 @@
 {
   "group_package": true,
   "dependency": [
+    "huggingface_dataset",
     "huggingface_transformers",
     "huggingface_accelerate",
     "huggingface_bitsandbytes",
