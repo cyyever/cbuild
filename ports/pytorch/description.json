@@ -13,6 +13,8 @@
   ],
   "main_language": "python",
   "environment_variable": [
+    "PYTORCH_BUILD_VERSION=2.7.0",
+    "PYTORCH_BUILD_NUMBER=0",
     "run_test=0",
     "slow_static_analysis=0",
     "BUILD_TEST=off",
