@@ -7,6 +7,9 @@
     "fmt",
     "cyy_algorithm:main"
   ],
+  "environment_variable": [
+    "run_test=1"
+  ],
   "conditional_cmake_options": {
     "windows": "-DBUILD_FUZZING=on"
   }
