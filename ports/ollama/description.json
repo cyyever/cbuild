@@ -1,9 +1,10 @@
 {
   "git_url": "git@github.com:ollama/ollama.git",
-  "main_language": "golang",
+  "main_language": "c",
   "environment_variable": [
     "OLLAMA_SKIP_ONEAPI_GENERATE=1",
     "CUDA_PATH=${CUDA_HOME}",
+    "BINARY_PATH=./ollama"
   ],
   "new_feature": [
     "ml_lib"
