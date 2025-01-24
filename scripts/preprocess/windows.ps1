@@ -39,7 +39,7 @@ if ((Test-Path env:FEATURE_feature_language_python)) {
 }
 
 $env:TORCH_CUDA_ARCH_LIST = "Turing"
-if ((which ccache)) {
+if ((Get-Command ccache)) {
     $env:CCACHE_CPP2 = "true"
     $env:CCACHE_BASEDIR = "$env:__SRC_DIR"
     $env:CCACHE_SLOPPINESS = "pch_defines,time_macros"

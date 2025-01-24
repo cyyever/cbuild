@@ -10,11 +10,12 @@ foreach ( $my_path  in ($path_list | Select-Object -Unique    )  ) {
     }
     $new_path += ";$my_path"
 }
+$new_path += ";C:/tools/msys64/usr/bin"
 
 [Environment]::SetEnvironmentVariable( "Path", $new_path, [EnvironmentVariableTarget]::User)
 
 if ((Get-Command "choco.exe" -ErrorAction SilentlyContinue) -eq $null) {
-    Start-Process -Wait -Verb runAs -FilePath powershell.exe -ArgumentList "Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))"
+	winget install --id chocolatey.chocolatey --source winget
 }
 $env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + [System.Environment]::GetEnvironmentVariable("Path", [EnvironmentVariableTarget]::User)
 
