@@ -27,7 +27,7 @@ $cmake_cmd += " "
 $cmake_cmd += $env:cmake_options
 $cmake_cmd += " "
 $cmake_cmd += $__SRC_DIR
-
+echo $cmake_cmd
 Invoke-Expression $cmake_cmd
 if ($LastExitCode -ne 0) {
     rm -r -Force *
