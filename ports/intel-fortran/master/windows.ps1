@@ -1,2 +1,2 @@
 cd $env:SRC_DIR
-gsudo .\w_fortran*.exe
+gsudo .\intel-fortran-compiler-2025.0.4.19.exe

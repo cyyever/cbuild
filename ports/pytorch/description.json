@@ -62,7 +62,8 @@
       "DEBUG=1"
     ],
     "windows": [
-      "BLAS=OpenBLAS"
+      "BLAS=OpenBLAS",
+    "BUILD_CUSTOM_PROTOBUF=on"
     ],
     "freebsd": [
       "CMAKE_GENERATOR='Unix Makefiles'",

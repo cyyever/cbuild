@@ -1,7 +1,7 @@
 {
   "cache_time": 300,
     "windows": {
-      "url": "https://registrationcenter-download.intel.com/akdlm/IRC_NAS/1720594b-b12c-4aca-b7fb-a7d317bac5cb/w_fortran-compiler_p_2023.2.1.7.exe",
+      "url":"https://registrationcenter-download.intel.com/akdlm/IRC_NAS/1269b58a-590e-49b1-9f53-beebe171ac56/intel-fortran-compiler-2025.0.4.19.exe",
       "checksum": "no_checksum"
     }
 }
