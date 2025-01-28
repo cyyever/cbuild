@@ -63,6 +63,7 @@
     ],
     "windows": [
       "BLAS=OpenBLAS",
+"USE_SYSTEM_PYBIND11=1",
     "BUILD_CUSTOM_PROTOBUF=on"
     ],
     "freebsd": [
