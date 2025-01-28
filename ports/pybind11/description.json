@@ -1,5 +1,6 @@
 {
   "git_url": "git@github.com:pybind/pybind11.git",
+  "git_branch": "master",
   "cache_time": 30,
   "reuse_build": true,
   "main_language": "c",
