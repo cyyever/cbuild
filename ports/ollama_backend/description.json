@@ -4,7 +4,7 @@
   "main_language": "c",
   "environment_variable": [
     "BUILD_DIR=${SRC_DIR}/build",
-    "no_install=1"
+    "INSTALL_PREFIX=${GOPATH}/bin/lib/ollama"
   ],
   "new_feature": [
     "ml_lib"
