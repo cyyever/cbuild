@@ -1,5 +1,6 @@
 {
   "git_url": "https://code.videolan.org/videolan/x264.git",
+  "git_branch": "master",
   "cache_time": 300,
   "use_mingw64": true,
   "dependency": [

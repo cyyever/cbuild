@@ -124,6 +124,29 @@ build_by_autotools() {
   fi
 }
 build_package() {
+  if [[ "${BUILD_CONTEXT_mingw64:=0}" == "1" ]]; then
+    export PATH="/mingw64/bin/:${PATH}"
+    msvc_dir="/c/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC"
+    if test -d "$msvc_dir"; then
+      export PATH="/c/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.6/bin:${PATH}"
+      cd "$msvc_dir"
+      cl_exe_path=$(find . -name 'cl.exe' | grep -e 'Hostx64.*x64')
+      echo "old_cl_exe_path is ${cl_exe_path}"
+      if [[ $? -eq 0 ]]; then
+        cl_exe_path="${msvc_dir}/${cl_exe_path}"
+        cl_path=$(dirname "${cl_exe_path}")
+        echo "cl_exe_path is ${cl_exe_path}"
+        echo "cl_path is ${cl_path}"
+        export PATH="${cl_path}:${PATH}"
+        export CUDAHOSTCXX="${cl_path}"
+      else
+        echo "no cl dir"
+      fi
+    else
+      echo "no msvc dir ${CUDA_HOST_COMPILER}"
+    fi
+  fi
+
   if [[ "${use_libtool:=0}" == "0" ]] && test -f "${__SRC_DIR}/CMakeLists.txt"; then
     build_by_cmake
   else

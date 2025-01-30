@@ -13,6 +13,9 @@
     ],
     "macos": [
       "LDFLAGS=-Wl,-ld_classic"
+    ],
+    "mingw64": [
+      "CC=gcc"
     ]
   },
   "new_feature": [
@@ -21,7 +24,8 @@
   "conditional_dependency": {
     "cuda": [
       "nv-codec-headers"
-    ]
+    ],
+    "mingw64": ["mingw64_env"]
   },
   "main_language": "c",
   "configure_options": "--extra-cflags=-fPIE --disable-doc --enable-nonfree --enable-gpl --enable-libx264 --enable-libx265",
