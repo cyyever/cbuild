@@ -10,7 +10,7 @@ foreach ( $my_path  in ($path_list | Select-Object -Unique    )  ) {
     }
     $new_path += ";$my_path"
 }
-$new_path += ";C:/tools/msys64/usr/bin"
+$new_path += ";C:/tools/msys64/usr/bin;C:/Users/cyy/opt/node_modules/.bin;C:/Users/cyy/go/bin"
 
 [Environment]::SetEnvironmentVariable( "Path", $new_path, [EnvironmentVariableTarget]::User)
 

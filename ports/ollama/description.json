@@ -1,12 +1,26 @@
 {
   "git_url": "git@github.com:ollama/ollama.git",
   "main_language": "c",
+  "use_mingw64": true,
   "environment_variable": [
     "OLLAMA_SKIP_ONEAPI_GENERATE=1",
     "CUDA_PATH=${CUDA_HOME}",
-    "BINARY_PATH=./ollama"
+    "BINARY_PATH=./ollama",
+    "PATH=/c/tools/msys64/mingw64/bin:/c/Program Files/Go/bin:${PATH}",
+    "CC=gcc"
   ],
   "new_feature": [
     "ml_lib"
-  ]
+  ],
+  "dependency": [
+    "golang_env"
+  ],
+  "system_package_dependency": {
+    "mingw64": [
+      "git",
+      "mingw-w64-clang-x86_64-gcc-compat",
+      "mingw-w64-x86_64-clang",
+      "mingw-w64-clang-x86_64-clang"
+    ]
+  }
 }
