@@ -8,7 +8,7 @@ from cyy_naive_lib.shell.docker_file import DockerFile
 
 from . import environment
 from .build_action import BuildAction
-from .environment import BuildContext
+from .environment import BuildContext, sources_dir
 from .package_description import PackageDescription
 
 
@@ -103,6 +103,7 @@ class Package:
                 print("reuse build directory for package:", str(self.desc.spec))
             os.makedirs(build_dir, exist_ok=True)
 
+            script.prepend_env_path("SOURCES_DIR", os.path.abspath(sources_dir))
             if source_result:
                 if os.path.isdir(source_result):
                     script.prepend_env_path("SRC_DIR", os.path.abspath(source_result))
