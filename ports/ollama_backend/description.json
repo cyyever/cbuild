@@ -1,0 +1,11 @@
+{
+  "git_url": "git@github.com:ollama/ollama.git",
+  "git_branch": "main",
+  "main_language": "c",
+  "environment_variable": [
+    "BUILD_DIR=${SRC_DIR}/build"
+  ],
+  "new_feature": [
+    "ml_lib"
+  ]
+}
