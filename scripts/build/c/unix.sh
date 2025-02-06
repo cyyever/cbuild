@@ -124,6 +124,7 @@ build_by_autotools() {
   fi
 }
 build_package() {
+  mkdir -p ${BUILD_DIR}
   if [[ "${BUILD_CONTEXT_mingw64:=0}" == "1" ]]; then
     export PATH="/mingw64/bin/:${PATH}"
     msvc_dir="/c/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC"
