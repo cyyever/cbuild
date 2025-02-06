@@ -1,5 +1,8 @@
 {
   "git_url": "git@github.com:cyyever/distributed_graph_learning_simulator.git",
   "cache_time": 0,
-  "main_language": "python"
+  "main_language": "python",
+  "dependency": [
+    "cyy_torch_toolbox"
+  ]
 }

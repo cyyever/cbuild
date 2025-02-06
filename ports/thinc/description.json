@@ -1,0 +1,7 @@
+{
+  "git_url": "git@github.com:explosion/thinc.git",
+  "main_language": "python",
+  "environment_variable": [
+    "run_test=0"
+  ]
+}
