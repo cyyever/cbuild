@@ -1,5 +1,6 @@
 {
   "git_url": "git@github.com:vllm-project/flash-attention.git",
+  "git_branch": "d4e09037abf588af1ec47d0e966b237ee376876c",
   "cache_time": 30,
   "main_language": "python",
   "new_feature": [
