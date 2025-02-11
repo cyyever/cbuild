@@ -51,6 +51,9 @@
       "USE_NCCL=on",
       "USE_NATIVE_ARCH=on"
     ],
+    "cuda&&!windows": [
+      "CUSPARSELT_ROOT_DIR=${INSTALL_PREFIX}"
+    ],
     "docker": [
       "USE_STATIC_CUDNN=off",
       "USE_NCCL=on"
@@ -63,8 +66,8 @@
     ],
     "windows": [
       "BLAS=OpenBLAS",
-"USE_SYSTEM_PYBIND11=1",
-    "BUILD_CUSTOM_PROTOBUF=on"
+      "USE_SYSTEM_PYBIND11=1",
+      "BUILD_CUSTOM_PROTOBUF=on"
     ],
     "freebsd": [
       "CMAKE_GENERATOR='Unix Makefiles'",
