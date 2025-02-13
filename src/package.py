@@ -68,9 +68,8 @@ class Package:
 
         with self.source as source_result:
             # recheck since we change __cbuild_most_recent_tag here
-            if action == BuildAction.BUILD_WITH_CACHE:
-                if self.check_cache():
-                    return False
+            if action == BuildAction.BUILD_WITH_CACHE and self.check_cache():
+                return False
 
             script = self.desc.get_script(action)
 

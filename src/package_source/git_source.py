@@ -77,14 +77,14 @@ class GitSource(Source):
                 assert default_branch is not None
                 self.spec.branch = default_branch
             print("resolve spec", self.spec.name, "to branch", self.spec.branch)
-        if not os.getenv("no_update_pkg"):
+        if not os.getenv("NO_UPDATE_PKG"):
             exec_cmd("git clean -fxd :/")
             exec_cmd("git restore .", throw=False)
             exec_cmd("git submodule foreach git restore .", throw=False)
         if self.remote_url is not None:
             assert self.remote_branch is not None
             exec_cmd("git fetch origin " + self.spec.branch)
-            if not os.getenv("no_update_pkg"):
+            if not os.getenv("NO_UPDATE_PKG"):
                 exec_cmd("git reset --hard FETCH_HEAD")
             exec_cmd("git fetch up " + self.remote_branch)
 
