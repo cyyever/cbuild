@@ -81,10 +81,9 @@ class Package:
             new_hash = self.source.get_checksum() + "-" + str(tmp)
 
             tag_file = self.get_tag_file()
-            if action == BuildAction.BUILD_WITH_CACHE:
-                if self.check_cache(new_hash):
-                    os.utime(tag_file, (time.time(), time.time()))
-                    return False
+            if action == BuildAction.BUILD_WITH_CACHE and self.check_cache(new_hash):
+                os.utime(tag_file, (time.time(), time.time()))
+                return False
             features = self.desc.get_features()
             if features:
                 print("build", str(self.desc.spec) + " with the following features:")
