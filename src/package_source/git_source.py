@@ -96,7 +96,7 @@ class GitSource(Source):
                 print("rebase succ")
         else:
             exec_cmd("git fetch --depth 1 origin " + self.spec.branch)
-            if not os.getenv("no_update_pkg"):
+            if not os.getenv("NO_UPDATE_PKG"):
                 exec_cmd("git reset --hard FETCH_HEAD")
 
         if self.with_submodule:
