@@ -15,7 +15,7 @@ class PackageChain:
         self.chain: list = []
         self.__get_chain()
 
-    def build(self, action=BuildAction.BUILD_WITH_CACHE, parallel: int = 1) -> None:
+    def build(self, action=BuildAction.BUILD_WITH_CACHE) -> None:
         print("build packages in the following context:")
         for ctx in BuildContext.get():
             print("\t", ctx)
@@ -26,15 +26,18 @@ class PackageChain:
         rebuilt_pkgs: set = set()
         for i, cur_pkg in enumerate(self.chain):
             real_action = action
-            if real_action == BuildAction.BUILD_WITH_CACHE:
-                if i + 1 == len(self.chain) or (
+            if (
+                real_action == BuildAction.BUILD_WITH_CACHE
+                and i + 1 == len(self.chain)
+                or (
                     not cur_pkg.desc.get_item("cache_ignore_dependency_change", False)
                     and {p.name for p in cur_pkg.desc.get_dependency()}.intersection(
                         rebuilt_pkgs
                     )
-                ):
-                    real_action = BuildAction.BUILD
-                    print("disable cache of", cur_pkg)
+                )
+            ):
+                real_action = BuildAction.BUILD
+                print("disable cache of", cur_pkg)
             if cur_pkg.build_local(real_action):
                 rebuilt_pkgs.add(cur_pkg.name)
 
@@ -99,9 +102,3 @@ class PackageChain:
             packages.sort(key=lambda x: x.name)
             self.chain += packages
         assert self.chain[-1] == last_package
-
-    def __iter__(self):
-        return self.chain.__iter__()
-
-    def __next__(self):
-        return self.chain.__next__()
