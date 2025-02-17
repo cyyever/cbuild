@@ -9,9 +9,9 @@ if test -f requirements.txt && [[ "${BUILD_CONTEXT_docker:=0}" == 0 ]]; then
   ${sed_cmd} -i -e '/nvidia/d' requirements.txt
   ${sed_cmd} -i -e '/setuptools/d' requirements.txt
   ${sed_cmd} -i -e '/numpy/d' requirements.txt
-  if ! test -f "pyproject.toml" || ! grep 'requirements.txt' "pyproject.toml"; then
-    ${CBUILD_PIP_EXE} install --upgrade -r requirements.txt --user
-  fi
+  # if ! test -f "pyproject.toml" || ! grep 'requirements.txt' "pyproject.toml"; then
+  #   # ${CBUILD_PIP_EXE} install --upgrade -r requirements.txt --user
+  # fi
 fi
 
 if test -f "pyproject.toml" && [[ -z ${use_setup_py+x} ]]; then

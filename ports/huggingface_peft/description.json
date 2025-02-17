@@ -2,7 +2,8 @@
   "git_url": "git@github.com:huggingface/peft.git",
   "main_language": "python",
   "environment_variable": [
-    "use_setup_py=1"
+    "use_setup_py=1",
+    "run_test=0"
   ],
   "new_feature": [
     "ml_lib"
