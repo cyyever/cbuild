@@ -1,5 +1,5 @@
 {
-  "git_url": "git@github.com:huggingface/peft.git",
+  "git_url": "git@github.com:huggingface/trl.git",
   "main_language": "python",
   "environment_variable": [
     "use_setup_py=1",
