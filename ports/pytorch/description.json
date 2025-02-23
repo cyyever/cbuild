@@ -10,7 +10,8 @@
   ],
   "cache_time": 30,
   "new_feature": [
-    "ml_lib"
+    "ml_lib",
+    "use_mold"
   ],
   "main_language": "python",
   "environment_variable": [
