@@ -26,3 +26,5 @@ fi
 if [[ "${BUILD_CONTEXT_macos:=0}" == "0" ]]; then
   ${sed_cmd} -i -e '/set(TP_BUILD_LIBUV ON CACHE BOOL "" FORCE)/s/ON/OFF/g' cmake/Dependencies.cmake
 fi
+
+${sed_cmd} -i -e 's/value_.template /value_./g' third_party/tensorpipe/third_party/libnop/include/nop/types/variant.h
