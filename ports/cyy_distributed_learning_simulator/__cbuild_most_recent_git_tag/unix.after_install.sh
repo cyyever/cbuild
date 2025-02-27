@@ -1,2 +1,4 @@
 cd ${SRC_DIR}
-# bash test.sh
+if [[ "${BUILD_CONTEXT_docker:=0}" == "0" ]]; then
+  bash test.sh
+fi
