@@ -35,7 +35,6 @@
     "USE_GLOG=off",
     "USE_GFLAGS=off",
     "ONNX_ML=off",
-    "USE_MKLDNN=off",
     "USE_XNNPACK=off",
     "USE_PYTORCH_QNNPACK=off",
     "BLAS=OpenBLAS",
@@ -58,9 +57,6 @@
     "docker": [
       "USE_STATIC_CUDNN=off",
       "USE_NCCL=on"
-    ],
-    "amd64&&!cuda": [
-      "USE_MKLDNN=on"
     ],
     "debug_build": [
       "DEBUG=1"
