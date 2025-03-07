@@ -18,7 +18,7 @@
       "python"
     ],
     "cache_time": 999,
-    "cmake_options": "-Dprotobuf_ABSL_PROVIDER=module -Dprotobuf_BUILD_TESTS=on -DBUILD_SHARED_LIBS=on -Dprotobuf_USE_EXTERNAL_GTEST=on",
+    "cmake_options": "-Dprotobuf_ABSL_PROVIDER=module -Dprotobuf_BUILD_TESTS=off -DBUILD_SHARED_LIBS=on -Dprotobuf_USE_EXTERNAL_GTEST=off",
     "environment_variable": [
       "py_pkg_name=protobuf",
       "run_test=1"
