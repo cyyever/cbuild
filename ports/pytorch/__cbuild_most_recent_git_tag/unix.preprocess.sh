@@ -18,6 +18,7 @@ ${sed_cmd} -i -e '/Werror/d' third_party/fbgemm/CMakeLists.txt
 ${sed_cmd} -i -e '/opentelemetry/d' torch/CMakeLists.txt
 ${sed_cmd} -i -e '/-Wno-pass-failed/s/-Wno-pass-failed/-Wno-pass-failed -Wno-deprecated-literal-operator/' CMakeLists.txt
 ${sed_cmd} -i -e '/CXX_STANDARD 17/d' cmake/public/utils.cmake
+${sed_cmd} -i -e '/CONVERT_NON_VECTORIZED_INIT(BFloat16, bfloat16);/s/CONVERT_NON_VECTORIZED_INIT(BFloat16, bfloat16);/CONVERT_NON_VECTORIZED_INIT(BFloat16, bfloat16)/g' aten/src/ATen/cpu/vec/vec256/vec256_bfloat16.h
 
 if [[ "$(uname)" == "FreeBSD" ]]; then
   ${sed_cmd} -i -e 's/_assert/assert_in_pytorch/g' aten/src/ATen/native/sparse/ValidateCompressedIndicesCommon.h
