@@ -74,7 +74,8 @@
     "macos": [
       "BLAS=vecLib",
       "BUILD_CUSTOM_PROTOBUF=on",
-      "USE_TENSORPIPE=off"
+      "USE_TENSORPIPE=off",
+      "USE_DISTRIBUTED=off"
     ]
   },
   "dependency": [
