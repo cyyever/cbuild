@@ -30,4 +30,3 @@ if [[ "${BUILD_CONTEXT_macos:=0}" == "0" ]]; then
 fi
 
 ${sed_cmd} -i -e 's/value_.template /value_./g' third_party/tensorpipe/third_party/libnop/include/nop/types/variant.h
-${sed_cmd} -i -e '/constexpr.*;/s/;//g' third_party/tensorpipe/tensorpipe/common/optional.h
