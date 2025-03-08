@@ -10,10 +10,12 @@ rm -rf ${INSTALL_PREFIX}/include/caffe2 || true
 rm -rf ${INSTALL_PREFIX}/include/sleef.h || true
 rm -rf ${INSTALL_PREFIX}/include/xnnpack.h || true
 
-if test -d third_party/fbgemm; then
-  rm -rf -f third_party/fbgemm
+if [[ "${BUILD_CONTEXT_macos:=0}" == "0" ]]; then
+  if test -d third_party/fbgemm; then
+    rm -rf -f third_party/fbgemm
+  fi
+  cp -r ${SRC_DIR}/../FBGEMM third_party/fbgemm
 fi
-cp -r ${SRC_DIR}/../FBGEMM third_party/fbgemm
 export CXXFLAGS+=" -Wno-error=maybe-uninitialized "
 
 ${sed_cmd} -i -e "/INTEL_MKL_DIR/s/,/,'USE_MKLDNN', 'USE_NCCL','CMAKE_CXX_STANDARD','CMAKE_CUDA_STANDARD','FBGEMM_SOURCE_DIR',/" tools/setup_helpers/cmake.py
