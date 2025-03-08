@@ -42,4 +42,4 @@ ${sed_cmd} -i -e 's/value_.template /value_./g' third_party/tensorpipe/third_par
 
 
 ${sed_cmd} -i -e '/codecvt_utf8_utf16/d' c10/util/StringUtil.cpp
-${sed_cmd} -i -e '/codecvt_utf8_utf16/s/return .*/return ss;/g' c10/util/StringUtil.cpp
+${sed_cmd} -i -e '/erter.to_by/s/return .*/return ss;/g' c10/util/StringUtil.cpp
