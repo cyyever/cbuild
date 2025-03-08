@@ -15,8 +15,8 @@ if [[ "${BUILD_CONTEXT_macos:=0}" == "0" ]]; then
     rm -rf -f third_party/fbgemm
   fi
   cp -r ${SRC_DIR}/../FBGEMM third_party/fbgemm
+  export CXXFLAGS+=" -Wno-error=maybe-uninitialized "
 fi
-export CXXFLAGS+=" -Wno-error=maybe-uninitialized "
 
 ${sed_cmd} -i -e "/INTEL_MKL_DIR/s/,/,'USE_MKLDNN', 'USE_NCCL','CMAKE_CXX_STANDARD','CMAKE_CUDA_STANDARD','FBGEMM_SOURCE_DIR',/" tools/setup_helpers/cmake.py
 ${sed_cmd} -i -e '/^\s*check_submodules()/s/check_submodules()/#check_submodules()/g' setup.py
@@ -39,3 +39,7 @@ fi
 ${sed_cmd} -i -e 's/set(FBGEMM_LIBRARY_TYPE "static"/set(FBGEMM_LIBRARY_TYPE "shared"/g' cmake/Dependencies.cmake
 
 ${sed_cmd} -i -e 's/value_.template /value_./g' third_party/tensorpipe/third_party/libnop/include/nop/types/variant.h
+
+
+${sed_cmd} -i -e '/codecvt_utf8_utf16/d' c10/util/StringUtil.cpp
+${sed_cmd} -i -e '/codecvt_utf8_utf16/s/return .*/return ss;/g' c10/util/StringUtil.cpp
