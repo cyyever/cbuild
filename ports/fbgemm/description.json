@@ -1,0 +1,5 @@
+{
+  "git_url": "git@github.com:pytorch/FBGEMM.git",
+  "git_branch": "v1.1.0",
+  "main_language": "c"
+}
