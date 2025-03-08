@@ -94,7 +94,7 @@
       "gflags",
       "numactl"
     ],
-    "pip_nodeps": [
+    "pip_nodeps&&cuda": [
       "nvidia-nccl-cu12"
     ]
   }
