@@ -31,7 +31,6 @@
     "USE_SYSTEM_ONNX=off",
     "GLIBCXX_USE_CXX11_ABI=1",
     "USE_KINETO=off",
-    "FBGEMM_SOURCE_DIR=${SRC_DIR}/../FBGEMM",
     "USE_TENSORPIPE=on",
     "TP_BUILD_LIBUV=off",
     "USE_GLOG=off",
