@@ -40,6 +40,8 @@ ${sed_cmd} -i -e 's/set(FBGEMM_LIBRARY_TYPE "static"/set(FBGEMM_LIBRARY_TYPE "sh
 
 ${sed_cmd} -i -e 's/value_.template /value_./g' third_party/tensorpipe/third_party/libnop/include/nop/types/variant.h
 
-
 ${sed_cmd} -i -e '/codecvt_utf8_utf16/d' c10/util/StringUtil.cpp
 ${sed_cmd} -i -e '/erter.to_by/s/return .*/return ss;/g' c10/util/StringUtil.cpp
+${sed_cmd} -i -e 's/fmt::format(shaderSource/fmt::format(fmt::runtime(shaderSource)/g' aten/src/ATen/native/mps/OperationUtils.mm
+${sed_cmd} -i -e '/has_denorm.*;/d' aten/src/ATen/test/half_test.cpp
+${sed_cmd} -i -e '/has_denorm/d' c10/util/*.h
