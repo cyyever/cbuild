@@ -10,6 +10,10 @@ rm -rf ${INSTALL_PREFIX}/include/caffe2 || true
 rm -rf ${INSTALL_PREFIX}/include/sleef.h || true
 rm -rf ${INSTALL_PREFIX}/include/xnnpack.h || true
 
+cd third_party/onnx
+git fetch --all
+git checkout main
+cd ${SRC_DIR}
 if [[ "${BUILD_CONTEXT_macos:=0}" == "0" ]]; then
   if test -d third_party/fbgemm; then
     rm -rf -f third_party/fbgemm
@@ -18,6 +22,7 @@ if [[ "${BUILD_CONTEXT_macos:=0}" == "0" ]]; then
   export CXXFLAGS+=" -Wno-error=maybe-uninitialized "
 fi
 
+${sed_cmd} -i -e 's/return std::move(var)/return var/g' torch/csrc/jit/tensorexpr/kernel.cpp
 ${sed_cmd} -i -e "/INTEL_MKL_DIR/s/,/,'USE_MKLDNN', 'USE_NCCL','CMAKE_CXX_STANDARD','CMAKE_CUDA_STANDARD','FBGEMM_SOURCE_DIR',/" tools/setup_helpers/cmake.py
 ${sed_cmd} -i -e '/^\s*check_submodules()/s/check_submodules()/#check_submodules()/g' setup.py
 ${sed_cmd} -i -e '/int64_t max_split_size/s/int64_t/size_t/g' c10/cuda/CUDACachingAllocator.h
