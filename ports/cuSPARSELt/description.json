@@ -1,5 +1,5 @@
 {
-  "url": "https://developer.download.nvidia.com/compute/cusparselt/redist/libcusparse_lt/linux-x86_64/libcusparse_lt-linux-x86_64-0.7.0.0-archive.tar.xz",
+  "url": "https://developer.download.nvidia.com/compute/cusparselt/redist/libcusparse_lt/linux-x86_64/libcusparse_lt-linux-x86_64-0.7.1.0-archive.tar.xz",
   "checksum": "no_checksum",
   "cache_time": 900
 }
