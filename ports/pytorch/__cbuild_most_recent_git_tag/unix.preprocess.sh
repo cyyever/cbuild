@@ -19,7 +19,10 @@ if [[ "${BUILD_CONTEXT_macos:=0}" == "0" ]]; then
     rm -rf -f third_party/fbgemm
   fi
   cp -r ${SRC_DIR}/../FBGEMM third_party/fbgemm
-  export CXXFLAGS+=" -Wno-error=maybe-uninitialized "
+
+  if [[ $CXX != *"clang++"* ]]; then
+    export CXXFLAGS+=" -Wno-error=maybe-uninitialized "
+  fi
 fi
 
 ${sed_cmd} -i -e 's/return std::move(var)/return var/g' torch/csrc/jit/tensorexpr/kernel.cpp
