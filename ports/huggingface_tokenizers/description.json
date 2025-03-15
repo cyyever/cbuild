@@ -6,12 +6,9 @@
     "run_test=0",
     "SRC_SUBDIR=bindings/python"
   ],
-  "conditional_environment_variable": {
-    "freebsd": [
-      "CC=gcc",
-      "CXX=g++"
-    ]
-  },
+  "new_feature": [
+    "ml_lib"
+  ],
   "dependency": [
     "opencv",
     "pytorch",

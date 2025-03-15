@@ -1,15 +1,12 @@
 {
   "git_url": "git@github.com:huggingface/transformers.git",
   "main_language": "python",
+  "new_feature": [
+    "ml_lib"
+  ],
   "environment_variable": [
     "run_test=0"
   ],
-  "conditional_environment_variable": {
-    "freebsd": [
-      "CC=gcc",
-      "CXX=g++"
-    ]
-  },
   "dependency": [
     "opencv",
     "pytorch",
