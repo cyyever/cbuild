@@ -80,7 +80,6 @@
     ]
   },
   "dependency": [
-    "machine_learning_dev_env",
     "glog"
   ],
   "conditional_dependency": {
