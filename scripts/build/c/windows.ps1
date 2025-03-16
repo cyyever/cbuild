@@ -1,4 +1,4 @@
-mkdir "$env:BUILD_DIR"
+mkdir -Force "$env:BUILD_DIR"
 cd $env:BUILD_DIR
 
 $install_prefix_exp = "-DCMAKE_INSTALL_PREFIX=$__INSTALL_PREFIX"
