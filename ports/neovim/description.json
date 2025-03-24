@@ -1,7 +1,4 @@
 {
-  "freebsd": {
-    "group_package": true
-  },
   "all_os": {
     "git_url": "git@github.com:neovim/neovim.git",
     "main_language": "c",
@@ -36,7 +33,7 @@
       "lua-mpack",
       "gmock"
     ],
-    "bsd_ports": [
+    "freebsd": [
       "editors/neovim"
     ]
   }
