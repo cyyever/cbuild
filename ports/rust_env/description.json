@@ -1,7 +1,7 @@
 {
   "group_package": true,
   "system_package_dependency": {
-    "all&&!ubuntu": [
+    "all_os&&!ubuntu": [
       "rust"
     ],
     "ubuntu": [
