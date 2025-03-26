@@ -27,7 +27,7 @@
         "openssl"
       ]
     },
-    "cmake_options": "-DBUILD_TESTING=OFF"
+    "cmake_options": "-DBUILD_TESTING=OFF -DCMAKE_CXX_STANDARD=17"
   },
   "system_package_dependency": {
     "all_os": [
