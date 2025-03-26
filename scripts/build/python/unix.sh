@@ -33,7 +33,7 @@ if test -f "pyproject.toml" && [[ -z ${use_setup_py+x} ]]; then
     done
   fi
 
-  build_cmd="${CBUILD_PIP_EXE} install --no-build-isolation . --user --force --verbose"
+  build_cmd="${CBUILD_PIP_EXE} install --no-build-isolation . --user --force --verbose --upgrade"
   if [[ -n ${need_compilation_json+x} ]] && command -v bear; then
     build_cmd="bear -- ${build_cmd}"
   fi
