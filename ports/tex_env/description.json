@@ -15,7 +15,7 @@
       "zathura-pdf-poppler"
     ],
     "brew": [
-      "sioyek"
+      "zathura-pdf-poppler"
     ],
     "macos": [
       "texlive",
