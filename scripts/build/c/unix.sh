@@ -1,3 +1,12 @@
+build_by_meson() {
+  cd ${__SRC_DIR}
+  meson build --prefix ${__INSTALL_PREFIX}
+  meson install -C build
+  # cd build
+  # ninja
+  # ninja install
+}
+
 build_by_cmake() {
   if [[ -n ${pre_cmake_cmd+x} ]]; then
     cd ${SRC_DIR}
@@ -153,7 +162,11 @@ build_package() {
   if [[ "${use_libtool:=0}" == "0" ]] && test -f "${__SRC_DIR}/CMakeLists.txt"; then
     build_by_cmake
   else
-    build_by_autotools
+    if test -f "${__SRC_DIR}/meson.build"; then
+      build_by_meson
+    else
+      build_by_autotools
+    fi
   fi
 }
 

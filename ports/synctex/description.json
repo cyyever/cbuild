@@ -1,0 +1,9 @@
+{
+  "git_url": "git@github.com:jlaurens/synctex.git",
+  "main_language": "c",
+  "environment_variable": [
+    "run_test=0",
+    "SRC_SUBDIR=meson"
+  ],
+  "cache_time": 300
+}
