@@ -9,7 +9,11 @@
   ],
   "main_language": "python",
   "dependency": [
-    "pytorch",
     "doctest"
-  ]
+  ],
+  "system_package_dependency": {
+    "pip": [
+      "torch"
+    ]
+  }
 }
