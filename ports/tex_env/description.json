@@ -14,13 +14,11 @@
       "tex-dvipsk",
       "zathura-pdf-poppler"
     ],
-    "brew": [
-      "zathura-pdf-poppler"
-    ],
     "macos": [
       "texlive",
       "pstree",
       "biber",
+      "zathura-pdf-poppler",
       "latexindent"
     ],
     "archlinux": [
