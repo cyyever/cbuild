@@ -21,7 +21,7 @@ if [[ "${BUILD_CONTEXT_macos:=0}" == "0" ]]; then
   cp -r ${SRC_DIR}/../FBGEMM third_party/fbgemm
 
   if [[ $CXX != *"clang++"* ]]; then
-    export CXXFLAGS+=" -Wno-error=maybe-uninitialized "
+    export CXXFLAGS="${CXXFLAGS} -Wno-error=maybe-uninitialized "
   fi
 fi
 
