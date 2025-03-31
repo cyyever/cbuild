@@ -1,9 +1,8 @@
 {
   "all_os": {
-    "git_url": "git@github.com:pwmt/zathura.git",
+    "git_url": "git@github.com:pwmt/zathura-pdf-poppler.git",
     "main_language": "c",
     "environment_variable": [
-      "PKG_CONFIG_PATH=${INSTALL_PREFIX}/lib/pkgconfig",
       "run_test=0"
     ],
     "cache_time": 300
