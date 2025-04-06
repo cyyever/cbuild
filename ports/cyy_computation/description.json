@@ -4,7 +4,6 @@
   "main_language": "c",
   "dependency": [
     "doctest",
-    "fmt",
     "cyy_algorithm:main"
   ],
   "environment_variable": [
