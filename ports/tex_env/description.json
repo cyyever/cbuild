@@ -1,13 +1,15 @@
 {
   "group_package": true,
   "dependency": [
-    "cyy_cli_tool_configs:main",
-    "bibclean:master"
+    "cyy_cli_tool_configs:main"
   ],
   "system_package_dependency": {
     "windows": [
       "SumatraPDF",
       "texlive"
+    ],
+    "npm": [
+      "bibtex-tidy"
     ],
     "freebsd": [
       "latex-mk",
