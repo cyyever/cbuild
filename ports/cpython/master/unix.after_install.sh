@@ -5,3 +5,6 @@ if [[ "${BUILD_CONTEXT_docker:=0}" == 1 ]]; then
   echo "export LIBRARY_PATH=${LIBRARY_PATH}" >>~/.bashrc
   echo "export PYTHONPATH=${PYTHONPATH}" >>~/.bashrc
 fi
+
+cd ${INSTALL_PREFIX}/python/bin
+cp ./python3 ./python
