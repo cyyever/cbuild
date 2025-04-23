@@ -25,16 +25,13 @@ if [[ "${BUILD_CONTEXT_macos:=0}" == "0" ]]; then
   fi
 fi
 
-${sed_cmd} -i -e 's/return std::move(var)/return var/g' torch/csrc/jit/tensorexpr/kernel.cpp
 ${sed_cmd} -i -e "/INTEL_MKL_DIR/s/,/,'USE_MKLDNN', 'USE_NCCL','CMAKE_CXX_STANDARD','CMAKE_CUDA_STANDARD','FBGEMM_SOURCE_DIR',/" tools/setup_helpers/cmake.py
 ${sed_cmd} -i -e '/^\s*check_submodules()/s/check_submodules()/#check_submodules()/g' setup.py
-${sed_cmd} -i -e '/int64_t max_split_size/s/int64_t/size_t/g' c10/cuda/CUDACachingAllocator.h
 ${sed_cmd} -i -e '/ninja/d' requirements.txt
 ${sed_cmd} -i -e '/cudnn/d' requirements.txt
 ${sed_cmd} -i -e '/opentelemetry/d' torch/CMakeLists.txt
 ${sed_cmd} -i -e '/-Wno-pass-failed/s/-Wno-pass-failed/-Wno-pass-failed -Wno-deprecated-literal-operator/' CMakeLists.txt
 ${sed_cmd} -i -e '/CXX_STANDARD 17/d' cmake/public/utils.cmake
-${sed_cmd} -i -e '/CONVERT_NON_VECTORIZED_INIT(BFloat16, bfloat16);/s/CONVERT_NON_VECTORIZED_INIT(BFloat16, bfloat16);/CONVERT_NON_VECTORIZED_INIT(BFloat16, bfloat16)/g' aten/src/ATen/cpu/vec/vec256/vec256_bfloat16.h
 
 if [[ "$(uname)" == "FreeBSD" ]]; then
   ${sed_cmd} -i -e 's/_assert/assert_in_pytorch/g' aten/src/ATen/native/sparse/ValidateCompressedIndicesCommon.h
