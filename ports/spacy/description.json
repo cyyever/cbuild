@@ -1,0 +1,15 @@
+{
+  "git_url": "git@github.com:explosion/spaCy.git",
+  "cache_time": 300,
+  "reuse_build": true,
+  "main_language": "python",
+  "environment_variable": [
+    "run_test=0"
+  ],
+  "system_package_dependency": {
+    "pip": [
+      "srsly",
+      "mock"
+    ]
+  }
+}
