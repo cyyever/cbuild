@@ -50,5 +50,3 @@ ${sed_cmd} -i -e '/erter.to_by/s/return .*/return ss;/g' c10/util/StringUtil.cpp
 ${sed_cmd} -i -e 's/fmt::format(shaderSource/fmt::format(fmt::runtime(shaderSource)/g' aten/src/ATen/native/mps/OperationUtils.mm
 ${sed_cmd} -i -e '/has_denorm.*;/d' aten/src/ATen/test/half_test.cpp
 ${sed_cmd} -i -e '/has_denorm/d' c10/util/*.h
-${sed_cmd} -i -e 's/return std::move(sequence);/return sequence;/g' torch/csrc/jit/python/python_arg_flatten.cpp
-${sed_cmd} -i -e 's/return std::move(t);/return t;/g' torch/csrc/jit/python/pybind_utils.cpp
