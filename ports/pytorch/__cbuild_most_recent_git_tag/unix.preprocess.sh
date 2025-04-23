@@ -10,10 +10,6 @@ rm -rf ${INSTALL_PREFIX}/include/caffe2 || true
 rm -rf ${INSTALL_PREFIX}/include/sleef.h || true
 rm -rf ${INSTALL_PREFIX}/include/xnnpack.h || true
 
-cd third_party/onnx
-git fetch --all
-git checkout main
-cd ${SRC_DIR}
 if [[ "${BUILD_CONTEXT_macos:=0}" == "0" ]]; then
   if test -d third_party/fbgemm; then
     rm -rf -f third_party/fbgemm
