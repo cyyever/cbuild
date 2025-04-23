@@ -1,4 +1,5 @@
 cd ${SRC_DIR}
+
 rm -rf ${INSTALL_PREFIX}/lib/libc10* || true
 rm -rf ${INSTALL_PREFIX}/lib/libtorch* || true
 rm -rf ${INSTALL_PREFIX}/lib/libshm* || true
