@@ -30,7 +30,6 @@
     "BUILD_CUSTOM_PROTOBUF=off",
     "USE_FBGEMM=on",
     "USE_SYSTEM_ONNX=off",
-    "GLIBCXX_USE_CXX11_ABI=1",
     "USE_KINETO=off",
     "USE_TENSORPIPE=on",
     "TP_BUILD_LIBUV=off",
