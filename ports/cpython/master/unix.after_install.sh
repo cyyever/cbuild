@@ -7,4 +7,4 @@ if [[ "${BUILD_CONTEXT_docker:=0}" == 1 ]]; then
 fi
 
 cd ${INSTALL_PREFIX}/python/bin
-cp ./python3 ./python
+cp ./python3 ./python || true
