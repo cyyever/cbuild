@@ -18,7 +18,7 @@ else {
     $env:CMAKE_GENERATOR = ""
 }
 
-$cmake_cmd += " -DCMAKE_CXX_COMPILER=cl.exe -DCMAKE_C_COMPILER=cl.exe -DCMAKE_BUILD_TYPE="
+$cmake_cmd += " -DCMAKE_CXX_COMPILER=cl -DCMAKE_C_COMPILER=cl -DCMAKE_BUILD_TYPE="
 $cmake_cmd += $env:BUILD_TYPE
 $cmake_cmd += " "
 $cmake_cmd += $install_prefix_exp
