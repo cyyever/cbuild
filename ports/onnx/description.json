@@ -7,5 +7,5 @@
     "static_analysis=1",
     "TEST_SUBDIR=onnx/test"
   ],
-  "cmake_options": "-DONNX_BUILD_TESTS=on -DBUILD_ONNX_PYTHON=on -DONNX_BUILD_CUSTOM_PROTOBUF=on -Dprotobuf_FORCE_FETCH_DEPENDENCIES=on"
+  "cmake_options": "-DONNX_BUILD_TESTS=on -DBUILD_ONNX_PYTHON=on"
 }
