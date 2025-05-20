@@ -6,6 +6,7 @@
     "third_party/eigen",
     "third_party/fbgemm",
     "third_party/opentelemetry-cpp",
+    "third_party/tensorpipe",
     "third_party/composable_kernel",
     "android/libs/fbjni"
   ],
@@ -31,7 +32,7 @@
     "USE_FBGEMM=on",
     "USE_SYSTEM_ONNX=off",
     "USE_KINETO=off",
-    "USE_TENSORPIPE=on",
+    "USE_TENSORPIPE=off",
     "TP_BUILD_LIBUV=off",
     "USE_GLOG=off",
     "USE_GFLAGS=off",
