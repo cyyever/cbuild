@@ -1,0 +1,21 @@
+{
+  "git_url": "git@github.com:cyyever/nccl.git",
+  "git_branch": "cmake",
+  "cache_time": 300,
+  "use_mingw64": true,
+  "conditional_environment_variable": {
+    "mingw64": [
+      "CC=gcc",
+      "CXX=g++"
+    ]
+  },
+  "new_feature": [
+    "ml_lib"
+  ],
+  "conditional_dependency": {
+    "mingw64": [
+      "mingw64_env"
+    ]
+  },
+  "main_language": "c"
+}
