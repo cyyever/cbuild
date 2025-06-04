@@ -138,7 +138,7 @@ build_package() {
     export PATH="/mingw64/bin/:${PATH}"
     msvc_dir="/c/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC"
     if test -d "$msvc_dir"; then
-      cuda_dir="/c/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.6/"
+      cuda_dir="/c/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v12.9/"
       export PATH="${cuda_dir}/bin:${PATH}"
       cd "$msvc_dir"
       cl_exe_path=$(find . -name 'cl.exe' | grep -e 'Hostx64.*x64')

@@ -6,6 +6,7 @@
       "run_test=0",
       "SRC_SUBDIR=build/cmake"
     ],
+  "cmake_options": "-DZSTD_LEGACY_SUPPORT=OFF",
     "cache_time": 300
   }
 }

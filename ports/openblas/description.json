@@ -9,9 +9,9 @@
   "new_feature": [
     "ml_lib"
   ],
-  "cmake_options": "-DBUILD_WITHOUT_LAPACK=OFF -DUSE_OPENMP=on -DCMAKE_GNUtoMS=on",
+  "cmake_options": "-DBUILD_WITHOUT_LAPACK=OFF -DUSE_OPENMP=on",
   "conditional_cmake_options": {
-    "windows": "-DCMAKE_Fortran_FLAGS='-names:lowercase -assume:underscore' -DCMAKE_WINDOWS_EXPORT_ALL_SYMBOLS=on -DCMAKE_FORTRAN_COMPILER_ID=IntelLLVM"
+    "windows": "-DCMAKE_Fortran_FLAGS='/names:lowercase /assume:underscore' -DCMAKE_WINDOWS_EXPORT_ALL_SYMBOLS=on -DCMAKE_FORTRAN_COMPILER_ID=Intel -DUSE_OPENMP=off"
   },
   "main_language": "c",
   "build_languages": [
