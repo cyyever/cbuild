@@ -1,0 +1,19 @@
+{
+  "git_url": "git@github.com:cyyever/dynolog.git",
+  "reuse_build": true,
+  "cache_time": 30,
+  "environment_variable": [
+    "static_analysis=1"
+  ],
+  "new_feature": [
+    "ml_lib"
+  ],
+  "main_language": "c",
+  "build_languages": [
+    "rust",
+    "cpp"
+  ],
+  "dependency": [
+    "machine_learning_dev_env"
+  ]
+}
