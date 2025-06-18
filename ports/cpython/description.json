@@ -4,7 +4,7 @@
   },
   "unix": {
     "git_url": "git@github.com:python/cpython.git",
-    "git_branch": "v3.13.3",
+    "git_branch": "v3.13.5",
     "cache_time": 60,
     "environment_variable": [
       "INSTALL_SUBDIR=python",
