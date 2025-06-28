@@ -1,0 +1,37 @@
+{
+  "script_package": true,
+  "system_package_dependency": {
+    "freebsd": [
+      "xorg",
+      "x11/kde6",
+      "x11/sddm",
+      "v4l-utils",
+      "v4l_compat",
+      "graphics/drm-kmod",
+      "xf86-video-intel",
+      "urwfonts",
+      "zh-ibus-rime",
+      "noto-sc",
+      "latte-dock",
+      "noto-tc",
+      "noto-emoji",
+      "noto-extra"
+    ],
+    "archlinux": [
+      "pulseaudio-alsa",
+      "pulseaudio-bluetooth",
+      "gobject-introspection",
+      "noto-fonts",
+      "noto-fonts-CJK",
+      "bluez",
+      "ibus-rime",
+      "bluez-libs",
+      "bluez-utils",
+      "latte-dock",
+      "profile-sync-daemon"
+    ],
+    "pip": [
+      "PyGObject"
+    ]
+  }
+}
