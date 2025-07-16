@@ -5,6 +5,7 @@
   "ignored_git_submodules": [
     "third_party/eigen",
     "third_party/fbgemm",
+    "third_party/aiter",
     "third_party/opentelemetry-cpp",
     "third_party/tensorpipe",
     "third_party/composable_kernel",
