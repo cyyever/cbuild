@@ -11,17 +11,6 @@ rm -rf ${INSTALL_PREFIX}/include/caffe2 || true
 rm -rf ${INSTALL_PREFIX}/include/sleef.h || true
 rm -rf ${INSTALL_PREFIX}/include/xnnpack.h || true
 
-if [[ "${BUILD_CONTEXT_macos:=0}" == "0" ]]; then
-  if test -d third_party/fbgemm; then
-    rm -rf -f third_party/fbgemm
-  fi
-  cp -r ${SRC_DIR}/../FBGEMM third_party/fbgemm
-
-  if [[ $CXX != *"clang++"* ]]; then
-    export CXXFLAGS="${CXXFLAGS} -Wno-error=maybe-uninitialized "
-  fi
-fi
-
 ${sed_cmd} -i -e "/INTEL_MKL_DIR/s/,/,'USE_MKLDNN', 'USE_NCCL','CMAKE_CXX_STANDARD','CMAKE_CUDA_STANDARD','FBGEMM_SOURCE_DIR',/" tools/setup_helpers/cmake.py
 ${sed_cmd} -i -e '/^\s*check_submodules()/s/check_submodules()/#check_submodules()/g' setup.py
 ${sed_cmd} -i -e '/ninja/d' requirements.txt
@@ -40,6 +29,5 @@ fi
 
 ${sed_cmd} -i -e '/codecvt_utf8_utf16/d' c10/util/StringUtil.cpp
 ${sed_cmd} -i -e '/erter.to_by/s/return .*/return ss;/g' c10/util/StringUtil.cpp
-# ${sed_cmd} -i -e 's/fmt::format(shaderSource/fmt::format(fmt::runtime(shaderSource)/g' aten/src/ATen/native/mps/OperationUtils.mm
 ${sed_cmd} -i -e '/has_denorm.*;/d' aten/src/ATen/test/half_test.cpp
 ${sed_cmd} -i -e '/has_denorm/d' c10/util/*.h
