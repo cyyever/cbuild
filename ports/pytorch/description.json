@@ -42,6 +42,7 @@
     "USE_PYTORCH_QNNPACK=off",
     "BLAS=OpenBLAS",
     "WERROR=off",
+    "CMAKE_POLICY_VERSION_MINIMUM=3.5",
     "OpenBLAS_HOME=${INSTALL_PREFIX}/include/openblas",
     "OpenBLAS=${INSTALL_PREFIX}"
   ],
