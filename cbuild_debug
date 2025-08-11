@@ -11,4 +11,4 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
     BuildContext.add("debug_build")
-    PackageChain(args.pkg).build(parallel=args.j)
+    PackageChain(args.pkg).build()
