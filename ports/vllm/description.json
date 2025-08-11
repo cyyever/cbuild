@@ -1,5 +1,5 @@
 {
-  "git_url": "git@github.com:vllm-project/vllm.git",
+  "git_url": "git@github.com:cyyever/vllm.git",
   "cache_time": 30,
   "main_language": "python",
   "new_feature": [
@@ -7,7 +7,7 @@
     "use_mold"
   ],
   "environment_variable": [
-    "MAX_JOBS=50",
+    "MAX_JOBS=20",
     "run_test=0",
     "use_setup_py=1"
   ],
