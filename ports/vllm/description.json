@@ -7,13 +7,9 @@
     "use_mold"
   ],
   "environment_variable": [
-    "MAX_JOBS=20",
+    "MAX_JOBS=50",
     "run_test=0",
     "use_setup_py=1"
-  ],
-  "dependency": [
-    "torchvision",
-    "vllm-flash-attention"
   ],
   "system_package_dependency": {
     "pip": [
