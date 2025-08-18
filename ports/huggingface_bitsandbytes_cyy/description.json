@@ -1,0 +1,15 @@
+{
+  "git_url": "git@github.com:cyyever/bitsandbytes.git",
+  "main_language": "c",
+  "environment_variable": [
+    "no_install=1",
+    "run_test=0",
+    "BUILD_DIR=${SRC_DIR}"
+  ],
+  "conditional_cmake_options": {
+    "cuda": "-DCOMPUTE_BACKEND='cuda' -DCOMPUTE_CAPABILITY=${CUDAARCHS}"
+  },
+  "new_feature": [
+    "ml_lib"
+  ]
+}
