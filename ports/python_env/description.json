@@ -18,6 +18,7 @@
       "types-PyYAML",
       "pyupgrade",
       "setuptools",
+      "scikit-build-core",
       "coverage",
       "pytest",
       "toml-cli",

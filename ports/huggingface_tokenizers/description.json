@@ -10,8 +10,6 @@
     "ml_lib"
   ],
   "dependency": [
-    "opencv",
-    "pytorch",
-    "torchvision"
+    "opencv"
   ]
 }

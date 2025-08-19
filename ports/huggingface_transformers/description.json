@@ -8,8 +8,6 @@
     "run_test=0"
   ],
   "dependency": [
-    "opencv",
-    "pytorch",
-    "torchvision"
+    "opencv"
   ]
 }
