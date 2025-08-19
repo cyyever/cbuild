@@ -6,8 +6,9 @@
     "ml_lib",
     "use_mold"
   ],
-  "cmake_options": "CUTLASS_NVCC_ARCHS_ENABLED=${CUDAARCHS}",
   "environment_variable": [
+    "CUTLASS_NVCC_ARCHS=${CUDAARCHS}",
+    "CUTLASS_NVCC_ARCHS_ENABLED=${CUDAARCHS}",
     "FLASH_ATTN_CUDA_ARCHS=${CUDAARCHS}",
     "FLASH_ATTENTION_FORCE_CXX11_ABI=TRUE",
     "MAX_JOBS=50",
