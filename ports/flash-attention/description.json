@@ -7,7 +7,7 @@
   ],
   "environment_variable": [
     "MAX_JOBS=20",
-    "FLASH_ATTN_CUDA_ARCHS=80",
+    "FLASH_ATTN_CUDA_ARCHS=${CUDAARCHS}",
     "FLASH_ATTENTION_FORCE_CXX11_ABI=TRUE",
     "run_test=0",
     "CC=/usr/bin/gcc-14",
