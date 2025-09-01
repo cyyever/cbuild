@@ -7,8 +7,5 @@
   "environment_variable": [
     "run_test=0",
     "DISTUTILS_USE_SDK=0"
-  ],
-  "dependency": [
-    "pytorch"
   ]
 }
