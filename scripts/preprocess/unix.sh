@@ -19,9 +19,6 @@ if [[ "${BUILD_CONTEXT_docker:=0}" == 0 ]]; then
   if [[ -n ${CUDA_HOME+x} ]]; then
     export CUDAToolkit_ROOT="${CUDA_HOME}"
   fi
-  if [[ -n ${CUDA_TOOLKIT_ROOT+x} ]]; then
-    export CUDAToolkit_ROOT="${CUDA_TOOLKIT_ROOT}"
-  fi
 
   if [[ -n ${CUDAToolkit_ROOT=+x} ]]; then
     export CUDACXX="${CUDAToolkit_ROOT}/bin/nvcc"
