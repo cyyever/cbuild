@@ -33,7 +33,7 @@ class GitSource(Source):
         if not GitSource.is_git_source(git_url):
             sys.exit("no git url:" + git_url)
         self.url = git_url
-        self.__repositary_path = os.path.join(
+        self.__repository_path = os.path.join(
             root_dir, self.url.split("/")[-1].replace(".git", "")
         )
         self.remote_url = remote_url
@@ -52,22 +52,22 @@ class GitSource(Source):
     @functools.cache
     def _download(self) -> str:
         print("downloading", self.spec.name)
-        if not os.path.isdir(os.path.join(self.__repositary_path, ".git")):
-            if os.path.exists(self.__repositary_path):
-                if not os.listdir(self.__repositary_path):
-                    os.rmdir(self.__repositary_path)
+        if not os.path.isdir(os.path.join(self.__repository_path, ".git")):
+            if os.path.exists(self.__repository_path):
+                if not os.listdir(self.__repository_path):
+                    os.rmdir(self.__repository_path)
                 else:
                     sys.exit(
-                        self.__repositary_path + " exists but not a git repository"
+                        self.__repository_path + " exists but not a git repository"
                     )
 
-            os.makedirs(self.__repositary_path, exist_ok=True)
-            os.chdir(self.__repositary_path)
+            os.makedirs(self.__repository_path, exist_ok=True)
+            os.chdir(self.__repository_path)
             exec_cmd("git init")
             exec_cmd("git remote add origin " + self.url)
             if self.remote_url is not None:
                 exec_cmd("git remote add up " + self.remote_url)
-        os.chdir(self.__repositary_path)
+        os.chdir(self.__repository_path)
         if self.spec.branch == PackageSpecification.default_branch:
             tag = self.__get_max_tag()
             if tag is not None:
@@ -113,7 +113,7 @@ class GitSource(Source):
             exec_cmd(cmd)
 
         print("finish downloading", self.spec.name)
-        return self.__repositary_path
+        return self.__repository_path
 
     def in_master(self):
         return self.spec.branch in ("master", "main")

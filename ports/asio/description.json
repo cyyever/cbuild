@@ -4,7 +4,7 @@
     "SRC_SUBDIR=asio"
   ],
   "main_language": "c",
-  "conditional_depedency": {
+  "conditional_dependency": {
     "unix": [
       "openssl"
     ]
