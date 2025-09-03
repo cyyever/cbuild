@@ -1,5 +1,5 @@
 {
-  "git_url": "git@github.com:vllm-project/vllm.git",
+  "git_url": "git@github.com:cyyever/vllm.git",
   "cache_time": 30,
   "main_language": "python",
   "new_feature": [
@@ -9,9 +9,10 @@
   "environment_variable": [
     "CUTLASS_NVCC_ARCHS=${CUDAARCHS}",
     "CUTLASS_NVCC_ARCHS_ENABLED=${CUDAARCHS}",
-    "FLASH_ATTN_CUDA_ARCHS=${CUDAARCHS}",
     "FLASH_ATTENTION_FORCE_CXX11_ABI=TRUE",
-    "MAX_JOBS=50",
+    "TORCH_CUDA_ARCH_LIST=${CUDAARCHS}",
+    "FLASH_ATTN_CUDA_ARCHS=${CUDAARCHS}",
+    "MAX_JOBS=20",
     "run_test=0",
     "use_setup_py=1"
   ],
