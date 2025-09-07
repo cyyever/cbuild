@@ -1,6 +1,5 @@
 {
   "git_url": "git@github.com:pytorch/pytorch.git",
-  "git_branch": "viable/strict",
   "reuse_build": true,
   "ignored_git_submodules": [
     "third_party/eigen",
@@ -22,6 +21,7 @@
     "BUILD_TEST=off",
     "USE_SYSTEM_PYBIND11=off",
     "USE_NUMPY=on",
+    "USE_GLOO=off",
     "USE_XPU=off",
     "USE_MAGMA=off",
     "ATEN_NO_TEST=ON",
@@ -49,8 +49,8 @@
     "cuda": [
       "USE_CUDA=on",
       "USE_CUDNN=on",
-      "USE_NCCL=off",
-      "USE_SYSTEM_NCCL=off",
+      "USE_NCCL=on",
+      "USE_SYSTEM_NCCL=on",
       "NCCL_ROOT_DIR=~/.local/lib/python${PYTHONVERSION}/site-packages/nvidia/nccl",
       "USE_NATIVE_ARCH=on"
     ],
