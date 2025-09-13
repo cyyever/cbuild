@@ -54,7 +54,7 @@
       "USE_NATIVE_ARCH=on"
     ],
     "cuda&&!windows": [
-      "CUSPARSELT_ROOT_DIR=${INSTALL_PREFIX}"
+      "CUSPARSELT_ROOT_DIR=~/.local/lib/python${PYTHONVERSION}/site-packages/nvidia/cusparselt"
     ],
     "docker": [
       "USE_STATIC_CUDNN=off",
@@ -83,11 +83,6 @@
   "dependency": [
     "glog"
   ],
-  "conditional_dependency": {
-    "cuda&&!windows": [
-      "cuSPARSELt"
-    ]
-  },
   "system_package_dependency": {
     "ubuntu": [
       "libnuma-dev",
@@ -98,7 +93,8 @@
       "numactl"
     ],
     "pip_nodeps&&cuda": [
-      "nvidia-nccl-cu12"
+      "nvidia-nccl-cu12",
+      "nvidia-cusparselt-cu12"
     ]
   }
 }
