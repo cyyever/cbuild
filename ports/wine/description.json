@@ -1,0 +1,11 @@
+{
+  "all_os": {
+    "git_url": "git@github.com:wine-mirror/wine.git",
+    "main_language": "c"
+  },
+  "conditional_environment_variable": {
+    "macos": [
+      "PATH=$(brew --prefix bison)/bin:${PATH:-}"
+    ]
+  }
+}
