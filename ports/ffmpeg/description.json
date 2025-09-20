@@ -1,11 +1,10 @@
 {
   "git_url": "https://git.ffmpeg.org/ffmpeg.git",
-  "git_branch": "master",
   "cache_time": 300,
   "use_mingw64": true,
   "dependency": [
     "x264",
-    "x265"
+    "x265:master"
   ],
   "conditional_environment_variable": {
     "freebsd": [
