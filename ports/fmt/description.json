@@ -1,7 +1,5 @@
 {
   "git_url": "git@github.com:fmtlib/fmt.git",
   "main_language": "c",
-  "environment_variable": [
-    "run_test=0"
-  ]
+  "cmake_options": "-DFMT_TEST=off"
 }
