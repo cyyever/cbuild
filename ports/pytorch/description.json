@@ -1,5 +1,5 @@
 {
-  "git_url": "git@github.com:pytorch/pytorch.git",
+  "git_url": "git@github.com:cyyever/pytorch.git",
   "reuse_build": true,
   "ignored_git_submodules": [
     "third_party/eigen",
@@ -93,8 +93,8 @@
       "numactl"
     ],
     "pip_nodeps&&cuda": [
-      "nvidia-nccl-cu12",
-      "nvidia-cusparselt-cu12"
+      "nvidia-nccl-cu13",
+      "nvidia-cusparselt-cu13"
     ]
   }
 }
