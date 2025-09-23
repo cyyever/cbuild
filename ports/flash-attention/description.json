@@ -6,7 +6,7 @@
     "ml_lib"
   ],
   "environment_variable": [
-    "MAX_JOBS=10",
+    "MAX_JOBS=20",
     "TORCH_CUDA_ARCH_LIST=${CUDAARCHS}",
     "FLASH_ATTN_CUDA_ARCHS=${CUDAARCHS}",
     "FLASH_ATTENTION_FORCE_CXX11_ABI=TRUE",
