@@ -5,7 +5,9 @@
   },
   "conditional_environment_variable": {
     "macos": [
-      "PATH=$(brew --prefix bison)/bin:${PATH:-}"
+      "PATH=$(brew --prefix bison)/bin:${PATH:-}",
+      "CC=/usr/bin/clang",
+      "CXX=/usr/bin/clang++"
     ]
   }
 }
