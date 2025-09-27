@@ -1,7 +1,7 @@
 {
   "git_url": "git@github.com:gabime/spdlog.git",
   "main_language": "c",
-  "cmake_options": "-DSPDLOG_BUILD_EXAMPLE=off",
+  "cmake_options": "-DSPDLOG_BUILD_EXAMPLE=off -DSPDLOG_USE_STD_FORMAT=on",
   "conditional_cmake_options": {
     "shared_lib": "-DSPDLOG_BUILD_SHARED=on"
   }
