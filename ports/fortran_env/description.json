@@ -1,11 +1,16 @@
 {
   "group_package": true,
   "conditional_dependency": {
-    "windows": ["intel-fortran"]
+    "windows": [
+      "intel-fortran"
+    ]
   },
   "system_package_dependency": {
     "ubuntu": [
       "gfortran"
+    ],
+    "macos": [
+      "flang"
     ],
     "archlinux": [
       "gcc-fortran"
