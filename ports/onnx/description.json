@@ -1,6 +1,6 @@
 {
   "git_url": "git@github.com:cyyever/onnx.git",
-  "main_language": "c",
+  "main_language": "python",
   "environment_variable": [
     "static_analysis=1",
     "TEST_SUBDIR=onnx/test"
