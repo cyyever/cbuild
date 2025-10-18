@@ -4,7 +4,7 @@
   },
   "unix": {
     "git_url": "git@github.com:python/cpython.git",
-    "git_branch": "v3.13.7",
+    "git_branch": "v3.14.0",
     "cache_time": 60,
     "environment_variable": [
       "INSTALL_SUBDIR=python",
@@ -16,8 +16,8 @@
     "conditional_environment_variable": {
       "macos": [
         "PKG_CONFIG_PATH=$(brew --prefix openssl)/lib/pkgconfig:$(brew --prefix libffi)/lib/pkgconfig",
-        "CPPFLAGS=-I$(brew --prefix readline)/include -I$(brew --prefix xz)/include -I$(brew --prefix zlib)/include -I${INSTALL_PREFIX}/include",
-        "LDFLAGS=-L$(brew --prefix readline)/lib -L$(brew --prefix xz)/lib -L$(brew --prefix zlib)/lib -L${INSTALL_PREFIX}/lib ${LDFLAGS:-}"
+        "CPPFLAGS=-I$(brew --prefix readline)/include -I$(brew --prefix xz)/include -I$(brew --prefix zlib)/include -I${INSTALL_PREFIX}/include -I$(brew --prefix zstd)/include ${CPPFLAGS:-}",
+        "LDFLAGS=-L$(brew --prefix readline)/lib -L$(brew --prefix xz)/lib -L$(brew --prefix zlib)/lib -L${INSTALL_PREFIX}/lib -L$(brew --prefix zstd)/lib ${LDFLAGS:-}"
       ],
       "freebsd": [
         "LDFLAGS=-L/usr/local/lib"
@@ -93,6 +93,7 @@
       "bzip2",
       "expat",
       "xz",
+      "zstd",
       "zlib",
       "gdbm",
       "readline",
