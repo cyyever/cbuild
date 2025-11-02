@@ -82,6 +82,7 @@
     ]
   },
   "conditional_cmake_options": {
+    "windows":"-DCMAKE_FORTRAN_COMPILER_ID=IntelLLVM",
     "all_os": "-DCMAKE_EXPORT_COMPILE_COMMANDS=on -DCMAKE_PREFIX_PATH=${INSTALL_PREFIX} -DCMAKE_BUILD_TYPE=${BUILD_TYPE} -DBUILD_SHARED_LIBS=on -DCMAKE_CUDA_STANDARD=20 -DCMAKE_POLICY_VERSION_MINIMUM='3.5'",
     "shared_lib": "-DBUILD_SHARED_LIBS=on",
     "static_lib": "-DBUILD_SHARED_LIBS=off",

@@ -11,7 +11,7 @@
   ],
   "cmake_options": "-DBUILD_WITHOUT_LAPACK=OFF -DUSE_OPENMP=on",
   "conditional_cmake_options": {
-    "windows": "-DCMAKE_Fortran_FLAGS='/names:lowercase /assume:underscore' -DCMAKE_WINDOWS_EXPORT_ALL_SYMBOLS=on -DCMAKE_FORTRAN_COMPILER_ID=Intel -DUSE_OPENMP=off",
+    "windows": "-DCMAKE_WINDOWS_EXPORT_ALL_SYMBOLS=on -DUSE_OPENMP=off",
     "macos": "-DCMAKE_Fortran_COMPILER_ID=LLVMFlang"
   },
   "main_language": "c",

@@ -9,6 +9,7 @@
   "environment_variable": [
     "run_test=0"
   ],
+  "cmake_options":"-DEIGEN_BUILD_LAPACK=off -DEIGEN_BUILD_BLAS=off",
   "dependency": [
     "fortran_env"
   ]
