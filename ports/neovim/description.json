@@ -7,8 +7,7 @@
     ],
     "environment_variable": [
       "VisualStudioEdition=1",
-      "USE_BUNDLED_NVIMQT=off",
-      "cmake_generator=native"
+      "USE_BUNDLED_NVIMQT=off"
     ],
     "dependency": [
       "glog"
