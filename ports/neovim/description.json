@@ -33,9 +33,6 @@
       "lua-lpeg",
       "lua-mpack",
       "gmock"
-    ],
-    "freebsd": [
-      "editors/neovim"
     ]
   }
 }

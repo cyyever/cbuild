@@ -11,9 +11,11 @@ fi
 if [[ -z ${make_cmd+x} ]]; then
   make_cmd=make
 fi
-# if command -v gmake >/dev/null; then
-#   make_cmd=gmake
-# fi
+if [[ "${USE_GMAKE:=0}" == 1 ]]; then
+  if command -v gmake >/dev/null; then
+    make_cmd=gmake
+  fi
+fi
 
 if [[ "${BUILD_CONTEXT_docker:=0}" == 0 ]]; then
   if [[ -n ${CUDA_HOME+x} ]]; then
