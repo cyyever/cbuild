@@ -1,4 +1,4 @@
-PIP_CMD="${CBUILD_PYTHON_EXE} -m pip"
+PIP_CMD="${CBUILD_PYTHON_EXE} -m pip -i https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple"
 
 if [[ -n ${DEFAULT_INSTALL_PREFIX+x} ]]; then
   ${CBUILD_PYTHON_EXE} -m ensurepip --default-pip || true

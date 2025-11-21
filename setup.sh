@@ -37,7 +37,7 @@ fi
 
 ${python3_cmd} -m ensurepip --upgrade --user || true
 ${python3_cmd} -m pip install --upgrade pip --user
-${python3_cmd} -m pip install --upgrade --user -r requirements.txt --force
+${python3_cmd} -m pip install --upgrade --user -i https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple  -r requirements.txt --force
 git pull
 if test -d private_ports; then
   cd private_ports

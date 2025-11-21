@@ -2,7 +2,7 @@ cd $__SRC_DIR
 
 if ((Test-Path requirements.txt -PathType Leaf)) {
     sed -i -e '/cyyever/d' requirements.txt
-    Invoke-Expression "$env:CBUILD_PYTHON_EXE -m pip install --upgrade -r requirements.txt --user"
+    Invoke-Expression "$env:CBUILD_PYTHON_EXE -m pip install -i https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple --upgrade -r requirements.txt --user"
 }
 
 if ($env:reuse_build -ne "1") {
