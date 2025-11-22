@@ -26,7 +26,7 @@
       "libboost-all-dev"
     ],
     "freebsd": [
-      "boost-all"
+      "boost-libs"
     ],
     "archlinux": [
       "boost"
