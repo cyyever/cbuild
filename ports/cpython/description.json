@@ -20,7 +20,8 @@
         "LDFLAGS=-L$(brew --prefix readline)/lib -L$(brew --prefix xz)/lib -L$(brew --prefix zlib)/lib -L${INSTALL_PREFIX}/lib -L$(brew --prefix zstd)/lib ${LDFLAGS:-}"
       ],
       "freebsd": [
-        "LDFLAGS=-L/usr/local/lib"
+        "LDFLAGS=-L/usr/local/lib",
+        "USE_GMAKE=1"
       ]
     },
     "main_language": "c",
@@ -35,7 +36,7 @@
         "--enable-optimizations"
       ],
       "freebsd": [
-        "--disable-bolt --disable-optimizations"
+        "--disable-optimizations"
       ],
       "!macos": [
         "--with-system-ffi"
