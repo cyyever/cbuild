@@ -31,7 +31,7 @@
       "kitty"
     ],
     "freebsd": [
-      "kitty"
+      "libxkbcommon"
     ],
     "macos": [
       "kitty"
