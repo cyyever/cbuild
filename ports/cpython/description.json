@@ -35,9 +35,6 @@
       "!debug_build": [
         "--enable-optimizations"
       ],
-      "freebsd": [
-        "--disable-optimizations"
-      ],
       "!macos": [
         "--with-system-ffi"
       ]
