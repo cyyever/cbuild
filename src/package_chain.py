@@ -41,7 +41,7 @@ class PackageChain:
             if cur_pkg.build_local(real_action):
                 rebuilt_pkgs.add(cur_pkg.name)
 
-    def build_docker(self):
+    def build_docker(self) -> None:
         print("build packages in the following context:")
         for ctx in BuildContext.get():
             print("\t", ctx)
@@ -55,7 +55,7 @@ class PackageChain:
                 prev_pkg = self.chain[i - 1]
             pkg.build_docker_image(prev_pkg)
 
-    def __get_chain(self):
+    def __get_chain(self) -> None:
         package_dependency = {}
         last_package_specification = self.last_package_specification
         if not isinstance(last_package_specification, PackageSpecification):

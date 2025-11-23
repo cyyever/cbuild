@@ -20,7 +20,7 @@ from .package_source.script_source import ScriptSource
 
 
 class PackageDescription:
-    def __init__(self, specification):
+    def __init__(self, specification) -> None:
         if not isinstance(specification, PackageSpecification):
             specification = PackageSpecification(specification)
         self.spec = specification
@@ -133,7 +133,7 @@ class PackageDescription:
     def get_docker_base_image(self):
         return self.__get_conditional_items("docker_base_image")[0]
 
-    def disable_build_cache(self):
+    def disable_build_cache(self) -> None:
         self.__config.set("cache_time", None)
 
     def __check_languages(self) -> tuple[set, set]:
@@ -337,7 +337,7 @@ class PackageDescription:
         )
 
     @staticmethod
-    def __check_and_conditions(condition_expr, elements):
+    def __check_and_conditions(condition_expr, elements) -> bool:
         conditions = [c.strip() for c in condition_expr.split("&&")]
         for condition in conditions:
             flag = None

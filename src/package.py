@@ -13,7 +13,7 @@ from .package_description import PackageDescription
 
 
 class Package:
-    def __init__(self, specification):
+    def __init__(self, specification) -> None:
         self.desc = PackageDescription(specification)
 
     @property
@@ -28,7 +28,7 @@ class Package:
     def branch(self):
         return self.desc.spec.branch
 
-    def full_name(self):
+    def full_name(self) -> str:
         return f"{self.name}-{self.branch}"
 
     def specification(self):
@@ -62,7 +62,7 @@ class Package:
 
         return False
 
-    def build_local(self, action):
+    def build_local(self, action) -> bool:
         if action == BuildAction.BUILD_WITH_CACHE and self.check_cache():
             return False
 
@@ -133,7 +133,7 @@ class Package:
                 shutil.rmtree(build_dir, ignore_errors=True)
             return True
 
-    def build_docker_image(self, prev_package=None):
+    def build_docker_image(self, prev_package=None) -> None:
         from_docker_image = None
         build_context = BuildContext.get()
         if prev_package is None:
@@ -252,5 +252,5 @@ class Package:
     def __hash__(self):
         return hash(self.specification())
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return repr(self.specification())

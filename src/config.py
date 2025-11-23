@@ -11,7 +11,7 @@ from .environment import project_dir
 
 
 class ToolMapping:
-    def __init__(self):
+    def __init__(self) -> None:
         with open(
             os.path.join(project_dir, "config", "tool_mapping.json"),
             encoding="utf8",
@@ -46,7 +46,7 @@ class Config:
         self,
         local_config_chain: list | None = None,
         global_config_path: str | None = None,
-    ):
+    ) -> None:
         self.config_chain = []
         if local_config_chain is not None:
             self.config_chain = local_config_chain
@@ -92,7 +92,7 @@ class Environment:
     def __init__(
         self,
         local_config_chain: list | None = None,
-    ):
+    ) -> None:
         self.config = Config(
             local_config_chain=local_config_chain,
             global_config_path=os.path.join(project_dir, "config", "env.json"),
