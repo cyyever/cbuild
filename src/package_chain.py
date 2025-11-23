@@ -27,13 +27,11 @@ class PackageChain:
         for i, cur_pkg in enumerate(self.chain):
             real_action = action
             if (
-                real_action == BuildAction.BUILD_WITH_CACHE
-                and i + 1 == len(self.chain)
-                or (
-                    not cur_pkg.desc.get_item("cache_ignore_dependency_change", False)
-                    and {p.name for p in cur_pkg.desc.get_dependency()}.intersection(
-                        rebuilt_pkgs
-                    )
+                real_action == BuildAction.BUILD_WITH_CACHE and i + 1 == len(self.chain)
+            ) or (
+                not cur_pkg.desc.get_item("cache_ignore_dependency_change", False)
+                and {p.name for p in cur_pkg.desc.get_dependency()}.intersection(
+                    rebuilt_pkgs
                 )
             ):
                 real_action = BuildAction.BUILD

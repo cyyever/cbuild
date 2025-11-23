@@ -275,9 +275,8 @@ class PackageDescription:
         script_content = self.__get_script_content(action)
         if script_content:
             script.append_content(script_content)
-        else:
-            if not self.get_item("group_package"):
-                sys.exit("no build script for package:" + self.spec.name)
+        elif not self.get_item("group_package"):
+            sys.exit("no build script for package:" + self.spec.name)
         script_content = self.__get_script_content(BuildAction.AFTER_INSTALL)
         if script_content:
             script.append_content(script_content)
