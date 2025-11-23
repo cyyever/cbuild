@@ -35,7 +35,7 @@ class ToolMapping:
         return self.data.get(tool, [])
 
     def is_supported_language(self, lang):
-        return lang in set(sum(self.data.values(), []))
+        return lang in self.data.values()
 
     def is_supported_tool(self, tool):
         return tool in self.data
