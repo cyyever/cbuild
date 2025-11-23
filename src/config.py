@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import json
 import multiprocessing
 import os
@@ -18,7 +17,7 @@ class ToolMapping:
         ) as f:
             self.data: dict = json.load(f)
 
-    def guess_language(self, lines):
+    def guess_language(self, lines: list[str] | str):
         tokens = set()
         if isinstance(lines, str):
             lines = lines.splitlines()

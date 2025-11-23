@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 from cyy_naive_lib.source_code.source import Source
 
 

@@ -1,8 +1,7 @@
-#!/usr/bin/env python3
-from enum import Enum, auto
+from enum import StrEnum, auto
 
 
-class BuildAction(Enum):
+class BuildAction(StrEnum):
     PREPROCESS = auto()
     BUILD = auto()
     BUILD_WITH_CACHE = auto()
