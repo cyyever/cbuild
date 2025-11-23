@@ -6,8 +6,15 @@
     "third_party/aiter",
     "third_party/opentelemetry-cpp",
     "third_party/composable_kernel",
+    "third_party/XNNPACK",
     "android/libs/fbjni"
   ],
+  "conditional_ignored_git_submodules": {
+    "freebsd": [
+      "third_party/cudnn_frontend",
+      "third_party/cutlass"
+    ]
+  },
   "cache_time": 30,
   "new_feature": [
     "ml_lib",

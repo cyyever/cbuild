@@ -72,7 +72,7 @@ class PackageDescription:
             with_submodule = self.get_item("with_submodule")
             if with_submodule is None:
                 with_submodule = True
-            ignored_submodules = self.get_item("ignored_git_submodules")
+            ignored_submodules = self.__get_conditional_items("ignored_git_submodules")
             if ignored_submodules is not None:
                 ignored_submodules = set(ignored_submodules)
 
