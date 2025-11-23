@@ -6,7 +6,6 @@
     "third_party/aiter",
     "third_party/opentelemetry-cpp",
     "third_party/composable_kernel",
-    "third_party/flash-attention",
     "third_party/XNNPACK",
     "android/libs/fbjni"
   ],
@@ -14,6 +13,7 @@
     "freebsd": [
       "third_party/cudnn_frontend",
       "third_party/cutlass",
+      "third_party/flash-attention",
       "third_party/fbgemm"
     ]
   },
