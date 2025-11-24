@@ -9,7 +9,7 @@
   "new_feature": [
     "ml_lib"
   ],
-  "cmake_options": "-DBUILD_WITHOUT_LAPACK=OFF -DUSE_OPENMP=on",
+  "cmake_options": "-DBUILD_WITHOUT_LAPACK=OFF -DUSE_OPENMP=off",
   "conditional_cmake_options": {
     "windows": "-DCMAKE_WINDOWS_EXPORT_ALL_SYMBOLS=on -DUSE_OPENMP=off",
     "macos": "-DCMAKE_Fortran_COMPILER_ID=LLVMFlang"
