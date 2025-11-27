@@ -3,7 +3,6 @@
   "main_language": "c",
   "dependency": [
     "cyy_naive_cpp_lib:master",
-    "cyy_math:master",
     "boost"
   ],
   "environment_variable": [
