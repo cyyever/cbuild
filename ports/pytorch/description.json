@@ -79,6 +79,7 @@
     ],
     "freebsd": [
       "CMAKE_GENERATOR='Unix Makefiles'",
+      "USE_TENSORPIPE=off",
       "USE_FBGEMM=off"
     ],
     "macos": [
