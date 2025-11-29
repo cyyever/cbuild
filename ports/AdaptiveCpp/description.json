@@ -1,4 +1,6 @@
 {
- "git_url": "git@github.com:AdaptiveCpp/AdaptiveCpp.git",
- "main_language": "c"
+  "git_url": "git@github.com:AdaptiveCpp/AdaptiveCpp.git",
+  "cache_time": 999,
+  "reuse_build": true,
+  "main_language": "c"
 }
