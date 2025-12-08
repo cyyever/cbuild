@@ -1,6 +1,5 @@
 {
-  "git_url": "git@github.com:pybind/pybind11.git",
-  "git_branch": "master",
+  "git_url": "git@github.com:cyyever/pybind11.git",
   "cache_time": 30,
   "reuse_build": true,
   "main_language": "c",
@@ -23,5 +22,5 @@
       "static_analysis=1"
     ]
   },
-  "cmake_options": "-DPYBIND11_TEST=on -DDOWNLOAD_CATCH=ON -DCMAKE_CXX_STANDARD=14"
+  "cmake_options": "-DPYBIND11_TEST=on -DDOWNLOAD_CATCH=ON -DCMAKE_CXX_STANDARD=11"
 }
