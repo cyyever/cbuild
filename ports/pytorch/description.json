@@ -13,8 +13,7 @@
     "freebsd": [
       "third_party/cudnn_frontend",
       "third_party/cutlass",
-      "third_party/flash-attention",
-      "third_party/fbgemm"
+      "third_party/flash-attention"
     ]
   },
   "cache_time": 30,
@@ -44,7 +43,7 @@
     "TP_BUILD_LIBUV=off",
     "USE_GLOG=off",
     "USE_GFLAGS=off",
-    "ONNX_ML=off",
+    "ONNX_ML=on",
     "USE_XNNPACK=off",
     "USE_PYTORCH_QNNPACK=off",
     "BLAS=OpenBLAS",
@@ -73,14 +72,17 @@
       "DEBUG=1"
     ],
     "windows": [
-      "BLAS=OpenBLAS",
+      "BLAS=Eigen",
       "USE_SYSTEM_PYBIND11=1",
       "BUILD_CUSTOM_PROTOBUF=on"
     ],
     "freebsd": [
       "CMAKE_GENERATOR='Unix Makefiles'",
       "USE_TENSORPIPE=off",
-      "USE_FBGEMM=off"
+      "USE_SYSTEM_GLOO=on",
+      "USE_SYSTEM_ONNX=on",
+      "DEBUG=1",
+      "USE_FBGEMM=on"
     ],
     "macos": [
       "BLAS=vecLib",

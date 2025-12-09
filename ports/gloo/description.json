@@ -1,4 +1,8 @@
 {
-    "git_url": "git@github.com:facebookincubator/gloo.git",
-    "main_language": "c"
+  "git_url": "git@github.com:cyyever/gloo.git",
+  "main_language": "c",
+  "environment_variable": [
+    "run_test=1"
+  ],
+  "cmake_options": "-DBUILD_TEST=on -DUSE_LIBUV=on -DGLOO_STATIC_OR_SHARED=STATIC -DBUILD_SHARED_LIBS=off"
 }
