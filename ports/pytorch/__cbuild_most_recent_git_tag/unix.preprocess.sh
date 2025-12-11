@@ -21,6 +21,10 @@ ${sed_cmd} -i -e '/CXX_STANDARD 17/d' cmake/public/utils.cmake
 
 if [[ "$(uname)" == "FreeBSD" ]]; then
   ${sed_cmd} -i -e 's/_assert/assert_in_pytorch/g' aten/src/ATen/native/sparse/ValidateCompressedIndicesCommon.h
+  ${sed_cmd} -i -e 's/ifdef __APPLE__/if 1/g' $(grep 'ifdef __APPLE__' -r torch/csrc -l)
+  ${sed_cmd} -i -e 's/py::make_tuple(func, overload_names)/py::make_tuple(func, std::move(overload_names))/g' torch/csrc/jit/python/init.cpp
+  git checkout torch/csrc/inductor/aoti_runner/pybind.cpp
+  ${sed_cmd} -i -e '/mirror_inductor_external_kernels()$/d' setup.py
 fi
 
 if [[ "${BUILD_CONTEXT_macos:=0}" == "0" ]]; then
