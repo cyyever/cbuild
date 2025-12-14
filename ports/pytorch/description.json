@@ -78,9 +78,10 @@
     ],
     "freebsd": [
       "CMAKE_GENERATOR='Unix Makefiles'",
+      "USE_DISTRIBUTED=off",
       "USE_TENSORPIPE=off",
       "USE_SYSTEM_GLOO=on",
-      "USE_SYSTEM_ONNX=on",
+      "USE_SYSTEM_ONNX=off",
       "DEBUG=1",
       "USE_FBGEMM=on"
     ],
