@@ -72,7 +72,7 @@
       "DEBUG=1"
     ],
     "windows": [
-      "BLAS=Eigen",
+      "BLAS=OpenBLAS",
       "USE_SYSTEM_PYBIND11=1",
       "BUILD_CUSTOM_PROTOBUF=on"
     ],
