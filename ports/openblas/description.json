@@ -11,7 +11,7 @@
   ],
   "cmake_options": "-DBUILD_WITHOUT_LAPACK=OFF -DUSE_OPENMP=off",
   "conditional_cmake_options": {
-    "windows": "-DCMAKE_WINDOWS_EXPORT_ALL_SYMBOLS=on -DUSE_OPENMP=off",
+    "windows": "-DCMAKE_WINDOWS_EXPORT_ALL_SYMBOLS=on -DUSE_OPENMP=off -DBUILD_WITHOUT_LAPACK=on",
     "macos": "-DCMAKE_Fortran_COMPILER_ID=LLVMFlang"
   },
   "main_language": "c",
