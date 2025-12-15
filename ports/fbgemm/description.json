@@ -1,7 +1,11 @@
 {
   "git_url": "git@github.com:cyyever/FBGEMM.git",
   "main_language": "c",
-  "cmake_options": "-DFBGEMM_BUILD_FBGEMM_GPU=off -DFBGEMM_USE_IPO=on",
+  "cmake_options": "-DFBGEMM_USE_IPO=on",
+  "environment_variable": [
+    "run_test=1",
+    "SRC_SUBDIR=fbgemm_gpu"
+  ],
   "conditional_new_feature": {
     "support_cuda": [
       "cuda"

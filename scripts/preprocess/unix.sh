@@ -190,6 +190,6 @@ run_clang_tidy_fix() {
   fi
   cd $__SRC_DIR
   mkdir -p "${STATIC_ANALYSIS_DIR}"
-  eval "${run_clang_tidy_cmd} -j $MAX_JOBS -p $(dirname $json_path) -fix -quiet >${STATIC_ANALYSIS_DIR}/run-clang-tidy.txt"
+  eval "${run_clang_tidy_cmd} -j 1 -p $(dirname $json_path) -header-filter=".*" -fix -quiet >${STATIC_ANALYSIS_DIR}/run-clang-tidy.txt"
   return
 }
