@@ -16,7 +16,6 @@ ${sed_cmd} -i -e '/^\s*check_submodules()/s/check_submodules()/#check_submodules
 ${sed_cmd} -i -e '/ninja/d' requirements.txt
 ${sed_cmd} -i -e '/cudnn/d' requirements.txt
 ${sed_cmd} -i -e '/opentelemetry/d' torch/CMakeLists.txt
-${sed_cmd} -i -e '/-Wno-pass-failed/s/-Wno-pass-failed/-Wno-pass-failed -Wno-deprecated-literal-operator/' CMakeLists.txt
 ${sed_cmd} -i -e '/CXX_STANDARD 17/d' cmake/public/utils.cmake
 ${sed_cmd} -i -e 's/-Wmove//g' cmake/public/utils.cmake
 
@@ -38,4 +37,4 @@ ${sed_cmd} -i -e '/codecvt_utf8_utf16/d' c10/util/StringUtil.cpp
 ${sed_cmd} -i -e '/erter.to_by/s/return .*/return ss;/g' c10/util/StringUtil.cpp
 ${sed_cmd} -i -e '/has_denorm.*;/d' aten/src/ATen/test/half_test.cpp
 ${sed_cmd} -i -e '/has_denorm/d' c10/util/*.h
-${sed_cmd} -i -e '/string(REGEX REPLACE/d' third_party/torch-xpu-ops/cmake/SYCL.cmake
+# ${sed_cmd} -i -e '/string(REGEX REPLACE/d' third_party/torch-xpu-ops/cmake/SYCL.cmake
