@@ -2,5 +2,6 @@
   "git_url": "git@github.com:AdaptiveCpp/AdaptiveCpp.git",
   "cache_time": 999,
   "reuse_build": true,
-  "main_language": "c"
+  "main_language": "c",
+  "cmake_options": "-DACPP_EXPERIMENTAL_LLVM=ON"
 }

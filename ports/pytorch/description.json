@@ -39,7 +39,7 @@
     "USE_FBGEMM=on",
     "USE_SYSTEM_ONNX=off",
     "USE_KINETO=off",
-    "USE_TENSORPIPE=on",
+    "USE_TENSORPIPE=off",
     "TP_BUILD_LIBUV=off",
     "USE_GLOG=off",
     "USE_GFLAGS=off",
@@ -79,7 +79,6 @@
     "freebsd": [
       "CMAKE_GENERATOR='Unix Makefiles'",
       "USE_DISTRIBUTED=off",
-      "USE_TENSORPIPE=off",
       "USE_SYSTEM_GLOO=on",
       "USE_SYSTEM_ONNX=off",
       "DEBUG=1",
@@ -89,7 +88,6 @@
       "BLAS=vecLib",
       "BUILD_CUSTOM_PROTOBUF=on",
       "USE_FBGEMM=off",
-      "USE_TENSORPIPE=off",
       "USE_DISTRIBUTED=off"
     ]
   },
