@@ -6,7 +6,8 @@
     ],
     "archlinux": [
       "nodejs",
-      "npm"
+      "npm",
+      "yarn"
     ],
     "fedora": [
       "nodejs"
