@@ -1,0 +1,11 @@
+{
+  "git_url": "git@github.com:cyyever/vimfiles.git",
+  "dependency": [
+    "nodejs-env"
+  ],
+  "system_package_dependency": {
+    "npm": [
+      "nx"
+    ]
+  }
+}
