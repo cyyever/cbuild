@@ -5,7 +5,9 @@
   ],
   "system_package_dependency": {
     "npm": [
-      "nx"
+      "nx",
+      "playwright",
+      "codeceptjs"
     ]
   }
 }
