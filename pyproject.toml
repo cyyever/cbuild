@@ -1,16 +1,13 @@
 [project]
 name = "cbuild"
 version = "0.1"
-requires-python = ">=3.11"
-readme = {file = "README.md", content-type = "text/markdown"}
+readme = { file = "README.md", content-type = "text/markdown" }
+requires-python = ">=3.12"
+license = { text = "BSD License" }
 authors = [
-  {name = "cyy", email = "cyyever@outlook.com"},
+  { name = "cyy", email = "cyyever@outlook.com" },
 ]
-license = {text = "BSD License"}
-classifiers = [
-  "Programming Language :: Python"
-]
-
+classifiers = ["Programming Language :: Python"]
 
 [project.urls]
 Repository = "https://github.com/cyyever/cbuild"
@@ -18,26 +15,25 @@ Repository = "https://github.com/cyyever/cbuild"
 [tool.pyright]
 include = ["src"]
 defineConstant = { DEBUG = true }
-
 reportMissingImports = true
 reportMissingTypeStubs = false
 
 [tool.ruff]
-target-version = "py313"
+target-version = "py312"
 src = ["src"]
 
 [tool.ruff.lint]
 select = [
-    # pycodestyle
-    "E",
-    # Pyflakes
-    "F",
-    # pyupgrade
-    "UP",
-    # flake8-bugbear
-    "B",
-    # flake8-simplify
-    "SIM",
-    # isort
-    "I",
+  # pycodestyle
+  "E",
+  # Pyflakes
+  "F",
+  # pyupgrade
+  "UP",
+  # flake8-bugbear
+  "B",
+  # flake8-simplify
+  "SIM",
+  # isort
+  "I",
 ]

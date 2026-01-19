@@ -2,7 +2,8 @@
   "group_package": true,
   "system_package_dependency": {
     "all_os&&!ubuntu": [
-      "rust"
+      "rust",
+      "cargo"
     ],
     "ubuntu": [
       "rustc",

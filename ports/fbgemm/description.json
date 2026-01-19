@@ -1,7 +1,7 @@
 {
   "git_url": "git@github.com:cyyever/FBGEMM.git",
   "main_language": "c",
-  "cmake_options": "-DFBGEMM_USE_IPO=on",
+  "cmake_options": "-DFBGEMM_USE_IPO=on -DFBGEMM_BUILD_TARGET=genai",
   "environment_variable": [
     "run_test=1",
     "SRC_SUBDIR=fbgemm_gpu"

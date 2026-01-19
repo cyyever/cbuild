@@ -11,7 +11,7 @@ if command -v apt-get >/dev/null; then
 elif command -v dnf >/dev/null; then
   ${sudo_cmd} dnf -y install python3
 elif command -v pacman >/dev/null; then
-  ${sudo_cmd} pacman -Sy python3 --noconfirm
+  ${sudo_cmd} pacman -Sy python3 python3-pip --noconfirm
 elif command -v pkg >/dev/null; then
   ${sudo_cmd} pkg install -y python312 bash jq
   export python3_cmd=python3.12
@@ -35,7 +35,6 @@ if test -f ~/opt/python/bin/python3; then
   export python3_cmd=$HOME/opt/python/bin/python3
 fi
 
-${python3_cmd} -m ensurepip --upgrade --user || true
 ${python3_cmd} -m pip install --upgrade pip --user
 ${python3_cmd} -m pip install --upgrade --user -i https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple  -r requirements.txt --force
 git pull
