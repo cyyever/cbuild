@@ -27,6 +27,8 @@ if [[ "$(uname)" == "FreeBSD" ]]; then
   ${sed_cmd} -i -e '1834s/kwargs)/kwargs)->py::object/' torch/csrc/jit/python/init.cpp
   git checkout torch/csrc/inductor/aoti_runner/pybind.cpp
   ${sed_cmd} -i -e '/mirror_inductor_external_kernels()$/d' setup.py
+  ${sed_cmd} -i -e 's/if(APPLE)/if(ON)/g' torch/CMakeLists.txt
+  ${sed_cmd} -i -e 's/set_target_properties(onnx PROPERTIES CXX_VISIBILITY_PRESET hidden)/set_source_files_properties(\${ONNX_SRCS} PROPERTIES CXX_VISIBILITY_PRESET hidden)/' third_party/onnx/CMakeLists.txt
 fi
 
 if [[ "${BUILD_CONTEXT_macos:=0}" == "0" ]]; then
