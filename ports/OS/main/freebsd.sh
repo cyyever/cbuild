@@ -16,8 +16,14 @@ sudo pw groupmod video -m $(whoami)
 sudo pw groupmod wheel -m $(whoami)
 
 sudo mkdir -p /compat/linux/sys /compat/linux/proc /compat/linux/dev/shm
+sudo mkdir -p /compat/ubuntu/sys /compat/ubuntu/proc /compat/ubuntu/dev/shm
 if test -f /etc/fstab; then
   for line in 'linsysfs    /compat/linux/sys	linsysfs	rw	0	0' 'linprocfs   /compat/linux/proc	linprocfs	rw	0	0' 'tmpfs    /compat/linux/dev/shm	tmpfs	rw,mode=1777	0	0'; do
+    if ! grep "$line" /etc/fstab; then
+      printf "%s\n" "$line" | sudo tee -a /etc/fstab
+    fi
+  done
+  for line in 'linsysfs    /compat/ubuntu/sys	linsysfs	rw	0	0' 'linprocfs   /compat/ubuntu/proc	linprocfs	rw	0	0' 'tmpfs    /compat/ubuntu/dev/shm	tmpfs	rw,mode=1777	0	0'; do
     if ! grep "$line" /etc/fstab; then
       printf "%s\n" "$line" | sudo tee -a /etc/fstab
     fi
