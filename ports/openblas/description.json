@@ -1,6 +1,7 @@
 {
   "git_url": "git@github.com:OpenMathLib/OpenBLAS.git",
   "reuse_build": true,
+  "use_mingw64": true,
   "cache_time": 90,
   "environment_variable": [
     "CTEST_PARALLEL_LEVEL=3",
