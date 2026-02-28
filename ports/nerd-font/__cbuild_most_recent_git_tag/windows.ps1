@@ -12,5 +12,7 @@ foreach ($fontFile in $fontFiles) {
         $shellApp = New-Object -ComObject shell.application
         $fonts = $shellApp.NameSpace(0x14)
     }
-    $fonts.CopyHere($fontFile.FullName, 0x14)
+    $FOF_SILENT = 0x04
+    $FOF_NOCONFIRMATION = 0x10
+    $fonts.CopyHere($fontFile.FullName, $FOF_SILENT -bor $FOF_NOCONFIRMATION)
 }
