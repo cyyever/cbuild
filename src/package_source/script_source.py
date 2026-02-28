@@ -5,8 +5,8 @@ class ScriptSource(Source):
     def __init__(self, spec, root_dir) -> None:
         super().__init__(spec=spec, root_dir=root_dir)
 
-    def _download(self) -> str:
-        return ""
+    def _download(self) -> None:
+        return None
 
     def get_checksum(self) -> str:
         return "no_checksum"

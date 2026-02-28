@@ -2,6 +2,7 @@ import functools
 import os
 import re
 import sys
+from pathlib import Path
 
 from cyy_naive_lib.shell import exec_cmd
 from cyy_naive_lib.source_code.package_spec import PackageSpecification
@@ -50,7 +51,7 @@ class GitSource(Source):
             return commit_hash.strip()
 
     @functools.cache
-    def _download(self) -> str:
+    def _download(self) -> Path:
         print("downloading", self.spec.name)
         if not os.path.isdir(os.path.join(self.__repository_path, ".git")):
             if os.path.exists(self.__repository_path):
@@ -113,7 +114,7 @@ class GitSource(Source):
             exec_cmd(cmd)
 
         print("finish downloading", self.spec.name)
-        return self.__repository_path
+        return Path(self.__repository_path)
 
     def in_master(self):
         return self.spec.branch in ("master", "main")
