@@ -157,6 +157,8 @@ class GitSource(Source):
                 tags = [t for t in tags if re.search(regex, t) is None]
         tags = [tag for tag in tags if tag]
         print("final tags", tags)
+        if not tags:
+            return None
         tag = tags[0]
         try:
             tags = sorted(tags, key=LooseVersion)

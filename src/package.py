@@ -109,7 +109,7 @@ class Package:
                     script.prepend_env_path(
                         "SRC_DIR", os.path.dirname(os.path.abspath(source_result))
                     )
-                    script.prepend_env("FILE_NAME", source_result)
+                    script.prepend_env("FILE_NAME", str(source_result))
             script.prepend_env_path("BUILD_DIR", build_dir)
             static_analysis_dir = os.path.join(
                 environment.static_analysis_dir, self.full_name()
