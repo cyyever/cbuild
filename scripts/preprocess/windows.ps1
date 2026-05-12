@@ -1,9 +1,8 @@
 $env:INSTALL_PREFIX = $env:INSTALL_PREFIX.Replace("\", "/")
 $vs_path = (vswhere -latest -prerelease -property installationPath)
 if ($vs_path) {
-    cd $vs_path
-    cd VC/Auxiliary/Build
-    C:\Windows\System32\cmd.exe /c "call vcvarsall.bat x64 && set" | ForEach-Object {
+    $vcvarsall = "$vs_path\VC\Auxiliary\Build\vcvarsall.bat"
+    C:\Windows\System32\cmd.exe /c "call `"$vcvarsall`" x64 && set" | ForEach-Object {
         if ($_ -match "^(.*?)=(.*)$") {
             Set-Item -Path "Env:$($matches[1])" -Value $matches[2]
         }
@@ -41,7 +40,7 @@ if ((Test-Path env:FEATURE_feature_language_python)) {
 $env:TORCH_CUDA_ARCH_LIST = "Turing"
 if ((Get-Command ccache)) {
     $env:CCACHE_CPP2 = "true"
-    $env:CCACHE_BASEDIR = "$env:__SRC_DIR"
+    $env:CCACHE_BASEDIR = "$__SRC_DIR"
     $env:CCACHE_SLOPPINESS = "pch_defines,time_macros"
     $env:CMAKE_CXX_COMPILER_LAUNCHER = "ccache"
     $env:CMAKE_C_COMPILER_LAUNCHER = "ccache"

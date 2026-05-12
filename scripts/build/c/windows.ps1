@@ -41,7 +41,7 @@ cmake --build . --config $env:BUILD_TYPE
 if ($LastExitCode -ne 0) {
     exit $LastExitCode
 }
-if (!$env:no_install -eq "1") {
+if ($env:no_install -ne "1") {
     cmake --build . --config $env:BUILD_TYPE --target install
     if ($LastExitCode -ne 0) {
         exit $LastExitCode

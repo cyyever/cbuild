@@ -97,7 +97,7 @@ build_by_autotools() {
   if [[ -n ${need_compilation_json+x} ]] && command -v bear; then
     bear -- ${make_cmd} -j $MAX_JOBS
     CWD=$(pwd)
-    if run_clang_tidy_fix:; then
+    if run_clang_tidy_fix; then
       bear -- ${make_cmd} -j $MAX_JOBS
       cd ${CWD}
     fi

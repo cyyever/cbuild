@@ -22,7 +22,7 @@ if [[ "${BUILD_CONTEXT_docker:=0}" == 0 ]]; then
     export CUDAToolkit_ROOT="${CUDA_HOME}"
   fi
 
-  if [[ -n ${CUDAToolkit_ROOT=+x} ]]; then
+  if [[ -n ${CUDAToolkit_ROOT+x} ]]; then
     export CUDACXX="${CUDAToolkit_ROOT}/bin/nvcc"
     if test -f ${CUDAToolkit_ROOT}/extras/demo_suite/deviceQuery; then
       if ${CUDAToolkit_ROOT}/extras/demo_suite/deviceQuery >/dev/null; then

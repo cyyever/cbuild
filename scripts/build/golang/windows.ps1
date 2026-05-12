@@ -1,4 +1,4 @@
-if ($env:GO_SRC_DIRS -ne "") {
+if ($env:GO_SRC_DIRS) {
     $env:GO_SRC_DIRS.split(":") | ForEach-Object {
         cd $env:SRC_DIR
         cd $_
