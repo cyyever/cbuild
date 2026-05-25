@@ -11,7 +11,7 @@ if command -v apt-get >/dev/null; then
 elif command -v dnf >/dev/null; then
   ${sudo_cmd} dnf -y install python3
 elif command -v pacman >/dev/null; then
-  ${sudo_cmd} pacman -Sy python3 python3-pip --noconfirm
+  ${sudo_cmd} pacman -Sy python3 python-pip --noconfirm
 elif command -v pkg >/dev/null; then
   ${sudo_cmd} pkg install -y python312 bash jq
   export python3_cmd=python3.12
