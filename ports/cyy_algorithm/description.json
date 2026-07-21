@@ -9,6 +9,7 @@
     "static_analysis=1",
     "slow_static_analysis=1"
   ],
+  "cmake_options": "-DCMAKE_CXX_COMPILER_LAUNCHER= -DCMAKE_C_COMPILER_LAUNCHER= -DCMAKE_CUDA_COMPILER_LAUNCHER=",
   "conditional_cmake_options": {
     "python_binding": "-DBUILD_PYTHON_BINDING=on",
     "bsd": "-DBUILD_FUZZING=ON",
