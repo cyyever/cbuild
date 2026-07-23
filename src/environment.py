@@ -60,6 +60,14 @@ class BuildContext:
         return context_set
 
 
+# cmd.exe treats NoDefaultCurrentDirectoryInExePath as a flag by its mere
+# existence (value is irrelevant) and stops searching the current directory for
+# executables. Build scripts such as LuaJIT's msvcbuild.bat invoke tools they
+# just built in the working directory (minilua, buildvm) by bare name, so this
+# flag makes them fail with "'minilua' is not recognized". Drop it for every
+# build subprocess on Windows.
+os.environ.pop("NoDefaultCurrentDirectoryInExePath", None)
+
 home_dir = os.path.expanduser("~")
 project_dir = os.path.abspath(
     os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
