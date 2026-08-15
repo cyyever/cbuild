@@ -1,12 +1,10 @@
 {
-  "all_os": {
-    "git_url": "git@github.com:facebook/zstd.git",
-    "main_language": "c",
-    "environment_variable": [
-      "run_test=0",
-      "SRC_SUBDIR=build/cmake"
-    ],
+  "git_url": "git@github.com:facebook/zstd.git",
+  "main_language": "c",
+  "environment_variable": [
+    "run_test=0",
+    "SRC_SUBDIR=build/cmake"
+  ],
   "cmake_options": "-DZSTD_LEGACY_SUPPORT=OFF",
-    "cache_time": 300
-  }
+  "cache_time": 300
 }

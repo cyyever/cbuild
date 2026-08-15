@@ -50,8 +50,13 @@ class PackageDescription:
                 if ctx in BuildContext.get() and ctx in branch_description:
                     branch_description = branch_description[ctx]
                     break
-        self.__config = Config([branch_description, description])
-        self.__environment = Environment([branch_description, description])
+        # When no nested group matched, branch_description IS description; listing
+        # it twice would make conditional_get accumulate every value twice.
+        config_chain = [branch_description]
+        if branch_description is not description:
+            config_chain.append(description)
+        self.__config = Config(list(config_chain))
+        self.__environment = Environment(list(config_chain))
         self.__check_language_feature = True
         self.__languages = None
         self.__build_tools = None

@@ -1,18 +1,16 @@
 {
-  "all_os": {
-    "git_url": "git@github.com:neovim/neovim.git",
-    "main_language": "c",
-    "build_languages": [
-      "python"
-    ],
-    "environment_variable": [
-      "VisualStudioEdition=1",
-      "USE_BUNDLED_NVIMQT=off"
-    ],
-    "dependency": [
-      "glog"
-    ]
-  },
+  "git_url": "git@github.com:neovim/neovim.git",
+  "main_language": "c",
+  "build_languages": [
+    "python"
+  ],
+  "environment_variable": [
+    "VisualStudioEdition=1",
+    "USE_BUNDLED_NVIMQT=off"
+  ],
+  "dependency": [
+    "glog"
+  ],
   "system_package_dependency": {
     "ubuntu": [
       "libgtest-dev",

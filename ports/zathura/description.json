@@ -1,11 +1,9 @@
 {
-  "all_os": {
-    "git_url": "git@github.com:pwmt/zathura.git",
-    "main_language": "c",
-    "environment_variable": [
-      "PKG_CONFIG_PATH=${INSTALL_PREFIX}/lib/pkgconfig",
-      "run_test=0"
-    ],
-    "cache_time": 300
-  }
+  "git_url": "git@github.com:pwmt/zathura.git",
+  "main_language": "c",
+  "environment_variable": [
+    "PKG_CONFIG_PATH=${INSTALL_PREFIX}/lib/pkgconfig",
+    "run_test=0"
+  ],
+  "cache_time": 300
 }
