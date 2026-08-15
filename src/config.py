@@ -75,13 +75,9 @@ class Config:
         for config in chain:
             if key in config:
                 values.append(config[key])
-            for k in [
-                "conditional_" + key,
-                "context_" + key,
-            ]:
-                if k not in config:
-                    continue
-                for cond, value in config[k].items():
+            conditional_key = "conditional_" + key
+            if conditional_key in config:
+                for cond, value in config[conditional_key].items():
                     if check_fn(cond):
                         values.append(value)
         return values

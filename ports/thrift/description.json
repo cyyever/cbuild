@@ -10,7 +10,7 @@
       "libssl-dev"
     ]
   },
-  "context_dependency": {
+  "conditional_dependency": {
     "all_os": [
       "boost"
     ],

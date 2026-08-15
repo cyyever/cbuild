@@ -9,10 +9,8 @@
   "environment_variable": [
     "run_test=1"
   ],
-  "conditional_configure_options": {
-    "all_os": [
-      "--disable-cli --enable-static --enable-shared"
-    ]
-  },
+  "configure_options": [
+    "--disable-cli --enable-static --enable-shared"
+  ],
   "main_language": "c"
 }

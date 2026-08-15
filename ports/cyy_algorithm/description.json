@@ -15,7 +15,7 @@
     "bsd": "-DBUILD_FUZZING=ON",
     "windows": "-DBUILD_FUZZING=ON"
   },
-  "context_dependency": {
+  "conditional_dependency": {
     "python_binding": [
       "pybind11"
     ]
