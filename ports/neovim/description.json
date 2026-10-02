@@ -16,15 +16,11 @@
       "libgtest-dev",
       "libgmock-dev"
     ],
-    "macos": [
-      "tree-sitter"
-    ],
     "archlinux": [
       "lua51",
       "luarocks",
       "msgpack-c",
       "libluv",
-      "tree-sitter",
       "unibilium",
       "libtermkey",
       "libvterm",
